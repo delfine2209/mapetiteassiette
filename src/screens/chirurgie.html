@@ -1,108 +1,595 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Se préparer à une chirurgie - Ma Petite Assiette</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Préparer ma chirurgie - Ma Petite Assiette</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3f4038;
+      padding-bottom: 90px;
+    }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(
+        145deg,
+        #f4d8c8 0%,
+        #f8e5d8 45%,
+        #dce8d8 100%
+      );
+      padding: 24px 20px 30px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #4d6250;
+      font-size: 14px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.65);
+      padding: 9px 13px;
+      border-radius: 14px;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      box-shadow: 0 5px 15px rgba(90,70,50,0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.15;
+      color: #39463b;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: #687066;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* CONTENU */
+
+    .content {
+      padding: 22px 16px;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.08);
+      margin-bottom: 20px;
+    }
+
+    .intro-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 17px;
+      background: #f2e4dc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      margin-bottom: 13px;
+    }
+
+    .intro h2 {
+      margin: 0 0 9px;
+      color: #4c5c4b;
+      font-size: 20px;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #737970;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* PARCOURS */
+
+    .section-title {
+      margin: 0 0 11px 4px;
+      font-size: 18px;
+      color: #566254;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      box-shadow: 0 4px 15px rgba(90,70,50,0.06);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: #e5eddf;
+      color: #5c7156;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .step h3 {
+      margin: 1px 0 5px;
+      font-size: 15px;
+      color: #465046;
+    }
+
+    .step p {
+      margin: 0;
+      color: #7a8078;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* ALIMENTATION */
+
+    .food-card {
+      background: linear-gradient(
+        135deg,
+        #eef3e9,
+        #f9eee6
+      );
+      border-radius: 24px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .food-card h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #4e5e4c;
+    }
+
+    .food-card p {
+      margin: 0 0 14px;
+      color: #6f776d;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .food-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .food-item {
+      background: rgba(255,255,255,0.7);
+      border-radius: 14px;
+      padding: 11px 12px;
+      color: #687066;
+      font-size: 13px;
+    }
+
+    /* IMPORTANT */
+
+    .important {
+      background: #fff2ea;
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .important h2 {
+      margin: 0 0 8px;
+      color: #66564e;
+      font-size: 17px;
+    }
+
+    .important p {
+      margin: 0;
+      color: #77716d;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.07);
+    }
+
+    .cta h2 {
+      margin: 0 0 8px;
+      color: #4d5b4c;
+      font-size: 19px;
+    }
+
+    .cta p {
+      margin: 0 0 16px;
+      color: #777d75;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      background: #70866a;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 17px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* NAVIGATION */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid #eee5dd;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+      box-shadow: 0 -4px 18px rgba(90,70,50,0.06);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-item {
+      text-decoration: none;
+      color: #92978f;
+      font-size: 11px;
+      text-align: center;
+      min-width: 65px;
+    }
+
+    .nav-item span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+    .nav-item.active {
+      color: #657b60;
+      font-weight: bold;
+    }
+
+    @media (min-width: 601px) {
+      .bottom-nav {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 600px;
+        border-radius: 25px 25px 0 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-    <a href="index.html" class="logo">←</a>
-    <div>
-        <h1>MON PARCOURS</h1>
-        <p>Je me prépare à une chirurgie.</p>
+<div class="page">
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="top">
+
+      <a class="back" href="../../index.html">
+        ← Accueil
+      </a>
+
+      <div class="logo">
+        🍽️
+      </div>
+
     </div>
-</header>
 
-<main>
+    <h1>Préparer ma chirurgie 🌸</h1>
 
-<section class="intro">
-<h2>🩺 Je me prépare</h2>
+    <p class="subtitle">
+      Un espace pour vous aider à préparer votre alimentation et votre organisation.
+    </p>
 
-<p>
-Un espace pour vous aider à organiser votre quotidien
-avant et après une chirurgie bariatrique.
-</p>
-</section>
+  </header>
 
-<section class="features">
 
-<h2>Avant l'opération</h2>
+  <main class="content">
 
-<div class="feature-grid">
+    <!-- INTRO -->
 
-<a href="#">
-📅
-<strong>Mon calendrier</strong>
-<small>Suivre les étapes importantes</small>
-</a>
+    <section class="intro">
 
-<a href="batch-cooking.html">
-🍱
-<strong>Je prépare mes repas</strong>
-<small>Anticiper et organiser</small>
-</a>
+      <div class="intro-icon">
+        🌸
+      </div>
 
-<a href="courses.html">
-🛒
-<strong>Mes courses</strong>
-<small>Préparer ce dont j'ai besoin</small>
-</a>
+      <h2>
+        Votre préparation, étape par étape
+      </h2>
 
-<a href="frigo.html">
-🧊
-<strong>Mon frigo</strong>
-<small>Organiser mes aliments</small>
-</a>
+      <p>
+        La préparation d'une chirurgie bariatrique peut être l'occasion
+        de prendre progressivement de nouvelles habitudes alimentaires
+        et de mieux préparer son quotidien.
+      </p>
+
+    </section>
+
+
+    <!-- PARCOURS -->
+
+    <h2 class="section-title">
+      Mon parcours
+    </h2>
+
+    <section class="steps">
+
+      <article class="step">
+
+        <div class="step-number">1</div>
+
+        <div>
+
+          <h3>
+            Comprendre les nouvelles habitudes
+          </h3>
+
+          <p>
+            Prenez le temps de comprendre les changements qui pourront
+            accompagner votre parcours.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-number">2</div>
+
+        <div>
+
+          <h3>
+            Apprendre à écouter sa faim
+          </h3>
+
+          <p>
+            Observez progressivement vos sensations de faim et de satiété
+            sans chercher à imposer une quantité identique à chaque repas.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-number">3</div>
+
+        <div>
+
+          <h3>
+            Découvrir les petites portions
+          </h3>
+
+          <p>
+            Ma Petite Assiette propose des recettes permettant de réfléchir
+            aux portions et à l'organisation des repas.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-number">4</div>
+
+        <div>
+
+          <h3>
+            Préparer son organisation
+          </h3>
+
+          <p>
+            Le batch-cooking, les courses et la préparation des repas
+            peuvent faciliter le quotidien après l'intervention.
+          </p>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- ALIMENTATION -->
+
+    <section class="food-card">
+
+      <h2>
+        🍽️ Les grands principes
+      </h2>
+
+      <p>
+        Les recommandations exactes varient selon le type d'intervention
+        et le protocole de votre équipe. L'application peut vous aider
+        à vous organiser, sans remplacer cet accompagnement.
+      </p>
+
+      <div class="food-list">
+
+        <div class="food-item">
+          🥄 Privilégier progressivement les petites portions.
+        </div>
+
+        <div class="food-item">
+          💧 Penser régulièrement à l'hydratation selon les recommandations reçues.
+        </div>
+
+        <div class="food-item">
+          💪 Accorder une place suffisante aux protéines selon votre protocole.
+        </div>
+
+        <div class="food-item">
+          🌿 Privilégier des préparations simples et adaptées à votre tolérance.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPORTANT -->
+
+    <section class="important">
+
+      <h2>
+        ⚠️ Une information importante
+      </h2>
+
+      <p>
+        Ma Petite Assiette est un outil d'organisation et d'accompagnement.
+        Elle ne remplace pas les conseils de votre chirurgien, médecin,
+        diététicien ou équipe spécialisée. Après l'intervention,
+        les consignes de votre équipe médicale sont prioritaires,
+        notamment concernant les textures, quantités, aliments autorisés
+        et étapes de réalimentation.
+
+      </p>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <h2>
+        🥄 Commencer avec les petites portions
+      </h2>
+
+      <p>
+        Découvrez les recettes pensées pour les petits appétits
+        et l'organisation des repas.
+      </p>
+
+      <a
+        class="button"
+        href="petit-appetit.html"
+      >
+        Découvrir
+      </a>
+
+    </section>
+
+  </main>
 
 </div>
 
-<h2 style="margin-top:30px;">Après l'opération</h2>
 
-<div class="feature-grid">
-
-<a href="#">
-📖
-<strong>Mon parcours alimentaire</strong>
-<small>À suivre selon les recommandations de mon équipe</small>
-</a>
-
-<a href="recettes.html">
-🍽️
-<strong>Mes recettes</strong>
-<small>Des idées à adapter</small>
-</a>
-
-</div>
-
-<div style="margin-top:25px; padding:16px; background:white; border-radius:15px;">
-<strong>ℹ️ Important</strong>
-
-<p style="margin-top:8px; line-height:1.5; font-size:13px;">
-Les informations et recettes proposées ici sont générales.
-Elles ne remplacent pas les recommandations de votre équipe
-de soins. Après une chirurgie, les textures, quantités et
-étapes alimentaires doivent suivre les consignes qui vous
-ont été données.
-</p>
-
-</div>
-
-</section>
-
-</main>
+<!-- NAVIGATION -->
 
 <nav class="bottom-nav">
-<a href="index.html">🏠<small>Accueil</small></a>
-<a href="recettes.html">🍽️<small>Recettes</small></a>
-<a href="menu.html">📅<small>Menu</small></a>
-<a href="courses.html">🛒<small>Courses</small></a>
+
+  <div class="nav-inner">
+
+    <a
+      class="nav-item"
+      href="../../index.html"
+    >
+      <span>🏠</span>
+      Accueil
+    </a>
+
+    <a
+      class="nav-item"
+      href="Recettes.html"
+    >
+      <span>🍽️</span>
+      Recettes
+    </a>
+
+    <a
+      class="nav-item"
+      href="Favoris.html"
+    >
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a
+      class="nav-item active"
+      href="MonProfil.html"
+    >
+      <span>👤</span>
+      Profil
+    </a>
+
+  </div>
+
 </nav>
 
 </body>
 </html>
-```
