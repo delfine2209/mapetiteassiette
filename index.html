@@ -15,7 +15,54 @@
   <link rel="stylesheet" href="src/style.css">
 
   <style>
+<script>
 
+function choisirEnvie(envie) {
+
+  /*
+   * On enregistre la nouvelle envie
+   */
+
+  localStorage.setItem(
+    "envie",
+    envie
+  );
+
+
+  /*
+   * Depuis l'accueil,
+   * on ne conserve pas les anciens filtres.
+   */
+
+  localStorage.setItem(
+    "preferences",
+    JSON.stringify([])
+  );
+
+
+  /*
+   * On laisse le temps libre.
+   * L'utilisateur pourra ensuite voir
+   * toutes les recettes correspondant
+   * à son envie.
+   */
+
+  localStorage.setItem(
+    "temps",
+    "plus"
+  );
+
+
+  /*
+   * On affiche directement les résultats.
+   */
+
+  window.location.href =
+    "src/screens/Resultats.html";
+
+}
+
+</script>
     body {
       margin: 0;
       background: #f7f4ef;
