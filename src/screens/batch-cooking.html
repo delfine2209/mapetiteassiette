@@ -1,108 +1,505 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Batch cooking - Ma Petite Assiette</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Batch-cooking - Ma Petite Assiette</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3f4038;
+      padding-bottom: 90px;
+    }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(
+        145deg,
+        #f4d8c8 0%,
+        #f8e5d8 45%,
+        #dce8d8 100%
+      );
+      padding: 24px 20px 30px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #4d6250;
+      font-size: 14px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.65);
+      padding: 9px 13px;
+      border-radius: 14px;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.15;
+      color: #39463b;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: #687066;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* CONTENU */
+
+    .content {
+      padding: 22px 16px;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.08);
+      margin-bottom: 20px;
+    }
+
+    .intro h2 {
+      margin: 0 0 9px;
+      color: #4c5c4b;
+      font-size: 20px;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #737970;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* ÉTAPES */
+
+    .section-title {
+      margin: 0 0 11px 4px;
+      font-size: 18px;
+      color: #566254;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      box-shadow: 0 4px 15px rgba(90,70,50,0.06);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: #e5eddf;
+      color: #5c7156;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .step h3 {
+      margin: 1px 0 5px;
+      font-size: 15px;
+      color: #465046;
+    }
+
+    .step p {
+      margin: 0;
+      color: #7a8078;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* CONSEILS */
+
+    .tips {
+      background: linear-gradient(
+        135deg,
+        #eef3e9,
+        #f9eee6
+      );
+      border-radius: 24px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .tips h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: #4e5e4c;
+    }
+
+    .tip {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: #687066;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .tip:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.07);
+    }
+
+    .cta h2 {
+      margin: 0 0 8px;
+      color: #4d5b4c;
+      font-size: 19px;
+    }
+
+    .cta p {
+      margin: 0 0 16px;
+      color: #777d75;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      background: #70866a;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 17px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* NAVIGATION */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid #eee5dd;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+      box-shadow: 0 -4px 18px rgba(90,70,50,0.06);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-item {
+      text-decoration: none;
+      color: #92978f;
+      font-size: 11px;
+      text-align: center;
+      min-width: 65px;
+    }
+
+    .nav-item span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+    .nav-item.active {
+      color: #657b60;
+      font-weight: bold;
+    }
+
+    @media (min-width: 601px) {
+      .bottom-nav {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 600px;
+        border-radius: 25px 25px 0 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-    <a href="index.html" class="logo">←</a>
-    <div>
-        <h1>BATCH COOKING</h1>
-        <p>Préparer plusieurs petites portions à l'avance.</p>
+<div class="page">
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="top">
+
+      <a class="back" href="../../index.html">
+        ← Accueil
+      </a>
+
+      <div class="logo">
+        🍽️
+      </div>
+
     </div>
-</header>
 
-<main>
+    <h1>Batch-cooking 📦</h1>
 
-<section class="intro">
-<h2>🍱 Je prépare ma semaine</h2>
-<p>
-Préparez plusieurs petites portions en une seule session
-et organisez facilement vos repas.
-</p>
-</section>
+    <p class="subtitle">
+      Préparez plusieurs éléments à l'avance pour vous simplifier les repas.
+    </p>
 
-<section class="features">
+  </header>
 
-<h2>Combien de jours ?</h2>
 
-<div class="feature-grid">
+  <main class="content">
 
-<a href="#">
-📅
-<strong>3 jours</strong>
-<small>Une petite préparation</small>
-</a>
+    <!-- INTRO -->
 
-<a href="#">
-📅
-<strong>5 jours</strong>
-<small>Une semaine organisée</small>
-</a>
+    <section class="intro">
 
-<a href="#">
-📅
-<strong>7 jours</strong>
-<small>Je prépare toute ma semaine</small>
-</a>
+      <h2>
+        Préparer une fois, profiter plusieurs fois
+      </h2>
+
+      <p>
+        Le batch-cooking permet d'anticiper une partie des préparations
+        et de gagner du temps les jours où l'on a moins d'énergie ou
+        moins de temps pour cuisiner.
+      </p>
+
+    </section>
+
+
+    <!-- ÉTAPES -->
+
+    <h2 class="section-title">
+      Comment commencer ?
+    </h2>
+
+    <section class="steps">
+
+      <article class="step">
+
+        <div class="step-number">1</div>
+
+        <div>
+          <h3>Choisir quelques recettes</h3>
+
+          <p>
+            Sélectionnez plusieurs recettes compatibles avec vos envies
+            et votre organisation de la semaine.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-number">2</div>
+
+        <div>
+          <h3>Préparer les bases</h3>
+
+          <p>
+            Cuisez à l'avance certains légumes, féculents ou protéines
+            qui pourront servir dans plusieurs repas.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-number">3</div>
+
+        <div>
+          <h3>Portionner</h3>
+
+          <p>
+            Répartissez les préparations dans des contenants adaptés
+            pour faciliter les repas suivants.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-number">4</div>
+
+        <div>
+          <h3>Conserver ou congeler</h3>
+
+          <p>
+            Respectez les indications de conservation propres à chaque
+            préparation et les recommandations habituelles de sécurité alimentaire.
+          </p>
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- CONSEILS -->
+
+    <section class="tips">
+
+      <h2>
+        🌿 Mes petits conseils
+      </h2>
+
+      <div class="tip">
+        <span>✓</span>
+        <span>Commencez par seulement 2 ou 3 préparations.</span>
+      </div>
+
+      <div class="tip">
+        <span>✓</span>
+        <span>Utilisez des préparations qui peuvent servir dans plusieurs recettes.</span>
+      </div>
+
+      <div class="tip">
+        <span>✓</span>
+        <span>Gardez quelques portions individuelles prêtes à l'emploi.</span>
+      </div>
+
+      <div class="tip">
+        <span>✓</span>
+        <span>Adaptez les quantités à votre appétit et à votre organisation.</span>
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <h2>
+        🍽️ Voir les recettes adaptées
+      </h2>
+
+      <p>
+        Retrouvez les recettes de Ma Petite Assiette
+        qui peuvent être préparées à l'avance.
+      </p>
+
+      <a
+        class="button"
+        href="Recettes.html?batch=true"
+      >
+        Voir les recettes
+      </a>
+
+    </section>
+
+  </main>
 
 </div>
 
-<h2 style="margin-top:30px;">Je prépare quoi ?</h2>
 
-<div class="feature-grid">
-
-<a href="recettes.html#petit-dejeuner">
-🌅
-<strong>Petits-déjeuners</strong>
-<small>Préparer à l'avance</small>
-</a>
-
-<a href="recettes.html#collation">
-🍎
-<strong>Collations</strong>
-<small>Petites portions</small>
-</a>
-
-<a href="recettes.html#dejeuner">
-☀️
-<strong>Déjeuners</strong>
-<small>Préparer plusieurs portions</small>
-</a>
-
-<a href="recettes.html#diner">
-🌙
-<strong>Dîners</strong>
-<small>Organiser la semaine</small>
-</a>
-
-</div>
-
-<h2 style="margin-top:30px;">❄️ Conservation</h2>
-
-<p style="line-height:1.6; margin-top:10px;">
-L'application indiquera pour chaque préparation les conditions
-de conservation et, lorsque c'est approprié, la possibilité
-de congeler.
-</p>
-
-</section>
-
-</main>
+<!-- NAVIGATION -->
 
 <nav class="bottom-nav">
-<a href="index.html">🏠<small>Accueil</small></a>
-<a href="recettes.html">🍽️<small>Recettes</small></a>
-<a href="menu.html">📅<small>Menu</small></a>
-<a href="courses.html">🛒<small>Courses</small></a>
+
+  <div class="nav-inner">
+
+    <a
+      class="nav-item"
+      href="../../index.html"
+    >
+      <span>🏠</span>
+      Accueil
+    </a>
+
+    <a
+      class="nav-item"
+      href="Recettes.html"
+    >
+      <span>🍽️</span>
+      Recettes
+    </a>
+
+    <a
+      class="nav-item"
+      href="Favoris.html"
+    >
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a
+      class="nav-item"
+      href="MonProfil.html"
+    >
+      <span>👤</span>
+      Profil
+    </a>
+
+  </div>
+
 </nav>
 
 </body>
 </html>
-```
