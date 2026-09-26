@@ -1,56 +1,613 @@
-<div class="screen mon-profil">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <header class="header">
-    <h1 class="title">Mon profil</h1>
+  <title>Mon profil - Ma Petite Assiette</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3f4038;
+      padding-bottom: 90px;
+    }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(
+        145deg,
+        #f4d8c8 0%,
+        #f8e5d8 45%,
+        #dce8d8 100%
+      );
+      padding: 24px 20px 30px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #4d6250;
+      font-size: 14px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.65);
+      padding: 9px 13px;
+      border-radius: 14px;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      box-shadow: 0 5px 15px rgba(90,70,50,0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.15;
+      color: #39463b;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: #687066;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* CONTENU */
+
+    .content {
+      padding: 22px 16px;
+    }
+
+    .section {
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      margin: 0 0 10px 4px;
+      color: #566254;
+      font-size: 17px;
+    }
+
+    /* CARTE PROFIL */
+
+    .profile-card {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.08);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .avatar {
+      width: 62px;
+      height: 62px;
+      flex-shrink: 0;
+      border-radius: 21px;
+      background: #e7eee2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .profile-info h2 {
+      margin: 0 0 5px;
+      font-size: 19px;
+      color: #424c42;
+    }
+
+    .profile-info p {
+      margin: 0;
+      color: #7a8078;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* OPTIONS */
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option {
+      width: 100%;
+      border: none;
+      text-decoration: none;
+      background: white;
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: #444b43;
+      box-shadow: 0 4px 15px rgba(90,70,50,0.06);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .option-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 15px;
+      background: #f6e7dc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+    }
+
+    .option:nth-child(2) .option-icon {
+      background: #e4eddc;
+    }
+
+    .option:nth-child(3) .option-icon {
+      background: #e5edf1;
+    }
+
+    .option:nth-child(4) .option-icon {
+      background: #f2e5ef;
+    }
+
+    .option:nth-child(5) .option-icon {
+      background: #f4ecd9;
+    }
+
+    .option-text {
+      flex: 1;
+    }
+
+    .option-title {
+      display: block;
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .option-description {
+      display: block;
+      color: #858981;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .arrow {
+      color: #9aa098;
+      font-size: 20px;
+    }
+
+    /* PARCOURS */
+
+    .journey {
+      background: linear-gradient(
+        135deg,
+        #eef3e9,
+        #f9eee6
+      );
+      border-radius: 24px;
+      padding: 19px;
+    }
+
+    .journey-title {
+      margin: 0 0 7px;
+      font-size: 17px;
+      color: #4d5d4b;
+    }
+
+    .journey-text {
+      margin: 0 0 15px;
+      color: #737970;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .journey-button {
+      display: inline-block;
+      text-decoration: none;
+      background: #70866a;
+      color: white;
+      padding: 11px 15px;
+      border-radius: 15px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* INFORMATIONS */
+
+    .info-card {
+      background: #fff4ec;
+      border-radius: 20px;
+      padding: 17px;
+      color: #737970;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .info-card strong {
+      color: #5d665b;
+    }
+
+    /* NAVIGATION */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid #eee5dd;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+      box-shadow: 0 -4px 18px rgba(90,70,50,0.06);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-item {
+      text-decoration: none;
+      color: #92978f;
+      font-size: 11px;
+      text-align: center;
+      min-width: 65px;
+    }
+
+    .nav-item span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+    .nav-item.active {
+      color: #657b60;
+      font-weight: bold;
+    }
+
+    @media (min-width: 601px) {
+      .bottom-nav {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 600px;
+        border-radius: 25px 25px 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="top">
+
+      <a class="back" href="../../index.html">
+        ← Accueil
+      </a>
+
+      <div class="logo">
+        🍽️
+      </div>
+
+    </div>
+
+    <h1>Mon profil</h1>
+
+    <p class="subtitle">
+      Personnalisez votre expérience et retrouvez facilement votre parcours.
+    </p>
+
   </header>
 
-  <nav class="navbar">
-  <a href="Accueil.html" class="nav-item">🏠<span>Accueil</span></a>
-  <a href="MesEnvies.html" class="nav-item">🔍<span>Envies</span></a>
-  <a href="Recette.html" class="nav-item">🍽️<span>Recettes</span></a>
-  <a href="Favoris.html" class="nav-item">⭐<span>Favoris</span></a>
-  <a href="MonProfil.html" class="nav-item">👤<span>Profil</span></a>
-</nav>
 
-  <section class="intro">
-    <p class="description">
-      Vos préférences alimentaires, vos habitudes et vos restrictions.
-    </p>
-  </section>
+  <!-- CONTENU -->
 
-  <section class="profil-section">
+  <main class="content">
 
-    <div class="profil-card">
-      <h2>Mes préférences</h2>
-      <ul class="profil-list">
-        <li>Type d’alimentation : <strong>Standard</strong></li>
-        <li>Préférences : <strong>Salé, léger</strong></li>
-        <li>Régimes : <strong>Aucun</strong></li>
-      </ul>
-      <a class="button secondary" href="ModifierProfil.html">Modifier</a>
-    </div>
+    <!-- PROFIL -->
 
-    <div class="profil-card">
-      <h2>Ma quantité habituelle</h2>
-      <ul class="profil-list">
-        <li>Portion : <strong>Petite</strong></li>
-        <li>Faim moyenne : <strong>Oui</strong></li>
-      </ul>
-      <a class="button secondary" href="MaFaim.html">Ajuster</a>
-    </div>
+    <section class="section">
 
-    <div class="profil-card">
-      <h2>Mes aliments à éviter</h2>
-      <ul class="profil-list">
-        <li><strong>Aucun aliment renseigné</strong></li>
-      </ul>
-      <a class="button secondary" href="ModifierProfil.html">Ajouter</a>
-    </div>
+      <div class="profile-card">
 
-  </section>
+        <div class="avatar">
+          👤
+        </div>
 
-  <footer class="footer">
-    © 2026 Ma Petite Assiette
-  </footer>
+        <div class="profile-info">
+
+          <h2>Mon espace personnel</h2>
+
+          <p>
+            Retrouvez vos préférences, vos favoris et vos différents parcours.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MON PARCOURS -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Mon parcours
+      </h2>
+
+      <div class="journey">
+
+        <h3 class="journey-title">
+          🌿 Une assiette adaptée à vos besoins
+        </h3>
+
+        <p class="journey-text">
+          Ma Petite Assiette vous accompagne dans vos choix,
+          de la découverte des recettes jusqu'à la préparation
+          de votre chirurgie.
+        </p>
+
+        <a
+          class="journey-button"
+          href="petit-appetit.html"
+        >
+          Découvrir mon parcours
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- MES PRÉFÉRENCES -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Mes préférences
+      </h2>
+
+      <div class="options">
+
+        <a class="option" href="MesEnvies.html">
+
+          <div class="option-icon">
+            🍽️
+          </div>
+
+          <div class="option-text">
+
+            <span class="option-title">
+              Mes envies
+            </span>
+
+            <span class="option-description">
+              Choisissez ce qui vous ferait plaisir aujourd'hui.
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+
+        <a class="option" href="MesEnvies.html">
+
+          <div class="option-icon">
+            🥄
+          </div>
+
+          <div class="option-text">
+
+            <span class="option-title">
+              Petite portion
+            </span>
+
+            <span class="option-description">
+              Retrouvez des recettes adaptées aux petits appétits.
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+
+        <a class="option" href="batch-cooking.html">
+
+          <div class="option-icon">
+            📦
+          </div>
+
+          <div class="option-text">
+
+            <span class="option-title">
+              Batch-cooking
+            </span>
+
+            <span class="option-description">
+              Préparez plusieurs repas à l'avance simplement.
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+
+        <a class="option" href="chirurgie.html">
+
+          <div class="option-icon">
+            🌸
+          </div>
+
+          <div class="option-text">
+
+            <span class="option-title">
+              Préparer ma chirurgie
+            </span>
+
+            <span class="option-description">
+              Retrouvez les informations et les étapes de votre parcours.
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+
+        <a class="option" href="Favoris.html">
+
+          <div class="option-icon">
+            ❤️
+          </div>
+
+          <div class="option-text">
+
+            <span class="option-title">
+              Mes favoris
+            </span>
+
+            <span class="option-description">
+              Retrouvez toutes vos recettes préférées.
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+
+    <section class="section">
+
+      <div class="info-card">
+
+        <strong>💡 À savoir</strong><br>
+
+        Les informations et recettes proposées dans
+        Ma Petite Assiette sont destinées à vous aider
+        à organiser vos repas. Pour la préparation et
+        le suivi après une chirurgie bariatrique,
+        les recommandations de votre équipe médicale
+        restent prioritaires.
+
+      </div>
+
+    </section>
+
+  </main>
 
 </div>
+
+
+<!-- NAVIGATION -->
+
+<nav class="bottom-nav">
+
+  <div class="nav-inner">
+
+    <a
+      class="nav-item"
+      href="../../index.html"
+    >
+      <span>🏠</span>
+      Accueil
+    </a>
+
+    <a
+      class="nav-item"
+      href="Recettes.html"
+    >
+      <span>🍽️</span>
+      Recettes
+    </a>
+
+    <a
+      class="nav-item"
+      href="Favoris.html"
+    >
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a
+      class="nav-item active"
+      href="MonProfil.html"
+    >
+      <span>👤</span>
+      Profil
+    </a>
+
+  </div>
+
+</nav>
+
+</body>
+</html>
