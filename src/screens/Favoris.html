@@ -1,7 +1,751 @@
-<div class="screen">
-  <h1>Mes favoris</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="card">Poulet crémeux aux courgettes</div>
-  <div class="card">Cassolettes, purée de pois chiches</div>
-  <div class="card">Œuf cocotte aux épinards</div>
+  <title>Mes favoris - Ma Petite Assiette</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3f4038;
+      padding-bottom: 90px;
+    }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(
+        145deg,
+        #f4d8c8 0%,
+        #f8e5d8 45%,
+        #dce8d8 100%
+      );
+      padding: 24px 20px 30px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #4d6250;
+      font-size: 14px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.65);
+      padding: 9px 13px;
+      border-radius: 14px;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      box-shadow: 0 5px 15px rgba(90,70,50,0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.15;
+      color: #39463b;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: #687066;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* CONTENU */
+
+    .content {
+      padding: 22px 16px;
+    }
+
+    .summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .summary strong {
+      font-size: 18px;
+      color: #465348;
+    }
+
+    .count {
+      background: #e5eddf;
+      color: #50624e;
+      padding: 7px 11px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* RECHERCHE */
+
+    .search {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: white;
+      border-radius: 18px;
+      padding: 15px 17px;
+      font-size: 15px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 15px rgba(90,70,50,0.07);
+    }
+
+    .search:focus {
+      box-shadow: 0 0 0 2px #d7e4d1;
+    }
+
+    /* CARDS */
+
+    .recipes {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .recipe-card {
+      position: relative;
+      background: white;
+      border-radius: 23px;
+      padding: 18px;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.08);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .recipe-card:active {
+      transform: scale(0.98);
+    }
+
+    .recipe-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding-right: 42px;
+    }
+
+    .recipe-icon {
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+      border-radius: 17px;
+      background: #f5e4d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+    }
+
+    .recipe-info {
+      min-width: 0;
+    }
+
+    .category {
+      color: #7b8977;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .recipe-name {
+      margin: 0;
+      color: #3f493f;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .detail {
+      background: #f8f4ef;
+      color: #697066;
+      padding: 7px 9px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+
+    .batch {
+      background: #e5efdf;
+      color: #587052;
+    }
+
+    .remove {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      border-radius: 50%;
+      background: #fff0ec;
+      color: #c47769;
+      font-size: 19px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .remove:active {
+      transform: scale(0.9);
+    }
+
+    /* ETAT VIDE */
+
+    .empty {
+      background: white;
+      border-radius: 25px;
+      padding: 35px 22px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.07);
+    }
+
+    .empty-icon {
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
+
+    .empty h2 {
+      margin: 0 0 8px;
+      color: #465348;
+      font-size: 21px;
+    }
+
+    .empty p {
+      margin: 0 auto 20px;
+      max-width: 330px;
+      color: #747970;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .primary-button {
+      display: inline-block;
+      border: none;
+      text-decoration: none;
+      background: #71866b;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 17px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* MESSAGE RECHERCHE */
+
+    .no-result {
+      display: none;
+      background: white;
+      border-radius: 22px;
+      padding: 28px 20px;
+      text-align: center;
+      color: #747970;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.06);
+    }
+
+    /* NAVIGATION */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid #eee5dd;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+      box-shadow: 0 -4px 18px rgba(90,70,50,0.06);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-item {
+      text-decoration: none;
+      color: #92978f;
+      font-size: 11px;
+      text-align: center;
+      min-width: 65px;
+    }
+
+    .nav-item span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+    .nav-item.active {
+      color: #657b60;
+      font-weight: bold;
+    }
+
+    @media (min-width: 601px) {
+      .bottom-nav {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 600px;
+        border-radius: 25px 25px 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <div class="top">
+      <a class="back" href="../../index.html">← Accueil</a>
+
+      <div class="logo">🍽️</div>
+    </div>
+
+    <h1>Mes favoris ❤️</h1>
+
+    <p class="subtitle">
+      Retrouvez ici les petites recettes que vous aimez garder sous la main.
+    </p>
+
+  </header>
+
+
+  <!-- CONTENU -->
+  <main class="content">
+
+    <div class="summary">
+      <strong>Mes recettes préférées</strong>
+      <span class="count" id="count">0 recette</span>
+    </div>
+
+    <input
+      type="search"
+      id="search"
+      class="search"
+      placeholder="🔎 Rechercher un favori..."
+      autocomplete="off"
+    >
+
+    <div id="recipes" class="recipes"></div>
+
+    <div id="noResult" class="no-result">
+      <div style="font-size:34px; margin-bottom:8px;">🔎</div>
+      Aucune recette ne correspond à votre recherche.
+    </div>
+
+    <div id="empty" class="empty" style="display:none;">
+
+      <div class="empty-icon">♡</div>
+
+      <h2>Votre carnet est encore vide</h2>
+
+      <p>
+        Ajoutez vos recettes préférées en cliquant sur
+        ❤️ depuis une fiche recette.
+      </p>
+
+      <a class="primary-button" href="Recettes.html">
+        Découvrir les recettes
+      </a>
+
+    </div>
+
+  </main>
+
 </div>
+
+
+<!-- NAVIGATION -->
+<nav class="bottom-nav">
+
+  <div class="nav-inner">
+
+    <a class="nav-item" href="../../index.html">
+      <span>🏠</span>
+      Accueil
+    </a>
+
+    <a class="nav-item" href="Recettes.html">
+      <span>🍽️</span>
+      Recettes
+    </a>
+
+    <a class="nav-item active" href="Favoris.html">
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a class="nav-item" href="MonProfil.html">
+      <span>👤</span>
+      Profil
+    </a>
+
+  </div>
+
+</nav>
+
+
+<script>
+
+  let recettes = [];
+  let favoris = [];
+
+  const recipesContainer = document.getElementById("recipes");
+  const emptyContainer = document.getElementById("empty");
+  const noResultContainer = document.getElementById("noResult");
+  const searchInput = document.getElementById("search");
+  const countElement = document.getElementById("count");
+
+
+  /* RÉCUPÉRATION DES FAVORIS */
+
+  function chargerFavoris() {
+
+    try {
+      favoris = JSON.parse(
+        localStorage.getItem("favoris") || "[]"
+      );
+    } catch (error) {
+      favoris = [];
+    }
+
+    if (!Array.isArray(favoris)) {
+      favoris = [];
+    }
+  }
+
+
+  /* AFFICHAGE */
+
+  function afficherFavoris() {
+
+    const recherche = searchInput.value
+      .trim()
+      .toLowerCase();
+
+    recipesContainer.innerHTML = "";
+    noResultContainer.style.display = "none";
+
+
+    const recettesFavorites = recettes.filter(recette =>
+      favoris.includes(recette.id)
+    );
+
+
+    countElement.textContent =
+      recettesFavorites.length +
+      (recettesFavorites.length > 1 ? " recettes" : " recette");
+
+
+    /* AUCUN FAVORI */
+
+    if (recettesFavorites.length === 0) {
+
+      emptyContainer.style.display = "block";
+      return;
+
+    }
+
+    emptyContainer.style.display = "none";
+
+
+    /* RECHERCHE */
+
+    const resultat = recettesFavorites.filter(recette => {
+
+      const texte = `
+        ${recette.nom || ""}
+        ${recette.categorie || ""}
+        ${recette.type || ""}
+      `.toLowerCase();
+
+      return texte.includes(recherche);
+
+    });
+
+
+    if (resultat.length === 0) {
+
+      noResultContainer.style.display = "block";
+      return;
+
+    }
+
+
+    resultat.forEach(recette => {
+
+      const card = document.createElement("article");
+
+      card.className = "recipe-card";
+
+
+      card.addEventListener("click", function() {
+
+        window.location.href =
+          "Recette.html?id=" +
+          encodeURIComponent(recette.id);
+
+      });
+
+
+      const icon = obtenirIcone(recette);
+
+
+      card.innerHTML = `
+
+        <div class="recipe-top">
+
+          <div class="recipe-icon">
+            ${icon}
+          </div>
+
+          <div class="recipe-info">
+
+            <div class="category">
+              ${recette.categorie || "Recette"}
+            </div>
+
+            <h2 class="recipe-name">
+              ${recette.nom || "Recette"}
+            </h2>
+
+          </div>
+
+        </div>
+
+        <div class="details">
+
+          <span class="detail">
+            ⏱️ ${recette.temps || "-"} min
+          </span>
+
+          <span class="detail">
+            🍽️ ${recette.portion || "Petite portion"}
+          </span>
+
+          <span class="detail">
+            💪 ${recette.proteines || 0} g protéines
+          </span>
+
+          ${
+            recette.batchCooking
+            ? `<span class="detail batch">📦 Batch-cooking</span>`
+            : ""
+          }
+
+        </div>
+
+        <button
+          class="remove"
+          type="button"
+          aria-label="Retirer des favoris"
+          title="Retirer des favoris"
+        >
+          ♥
+        </button>
+
+      `;
+
+
+      /* BOUTON SUPPRESSION */
+
+      const removeButton =
+        card.querySelector(".remove");
+
+
+      removeButton.addEventListener("click", function(event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        retirerFavori(recette.id);
+
+      });
+
+
+      recipesContainer.appendChild(card);
+
+    });
+
+  }
+
+
+  /* ICÔNE SELON LE TYPE */
+
+  function obtenirIcone(recette) {
+
+    const texte = `
+      ${recette.categorie || ""}
+      ${recette.type || ""}
+      ${recette.nom || ""}
+    `.toLowerCase();
+
+
+    if (
+      texte.includes("petit-déjeuner") ||
+      texte.includes("petit dejeuner")
+    ) {
+      return "☀️";
+    }
+
+    if (
+      texte.includes("collation") ||
+      texte.includes("dessert") ||
+      texte.includes("sucré") ||
+      texte.includes("sucre")
+    ) {
+      return "🍓";
+    }
+
+    if (recette.vegetarien) {
+      return "🥗";
+    }
+
+    if (texte.includes("salade")) {
+      return "🥗";
+    }
+
+    if (
+      texte.includes("poisson") ||
+      texte.includes("saumon") ||
+      texte.includes("thon") ||
+      texte.includes("cabillaud") ||
+      texte.includes("crevette")
+    ) {
+      return "🐟";
+    }
+
+    if (
+      texte.includes("poulet") ||
+      texte.includes("dinde")
+    ) {
+      return "🍗";
+    }
+
+    return "🍽️";
+
+  }
+
+
+  /* SUPPRIMER UN FAVORI */
+
+  function retirerFavori(id) {
+
+    favoris = favoris.filter(
+      favori => favori !== id
+    );
+
+    localStorage.setItem(
+      "favoris",
+      JSON.stringify(favoris)
+    );
+
+    afficherFavoris();
+
+  }
+
+
+  /* RECHERCHE */
+
+  searchInput.addEventListener(
+    "input",
+    afficherFavoris
+  );
+
+
+  /* CHARGEMENT DU JSON */
+
+  fetch("../recettes.json")
+
+    .then(response => {
+
+      if (!response.ok) {
+        throw new Error("Impossible de charger les recettes.");
+      }
+
+      return response.json();
+
+    })
+
+    .then(data => {
+
+      recettes = data;
+
+      chargerFavoris();
+
+      afficherFavoris();
+
+    })
+
+    .catch(error => {
+
+      console.error(error);
+
+      recipesContainer.innerHTML = `
+        <div class="empty">
+
+          <div class="empty-icon">⚠️</div>
+
+          <h2>Les recettes ne sont pas disponibles</h2>
+
+          <p>
+            Une erreur est survenue lors du chargement
+            de votre carnet de recettes.
+          </p>
+
+        </div>
+      `;
+
+    });
+
+</script>
+
+</body>
+</html>
