@@ -1,654 +1,949 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <title>Mes recettes - Ma Petite Assiette</title>
+  <title>Mes suggestions - Ma Petite Assiette</title>
 
-    <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+
+    .resultats-page {
+      padding-bottom: 100px;
+    }
+
+    .resultats-header {
+      margin-bottom: 20px;
+    }
+
+    .resultats-header h1 {
+      margin-bottom: 7px;
+    }
+
+    .selection-resume {
+      background: #eef4e9;
+      border-radius: 18px;
+      padding: 15px;
+      margin-bottom: 22px;
+      color: #596454;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .resultats-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .resultat-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      border-radius: 19px;
+      padding: 17px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .resultat-card h3 {
+      margin: 0 0 8px;
+      color: #454b42;
+      font-size: 18px;
+    }
+
+    .resultat-category {
+      display: inline-block;
+      background: #f3eee8;
+      border-radius: 12px;
+      padding: 5px 9px;
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .resultat-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .resultat-meta span {
+      background: #f7f7f7;
+      border-radius: 12px;
+      padding: 6px 9px;
+      font-size: 12px;
+    }
+
+    .resultat-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .resultat-badge {
+      background: #edf5ea;
+      color: #597254;
+      padding: 5px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+    }
+
+    .aucun-resultat {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .aucun-resultat .icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .aucun-resultat h2 {
+      color: #4b5148;
+    }
+
+    .aucun-resultat p {
+      color: #777;
+      line-height: 1.5;
+    }
+
+    .actions-resultats {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button-secondary {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #f0eee9;
+      color: #555;
+      border-radius: 15px;
+      padding: 13px;
+    }
+
+    @media (min-width: 700px) {
+
+      .resultats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+  </style>
 
 </head>
 
 
 <body>
 
-<div class="screen">
+<div class="screen resultats-page">
 
+  <main>
 
-    <!-- =========================
-         EN-TÊTE
-    ========================== -->
+    <header class="resultats-header">
 
-    <header class="page-header">
+      <a
+        href="MesEnvies.html"
+        class="retour"
+      >
+        ← Modifier mes choix
+      </a>
 
-        <h1>
-            ✨ Mes recettes pour vous
-        </h1>
+      <h1>
+        ✨ Mes suggestions
+      </h1>
 
-        <p class="page-subtitle">
-            Des recettes qui correspondent à vos envies
-        </p>
+      <p>
+        Voici les recettes qui correspondent
+        à votre envie.
+      </p>
 
     </header>
 
 
-    <!-- =========================
-         RÉSUMÉ DES CHOIX
-    ========================== -->
-
-    <section class="results-summary">
-
-        <p id="resumeChoix">
-            Recherche de vos recettes...
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         RÉSULTATS
-    ========================== -->
-
-    <main>
-
-        <section
-            id="liste-resultats"
-            class="recipe-results">
-
-            <p>
-                Recherche des recettes...
-            </p>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         RETOUR
-    ========================== -->
-
-    <div class="back-button">
-
-        <a
-            href="MesEnvies.html"
-            class="button">
-
-            ← Modifier mes envies
-
-        </a>
-
+    <div
+      id="selection-resume"
+      class="selection-resume"
+    >
+      Recherche de vos recettes...
     </div>
 
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <section>
 
-    <nav class="navbar">
-
-        <a
-            href="Accueil.html"
-            class="nav-item">
-
-            🏠
-            <span>Accueil</span>
-
-        </a>
+      <div
+        id="liste-resultats"
+        class="resultats-grid"
+      >
+      </div>
 
 
-        <a
+      <div
+        id="aucun-resultat"
+        class="aucun-resultat"
+        style="display:none;"
+      >
+
+        <div class="icon">
+          🥣
+        </div>
+
+        <h2>
+          Nous n'avons pas encore trouvé
+          la recette idéale
+        </h2>
+
+        <p id="message-aucun">
+          Essayez une autre combinaison
+          d'envies ou de temps.
+        </p>
+
+        <div class="actions-resultats">
+
+          <a
             href="MesEnvies.html"
-            class="nav-item active">
+            class="button button-main"
+          >
+            💛 Modifier mes envies
+          </a>
 
-            🔍
-            <span>Envies</span>
-
-        </a>
-
-
-        <a
+          <a
             href="Recettes.html"
-            class="nav-item">
+            class="button-secondary"
+          >
+            📖 Voir toutes les recettes
+          </a>
 
-            🍽️
-            <span>Recettes</span>
+        </div>
 
-        </a>
+      </div>
 
+    </section>
 
-        <a
-            href="Favoris.html"
-            class="nav-item">
-
-            ⭐
-            <span>Favoris</span>
-
-        </a>
+  </main>
 
 
-        <a
-            href="MonProfil.html"
-            class="nav-item">
+  <nav class="navbar">
 
-            👤
-            <span>Profil</span>
+    <a
+      href="Accueil.html"
+      class="nav-item"
+    >
+      🏠 <span>Accueil</span>
+    </a>
 
-        </a>
+    <a
+      href="MesEnvies.html"
+      class="nav-item active"
+    >
+      🔍 <span>Envies</span>
+    </a>
 
-    </nav>
+    <a
+      href="Recettes.html"
+      class="nav-item"
+    >
+      🍽️ <span>Recettes</span>
+    </a>
 
+    <a
+      href="Favoris.html"
+      class="nav-item"
+    >
+      ⭐ <span>Favoris</span>
+    </a>
+
+    <a
+      href="MonProfil.html"
+      class="nav-item"
+    >
+      👤 <span>Profil</span>
+    </a>
+
+  </nav>
 
 </div>
 
 
-
 <script>
 
+let toutesLesRecettes = [];
 
-/* =========================
-   INITIALISATION
-========================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    afficherResultats
-);
-
+let envie = "";
+let temps = "";
+let preferences = [];
 
 
 /* =========================
-   AFFICHAGE DES RÉSULTATS
+   CORRESPONDANCE DES ENVIES
 ========================= */
 
-async function afficherResultats() {
+const nomsEnvies = {
+
+  leger: "Léger",
+
+  complet: "Un plat complet",
+
+  rapide: "Rapide",
+
+  sucre: "Petite douceur sucrée",
+
+  reconfort: "Réconfortant",
+
+  vegetarien: "Végétarien"
+
+};
 
 
-    const container =
-        document.getElementById(
-            "liste-resultats"
-        );
+/* =========================
+   CHARGEMENT
+========================= */
 
+async function chargerResultats() {
 
-    const resume =
-        document.getElementById(
-            "resumeChoix"
-        );
+  const liste =
+    document.getElementById(
+      "liste-resultats"
+    );
 
+  try {
 
-    /*
-     * Récupération des choix
-     */
+    const response =
+      await fetch("../recettes.json");
 
-    const envie =
-        localStorage.getItem("envie");
-
-
-    const temps =
-        localStorage.getItem("temps");
-
-
-    const preferences =
-        JSON.parse(
-            localStorage.getItem("preferences")
-        ) || [];
-
-
-    /*
-     * Traduction des envies
-     */
-
-    const nomsEnvies = {
-
-        leger:
-            "Léger",
-
-        complet:
-            "Un plat complet",
-
-        rapide:
-            "Rapide",
-
-        sucre:
-            "Sucré",
-
-        reconfort:
-            "Réconfortant",
-
-        vegetarien:
-            "Végétarien"
-
-    };
-
-
-    const nomEnvie =
-        nomsEnvies[envie] ||
-        "Votre envie";
-
-
-    /*
-     * Traduction du temps
-     */
-
-    let texteTemps;
-
-
-    if (temps === "10") {
-
-        texteTemps = "10 minutes";
-
+    if (!response.ok) {
+      throw new Error(
+        "Impossible de charger recettes.json"
+      );
     }
 
-    else if (temps === "20") {
-
-        texteTemps = "20 minutes";
-
-    }
-
-    else if (temps === "30") {
-
-        texteTemps = "30 minutes";
-
-    }
-
-    else {
-
-        texteTemps =
-            "sans limite de temps";
-
-    }
+    toutesLesRecettes =
+      await response.json();
 
 
-    /*
-     * Résumé
-     */
+    envie =
+      localStorage.getItem("envie") || "";
 
-    resume.innerHTML = `
+    temps =
+      localStorage.getItem("temps") || "";
 
-        Vous recherchez quelque chose de
-        <strong>${nomEnvie}</strong>,
-        réalisable en
-        <strong>${texteTemps}</strong>.
-
-    `;
-
-
-    /*
-     * Chargement du JSON
-     */
 
     try {
 
-
-        const response =
-            await fetch("../recettes.json");
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                "Impossible de charger recettes.json"
-            );
-
-        }
-
-
-        const recettes =
-            await response.json();
-
-
-        /*
-         * FILTRAGE
-         *
-         * On commence par le temps
-         * et les caractéristiques principales.
-         */
-
-        let resultats =
-            recettes.filter(recette => {
-
-
-                /* =========================
-                   TEMPS
-                ========================= */
-
-                let correspondTemps = true;
-
-
-                if (
-                    temps &&
-                    temps !== "plus"
-                ) {
-
-                    correspondTemps =
-                        Number(recette.temps)
-                        <=
-                        Number(temps);
-
-                }
-
-
-                if (!correspondTemps) {
-
-                    return false;
-
-                }
-
-
-                /* =========================
-                   PETITE PORTION
-                ========================= */
-
-                if (
-                    preferences.includes("petite") &&
-                    recette.petitAppetit !== true
-                ) {
-
-                    return false;
-
-                }
-
-
-                /* =========================
-                   VÉGÉTARIEN
-                ========================= */
-
-                if (
-                    envie === "vegetarien" &&
-                    recette.vegetarien !== true
-                ) {
-
-                    return false;
-
-                }
-
-
-                /* =========================
-                   ENVIES
-                ========================= */
-
-                if (envie === "leger") {
-
-                    if (
-                        !recette.envies.includes(
-                            "leger"
-                        )
-                    ) {
-
-                        return false;
-
-                    }
-
-                }
-
-
-                if (envie === "rapide") {
-
-                    if (
-                        !recette.envies.includes(
-                            "rapide"
-                        )
-                    ) {
-
-                        return false;
-
-                    }
-
-                }
-
-
-                if (envie === "reconfort") {
-
-                    if (
-                        !recette.envies.includes(
-                            "reconfortant"
-                        )
-                    ) {
-
-                        return false;
-
-                    }
-
-                }
-
-
-                /*
-                 * UN PLAT COMPLET
-                 *
-                 * On privilégie les recettes
-                 * contenant une protéine.
-                 */
-
-                if (envie === "complet") {
-
-                    if (
-                        !recette.envies.includes(
-                            "proteine"
-                        )
-                    ) {
-
-                        return false;
-
-                    }
-
-                }
-
-
-                /*
-                 * SUCRÉ
-                 *
-                 * Pour l'instant, ton JSON ne contient
-                 * pas encore de recettes sucrées.
-                 *
-                 * On ne bloque donc pas les résultats.
-                 */
-
-                if (envie === "sucre") {
-
-                    return true;
-
-                }
-
-
-                return true;
-
-            });
-
-
-        /*
-         * =========================
-         * SI AUCUN RÉSULTAT
-         * =========================
-         */
-
-        if (
-            resultats.length === 0
-        ) {
-
-            /*
-             * On fait une deuxième recherche
-             * plus souple uniquement sur le temps.
-             *
-             * Cela évite de laisser l'utilisateur
-             * devant une page vide.
-             */
-
-            resultats =
-                recettes.filter(
-                    recette => {
-
-                        if (
-                            !temps ||
-                            temps === "plus"
-                        ) {
-
-                            return true;
-
-                        }
-
-                        return (
-                            Number(recette.temps)
-                            <=
-                            Number(temps)
-                        );
-
-                    }
-                );
-
-
-            /*
-             * On limite le message si vraiment
-             * aucune recette n'existe.
-             */
-
-            if (
-                resultats.length === 0
-            ) {
-
-                container.innerHTML = `
-
-                    <div class="no-results">
-
-                        <h2>
-                            😕 Aucune recette trouvée
-                        </h2>
-
-                        <p>
-                            Essayez de modifier
-                            vos critères.
-                        </p>
-
-                        <a
-                            href="MesEnvies.html"
-                            class="button">
-
-                            Modifier mes envies
-
-                        </a>
-
-                    </div>
-
-                `;
-
-                return;
-
-            }
-
-        }
-
-
-        /*
-         * =========================
-         * AFFICHAGE
-         * =========================
-         */
-
-        container.innerHTML = "";
-
-
-        resultats.forEach(
-            recette => {
-
-
-                const card =
-                    document.createElement("a");
-
-
-                card.className =
-                    "recipe-result-card";
-
-
-                card.href =
-                    `Recette.html?id=${recette.id}`;
-
-
-                card.innerHTML = `
-
-                    <div class="recipe-result-icon">
-                        🍽️
-                    </div>
-
-
-                    <div class="recipe-result-content">
-
-                        <h2>
-                            ${recette.nom}
-                        </h2>
-
-                        <p>
-                            ⏱️ ${recette.temps} min
-                        </p>
-
-                        <p>
-                            🥩 ${recette.proteines}
-                            g de protéines
-                        </p>
-
-                        <p>
-                            🥄 Petite portion
-                        </p>
-
-                        <p>
-                            🍴 ${recette.texture}
-                        </p>
-
-                    </div>
-
-
-                    <div class="recipe-result-arrow">
-                        →
-                    </div>
-
-                `;
-
-
-                container.appendChild(card);
-
-            }
-        );
-
+      preferences =
+        JSON.parse(
+          localStorage.getItem(
+            "preferences"
+          )
+        ) || [];
+
+    } catch {
+
+      preferences = [];
 
     }
 
 
-    catch (error) {
+    afficherResume();
+
+    afficherResultats();
 
 
-        console.error(error);
+  } catch (error) {
 
+    console.error(error);
 
-        container.innerHTML = `
+    liste.innerHTML = `
+      <div class="aucun-resultat">
+        <div class="icon">⚠️</div>
+        <h2>Impossible de charger les recettes</h2>
+        <p>
+          Vérifiez que le fichier
+          <strong>recettes.json</strong>
+          est bien présent dans le dossier
+          <strong>src</strong>.
+        </p>
+      </div>
+    `;
 
-            <div class="no-results">
-
-                <h2>
-                    ⚠️ Une erreur est survenue
-                </h2>
-
-                <p>
-                    Impossible de charger
-                    les recettes.
-                </p>
-
-            </div>
-
-        `;
-
-    }
+  }
 
 }
 
 
-</script>
+/* =========================
+   RESUME
+========================= */
 
+function afficherResume() {
+
+  const resume =
+    document.getElementById(
+      "selection-resume"
+    );
+
+
+  const nomEnvie =
+    nomsEnvies[envie] ||
+    "Toutes les envies";
+
+
+  let texte =
+    `<strong>Votre envie :</strong> ${nomEnvie}`;
+
+
+  if (temps === "plus") {
+
+    texte +=
+      `<br><strong>Temps :</strong> J'ai le temps`;
+
+  } else if (temps) {
+
+    texte +=
+      `<br><strong>Temps :</strong> ${temps} minutes`;
+
+  }
+
+
+  if (preferences.length > 0) {
+
+    texte +=
+      `<br><strong>Préférences :</strong> ` +
+      preferences.join(", ");
+
+  }
+
+
+  resume.innerHTML = texte;
+
+}
+
+
+/* =========================
+   NORMALISATION
+========================= */
+
+function texteRecette(recette) {
+
+  return (
+
+    (recette.nom || "") +
+    " " +
+    (recette.categorie || "") +
+    " " +
+    (recette.type || "") +
+    " " +
+    (recette.envies || []).join(" ") +
+    " " +
+    (recette.ingredients || []).join(" ")
+
+  )
+  .toLowerCase()
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "");
+
+}
+
+
+/* =========================
+   VERIFICATION ENVIE
+========================= */
+
+function correspondAEnvie(recette) {
+
+  const texte =
+    texteRecette(recette);
+
+
+  const envies =
+    (recette.envies || [])
+      .map(e =>
+        e.toLowerCase()
+      );
+
+
+  /* -------------------------
+     SUCRE
+  ------------------------- */
+
+  if (envie === "sucre") {
+
+    return (
+
+      envies.includes("sucre") ||
+
+      envies.includes("sucre") ||
+
+      texte.includes("dessert") ||
+
+      texte.includes("douceur") ||
+
+      texte.includes("pancake") ||
+
+      texte.includes("porridge") ||
+
+      texte.includes("compote") ||
+
+      texte.includes("yaourt") ||
+
+      texte.includes("mousse") ||
+
+      texte.includes("cheesecake") ||
+
+      recette.categorie === "collation" ||
+
+      recette.categorie === "petit-dejeuner"
+
+    );
+
+  }
+
+
+  /* -------------------------
+     VEGETARIEN
+  ------------------------- */
+
+  if (envie === "vegetarien") {
+
+    return recette.vegetarien === true;
+
+  }
+
+
+  /* -------------------------
+     LEGER
+  ------------------------- */
+
+  if (envie === "leger") {
+
+    return (
+      envies.includes("leger") ||
+      texte.includes("leger")
+    );
+
+  }
+
+
+  /* -------------------------
+     RAPIDE
+  ------------------------- */
+
+  if (envie === "rapide") {
+
+    return (
+      envies.includes("rapide") ||
+      recette.temps <= 20
+    );
+
+  }
+
+
+  /* -------------------------
+     RECONFORT
+  ------------------------- */
+
+  if (envie === "reconfort") {
+
+    return (
+      envies.includes("reconfortant") ||
+      texte.includes("gratin") ||
+      texte.includes("parmentier") ||
+      texte.includes("raclette")
+    );
+
+  }
+
+
+  /* -------------------------
+     COMPLET
+  ------------------------- */
+
+  if (envie === "complet") {
+
+    return (
+      envies.includes("proteine") ||
+      recette.proteines >= 15
+    );
+
+  }
+
+
+  return true;
+
+}
+
+
+/* =========================
+   AFFICHAGE
+========================= */
+
+function afficherResultats() {
+
+  const liste =
+    document.getElementById(
+      "liste-resultats"
+    );
+
+  const aucun =
+    document.getElementById(
+      "aucun-resultat"
+    );
+
+  const message =
+    document.getElementById(
+      "message-aucun"
+    );
+
+
+  let resultats =
+    toutesLesRecettes.filter(
+      recette => {
+
+        /* ENVIE */
+
+        if (
+          !correspondAEnvie(recette)
+        ) {
+          return false;
+        }
+
+
+        /* TEMPS */
+
+        if (
+          temps &&
+          temps !== "plus" &&
+          Number(recette.temps) > Number(temps)
+        ) {
+
+          return false;
+
+        }
+
+
+        /* PETITE PORTION */
+
+        if (
+          preferences.includes("petite") &&
+          !recette.petitAppetit
+        ) {
+
+          return false;
+
+        }
+
+
+        /* VEGETARIEN */
+
+        if (
+          preferences.includes("vegetarien") &&
+          !recette.vegetarien
+        ) {
+
+          return false;
+
+        }
+
+
+        /* DIGESTE */
+
+        if (
+          preferences.includes("digeste")
+        ) {
+
+          const texture =
+            (recette.texture || "")
+              .toLowerCase();
+
+          if (
+            !texture.includes("fondant") &&
+            !texture.includes("mou") &&
+            !texture.includes("tendre") &&
+            !texture.includes("mix")
+          ) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* A PREPARER A L'AVANCE */
+
+        if (
+          preferences.includes("avance") &&
+          !recette.batchCooking
+        ) {
+
+          return false;
+
+        }
+
+
+        return true;
+
+      }
+    );
+
+
+  /* =========================
+     AUCUN RESULTAT
+  ========================= */
+
+  if (resultats.length === 0) {
+
+    liste.innerHTML = "";
+
+    aucun.style.display = "block";
+
+
+    if (envie === "sucre") {
+
+      message.innerHTML =
+        "Aucune petite douceur ne correspond exactement à votre temps disponible et à vos autres critères. Vous pouvez élargir le temps ou retirer un filtre.";
+
+    } else {
+
+      message.innerHTML =
+        "Aucune recette ne correspond exactement à votre combinaison de critères. Essayez de modifier vos choix.";
+
+    }
+
+    return;
+
+  }
+
+
+  aucun.style.display = "none";
+
+
+  /* =========================
+     TRI
+  ========================= */
+
+  resultats.sort(
+    (a, b) => {
+
+      /* Pour une douceur :
+         favoriser les recettes sucrées */
+
+      if (envie === "sucre") {
+
+        const scoreA =
+          scoreSucre(a);
+
+        const scoreB =
+          scoreSucre(b);
+
+        return scoreB - scoreA;
+
+      }
+
+
+      /* Sinon, les plus rapides */
+
+      return (
+        Number(a.temps) -
+        Number(b.temps)
+      );
+
+    }
+  );
+
+
+  liste.innerHTML =
+    resultats
+      .map(creerCarte)
+      .join("");
+
+}
+
+
+/* =========================
+   SCORE SUCRE
+========================= */
+
+function scoreSucre(recette) {
+
+  const texte =
+    texteRecette(recette);
+
+  let score = 0;
+
+
+  if (
+    (recette.envies || [])
+      .includes("sucre")
+  ) {
+    score += 10;
+  }
+
+
+  const motsSucrés = [
+
+    "pancake",
+    "banane",
+    "fromage blanc",
+    "fruit",
+    "porridge",
+    "compote",
+    "yaourt",
+    "mousse",
+    "chocolat",
+    "cheesecake"
+
+  ];
+
+
+  motsSucrés.forEach(
+    mot => {
+
+      if (
+        texte.includes(mot)
+      ) {
+        score += 2;
+      }
+
+    }
+  );
+
+
+  if (
+    recette.categorie === "collation"
+  ) {
+    score += 5;
+  }
+
+
+  if (
+    recette.categorie === "petit-dejeuner"
+  ) {
+    score += 3;
+  }
+
+
+  return score;
+
+}
+
+
+/* =========================
+   CARTE
+========================= */
+
+function creerCarte(recette) {
+
+  let badges = "";
+
+
+  if (recette.petitAppetit) {
+
+    badges += `
+      <span class="resultat-badge">
+        🥄 Petite portion
+      </span>
+    `;
+
+  }
+
+
+  if (recette.vegetarien) {
+
+    badges += `
+      <span class="resultat-badge">
+        🌱 Végétarien
+      </span>
+    `;
+
+  }
+
+
+  if (recette.batchCooking) {
+
+    badges += `
+      <span class="resultat-badge">
+        🥘 Batch-cooking
+      </span>
+    `;
+
+  }
+
+
+  return `
+
+    <a
+      href="Recette.html?id=${recette.id}"
+      class="resultat-card"
+    >
+
+      <h3>
+        ${recette.nom}
+      </h3>
+
+      <span class="resultat-category">
+        ${recette.categorie || "Recette"}
+      </span>
+
+      <div class="resultat-meta">
+
+        <span>
+          ⏱️ ${recette.temps} min
+        </span>
+
+        <span>
+          💪 ${recette.proteines} g protéines
+        </span>
+
+        <span>
+          🍽️ ${recette.portion || "1 portion"}
+        </span>
+
+      </div>
+
+
+      ${
+        badges
+          ? `
+            <div class="resultat-badges">
+              ${badges}
+            </div>
+          `
+          : ""
+      }
+
+    </a>
+
+  `;
+
+}
+
+
+/* =========================
+   LANCEMENT
+========================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  chargerResultats
+);
+
+</script>
 
 </body>
 
 </html>
-```
