@@ -1,554 +1,501 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+  <title>Recette - Ma Petite Assiette</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
 
-    <title>Ma Petite Assiette - Recette</title>
+  <style>
+    .recette-page {
+      padding-bottom: 100px;
+    }
 
-    <link rel="stylesheet" href="../style.css">
+    .recette-header {
+      margin-bottom: 20px;
+    }
 
+    .recette-header h1 {
+      margin-bottom: 8px;
+    }
+
+    .recette-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .meta-badge {
+      background: #f4f1ec;
+      padding: 7px 10px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .recette-section {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .recette-section h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .ingredients-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ingredients-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .ingredients-list li:last-child {
+      border-bottom: none;
+    }
+
+    .preparation-list {
+      padding-left: 25px;
+      margin: 0;
+    }
+
+    .preparation-list li {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .compatibilites {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .compatibilite {
+      background: #eef7ee;
+      border-radius: 15px;
+      padding: 7px 10px;
+      font-size: 14px;
+    }
+
+    .batch-info {
+      background: #fff7e8;
+      border-radius: 14px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+
+    .button-favori {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .retour {
+      display: inline-block;
+      margin-bottom: 15px;
+      text-decoration: none;
+    }
+
+    .erreur {
+      text-align: center;
+      padding: 30px 15px;
+    }
+  </style>
 </head>
-
 
 <body>
 
-<div class="screen">
+<div class="screen recette-page">
 
+  <main id="fiche-recette">
 
-    <!-- =========================
-         EN-TÊTE
-    ========================== -->
-
-    <header class="page-header">
-
-        <h1 id="nom-recette">
-            Ma recette
-        </h1>
-
-        <p class="page-subtitle">
-            Ma Petite Assiette
-        </p>
-
-    </header>
-
-
-    <!-- =========================
-         CONTENU
-    ========================== -->
-
-    <main id="fiche-recette">
-
-        <p>
-            Chargement de la recette...
-        </p>
-
-    </main>
-
-
-    <!-- =========================
-         RETOUR AUX RÉSULTATS
-    ========================== -->
-
-    <div class="back-button">
-
-        <a
-            href="Resultats.html"
-            class="button">
-
-            ← Retour à mes recettes
-
-        </a>
-
+    <div class="erreur">
+      <p>Chargement de la recette...</p>
     </div>
 
+  </main>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+  <nav class="navbar">
+    <a href="Accueil.html" class="nav-item">
+      🏠
+      <span>Accueil</span>
+    </a>
 
-    <nav class="navbar">
+    <a href="MesEnvies.html" class="nav-item">
+      🔍
+      <span>Envies</span>
+    </a>
 
-        <a
-            href="Accueil.html"
-            class="nav-item">
+    <a href="Recette.html" class="nav-item active">
+      🍽️
+      <span>Recettes</span>
+    </a>
 
-            🏠
-            <span>Accueil</span>
+    <a href="Favoris.html" class="nav-item">
+      ⭐
+      <span>Favoris</span>
+    </a>
 
-        </a>
-
-
-        <a
-            href="MesEnvies.html"
-            class="nav-item">
-
-            🔍
-            <span>Envies</span>
-
-        </a>
-
-
-        <a
-            href="Recettes.html"
-            class="nav-item active">
-
-            🍽️
-            <span>Recettes</span>
-
-        </a>
-
-
-        <a
-            href="Favoris.html"
-            class="nav-item">
-
-            ⭐
-            <span>Favoris</span>
-
-        </a>
-
-
-        <a
-            href="MonProfil.html"
-            class="nav-item">
-
-            👤
-            <span>Profil</span>
-
-        </a>
-
-    </nav>
-
+    <a href="MonProfil.html" class="nav-item">
+      👤
+      <span>Profil</span>
+    </a>
+  </nav>
 
 </div>
 
-
-
-<!-- =========================
-     JAVASCRIPT
-========================== -->
-
 <script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    afficherRecette
-);
-
 
 async function afficherRecette() {
 
-    const fiche =
-        document.getElementById("fiche-recette");
+  const fiche = document.getElementById("fiche-recette");
 
-    const titre =
-        document.getElementById("nom-recette");
+  try {
 
-
-    /*
-     * Récupération de l'ID
-     */
-
-    const params =
-        new URLSearchParams(
-            window.location.search
-        );
-
-
-    const id =
-        params.get("id");
-
-
-    /*
-     * Vérification
-     */
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
 
     if (!id) {
+      fiche.innerHTML = `
+        <div class="erreur">
+          <h2>Recette introuvable</h2>
+          <p>Aucune recette n'a été sélectionnée.</p>
+          <a href="MesEnvies.html" class="button">
+            Retour aux envies
+          </a>
+        </div>
+      `;
+      return;
+    }
 
-        fiche.innerHTML = `
+    const response = await fetch("../recettes.json");
 
-            <div class="no-results">
+    if (!response.ok) {
+      throw new Error("Impossible de charger recettes.json");
+    }
 
-                <h2>
-                    😕 Recette introuvable
-                </h2>
+    const recettes = await response.json();
 
-                <p>
-                    Aucune recette n'a été sélectionnée.
-                </p>
+    const recette = recettes.find(
+      r => r.id === id
+    );
 
-                <a
-                    href="Recettes.html"
-                    class="button">
+    if (!recette) {
 
-                    Voir les recettes
+      fiche.innerHTML = `
+        <div class="erreur">
+          <h2>Recette introuvable</h2>
+          <p>La recette ${id} n'existe pas.</p>
 
-                </a>
+          <a href="MesEnvies.html" class="button">
+            Retour aux envies
+          </a>
+        </div>
+      `;
 
-            </div>
+      return;
+    }
 
-        `;
+    // -----------------------------
+    // COMPATIBILITÉS
+    // -----------------------------
 
-        return;
+    let compatibilites = "";
+
+    if (recette.petitAppetit) {
+      compatibilites += `
+        <span class="compatibilite">
+          ✅ Petite portion
+        </span>
+      `;
+    }
+
+    if (recette.preOperatoire) {
+      compatibilites += `
+        <span class="compatibilite">
+          ✅ Pré-opératoire
+        </span>
+      `;
+    }
+
+    if (recette.postOperatoire) {
+      compatibilites += `
+        <span class="compatibilite">
+          ✅ Post-opératoire
+        </span>
+      `;
+    }
+
+    if (recette.vegetarien) {
+      compatibilites += `
+        <span class="compatibilite">
+          🌱 Végétarien
+        </span>
+      `;
+    }
+
+    if (recette.vegetalien) {
+      compatibilites += `
+        <span class="compatibilite">
+          🌱 Végétalien
+        </span>
+      `;
+    }
+
+    if (recette.sansGluten) {
+      compatibilites += `
+        <span class="compatibilite">
+          🌾 Sans gluten
+        </span>
+      `;
+    }
+
+    if (recette.sansLactose) {
+      compatibilites += `
+        <span class="compatibilite">
+          🥛 Sans lactose
+        </span>
+      `;
+    }
+
+    // -----------------------------
+    // INGRÉDIENTS
+    // -----------------------------
+
+    let ingredientsHTML = "";
+
+    if (recette.ingredients && recette.ingredients.length > 0) {
+
+      ingredientsHTML = recette.ingredients
+        .map(ingredient => `
+          <li>🛒 ${ingredient}</li>
+        `)
+        .join("");
+
+    } else {
+
+      ingredientsHTML = `
+        <li>Ingrédients à compléter.</li>
+      `;
+    }
+
+    // -----------------------------
+    // PRÉPARATION
+    // -----------------------------
+
+    let preparationHTML = "";
+
+    if (recette.preparation && recette.preparation.length > 0) {
+
+      preparationHTML = recette.preparation
+        .map(etape => `
+          <li>${etape}</li>
+        `)
+        .join("");
+
+    } else {
+
+      preparationHTML = `
+        <li>Préparation à compléter.</li>
+      `;
+    }
+
+    // -----------------------------
+    // BATCH COOKING
+    // -----------------------------
+
+    let batchHTML = "";
+
+    if (recette.batchCooking) {
+
+      batchHTML = `
+        <div class="batch-info">
+          🥘 <strong>Batch-cooking</strong>
+          <br>
+          Cette recette peut être préparée à l'avance.
+        </div>
+      `;
 
     }
 
+    // -----------------------------
+    // AFFICHAGE
+    // -----------------------------
 
-    /*
-     * Chargement du fichier JSON
-     */
+    fiche.innerHTML = `
 
-    try {
+      <a href="javascript:history.back()" class="retour">
+        ← Retour
+      </a>
 
-        const response =
-            await fetch("../recettes.json");
+      <header class="recette-header">
 
+        <h1>${recette.nom}</h1>
 
-        if (!response.ok) {
+        <p>
+          ${recette.categorie}
+        </p>
 
-            throw new Error(
-                "Impossible de charger les recettes."
-            );
+        <div class="recette-meta">
 
-        }
+          <span class="meta-badge">
+            ⏱️ ${recette.temps} min
+          </span>
 
+          <span class="meta-badge">
+            💪 ${recette.proteines} g protéines
+          </span>
 
-        const recettes =
-            await response.json();
+          <span class="meta-badge">
+            🍽️ ${recette.portion || "1 portion"}
+          </span>
 
+          <span class="meta-badge">
+            🥄 ${recette.texture || "Texture adaptée"}
+          </span>
 
-        /*
-         * Recherche de la recette
-         */
+        </div>
 
-        const recette =
-            recettes.find(
-                r => r.id === id
-            );
+      </header>
 
 
-        /*
-         * Recette inexistante
-         */
+      <section class="recette-section">
 
-        if (!recette) {
+        <h2>🛒 Ingrédients</h2>
 
-            titre.textContent =
-                "Recette introuvable";
+        <ul class="ingredients-list">
+          ${ingredientsHTML}
+        </ul>
 
+      </section>
 
-            fiche.innerHTML = `
 
-                <div class="no-results">
+      <section class="recette-section">
 
-                    <h2>
-                        😕 Cette recette n'existe pas
-                    </h2>
+        <h2>👩‍🍳 Préparation</h2>
 
-                    <p>
-                        L'identifiant ${id}
-                        ne correspond à aucune recette.
-                    </p>
+        <ol class="preparation-list">
+          ${preparationHTML}
+        </ol>
 
-                    <a
-                        href="Recettes.html"
-                        class="button">
+      </section>
 
-                        Voir les recettes
 
-                    </a>
+      <section class="recette-section">
 
-                </div>
+        <h2>💚 Cette recette vous correspond</h2>
 
-            `;
+        <div class="compatibilites">
 
-            return;
+          ${compatibilites || `
+            <span class="compatibilite">
+              ℹ️ À découvrir
+            </span>
+          `}
 
-        }
+        </div>
 
+        ${batchHTML}
 
-        /*
-         * Titre
-         */
+      </section>
 
-        titre.textContent =
-            recette.nom;
 
+      <section class="recette-section">
 
-        /*
-         * Construction des caractéristiques
-         */
+        <h2>💛 Une recette qui vous plaît ?</h2>
 
-        let caracteristiques = "";
+        <button
+          class="button button-main button-favori"
+          onclick="ajouterFavori('${recette.id}')"
+        >
+          ❤️ Ajouter aux favoris
+        </button>
 
+      </section>
 
-        if (recette.petitAppetit) {
+    `;
 
-            caracteristiques += `
-                <span class="tag">
-                    🥄 Petite portion
-                </span>
-            `;
+  }
 
-        }
+  catch (error) {
 
+    console.error(error);
 
-        if (recette.preOperatoire) {
+    fiche.innerHTML = `
 
-            caracteristiques += `
-                <span class="tag">
-                    🩺 Pré-opératoire
-                </span>
-            `;
+      <div class="erreur">
 
-        }
+        <h2>Oups !</h2>
 
+        <p>
+          Impossible de charger cette recette.
+        </p>
 
-        if (recette.postOperatoire) {
+        <p>
+          Vérifiez que le fichier
+          <strong>recettes.json</strong>
+          est bien présent dans le dossier
+          <strong>src</strong>.
+        </p>
 
-            caracteristiques += `
-                <span class="tag">
-                    🩺 Post-opératoire
-                </span>
-            `;
+        <a href="MesEnvies.html" class="button">
+          Retour aux envies
+        </a>
 
-        }
+      </div>
 
-
-        if (recette.vegetarien) {
-
-            caracteristiques += `
-                <span class="tag">
-                    🌱 Végétarien
-                </span>
-            `;
-
-        }
-
-
-        if (recette.vegetalien) {
-
-            caracteristiques += `
-                <span class="tag">
-                    🌱 Végétalien
-                </span>
-            `;
-
-        }
-
-
-        if (recette.sansGluten) {
-
-            caracteristiques += `
-                <span class="tag">
-                    🌾 Sans gluten
-                </span>
-            `;
-
-        }
-
-
-        if (recette.sansLactose) {
-
-            caracteristiques += `
-                <span class="tag">
-                    🥛 Sans lactose
-                </span>
-            `;
-
-        }
-
-
-        /*
-         * Affichage de la fiche
-         */
-
-        fiche.innerHTML = `
-
-            <section class="recipe-detail">
-
-
-                <div class="recipe-detail-icon">
-                    🍽️
-                </div>
-
-
-                <h2>
-                    ${recette.nom}
-                </h2>
-
-
-                <p class="recipe-category">
-                    ${recette.categorie}
-                </p>
-
-
-                <div class="recipe-infos">
-
-
-                    <div class="recipe-info">
-
-                        <span>
-                            ⏱️
-                        </span>
-
-                        <strong>
-                            ${recette.temps} min
-                        </strong>
-
-                        <small>
-                            Temps
-                        </small>
-
-                    </div>
-
-
-                    <div class="recipe-info">
-
-                        <span>
-                            🥩
-                        </span>
-
-                        <strong>
-                            ${recette.proteines} g
-                        </strong>
-
-                        <small>
-                            Protéines
-                        </small>
-
-                    </div>
-
-
-                    <div class="recipe-info">
-
-                        <span>
-                            🍴
-                        </span>
-
-                        <strong>
-                            ${recette.texture}
-                        </strong>
-
-                        <small>
-                            Texture
-                        </small>
-
-                    </div>
-
-
-                </div>
-
-
-                <section class="recipe-tags">
-
-                    <h3>
-                        Cette recette vous correspond
-                    </h3>
-
-                    <div class="tags">
-
-                        ${caracteristiques}
-
-                    </div>
-
-                </section>
-
-
-                <section class="recipe-actions">
-
-                    <button
-                        class="button button-main"
-                        onclick="ajouterFavori('${recette.id}')">
-
-                        ❤️ Ajouter aux favoris
-
-                    </button>
-
-                </section>
-
-
-            </section>
-
-        `;
-
-    }
-
-    catch (error) {
-
-        console.error(error);
-
-
-        fiche.innerHTML = `
-
-            <div class="no-results">
-
-                <h2>
-                    ⚠️ Une erreur est survenue
-                </h2>
-
-                <p>
-                    Impossible de charger cette recette.
-                </p>
-
-            </div>
-
-        `;
-
-    }
-
+    `;
+  }
 }
 
 
-
-/* =========================
-   FAVORIS
-========================= */
+// -----------------------------
+// FAVORIS
+// -----------------------------
 
 function ajouterFavori(id) {
 
-    let favoris =
-        JSON.parse(
-            localStorage.getItem("favoris")
-        ) || [];
+  let favoris =
+    JSON.parse(localStorage.getItem("favoris")) || [];
 
+  if (!favoris.includes(id)) {
 
-    if (!favoris.includes(id)) {
+    favoris.push(id);
 
-        favoris.push(id);
+    localStorage.setItem(
+      "favoris",
+      JSON.stringify(favoris)
+    );
 
-        localStorage.setItem(
-            "favoris",
-            JSON.stringify(favoris)
-        );
+    alert("Recette ajoutée aux favoris ❤️");
 
-        alert(
-            "❤️ Recette ajoutée à vos favoris !"
-        );
+  } else {
 
-    }
+    alert("Cette recette est déjà dans vos favoris ⭐");
 
-    else {
-
-        alert(
-            "Cette recette est déjà dans vos favoris ❤️"
-        );
-
-    }
-
+  }
 }
+
+
+// -----------------------------
+// LANCEMENT
+// -----------------------------
+
+document.addEventListener(
+  "DOMContentLoaded",
+  afficherRecette
+);
 
 </script>
 
-
 </body>
-
 </html>
-```
 
