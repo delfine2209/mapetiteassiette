@@ -1,157 +1,605 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>Petit appétit - Ma Petite Assiette</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<title>🥄 J'ai un petit appétit</title>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3f4038;
+      padding-bottom: 90px;
+    }
 
-<link rel="stylesheet" href="style.css">
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(
+        145deg,
+        #f4d8c8 0%,
+        #f8e5d8 45%,
+        #dce8d8 100%
+      );
+      padding: 24px 20px 30px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #4d6250;
+      font-size: 14px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.65);
+      padding: 9px 13px;
+      border-radius: 14px;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      box-shadow: 0 5px 15px rgba(90,70,50,0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.15;
+      color: #39463b;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: #687066;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* CONTENU */
+
+    .content {
+      padding: 22px 16px;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 24px;
+      padding: 21px;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.08);
+      margin-bottom: 20px;
+    }
+
+    .intro-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 17px;
+      background: #e5eddf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 13px;
+    }
+
+    .intro h2 {
+      margin: 0 0 9px;
+      color: #4c5c4b;
+      font-size: 20px;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #737970;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* CARTES */
+
+    .section-title {
+      margin: 0 0 11px 4px;
+      font-size: 18px;
+      color: #566254;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 21px;
+      padding: 17px;
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      box-shadow: 0 4px 15px rgba(90,70,50,0.06);
+    }
+
+    .card-icon {
+      width: 43px;
+      height: 43px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: #f5e3d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+    }
+
+    .card:nth-child(2) .card-icon {
+      background: #e5edf1;
+    }
+
+    .card:nth-child(3) .card-icon {
+      background: #f2e5ef;
+    }
+
+    .card:nth-child(4) .card-icon {
+      background: #f4ecd9;
+    }
+
+    .card h3 {
+      margin: 1px 0 5px;
+      font-size: 15px;
+      color: #465046;
+    }
+
+    .card p {
+      margin: 0;
+      color: #7a8078;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* PORTION */
+
+    .portion {
+      background: linear-gradient(
+        135deg,
+        #eef3e9,
+        #f9eee6
+      );
+      border-radius: 24px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .portion h2 {
+      margin: 0 0 8px;
+      color: #4e5e4c;
+      font-size: 18px;
+    }
+
+    .portion p {
+      margin: 0 0 15px;
+      color: #6f776d;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .portion-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.78);
+      color: #647060;
+      padding: 9px 11px;
+      border-radius: 14px;
+      font-size: 12px;
+    }
+
+    /* MESSAGE */
+
+    .important {
+      background: #fff2ea;
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .important h2 {
+      margin: 0 0 8px;
+      color: #66564e;
+      font-size: 17px;
+    }
+
+    .important p {
+      margin: 0;
+      color: #77716d;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(90,70,50,0.07);
+    }
+
+    .cta h2 {
+      margin: 0 0 8px;
+      color: #4d5b4c;
+      font-size: 19px;
+    }
+
+    .cta p {
+      margin: 0 0 16px;
+      color: #777d75;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      background: #70866a;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 17px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* NAVIGATION */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid #eee5dd;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+      box-shadow: 0 -4px 18px rgba(90,70,50,0.06);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-item {
+      text-decoration: none;
+      color: #92978f;
+      font-size: 11px;
+      text-align: center;
+      min-width: 65px;
+    }
+
+    .nav-item span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+    .nav-item.active {
+      color: #657b60;
+      font-weight: bold;
+    }
+
+    @media (min-width: 601px) {
+      .bottom-nav {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 600px;
+        border-radius: 25px 25px 0 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
+<div class="page">
 
-<a href="index.html" class="logo">←</a>
+  <!-- HERO -->
 
-<div>
+  <header class="hero">
 
-<h1>MA PETITE ASSIETTE</h1>
+    <div class="top">
 
-<p>Des petites portions, mais un vrai repas.</p>
+      <a class="back" href="../../index.html">
+        ← Accueil
+      </a>
+
+      <div class="logo">
+        🍽️
+      </div>
+
+    </div>
+
+    <h1>Petit appétit 🥄</h1>
+
+    <p class="subtitle">
+      Des repères simples pour composer des repas adaptés aux petites faims.
+    </p>
+
+  </header>
+
+
+  <main class="content">
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+      <div class="intro-icon">
+        🥄
+      </div>
+
+      <h2>
+        Manger peu, mais bien
+      </h2>
+
+      <p>
+        Lorsque l'appétit est petit, l'objectif peut être de privilégier
+        des préparations simples, nourrissantes et faciles à manger,
+        plutôt que de chercher à remplir son assiette.
+      </p>
+
+    </section>
+
+
+    <!-- REPÈRES -->
+
+    <h2 class="section-title">
+      Mes petits repères
+    </h2>
+
+    <section class="cards">
+
+      <article class="card">
+
+        <div class="card-icon">
+          💪
+        </div>
+
+        <div>
+
+          <h3>
+            Penser aux protéines
+          </h3>
+
+          <p>
+            Selon votre protocole, pensez à intégrer une source de protéines
+            adaptée à votre repas.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="card-icon">
+          🥕
+        </div>
+
+        <div>
+
+          <h3>
+            Miser sur la simplicité
+          </h3>
+
+          <p>
+            Quelques ingrédients bien choisis peuvent suffire à composer
+            une petite assiette agréable et équilibrée.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="card-icon">
+          🍽️
+        </div>
+
+        <div>
+
+          <h3>
+            Adapter la quantité
+          </h3>
+
+          <p>
+            La quantité réellement consommée peut varier selon votre faim,
+            votre tolérance et les recommandations de votre équipe.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="card-icon">
+          🌿
+        </div>
+
+        <div>
+
+          <h3>
+            Privilégier les textures agréables
+          </h3>
+
+          <p>
+            Choisissez des préparations dont la texture vous convient
+            et respectez les consignes données par votre équipe médicale.
+          </p>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- PETITE ASSIETTE -->
+
+    <section class="portion">
+
+      <h2>
+        🍽️ L'idée de la petite assiette
+      </h2>
+
+      <p>
+        Ma Petite Assiette vous permet de découvrir des recettes en
+        petites portions et de sélectionner plus facilement ce qui
+        correspond à votre appétit du moment.
+      </p>
+
+      <div class="portion-list">
+
+        <span class="pill">🥚 Protéines</span>
+
+        <span class="pill">🥕 Légumes</span>
+
+        <span class="pill">🥔 Féculents</span>
+
+        <span class="pill">🥗 Végétarien</span>
+
+        <span class="pill">🍓 Collations</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPORTANT -->
+
+    <section class="important">
+
+      <h2>
+        ⚠️ À retenir
+      </h2>
+
+      <p>
+        Les quantités et les étapes de réalimentation après une chirurgie
+        bariatrique dépendent notamment de l'intervention et du protocole
+        de votre équipe. Les indications de votre chirurgien, médecin
+        ou diététicien restent prioritaires.
+
+      </p>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <h2>
+        🍽️ Trouver une petite recette
+      </h2>
+
+      <p>
+        Découvrez les recettes identifiées comme adaptées
+        aux petits appétits dans votre application.
+      </p>
+
+      <a
+        class="button"
+        href="Recettes.html?petite=true"
+      >
+        Voir les recettes
+      </a>
+
+    </section>
+
+  </main>
 
 </div>
 
-</header>
 
-
-<main>
-
-<section class="intro">
-
-<h2>📱 TITRE DE LA PAGE</h2>
-
-<p>
-DESCRIPTION DE LA PAGE
-</p>
-
-</section>
-
-
-<section class="features">
-
-
-<div class="feature-grid">
-
-
-<a href="recettes.html">
-
-🍽️
-
-<strong>Mes recettes</strong>
-
-<small>
-Découvrir les recettes
-</small>
-
-</a>
-
-
-<a href="menu.html">
-
-📅
-
-<strong>Mon menu</strong>
-
-<small>
-Organiser mes repas
-</small>
-
-</a>
-
-
-<a href="courses.html">
-
-🛒
-
-<strong>Mes courses</strong>
-
-<small>
-Préparer ma liste
-</small>
-
-</a>
-
-
-<a href="index.html">
-
-🏠
-
-<strong>Accueil</strong>
-
-<small>
-Retour à l'accueil
-</small>
-
-</a>
-
-
-</div>
-
-
-</section>
-
-</main>
-
+<!-- NAVIGATION -->
 
 <nav class="bottom-nav">
 
-<a href="index.html">
+  <div class="nav-inner">
 
-🏠
+    <a
+      class="nav-item"
+      href="../../index.html"
+    >
+      <span>🏠</span>
+      Accueil
+    </a>
 
-<small>Accueil</small>
+    <a
+      class="nav-item"
+      href="Recettes.html"
+    >
+      <span>🍽️</span>
+      Recettes
+    </a>
 
-</a>
+    <a
+      class="nav-item"
+      href="Favoris.html"
+    >
+      <span>❤️</span>
+      Favoris
+    </a>
 
+    <a
+      class="nav-item active"
+      href="MonProfil.html"
+    >
+      <span>👤</span>
+      Profil
+    </a>
 
-<a href="recettes.html">
-
-🍽️
-
-<small>Recettes</small>
-
-</a>
-
-
-<a href="menu.html">
-
-📅
-
-<small>Menu</small>
-
-</a>
-
-
-<a href="courses.html">
-
-🛒
-
-<small>Courses</small>
-
-</a>
+  </div>
 
 </nav>
 
-
 </body>
-
 </html>
-```
