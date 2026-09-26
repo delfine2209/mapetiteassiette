@@ -1,165 +1,995 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes recettes - Ma Petite Assiette</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mes recettes - Ma Petite Assiette</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .recettes-page {
+      padding-bottom: 100px;
+    }
+
+    .recettes-header {
+      margin-bottom: 20px;
+    }
+
+    .recettes-header h1 {
+      margin-bottom: 6px;
+    }
+
+    .recettes-subtitle {
+      color: #777;
+      margin-top: 0;
+    }
+
+    /* RECHERCHE */
+
+    .search-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px 18px 15px 48px;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      font-size: 16px;
+      background: white;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: #9abf9a;
+      box-shadow: 0 0 0 3px rgba(154, 191, 154, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+    }
+
+    /* CATEGORIES */
+
+    .filter-section {
+      margin-bottom: 20px;
+    }
+
+    .filter-section h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .filter-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+      scrollbar-width: none;
+    }
+
+    .filter-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-button {
+      flex: 0 0 auto;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 20px;
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .filter-button.active {
+      background: #dfeedd;
+      border-color: #a8c9a5;
+      font-weight: 600;
+    }
+
+    /* FILTRES */
+
+    .advanced-filters {
+      background: white;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .advanced-filters h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .filter-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .filter-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
+      border-radius: 12px;
+      background: #f8f8f8;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .filter-check input {
+      accent-color: #7ca77c;
+    }
+
+    /* RESULTATS */
+
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .results-header h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    #compteur {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* CARTES */
+
+    .recettes-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .recette-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      border-radius: 18px;
+      padding: 17px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .recette-card:active {
+      transform: scale(0.98);
+    }
+
+    .recette-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .recette-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .recette-category {
+      display: inline-block;
+      font-size: 12px;
+      color: #6d6d6d;
+      background: #f3f1ed;
+      padding: 5px 9px;
+      border-radius: 12px;
+    }
+
+    .favorite-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .recette-description {
+      color: #666;
+      font-size: 14px;
+      margin: 12px 0;
+      line-height: 1.4;
+    }
+
+    .recette-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .meta-item {
+      background: #f7f7f7;
+      border-radius: 12px;
+      padding: 6px 9px;
+      font-size: 12px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      background: #eef7ee;
+      color: #527452;
+      border-radius: 12px;
+      padding: 5px 8px;
+      font-size: 11px;
+    }
+
+    /* MESSAGE AUCUN RESULTAT */
+
+    .no-results {
+      text-align: center;
+      background: white;
+      border-radius: 18px;
+      padding: 30px 20px;
+      color: #777;
+    }
+
+    .no-results-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .reset-button {
+      margin-top: 12px;
+      border: none;
+      background: #e4eee2;
+      padding: 10px 16px;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 700px) {
+      .recettes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-    <a href="index.html" class="logo">←</a>
-    <div>
-        <h1>MES RECETTES</h1>
-        <p>Des petites portions, mais un vrai repas.</p>
-    </div>
-</header>
+<div class="screen recettes-page">
 
-<main>
+  <main>
 
-<section class="intro">
-    <h2>🍽️ Que vais-je manger ?</h2>
-    <p>
-        Des recettes simples, gourmandes et faciles à adapter
-        à votre appétit.
-    </p>
-</section>
+    <!-- EN-TÊTE -->
 
-<section class="features">
+    <header class="recettes-header">
+      <h1>🍽️ Mes recettes</h1>
+      <p class="recettes-subtitle">
+        Découvrez des recettes adaptées à vos envies et à votre quotidien.
+      </p>
+    </header>
 
-    <h2 id="petit-dejeuner">🌅 Petit-déjeuner</h2>
 
-    <div class="recipe-grid">
+    <!-- RECHERCHE -->
 
-        <a href="#" class="recipe-card">
-            <span>🥞</span>
-            <h3>Mini-pancakes individuels</h3>
-            <p>Une petite portion gourmande pour commencer la journée.</p>
-        </a>
+    <section class="search-box">
+      <span class="search-icon">🔎</span>
 
-        <a href="#" class="recipe-card">
-            <span>🥣</span>
-            <h3>Porridge individuel</h3>
-            <p>Simple, doux et personnalisable.</p>
-        </a>
+      <input
+        type="search"
+        id="recherche"
+        placeholder="Rechercher une recette..."
+        autocomplete="off"
+      >
+    </section>
 
-    </div>
 
-    <h2 id="collation" style="margin-top:30px;">🍎 Collation</h2>
+    <!-- CATEGORIES -->
 
-    <div class="recipe-grid">
+    <section class="filter-section">
 
-        <a href="#" class="recipe-card">
-            <span>🍎</span>
-            <h3>Compote pomme-poire</h3>
-            <p>Une petite portion facile à préparer.</p>
-        </a>
+      <h2>📚 Catégories</h2>
 
-        <a href="#" class="recipe-card">
-            <span>🥛</span>
-            <h3>Fromage blanc gourmand</h3>
-            <p>Une collation simple à personnaliser.</p>
-        </a>
+      <div class="filter-scroll">
 
-    </div>
+        <button
+          class="filter-button active"
+          data-categorie="toutes">
+          Toutes
+        </button>
 
-    <h2 id="dejeuner" style="margin-top:30px;">☀️ Déjeuner</h2>
+        <button
+          class="filter-button"
+          data-categorie="petit-dejeuner">
+          🌅 Petit-déjeuner
+        </button>
 
-    <div class="recipe-grid">
+        <button
+          class="filter-button"
+          data-categorie="dejeuner">
+          🍽️ Déjeuner
+        </button>
 
-        <a href="#" class="recipe-card">
-            <span>🍗</span>
-            <h3>Poulet aux courgettes</h3>
-            <p>Une recette simple et familiale.</p>
-        </a>
+        <button
+          class="filter-button"
+          data-categorie="diner">
+          🌙 Dîner
+        </button>
 
-        <a href="#" class="recipe-card">
-            <span>🍅</span>
-            <h3>Poulet basquaise doux</h3>
-            <p>Une version douce et facile à adapter.</p>
-        </a>
+        <button
+          class="filter-button"
+          data-categorie="collation">
+          🍎 Collation
+        </button>
 
-        <a href="#" class="recipe-card">
-            <span>🥕</span>
-            <h3>Bœuf carottes</h3>
-            <p>Un classique réconfortant.</p>
-        </a>
+        <button
+          class="filter-button"
+          data-categorie="vegetarien">
+          🌱 Végétarien
+        </button>
 
-        <a href="#" class="recipe-card">
-            <span>🐟</span>
-            <h3>Saumon citron</h3>
-            <p>Une recette simple et fraîche.</p>
-        </a>
+        <button
+          class="filter-button"
+          data-categorie="salade">
+          🥗 Salades
+        </button>
 
-    </div>
+      </div>
 
-    <h2 id="diner" style="margin-top:30px;">🌙 Dîner</h2>
+    </section>
 
-    <div class="recipe-grid">
 
-        <a href="#" class="recipe-card">
-            <span>🥚</span>
-            <h3>Omelette aux courgettes</h3>
-            <p>Rapide à préparer et facile à portionner.</p>
-        </a>
+    <!-- FILTRES AVANCES -->
 
-        <a href="#" class="recipe-card">
-            <span>🐟</span>
-            <h3>Cabillaud tomate-courgettes</h3>
-            <p>Un plat léger et familial.</p>
-        </a>
+    <section class="advanced-filters">
 
-    </div>
+      <h2>⚙️ Affiner ma recherche</h2>
 
-    <h2 id="gourmand" style="margin-top:30px;">🍰 Gourmand</h2>
+      <div class="filter-options">
 
-    <div class="recipe-grid">
+        <label class="filter-check">
+          <input type="checkbox" id="filtrePetit">
+          <span>Petite portion</span>
+        </label>
 
-        <a href="#" class="recipe-card">
-            <span>🍫</span>
-            <h3>Mousse au chocolat individuelle</h3>
-            <p>Une petite portion plaisir.</p>
-        </a>
+        <label class="filter-check">
+          <input type="checkbox" id="filtreVegetarien">
+          <span>Végétarien</span>
+        </label>
 
-        <a href="#" class="recipe-card">
-            <span>🍰</span>
-            <h3>Cheesecake individuel</h3>
-            <p>Le plaisir en petit format.</p>
-        </a>
+        <label class="filter-check">
+          <input type="checkbox" id="filtreBatch">
+          <span>Batch-cooking</span>
+        </label>
 
-    </div>
+        <label class="filter-check">
+          <input type="checkbox" id="filtrePreOp">
+          <span>Pré-opératoire</span>
+        </label>
 
-</section>
+        <label class="filter-check">
+          <input type="checkbox" id="filtrePostOp">
+          <span>Post-opératoire</span>
+        </label>
 
-</main>
+        <label class="filter-check">
+          <input type="checkbox" id="filtreSansGluten">
+          <span>Sans gluten</span>
+        </label>
 
-<nav class="bottom-nav">
+      </div>
 
-    <a href="index.html">
-        <span>🏠</span>
-        <small>Accueil</small>
+    </section>
+
+
+    <!-- RESULTATS -->
+
+    <section>
+
+      <div class="results-header">
+
+        <h2>Mes recettes</h2>
+
+        <span id="compteur">
+          Chargement...
+        </span>
+
+      </div>
+
+
+      <div
+        id="liste-recettes"
+        class="recettes-grid">
+      </div>
+
+
+      <div
+        id="aucun-resultat"
+        class="no-results"
+        style="display:none;">
+
+        <div class="no-results-icon">🍽️</div>
+
+        <h3>Aucune recette trouvée</h3>
+
+        <p>
+          Essayez de modifier votre recherche ou vos filtres.
+        </p>
+
+        <button
+          class="reset-button"
+          id="reinitialiser">
+          Réinitialiser les filtres
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- NAVIGATION -->
+
+  <nav class="navbar">
+
+    <a href="Accueil.html" class="nav-item">
+      🏠 <span>Accueil</span>
     </a>
 
-    <a href="recettes.html" class="active">
-        <span>🍽️</span>
-        <small>Recettes</small>
+    <a href="MesEnvies.html" class="nav-item">
+      🔍 <span>Envies</span>
     </a>
 
-    <a href="menu.html">
-        <span>📅</span>
-        <small>Menu</small>
+    <a href="Recettes.html" class="nav-item active">
+      🍽️ <span>Recettes</span>
     </a>
 
-    <a href="courses.html">
-        <span>🛒</span>
-        <small>Courses</small>
+    <a href="Favoris.html" class="nav-item">
+      ⭐ <span>Favoris</span>
     </a>
 
-</nav>
+    <a href="MonProfil.html" class="nav-item">
+      👤 <span>Profil</span>
+    </a>
+
+  </nav>
+
+</div>
+
+
+<script>
+
+let toutesLesRecettes = [];
+
+let categorieSelectionnee = "toutes";
+
+
+/* ============================
+   CHARGEMENT DES RECETTES
+============================ */
+
+async function chargerRecettes() {
+
+  const liste = document.getElementById("liste-recettes");
+
+  try {
+
+    const response = await fetch("../recettes.json");
+
+    if (!response.ok) {
+      throw new Error("Impossible de charger recettes.json");
+    }
+
+    toutesLesRecettes = await response.json();
+
+    afficherRecettes();
+
+  } catch (error) {
+
+    console.error(error);
+
+    liste.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon">⚠️</div>
+
+        <h3>Impossible de charger les recettes</h3>
+
+        <p>
+          Vérifiez que le fichier
+          <strong>recettes.json</strong>
+          se trouve bien dans le dossier
+          <strong>src</strong>.
+        </p>
+      </div>
+    `;
+
+    document.getElementById("compteur").textContent = "";
+
+  }
+
+}
+
+
+/* ============================
+   AFFICHAGE
+============================ */
+
+function afficherRecettes() {
+
+  const liste =
+    document.getElementById("liste-recettes");
+
+  const compteur =
+    document.getElementById("compteur");
+
+  const aucun =
+    document.getElementById("aucun-resultat");
+
+
+  const recherche =
+    document.getElementById("recherche")
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  const petit =
+    document.getElementById("filtrePetit").checked;
+
+  const vegetarien =
+    document.getElementById("filtreVegetarien").checked;
+
+  const batch =
+    document.getElementById("filtreBatch").checked;
+
+  const preOp =
+    document.getElementById("filtrePreOp").checked;
+
+  const postOp =
+    document.getElementById("filtrePostOp").checked;
+
+  const sansGluten =
+    document.getElementById("filtreSansGluten").checked;
+
+
+  let recettesFiltrees =
+    toutesLesRecettes.filter(recette => {
+
+
+      /* RECHERCHE */
+
+      const texteRecherche =
+        (
+          recette.nom +
+          " " +
+          recette.categorie +
+          " " +
+          recette.type +
+          " " +
+          (recette.envies || []).join(" ") +
+          " " +
+          (recette.ingredients || []).join(" ")
+        )
+        .toLowerCase();
+
+
+      if (
+        recherche &&
+        !texteRecherche.includes(recherche)
+      ) {
+        return false;
+      }
+
+
+      /* CATEGORIE */
+
+      if (
+        categorieSelectionnee !== "toutes"
+      ) {
+
+        if (
+          categorieSelectionnee === "vegetarien"
+        ) {
+
+          if (!recette.vegetarien) {
+            return false;
+          }
+
+        } else {
+
+          const categorie =
+            (recette.categorie || "")
+            .toLowerCase();
+
+          const type =
+            (recette.type || "")
+            .toLowerCase();
+
+          if (
+            !categorie.includes(
+              categorieSelectionnee
+            ) &&
+            !type.includes(
+              categorieSelectionnee
+            )
+          ) {
+            return false;
+          }
+
+        }
+
+      }
+
+
+      /* PETITE PORTION */
+
+      if (
+        petit &&
+        !recette.petitAppetit
+      ) {
+        return false;
+      }
+
+
+      /* VEGETARIEN */
+
+      if (
+        vegetarien &&
+        !recette.vegetarien
+      ) {
+        return false;
+      }
+
+
+      /* BATCH COOKING */
+
+      if (
+        batch &&
+        !recette.batchCooking
+      ) {
+        return false;
+      }
+
+
+      /* PRE OPERATOIRE */
+
+      if (
+        preOp &&
+        !recette.preOperatoire
+      ) {
+        return false;
+      }
+
+
+      /* POST OPERATOIRE */
+
+      if (
+        postOp &&
+        !recette.postOperatoire
+      ) {
+        return false;
+      }
+
+
+      /* SANS GLUTEN */
+
+      if (
+        sansGluten &&
+        !recette.sansGluten
+      ) {
+        return false;
+      }
+
+
+      return true;
+
+    });
+
+
+  /* COMPTEUR */
+
+  compteur.textContent =
+    recettesFiltrees.length +
+    " recette" +
+    (recettesFiltrees.length > 1 ? "s" : "");
+
+
+  /* AUCUN RESULTAT */
+
+  if (
+    recettesFiltrees.length === 0
+  ) {
+
+    liste.innerHTML = "";
+
+    aucun.style.display = "block";
+
+    return;
+
+  }
+
+
+  aucun.style.display = "none";
+
+
+  /* CARTES */
+
+  liste.innerHTML =
+    recettesFiltrees
+      .map(creerCarteRecette)
+      .join("");
+
+}
+
+
+/* ============================
+   CREATION D'UNE CARTE
+============================ */
+
+function creerCarteRecette(recette) {
+
+  const favoris =
+    JSON.parse(
+      localStorage.getItem("favoris")
+    ) || [];
+
+
+  const estFavori =
+    favoris.includes(recette.id);
+
+
+  let badges = "";
+
+
+  if (recette.petitAppetit) {
+
+    badges += `
+      <span class="badge">
+        Petite portion
+      </span>
+    `;
+
+  }
+
+
+  if (recette.vegetarien) {
+
+    badges += `
+      <span class="badge">
+        🌱 Végétarien
+      </span>
+    `;
+
+  }
+
+
+  if (recette.batchCooking) {
+
+    badges += `
+      <span class="badge">
+        🥘 Batch-cooking
+      </span>
+    `;
+
+  }
+
+
+  if (recette.sansGluten) {
+
+    badges += `
+      <span class="badge">
+        🌾 Sans gluten
+      </span>
+    `;
+
+  }
+
+
+  return `
+
+    <a
+      href="Recette.html?id=${recette.id}"
+      class="recette-card"
+    >
+
+      <div class="recette-card-top">
+
+        <div>
+
+          <h3>
+            ${recette.nom}
+          </h3>
+
+          <span class="recette-category">
+            ${recette.categorie || "Recette"}
+          </span>
+
+        </div>
+
+        <span class="favorite-icon">
+          ${estFavori ? "❤️" : "♡"}
+        </span>
+
+      </div>
+
+
+      <p class="recette-description">
+
+        ${
+          recette.type
+          ? recette.type
+          : "Une recette simple et adaptée à vos envies."
+        }
+
+      </p>
+
+
+      <div class="recette-meta">
+
+        <span class="meta-item">
+          ⏱️ ${recette.temps} min
+        </span>
+
+        <span class="meta-item">
+          💪 ${recette.proteines} g protéines
+        </span>
+
+        <span class="meta-item">
+          🍽️ ${recette.portion || "1 portion"}
+        </span>
+
+      </div>
+
+
+      ${
+        badges
+          ? `<div class="badges">${badges}</div>`
+          : ""
+      }
+
+    </a>
+
+  `;
+
+}
+
+
+/* ============================
+   RECHERCHE
+============================ */
+
+document
+  .getElementById("recherche")
+  .addEventListener(
+    "input",
+    afficherRecettes
+  );
+
+
+/* ============================
+   CATEGORIES
+============================ */
+
+document
+  .querySelectorAll(".filter-button")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      function() {
+
+        document
+          .querySelectorAll(".filter-button")
+          .forEach(btn =>
+            btn.classList.remove("active")
+          );
+
+        this.classList.add("active");
+
+        categorieSelectionnee =
+          this.dataset.categorie;
+
+        afficherRecettes();
+
+      }
+    );
+
+  });
+
+
+/* ============================
+   FILTRES
+============================ */
+
+document
+  .querySelectorAll(
+    ".filter-check input"
+  )
+  .forEach(checkbox => {
+
+    checkbox.addEventListener(
+      "change",
+      afficherRecettes
+    );
+
+  });
+
+
+/* ============================
+   REINITIALISATION
+============================ */
+
+document
+  .getElementById("reinitialiser")
+  .addEventListener(
+    "click",
+    function() {
+
+      document
+        .getElementById("recherche")
+        .value = "";
+
+
+      document
+        .querySelectorAll(
+          ".filter-check input"
+        )
+        .forEach(checkbox => {
+          checkbox.checked = false;
+        });
+
+
+      categorieSelectionnee =
+        "toutes";
+
+
+      document
+        .querySelectorAll(
+          ".filter-button"
+        )
+        .forEach(button =>
+          button.classList.remove("active")
+        );
+
+
+      document
+        .querySelector(
+          '[data-categorie="toutes"]'
+        )
+        .classList.add("active");
+
+
+      afficherRecettes();
+
+    }
+  );
+
+
+/* ============================
+   LANCEMENT
+============================ */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  chargerRecettes
+);
+
+</script>
 
 </body>
 </html>
-```
