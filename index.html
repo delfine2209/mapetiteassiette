@@ -1,576 +1,817 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <meta name="description"
-          content="Ma Petite Assiette - Des petites portions, mais un vrai repas.">
+  <title>Ma Petite Assiette</title>
 
-    <title>Ma Petite Assiette</title>
+  <link rel="stylesheet" href="src/style.css">
 
-    <!-- =========================
-         STYLE PRINCIPAL
-    ========================== -->
+  <style>
 
-    <link rel="stylesheet" href="src/style.css">
+    body {
+      margin: 0;
+      background: #f7f4ef;
+    }
+
+    .home-page {
+      min-height: 100vh;
+      padding-bottom: 100px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 30px 20px 28px;
+      background:
+        linear-gradient(
+          145deg,
+          #f1dfcf 0%,
+          #f7eadb 48%,
+          #e5eee0 100%
+        );
+      border-radius: 0 0 32px 32px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.30);
+      top: -70px;
+      right: -45px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.20);
+      bottom: -50px;
+      left: -35px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .logo-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.78);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: #4d554a;
+      letter-spacing: -0.4px;
+    }
+
+    .hero h1 {
+      font-size: 31px;
+      line-height: 1.12;
+      color: #41483e;
+      margin: 0 0 12px;
+      max-width: 340px;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #62685d;
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 370px;
+    }
+
+    /* =========================
+       ACTION PRINCIPALE
+    ========================= */
+
+    .main-choice {
+      margin: -12px 16px 25px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .main-choice-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 8px 25px rgba(72,62,50,0.12);
+    }
+
+    .main-choice-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .main-choice-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 17px;
+      background: #edf4e9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+
+    .main-choice-card h2 {
+      flex: 1;
+      margin: 0;
+      font-size: 19px;
+      color: #444b41;
+    }
+
+    .arrow {
+      font-size: 24px;
+      color: #7d9475;
+    }
+
+    .main-choice-card p {
+      margin: 13px 0 0;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .home-section {
+      padding: 0 16px;
+      margin-bottom: 27px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 13px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #454b42;
+    }
+
+    .section-title span {
+      font-size: 13px;
+      color: #858b81;
+    }
+
+    /* =========================
+       CARTES PARCOURS
+    ========================= */
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .journey-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      min-height: 145px;
+      padding: 17px;
+      border-radius: 22px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .journey-card::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.28);
+      right: -25px;
+      bottom: -30px;
+    }
+
+    .journey-card.green {
+      background: #dfead9;
+    }
+
+    .journey-card.peach {
+      background: #f4dfd0;
+    }
+
+    .journey-card.yellow {
+      background: #f4e8bf;
+    }
+
+    .journey-card.blue {
+      background: #dce8eb;
+    }
+
+    .journey-icon {
+      font-size: 28px;
+      margin-bottom: 13px;
+    }
+
+    .journey-card h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: #454b42;
+    }
+
+    .journey-card p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #666b62;
+    }
+
+    /* =========================
+       ENVIES
+    ========================= */
+
+    .envies-home {
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+      scrollbar-width: none;
+    }
+
+    .envies-home::-webkit-scrollbar {
+      display: none;
+    }
+
+    .envie-home-card {
+      flex: 0 0 auto;
+      width: 105px;
+      padding: 15px 10px;
+      box-sizing: border-box;
+      background: white;
+      border-radius: 19px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .envie-home-card .icon {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .envie-home-card span:last-child {
+      font-size: 13px;
+      color: #555b52;
+      font-weight: 600;
+    }
+
+    /* =========================
+       RECETTES
+    ========================= */
+
+    .recipe-shortcut {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+    }
+
+    .recipe-shortcut a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      border-radius: 19px;
+      padding: 16px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .recipe-shortcut .icon {
+      font-size: 25px;
+      margin-bottom: 9px;
+    }
+
+    .recipe-shortcut strong {
+      display: block;
+      color: #4c5349;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .recipe-shortcut small {
+      color: #888;
+      font-size: 12px;
+    }
+
+    /* =========================
+       BANDEAU
+    ========================= */
+
+    .little-message {
+      margin: 0 16px 25px;
+      padding: 18px;
+      border-radius: 22px;
+      background: #fffaf2;
+      border: 1px solid #f0e2ca;
+    }
+
+    .little-message strong {
+      display: block;
+      color: #625744;
+      margin-bottom: 5px;
+    }
+
+    .little-message p {
+      margin: 0;
+      color: #817766;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .navbar {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+    }
+
+  </style>
 
 </head>
 
 
 <body>
 
+<div class="screen home-page">
 
-<!-- =========================
-     EN-TÊTE
-========================== -->
 
-<header class="header">
+  <!-- =====================
+       HERO
+  ====================== -->
 
-    <div class="logo">
-        🍽️
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="logo-line">
+
+        <div class="logo-icon">
+          🍽️
+        </div>
+
+        <div class="logo-text">
+          Ma Petite Assiette
+        </div>
+
+      </div>
+
+
+      <h1>
+        Aujourd'hui,<br>
+        on mange quoi ?
+      </h1>
+
+
+      <p>
+        Une petite assiette, de bonnes idées,
+        et surtout des recettes qui vous ressemblent.
+      </p>
+
     </div>
 
-    <div>
+  </header>
 
-        <h1>
-            MA PETITE ASSIETTE
-        </h1>
 
-        <p>
-            Des petites portions, mais un vrai repas.
-        </p>
+  <!-- =====================
+       CHOIX PRINCIPAL
+  ====================== -->
+
+  <div class="main-choice">
+
+    <a
+      href="src/screens/MesEnvies.html"
+      class="main-choice-card"
+    >
+
+      <div class="main-choice-top">
+
+        <div class="main-choice-icon">
+          ✨
+        </div>
+
+        <h2>
+          Je choisis selon mes envies
+        </h2>
+
+        <div class="arrow">
+          →
+        </div>
+
+      </div>
+
+      <p>
+        Dites-nous ce qui vous ferait plaisir,
+        le temps dont vous disposez et vos préférences.
+        Nous vous proposons ensuite des recettes adaptées.
+      </p>
+
+    </a>
+
+  </div>
+
+
+  <!-- =====================
+       MON PARCOURS
+  ====================== -->
+
+  <section class="home-section">
+
+    <div class="section-title">
+
+      <h2>
+        🌿 Mon parcours
+      </h2>
+
+      <span>
+        À découvrir
+      </span>
 
     </div>
 
-</header>
+
+    <div class="journey-grid">
 
 
+      <a
+        href="src/screens/petit-appetit.html"
+        class="journey-card green"
+      >
 
-<main>
+        <div class="journey-icon">
+          🥄
+        </div>
 
-
-    <!-- =========================
-         INTRODUCTION
-    ========================== -->
-
-    <section class="intro">
-
-        <h2>
-            Bienvenue !
-        </h2>
+        <h3>
+          Petit appétit
+        </h3>
 
         <p>
-            Des idées simples, gourmandes et faciles à adapter
-            quand on mange en petites quantités.
+          Des idées de petites portions
+          sans renoncer au plaisir.
         </p>
 
-    </section>
+      </a>
 
 
+      <a
+        href="src/screens/chirurgie.html"
+        class="journey-card peach"
+      >
 
-    <!-- =========================
-         MES ENVIES
-    ========================== -->
-
-    <section class="mes-envies-home">
-
-        <div class="card envie-home-card">
-
-            <div class="envie-home-icon">
-                🔍
-            </div>
-
-            <div class="envie-home-content">
-
-                <h2>
-                    Je choisis selon mes envies
-                </h2>
-
-                <p>
-                    Léger, rapide, réconfortant, sucré...
-                    Dites-nous ce qui vous ferait plaisir aujourd'hui.
-                </p>
-
-                <a
-                    class="button"
-                    href="src/screens/MesEnvies.html">
-
-                    ✨ CHOISIR MES ENVIES
-
-                </a>
-
-            </div>
-
+        <div class="journey-icon">
+          🌸
         </div>
 
-    </section>
+        <h3>
+          Préparer ma chirurgie
+        </h3>
+
+        <p>
+          Un espace pour organiser
+          progressivement ses repas.
+        </p>
+
+      </a>
 
 
+      <a
+        href="src/screens/batch-cooking.html"
+        class="journey-card yellow"
+      >
 
-    <!-- =========================
-         QUE SOUHAITEZ-VOUS FAIRE ?
-    ========================== -->
-
-    <section class="question">
-
-        <h2>
-            Que souhaitez-vous faire aujourd'hui ?
-        </h2>
-
-
-        <!-- PETIT APPÉTIT -->
-
-        <a
-            href="src/screens/petit-appetit.html"
-            class="main-card">
-
-            <span class="icon">
-                🥄
-            </span>
-
-            <div>
-
-                <strong>
-                    J'ai un petit appétit
-                </strong>
-
-                <small>
-                    Des recettes en petites portions
-                </small>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- CHIRURGIE -->
-
-        <a
-            href="src/screens/chirurgie.html"
-            class="main-card">
-
-            <span class="icon">
-                🩺
-            </span>
-
-            <div>
-
-                <strong>
-                    Je me prépare à une chirurgie
-                </strong>
-
-                <small>
-                    Un parcours pour mieux s'organiser
-                </small>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- BATCH COOKING -->
-
-        <a
-            href="src/screens/batch-cooking.html"
-            class="main-card">
-
-            <span class="icon">
-                🍱
-            </span>
-
-            <div>
-
-                <strong>
-                    Je prépare mes repas
-                </strong>
-
-                <small>
-                    Menus, batch cooking et conservation
-                </small>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- ADAPTER -->
-
-        <a
-            href="src/screens/adapter.html"
-            class="main-card">
-
-            <span class="icon">
-                ❤️
-            </span>
-
-            <div>
-
-                <strong>
-                    J'adapte mon plat
-                </strong>
-
-                <small>
-                    Retrouver ses plats préférés autrement
-                </small>
-
-            </div>
-
-        </a>
-
-    </section>
-
-
-
-    <!-- =========================
-         RECETTES
-    ========================== -->
-
-    <section class="recipes">
-
-
-        <div class="section-title">
-
-            <h2>
-                🍽️ Aujourd'hui dans ma petite assiette
-            </h2>
-
-            <a href="src/screens/Recettes.html">
-                Voir toutes les recettes →
-            </a>
-
+        <div class="journey-icon">
+          🥘
         </div>
 
+        <h3>
+          Batch-cooking
+        </h3>
+
+        <p>
+          Préparer plusieurs éléments
+          à l'avance pour gagner du temps.
+        </p>
+
+      </a>
 
 
-        <div class="recipe-grid">
+      <a
+        href="src/screens/adapter.html"
+        class="journey-card blue"
+      >
 
-
-            <!-- PETIT-DÉJEUNER -->
-
-            <a
-                href="src/screens/Recettes.html#petit-dejeuner"
-                class="recipe-card">
-
-                <span>
-                    🌅
-                </span>
-
-                <h3>
-                    Petit-déjeuner
-                </h3>
-
-                <p>
-                    Mini-pancakes individuels
-                </p>
-
-            </a>
-
-
-
-            <!-- COLLATION -->
-
-            <a
-                href="src/screens/Recettes.html#collation"
-                class="recipe-card">
-
-                <span>
-                    🍎
-                </span>
-
-                <h3>
-                    Collation
-                </h3>
-
-                <p>
-                    Compote pomme-poire
-                </p>
-
-            </a>
-
-
-
-            <!-- DÉJEUNER -->
-
-            <a
-                href="src/screens/Recettes.html#dejeuner"
-                class="recipe-card">
-
-                <span>
-                    ☀️
-                </span>
-
-                <h3>
-                    Déjeuner
-                </h3>
-
-                <p>
-                    Poulet aux courgettes
-                </p>
-
-            </a>
-
-
-
-            <!-- DÎNER -->
-
-            <a
-                href="src/screens/Recettes.html#diner"
-                class="recipe-card">
-
-                <span>
-                    🌙
-                </span>
-
-                <h3>
-                    Dîner
-                </h3>
-
-                <p>
-                    Omelette aux courgettes
-                </p>
-
-            </a>
-
+        <div class="journey-icon">
+          🥗
         </div>
 
-    </section>
+        <h3>
+          Adapter mon assiette
+        </h3>
+
+        <p>
+          Des idées pour composer
+          une petite assiette simplement.
+        </p>
+
+      </a>
+
+    </div>
+
+  </section>
 
 
+  <!-- =====================
+       MES ENVIES
+  ====================== -->
 
-    <!-- =========================
-         ORGANISATION DES REPAS
-    ========================== -->
+  <section class="home-section">
 
-    <section class="features">
+    <div class="section-title">
 
-        <h2>
-            Tout pour organiser mes repas
-        </h2>
+      <h2>
+        💛 Aujourd'hui j'ai envie de...
+      </h2>
 
-
-        <div class="feature-grid">
-
-
-            <!-- FRIGO -->
-
-            <a href="src/screens/frigo.html">
-
-                🧊
-
-                <strong>
-                    Mon frigo
-                </strong>
-
-                <small>
-                    Je cuisine avec ce que j'ai
-                </small>
-
-            </a>
+    </div>
 
 
-
-            <!-- RESTES -->
-
-            <a href="src/screens/restes.html">
-
-                ♻️
-
-                <strong>
-                    Mes restes
-                </strong>
-
-                <small>
-                    Je ne gaspille rien
-                </small>
-
-            </a>
+    <div class="envies-home">
 
 
+      <a
+        href="src/screens/MesEnvies.html"
+        class="envie-home-card"
+      >
 
-            <!-- MENU -->
+        <span class="icon">🥗</span>
+        <span>Léger</span>
 
-            <a href="src/screens/menu.html">
-
-                📅
-
-                <strong>
-                    Mon menu
-                </strong>
-
-                <small>
-                    J'organise ma semaine
-                </small>
-
-            </a>
+      </a>
 
 
+      <a
+        href="src/screens/MesEnvies.html"
+        class="envie-home-card"
+      >
 
-            <!-- COURSES -->
+        <span class="icon">🍝</span>
+        <span>Complet</span>
 
-            <a href="src/screens/courses.html">
-
-                🛒
-
-                <strong>
-                    Mes courses
-                </strong>
-
-                <small>
-                    Ma liste au même endroit
-                </small>
-
-            </a>
+      </a>
 
 
+      <a
+        href="src/screens/MesEnvies.html"
+        class="envie-home-card"
+      >
 
-            <!-- FAMILLE -->
+        <span class="icon">⚡</span>
+        <span>Rapide</span>
 
-            <a href="src/screens/Famille.html">
-
-                👨‍👩‍👧
-
-                <strong>
-                    Ma famille
-                </strong>
-
-                <small>
-                    Un repas, plusieurs portions
-                </small>
-
-            </a>
+      </a>
 
 
+      <a
+        href="src/screens/MesEnvies.html"
+        class="envie-home-card"
+      >
 
-            <!-- COMPRENDRE -->
+        <span class="icon">🍰</span>
+        <span>Petite douceur</span>
 
-            <a href="src/screens/comprendre.html">
+      </a>
 
-                📖
 
-                <strong>
-                    Je comprends
-                </strong>
+      <a
+        href="src/screens/MesEnvies.html"
+        class="envie-home-card"
+      >
 
-                <small>
-                    Des informations simples
-                </small>
+        <span class="icon">🌱</span>
+        <span>Végétarien</span>
 
-            </a>
+      </a>
 
+    </div>
+
+  </section>
+
+
+  <!-- =====================
+       RECETTES
+  ====================== -->
+
+  <section class="home-section">
+
+    <div class="section-title">
+
+      <h2>
+        🍽️ Mes recettes
+      </h2>
+
+      <span>
+        40 recettes
+      </span>
+
+    </div>
+
+
+    <div class="recipe-shortcut">
+
+
+      <a href="src/screens/Recettes.html">
+
+        <div class="icon">
+          📖
         </div>
 
-    </section>
-
-</main>
-
-
-
-<!-- =========================
-     NAVIGATION MOBILE
-========================== -->
-
-<nav class="bottom-nav">
-
-
-    <!-- ACCUEIL -->
-
-    <a
-        href="index.html"
-        class="active">
-
-        <span>
-            🏠
-        </span>
+        <strong>
+          Voir toutes les recettes
+        </strong>
 
         <small>
-            Accueil
+          Rechercher et filtrer
         </small>
 
-    </a>
+      </a>
 
 
+      <a href="src/screens/Favoris.html">
 
-    <!-- ENVIES -->
+        <div class="icon">
+          ❤️
+        </div>
 
-    <a
-        href="src/screens/MesEnvies.html">
-
-        <span>
-            🔍
-        </span>
+        <strong>
+          Mes favoris
+        </strong>
 
         <small>
-            Envies
+          Mes recettes préférées
         </small>
 
-    </a>
+      </a>
 
 
+      <a href="src/screens/menu.html">
 
-    <!-- RECETTES -->
+        <div class="icon">
+          📅
+        </div>
 
-    <a
-        href="src/screens/Recettes.html">
-
-        <span>
-            🍽️
-        </span>
+        <strong>
+          Mon menu
+        </strong>
 
         <small>
-            Recettes
+          Organiser mes repas
         </small>
 
-    </a>
+      </a>
 
 
+      <a href="src/screens/courses.html">
 
-    <!-- MENU -->
+        <div class="icon">
+          🛒
+        </div>
 
-    <a
-        href="src/screens/menu.html">
-
-        <span>
-            📅
-        </span>
+        <strong>
+          Mes courses
+        </strong>
 
         <small>
-            Menu
+          Préparer ma liste
         </small>
 
-    </a>
+      </a>
+
+    </div>
+
+  </section>
 
 
+  <!-- =====================
+       PETIT MESSAGE
+  ====================== -->
 
-    <!-- COURSES -->
+  <div class="little-message">
+
+    <strong>
+      💚 Une petite assiette, c'est déjà un vrai repas.
+    </strong>
+
+    <p>
+      L'objectif est de trouver des idées simples,
+      gourmandes et adaptées à votre quotidien.
+      Prenez le temps d'écouter vos sensations.
+    </p>
+
+  </div>
+
+
+  <!-- =====================
+       NAVIGATION
+  ====================== -->
+
+  <nav class="navbar">
 
     <a
-        href="src/screens/courses.html">
-
-        <span>
-            🛒
-        </span>
-
-        <small>
-            Courses
-        </small>
-
+      href="index.html"
+      class="nav-item active"
+    >
+      🏠
+      <span>Accueil</span>
     </a>
 
-</nav>
+    <a
+      href="src/screens/MesEnvies.html"
+      class="nav-item"
+    >
+      🔍
+      <span>Envies</span>
+    </a>
 
+    <a
+      href="src/screens/Recettes.html"
+      class="nav-item"
+    >
+      🍽️
+      <span>Recettes</span>
+    </a>
+
+    <a
+      href="src/screens/Favoris.html"
+      class="nav-item"
+    >
+      ⭐
+      <span>Favoris</span>
+    </a>
+
+    <a
+      href="src/screens/MonProfil.html"
+      class="nav-item"
+    >
+      👤
+      <span>Profil</span>
+    </a>
+
+  </nav>
+
+
+</div>
 
 </body>
 
 </html>
-```
-
-
