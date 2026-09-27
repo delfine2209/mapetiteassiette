@@ -5270,5 +5270,274 @@
       "Fromage râpé": "40 g",
       "Lait": "2 cuillères à café"
     }
+},
+    {
+  "id": "COL081",
+  "nom": "Compote pomme-cannelle & petit-suisse",
+  "categorie": "Collation",
+  "type": "Collation",
+  "temps": 5,
+  "tempsPreparation": 5,
+  "tempsCuisson": 0,
+  "proteines": 6,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "rapide", "sucre"],
+  "texture": "lisse",
+  "ingredients": [
+    "100 g de compote de pomme sans sucre ajouté",
+    "1 petit-suisse",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Verser la compote dans un petit bol.",
+    "Ajouter le petit-suisse.",
+    "Mélanger légèrement.",
+    "Ajouter une pincée de cannelle."
+  ],
+  "quantites": {
+    "petite": {
+      "Compote": "50 g",
+      "Petit-suisse": "1/2"
+    },
+    "famille2": {
+      "Compote": "100 g",
+      "Petit-suisse": "1"
+    },
+    "famille4": {
+      "Compote": "200 g",
+      "Petit-suisse": "2"
+    ]
+},
+{
+  "id": "COL082",
+  "nom": "Mini smoothie banane & fromage blanc",
+  "categorie": "Collation",
+  "type": "Collation",
+  "temps": 5,
+  "tempsPreparation": 5,
+  "tempsCuisson": 0,
+  "proteines": 8,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "rapide", "sucre"],
+  "texture": "lisse",
+  "ingredients": [
+    "1/2 banane",
+    "100 g de fromage blanc",
+    "50 ml de lait",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Couper la banane en morceaux.",
+    "Placer tous les ingrédients dans un blender.",
+    "Mixer jusqu'à obtenir une texture lisse.",
+    "Servir immédiatement."
+  ],
+  "quantites": {
+    "petite": {
+      "Banane": "1/4",
+      "Fromage blanc": "50 g",
+      "Lait": "25 ml"
+    },
+    "famille2": {
+      "Banane": "1/2",
+      "Fromage blanc": "100 g",
+      "Lait": "50 ml"
+    },
+    "famille4": {
+      "Banane": "1",
+      "Fromage blanc": "200 g",
+      "Lait": "100 ml"
+    ]
+},
+{
+  "id": "COL083",
+  "nom": "Mini muffin pomme & avoine",
+  "categorie": "Collation",
+  "type": "Collation",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 5,
+  "portions": 4,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer plusieurs mini muffins pour les collations.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "rapide"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "40 g de flocons d'avoine mixés",
+    "1/2 pomme",
+    "1 œuf",
+    "30 g de compote sans sucre ajouté",
+    "30 g de fromage blanc",
+    "1/2 cuillère à café de levure",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Mélanger l'œuf, la compote et le fromage blanc.",
+    "Ajouter les flocons d'avoine et la levure.",
+    "Ajouter la pomme coupée en petits dés.",
+    "Parfumer avec la cannelle.",
+    "Répartir dans de petits moules.",
+    "Cuire environ 15 minutes."
+  ],
+  "quantites": {
+    "petite": {
+      "Flocons d'avoine": "10 g",
+      "Pomme": "1/8",
+      "Œuf": "1/4",
+      "Compote": "8 g",
+      "Fromage blanc": "8 g"
+    },
+    "famille2": {
+      "Flocons d'avoine": "20 g",
+      "Pomme": "1/4",
+      "Œuf": "1/2",
+      "Compote": "15 g",
+      "Fromage blanc": "15 g"
+    },
+    "famille4": {
+      "Flocons d'avoine": "40 g",
+      "Pomme": "1/2",
+      "Œuf": "1",
+      "Compote": "30 g",
+      "Fromage blanc": "30 g"
+    ]
+},
+{
+  "id": "COL084",
+  "nom": "Crème légère au chocolat",
+  "categorie": "Collation",
+  "type": "Collation",
+  "temps": 10,
+  "tempsPreparation": 10,
+  "tempsCuisson": 0,
+  "proteines": 7,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer les portions à l'avance et conserver au frais.",
+  "conservation": "24 heures au réfrigérateur",
+  "envies": ["sucre", "reconfort"],
+  "texture": "lisse",
+  "ingredients": [
+    "100 g de fromage blanc",
+    "5 g de cacao non sucré",
+    "1 cuillère à café de miel",
+    "1 cuillère à soupe de lait"
+  ],
+  "preparation": [
+    "Déposer le fromage blanc dans un bol.",
+    "Ajouter le cacao et le miel.",
+    "Ajouter le lait.",
+    "Mélanger jusqu'à obtenir une crème homogène.",
+    "Réserver quelques minutes au frais avant de déguster."
+  ],
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "50 g",
+      "Cacao": "2,5 g",
+      "Miel": "1/2 cuillère à café",
+      "Lait": "1/2 cuillère à soupe"
+    },
+    "famille2": {
+      "Fromage blanc": "100 g",
+      "Cacao": "5 g",
+      "Miel": "1 cuillère à café",
+      "Lait": "1 cuillère à soupe"
+    },
+    "famille4": {
+      "Fromage blanc": "200 g",
+      "Cacao": "10 g",
+      "Miel": "2 cuillères à café",
+      "Lait": "2 cuillères à soupe"
+    ]
+},
+{
+  "id": "COL085",
+  "nom": "Poire fondante au fromage blanc",
+  "categorie": "Collation",
+  "type": "Collation",
+  "temps": 10,
+  "tempsPreparation": 5,
+  "tempsCuisson": 5,
+  "proteines": 7,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "sucre"],
+  "texture": "fondante",
+  "ingredients": [
+    "1/2 poire",
+    "100 g de fromage blanc",
+    "1 cuillère à café de miel",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Éplucher la poire.",
+    "La couper en petits morceaux.",
+    "La faire légèrement fondre dans une petite casserole avec une cuillère d'eau.",
+    "Déposer le fromage blanc dans un bol.",
+    "Ajouter la poire tiédie.",
+    "Ajouter un peu de miel et de cannelle."
+  ],
+  "quantites": {
+    "petite": {
+      "Poire": "1/4",
+      "Fromage blanc": "50 g",
+      "Miel": "1/2 cuillère à café"
+    },
+    "famille2": {
+      "Poire": "1/2",
+      "Fromage blanc": "100 g",
+      "Miel": "1 cuillère à café"
+    },
+    "famille4": {
+      "Poire": "1",
+      "Fromage blanc": "200 g",
+      "Miel": "2 cuillères à café"
+    ]
 }
 ]
