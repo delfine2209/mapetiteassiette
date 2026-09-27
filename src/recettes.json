@@ -3714,7 +3714,7 @@
       "Répartir dans deux petites portions."
     ]
   },
-   {
+  {
   "id": "ADP001",
   "nom": "Petite pizza poulet & courgette",
   "categorie": "Déjeuner",
@@ -3836,8 +3836,7 @@
     "Servir tiède."
   ]
 },
-
-  {
+{
   "id": "ADP004",
   "nom": "Mini-burger poulet & fromage frais",
   "categorie": "Déjeuner",
