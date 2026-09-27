@@ -1,68 +1,103 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes recettes - Ma Petite Assiette</title>
+
+  <title>Recettes - Ma Petite Assiette</title>
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background: #fffaf5;
-      color: #4b4039;
-      padding-bottom: 90px;
+      color: #4d4038;
+      padding-bottom: 85px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #f5d8c8, #dce8d4);
-      padding: 28px 20px 24px;
+      background: linear-gradient(135deg, #f6d9c8, #dce8d5);
+      padding: 28px 20px 30px;
       border-radius: 0 0 30px 30px;
     }
 
-    .logo {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.75);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      margin-bottom: 16px;
+    .retour {
+      display: inline-block;
+      color: #5b7153;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 18px;
     }
 
-    h1 {
-      margin: 0;
+    .hero h1 {
       font-size: 28px;
-      color: #51453d;
+      color: #4d4038;
+      margin-bottom: 8px;
     }
 
-    .intro {
-      margin: 8px 0 0;
-      font-size: 15px;
+    .hero p {
       line-height: 1.5;
-      color: #6b5b51;
-    }
-
-    .content {
-      padding: 20px 16px;
-    }
-
-    .search {
-      width: 100%;
-      border: none;
-      background: white;
-      border-radius: 18px;
-      padding: 15px 17px;
       font-size: 15px;
-      box-shadow: 0 4px 14px rgba(80,60,40,0.07);
-      margin-bottom: 16px;
+    }
+
+    .contenu {
+      padding: 20px 16px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* CONTEXTE */
+
+    .contexte {
+      display: none;
+      background: #eef5e9;
+      border: 1px solid #d5e4cc;
+      color: #506448;
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      line-height: 1.4;
+      font-size: 14px;
+    }
+
+    .contexte strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+    }
+
+    /* RECHERCHE */
+
+    .recherche {
+      margin-bottom: 18px;
+    }
+
+    .recherche input {
+      width: 100%;
+      border: 1px solid #e2d6cd;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 15px;
+      background: white;
       outline: none;
+    }
+
+    .recherche input:focus {
+      border-color: #9db58f;
+    }
+
+    /* CATEGORIES */
+
+    .titre-section {
+      font-size: 19px;
+      margin: 20px 0 12px;
+      color: #4d4038;
     }
 
     .categories {
@@ -70,532 +105,592 @@
       gap: 8px;
       overflow-x: auto;
       padding-bottom: 5px;
-      margin-bottom: 18px;
+      scrollbar-width: none;
     }
 
-    .category {
-      flex: 0 0 auto;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 15px;
-      background: #f0e5dc;
-      color: #5d5149;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .category.active {
-      background: #7e9b72;
-      color: white;
-    }
-
-    .filters {
-      background: white;
-      border-radius: 22px;
-      padding: 17px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 14px rgba(80,60,40,0.07);
-    }
-
-    .filters-title {
-      font-weight: bold;
-      margin-bottom: 12px;
-      color: #55483f;
-    }
-
-    .filter-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .filter {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: #665950;
-    }
-
-    .filter input {
-      accent-color: #7e9b72;
-    }
-
-    .texture-banner {
-      background: #edf3e9;
-      border-radius: 18px;
-      padding: 13px 15px;
-      margin-bottom: 18px;
-      color: #5d7455;
-      font-size: 13px;
-      line-height: 1.4;
+    .categories::-webkit-scrollbar {
       display: none;
     }
 
-    .texture-banner strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 3px;
-    }
-
-    .count {
+    .categorie-btn {
+      border: none;
+      background: #f2e8df;
+      color: #65574e;
+      border-radius: 22px;
+      padding: 10px 14px;
+      white-space: nowrap;
+      cursor: pointer;
       font-size: 14px;
-      color: #7b6d64;
-      margin: 10px 3px 14px;
     }
 
-    .recipe-card {
+    .categorie-btn.active {
+      background: #78936d;
+      color: white;
+    }
+
+    /* FILTRES */
+
+    .filtres {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .filtre {
+      border: 1px solid #dfd1c6;
+      background: white;
+      color: #65574e;
+      border-radius: 18px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .filtre.active {
+      background: #f0d8c9;
+      border-color: #e1bda8;
+    }
+
+    /* RESULTATS */
+
+    .resultats-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 22px 0 12px;
+    }
+
+    .resultats-header h2 {
+      font-size: 19px;
+    }
+
+    #compteur {
+      font-size: 13px;
+      color: #85756b;
+    }
+
+    .liste-recettes {
+      display: grid;
+      gap: 14px;
+    }
+
+    .recette-card {
       background: white;
       border-radius: 22px;
       padding: 17px;
-      margin-bottom: 13px;
-      box-shadow: 0 4px 14px rgba(80,60,40,0.07);
-      cursor: pointer;
-      position: relative;
+      box-shadow: 0 4px 16px rgba(91, 70, 55, 0.08);
+      border: 1px solid #f0e5dd;
     }
 
-    .recipe-top {
+    .recette-card-top {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
+      justify-content: space-between;
+      gap: 12px;
     }
 
-    .recipe-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: #f4e8df;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-
-    .recipe-category {
-      font-size: 12px;
-      color: #7d9a70;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    .recipe-name {
+    .recette-card h3 {
+      color: #4d4038;
       font-size: 18px;
-      font-weight: bold;
-      margin: 5px 0;
-      padding-right: 30px;
-      color: #4e433b;
+      line-height: 1.3;
+      margin-bottom: 6px;
     }
 
-    .recipe-meta {
+    .recette-meta {
+      font-size: 13px;
+      color: #8a7a70;
+      line-height: 1.5;
+    }
+
+    .favori {
+      border: none;
+      background: #fff3ed;
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .favori.active {
+      background: #f5d7c7;
+    }
+
+    .badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 10px;
+      gap: 6px;
+      margin-top: 12px;
     }
 
     .badge {
-      background: #f5eee9;
+      background: #eef4ea;
+      color: #5d7355;
       border-radius: 12px;
-      padding: 6px 9px;
+      padding: 5px 8px;
       font-size: 11px;
-      color: #685b52;
     }
 
-    .badge.batch {
-      background: #e2ecde;
-      color: #5c7952;
+    .badge.peche {
+      background: #f8e7dc;
+      color: #9a6a51;
     }
 
-    .badge.texture {
-      background: #e8efe3;
-      color: #5f7757;
-    }
-
-    .favorite {
-      position: absolute;
-      right: 15px;
-      top: 15px;
+    .ouvrir {
+      display: block;
+      width: 100%;
       border: none;
-      background: transparent;
-      font-size: 23px;
+      background: #78936d;
+      color: white;
+      border-radius: 15px;
+      padding: 12px;
+      margin-top: 14px;
+      font-weight: bold;
       cursor: pointer;
-      z-index: 2;
     }
 
-    .empty {
-      text-align: center;
+    /* VIDE */
+
+    .vide {
       background: white;
       border-radius: 22px;
-      padding: 28px 18px;
-      color: #75675d;
-      box-shadow: 0 4px 14px rgba(80,60,40,0.06);
+      padding: 25px 18px;
+      text-align: center;
+      color: #75665d;
+      box-shadow: 0 4px 16px rgba(91, 70, 55, 0.06);
+    }
+
+    .vide .emoji {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .vide p {
+      line-height: 1.5;
+      margin-bottom: 15px;
     }
 
     .reset {
-      width: 100%;
       border: none;
-      border-radius: 16px;
-      padding: 13px;
-      margin-top: 14px;
-      background: #f0e4da;
-      color: #5c5048;
+      background: #78936d;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 15px;
       cursor: pointer;
       font-weight: bold;
     }
 
+    /* NAVIGATION */
+
     .bottom-nav {
       position: fixed;
+      bottom: 0;
       left: 0;
       right: 0;
-      bottom: 0;
       height: 72px;
-      background: rgba(255,255,255,0.96);
-      border-top: 1px solid #eee2d8;
+      background: rgba(255, 250, 245, 0.97);
+      border-top: 1px solid #eadfd7;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      z-index: 10;
+      z-index: 100;
     }
 
     .bottom-nav a {
       text-decoration: none;
-      color: #81736a;
-      font-size: 12px;
+      color: #82736a;
+      font-size: 11px;
       text-align: center;
     }
 
-    .bottom-nav a.active {
-      color: #718b66;
-      font-weight: bold;
-    }
-
-    .nav-icon {
+    .bottom-nav a span {
       display: block;
-      font-size: 21px;
+      font-size: 22px;
       margin-bottom: 3px;
     }
+
+    .bottom-nav a.active {
+      color: #66805d;
+      font-weight: bold;
+    }
   </style>
+
 </head>
 
 <body>
 
+  <!-- HERO -->
+
   <header class="hero">
+    <a class="retour" href="../../index.html">← Accueil</a>
 
-    <div class="logo">🍽️</div>
+```
+<h1>🍽️ Mes recettes</h1>
 
-    <h1>Mes recettes</h1>
-
-    <p class="intro">
-      Des idées adaptées à vos envies, votre appétit,
-      votre organisation et votre parcours.
-    </p>
+<p>
+  Des idées simples, gourmandes et adaptées à votre façon de manger.
+</p>
+```
 
   </header>
 
+  <main class="contenu">
 
-  <main class="content">
+```
+<!-- CONTEXTE DU CHOIX DEPUIS L'ACCUEIL -->
 
-    <input
-      type="search"
-      id="search"
-      class="search"
-      placeholder="🔎 Rechercher une recette..."
-    >
-
-
-    <div class="categories">
-
-      <button class="category active" data-category="Toutes">
-        Toutes
-      </button>
-
-      <button class="category" data-category="Petit-déjeuner">
-        Petit-déjeuner
-      </button>
-
-      <button class="category" data-category="Déjeuner">
-        Déjeuner
-      </button>
-
-      <button class="category" data-category="Dîner">
-        Dîner
-      </button>
-
-      <button class="category" data-category="Collation">
-        Collation
-      </button>
-
-      <button class="category" data-category="Végétarien">
-        Végétarien
-      </button>
-
-      <button class="category" data-category="Salades">
-        Salades
-      </button>
-
-    </div>
+<div class="contexte" id="contexte">
+  <strong id="contexteTitre"></strong>
+  <span id="contexteTexte"></span>
+</div>
 
 
-    <div
-      id="textureBanner"
-      class="texture-banner"
-    ></div>
+<!-- RECHERCHE -->
+
+<div class="recherche">
+  <input
+    type="search"
+    id="recherche"
+    placeholder="🔎 Rechercher une recette..."
+  >
+</div>
 
 
-    <section class="filters">
+<!-- CATEGORIES -->
 
-      <div class="filters-title">
-        Affiner mes recettes
-      </div>
+<h2 class="titre-section">Quel repas ?</h2>
 
-      <div class="filter-grid">
+<div class="categories">
 
-        <label class="filter">
-          <input type="checkbox" id="petite">
-          Petite portion
-        </label>
+  <button class="categorie-btn active" data-categorie="Toutes">
+    Toutes
+  </button>
 
-        <label class="filter">
-          <input type="checkbox" id="vegetarien">
-          Végétarien
-        </label>
+  <button class="categorie-btn" data-categorie="Petit-déjeuner">
+    🌅 Petit-déjeuner
+  </button>
 
-        <label class="filter">
-          <input type="checkbox" id="batch">
-          Batch-cooking
-        </label>
+  <button class="categorie-btn" data-categorie="Déjeuner">
+    🥗 Déjeuner
+  </button>
 
-        <label class="filter">
-          <input type="checkbox" id="preop">
-          Pré-opératoire
-        </label>
+  <button class="categorie-btn" data-categorie="Dîner">
+    🍽️ Dîner
+  </button>
 
-        <label class="filter">
-          <input type="checkbox" id="postop">
-          Post-opératoire
-        </label>
+  <button class="categorie-btn" data-categorie="Collation">
+    🍎 Collation
+  </button>
 
-        <label class="filter">
-          <input type="checkbox" id="gluten">
-          Sans gluten
-        </label>
+  <button class="categorie-btn" data-categorie="Végétarien">
+    🥕 Végétarien
+  </button>
 
-      </div>
+  <button class="categorie-btn" data-categorie="Salades">
+    🥗 Salades
+  </button>
+
+</div>
 
 
-      <button
-        class="reset"
-        onclick="resetFilters()"
-      >
-        Réinitialiser les filtres
-      </button>
+<!-- FILTRES -->
 
-    </section>
+<h2 class="titre-section">Affiner mes recettes</h2>
+
+<div class="filtres">
+
+  <button class="filtre" data-filtre="petite">
+    🥄 Petite portion
+  </button>
+
+  <button class="filtre" data-filtre="vegetarien">
+    🥕 Végétarien
+  </button>
+
+  <button class="filtre" data-filtre="batch">
+    📦 Batch-cooking
+  </button>
+
+  <button class="filtre" data-filtre="pre">
+    🌿 Pré-opératoire
+  </button>
+
+  <button class="filtre" data-filtre="post">
+    🌸 Post-opératoire
+  </button>
+
+  <button class="filtre" data-filtre="gluten">
+    🌾 Sans gluten
+  </button>
+
+</div>
 
 
-    <div
-      id="count"
-      class="count"
-    ></div>
+<!-- RESULTATS -->
 
+<div class="resultats-header">
 
-    <div id="recipes"></div>
+  <h2>Mes recettes</h2>
+
+  <span id="compteur">0 recette</span>
+
+</div>
+
+<div id="listeRecettes" class="liste-recettes"></div>
+```
 
   </main>
 
+  <!-- NAVIGATION BASSE -->
 
   <nav class="bottom-nav">
 
-    <a href="../../index.html">
-      <span class="nav-icon">🏠</span>
-      Accueil
-    </a>
+```
+<a href="../../index.html">
+  <span>🏠</span>
+  Accueil
+</a>
 
-    <a
-      href="Recettes.html"
-      class="active"
-    >
-      <span class="nav-icon">🍴</span>
-      Recettes
-    </a>
+<a href="Recettes.html" class="active">
+  <span>🍽️</span>
+  Recettes
+</a>
 
-    <a href="Favoris.html">
-      <span class="nav-icon">❤️</span>
-      Favoris
-    </a>
+<a href="Favoris.html">
+  <span>❤️</span>
+  Favoris
+</a>
 
-    <a href="MonProfil.html">
-      <span class="nav-icon">👤</span>
-      Profil
-    </a>
+<a href="MonProfil.html">
+  <span>👤</span>
+  Profil
+</a>
+```
 
   </nav>
-
 
   <script>
 
     let recettes = [];
-
     let categorieActive = "Toutes";
+    let recherche = "";
 
-
-    /*
-      Lecture des paramètres envoyés par les autres écrans.
-    */
-
-    const params =
-      new URLSearchParams(
-        window.location.search
-      );
-
-
-    const modePetite =
-      params.get("petite") === "true";
-
-
-    const modeBatch =
-      params.get("batch") === "true";
-
-
-    const textureDemandee =
-      params.get("texture");
-
-
-    /*
-      Correspondance entre le nom utilisé dans l'URL
-      et le nom affiché à l'utilisateur.
-    */
-
-    const nomsTextures = {
-
-      liquide: "🥤 Texture liquide",
-
-      mixee: "🥣 Texture mixée",
-
-      mouline: "🍲 Texture moulinée",
-
-      tendre: "🍽️ Texture tendre",
-
-      petite: "🥄 Petite assiette"
-
+    const filtresActifs = {
+      petite: false,
+      vegetarien: false,
+      batch: false,
+      pre: false,
+      post: false,
+      gluten: false
     };
 
 
-    /*
-      Préactivation des filtres provenant
-      des autres écrans.
-    */
+    /* --------------------------------------------------
+       NORMALISATION
+    -------------------------------------------------- */
 
-    document.getElementById("petite").checked =
-      modePetite;
+    function normaliser(texte) {
 
-
-    document.getElementById("batch").checked =
-      modeBatch;
-
-
-    /*
-      Affichage du bandeau de contexte.
-    */
-
-    function afficherContexteTexture() {
-
-      const banner =
-        document.getElementById(
-          "textureBanner"
-        );
-
-
-      if (!textureDemandee) {
-
-        banner.style.display = "none";
-
-        return;
-
-      }
-
-
-      const texte =
-        nomsTextures[textureDemandee];
-
-
-      if (!texte) {
-
-        banner.style.display = "none";
-
-        return;
-
-      }
-
-
-      banner.innerHTML = `
-
-        <strong>${texte}</strong>
-
-        Les recettes affichées correspondent
-        à cette texture lorsqu'elle est renseignée
-        dans le catalogue.
-
-      `;
-
-
-      banner.style.display = "block";
+      return String(texte || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[-_]/g, " ")
+        .trim();
 
     }
 
 
-    afficherContexteTexture();
+    /* --------------------------------------------------
+       PARAMETRES URL
+    -------------------------------------------------- */
+
+    const params = new URLSearchParams(window.location.search);
+
+    const typeRepas = params.get("type");
+    const filtrePetite = params.get("petite");
+    const filtreBatch = params.get("batch");
+    const filtreTexture = params.get("texture");
 
 
-    /*
-      Chargement du catalogue.
-    */
+    /* --------------------------------------------------
+       CORRESPONDANCE TYPE REPAS
+    -------------------------------------------------- */
+
+    const correspondanceTypeRepas = {
+
+      "petit-dejeuner": "Petit-déjeuner",
+
+      "dejeuner": "Déjeuner",
+
+      "diner": "Dîner",
+
+      "collation": "Collation"
+
+    };
+
+
+    /* --------------------------------------------------
+       INITIALISATION DU TYPE DE REPAS
+    -------------------------------------------------- */
+
+    if (
+      typeRepas &&
+      typeRepas !== "peu-importe" &&
+      correspondanceTypeRepas[typeRepas]
+    ) {
+
+      categorieActive =
+        correspondanceTypeRepas[typeRepas];
+
+      afficherContexte(
+        correspondanceTypeRepas[typeRepas]
+      );
+
+    }
+
+
+    /* --------------------------------------------------
+       PETITE DOUCEUR
+    -------------------------------------------------- */
+
+    if (typeRepas === "petite-douceur") {
+
+      afficherContexte("Petite douceur");
+
+    }
+
+
+    /* --------------------------------------------------
+       PARAMETRES PETITE PORTION
+    -------------------------------------------------- */
+
+    if (filtrePetite === "true") {
+
+      filtresActifs.petite = true;
+
+      document
+        .querySelector('[data-filtre="petite"]')
+        .classList.add("active");
+
+    }
+
+
+    /* --------------------------------------------------
+       PARAMETRE BATCH-COOKING
+    -------------------------------------------------- */
+
+    if (filtreBatch === "true") {
+
+      filtresActifs.batch = true;
+
+      document
+        .querySelector('[data-filtre="batch"]')
+        .classList.add("active");
+
+    }
+
+
+    /* --------------------------------------------------
+       CONTEXTE
+    -------------------------------------------------- */
+
+    function afficherContexte(type) {
+
+      const bloc = document.getElementById("contexte");
+
+      const titre = document.getElementById("contexteTitre");
+
+      const texte = document.getElementById("contexteTexte");
+
+      bloc.style.display = "block";
+
+      titre.textContent =
+        "✨ Vous recherchez des recettes pour : " + type;
+
+      texte.textContent =
+        "Les recettes affichées correspondent à votre choix.";
+
+    }
+
+
+    /* --------------------------------------------------
+       ACTIVER LA BONNE CATEGORIE
+    -------------------------------------------------- */
+
+    document
+      .querySelectorAll(".categorie-btn")
+      .forEach(function(button) {
+
+        if (
+          normaliser(button.dataset.categorie) ===
+          normaliser(categorieActive)
+        ) {
+
+          document
+            .querySelectorAll(".categorie-btn")
+            .forEach(function(btn) {
+
+              btn.classList.remove("active");
+
+            });
+
+          button.classList.add("active");
+
+        }
+
+      });
+
+
+    /* --------------------------------------------------
+       CHARGEMENT DU JSON
+    -------------------------------------------------- */
 
     fetch("../recettes.json")
 
-      .then(response => {
+      .then(function(response) {
 
         if (!response.ok) {
+
           throw new Error(
             "Impossible de charger recettes.json"
           );
+
         }
 
         return response.json();
 
       })
 
-      .then(data => {
+      .then(function(data) {
 
-        recettes = data;
+        recettes = Array.isArray(data)
+          ? data
+          : [];
 
         afficherRecettes();
 
       })
 
-      .catch(error => {
+      .catch(function(error) {
 
         console.error(error);
 
         document.getElementById(
-          "recipes"
+          "listeRecettes"
         ).innerHTML = `
 
-          <div class="empty">
+          <div class="vide">
 
-            <div style="font-size:38px;">
-              ⚠️
-            </div>
-
-            <strong>
-              Oups...
-            </strong>
+            <div class="emoji">⚠️</div>
 
             <p>
-              Impossible de charger les recettes
-              pour le moment.
+              Impossible de charger les recettes.
+              Vérifiez que le fichier
+              <strong>recettes.json</strong>
+              est bien présent dans le dossier
+              <strong>src</strong>.
             </p>
 
           </div>
@@ -605,163 +700,155 @@
       });
 
 
-    /*
-      Normalisation d'un texte.
-      Permet de comparer :
-      mixée / mixee
-      moulinée / moulinee
-      etc.
-    */
+    /* --------------------------------------------------
+       CATEGORIES
+    -------------------------------------------------- */
 
-    function normaliserTexte(texte) {
+    document
+      .querySelectorAll(".categorie-btn")
+      .forEach(function(button) {
 
-      return String(texte || "")
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(
-          /[\u0300-\u036f]/g,
-          ""
-        )
-        .replace(
-          /[\s-]/g,
-          ""
-        );
+        button.addEventListener("click", function() {
 
-    }
+          categorieActive =
+            button.dataset.categorie;
 
+          document
+            .querySelectorAll(".categorie-btn")
+            .forEach(function(btn) {
 
-    /*
-      Vérification de la texture.
-    */
+              btn.classList.remove("active");
 
-    function correspondTexture(
-      recette,
-      textureRecherchee
-    ) {
+            });
 
-      if (!textureRecherchee) {
-        return true;
-      }
+          button.classList.add("active");
+
+          afficherRecettes();
+
+        });
+
+      });
 
 
-      /*
-        "petite" correspond à l'idée
-        de petite assiette / petit appétit.
-      */
+    /* --------------------------------------------------
+       FILTRES
+    -------------------------------------------------- */
 
-      if (
-        textureRecherchee === "petite"
-      ) {
+    document
+      .querySelectorAll(".filtre")
+      .forEach(function(button) {
 
-        return (
-          recette.petitAppetit === true
-        );
+        button.addEventListener("click", function() {
 
-      }
+          const filtre =
+            button.dataset.filtre;
 
+          filtresActifs[filtre] =
+            !filtresActifs[filtre];
 
-      const textureRecette =
-        normaliserTexte(
-          recette.texture
-        );
+          button.classList.toggle(
+            "active",
+            filtresActifs[filtre]
+          );
 
+          afficherRecettes();
 
-      const textureRechercheeNormalisee =
-        normaliserTexte(
-          textureRecherchee
-        );
+        });
 
-
-      /*
-        Pour le moment, une recette n'est
-        proposée que si sa texture est
-        explicitement renseignée.
-      */
-
-      return (
-        textureRecette ===
-        textureRechercheeNormalisee
-      );
-
-    }
+      });
 
 
-    function afficherRecettes() {
+    /* --------------------------------------------------
+       RECHERCHE
+    -------------------------------------------------- */
 
-      const recherche =
-        document.getElementById(
-          "search"
-        ).value
-          .toLowerCase()
-          .trim();
+    document
+      .getElementById("recherche")
+      .addEventListener("input", function(event) {
 
+        recherche =
+          normaliser(event.target.value);
 
-      const petite =
-        document.getElementById(
-          "petite"
-        ).checked;
+        afficherRecettes();
 
-
-      const vegetarien =
-        document.getElementById(
-          "vegetarien"
-        ).checked;
+      });
 
 
-      const batch =
-        document.getElementById(
-          "batch"
-        ).checked;
+    /* --------------------------------------------------
+       FILTRAGE
+    -------------------------------------------------- */
 
+    function filtrerRecettes() {
 
-      const preop =
-        document.getElementById(
-          "preop"
-        ).checked;
+      return recettes.filter(function(recette) {
 
+        /* CATEGORIE */
 
-      const postop =
-        document.getElementById(
-          "postop"
-        ).checked;
+        if (categorieActive !== "Toutes") {
 
+          const categorieRecette =
+            normaliser(recette.categorie);
 
-      const gluten =
-        document.getElementById(
-          "gluten"
-        ).checked;
-
-
-      let resultat =
-        recettes.filter(recette => {
-
+          const categorieChoisie =
+            normaliser(categorieActive);
 
           /*
-            Recherche
+             Cas normal :
+             Petit-déjeuner = Petit-déjeuner
+             Déjeuner = Déjeuner
+             Dîner = Dîner
+             Collation = Collation
           */
 
-          if (recherche) {
+          if (
+            categorieRecette !==
+            categorieChoisie
+          ) {
 
-            const texte = [
+            /*
+              Cas spécial :
+              Petite douceur
 
-              recette.nom,
-
-              recette.categorie,
-
-              recette.type,
-
-              ...(recette.ingredients || [])
-
-            ]
-              .join(" ")
-              .toLowerCase();
-
+              On recherche les recettes sucrées
+              même si elles appartiennent à une
+              autre catégorie.
+            */
 
             if (
-              !texte.includes(
-                recherche
-              )
+              typeRepas === "petite-douceur"
             ) {
+
+              const texte = normaliser(
+
+                (recette.nom || "") +
+                " " +
+                (recette.type || "") +
+                " " +
+                (recette.categorie || "")
+
+              );
+
+              const envies =
+                Array.isArray(recette.envies)
+                  ? recette.envies.map(normaliser)
+                  : [];
+
+              const sucre =
+                envies.includes("sucre") ||
+                texte.includes("dessert") ||
+                texte.includes("douceur") ||
+                texte.includes("gateau") ||
+                texte.includes("compote") ||
+                texte.includes("yaourt") ||
+                texte.includes("pancake");
+
+              if (!sucre) {
+
+                return false;
+
+              }
+
+            } else {
 
               return false;
 
@@ -769,91 +856,33 @@
 
           }
 
-
-          /*
-            Catégorie
-          */
-
-          if (
-            categorieActive !==
-            "Toutes"
-          ) {
-
-            if (
-              categorieActive ===
-              "Végétarien"
-            ) {
-
-              if (
-                recette.vegetarien !== true
-              ) {
-
-                return false;
-
-              }
-
-            }
-
-            else if (
-              categorieActive ===
-              "Salades"
-            ) {
-
-              const texte = `
-
-                ${recette.nom || ""}
-
-                ${recette.categorie || ""}
-
-                ${recette.type || ""}
-
-              `.toLowerCase();
+        }
 
 
-              if (
-                !texte.includes(
-                  "salade"
-                )
-              ) {
+        /* RECHERCHE */
 
-                return false;
+        if (recherche) {
 
-              }
+          const texteRecherche =
+            normaliser(
 
-            }
+              (recette.nom || "") +
+              " " +
+              (recette.categorie || "") +
+              " " +
+              (recette.type || "") +
+              " " +
+              (
+                Array.isArray(recette.envies)
+                  ? recette.envies.join(" ")
+                  : ""
+              )
 
-            else {
-
-              const categorie =
-                (
-                  recette.categorie ||
-                  ""
-                ).toLowerCase();
-
-
-              if (
-                !categorie.includes(
-                  categorieActive.toLowerCase()
-                )
-              ) {
-
-                return false;
-
-              }
-
-            }
-
-          }
-
-
-          /*
-            TEXTURE POST-OPÉRATOIRE
-          */
+            );
 
           if (
-            !correspondTexture(
-              recette,
-              textureDemandee
+            !texteRecherche.includes(
+              recherche
             )
           ) {
 
@@ -861,147 +890,164 @@
 
           }
 
+        }
 
-          /*
-            Petite portion
-          */
+
+        /* PETITE PORTION */
+
+        if (filtresActifs.petite) {
 
           if (
-            petite &&
-            recette.petitAppetit !== true
+            !recette.petitAppetit &&
+            !recette.portion &&
+            !recette.quantites?.petite
           ) {
 
             return false;
 
           }
 
+        }
 
-          /*
-            Végétarien
-          */
+
+        /* VEGETARIEN */
+
+        if (filtresActifs.vegetarien) {
+
+          if (!recette.vegetarien) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* BATCH-COOKING */
+
+        if (filtresActifs.batch) {
+
+          if (!recette.batchCooking) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* PRE-OPERATOIRE */
+
+        if (filtresActifs.pre) {
+
+          if (!recette.preOperatoire) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* POST-OPERATOIRE */
+
+        if (filtresActifs.post) {
+
+          if (!recette.postOperatoire) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* SANS GLUTEN */
+
+        if (filtresActifs.gluten) {
+
+          if (!recette.sansGluten) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* TEXTURE */
+
+        if (filtreTexture) {
+
+          const textureRecette =
+            normaliser(recette.texture);
+
+          const textureDemandee =
+            normaliser(filtreTexture);
 
           if (
-            vegetarien &&
-            recette.vegetarien !== true
+            textureRecette !==
+            textureDemandee
           ) {
 
             return false;
 
           }
 
-
-          /*
-            Batch-cooking
-          */
-
-          if (
-            batch &&
-            recette.batchCooking !== true
-          ) {
-
-            return false;
-
-          }
+        }
 
 
-          /*
-            Pré-opératoire
-          */
+        return true;
 
-          if (
-            preop &&
-            recette.preOperatoire !== true
-          ) {
+      });
 
-            return false;
-
-          }
+    }
 
 
-          /*
-            Post-opératoire
-          */
+    /* --------------------------------------------------
+       AFFICHAGE
+    -------------------------------------------------- */
 
-          if (
-            postop &&
-            recette.postOperatoire !== true
-          ) {
+    function afficherRecettes() {
 
-            return false;
+      const liste =
+        document.getElementById(
+          "listeRecettes"
+        );
 
-          }
-
-
-          /*
-            Sans gluten
-          */
-
-          if (
-            gluten &&
-            recette.sansGluten !== true
-          ) {
-
-            return false;
-
-          }
-
-
-          return true;
-
-        });
-
-
-      /*
-        Compteur
-      */
+      const resultat =
+        filtrerRecettes();
 
       document.getElementById(
-        "count"
+        "compteur"
       ).textContent =
-
         resultat.length +
         (
           resultat.length > 1
-            ? " recettes trouvées"
-            : " recette trouvée"
+            ? " recettes"
+            : " recette"
         );
 
 
-      const container =
-        document.getElementById(
-          "recipes"
-        );
+      if (resultat.length === 0) {
 
+        liste.innerHTML = `
 
-      /*
-        Aucune recette
-      */
+          <div class="vide">
 
-      if (
-        resultat.length === 0
-      ) {
-
-        container.innerHTML = `
-
-          <div class="empty">
-
-            <div style="font-size:38px;">
-              🥄
-            </div>
-
-            <strong>
-              Aucune recette trouvée
-            </strong>
+            <div class="emoji">🥄</div>
 
             <p>
-              Cette texture n'a pas encore
-              de recette dans notre catalogue.
+              Aucune recette ne correspond
+              à vos critères pour le moment.
             </p>
 
-            <p>
-              Nous allons progressivement
-              enrichir cette rubrique.
-            </p>
+            <button
+              class="reset"
+              onclick="reinitialiser()"
+            >
+              Voir toutes les recettes
+            </button>
 
           </div>
 
@@ -1012,274 +1058,169 @@
       }
 
 
-      /*
-        Affichage des recettes
-      */
-
-      container.innerHTML =
-
+      liste.innerHTML =
         resultat
-          .map(recette => {
-
-
-            const favoris =
-              JSON.parse(
-                localStorage.getItem(
-                  "favoris"
-                ) || "[]"
-              );
-
-
-            const estFavori =
-              favoris.includes(
-                recette.id
-              );
-
-
-            return `
-
-              <article
-                class="recipe-card"
-                onclick="
-                  ouvrirRecette(
-                    '${recette.id}'
-                  )
-                "
-              >
-
-                <button
-                  class="favorite"
-                  onclick="
-                    toggleFavori(
-                      event,
-                      '${recette.id}'
-                    )
-                  "
-                  aria-label="
-                    Ajouter aux favoris
-                  "
-                >
-
-                  ${
-                    estFavori
-                      ? "❤️"
-                      : "♡"
-                  }
-
-                </button>
-
-
-                <div class="recipe-top">
-
-                  <div class="recipe-icon">
-
-                    ${iconeRecette(recette)}
-
-                  </div>
-
-
-                  <div class="recipe-category">
-
-                    ${
-                      recette.categorie ||
-                      "Recette"
-                    }
-
-                  </div>
-
-                </div>
-
-
-                <div class="recipe-name">
-
-                  ${recette.nom}
-
-                </div>
-
-
-                <div class="recipe-meta">
-
-                  <span class="badge">
-
-                    ⏱️
-                    ${recette.temps || "-"}
-                    min
-
-                  </span>
-
-
-                  <span class="badge">
-
-                    🥄
-                    ${recette.portion || "-"}
-
-                  </span>
-
-
-                  <span class="badge">
-
-                    💪
-                    ${recette.proteines || 0}
-                    g protéines
-
-                  </span>
-
-
-                  ${
-                    recette.texture
-                      ? `
-                        <span class="badge texture">
-
-                          🥣
-                          ${recette.texture}
-
-                        </span>
-                      `
-                      : ""
-                  }
-
-
-                  ${
-                    recette.batchCooking
-                      ? `
-                        <span class="badge batch">
-
-                          📦 Batch-cooking
-
-                        </span>
-                      `
-                      : ""
-                  }
-
-                </div>
-
-              </article>
-
-            `;
-
-          })
+          .map(creerCarteRecette)
           .join("");
 
     }
 
 
-    /*
-      Icône selon le type de recette.
-    */
+    /* --------------------------------------------------
+       CARTE RECETTE
+    -------------------------------------------------- */
 
-    function iconeRecette(
-      recette
-    ) {
+    function creerCarteRecette(recette) {
 
-      const categorie = `
+      const favoris =
+        JSON.parse(
+          localStorage.getItem("favoris") || "[]"
+        );
 
-        ${recette.categorie || ""}
-
-        ${recette.type || ""}
-
-      `.toLowerCase();
+      const estFavori =
+        favoris.includes(recette.id);
 
 
-      if (
-        categorie.includes("petit") ||
-        categorie.includes("matin")
-      ) {
-
-        return "🥣";
-
-      }
+      let badges = "";
 
 
-      if (
-        categorie.includes("collation")
-      ) {
+      if (recette.petitAppetit) {
 
-        return "🍎";
+        badges +=
+          '<span class="badge">🥄 Petite assiette</span>';
 
       }
 
 
-      if (
-        recette.vegetarien === true
-      ) {
+      if (recette.batchCooking) {
 
-        return "🥕";
-
-      }
-
-
-      if (
-        categorie.includes("salade")
-      ) {
-
-        return "🥗";
+        badges +=
+          '<span class="badge">📦 Batch-cooking</span>';
 
       }
 
 
-      if (
-        categorie.includes("poisson") ||
-        categorie.includes("saumon") ||
-        categorie.includes("thon")
-      ) {
+      if (recette.vegetarien) {
 
-        return "🐟";
+        badges +=
+          '<span class="badge">🥕 Végétarien</span>';
 
       }
 
 
-      return "🍽️";
+      if (recette.preOperatoire) {
+
+        badges +=
+          '<span class="badge">🌿 Pré-op</span>';
+
+      }
+
+
+      if (recette.postOperatoire) {
+
+        badges +=
+          '<span class="badge peche">🌸 Post-op</span>';
+
+      }
+
+
+      return `
+
+        <article class="recette-card">
+
+          <div class="recette-card-top">
+
+            <div>
+
+              <h3>
+                ${recette.nom || "Recette"}
+              </h3>
+
+              <div class="recette-meta">
+
+                ${recette.categorie || ""}
+
+                ${recette.temps
+                  ? " · ⏱️ " + recette.temps + " min"
+                  : ""}
+
+                ${recette.proteines
+                  ? " · 💪 " + recette.proteines + " g protéines"
+                  : ""}
+
+              </div>
+
+            </div>
+
+            <button
+              class="favori ${estFavori ? "active" : ""}"
+              onclick="toggleFavori('${recette.id}', event)"
+              aria-label="Ajouter aux favoris"
+            >
+              ${estFavori ? "❤️" : "♡"}
+            </button>
+
+          </div>
+
+
+          <div class="badges">
+
+            ${badges}
+
+          </div>
+
+
+          <button
+            class="ouvrir"
+            onclick="ouvrirRecette('${recette.id}')"
+          >
+            Voir la recette →
+          </button>
+
+        </article>
+
+      `;
 
     }
 
 
-    /*
-      Ouverture d'une fiche recette.
-    */
+    /* --------------------------------------------------
+       OUVRIR UNE RECETTE
+    -------------------------------------------------- */
 
-    function ouvrirRecette(
-      id
-    ) {
+    function ouvrirRecette(id) {
 
       window.location.href =
-        `Recette.html?id=${encodeURIComponent(id)}`;
+        "Recette.html?id=" +
+        encodeURIComponent(id);
 
     }
 
 
-    /*
-      Gestion des favoris.
-    */
+    /* --------------------------------------------------
+       FAVORIS
+    -------------------------------------------------- */
 
-    function toggleFavori(
-      event,
-      id
-    ) {
+    function toggleFavori(id, event) {
 
       event.stopPropagation();
 
-
       let favoris =
         JSON.parse(
-          localStorage.getItem(
-            "favoris"
-          ) || "[]"
+          localStorage.getItem("favoris") || "[]"
         );
 
 
-      if (
-        favoris.includes(id)
-      ) {
+      if (favoris.includes(id)) {
 
         favoris =
-          favoris.filter(
-            favori =>
-              favori !== id
-          );
+          favoris.filter(function(item) {
 
-      }
+            return item !== id;
 
-      else {
+          });
+
+      } else {
 
         favoris.push(id);
 
@@ -1288,9 +1229,7 @@
 
       localStorage.setItem(
         "favoris",
-        JSON.stringify(
-          favoris
-        )
+        JSON.stringify(favoris)
       );
 
 
@@ -1299,160 +1238,58 @@
     }
 
 
-    /*
-      Réinitialisation.
-    */
+    /* --------------------------------------------------
+       REINITIALISER
+    -------------------------------------------------- */
 
-    function resetFilters() {
+    function reinitialiser() {
+
+      categorieActive = "Toutes";
+
+      recherche = "";
+
 
       document.getElementById(
-        "search"
+        "recherche"
       ).value = "";
 
 
-      document.getElementById(
-        "petite"
-      ).checked = false;
+      Object.keys(filtresActifs)
+        .forEach(function(cle) {
 
+          filtresActifs[cle] = false;
 
-      document.getElementById(
-        "vegetarien"
-      ).checked = false;
-
-
-      document.getElementById(
-        "batch"
-      ).checked = false;
-
-
-      document.getElementById(
-        "preop"
-      ).checked = false;
-
-
-      document.getElementById(
-        "postop"
-      ).checked = false;
-
-
-      document.getElementById(
-        "gluten"
-      ).checked = false;
-
-
-      categorieActive =
-        "Toutes";
+        });
 
 
       document
-        .querySelectorAll(
-          ".category"
-        )
-        .forEach(button => {
+        .querySelectorAll(".filtre")
+        .forEach(function(button) {
 
-          button.classList.remove(
-            "active"
-          );
+          button.classList.remove("active");
+
+        });
+
+
+      document
+        .querySelectorAll(".categorie-btn")
+        .forEach(function(button) {
+
+          button.classList.remove("active");
 
         });
 
 
       document
         .querySelector(
-          '.category[data-category="Toutes"]'
+          '[data-categorie="Toutes"]'
         )
-        .classList.add(
-          "active"
-        );
+        .classList.add("active");
 
-
-      /*
-        Le paramètre texture reste volontairement
-        actif lorsqu'on vient du parcours
-        post-opératoire.
-      */
 
       afficherRecettes();
 
     }
-
-
-    /*
-      Catégories.
-    */
-
-    document
-      .querySelectorAll(
-        ".category"
-      )
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            categorieActive =
-              button.dataset.category;
-
-
-            document
-              .querySelectorAll(
-                ".category"
-              )
-              .forEach(btn => {
-
-                btn.classList.remove(
-                  "active"
-                );
-
-              });
-
-
-            button.classList.add(
-              "active"
-            );
-
-
-            afficherRecettes();
-
-          }
-        );
-
-      });
-
-
-    /*
-      Recherche.
-    */
-
-    document
-      .getElementById(
-        "search"
-      )
-      .addEventListener(
-        "input",
-        afficherRecettes
-      );
-
-
-    /*
-      Filtres.
-    */
-
-    document
-      .querySelectorAll(
-        "#petite, #vegetarien, #batch, #preop, #postop, #gluten"
-      )
-      .forEach(
-        checkbox => {
-
-          checkbox.addEventListener(
-            "change",
-            afficherRecettes
-          );
-
-        }
-      );
 
   </script>
 
