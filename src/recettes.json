@@ -3231,5 +3231,73 @@
       "Assembler les ingrédients.",
       "Écraser légèrement si nécessaire pour obtenir une texture tendre."
     ]
-  }
-]
+  },
+    {
+    "id": "REC081",
+    "nom": "Poulet fondant à la patate douce",
+    "categorie": "Déjeuner",
+    "type": "Plat",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 22,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions familiales",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": true,
+    "batchCookingDetail": "Peut être préparé à l'avance et conservé en portions individuelles.",
+    "conservation": "2 jours au réfrigérateur",
+    "congelation": "Oui, en portions individuelles",
+    "envies": [
+      "complet",
+      "leger",
+      "rapide"
+    ],
+    "texture": "tendre",
+    "ingredients": [
+      "120 g de blanc de poulet",
+      "200 g de patate douce",
+      "1 petite courgette",
+      "1 cuillère à café d'huile d'olive",
+      "2 cuillères à soupe de fromage blanc",
+      "Sel et épices douces selon les goûts"
+    ],
+    "preparation": [
+      "Éplucher la patate douce et la couper en petits morceaux.",
+      "Cuire la patate douce et la courgette jusqu'à ce qu'elles soient bien fondantes.",
+      "Cuire le poulet à feu doux jusqu'à ce qu'il soit tendre.",
+      "Écraser grossièrement la patate douce avec le fromage blanc.",
+      "Ajouter la courgette et le poulet coupé en petits morceaux.",
+      "Ajouter une petite quantité d'huile d'olive et assaisonner avec des épices douces.",
+      "Servir dans une petite assiette en adaptant la quantité à son appétit."
+    ],
+    "quantites": {
+      "petite": {
+        "Poulet": "60 g",
+        "Patate douce": "100 g",
+        "Courgette": "50 g",
+        "Huile d'olive": "1/2 cuillère à café",
+        "Fromage blanc": "1 cuillère à soupe"
+      },
+      "famille2": {
+        "Poulet": "120 g",
+        "Patate douce": "200 g",
+        "Courgette": "1 petite",
+        "Huile d'olive": "1 cuillère à café",
+        "Fromage blanc": "2 cuillères à soupe"
+      },
+      "famille4": {
+        "Poulet": "240 g",
+        "Patate douce": "400 g",
+        "Courgette": "2 petites",
+        "Huile d'olive": "2 cuillères à café",
+        "Fromage blanc": "4 cuillères à soupe"
+      }
+    }
+  ]
