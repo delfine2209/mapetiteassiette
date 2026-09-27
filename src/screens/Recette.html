@@ -6,8 +6,9 @@
 
   <title>Recette - Ma Petite Assiette</title>
 
-  <style>
+  <link rel="stylesheet" href="../style.css">
 
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -16,7 +17,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: #fffaf5;
-      color: #4d4038;
+      color: #4b4039;
     }
 
     .page {
@@ -25,79 +26,51 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #f6d9c8, #dce8d7);
-      padding: 25px 20px 30px;
+      padding: 28px 20px 30px;
+      background: linear-gradient(
+        135deg,
+        #f8d8c7,
+        #f4e5c8,
+        #dce8d5
+      );
       border-radius: 0 0 30px 30px;
     }
 
     .back {
       display: inline-block;
+      margin-bottom: 20px;
+      color: #5f7553;
       text-decoration: none;
-      color: #66574e;
-      font-size: 14px;
-      margin-bottom: 18px;
+      font-weight: 600;
     }
 
     .logo {
       width: 58px;
       height: 58px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.75);
       display: flex;
       align-items: center;
       justify-content: center;
+      background: rgba(255,255,255,.7);
+      border-radius: 18px;
       font-size: 30px;
       margin-bottom: 15px;
     }
 
-    h1 {
+    .hero h1 {
       margin: 0 0 8px;
       font-size: 28px;
       line-height: 1.15;
-      color: #3f5145;
     }
 
-    .categorie {
-      font-size: 14px;
-      color: #6e625a;
+    .hero p {
+      margin: 0;
+      line-height: 1.5;
     }
 
-    main {
+    .content {
       padding: 20px 16px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .info-card {
-      background: white;
-      border-radius: 18px;
-      padding: 14px 8px;
-      text-align: center;
-      box-shadow: 0 4px 14px rgba(90, 70, 55, 0.08);
-    }
-
-    .info-icon {
-      font-size: 22px;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .info-label {
-      display: block;
-      font-size: 11px;
-      color: #8a7c73;
-      margin-bottom: 3px;
-    }
-
-    .info-value {
-      font-weight: bold;
-      font-size: 13px;
-      color: #4f6355;
+      max-width: 700px;
+      margin: auto;
     }
 
     .card {
@@ -105,32 +78,62 @@
       border-radius: 22px;
       padding: 20px;
       margin-bottom: 16px;
-      box-shadow: 0 5px 18px rgba(90, 70, 55, 0.08);
+      box-shadow: 0 5px 20px rgba(90,70,50,.07);
     }
 
-    .card h2 {
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 20px;
+      background: #f5eee7;
+      font-size: 13px;
+    }
+
+    .badge.green {
+      background: #e4efdf;
+      color: #55704d;
+    }
+
+    .badge.peach {
+      background: #fae3d7;
+      color: #805c4d;
+    }
+
+    .section-title {
       margin: 0 0 15px;
-      font-size: 20px;
-      color: #4f6355;
+      font-size: 21px;
+      color: #51453e;
     }
 
-    /* QUANTITES */
+    /* SELECTEUR DE QUANTITES */
 
     .quantity-card {
-      background: linear-gradient(135deg, #fff5ed, #f1f7ee);
-      border: 1px solid #eaded4;
+      background: linear-gradient(
+        135deg,
+        #fff8f1,
+        #f7f3e9
+      );
+      border: 1px solid #eee2d5;
     }
 
     .quantity-intro {
-      margin: -5px 0 15px;
-      font-size: 13px;
-      color: #786b63;
+      margin: -5px 0 16px;
+      color: #756961;
+      font-size: 14px;
       line-height: 1.5;
     }
 
     .quantity-options {
       display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
     }
 
     .quantity-option {
@@ -145,99 +148,101 @@
 
     .quantity-option label {
       display: block;
-      padding: 14px 15px;
-      background: white;
-      border: 2px solid #eadfd6;
+      padding: 13px 7px;
+      text-align: center;
+      border: 2px solid #eadfd5;
       border-radius: 16px;
+      background: white;
       cursor: pointer;
-      font-weight: 600;
-      color: #5b5049;
+      font-size: 13px;
+      line-height: 1.35;
+      transition: .2s;
+    }
+
+    .quantity-option label span {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 5px;
     }
 
     .quantity-option input:checked + label {
-      border-color: #78927d;
-      background: #eef5ed;
-      color: #405846;
+      border-color: #8ba17e;
+      background: #edf4e9;
+      color: #50684a;
+      font-weight: 600;
     }
 
-    /* INGREDIENTS */
+    .quantity-info {
+      margin-top: 15px;
+      padding: 12px 14px;
+      background: #fff;
+      border-radius: 14px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #6e625a;
+    }
 
-    .ingredient-list,
-    .preparation-list {
+    .ingredient-list {
       margin: 0;
       padding-left: 20px;
     }
 
-    .ingredient-list li,
-    .preparation-list li {
+    .ingredient-list li {
       margin-bottom: 10px;
+      line-height: 1.45;
+    }
+
+    .preparation-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .preparation-list li {
+      margin-bottom: 13px;
       line-height: 1.5;
-      font-size: 14px;
     }
-
-    /* BADGES */
-
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 11px;
-      border-radius: 20px;
-      background: #eef5ed;
-      color: #506653;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .badge.peach {
-      background: #fff0e6;
-      color: #8b6651;
-    }
-
-    /* FAVORIS */
 
     .favorite-button {
       width: 100%;
       border: none;
       border-radius: 18px;
       padding: 15px;
-      background: #78927d;
-      color: white;
-      font-size: 15px;
-      font-weight: bold;
+      font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
-      margin-bottom: 16px;
+      background: #f3dfd3;
+      color: #6b5146;
+      margin-top: 5px;
     }
 
     .favorite-button.active {
-      background: #d98772;
+      background: #e8efdf;
+      color: #55704d;
     }
 
-    /* NOTES */
-
-    .note {
-      background: #fff5ed;
-      border-radius: 18px;
-      padding: 15px;
+    .notice {
+      padding: 14px 16px;
+      background: #fff4df;
+      border-radius: 16px;
       font-size: 13px;
       line-height: 1.5;
-      color: #75665c;
+      color: #6c5b49;
     }
-
-    /* ERREUR */
 
     .empty {
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
-    .empty-icon {
-      font-size: 42px;
-      margin-bottom: 10px;
+    .empty a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 13px 18px;
+      border-radius: 16px;
+      background: #dfead9;
+      color: #50684a;
+      text-decoration: none;
+      font-weight: 600;
     }
 
     /* NAVIGATION */
@@ -248,48 +253,43 @@
       left: 0;
       right: 0;
       height: 72px;
-      background: rgba(255,255,255,0.97);
-      border-top: 1px solid #eadfd6;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      background: rgba(255,255,255,.96);
+      border-top: 1px solid #eee5dd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
       z-index: 100;
-      box-shadow: 0 -4px 15px rgba(80,60,45,0.08);
     }
 
     .bottom-nav a {
       text-decoration: none;
-      color: #80736a;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-size: 11px;
-      gap: 4px;
+      color: #82766e;
+      text-align: center;
+      font-size: 12px;
     }
 
     .bottom-nav a span {
-      font-size: 21px;
+      display: block;
+      font-size: 22px;
+      margin-bottom: 2px;
     }
 
     .bottom-nav a.active {
-      color: #536b59;
-      font-weight: bold;
+      color: #5c7552;
+      font-weight: 700;
     }
 
-    @media (min-width: 700px) {
-
-      main {
-        max-width: 650px;
-        margin: auto;
+    @media (max-width: 380px) {
+      .quantity-options {
+        gap: 5px;
       }
 
-      .hero {
-        padding-left: calc((100% - 650px) / 2 + 20px);
-        padding-right: calc((100% - 650px) / 2 + 20px);
+      .quantity-option label {
+        font-size: 12px;
+        padding-left: 4px;
+        padding-right: 4px;
       }
-
     }
-
   </style>
 </head>
 
@@ -297,50 +297,15 @@
 
 <div class="page">
 
-  <header class="hero">
-
-    <a href="Recettes.html" class="back">
-      ← Retour aux recettes
-    </a>
-
-    <div class="logo">
-      🍽️
+  <div id="app">
+    <div class="empty">
+      <p>Chargement de la recette…</p>
     </div>
-
-    <h1 id="recipeName">
-      Ma Petite Assiette
-    </h1>
-
-    <div class="categorie" id="recipeCategory"></div>
-
-  </header>
-
-
-  <main>
-
-    <div id="recipeContent">
-
-      <div class="empty">
-
-        <div class="empty-icon">
-          🍽️
-        </div>
-
-        <p>
-          Chargement de la recette...
-        </p>
-
-      </div>
-
-    </div>
-
-  </main>
+  </div>
 
 </div>
 
-
 <nav class="bottom-nav">
-
   <a href="../../index.html">
     <span>🏠</span>
     Accueil
@@ -360,915 +325,1049 @@
     <span>👤</span>
     Profil
   </a>
-
 </nav>
 
 
 <script>
 
-  const params = new URLSearchParams(window.location.search);
+  /* =========================================================
+     PARAMETRES
+  ========================================================= */
 
+  const params = new URLSearchParams(window.location.search);
   const recetteId = params.get("id");
 
-  let recetteCourante = null;
+  let recetteActuelle = null;
+  let modeQuantiteActuel = "petite";
 
-  let quantiteSelectionnee = null;
 
+  /* =========================================================
+     OUTILS
+  ========================================================= */
 
-  /* =====================================================
-     NOM DE LA QUANTITE
-  ===================================================== */
-
-  function nomQuantite(cle) {
-
-    const noms = {
-
-      petite: "🥄 Petite portion",
-
-      famille2: "👤 2 personnes",
-
-      famille4: "👨‍👩‍👧‍👦 4 personnes"
-
-    };
-
-    return noms[cle] || "";
-
+  function normaliserTexte(texte) {
+    return String(texte || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
   }
 
 
-  /* =====================================================
-     MODE PAR DEFAUT
-  ===================================================== */
+  /*
+   * Transforme une quantité écrite sous forme :
+   *
+   * 120
+   * 1/2
+   * 1,5
+   * 1 1/2
+   *
+   * en nombre.
+   */
+  function convertirNombre(texte) {
 
-  function modeInitial(recette) {
-
-    if (!recette.quantites) {
-
+    if (!texte) {
       return null;
-
     }
 
-    const mode = localStorage.getItem("modePortion");
+    let valeur = String(texte)
+      .trim()
+      .replace(",", ".");
 
+    // Fraction simple : 1/2
+    if (/^\d+\s*\/\s*\d+$/.test(valeur)) {
 
-    if (mode === "famille") {
+      const morceaux = valeur.split("/");
 
-      return "famille2";
-
+      return (
+        Number(morceaux[0].trim()) /
+        Number(morceaux[1].trim())
+      );
     }
 
+    // Nombre mixte : 1 1/2
+    const mixte = valeur.match(
+      /^(\d+(?:\.\d+)?)\s+(\d+)\s*\/\s*(\d+)$/
+    );
 
-    if (mode === "petite") {
+    if (mixte) {
 
-      return "petite";
-
+      return (
+        Number(mixte[1]) +
+        Number(mixte[2]) / Number(mixte[3])
+      );
     }
 
+    const nombre = Number(valeur);
 
-    if (mode === "mixte") {
-
-      return "petite";
-
-    }
-
-
-    return "petite";
-
+    return Number.isFinite(nombre)
+      ? nombre
+      : null;
   }
 
 
-  /* =====================================================
-     AFFICHER LES INGREDIENTS
-  ===================================================== */
+  /*
+   * Transforme 0.5 en 1/2 lorsque c'est plus lisible.
+   */
+  function afficherNombre(nombre) {
+
+    if (Math.abs(nombre - 0.5) < 0.001) {
+      return "1/2";
+    }
+
+    if (Math.abs(nombre - 0.25) < 0.001) {
+      return "1/4";
+    }
+
+    if (Math.abs(nombre - 0.75) < 0.001) {
+      return "3/4";
+    }
+
+    if (Math.abs(nombre - 1.5) < 0.001) {
+      return "1 1/2";
+    }
+
+    if (Math.abs(nombre - 2.5) < 0.001) {
+      return "2 1/2";
+    }
+
+    if (Number.isInteger(nombre)) {
+      return String(nombre);
+    }
+
+    return nombre
+      .toFixed(2)
+      .replace(/0+$/, "")
+      .replace(/\.$/, "")
+      .replace(".", ",");
+  }
+
+
+  /*
+   * Arrondit intelligemment les quantités.
+   *
+   * Les grammes / ml peuvent rester entiers.
+   * Les cuillères peuvent accepter des demi-unités.
+   */
+  function arrondirQuantite(nombre, unite) {
+
+    const u = normaliserTexte(unite);
+
+    if (
+      u.includes("g") ||
+      u.includes("ml") ||
+      u.includes("kg") ||
+      u.includes("cl")
+    ) {
+      return Math.round(nombre);
+    }
+
+    return Math.round(nombre * 4) / 4;
+  }
+
+
+  /* =========================================================
+     CALCUL AUTOMATIQUE
+  ========================================================= */
+
+  function calculerIngredient(ingredient, facteur) {
+
+    if (!ingredient || facteur === 1) {
+      return ingredient;
+    }
+
+    const texte = String(ingredient).trim();
+
+    /*
+     * On cherche une quantité uniquement au début
+     * de l'ingrédient.
+     *
+     * Exemples pris en charge :
+     *
+     * 120 g de poulet
+     * 2 courgettes
+     * 1/2 oignon
+     * 1,5 cuillère à soupe d'huile
+     * 1 petite courgette
+     */
+
+    const match = texte.match(
+      /^(\d+(?:[,.]\d+)?|\d+\s*\/\s*\d+|\d+\s+\d+\s*\/\s*\d+)(\s*)(.*)$/i
+    );
+
+    if (!match) {
+      return ingredient;
+    }
+
+    const valeurInitiale = convertirNombre(match[1]);
+
+    if (valeurInitiale === null) {
+      return ingredient;
+    }
+
+    const reste = match[3] || "";
+
+    /*
+     * Pour les quantités alimentaires très petites,
+     * on évite de produire 0.
+     */
+    let nouvelleValeur =
+      valeurInitiale * facteur;
+
+    nouvelleValeur =
+      arrondirQuantite(
+        nouvelleValeur,
+        reste
+      );
+
+    if (nouvelleValeur <= 0) {
+      nouvelleValeur = 0.25;
+    }
+
+    return afficherNombre(nouvelleValeur) +
+      " " +
+      reste;
+  }
+
+
+  /*
+   * Calcule le facteur en fonction du nombre de portions
+   * de la recette.
+   *
+   * Petite portion = 1 portion
+   * Famille = 2 portions
+   * Famille = 4 portions
+   */
+  function obtenirFacteur(mode) {
+
+    const portionsBase =
+      Number(recetteActuelle.portions) || 2;
+
+    let portionsCible = 1;
+
+    if (mode === "famille2") {
+      portionsCible = 2;
+    }
+
+    if (mode === "famille4") {
+      portionsCible = 4;
+    }
+
+    return portionsCible / portionsBase;
+  }
+
+
+  /* =========================================================
+     QUANTITES PREDEFINIES
+  ========================================================= */
+
+  function obtenirQuantitesPredefinies(mode) {
+
+    if (
+      !recetteActuelle.quantites ||
+      !recetteActuelle.quantites[mode]
+    ) {
+      return null;
+    }
+
+    return recetteActuelle.quantites[mode];
+  }
+
+
+  /*
+   * Transforme les quantités explicites du JSON
+   * en liste HTML.
+   */
+  function afficherQuantitesPredefinies(mode) {
+
+    const quantites =
+      obtenirQuantitesPredefinies(mode);
+
+    if (!quantites) {
+      return null;
+    }
+
+    const liste = [];
+
+    Object.entries(quantites).forEach(
+      ([nom, quantite]) => {
+
+        liste.push(
+          `<li><strong>${nom}</strong> : ${quantite}</li>`
+        );
+
+      }
+    );
+
+    return liste.join("");
+  }
+
+
+  /* =========================================================
+     INGREDIENTS
+  ========================================================= */
 
   function afficherIngredients() {
-
-    if (!recetteCourante) {
-
-      return;
-
-    }
-
 
     const liste =
       document.getElementById("ingredientsList");
 
-
     if (!liste) {
-
       return;
-
     }
 
-
     /*
-      Si la recette possède des quantités,
-      on utilise celles correspondant au choix.
-    */
-
-    if (
-      recetteCourante.quantites &&
-      quantiteSelectionnee &&
-      recetteCourante.quantites[quantiteSelectionnee]
-    ) {
-
-      const quantites =
-        recetteCourante.quantites[quantiteSelectionnee];
-
-
-      let html = "";
-
-
-      Object.entries(quantites).forEach(
-        ([nom, valeur]) => {
-
-          html += `
-            <li>
-              <strong>${nom}</strong> : ${valeur}
-            </li>
-          `;
-
-        }
+     * PRIORITE 1 :
+     * Les recettes ayant des quantites précises
+     * utilisent toujours ces quantités.
+     */
+    const quantitesPredefinies =
+      afficherQuantitesPredefinies(
+        modeQuantiteActuel
       );
 
+    if (quantitesPredefinies) {
 
-      /*
-        Les ingrédients non chiffrés
-        restent affichés.
-      */
-
-      if (
-        Array.isArray(recetteCourante.ingredients)
-      ) {
-
-        recetteCourante.ingredients.forEach(
-          ingredient => {
-
-            const texte =
-              ingredient.toLowerCase();
-
-
-            if (
-              texte.includes("sel") ||
-              texte.includes("épices")
-            ) {
-
-              html += `
-                <li>${ingredient}</li>
-              `;
-
-            }
-
-          }
-        );
-
-      }
-
-
-      liste.innerHTML = html;
-
-
-      /* Mise à jour de la portion */
-
-      const portion =
-        document.getElementById("portionValue");
-
-
-      if (portion) {
-
-        if (quantiteSelectionnee === "petite") {
-
-          portion.textContent =
-            "Petite portion";
-
-        }
-
-        else if (
-          quantiteSelectionnee === "famille2"
-        ) {
-
-          portion.textContent =
-            "2 personnes";
-
-        }
-
-        else if (
-          quantiteSelectionnee === "famille4"
-        ) {
-
-          portion.textContent =
-            "4 personnes";
-
-        }
-
-      }
-
+      liste.innerHTML =
+        quantitesPredefinies;
 
       return;
-
     }
 
 
     /*
-      Recette classique :
-      on affiche les ingrédients d'origine.
-    */
-
-    if (Array.isArray(recetteCourante.ingredients)) {
+     * PRIORITE 2 :
+     * Les recettes post-opératoires sans quantités
+     * précises ne sont PAS recalculées automatiquement.
+     *
+     * On conserve leurs ingrédients d'origine.
+     */
+    if (recetteActuelle.postOperatoire === true) {
 
       liste.innerHTML =
-        recetteCourante.ingredients
+        recetteActuelle.ingredients
           .map(
             ingredient =>
               `<li>${ingredient}</li>`
           )
           .join("");
 
+      return;
     }
 
+
+    /*
+     * PRIORITE 3 :
+     * Toutes les recettes classiques peuvent utiliser
+     * le calcul automatique.
+     */
+
+    const facteur =
+      obtenirFacteur(
+        modeQuantiteActuel
+      );
+
+    liste.innerHTML =
+      recetteActuelle.ingredients
+        .map(
+          ingredient =>
+            `<li>${calculerIngredient(
+              ingredient,
+              facteur
+            )}</li>`
+        )
+        .join("");
   }
 
 
-  /* =====================================================
-     SELECTEUR DE QUANTITES
-  ===================================================== */
+  /* =========================================================
+     INFORMATIONS SUR LES QUANTITES
+  ========================================================= */
 
-  function afficherSelecteurQuantites() {
+  function afficherInformationQuantites() {
 
-    const container =
-      document.getElementById("quantitySelector");
+    const zone =
+      document.getElementById(
+        "quantityInformation"
+      );
 
+    if (!zone) {
+      return;
+    }
 
+    /*
+     * Quantités explicites
+     */
     if (
-      !container ||
-      !recetteCourante ||
-      !recetteCourante.quantites
+      recetteActuelle.quantites &&
+      recetteActuelle.quantites[modeQuantiteActuel]
     ) {
 
-      return;
+      zone.innerHTML =
+        "✓ Quantités prévues spécifiquement pour cette recette.";
 
+      return;
     }
 
 
-    quantiteSelectionnee =
-      modeInitial(recetteCourante);
+    /*
+     * Post-opératoire
+     */
+    if (recetteActuelle.postOperatoire === true) {
+
+      zone.innerHTML =
+        "🌸 Les quantités de cette recette ne sont pas recalculées automatiquement. Pour les repas post-opératoires, suivez les quantités et textures indiquées par votre équipe médicale.";
+
+      return;
+    }
 
 
-    container.innerHTML = `
+    /*
+     * Recette classique
+     */
+    zone.innerHTML =
+      "ℹ️ Les quantités sont calculées automatiquement à partir de la recette de base. Elles restent indicatives et peuvent être adaptées selon votre appétit.";
+  }
 
+
+  /* =========================================================
+     SELECTEUR
+  ========================================================= */
+
+  function modeInitial() {
+
+    const modeEnregistre =
+      localStorage.getItem(
+        "modePortion"
+      );
+
+    if (modeEnregistre === "famille") {
+      return "famille2";
+    }
+
+    if (
+      modeEnregistre === "petite" ||
+      modeEnregistre === "mixte"
+    ) {
+      return "petite";
+    }
+
+    return "petite";
+  }
+
+
+  function afficherSelecteurQuantites() {
+
+    return `
       <div class="card quantity-card">
 
-        <h2>
-          🍽️ Quelle quantité souhaitez-vous préparer ?
+        <h2 class="section-title">
+          🍽️ Pour combien ?
         </h2>
 
         <p class="quantity-intro">
-          Choisissez la quantité qui correspond
-          à votre repas.
+          Adaptez les quantités selon votre façon de cuisiner.
         </p>
-
 
         <div class="quantity-options">
 
           <div class="quantity-option">
-
             <input
               type="radio"
-              name="quantite"
               id="quantitePetite"
+              name="quantite"
               value="petite"
-              ${quantiteSelectionnee === "petite" ? "checked" : ""}
+              ${modeQuantiteActuel === "petite" ? "checked" : ""}
             >
 
             <label for="quantitePetite">
-              🥄 Petite portion
+              <span>🥄</span>
+              Petite portion
             </label>
-
           </div>
 
 
           <div class="quantity-option">
-
             <input
               type="radio"
+              id="quantiteFamille2"
               name="quantite"
-              id="quantite2"
               value="famille2"
-              ${quantiteSelectionnee === "famille2" ? "checked" : ""}
+              ${modeQuantiteActuel === "famille2" ? "checked" : ""}
             >
 
-            <label for="quantite2">
-              👤 2 personnes
+            <label for="quantiteFamille2">
+              <span>👩‍🍳</span>
+              2 personnes
             </label>
-
           </div>
 
 
           <div class="quantity-option">
-
             <input
               type="radio"
+              id="quantiteFamille4"
               name="quantite"
-              id="quantite4"
               value="famille4"
-              ${quantiteSelectionnee === "famille4" ? "checked" : ""}
+              ${modeQuantiteActuel === "famille4" ? "checked" : ""}
             >
 
-            <label for="quantite4">
-              👨‍👩‍👧‍👦 4 personnes
+            <label for="quantiteFamille4">
+              <span>👨‍👩‍👧‍👦</span>
+              4 personnes
             </label>
-
           </div>
 
         </div>
 
+        <div
+          class="quantity-info"
+          id="quantityInformation"
+        ></div>
+
       </div>
-
     `;
+  }
 
+
+  function initialiserSelecteur() {
 
     document
       .querySelectorAll(
         'input[name="quantite"]'
       )
-      .forEach(input => {
+      .forEach(
+        input => {
 
-        input.addEventListener(
-          "change",
-          function() {
+          input.addEventListener(
+            "change",
+            function () {
 
-            quantiteSelectionnee =
-              this.value;
+              modeQuantiteActuel =
+                this.value;
 
-            afficherIngredients();
+              afficherIngredients();
 
-          }
-        );
+              afficherInformationQuantites();
 
-      });
+              mettreAJourLibellePortion();
 
+            }
+          );
 
-    afficherIngredients();
-
+        }
+      );
   }
 
 
-  /* =====================================================
-     FAVORIS
-  ===================================================== */
+  /* =========================================================
+     LIBELLE PORTION
+  ========================================================= */
 
-  function gererFavori() {
+  function obtenirLibellePortion() {
 
-    const bouton =
-      document.getElementById("favoriteButton");
-
-
-    if (!bouton || !recetteCourante) {
-
-      return;
-
+    if (modeQuantiteActuel === "petite") {
+      return "🥄 Petite portion";
     }
 
+    if (modeQuantiteActuel === "famille2") {
+      return "👩‍🍳 2 personnes";
+    }
+
+    if (modeQuantiteActuel === "famille4") {
+      return "👨‍👩‍👧‍👦 4 personnes";
+    }
+
+    return recetteActuelle.portion || "";
+  }
+
+
+  function mettreAJourLibellePortion() {
+
+    const element =
+      document.getElementById(
+        "portionBadge"
+      );
+
+    if (element) {
+      element.textContent =
+        obtenirLibellePortion();
+    }
+  }
+
+
+  /* =========================================================
+     FAVORIS
+  ========================================================= */
+
+  function estFavori(id) {
 
     let favoris = [];
 
     try {
-
       favoris =
         JSON.parse(
-          localStorage.getItem("favoris") || "[]"
+          localStorage.getItem(
+            "favoris"
+          ) || "[]"
         );
-
-    }
-
-    catch (e) {
-
+    } catch (e) {
       favoris = [];
-
     }
 
-
-    const estFavori =
-      favoris.includes(recetteCourante.id);
-
-
-    bouton.textContent =
-      estFavori
-        ? "❤️ Retirer des favoris"
-        : "🤍 Ajouter aux favoris";
+    return favoris.includes(id);
+  }
 
 
-    bouton.classList.toggle(
-      "active",
-      estFavori
-    );
+  function gererFavori() {
 
+    let favoris = [];
 
-    bouton.onclick = function() {
-
-      let favorisActuels = [];
-
-
-      try {
-
-        favorisActuels =
-          JSON.parse(
-            localStorage.getItem("favoris") || "[]"
-          );
-
-      }
-
-      catch (e) {
-
-        favorisActuels = [];
-
-      }
-
-
-      if (
-        favorisActuels.includes(
-          recetteCourante.id
-        )
-      ) {
-
-        favorisActuels =
-          favorisActuels.filter(
-            id =>
-              id !== recetteCourante.id
-          );
-
-      }
-
-      else {
-
-        favorisActuels.push(
-          recetteCourante.id
+    try {
+      favoris =
+        JSON.parse(
+          localStorage.getItem(
+            "favoris"
+          ) || "[]"
         );
+    } catch (e) {
+      favoris = [];
+    }
 
-      }
-
-
-      localStorage.setItem(
-        "favoris",
-        JSON.stringify(favorisActuels)
+    const index =
+      favoris.indexOf(
+        recetteActuelle.id
       );
 
+    if (index >= 0) {
 
-      gererFavori();
+      favoris.splice(index, 1);
 
-    };
+    } else {
 
+      favoris.push(
+        recetteActuelle.id
+      );
+
+    }
+
+    localStorage.setItem(
+      "favoris",
+      JSON.stringify(favoris)
+    );
+
+    mettreAJourBoutonFavori();
   }
 
 
-  /* =====================================================
+  function mettreAJourBoutonFavori() {
+
+    const bouton =
+      document.getElementById(
+        "favoriteButton"
+      );
+
+    if (!bouton) {
+      return;
+    }
+
+    if (
+      estFavori(
+        recetteActuelle.id
+      )
+    ) {
+
+      bouton.classList.add(
+        "active"
+      );
+
+      bouton.innerHTML =
+        "❤️ Retirer des favoris";
+
+    } else {
+
+      bouton.classList.remove(
+        "active"
+      );
+
+      bouton.innerHTML =
+        "♡ Ajouter aux favoris";
+
+    }
+  }
+
+
+  /* =========================================================
      AFFICHAGE DE LA RECETTE
-  ===================================================== */
+  ========================================================= */
 
-  function afficherRecette(recette) {
+  function afficherRecette() {
 
-    recetteCourante = recette;
+    const app =
+      document.getElementById(
+        "app"
+      );
 
+    if (!recetteActuelle) {
 
-    document.title =
-      recette.nom +
-      " - Ma Petite Assiette";
+      app.innerHTML = `
+        <div class="empty">
 
-
-    document.getElementById(
-      "recipeName"
-    ).textContent =
-      recette.nom;
-
-
-    document.getElementById(
-      "recipeCategory"
-    ).textContent =
-      recette.categorie || "";
-
-
-    /* BADGES */
-
-    let badges = "";
-
-
-    if (recette.petitAppetit) {
-
-      badges +=
-        `<span class="badge">
-          🥄 Petite assiette
-        </span>`;
-
-    }
-
-
-    if (recette.preOperatoire) {
-
-      badges +=
-        `<span class="badge">
-          🌸 Pré-opératoire
-        </span>`;
-
-    }
-
-
-    if (recette.postOperatoire) {
-
-      badges +=
-        `<span class="badge">
-          💚 Post-opératoire
-        </span>`;
-
-    }
-
-
-    if (recette.vegetarien) {
-
-      badges +=
-        `<span class="badge">
-          🌱 Végétarien
-        </span>`;
-
-    }
-
-
-    if (recette.sansGluten) {
-
-      badges +=
-        `<span class="badge">
-          🌾 Sans gluten
-        </span>`;
-
-    }
-
-
-    if (recette.batchCooking) {
-
-      badges +=
-        `<span class="badge peach">
-          📦 Batch-cooking
-        </span>`;
-
-    }
-
-
-    /* INGREDIENTS INITIAUX */
-
-    let ingredientsHTML = "";
-
-
-    if (Array.isArray(recette.ingredients)) {
-
-      ingredientsHTML =
-        recette.ingredients
-          .map(
-            ingredient =>
-              `<li>${ingredient}</li>`
-          )
-          .join("");
-
-    }
-
-
-    /* PREPARATION */
-
-    let preparationHTML = "";
-
-
-    if (Array.isArray(recette.preparation)) {
-
-      preparationHTML =
-        recette.preparation
-          .map(
-            etape =>
-              `<li>${etape}</li>`
-          )
-          .join("");
-
-    }
-
-
-    /* CONTENU */
-
-    document.getElementById(
-      "recipeContent"
-    ).innerHTML = `
-
-
-      <div class="info-grid">
-
-
-        <div class="info-card">
-
-          <span class="info-icon">
-            ⏱️
-          </span>
-
-          <span class="info-label">
-            Temps
-          </span>
-
-          <span class="info-value">
-            ${recette.temps || "-"} min
-          </span>
-
-        </div>
-
-
-        <div class="info-card">
-
-          <span class="info-icon">
-            💪
-          </span>
-
-          <span class="info-label">
-            Protéines
-          </span>
-
-          <span class="info-value">
-            ${recette.proteines || "-"} g
-          </span>
-
-        </div>
-
-
-        <div class="info-card">
-
-          <span class="info-icon">
+          <div style="font-size:50px;">
             🍽️
-          </span>
+          </div>
 
-          <span class="info-label">
-            Portion
-          </span>
+          <h2>Recette introuvable</h2>
 
-          <span
-            class="info-value"
-            id="portionValue"
-          >
-            ${recette.portion || "-"}
-          </span>
+          <p>
+            Cette recette n'existe pas ou
+            n'est plus disponible.
+          </p>
+
+          <a href="Recettes.html">
+            Voir toutes les recettes
+          </a>
 
         </div>
+      `;
+
+      return;
+    }
 
 
-      </div>
+    modeQuantiteActuel =
+      modeInitial();
 
 
-      <div id="quantitySelector"></div>
+    const envies =
+      Array.isArray(
+        recetteActuelle.envies
+      )
+        ? recetteActuelle.envies
+        : [];
 
 
-      <button
-        id="favoriteButton"
-        class="favorite-button"
-      >
-        🤍 Ajouter aux favoris
-      </button>
+    const enviesHTML =
+      envies
+        .map(
+          envie =>
+            `<span class="badge">${envie}</span>`
+        )
+        .join("");
 
 
-      ${
-        badges
-          ? `
-
-            <div class="card">
-
-              <h2>
-                ✨ Cette recette vous correspond
-              </h2>
-
-              <div class="badges">
-
-                ${badges}
-
-              </div>
-
-            </div>
-
-          `
-          : ""
-      }
+    const textureHTML =
+      recetteActuelle.texture
+        ? `
+          <span class="badge green">
+            ${recetteActuelle.texture}
+          </span>
+        `
+        : "";
 
 
-      <div class="card">
+    const batchHTML =
+      recetteActuelle.batchCooking
+        ? `
+          <span class="badge peach">
+            📦 Batch-cooking
+          </span>
+        `
+        : "";
 
-        <h2>
-          🥕 Ingrédients
-        </h2>
 
-        <ul
-          class="ingredient-list"
-          id="ingredientsList"
+    const ingredientsHTML =
+      recetteActuelle.ingredients
+        .map(
+          ingredient =>
+            `<li>${ingredient}</li>`
+        )
+        .join("");
+
+
+    const preparationHTML =
+      recetteActuelle.preparation
+        .map(
+          (etape, index) =>
+            `<li>${etape}</li>`
+        )
+        .join("");
+
+
+    app.innerHTML = `
+
+      <header class="hero">
+
+        <a
+          href="Recettes.html"
+          class="back"
         >
+          ← Retour aux recettes
+        </a>
 
-          ${ingredientsHTML}
-
-        </ul>
-
-      </div>
-
-
-      <div class="card">
-
-        <h2>
-          👩‍🍳 Préparation
-        </h2>
-
-        <ol class="preparation-list">
-
-          ${preparationHTML}
-
-        </ol>
-
-      </div>
-
-
-      ${
-        recette.batchCookingDetail
-          ? `
-
-            <div class="card">
-
-              <h2>
-                📦 Batch-cooking
-              </h2>
-
-              <p class="note">
-                ${recette.batchCookingDetail}
-              </p>
-
-
-              ${
-                recette.conservation
-                  ? `
-                    <p
-                      class="note"
-                      style="margin-top:10px;"
-                    >
-                      🧊 ${recette.conservation}
-                    </p>
-                  `
-                  : ""
-              }
-
-
-              ${
-                recette.congelation
-                  ? `
-                    <p
-                      class="note"
-                      style="margin-top:10px;"
-                    >
-                      ❄️ ${recette.congelation}
-                    </p>
-                  `
-                  : ""
-              }
-
-            </div>
-
-          `
-          : ""
-      }
-
-
-      <div class="card">
-
-        <h2>
-          🌸 À savoir
-        </h2>
-
-        <p class="note">
-
-          Les quantités et les textures doivent
-          toujours être adaptées à votre appétit,
-          votre tolérance et, lorsqu'il s'agit
-          d'un parcours chirurgical, aux
-          recommandations de votre équipe médicale.
-
-        </p>
-
-      </div>
-
-
-    `;
-
-
-    /* Active le système de quantités
-       uniquement pour REC081 */
-
-    afficherSelecteurQuantites();
-
-
-    gererFavori();
-
-  }
-
-
-  /* =====================================================
-     CHARGEMENT DES RECETTES
-  ===================================================== */
-
-  if (!recetteId) {
-
-    document.getElementById(
-      "recipeContent"
-    ).innerHTML = `
-
-      <div class="empty">
-
-        <div class="empty-icon">
+        <div class="logo">
           🍽️
         </div>
 
-        <h2>
-          Aucune recette sélectionnée
-        </h2>
+        <h1>
+          ${recetteActuelle.nom}
+        </h1>
 
         <p>
-          Retournez à la liste des recettes.
+          ${recetteActuelle.categorie || ""}
         </p>
 
-      </div>
+        <div class="meta">
 
-    `;
+          <span class="badge">
+            ⏱️ ${recetteActuelle.temps || "—"} min
+          </span>
 
-  }
+          <span class="badge">
+            💪 ${recetteActuelle.proteines || "—"} g protéines
+          </span>
 
-  else {
+          <span
+            class="badge green"
+            id="portionBadge"
+          >
+            ${obtenirLibellePortion()}
+          </span>
 
-    fetch("../recettes.json")
+        </div>
 
-      .then(response => {
-
-        if (!response.ok) {
-
-          throw new Error(
-            "Impossible de charger recettes.json"
-          );
-
-        }
-
-        return response.json();
-
-      })
-
-      .then(recettes => {
-
-        const recette =
-          recettes.find(
-            item =>
-              item.id === recetteId
-          );
+      </header>
 
 
-        if (!recette) {
+      <main class="content">
 
-          throw new Error(
-            "Recette introuvable"
-          );
+        <div class="card">
 
-        }
+          <div class="meta">
 
+            ${enviesHTML}
 
-        afficherRecette(recette);
+            ${textureHTML}
 
-      })
-
-      .catch(error => {
-
-        console.error(error);
-
-
-        document.getElementById(
-          "recipeContent"
-        ).innerHTML = `
-
-          <div class="empty">
-
-            <div class="empty-icon">
-              ⚠️
-            </div>
-
-            <h2>
-              Recette introuvable
-            </h2>
-
-            <p>
-              Impossible de charger cette recette.
-            </p>
-
-            <p style="font-size:12px;">
-              Vérifiez que le lien contient bien
-              l'identifiant de la recette.
-            </p>
+            ${batchHTML}
 
           </div>
 
-        `;
+        </div>
 
-      });
 
+        ${afficherSelecteurQuantites()}
+
+
+        <div class="card">
+
+          <h2 class="section-title">
+            🛒 Ingrédients
+          </h2>
+
+          <ul
+            class="ingredient-list"
+            id="ingredientsList"
+          >
+            ${ingredientsHTML}
+          </ul>
+
+        </div>
+
+
+        <div class="card">
+
+          <h2 class="section-title">
+            👩‍🍳 Préparation
+          </h2>
+
+          <ol class="preparation-list">
+            ${preparationHTML}
+          </ol>
+
+        </div>
+
+
+        ${
+          recetteActuelle.batchCookingDetail
+            ? `
+              <div class="card">
+
+                <h2 class="section-title">
+                  📦 Batch-cooking
+                </h2>
+
+                <p>
+                  ${recetteActuelle.batchCookingDetail}
+                </p>
+
+                ${
+                  recetteActuelle.conservation
+                    ? `
+                      <p>
+                        <strong>
+                          🧊 Conservation :
+                        </strong>
+                        ${recetteActuelle.conservation}
+                      </p>
+                    `
+                    : ""
+                }
+
+                ${
+                  recetteActuelle.congelation
+                    ? `
+                      <p>
+                        <strong>
+                          ❄️ Congélation :
+                        </strong>
+                        ${recetteActuelle.congelation}
+                      </p>
+                    `
+                    : ""
+                }
+
+              </div>
+            `
+            : ""
+        }
+
+
+        ${
+          recetteActuelle.postOperatoire
+            ? `
+              <div class="notice">
+
+                🌸 <strong>
+                Repas post-opératoire
+                </strong>
+
+                <br><br>
+
+                Les textures et quantités après
+                une chirurgie bariatrique doivent
+                suivre les recommandations de votre
+                équipe médicale.
+
+                Ma Petite Assiette est un outil
+                d'organisation et d'inspiration,
+                et ne remplace pas le suivi médical.
+
+              </div>
+            `
+            : ""
+        }
+
+
+        <button
+          id="favoriteButton"
+          class="favorite-button"
+          type="button"
+        >
+          ♡ Ajouter aux favoris
+        </button>
+
+      </main>
+    `;
+
+
+    initialiserSelecteur();
+
+    afficherIngredients();
+
+    afficherInformationQuantites();
+
+    mettreAJourLibellePortion();
+
+    mettreAJourBoutonFavori();
+
+
+    document
+      .getElementById(
+        "favoriteButton"
+      )
+      .addEventListener(
+        "click",
+        gererFavori
+      );
   }
+
+
+  /* =========================================================
+     CHARGEMENT DU CATALOGUE
+  ========================================================= */
+
+  async function chargerRecette() {
+
+    if (!recetteId) {
+
+      afficherRecette();
+
+      return;
+    }
+
+    try {
+
+      const reponse =
+        await fetch(
+          "../recettes.json"
+        );
+
+      if (!reponse.ok) {
+        throw new Error(
+          "Impossible de charger recettes.json"
+        );
+      }
+
+      const recettes =
+        await reponse.json();
+
+      recetteActuelle =
+        recettes.find(
+          recette =>
+            String(recette.id) ===
+            String(recetteId)
+        );
+
+      afficherRecette();
+
+    } catch (erreur) {
+
+      console.error(erreur);
+
+      document.getElementById(
+        "app"
+      ).innerHTML = `
+
+        <div class="empty">
+
+          <div style="font-size:50px;">
+            ⚠️
+          </div>
+
+          <h2>
+            Impossible de charger la recette
+          </h2>
+
+          <p>
+            Vérifiez que le fichier
+            <strong>recettes.json</strong>
+            est bien présent dans le dossier
+            <strong>src</strong>.
+          </p>
+
+          <a href="Recettes.html">
+            Retour aux recettes
+          </a>
+
+        </div>
+
+      `;
+    }
+  }
+
+
+  chargerRecette();
 
 </script>
 
