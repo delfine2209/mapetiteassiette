@@ -3231,10 +3231,9 @@
       "Assembler les ingrédients.",
       "Écraser légèrement si nécessaire pour obtenir une texture tendre."
     ]
-    }
   },
   
-    {
+  {
     "id": "REC081",
     "nom": "Poulet fondant à la patate douce",
     "categorie": "Déjeuner",
@@ -3302,5 +3301,5 @@
         "Fromage blanc": "4 cuillères à soupe"
       }
     }
-      }
-  ]
+  }
+]
