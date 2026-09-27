@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Après l'opération - Ma Petite Assiette</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #4b4039;
+      padding-bottom: 90px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f5d8c8, #dce8d4);
+      padding: 28px 20px 25px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .back {
+      display: inline-block;
+      text-decoration: none;
+      color: #65574e;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #51453d;
+    }
+
+    .intro {
+      margin: 9px 0 0;
+      line-height: 1.5;
+      font-size: 15px;
+      color: #6b5b51;
+    }
+
+    .content {
+      padding: 20px 16px;
+    }
+
+    .notice {
+      background: #fff;
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(80,60,40,0.07);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #6d8762;
+      font-size: 16px;
+    }
+
+    .textures {
+      display: grid;
+      gap: 13px;
+    }
+
+    .texture-card {
+      background: white;
+      border-radius: 22px;
+      padding: 17px;
+      box-shadow: 0 4px 14px rgba(80,60,40,0.07);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.15s;
+    }
+
+    .texture-card:active {
+      transform: scale(0.98);
+    }
+
+    .texture-top {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .texture-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: #f4e8df;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      flex-shrink: 0;
+    }
+
+    .texture-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #50443c;
+      margin-bottom: 4px;
+    }
+
+    .texture-description {
+      font-size: 13px;
+      color: #776960;
+      line-height: 1.4;
+    }
+
+    .arrow {
+      margin-left: auto;
+      font-size: 22px;
+      color: #8aa17f;
+    }
+
+    .principes {
+      margin-top: 20px;
+      background: #edf3e9;
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .principes h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: #53684c;
+    }
+
+    .principes ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .principes li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .cta {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #7e9b72;
+      color: white;
+      border-radius: 18px;
+      padding: 15px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 72px;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid #eee2d8;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #81736a;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .bottom-nav a.active {
+      color: #718b66;
+      font-weight: bold;
+    }
+
+    .nav-icon {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+
+    <a href="chirurgie.html" class="back">
+      ← Préparer ma chirurgie
+    </a>
+
+    <div class="logo">🌸</div>
+
+    <h1>Après l'opération</h1>
+
+    <p class="intro">
+      Des idées de repas classées selon les textures et les étapes
+      de reprise alimentaire.
+    </p>
+
+  </header>
+
+
+  <main class="content">
+
+    <section class="notice">
+
+      <strong>💚 Un accompagnement à votre rythme</strong>
+
+      Après une chirurgie bariatrique, la texture des aliments évolue
+      progressivement. Les étapes et les aliments autorisés peuvent
+      varier selon votre intervention et le protocole de votre équipe
+      médicale.
+
+    </section>
+
+
+    <section class="textures">
+
+      <a
+        href="Recettes.html?texture=liquide"
+        class="texture-card"
+      >
+
+        <div class="texture-top">
+
+          <div class="texture-icon">🥤</div>
+
+          <div>
+            <div class="texture-name">Liquide</div>
+
+            <div class="texture-description">
+              Des préparations liquides adaptées à cette première texture,
+              selon les consignes de votre équipe.
+            </div>
+          </div>
+
+          <div class="arrow">›</div>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="Recettes.html?texture=mixee"
+        class="texture-card"
+      >
+
+        <div class="texture-top">
+
+          <div class="texture-icon">🥣</div>
+
+          <div>
+            <div class="texture-name">Mixé</div>
+
+            <div class="texture-description">
+              Des préparations lisses et homogènes, sans morceaux.
+            </div>
+          </div>
+
+          <div class="arrow">›</div>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="Recettes.html?texture=mouline"
+        class="texture-card"
+      >
+
+        <div class="texture-top">
+
+          <div class="texture-icon">🍲</div>
+
+          <div>
+            <div class="texture-name">Mouliné</div>
+
+            <div class="texture-description">
+              Des préparations plus épaisses avec une texture finement
+              travaillée.
+            </div>
+          </div>
+
+          <div class="arrow">›</div>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="Recettes.html?texture=tendre"
+        class="texture-card"
+      >
+
+        <div class="texture-top">
+
+          <div class="texture-icon">🍽️</div>
+
+          <div>
+            <div class="texture-name">Tendre</div>
+
+            <div class="texture-description">
+              Des aliments très tendres et faciles à manger,
+              lorsque cette étape est autorisée.
+            </div>
+          </div>
+
+          <div class="arrow">›</div>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="Recettes.html?texture=petite"
+        class="texture-card"
+      >
+
+        <div class="texture-top">
+
+          <div class="texture-icon">🥄</div>
+
+          <div>
+            <div class="texture-name">Petite assiette</div>
+
+            <div class="texture-description">
+              Des idées pour retrouver progressivement une alimentation
+              en petites quantités.
+            </div>
+          </div>
+
+          <div class="arrow">›</div>
+
+        </div>
+
+      </a>
+
+    </section>
+
+
+    <section class="principes">
+
+      <h2>🌿 Quelques repères</h2>
+
+      <ul>
+
+        <li>
+          Prendre le temps de manger et de bien mastiquer lorsque cette
+          étape est permise.
+        </li>
+
+        <li>
+          Privilégier les petites quantités et écouter les sensations
+          de satiété.
+        </li>
+
+        <li>
+          Faire évoluer les textures uniquement selon les consignes
+          de l'équipe médicale.
+        </li>
+
+        <li>
+          Les recettes de l'application sont des idées d'organisation
+          alimentaire et ne remplacent pas un suivi médical ou diététique.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <a
+      href="Recettes.html"
+      class="cta"
+    >
+      🍽️ Voir toutes les recettes
+    </a>
+
+  </main>
+
+
+  <nav class="bottom-nav">
+
+    <a href="../../index.html">
+      <span class="nav-icon">🏠</span>
+      Accueil
+    </a>
+
+    <a href="Recettes.html">
+      <span class="nav-icon">🍴</span>
+      Recettes
+    </a>
+
+    <a href="Favoris.html">
+      <span class="nav-icon">❤️</span>
+      Favoris
+    </a>
+
+    <a href="MonProfil.html" class="active">
+      <span class="nav-icon">👤</span>
+      Profil
+    </a>
+
+  </nav>
+
+</body>
+</html>
