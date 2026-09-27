@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Mes recettes - Ma Petite Assiette</title>
-
-  <link rel="stylesheet" href="../style.css">
 
   <style>
     * {
@@ -15,1148 +12,818 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f4ef;
-      color: #3f4038;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #4b4039;
+      padding-bottom: 90px;
     }
-
-    button,
-    input {
-      font-family: inherit;
-    }
-
-    .page {
-      max-width: 700px;
-      margin: auto;
-      min-height: 100vh;
-      padding-bottom: 100px;
-    }
-
-    /* HERO */
 
     .hero {
-      padding: 25px 20px 28px;
-      border-radius: 0 0 32px 32px;
-      background:
-        linear-gradient(
-          145deg,
-          #f4dfd0 0%,
-          #f5e9dc 45%,
-          #dfe8d8 100%
-        );
-    }
-
-    .back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      color: #66675f;
-      font-size: 14px;
-      margin-bottom: 20px;
+      background: linear-gradient(135deg, #f5d8c8, #dce8d4);
+      padding: 28px 20px 24px;
+      border-radius: 0 0 30px 30px;
     }
 
     .logo {
-      width: 52px;
-      height: 52px;
-      border-radius: 17px;
-      background: rgba(255,255,255,0.85);
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 27px;
+      font-size: 30px;
       margin-bottom: 16px;
     }
 
-    .hero h1 {
+    h1 {
       margin: 0;
-      font-size: 30px;
-      line-height: 1.15;
-      font-weight: 800;
+      font-size: 28px;
+      color: #51453d;
     }
 
-    .hero p {
-      margin: 9px 0 0;
-      color: #686960;
+    .intro {
+      margin: 8px 0 0;
       font-size: 15px;
       line-height: 1.5;
+      color: #6b5b51;
     }
-
-    /* CONTENU */
 
     .content {
-      padding: 20px;
+      padding: 20px 16px;
     }
 
-    /* RECHERCHE */
-
-    .search-box {
-      position: relative;
-      margin-bottom: 18px;
-    }
-
-    .search-box span {
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-    }
-
-    .search-box input {
+    .search {
       width: 100%;
-      height: 54px;
-      border: 1px solid #e8e0d8;
-      border-radius: 18px;
+      border: none;
       background: white;
-      padding: 0 16px 0 48px;
+      border-radius: 18px;
+      padding: 15px 17px;
       font-size: 15px;
+      box-shadow: 0 4px 14px rgba(80,60,40,0.07);
+      margin-bottom: 16px;
       outline: none;
-      color: #3f4038;
-      box-shadow: 0 5px 15px rgba(70,60,50,0.05);
-    }
-
-    .search-box input:focus {
-      border-color: #a5b69d;
-    }
-
-    /* CATEGORIES */
-
-    .section-title {
-      margin: 10px 0 12px;
-      font-size: 19px;
-      font-weight: 800;
     }
 
     .categories {
       display: flex;
-      gap: 9px;
+      gap: 8px;
       overflow-x: auto;
-      scrollbar-width: none;
-      padding: 2px 1px 12px;
-      margin-bottom: 12px;
-    }
-
-    .categories::-webkit-scrollbar {
-      display: none;
+      padding-bottom: 5px;
+      margin-bottom: 18px;
     }
 
     .category {
       flex: 0 0 auto;
       border: none;
-      border-radius: 999px;
-      background: white;
-      color: #66675f;
+      border-radius: 20px;
       padding: 10px 15px;
-      font-size: 12px;
-      font-weight: 700;
+      background: #f0e5dc;
+      color: #5d5149;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(70,60,50,0.05);
+      font-size: 13px;
     }
 
     .category.active {
-      background: #78956d;
+      background: #7e9b72;
       color: white;
     }
 
-    /* FILTRES */
-
-    .filters-box {
+    .filters {
       background: white;
       border-radius: 22px;
       padding: 17px;
-      border: 1px solid #eee7df;
-      margin: 8px 0 22px;
-      box-shadow: 0 5px 15px rgba(70,60,50,0.05);
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(80,60,40,0.07);
     }
 
     .filters-title {
-      font-size: 14px;
-      font-weight: 800;
+      font-weight: bold;
       margin-bottom: 12px;
+      color: #55483f;
     }
 
-    .filters {
+    .filter-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 9px;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
     }
 
     .filter {
-      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #665950;
     }
 
     .filter input {
-      position: absolute;
-      opacity: 0;
-    }
-
-    .filter label {
-      display: block;
-      background: #f7f4ef;
-      border: 1px solid transparent;
-      border-radius: 14px;
-      padding: 11px 10px;
-      font-size: 11px;
-      line-height: 1.25;
-      cursor: pointer;
-    }
-
-    .filter input:checked + label {
-      background: #e5efe1;
-      border-color: #b7c9af;
-      color: #5d7654;
-      font-weight: 700;
-    }
-
-    .reset {
-      margin-top: 13px;
-      width: 100%;
-      border: none;
-      background: transparent;
-      color: #7b7c74;
-      padding: 7px;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    /* COMPTEUR */
-
-    .results-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .results-header h2 {
-      margin: 0;
-      font-size: 20px;
+      accent-color: #7e9b72;
     }
 
     .count {
-      background: #e5efe1;
-      color: #5e7655;
-      border-radius: 999px;
-      padding: 7px 10px;
-      font-size: 11px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    /* RECETTES */
-
-    .recipes {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
+      font-size: 14px;
+      color: #7b6d64;
+      margin: 10px 3px 14px;
     }
 
     .recipe-card {
-      position: relative;
-      display: block;
-      text-decoration: none;
-      color: inherit;
       background: white;
-      border-radius: 23px;
+      border-radius: 22px;
       padding: 17px;
-      border: 1px solid #eee7df;
-      box-shadow: 0 6px 18px rgba(70,60,50,0.07);
-      transition: transform 0.15s ease;
+      margin-bottom: 13px;
+      box-shadow: 0 4px 14px rgba(80,60,40,0.07);
+      cursor: pointer;
+      position: relative;
     }
 
-    .recipe-card:active {
-      transform: scale(0.98);
-    }
-
-    .recipe-main {
+    .recipe-top {
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
     }
 
     .recipe-icon {
-      width: 49px;
-      height: 49px;
-      flex: 0 0 49px;
-      border-radius: 16px;
-      background: #edf3e9;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: #f4e8df;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-    }
-
-    .recipe-info {
-      flex: 1;
-      min-width: 0;
+      font-size: 22px;
+      flex-shrink: 0;
     }
 
     .recipe-category {
-      font-size: 10px;
+      font-size: 12px;
+      color: #7d9a70;
+      font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
-      color: #78906e;
-      font-weight: 700;
-      margin-bottom: 5px;
     }
 
     .recipe-name {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.25;
-      font-weight: 800;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 5px 0;
+      padding-right: 30px;
+      color: #4e433b;
     }
 
-    .arrow {
-      color: #a0a098;
-      font-size: 21px;
-    }
-
-    .meta {
+    .recipe-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-      margin-top: 13px;
+      margin-top: 10px;
     }
 
     .badge {
-      border-radius: 999px;
+      background: #f5eee9;
+      border-radius: 12px;
       padding: 6px 9px;
-      background: #f5f2ed;
-      color: #696a62;
-      font-size: 10px;
+      font-size: 11px;
+      color: #685b52;
     }
 
-    .badge.green {
-      background: #e5efe1;
-      color: #5e7655;
-    }
-
-    .badge.peach {
-      background: #f7e5d9;
-      color: #8a6755;
+    .badge.batch {
+      background: #e2ecdE;
+      color: #5c7952;
     }
 
     .favorite {
       position: absolute;
-      right: 14px;
-      bottom: 13px;
-      font-size: 19px;
-      color: #b5b5ad;
+      right: 15px;
+      top: 15px;
+      border: none;
+      background: transparent;
+      font-size: 23px;
+      cursor: pointer;
+      z-index: 2;
     }
-
-    /* VIDE */
 
     .empty {
-      background: white;
-      border-radius: 24px;
-      padding: 30px 20px;
       text-align: center;
-      border: 1px solid #eee7df;
+      background: white;
+      border-radius: 22px;
+      padding: 28px 18px;
+      color: #75675d;
+      box-shadow: 0 4px 14px rgba(80,60,40,0.06);
     }
 
-    .empty-icon {
-      font-size: 42px;
-      margin-bottom: 10px;
+    .reset {
+      width: 100%;
+      border: none;
+      border-radius: 16px;
+      padding: 13px;
+      margin-top: 14px;
+      background: #f0e4da;
+      color: #5c5048;
+      cursor: pointer;
+      font-weight: bold;
     }
-
-    .empty h2 {
-      margin: 0 0 8px;
-      font-size: 20px;
-    }
-
-    .empty p {
-      margin: 0;
-      color: #77786f;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    /* NAVIGATION */
 
     .bottom-nav {
       position: fixed;
+      left: 0;
+      right: 0;
       bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(700px, 100%);
       height: 72px;
       background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid #e9e2da;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      z-index: 100;
+      border-top: 1px solid #eee2d8;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 10;
     }
 
     .bottom-nav a {
       text-decoration: none;
-      color: #77786f;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      font-size: 11px;
+      color: #81736a;
+      font-size: 12px;
+      text-align: center;
     }
 
-    .bottom-nav a:nth-child(2) {
-      color: #6f8b65;
-      font-weight: 700;
+    .bottom-nav a.active {
+      color: #718b66;
+      font-weight: bold;
     }
 
-    .bottom-nav .nav-icon {
-      font-size: 22px;
+    .nav-icon {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 3px;
     }
   </style>
 </head>
 
 <body>
 
-<div class="page">
-
-  <!-- HERO -->
-
   <header class="hero">
-
-    <a href="../../index.html" class="back">
-      ← Accueil
-    </a>
-
-    <div class="logo">
-      🍽️
-    </div>
-
-    <h1>
-      Mes recettes
-    </h1>
-
-    <p>
-      Toutes mes petites assiettes,
-      à découvrir selon mes envies.
+    <div class="logo">🍽️</div>
+    <h1>Mes recettes</h1>
+    <p class="intro">
+      Des idées adaptées à vos envies, votre appétit et votre organisation.
     </p>
-
   </header>
-
 
   <main class="content">
 
-    <!-- RECHERCHE -->
-
-    <div class="search-box">
-
-      <span>🔎</span>
-
-      <input
-        type="search"
-        id="search"
-        placeholder="Rechercher une recette ou un ingrédient..."
-        autocomplete="off"
-      >
-
-    </div>
-
-
-    <!-- CATEGORIES -->
-
-    <h2 class="section-title">
-      Je cherche par catégorie
-    </h2>
+    <input
+      type="search"
+      id="search"
+      class="search"
+      placeholder="🔎 Rechercher une recette..."
+    >
 
     <div class="categories">
-
-      <button class="category active" data-category="Toutes">
-        Toutes
-      </button>
-
-      <button class="category" data-category="Petit-déjeuner">
-        Petit-déjeuner
-      </button>
-
-      <button class="category" data-category="Déjeuner">
-        Déjeuner
-      </button>
-
-      <button class="category" data-category="Dîner">
-        Dîner
-      </button>
-
-      <button class="category" data-category="Collation">
-        Collation
-      </button>
-
-      <button class="category" data-category="Végétarien">
-        Végétarien
-      </button>
-
-      <button class="category" data-category="Salades">
-        Salades
-      </button>
-
+      <button class="category active" data-category="Toutes">Toutes</button>
+      <button class="category" data-category="Petit-déjeuner">Petit-déjeuner</button>
+      <button class="category" data-category="Déjeuner">Déjeuner</button>
+      <button class="category" data-category="Dîner">Dîner</button>
+      <button class="category" data-category="Collation">Collation</button>
+      <button class="category" data-category="Végétarien">Végétarien</button>
+      <button class="category" data-category="Salades">Salades</button>
     </div>
 
-
-    <!-- FILTRES -->
-
-    <div class="filters-box">
+    <section class="filters">
 
       <div class="filters-title">
-        Affiner ma recherche
+        Affiner mes recettes
       </div>
 
-      <div class="filters">
+      <div class="filter-grid">
 
-        <div class="filter">
-          <input type="checkbox" id="petite" value="petite">
-          <label for="petite">
-            🥄 Petite portion
-          </label>
-        </div>
+        <label class="filter">
+          <input type="checkbox" id="petite">
+          Petite portion
+        </label>
 
-        <div class="filter">
-          <input type="checkbox" id="vegetarien" value="vegetarien">
-          <label for="vegetarien">
-            🌱 Végétarien
-          </label>
-        </div>
+        <label class="filter">
+          <input type="checkbox" id="vegetarien">
+          Végétarien
+        </label>
 
-        <div class="filter">
-          <input type="checkbox" id="batch" value="batch">
-          <label for="batch">
-            🍱 Batch-cooking
-          </label>
-        </div>
+        <label class="filter">
+          <input type="checkbox" id="batch">
+          Batch-cooking
+        </label>
 
-        <div class="filter">
-          <input type="checkbox" id="preop" value="preop">
-          <label for="preop">
-            🌿 Pré-opératoire
-          </label>
-        </div>
+        <label class="filter">
+          <input type="checkbox" id="preop">
+          Pré-opératoire
+        </label>
 
-        <div class="filter">
-          <input type="checkbox" id="postop" value="postop">
-          <label for="postop">
-            🍽️ Post-opératoire
-          </label>
-        </div>
+        <label class="filter">
+          <input type="checkbox" id="postop">
+          Post-opératoire
+        </label>
 
-        <div class="filter">
-          <input type="checkbox" id="gluten" value="gluten">
-          <label for="gluten">
-            🌾 Sans gluten
-          </label>
-        </div>
+        <label class="filter">
+          <input type="checkbox" id="gluten">
+          Sans gluten
+        </label>
 
       </div>
 
-      <button
-        type="button"
-        class="reset"
-        onclick="reinitialiser()"
-      >
+      <button class="reset" onclick="resetFilters()">
         Réinitialiser les filtres
       </button>
 
-    </div>
+    </section>
 
+    <div id="count" class="count"></div>
 
-    <!-- COMPTEUR -->
-
-    <div class="results-header">
-
-      <h2>
-        Mes recettes
-      </h2>
-
-      <span
-        class="count"
-        id="count"
-      >
-        0 recette
-      </span>
-
-    </div>
-
-
-    <!-- LISTE -->
-
-    <div
-      id="recipes"
-      class="recipes"
-    ></div>
+    <div id="recipes"></div>
 
   </main>
 
-</div>
+  <nav class="bottom-nav">
 
+    <a href="../../index.html">
+      <span class="nav-icon">🏠</span>
+      Accueil
+    </a>
 
-<!-- NAVIGATION -->
+    <a href="Recettes.html" class="active">
+      <span class="nav-icon">🍴</span>
+      Recettes
+    </a>
 
-<nav class="bottom-nav">
+    <a href="Favoris.html">
+      <span class="nav-icon">❤️</span>
+      Favoris
+    </a>
 
-  <a href="../../index.html">
-    <span class="nav-icon">⌂</span>
-    <span>Accueil</span>
-  </a>
+    <a href="MonProfil.html">
+      <span class="nav-icon">👤</span>
+      Profil
+    </a>
 
-  <a href="Recettes.html">
-    <span class="nav-icon">🍴</span>
-    <span>Recettes</span>
-  </a>
+  </nav>
 
-  <a href="Favoris.html">
-    <span class="nav-icon">❤️</span>
-    <span>Favoris</span>
-  </a>
+  <script>
 
-  <a href="MonProfil.html">
-    <span class="nav-icon">👤</span>
-    <span>Profil</span>
-  </a>
+    let recettes = [];
+    let categorieActive = "Toutes";
 
-</nav>
+    const params = new URLSearchParams(window.location.search);
 
+    const modePetite = params.get("petite") === "true";
+    const modeBatch = params.get("batch") === "true";
 
-<script>
+    /*
+      Si la page est ouverte depuis :
+      - Petit appétit → Petite portion automatiquement cochée
+      - Batch-cooking → Batch-cooking automatiquement coché
+    */
 
-let recettes = [];
+    document.getElementById("petite").checked = modePetite;
+    document.getElementById("batch").checked = modeBatch;
 
-let categorieActive = "Toutes";
+    fetch("../recettes.json")
+      .then(response => response.json())
+      .then(data => {
 
-
-/* --------------------------------------------------
-   CHARGEMENT
--------------------------------------------------- */
-
-async function chargerRecettes() {
-
-  try {
-
-    const response =
-      await fetch("../recettes.json");
-
-    if (!response.ok) {
-      throw new Error(
-        "Impossible de charger les recettes"
-      );
-    }
-
-    recettes = await response.json();
-
-    afficherRecettes();
-
-  } catch (error) {
-
-    console.error(error);
-
-    document.getElementById("recipes").innerHTML = `
-
-      <div class="empty">
-
-        <div class="empty-icon">
-          😕
-        </div>
-
-        <h2>
-          Oups…
-        </h2>
-
-        <p>
-          Impossible de charger les recettes
-          pour le moment.
-        </p>
-
-      </div>
-
-    `;
-  }
-}
-
-
-/* --------------------------------------------------
-   CATEGORIE
--------------------------------------------------- */
-
-document
-  .querySelectorAll(".category")
-  .forEach(button => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        document
-          .querySelectorAll(".category")
-          .forEach(btn =>
-            btn.classList.remove("active")
-          );
-
-        button.classList.add("active");
-
-        categorieActive =
-          button.dataset.category;
+        recettes = data;
 
         afficherRecettes();
+
+      })
+      .catch(error => {
+
+        console.error(error);
+
+        document.getElementById("recipes").innerHTML = `
+          <div class="empty">
+            <strong>Oups...</strong>
+            <p>Impossible de charger les recettes pour le moment.</p>
+          </div>
+        `;
+
+      });
+
+
+    function afficherRecettes() {
+
+      const recherche =
+        document.getElementById("search").value
+          .toLowerCase()
+          .trim();
+
+      const petite =
+        document.getElementById("petite").checked;
+
+      const vegetarien =
+        document.getElementById("vegetarien").checked;
+
+      const batch =
+        document.getElementById("batch").checked;
+
+      const preop =
+        document.getElementById("preop").checked;
+
+      const postop =
+        document.getElementById("postop").checked;
+
+      const gluten =
+        document.getElementById("gluten").checked;
+
+
+      let resultat = recettes.filter(recette => {
+
+        /* Recherche */
+        if (recherche) {
+
+          const texte = [
+
+            recette.nom,
+            recette.categorie,
+            recette.type,
+            ...(recette.ingredients || [])
+
+          ]
+          .join(" ")
+          .toLowerCase();
+
+          if (!texte.includes(recherche)) {
+            return false;
+          }
+        }
+
+
+        /* Catégorie */
+
+        if (categorieActive !== "Toutes") {
+
+          if (categorieActive === "Végétarien") {
+
+            if (recette.vegetarien !== true) {
+              return false;
+            }
+
+          } else if (categorieActive === "Salades") {
+
+            const texte =
+              `${recette.nom} ${recette.categorie} ${recette.type}`
+              .toLowerCase();
+
+            if (!texte.includes("salade")) {
+              return false;
+            }
+
+          } else {
+
+            const categorie =
+              (recette.categorie || "").toLowerCase();
+
+            if (
+              !categorie.includes(
+                categorieActive.toLowerCase()
+              )
+            ) {
+              return false;
+            }
+
+          }
+        }
+
+
+        /* Petite portion */
+
+        if (
+          petite &&
+          recette.petitAppetit !== true
+        ) {
+          return false;
+        }
+
+
+        /* Végétarien */
+
+        if (
+          vegetarien &&
+          recette.vegetarien !== true
+        ) {
+          return false;
+        }
+
+
+        /* Batch-cooking */
+
+        if (
+          batch &&
+          recette.batchCooking !== true
+        ) {
+          return false;
+        }
+
+
+        /* Pré-opératoire */
+
+        if (
+          preop &&
+          recette.preOperatoire !== true
+        ) {
+          return false;
+        }
+
+
+        /* Post-opératoire */
+
+        if (
+          postop &&
+          recette.postOperatoire !== true
+        ) {
+          return false;
+        }
+
+
+        /* Sans gluten */
+
+        if (
+          gluten &&
+          recette.sansGluten !== true
+        ) {
+          return false;
+        }
+
+
+        return true;
+
+      });
+
+
+      document.getElementById("count").textContent =
+        resultat.length +
+        (resultat.length > 1
+          ? " recettes trouvées"
+          : " recette trouvée");
+
+
+      const container =
+        document.getElementById("recipes");
+
+
+      if (resultat.length === 0) {
+
+        container.innerHTML = `
+          <div class="empty">
+
+            <div style="font-size:38px;">🥄</div>
+
+            <strong>Aucune recette trouvée</strong>
+
+            <p>
+              Essayez de modifier vos filtres ou votre recherche.
+            </p>
+
+          </div>
+        `;
+
+        return;
       }
-    );
 
-  });
 
+      container.innerHTML =
+        resultat
+          .map(recette => {
 
-/* --------------------------------------------------
-   RECHERCHE + FILTRES
--------------------------------------------------- */
+            const favoris =
+              JSON.parse(
+                localStorage.getItem("favoris") || "[]"
+              );
 
-document
-  .getElementById("search")
-  .addEventListener(
-    "input",
-    afficherRecettes
-  );
+            const estFavori =
+              favoris.includes(recette.id);
 
 
-document
-  .querySelectorAll(
-    '.filter input[type="checkbox"]'
-  )
-  .forEach(input => {
+            return `
 
-    input.addEventListener(
-      "change",
-      afficherRecettes
-    );
+              <article
+                class="recipe-card"
+                onclick="ouvrirRecette('${recette.id}')"
+              >
 
-  });
+                <button
+                  class="favorite"
+                  onclick="toggleFavori(event, '${recette.id}')"
+                  aria-label="Ajouter aux favoris"
+                >
+                  ${estFavori ? "❤️" : "♡"}
+                </button>
 
 
-/* --------------------------------------------------
-   FILTRAGE
--------------------------------------------------- */
+                <div class="recipe-top">
 
-function filtrerRecettes() {
+                  <div class="recipe-icon">
+                    ${iconeRecette(recette)}
+                  </div>
 
-  const recherche =
-    document
-      .getElementById("search")
-      .value
-      .trim()
-      .toLowerCase();
+                  <div class="recipe-category">
+                    ${recette.categorie || "Recette"}
+                  </div>
 
+                </div>
 
-  let resultat = [...recettes];
 
+                <div class="recipe-name">
+                  ${recette.nom}
+                </div>
 
-  /* RECHERCHE */
 
-  if (recherche) {
+                <div class="recipe-meta">
 
-    resultat =
-      resultat.filter(recette => {
+                  <span class="badge">
+                    ⏱️ ${recette.temps || "-"} min
+                  </span>
 
-        const texte = (
+                  <span class="badge">
+                    🥄 ${recette.portion || "-"}
+                  </span>
 
-          (recette.nom || "") +
-          " " +
-          (recette.categorie || "") +
-          " " +
-          (recette.type || "") +
-          " " +
-          JSON.stringify(
-            recette.ingredients || []
-          )
+                  <span class="badge">
+                    💪 ${recette.proteines || 0} g protéines
+                  </span>
 
-        ).toLowerCase();
+                  ${
+                    recette.batchCooking
+                      ? `<span class="badge batch">📦 Batch-cooking</span>`
+                      : ""
+                  }
 
-        return texte.includes(recherche);
-      });
+                </div>
 
-  }
+              </article>
 
+            `;
 
-  /* CATEGORIE */
+          })
+          .join("");
 
-  if (categorieActive !== "Toutes") {
+    }
 
-    resultat =
-      resultat.filter(recette => {
 
-        const categorie =
-          (recette.categorie || "")
-            .toLowerCase();
+    function iconeRecette(recette) {
 
-        if (
-          categorieActive ===
-          "Végétarien"
-        ) {
-          return recette.vegetarien === true;
-        }
-
-        if (
-          categorieActive ===
-          "Salades"
-        ) {
-          return (
-            categorie.includes("salade") ||
-            categorie.includes("bowl")
-          );
-        }
-
-        return categorie
-          .includes(
-            categorieActive.toLowerCase()
-          );
-
-      });
-
-  }
-
-
-  /* PETITE PORTION */
-
-  if (
-    document.getElementById("petite").checked
-  ) {
-
-    resultat =
-      resultat.filter(
-        recette =>
-          recette.petitAppetit === true
-      );
-
-  }
-
-
-  /* VEGETARIEN */
-
-  if (
-    document.getElementById("vegetarien").checked
-  ) {
-
-    resultat =
-      resultat.filter(
-        recette =>
-          recette.vegetarien === true
-      );
-
-  }
-
-
-  /* BATCH COOKING */
-
-  if (
-    document.getElementById("batch").checked
-  ) {
-
-    resultat =
-      resultat.filter(
-        recette =>
-          recette.batchCooking === true
-      );
-
-  }
-
-
-  /* PRE OPERATOIRE */
-
-  if (
-    document.getElementById("preop").checked
-  ) {
-
-    resultat =
-      resultat.filter(
-        recette =>
-          recette.preOperatoire === true
-      );
-
-  }
-
-
-  /* POST OPERATOIRE */
-
-  if (
-    document.getElementById("postop").checked
-  ) {
-
-    resultat =
-      resultat.filter(
-        recette =>
-          recette.postOperatoire === true
-      );
-
-  }
-
-
-  /* SANS GLUTEN */
-
-  if (
-    document.getElementById("gluten").checked
-  ) {
-
-    resultat =
-      resultat.filter(
-        recette =>
-          recette.sansGluten === true
-      );
-
-  }
-
-
-  return resultat;
-}
-
-
-/* --------------------------------------------------
-   AFFICHAGE
--------------------------------------------------- */
-
-function afficherRecettes() {
-
-  const resultat =
-    filtrerRecettes();
-
-  const container =
-    document.getElementById("recipes");
-
-  const count =
-    document.getElementById("count");
-
-
-  count.textContent =
-    resultat.length === 1
-      ? "1 recette"
-      : `${resultat.length} recettes`;
-
-
-  if (resultat.length === 0) {
-
-    container.innerHTML = `
-
-      <div class="empty">
-
-        <div class="empty-icon">
-          🥣
-        </div>
-
-        <h2>
-          Aucune recette trouvée
-        </h2>
-
-        <p>
-          Essayez de modifier votre recherche
-          ou de retirer un filtre.
-        </p>
-
-      </div>
-
-    `;
-
-    return;
-  }
-
-
-  container.innerHTML = "";
-
-
-  resultat.forEach(recette => {
-
-    const carte =
-      document.createElement("a");
-
-    carte.className =
-      "recipe-card";
-
-    carte.href =
-      `Recette.html?id=${encodeURIComponent(
-        recette.id
-      )}`;
-
-
-    /* ICONE */
-
-    let icon = "🍽️";
-
-    const categorie =
-      (recette.categorie || "")
+      const categorie =
+        `${recette.categorie || ""} ${recette.type || ""}`
         .toLowerCase();
 
-    if (
-      categorie.includes("dessert") ||
-      categorie.includes("collation") ||
-      categorie.includes("petit")
-    ) {
-      icon = "🍰";
-    }
-
-    else if (
-      recette.vegetarien === true
-    ) {
-      icon = "🌱";
-    }
-
-    else if (
-      categorie.includes("salade") ||
-      categorie.includes("bowl")
-    ) {
-      icon = "🥗";
-    }
-
-    else if (
-      categorie.includes("poisson")
-    ) {
-      icon = "🐟";
-    }
-
-
-    /* FAVORI */
-
-    let favoris = [];
-
-    try {
-
-      favoris =
-        JSON.parse(
-          localStorage.getItem(
-            "favoris"
-          ) || "[]"
-        );
-
-    } catch {
-
-      favoris = [];
-
-    }
-
-
-    const estFavori =
-      favoris.includes(recette.id);
-
-
-    carte.innerHTML = `
-
-      <div class="recipe-main">
-
-        <div class="recipe-icon">
-          ${icon}
-        </div>
-
-        <div class="recipe-info">
-
-          <div class="recipe-category">
-            ${recette.categorie || "Recette"}
-          </div>
-
-          <h3 class="recipe-name">
-            ${recette.nom}
-          </h3>
-
-        </div>
-
-        <div class="arrow">
-          ›
-        </div>
-
-      </div>
-
-
-      <div class="meta">
-
-        <span class="badge">
-          ⏱️ ${recette.temps || "—"} min
-        </span>
-
-        <span class="badge green">
-          🥄 ${recette.portion || "Petite portion"}
-        </span>
-
-        ${
-          recette.proteines
-            ? `
-              <span class="badge peach">
-                💪 ${recette.proteines} g
-              </span>
-            `
-            : ""
-        }
-
-        ${
-          recette.batchCooking
-            ? `
-              <span class="badge green">
-                🍱 Batch
-              </span>
-            `
-            : ""
-        }
-
-      </div>
-
-
-      <div class="favorite">
-        ${estFavori ? "❤️" : "♡"}
-      </div>
-
-    `;
-
-
-    container.appendChild(carte);
-
-  });
-
-}
-
-
-/* --------------------------------------------------
-   RESET
--------------------------------------------------- */
-
-function reinitialiser() {
-
-  document.getElementById("search").value = "";
-
-  categorieActive = "Toutes";
-
-
-  document
-    .querySelectorAll(".category")
-    .forEach(button => {
-
-      button.classList.remove("active");
-
       if (
-        button.dataset.category ===
-        "Toutes"
+        categorie.includes("petit") ||
+        categorie.includes("matin")
       ) {
-        button.classList.add("active");
+        return "🥣";
       }
 
-    });
+      if (categorie.includes("collation")) {
+        return "🍎";
+      }
+
+      if (recette.vegetarien === true) {
+        return "🥕";
+      }
+
+      if (categorie.includes("salade")) {
+        return "🥗";
+      }
+
+      if (
+        categorie.includes("poisson") ||
+        categorie.includes("saumon") ||
+        categorie.includes("thon")
+      ) {
+        return "🐟";
+      }
+
+      return "🍽️";
+    }
 
 
-  document
-    .querySelectorAll(
-      '.filter input[type="checkbox"]'
-    )
-    .forEach(input => {
+    function ouvrirRecette(id) {
 
-      input.checked = false;
+      window.location.href =
+        `Recette.html?id=${encodeURIComponent(id)}`;
 
-    });
+    }
 
 
-  afficherRecettes();
-}
+    function toggleFavori(event, id) {
+
+      event.stopPropagation();
+
+      let favoris =
+        JSON.parse(
+          localStorage.getItem("favoris") || "[]"
+        );
 
 
-/* --------------------------------------------------
-   DEMARRAGE
--------------------------------------------------- */
+      if (favoris.includes(id)) {
 
-chargerRecettes();
+        favoris =
+          favoris.filter(
+            favori => favori !== id
+          );
 
-</script>
+      } else {
+
+        favoris.push(id);
+
+      }
+
+
+      localStorage.setItem(
+        "favoris",
+        JSON.stringify(favoris)
+      );
+
+
+      afficherRecettes();
+
+    }
+
+
+    function resetFilters() {
+
+      document.getElementById("search").value = "";
+
+      document.getElementById("petite").checked = false;
+      document.getElementById("vegetarien").checked = false;
+      document.getElementById("batch").checked = false;
+      document.getElementById("preop").checked = false;
+      document.getElementById("postop").checked = false;
+      document.getElementById("gluten").checked = false;
+
+
+      categorieActive = "Toutes";
+
+
+      document
+        .querySelectorAll(".category")
+        .forEach(button => {
+          button.classList.remove("active");
+        });
+
+
+      document
+        .querySelector('.category[data-category="Toutes"]')
+        .classList.add("active");
+
+
+      afficherRecettes();
+
+    }
+
+
+    document
+      .querySelectorAll(".category")
+      .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          categorieActive =
+            button.dataset.category;
+
+
+          document
+            .querySelectorAll(".category")
+            .forEach(btn =>
+              btn.classList.remove("active")
+            );
+
+
+          button.classList.add("active");
+
+          afficherRecettes();
+
+        });
+
+      });
+
+
+    document
+      .getElementById("search")
+      .addEventListener(
+        "input",
+        afficherRecettes
+      );
+
+
+    document
+      .querySelectorAll(
+        "#petite, #vegetarien, #batch, #preop, #postop, #gluten"
+      )
+      .forEach(checkbox => {
+
+        checkbox.addEventListener(
+          "change",
+          afficherRecettes
+        );
+
+      });
+
+  </script>
 
 </body>
 </html>
