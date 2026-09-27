@@ -439,11 +439,83 @@
 
   function afficherQuantites() {
 
-    const container = document.getElementById("quantitesContainer");
+  if (!recetteCourante || !recetteCourante.quantites) {
+    return;
+  }
 
-    if (!container || !recetteCourante || !recetteCourante.quantites) {
-      return;
+  const quantites = recetteCourante.quantites[quantiteSelectionnee];
+
+  if (!quantites) {
+    return;
+  }
+
+  /* Mise à jour du nombre de personnes / portion */
+
+  const portionElement = document.getElementById("portionValue");
+
+  if (portionElement) {
+
+    if (quantiteSelectionnee === "petite") {
+      portionElement.textContent = "Petite portion";
     }
+
+    if (quantiteSelectionnee === "famille2") {
+      portionElement.textContent = "2 personnes";
+    }
+
+    if (quantiteSelectionnee === "famille4") {
+      portionElement.textContent = "4 personnes";
+    }
+  }
+
+
+  /* Mise à jour DIRECTE de la liste des ingrédients */
+
+  const ingredientsContainer =
+    document.getElementById("ingredientsList");
+
+  if (!ingredientsContainer) {
+    return;
+  }
+
+
+  let html = "";
+
+  Object.entries(quantites).forEach(([nom, valeur]) => {
+
+    html += `
+      <li>
+        <strong>${nom}</strong> : ${valeur}
+      </li>
+    `;
+
+  });
+
+
+  /*
+    On conserve les éléments non quantifiés
+    comme "Sel et épices douces selon les goûts"
+  */
+
+  if (
+    Array.isArray(recetteCourante.ingredients) &&
+    recetteCourante.ingredients.some(
+      ingredient =>
+        ingredient.toLowerCase().includes("sel") ||
+        ingredient.toLowerCase().includes("épices")
+    )
+  ) {
+
+    html += `
+      <li>
+        Sel et épices douces selon les goûts
+      </li>
+    `;
+  }
+
+
+  ingredientsContainer.innerHTML = html;
+}
 
     const quantites = recetteCourante.quantites[quantiteSelectionnee];
 
@@ -685,17 +757,18 @@
     }
 
 
-    /* INGREDIENTS CLASSIQUES */
+    
+   /* INGREDIENTS */
 
-    let ingredientsHTML = "";
+let ingredientsHTML = "";
 
-    if (Array.isArray(recette.ingredients)) {
+if (Array.isArray(recette.ingredients)) {
 
-      ingredientsHTML = recette.ingredients
-        .map(ingredient => `<li>${ingredient}</li>`)
-        .join("");
+  ingredientsHTML = recette.ingredients
+    .map(ingredient => `<li>${ingredient}</li>`)
+    .join("");
 
-    }
+}
 
 
     content.innerHTML = `
@@ -757,9 +830,9 @@
 
         <h2>🥕 Ingrédients</h2>
 
-        <ul class="ingredient-list">
-          ${ingredientsHTML}
-        </ul>
+        <ul class="ingredient-list" id="ingredientsList">
+  ${ingredientsHTML}
+</ul>
 
       </div>
 
