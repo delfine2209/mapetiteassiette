@@ -3301,5 +3301,417 @@
         "Fromage blanc": "4 cuillères à soupe"
       }
     }
+  },
+    {
+    "id": "REC082",
+    "nom": "Porridge doux à la banane",
+    "categorie": "Petit-déjeuner",
+    "type": "Petit-déjeuner",
+    "temps": 10,
+    "tempsPreparation": 5,
+    "tempsCuisson": 5,
+    "proteines": 12,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": true,
+    "batchCookingDetail": "Peut être préparé la veille et conservé au réfrigérateur.",
+    "conservation": "24 heures au réfrigérateur",
+    "congelation": "Non",
+    "envies": [
+      "leger",
+      "sucre",
+      "rapide"
+    ],
+    "texture": "mou",
+    "ingredients": [
+      "40 g de flocons d'avoine sans gluten",
+      "150 ml de lait",
+      "1/2 banane mûre",
+      "2 cuillères à soupe de fromage blanc",
+      "1 pincée de cannelle"
+    ],
+    "preparation": [
+      "Écraser la banane à la fourchette.",
+      "Faire chauffer le lait avec les flocons d'avoine à feu doux.",
+      "Ajouter la banane écrasée et mélanger jusqu'à obtenir une texture crémeuse.",
+      "Laisser tiédir quelques minutes.",
+      "Ajouter le fromage blanc et la cannelle.",
+      "Répartir dans deux petites portions."
+    ]
+  },
+  {
+    "id": "REC083",
+    "nom": "Fromage blanc pomme cannelle",
+    "categorie": "Petit-déjeuner",
+    "type": "Petit-déjeuner",
+    "temps": 5,
+    "tempsPreparation": 5,
+    "tempsCuisson": 0,
+    "proteines": 11,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": false,
+    "envies": [
+      "leger",
+      "sucre",
+      "rapide"
+    ],
+    "texture": "mou",
+    "ingredients": [
+      "200 g de fromage blanc",
+      "1 petite pomme",
+      "1 cuillère à café de miel",
+      "1 pincée de cannelle"
+    ],
+    "preparation": [
+      "Éplucher la pomme.",
+      "La râper très finement.",
+      "Mélanger le fromage blanc avec la pomme râpée.",
+      "Ajouter le miel et la cannelle.",
+      "Répartir dans deux petites portions."
+    ]
+  },
+  {
+    "id": "REC084",
+    "nom": "Œufs brouillés crémeux",
+    "categorie": "Petit-déjeuner",
+    "type": "Petit-déjeuner",
+    "temps": 8,
+    "tempsPreparation": 3,
+    "tempsCuisson": 5,
+    "proteines": 14,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": false,
+    "envies": [
+      "complet",
+      "rapide"
+    ],
+    "texture": "tendre",
+    "ingredients": [
+      "2 œufs",
+      "2 cuillères à soupe de lait",
+      "1 cuillère à café de fromage frais",
+      "1 cuillère à café d'huile d'olive",
+      "Sel selon les goûts"
+    ],
+    "preparation": [
+      "Casser les œufs dans un bol.",
+      "Ajouter le lait et battre légèrement.",
+      "Faire chauffer l'huile à feu doux.",
+      "Verser les œufs et remuer doucement.",
+      "Ajouter le fromage frais en fin de cuisson.",
+      "Cuire jusqu'à obtenir une texture crémeuse."
+    ]
+  },
+  {
+    "id": "REC085",
+    "nom": "Pancakes moelleux à la banane",
+    "categorie": "Petit-déjeuner",
+    "type": "Petit-déjeuner",
+    "temps": 15,
+    "tempsPreparation": 7,
+    "tempsCuisson": 8,
+    "proteines": 13,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": true,
+    "batchCookingDetail": "Les pancakes peuvent être préparés à l'avance et réchauffés doucement.",
+    "conservation": "24 heures au réfrigérateur",
+    "congelation": "Oui",
+    "envies": [
+      "sucre",
+      "rapide",
+      "reconfort"
+    ],
+    "texture": "tendre",
+    "ingredients": [
+      "1 banane mûre",
+      "1 œuf",
+      "40 g de farine",
+      "50 ml de lait",
+      "1/2 cuillère à café de levure",
+      "1 cuillère à café d'huile"
+    ],
+    "preparation": [
+      "Écraser la banane.",
+      "Ajouter l'œuf et mélanger.",
+      "Incorporer la farine et la levure.",
+      "Ajouter progressivement le lait.",
+      "Faire chauffer une petite quantité d'huile dans une poêle.",
+      "Former de petits pancakes.",
+      "Cuire quelques minutes de chaque côté à feu doux."
+    ]
+  },
+  {
+    "id": "REC086",
+    "nom": "Crème de semoule vanillée",
+    "categorie": "Petit-déjeuner",
+    "type": "Petit-déjeuner",
+    "temps": 10,
+    "tempsPreparation": 3,
+    "tempsCuisson": 7,
+    "proteines": 10,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": true,
+    "batchCookingDetail": "Peut être préparée la veille.",
+    "conservation": "24 heures au réfrigérateur",
+    "congelation": "Non",
+    "envies": [
+      "sucre",
+      "leger",
+      "reconfort"
+    ],
+    "texture": "mou",
+    "ingredients": [
+      "250 ml de lait",
+      "30 g de semoule fine",
+      "1 cuillère à café de sucre",
+      "1/2 cuillère à café d'extrait de vanille"
+    ],
+    "preparation": [
+      "Faire chauffer le lait avec la vanille.",
+      "Verser la semoule en pluie.",
+      "Mélanger constamment à feu doux.",
+      "Cuire jusqu'à épaississement.",
+      "Ajouter le sucre.",
+      "Répartir dans deux petites portions et laisser tiédir."
+    ]
+  },
+  {
+    "id": "REC087",
+    "nom": "Compote pomme poire maison",
+    "categorie": "Collation",
+    "type": "Collation",
+    "temps": 20,
+    "tempsPreparation": 5,
+    "tempsCuisson": 15,
+    "proteines": 1,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": true,
+    "sansGluten": true,
+    "sansLactose": true,
+    "batchCooking": true,
+    "batchCookingDetail": "Préparer plusieurs portions à l'avance pour les collations.",
+    "conservation": "3 jours au réfrigérateur",
+    "congelation": "Oui",
+    "envies": [
+      "sucre",
+      "leger",
+      "avance"
+    ],
+    "texture": "mixée",
+    "ingredients": [
+      "1 pomme",
+      "1 poire",
+      "2 cuillères à soupe d'eau",
+      "1 pincée de cannelle"
+    ],
+    "preparation": [
+      "Éplucher la pomme et la poire.",
+      "Les couper en petits morceaux.",
+      "Les placer dans une casserole avec l'eau.",
+      "Cuire à feu doux jusqu'à ce que les fruits soient fondants.",
+      "Mixer selon la texture souhaitée.",
+      "Ajouter une pincée de cannelle."
+    ]
+  },
+  {
+    "id": "REC088",
+    "nom": "Fromage blanc vanille et fruits rouges",
+    "categorie": "Collation",
+    "type": "Collation",
+    "temps": 5,
+    "tempsPreparation": 5,
+    "tempsCuisson": 0,
+    "proteines": 12,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": false,
+    "envies": [
+      "sucre",
+      "leger",
+      "rapide"
+    ],
+    "texture": "mou",
+    "ingredients": [
+      "200 g de fromage blanc",
+      "60 g de fruits rouges",
+      "1 cuillère à café de miel",
+      "1/2 cuillère à café d'extrait de vanille"
+    ],
+    "preparation": [
+      "Mélanger le fromage blanc avec la vanille.",
+      "Ajouter le miel.",
+      "Déposer les fruits rouges sur le dessus.",
+      "Répartir en deux petites portions."
+    ]
+  },
+  {
+    "id": "REC089",
+    "nom": "Mousse légère au fromage blanc",
+    "categorie": "Collation",
+    "type": "Collation",
+    "temps": 10,
+    "tempsPreparation": 10,
+    "tempsCuisson": 0,
+    "proteines": 13,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": true,
+    "batchCookingDetail": "Peut être préparée quelques heures à l'avance.",
+    "conservation": "24 heures au réfrigérateur",
+    "congelation": "Non",
+    "envies": [
+      "sucre",
+      "leger",
+      "reconfort"
+    ],
+    "texture": "mou",
+    "ingredients": [
+      "200 g de fromage blanc",
+      "1 blanc d'œuf",
+      "1 cuillère à café de miel",
+      "1/2 cuillère à café de vanille"
+    ],
+    "preparation": [
+      "Mélanger le fromage blanc avec la vanille et le miel.",
+      "Monter le blanc d'œuf en neige.",
+      "Incorporer délicatement le blanc en neige au fromage blanc.",
+      "Répartir dans deux petits ramequins.",
+      "Réserver au réfrigérateur avant de servir."
+    ]
+  },
+  {
+    "id": "REC090",
+    "nom": "Banane écrasée au fromage blanc",
+    "categorie": "Collation",
+    "type": "Collation",
+    "temps": 5,
+    "tempsPreparation": 5,
+    "tempsCuisson": 0,
+    "proteines": 8,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": false,
+    "envies": [
+      "sucre",
+      "leger",
+      "rapide"
+    ],
+    "texture": "mou",
+    "ingredients": [
+      "1 banane mûre",
+      "150 g de fromage blanc",
+      "1 pincée de cannelle"
+    ],
+    "preparation": [
+      "Écraser la banane à la fourchette.",
+      "Ajouter le fromage blanc.",
+      "Mélanger jusqu'à obtenir une préparation homogène.",
+      "Ajouter une pincée de cannelle."
+    ]
+  },
+  {
+    "id": "REC091",
+    "nom": "Petite crème chocolatée au fromage blanc",
+    "categorie": "Collation",
+    "type": "Collation",
+    "temps": 5,
+    "tempsPreparation": 5,
+    "tempsCuisson": 0,
+    "proteines": 12,
+    "portions": 2,
+    "portion": "Petite portion ou 2 portions",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": false,
+    "vegetarien": true,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": false,
+    "envies": [
+      "sucre",
+      "reconfort",
+      "rapide"
+    ],
+    "texture": "mou",
+    "ingredients": [
+      "200 g de fromage blanc",
+      "1 cuillère à soupe de cacao non sucré",
+      "1 cuillère à café de miel",
+      "1/2 banane mûre"
+    ],
+    "preparation": [
+      "Écraser la banane.",
+      "Mélanger le fromage blanc avec le cacao.",
+      "Ajouter la banane écrasée.",
+      "Ajouter le miel.",
+      "Mélanger jusqu'à obtenir une crème homogène.",
+      "Répartir dans deux petites portions."
+    ]
   }
 ]
