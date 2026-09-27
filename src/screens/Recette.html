@@ -1,956 +1,921 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recette - Ma Petite Assiette</title>
 
-  <link rel="stylesheet" href="../style.css">
-
   <style>
-
-    .recette-page {
-      padding-bottom: 110px;
+    * {
+      box-sizing: border-box;
     }
 
-    .recette-header {
-      margin-bottom: 20px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #4d4038;
     }
 
-    .recette-header h1 {
-      margin-bottom: 6px;
+    .page {
+      min-height: 100vh;
+      padding-bottom: 90px;
     }
 
-    .recette-categorie {
-      margin-top: 0;
-      opacity: 0.75;
+    .hero {
+      background: linear-gradient(135deg, #f6d9c8, #dce8d7);
+      padding: 25px 20px 30px;
+      border-radius: 0 0 30px 30px;
     }
 
-    /* =========================
-       INFORMATIONS RAPIDES
-       ========================= */
-
-    .recette-meta {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .meta-badge {
-      background: #f5f2ed;
-      padding: 12px 10px;
-      border-radius: 15px;
-      text-align: center;
+    .back {
+      display: inline-block;
+      text-decoration: none;
+      color: #66574e;
       font-size: 14px;
-    }
-
-    .meta-badge strong {
-      display: block;
-      margin-top: 4px;
-      font-size: 15px;
-    }
-
-    /* =========================
-       BLOCS
-       ========================= */
-
-    .recette-section {
-      background: white;
-      border-radius: 18px;
-      padding: 20px;
       margin-bottom: 18px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
     }
 
-    .recette-section h2 {
-      margin-top: 0;
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
       margin-bottom: 15px;
     }
 
-    /* =========================
-       INGREDIENTS
-       ========================= */
-
-    .ingredients-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.15;
+      color: #3f5145;
     }
 
-    .ingredients-list li {
-      padding: 11px 0;
-      border-bottom: 1px solid #eeeeee;
-    }
-
-    .ingredients-list li:last-child {
-      border-bottom: none;
-    }
-
-    /* =========================
-       PREPARATION
-       ========================= */
-
-    .preparation-list {
-      padding-left: 25px;
-      margin: 0;
-    }
-
-    .preparation-list li {
-      margin-bottom: 17px;
-      line-height: 1.55;
-      padding-left: 4px;
-    }
-
-    /* =========================
-       COMPATIBILITES
-       ========================= */
-
-    .compatibilites {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .compatibilite {
-      background: #eef7ee;
-      border-radius: 15px;
-      padding: 8px 11px;
+    .categorie {
       font-size: 14px;
+      color: #6e625a;
     }
 
-    /* =========================
-       INFOS PRATIQUES
-       ========================= */
-
-    .info-box {
-      border-radius: 15px;
-      padding: 15px;
-      margin-top: 12px;
-      line-height: 1.5;
+    main {
+      padding: 20px 16px;
     }
 
-    .conservation {
-      background: #eef6ff;
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
-    .congelation {
-      background: #f1f0ff;
+    .info-card {
+      background: white;
+      border-radius: 18px;
+      padding: 14px 8px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(90, 70, 55, 0.08);
     }
 
-    .batch-info {
-      background: #fff7e8;
-    }
-
-    .info-box strong {
+    .info-icon {
+      font-size: 22px;
       display: block;
       margin-bottom: 5px;
     }
 
-    /* =========================
-       FAVORIS
-       ========================= */
-
-    .button-favori {
-      width: 100%;
-      margin-top: 5px;
+    .info-label {
+      display: block;
+      font-size: 11px;
+      color: #8a7c73;
+      margin-bottom: 3px;
     }
 
-    /* =========================
-       RETOUR
-       ========================= */
-
-    .retour {
-      display: inline-block;
-      margin-bottom: 15px;
-      text-decoration: none;
-    }
-
-    /* =========================
-       ERREUR
-       ========================= */
-
-    .erreur {
-      text-align: center;
-      padding: 35px 15px;
-    }
-
-    /* =========================
-       PETITE NOTE
-       ========================= */
-
-    .note-app {
+    .info-value {
+      font-weight: bold;
       font-size: 13px;
-      opacity: 0.7;
-      line-height: 1.5;
-      margin-top: 15px;
+      color: #4f6355;
     }
 
+    .card {
+      background: white;
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 5px 18px rgba(90, 70, 55, 0.08);
+    }
+
+    .card h2 {
+      margin: 0 0 15px;
+      font-size: 20px;
+      color: #4f6355;
+    }
+
+    /* QUANTITÉS */
+
+    .quantity-card {
+      background: linear-gradient(135deg, #fff5ed, #f1f7ee);
+      border: 1px solid #eaded4;
+    }
+
+    .quantity-intro {
+      margin: -5px 0 15px;
+      font-size: 13px;
+      color: #786b63;
+      line-height: 1.5;
+    }
+
+    .quantity-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quantity-option {
+      position: relative;
+    }
+
+    .quantity-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .quantity-option label {
+      display: block;
+      padding: 14px 15px;
+      background: white;
+      border: 2px solid #eadfd6;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #5b5049;
+      transition: 0.2s;
+    }
+
+    .quantity-option input:checked + label {
+      border-color: #78927d;
+      background: #eef5ed;
+      color: #405846;
+    }
+
+    .quantity-option label:hover {
+      border-color: #a7b9a9;
+    }
+
+    .quantity-result {
+      margin-top: 17px;
+      padding: 15px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 16px;
+    }
+
+    .quantity-result-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #4f6355;
+      margin-bottom: 10px;
+    }
+
+    .quantity-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee4dc;
+      font-size: 14px;
+    }
+
+    .quantity-line:last-child {
+      border-bottom: none;
+    }
+
+    .quantity-name {
+      color: #62564e;
+    }
+
+    .quantity-value {
+      font-weight: bold;
+      color: #4f6355;
+      text-align: right;
+    }
+
+    /* INGRÉDIENTS */
+
+    .ingredient-list,
+    .preparation-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .ingredient-list li,
+    .preparation-list li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .preparation-list li::marker {
+      color: #78927d;
+      font-weight: bold;
+    }
+
+    /* BADGES */
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 11px;
+      border-radius: 20px;
+      background: #eef5ed;
+      color: #506653;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge.peach {
+      background: #fff0e6;
+      color: #8b6651;
+    }
+
+    /* FAVORI */
+
+    .favorite-button {
+      width: 100%;
+      border: none;
+      border-radius: 18px;
+      padding: 15px;
+      background: #78927d;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+
+    .favorite-button.active {
+      background: #d98772;
+    }
+
+    /* NOTE */
+
+    .note {
+      background: #fff5ed;
+      border-radius: 18px;
+      padding: 15px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #75665c;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .empty-icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    /* NAVIGATION */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid #eadfd6;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      z-index: 100;
+      box-shadow: 0 -4px 15px rgba(80, 60, 45, 0.08);
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #80736a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      gap: 4px;
+    }
+
+    .bottom-nav a span {
+      font-size: 21px;
+    }
+
+    .bottom-nav a.active {
+      color: #536b59;
+      font-weight: bold;
+    }
+
+    @media (min-width: 700px) {
+      main {
+        max-width: 650px;
+        margin: auto;
+      }
+
+      .hero {
+        padding-left: calc((100% - 650px) / 2 + 20px);
+        padding-right: calc((100% - 650px) / 2 + 20px);
+      }
+    }
   </style>
-
 </head>
-
 
 <body>
 
-<div class="screen recette-page">
+<div class="page">
 
-  <main id="fiche-recette">
+  <header class="hero">
+    <a href="Recettes.html" class="back">← Retour aux recettes</a>
 
-    <div class="erreur">
+    <div class="logo">🍽️</div>
 
-      <p>
-        Chargement de la recette...
-      </p>
+    <h1 id="recipeName">Ma Petite Assiette</h1>
+    <div class="categorie" id="recipeCategory"></div>
+  </header>
 
+  <main>
+
+    <div id="recipeContent">
+      <!-- La recette sera affichée ici -->
     </div>
 
   </main>
 
-
-  <!-- =========================
-       NAVIGATION
-       ========================= -->
-
-  <nav class="navbar">
-
-    <a
-      href="Accueil.html"
-      class="nav-item"
-    >
-      🏠
-      <span>Accueil</span>
-    </a>
-
-
-    <a
-      href="MesEnvies.html"
-      class="nav-item"
-    >
-      🔍
-      <span>Envies</span>
-    </a>
-
-
-    <a
-      href="Recettes.html"
-      class="nav-item active"
-    >
-      🍽️
-      <span>Recettes</span>
-    </a>
-
-
-    <a
-      href="Favoris.html"
-      class="nav-item"
-    >
-      ⭐
-      <span>Favoris</span>
-    </a>
-
-
-    <a
-      href="MonProfil.html"
-      class="nav-item"
-    >
-      👤
-      <span>Profil</span>
-    </a>
-
-  </nav>
-
 </div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html">
+    <span>🏠</span>
+    Accueil
+  </a>
+
+  <a href="Recettes.html" class="active">
+    <span>🍽️</span>
+    Recettes
+  </a>
+
+  <a href="Favoris.html">
+    <span>❤️</span>
+    Favoris
+  </a>
+
+  <a href="MonProfil.html">
+    <span>👤</span>
+    Profil
+  </a>
+</nav>
 
 
 <script>
 
-/* =====================================================
-   CHARGEMENT DE LA RECETTE
-   ===================================================== */
+  const params = new URLSearchParams(window.location.search);
+  const recetteId = params.get("id");
 
-async function afficherRecette() {
-
-  const fiche =
-    document.getElementById("fiche-recette");
+  let recetteCourante = null;
+  let quantiteSelectionnee = null;
 
 
-  try {
+  /* -------------------------------------------------
+     MODE QUANTITÉ INITIAL
+  ------------------------------------------------- */
 
-    /* =========================
-       RECUPERATION DE L'ID
-       ========================= */
+  function getModeInitial(recette) {
 
-    const params =
-      new URLSearchParams(
-        window.location.search
-      );
+    if (!recette.quantites) {
+      return null;
+    }
 
-    const id =
-      params.get("id");
+    const mode = localStorage.getItem("modePortion");
+
+    if (mode === "famille") {
+      return "famille2";
+    }
+
+    if (mode === "petite") {
+      return "petite";
+    }
+
+    if (mode === "mixte") {
+      return "petite";
+    }
+
+    return "petite";
+  }
 
 
-    /* =========================
-       PAS D'ID
-       ========================= */
+  /* -------------------------------------------------
+     TITRE DE LA QUANTITÉ
+  ------------------------------------------------- */
 
-    if (!id) {
+  function getNomQuantite(cle) {
 
-      fiche.innerHTML = `
+    const noms = {
+      petite: "🥄 Petite portion",
+      famille2: "👤 2 personnes",
+      famille4: "👨‍👩‍👧‍👦 4 personnes"
+    };
 
-        <div class="erreur">
+    return noms[cle] || "";
+  }
 
-          <h2>
-            Recette introuvable
-          </h2>
 
-          <p>
-            Aucune recette n'a été sélectionnée.
-          </p>
+  /* -------------------------------------------------
+     AFFICHAGE DES QUANTITÉS
+  ------------------------------------------------- */
 
-          <a
-            href="Recettes.html"
-            class="button"
-          >
-            Voir les recettes
-          </a>
+  function afficherQuantites() {
 
-        </div>
+    const container = document.getElementById("quantitesContainer");
 
-      `;
-
+    if (!container || !recetteCourante || !recetteCourante.quantites) {
       return;
     }
 
+    const quantites = recetteCourante.quantites[quantiteSelectionnee];
 
-    /* =========================
-       CHARGEMENT JSON
-       ========================= */
-
-    const response =
-      await fetch("../recettes.json");
-
-
-    if (!response.ok) {
-
-      throw new Error(
-        "Impossible de charger recettes.json"
-      );
-
-    }
-
-
-    const recettes =
-      await response.json();
-
-
-    /* =========================
-       RECHERCHE RECETTE
-       ========================= */
-
-    const recette =
-      recettes.find(
-        r => r.id === id
-      );
-
-
-    if (!recette) {
-
-      fiche.innerHTML = `
-
-        <div class="erreur">
-
-          <h2>
-            Recette introuvable
-          </h2>
-
-          <p>
-            La recette
-            <strong>${id}</strong>
-            n'existe pas.
-          </p>
-
-          <a
-            href="Recettes.html"
-            class="button"
-          >
-            Retour aux recettes
-          </a>
-
-        </div>
-
-      `;
-
+    if (!quantites) {
+      container.innerHTML = "";
       return;
     }
 
+    let html = `
+      <div class="quantity-result">
+        <div class="quantity-result-title">
+          ${getNomQuantite(quantiteSelectionnee)}
+        </div>
+    `;
 
-    /* =====================================================
-       COMPATIBILITES
-       ===================================================== */
+    Object.entries(quantites).forEach(([nom, valeur]) => {
 
-    let compatibilites = "";
+      html += `
+        <div class="quantity-line">
+          <span class="quantity-name">${nom}</span>
+          <span class="quantity-value">${valeur}</span>
+        </div>
+      `;
 
+    });
+
+    html += `</div>`;
+
+    container.innerHTML = html;
+
+    const portionElement = document.getElementById("portionValue");
+
+    if (portionElement) {
+
+      if (quantiteSelectionnee === "petite") {
+        portionElement.textContent = "Petite portion";
+      }
+
+      if (quantiteSelectionnee === "famille2") {
+        portionElement.textContent = "2 personnes";
+      }
+
+      if (quantiteSelectionnee === "famille4") {
+        portionElement.textContent = "4 personnes";
+      }
+    }
+  }
+
+
+  /* -------------------------------------------------
+     CRÉATION DU SÉLECTEUR
+  ------------------------------------------------- */
+
+  function afficherSelecteurQuantites() {
+
+    const container = document.getElementById("quantitySelector");
+
+    if (!container || !recetteCourante || !recetteCourante.quantites) {
+      return;
+    }
+
+    quantiteSelectionnee = getModeInitial(recetteCourante);
+
+    container.innerHTML = `
+      <div class="card quantity-card">
+
+        <h2>🍽️ Quelle quantité souhaitez-vous préparer ?</h2>
+
+        <p class="quantity-intro">
+          Choisissez la quantité qui correspond à votre repas.
+          Vous pouvez passer d'une petite portion à une préparation familiale.
+        </p>
+
+        <div class="quantity-options">
+
+          <div class="quantity-option">
+            <input
+              type="radio"
+              name="quantite"
+              id="quantitePetite"
+              value="petite"
+              ${quantiteSelectionnee === "petite" ? "checked" : ""}
+            >
+            <label for="quantitePetite">
+              🥄 Petite portion
+            </label>
+          </div>
+
+          <div class="quantity-option">
+            <input
+              type="radio"
+              name="quantite"
+              id="quantite2"
+              value="famille2"
+              ${quantiteSelectionnee === "famille2" ? "checked" : ""}
+            >
+            <label for="quantite2">
+              👤 2 personnes
+            </label>
+          </div>
+
+          <div class="quantity-option">
+            <input
+              type="radio"
+              name="quantite"
+              id="quantite4"
+              value="famille4"
+              ${quantiteSelectionnee === "famille4" ? "checked" : ""}
+            >
+            <label for="quantite4">
+              👨‍👩‍👧‍👦 4 personnes
+            </label>
+          </div>
+
+        </div>
+
+        <div id="quantitesContainer"></div>
+
+      </div>
+    `;
+
+    document
+      .querySelectorAll('input[name="quantite"]')
+      .forEach(input => {
+
+        input.addEventListener("change", function() {
+
+          quantiteSelectionnee = this.value;
+
+          afficherQuantites();
+
+        });
+
+      });
+
+    afficherQuantites();
+  }
+
+
+  /* -------------------------------------------------
+     FAVORIS
+  ------------------------------------------------- */
+
+  function gererFavori() {
+
+    const bouton = document.getElementById("favoriteButton");
+
+    if (!bouton || !recetteCourante) {
+      return;
+    }
+
+    let favoris = JSON.parse(
+      localStorage.getItem("favoris") || "[]"
+    );
+
+    const estFavori = favoris.includes(recetteCourante.id);
+
+    bouton.textContent = estFavori
+      ? "❤️ Retirer des favoris"
+      : "🤍 Ajouter aux favoris";
+
+    bouton.classList.toggle("active", estFavori);
+
+    bouton.onclick = function() {
+
+      let favorisActuels = JSON.parse(
+        localStorage.getItem("favoris") || "[]"
+      );
+
+      if (favorisActuels.includes(recetteCourante.id)) {
+
+        favorisActuels = favorisActuels.filter(
+          id => id !== recetteCourante.id
+        );
+
+      } else {
+
+        favorisActuels.push(recetteCourante.id);
+
+      }
+
+      localStorage.setItem(
+        "favoris",
+        JSON.stringify(favorisActuels)
+      );
+
+      gererFavori();
+    };
+  }
+
+
+  /* -------------------------------------------------
+     AFFICHAGE DE LA RECETTE
+  ------------------------------------------------- */
+
+  function afficherRecette(recette) {
+
+    recetteCourante = recette;
+
+    document.title =
+      recette.nom + " - Ma Petite Assiette";
+
+    document.getElementById("recipeName").textContent =
+      recette.nom;
+
+    document.getElementById("recipeCategory").textContent =
+      recette.categorie || "";
+
+
+    const content = document.getElementById("recipeContent");
+
+
+    /* BADGES */
+
+    let badges = "";
 
     if (recette.petitAppetit) {
-
-      compatibilites += `
-        <span class="compatibilite">
-          ✅ Petite portion
-        </span>
-      `;
-
+      badges += `<span class="badge">🥄 Petite assiette</span>`;
     }
-
 
     if (recette.preOperatoire) {
-
-      compatibilites += `
-        <span class="compatibilite">
-          ✅ Pré-opératoire
-        </span>
-      `;
-
+      badges += `<span class="badge">🌸 Pré-opératoire</span>`;
     }
-
 
     if (recette.postOperatoire) {
-
-      compatibilites += `
-        <span class="compatibilite">
-          ✅ Post-opératoire
-        </span>
-      `;
-
+      badges += `<span class="badge">💚 Post-opératoire</span>`;
     }
-
 
     if (recette.vegetarien) {
-
-      compatibilites += `
-        <span class="compatibilite">
-          🌱 Végétarien
-        </span>
-      `;
-
+      badges += `<span class="badge">🌱 Végétarien</span>`;
     }
-
-
-    if (recette.vegetalien) {
-
-      compatibilites += `
-        <span class="compatibilite">
-          🌱 Végétalien
-        </span>
-      `;
-
-    }
-
 
     if (recette.sansGluten) {
+      badges += `<span class="badge">🌾 Sans gluten</span>`;
+    }
 
-      compatibilites += `
-        <span class="compatibilite">
-          🌾 Sans gluten
-        </span>
-      `;
-
+    if (recette.batchCooking) {
+      badges += `<span class="badge peach">📦 Batch-cooking</span>`;
     }
 
 
-    if (recette.sansLactose) {
-
-      compatibilites += `
-        <span class="compatibilite">
-          🥛 Sans lactose
-        </span>
-      `;
-
-    }
-
-
-    /* =====================================================
-       INGREDIENTS
-       ===================================================== */
+    /* INGREDIENTS CLASSIQUES */
 
     let ingredientsHTML = "";
 
+    if (Array.isArray(recette.ingredients)) {
 
-    if (
-      recette.ingredients &&
-      recette.ingredients.length > 0
-    ) {
-
-      ingredientsHTML =
-        recette.ingredients
-          .map(
-            ingredient =>
-              `<li>🛒 ${ingredient}</li>`
-          )
-          .join("");
-
-    } else {
-
-      ingredientsHTML = `
-        <li>
-          Ingrédients à compléter.
-        </li>
-      `;
+      ingredientsHTML = recette.ingredients
+        .map(ingredient => `<li>${ingredient}</li>`)
+        .join("");
 
     }
 
 
-    /* =====================================================
-       PREPARATION
-       ===================================================== */
+    content.innerHTML = `
 
-    let preparationHTML = "";
+      <div class="info-grid">
 
-
-    if (
-      recette.preparation &&
-      recette.preparation.length > 0
-    ) {
-
-      preparationHTML =
-        recette.preparation
-          .map(
-            etape =>
-              `<li>${etape}</li>`
-          )
-          .join("");
-
-    } else {
-
-      preparationHTML = `
-        <li>
-          Préparation à compléter.
-        </li>
-      `;
-
-    }
-
-
-    /* =====================================================
-       INFORMATIONS BATCH-COOKING
-       ===================================================== */
-
-    let batchHTML = "";
-
-
-    if (recette.batchCooking) {
-
-      batchHTML = `
-
-        <div class="info-box batch-info">
-
-          <strong>
-            🥘 Préparer à l'avance
-          </strong>
-
-          ${
-            recette.batchCookingDetail ||
-            "Cette recette peut être préparée à l'avance."
-          }
-
+        <div class="info-card">
+          <span class="info-icon">⏱️</span>
+          <span class="info-label">Temps</span>
+          <span class="info-value">
+            ${recette.temps || "-"} min
+          </span>
         </div>
 
-      `;
-
-    }
-
-
-    /* =====================================================
-       CONSERVATION
-       ===================================================== */
-
-    let conservationHTML = "";
-
-
-    if (recette.conservation) {
-
-      conservationHTML = `
-
-        <div class="info-box conservation">
-
-          <strong>
-            🧊 Conservation
-          </strong>
-
-          ${recette.conservation}
-
+        <div class="info-card">
+          <span class="info-icon">💪</span>
+          <span class="info-label">Protéines</span>
+          <span class="info-value">
+            ${recette.proteines || "-"} g
+          </span>
         </div>
 
-      `;
-
-    }
-
-
-    /* =====================================================
-       CONGELATION
-       ===================================================== */
-
-    let congelationHTML = "";
-
-
-    if (recette.congelation) {
-
-      congelationHTML = `
-
-        <div class="info-box congelation">
-
-          <strong>
-            ❄️ Congélation
-          </strong>
-
-          ${recette.congelation}
-
+        <div class="info-card">
+          <span class="info-icon">🍽️</span>
+          <span class="info-label">Portion</span>
+          <span class="info-value" id="portionValue">
+            ${recette.portion || "-"}
+          </span>
         </div>
 
-      `;
+      </div>
 
-    }
 
+      <div id="quantitySelector"></div>
 
-    /* =====================================================
-       AFFICHAGE
-       ===================================================== */
 
-    fiche.innerHTML = `
+      <button
+        id="favoriteButton"
+        class="favorite-button">
+        🤍 Ajouter aux favoris
+      </button>
 
-
-      <a
-        href="javascript:history.back()"
-        class="retour"
-      >
-        ← Retour
-      </a>
-
-
-      <!-- =========================
-           TITRE
-           ========================= -->
-
-      <header class="recette-header">
-
-        <h1>
-          ${recette.nom}
-        </h1>
-
-
-        <p class="recette-categorie">
-
-          ${recette.categorie || ""}
-
-        </p>
-
-
-        <!-- =========================
-             INFORMATIONS
-             ========================= -->
-
-        <div class="recette-meta">
-
-
-          <div class="meta-badge">
-
-            ⏱️
-
-            <strong>
-              ${
-                recette.tempsPreparation ||
-                recette.temps ||
-                "-"
-              } min
-            </strong>
-
-            préparation
-
-          </div>
-
-
-          <div class="meta-badge">
-
-            🍳
-
-            <strong>
-              ${
-                recette.tempsCuisson ||
-                0
-              } min
-            </strong>
-
-            cuisson
-
-          </div>
-
-
-          <div class="meta-badge">
-
-            🍽️
-
-            <strong>
-              ${
-                recette.portions ||
-                recette.portion ||
-                "1"
-              }
-            </strong>
-
-            portion(s)
-
-          </div>
-
-
-          <div class="meta-badge">
-
-            💪
-
-            <strong>
-              ${
-                recette.proteines ||
-                "-"
-              } g
-            </strong>
-
-            protéines
-
-          </div>
-
-
-        </div>
-
-      </header>
-
-
-      <!-- =========================
-           INGREDIENTS
-           ========================= -->
-
-      <section class="recette-section">
-
-        <h2>
-          🛒 Ingrédients
-        </h2>
-
-
-        <ul class="ingredients-list">
-
-          ${ingredientsHTML}
-
-        </ul>
-
-      </section>
-
-
-      <!-- =========================
-           PREPARATION
-           ========================= -->
-
-      <section class="recette-section">
-
-        <h2>
-          👩‍🍳 Préparation
-        </h2>
-
-
-        <ol class="preparation-list">
-
-          ${preparationHTML}
-
-        </ol>
-
-      </section>
-
-
-      <!-- =========================
-           COMPATIBILITES
-           ========================= -->
-
-      <section class="recette-section">
-
-        <h2>
-          💚 Cette recette vous correspond
-        </h2>
-
-
-        <div class="compatibilites">
-
-          ${
-            compatibilites ||
-            `
-              <span class="compatibilite">
-                ℹ️ À découvrir
-              </span>
-            `
-          }
-
-        </div>
-
-
-        ${batchHTML}
-
-      </section>
-
-
-      <!-- =========================
-           CONSERVATION
-           ========================= -->
 
       ${
-        conservationHTML ||
-        congelationHTML
+        badges
           ? `
-
-            <section class="recette-section">
-
-              <h2>
-                🧊 Bien conserver
-              </h2>
-
-              ${conservationHTML}
-
-              ${congelationHTML}
-
-            </section>
-
+            <div class="card">
+              <h2>✨ Cette recette vous correspond</h2>
+              <div class="badges">
+                ${badges}
+              </div>
+            </div>
           `
           : ""
       }
 
 
-      <!-- =========================
-           FAVORIS
-           ========================= -->
+      <div class="card">
 
-      <section class="recette-section">
+        <h2>🥕 Ingrédients</h2>
 
-        <h2>
-          💛 Une recette qui vous plaît ?
-        </h2>
+        <ul class="ingredient-list">
+          ${ingredientsHTML}
+        </ul>
 
-
-        <button
-          class="button button-main button-favori"
-          onclick="ajouterFavori('${recette.id}')"
-        >
-
-          ❤️ Ajouter aux favoris
-
-        </button>
+      </div>
 
 
-        <p class="note-app">
+      <div class="card">
 
-          Vos recettes favorites seront
-          retrouvées dans votre espace
-          « Favoris ».
+        <h2>👩‍🍳 Préparation</h2>
 
+        <ol class="preparation-list">
+
+          ${
+            Array.isArray(recette.preparation)
+              ? recette.preparation
+                  .map(etape => `<li>${etape}</li>`)
+                  .join("")
+              : ""
+          }
+
+        </ol>
+
+      </div>
+
+
+      ${
+        recette.batchCookingDetail
+          ? `
+            <div class="card">
+
+              <h2>📦 Batch-cooking</h2>
+
+              <p class="note">
+                ${recette.batchCookingDetail}
+              </p>
+
+              ${
+                recette.conservation
+                  ? `
+                    <p class="note" style="margin-top:10px;">
+                      🧊 ${recette.conservation}
+                    </p>
+                  `
+                  : ""
+              }
+
+              ${
+                recette.congelation
+                  ? `
+                    <p class="note" style="margin-top:10px;">
+                      ❄️ ${recette.congelation}
+                    </p>
+                  `
+                  : ""
+              }
+
+            </div>
+          `
+          : ""
+      }
+
+
+      <div class="card">
+
+        <h2>🌸 À savoir</h2>
+
+        <p class="note">
+          Les quantités et textures doivent toujours être adaptées
+          à votre appétit, à votre tolérance et, lorsqu'il s'agit
+          d'un parcours chirurgical, aux recommandations de votre
+          équipe médicale.
         </p>
-
-      </section>
-
-
-    `;
-
-  }
-
-
-  catch (error) {
-
-    console.error(error);
-
-
-    fiche.innerHTML = `
-
-      <div class="erreur">
-
-        <h2>
-          Oups !
-        </h2>
-
-
-        <p>
-          Impossible de charger cette recette.
-        </p>
-
-
-        <a
-          href="Recettes.html"
-          class="button"
-        >
-          Retour aux recettes
-        </a>
 
       </div>
 
     `;
 
+
+    /* Affichage du sélecteur uniquement
+       pour les recettes qui possèdent
+       un système de quantités */
+
+    afficherSelecteurQuantites();
+
+    gererFavori();
   }
 
-}
 
+  /* -------------------------------------------------
+     RECUPERATION DU FICHIER JSON
+  ------------------------------------------------- */
 
-/* =====================================================
-   FAVORIS
-   ===================================================== */
+  fetch("../recettes.json")
 
-function ajouterFavori(id) {
+    .then(response => {
 
+      if (!response.ok) {
+        throw new Error("Impossible de charger les recettes.");
+      }
 
-  let favoris =
-    JSON.parse(
-      localStorage.getItem("favoris")
-    ) || [];
+      return response.json();
 
+    })
 
-  if (!favoris.includes(id)) {
+    .then(recettes => {
 
+      const recette = recettes.find(
+        item => item.id === recetteId
+      );
 
-    favoris.push(id);
+      if (!recette) {
 
+        document.getElementById("recipeContent").innerHTML = `
 
-    localStorage.setItem(
-      "favoris",
-      JSON.stringify(favoris)
-    );
+          <div class="empty">
 
+            <div class="empty-icon">🍽️</div>
 
-    alert(
-      "Recette ajoutée aux favoris ❤️"
-    );
+            <h2>Recette introuvable</h2>
 
+            <p>
+              Cette recette n'existe pas ou n'est plus disponible.
+            </p>
 
-  } else {
+          </div>
 
+        `;
 
-    alert(
-      "Cette recette est déjà dans vos favoris ⭐"
-    );
+        return;
+      }
 
-  }
+      afficherRecette(recette);
 
-}
+    })
 
+    .catch(error => {
 
-/* =====================================================
-   LANCEMENT
-   ===================================================== */
+      console.error(error);
 
-document.addEventListener(
-  "DOMContentLoaded",
-  afficherRecette
-);
+      document.getElementById("recipeContent").innerHTML = `
+
+        <div class="empty">
+
+          <div class="empty-icon">⚠️</div>
+
+          <h2>Une erreur est survenue</h2>
+
+          <p>
+            Impossible de charger cette recette.
+          </p>
+
+        </div>
+
+      `;
+
+    });
 
 </script>
 
 </body>
-
 </html>
