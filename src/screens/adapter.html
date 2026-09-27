@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>Adapter mon plat - Ma Petite Assiette</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -20,12 +22,12 @@
     }
 
     /* =========================
-       HEADER
+       HERO
     ========================= */
 
     .hero {
       background: linear-gradient(135deg, #f7d8c8, #dce8d2);
-      padding: 28px 20px 32px;
+      padding: 25px 18px 30px;
       border-radius: 0 0 30px 30px;
     }
 
@@ -33,14 +35,13 @@
       display: inline-block;
       color: #3f4038;
       text-decoration: none;
-      font-size: 15px;
-      margin-bottom: 20px;
+      font-size: 14px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
       margin: 0 0 8px;
       font-size: 28px;
-      line-height: 1.15;
     }
 
     .hero p {
@@ -60,19 +61,19 @@
     }
 
     .section {
-      margin-bottom: 24px;
+      margin-bottom: 25px;
     }
 
     .section h2 {
-      font-size: 20px;
       margin: 0 0 8px;
+      font-size: 20px;
     }
 
-    .section-intro {
+    .intro {
+      margin: 0 0 16px;
+      color: #707169;
       font-size: 14px;
       line-height: 1.5;
-      margin: 0 0 15px;
-      color: #686960;
     }
 
     /* =========================
@@ -92,19 +93,17 @@
       padding: 15px;
       text-align: left;
       cursor: pointer;
-      font-size: 15px;
-      transition: 0.2s;
     }
 
     .mode-button strong {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       font-size: 16px;
     }
 
     .mode-button span {
-      color: #77786f;
       font-size: 13px;
+      color: #77786f;
     }
 
     .mode-button.active {
@@ -122,53 +121,130 @@
       gap: 10px;
     }
 
-    .dish-card {
+    .dish-button {
       border: 2px solid #ebe4da;
       background: white;
       border-radius: 18px;
-      padding: 16px 12px;
+      padding: 17px 10px;
       cursor: pointer;
       text-align: center;
-      min-height: 95px;
-      transition: 0.2s;
+      min-height: 100px;
     }
 
-    .dish-card .emoji {
+    .dish-button .emoji {
       display: block;
-      font-size: 28px;
+      font-size: 29px;
       margin-bottom: 7px;
     }
 
-    .dish-card strong {
+    .dish-button strong {
       font-size: 15px;
     }
 
-    .dish-card.active {
+    .dish-button.active {
       border-color: #d79778;
       background: #fff1e9;
+    }
+
+    /* =========================
+       GARNITURES
+    ========================= */
+
+    #garnituresSection {
+      display: none;
+    }
+
+    #garnituresSection.visible {
+      display: block;
+    }
+
+    .garniture-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .garniture-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      width: 100%;
+      border: 2px solid #e8e1d7;
+      background: white;
+      border-radius: 18px;
+      padding: 15px;
+
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .garniture-card:hover {
+      border-color: #d79778;
+    }
+
+    .garniture-name {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .garniture-info {
+      display: block;
+      margin-top: 4px;
+      color: #77786f;
+      font-size: 12px;
+    }
+
+    .garniture-arrow {
+      font-size: 22px;
+    }
+
+    /* =========================
+       CHARGEMENT / MESSAGE
+    ========================= */
+
+    .message {
+      background: white;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+      color: #77786f;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .message.error {
+      background: #fff0ec;
+      color: #8b5145;
     }
 
     /* =========================
        AUTRE
     ========================= */
 
-    .custom-dish {
+    #autreSection {
       display: none;
-      margin-top: 15px;
     }
 
-    .custom-dish.visible {
+    #autreSection.visible {
       display: block;
     }
 
-    .custom-dish label {
+    .custom-box {
+      background: white;
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid #eee5da;
+    }
+
+    .custom-box label {
       display: block;
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       font-size: 14px;
     }
 
-    .custom-dish input {
+    .custom-box input {
       width: 100%;
       padding: 14px;
       border: 2px solid #e5dfd5;
@@ -177,80 +253,34 @@
       outline: none;
     }
 
-    .custom-dish input:focus {
+    .custom-box input:focus {
       border-color: #7d9b72;
     }
 
-    /* =========================
-       CONSEILS
-    ========================= */
-
-    .result {
-      display: none;
-      background: white;
-      border-radius: 22px;
-      padding: 20px;
-      box-shadow: 0 5px 18px rgba(80, 70, 50, 0.08);
-      border: 1px solid #eee7dd;
-    }
-
-    .result.visible {
-      display: block;
-    }
-
-    .result h3 {
-      margin: 0 0 8px;
-      font-size: 21px;
-    }
-
-    .result-subtitle {
-      margin: 0 0 18px;
-      color: #77786f;
-      font-size: 14px;
-    }
-
-    .tip {
-      background: #f8f4ed;
-      border-radius: 15px;
-      padding: 13px;
-      margin-bottom: 10px;
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    .tip strong {
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .info {
-      margin-top: 16px;
-      padding: 13px;
-      background: #eef5e9;
-      border-radius: 15px;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    /* =========================
-       BOUTON
-    ========================= */
-
-    .primary-button {
+    .custom-button {
       width: 100%;
       border: none;
-      border-radius: 18px;
-      padding: 16px;
       background: #7d9b72;
       color: white;
-      font-size: 16px;
+      border-radius: 15px;
+      padding: 14px;
+      margin-top: 10px;
+      font-size: 15px;
       font-weight: bold;
       cursor: pointer;
-      margin-top: 8px;
     }
 
-    .primary-button:active {
-      transform: scale(0.98);
+    /* =========================
+       INFORMATION
+    ========================= */
+
+    .info {
+      margin-top: 20px;
+      padding: 15px;
+      background: #eef5e9;
+      border-radius: 16px;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     /* =========================
@@ -263,11 +293,14 @@
       left: 0;
       right: 0;
       height: 72px;
-      background: rgba(255, 255, 255, 0.97);
+
+      background: rgba(255,255,255,0.97);
       border-top: 1px solid #eee7dd;
+
       display: flex;
       justify-content: space-around;
       align-items: center;
+
       z-index: 20;
     }
 
@@ -290,11 +323,6 @@
 
     @media (min-width: 600px) {
 
-      .hero {
-        padding-left: calc((100% - 650px) / 2 + 16px);
-        padding-right: calc((100% - 650px) / 2 + 16px);
-      }
-
       .mode-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -302,14 +330,17 @@
       .dish-grid {
         grid-template-columns: repeat(4, 1fr);
       }
+
     }
+
   </style>
 </head>
+
 
 <body>
 
   <!-- =========================
-       HEADER
+       HERO
   ========================= -->
 
   <header class="hero">
@@ -321,8 +352,8 @@
     <h1>🍽️ Adapter mon plat</h1>
 
     <p>
-      Garder le plaisir de vos plats préférés,
-      tout en adaptant les quantités à votre appétit.
+      Retrouvez le plaisir de vos plats préférés
+      avec des versions pensées pour votre façon de manger.
     </p>
 
   </header>
@@ -331,32 +362,49 @@
   <main>
 
     <!-- =========================
-         MODE
+         MODE DE CUISINE
     ========================= -->
 
     <section class="section">
 
       <h2>🥄 Comment cuisinez-vous ?</h2>
 
-      <p class="section-intro">
-        Choisissez le mode qui correspond à votre façon de cuisiner.
+      <p class="intro">
+        Votre choix sera conservé pour les prochaines recettes.
       </p>
 
       <div class="mode-grid">
 
         <button class="mode-button" data-mode="petite">
+
           <strong>🥄 Petite portion</strong>
-          <span>Je prépare une petite quantité.</span>
+
+          <span>
+            Je prépare une petite quantité pour moi.
+          </span>
+
         </button>
+
 
         <button class="mode-button" data-mode="famille">
+
           <strong>👨‍👩‍👧‍👦 Famille</strong>
-          <span>Je cuisine pour plusieurs personnes.</span>
+
+          <span>
+            Je cuisine pour plusieurs personnes.
+          </span>
+
         </button>
 
+
         <button class="mode-button" data-mode="mixte">
+
           <strong>🍲 Les deux</strong>
-          <span>Je cuisine pour moi et ma famille.</span>
+
+          <span>
+            Je cuisine pour moi et ma famille.
+          </span>
+
         </button>
 
       </div>
@@ -370,133 +418,140 @@
 
     <section class="section">
 
-      <h2>❤️ Quel plat souhaitez-vous adapter ?</h2>
+      <h2>❤️ Quel plat vous fait envie ?</h2>
 
-      <p class="section-intro">
-        Choisissez un plat qui vous fait envie.
-        Il ne s'agit pas forcément d'une recette présente dans notre catalogue.
+      <p class="intro">
+        Choisissez une famille de plats pour découvrir
+        les différentes garnitures disponibles.
       </p>
+
 
       <div class="dish-grid">
 
-        <button class="dish-card" data-dish="Pizza">
+        <button class="dish-button" data-dish="Pizza">
           <span class="emoji">🍕</span>
           <strong>Pizza</strong>
         </button>
 
-        <button class="dish-card" data-dish="Burger">
+
+        <button class="dish-button" data-dish="Burger">
           <span class="emoji">🍔</span>
           <strong>Burger</strong>
         </button>
 
-        <button class="dish-card" data-dish="Pâtes">
+
+        <button class="dish-button" data-dish="Pâtes">
           <span class="emoji">🍝</span>
           <strong>Pâtes</strong>
         </button>
 
-        <button class="dish-card" data-dish="Raclette">
+
+        <button class="dish-button" data-dish="Raclette">
           <span class="emoji">🧀</span>
           <strong>Raclette</strong>
         </button>
 
-        <button class="dish-card" data-dish="Tartiflette">
+
+        <button class="dish-button" data-dish="Tartiflette">
           <span class="emoji">🥔</span>
           <strong>Tartiflette</strong>
         </button>
 
-        <button class="dish-card" data-dish="Fajitas">
+
+        <button class="dish-button" data-dish="Fajitas">
           <span class="emoji">🌮</span>
           <strong>Fajitas</strong>
         </button>
 
-        <button class="dish-card" data-dish="Couscous">
+
+        <button class="dish-button" data-dish="Couscous">
           <span class="emoji">🥘</span>
           <strong>Couscous</strong>
         </button>
 
-        <button class="dish-card" data-dish="Autre">
+
+        <button class="dish-button" data-dish="Autre">
           <span class="emoji">✨</span>
           <strong>Autre</strong>
         </button>
 
       </div>
 
+    </section>
 
-      <div class="custom-dish" id="customDish">
 
-        <label for="customDishInput">
-          ✏️ Écrivez le nom de votre plat
+    <!-- =========================
+         GARNITURES
+    ========================= -->
+
+    <section
+      class="section"
+      id="garnituresSection"
+    >
+
+      <h2>✨ Choisissez votre garniture</h2>
+
+      <p class="intro" id="garnitureIntro">
+        Plusieurs versions sont disponibles.
+      </p>
+
+      <div
+        class="garniture-list"
+        id="garnitureList"
+      ></div>
+
+    </section>
+
+
+    <!-- =========================
+         AUTRE
+    ========================= -->
+
+    <section
+      class="section"
+      id="autreSection"
+    >
+
+      <div class="custom-box">
+
+        <label for="customDish">
+          ✏️ Quel plat souhaitez-vous adapter ?
         </label>
 
         <input
           type="text"
-          id="customDishInput"
-          placeholder="Ex. gratin de légumes..."
+          id="customDish"
+          placeholder="Ex. gratin de courgettes..."
           maxlength="80"
         >
 
+        <button
+          class="custom-button"
+          id="customButton"
+        >
+          Créer mon idée adaptée
+        </button>
+
       </div>
 
     </section>
 
 
     <!-- =========================
-         BOUTON
+         INFORMATION
     ========================= -->
 
-    <button class="primary-button" id="adaptButton">
-      ✨ Voir mes conseils
-    </button>
+    <div class="info">
 
+      💚 <strong>Ma Petite Assiette</strong>
 
-    <!-- =========================
-         RESULTAT
-    ========================= -->
+      <br><br>
 
-    <section class="section">
+      L'objectif n'est pas de supprimer les plats que vous aimez,
+      mais de trouver des façons de les préparer et de les servir
+      en quantités adaptées à votre appétit.
 
-      <div class="result" id="result">
-
-        <h3 id="resultTitle">
-          Votre plat
-        </h3>
-
-        <p class="result-subtitle" id="resultSubtitle">
-          Voici quelques pistes pour l'adapter.
-        </p>
-
-        <div class="tip">
-          <strong>🥄 Commencer par une petite quantité</strong>
-          Servez-vous une quantité raisonnable et gardez la possibilité
-          de vous resservir si vous en avez encore envie.
-        </div>
-
-        <div class="tip">
-          <strong>🍗 Garder une source de protéines</strong>
-          Essayez de conserver une partie protéinée dans votre assiette
-          lorsque le plat s'y prête.
-        </div>
-
-        <div class="tip">
-          <strong>🥕 Ajouter ou conserver des légumes</strong>
-          Les légumes peuvent permettre de composer une assiette
-          équilibrée tout en adaptant les quantités.
-        </div>
-
-        <div class="tip">
-          <strong>🍽️ Adapter plutôt que supprimer</strong>
-          Un plat apprécié peut souvent être préparé en plus petite
-          quantité ou réparti en plusieurs portions.
-        </div>
-
-        <div class="info" id="modeAdvice">
-          💚 Votre mode de cuisine sera pris en compte dans vos prochaines
-          utilisations de l'application.
-        </div>
-
-      </div>
-
-    </section>
+    </div>
 
   </main>
 
@@ -539,17 +594,43 @@
     let modeSelectionne =
       localStorage.getItem("modePortion") || "petite";
 
-    let platSelectionne = "";
+    let recettes = [];
+
+
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const modeButtons =
+      document.querySelectorAll(".mode-button");
+
+    const dishButtons =
+      document.querySelectorAll(".dish-button");
+
+    const garnituresSection =
+      document.getElementById("garnituresSection");
+
+    const garnitureList =
+      document.getElementById("garnitureList");
+
+    const garnitureIntro =
+      document.getElementById("garnitureIntro");
+
+    const autreSection =
+      document.getElementById("autreSection");
+
+    const customDish =
+      document.getElementById("customDish");
+
+    const customButton =
+      document.getElementById("customButton");
 
 
     /* =========================
        MODE
     ========================= */
 
-    const modeButtons =
-      document.querySelectorAll(".mode-button");
-
-    function afficherModeSelectionne() {
+    function afficherMode() {
 
       modeButtons.forEach(button => {
 
@@ -562,117 +643,116 @@
 
     }
 
+
     modeButtons.forEach(button => {
 
       button.addEventListener("click", function() {
 
-        modeSelectionne = this.dataset.mode;
+        modeSelectionne =
+          this.dataset.mode;
 
         localStorage.setItem(
           "modePortion",
           modeSelectionne
         );
 
-        afficherModeSelectionne();
+        afficherMode();
 
       });
 
     });
 
-    afficherModeSelectionne();
+
+    afficherMode();
 
 
     /* =========================
-       PLATS
+       CHARGEMENT DU CATALOGUE
     ========================= */
 
-    const dishCards =
-      document.querySelectorAll(".dish-card");
+    fetch("../recettes.json")
 
-    const customDish =
-      document.getElementById("customDish");
+      .then(response => {
 
-    const customDishInput =
-      document.getElementById("customDishInput");
+        if (!response.ok) {
+          throw new Error(
+            "Impossible de charger le catalogue."
+          );
+        }
+
+        return response.json();
+
+      })
+
+      .then(data => {
+
+        recettes = data;
+
+      })
+
+      .catch(error => {
+
+        console.error(error);
+
+      });
 
 
-    dishCards.forEach(card => {
+    /* =========================
+       NORMALISATION
+    ========================= */
 
-      card.addEventListener("click", function() {
+    function normaliser(texte) {
 
-        dishCards.forEach(item => {
-          item.classList.remove("active");
+      return String(texte || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+
+    }
+
+
+    /* =========================
+       AFFICHER LES RECETTES
+    ========================= */
+
+    function afficherGarnitures(plat) {
+
+      garnitureList.innerHTML = "";
+
+      const platRecherche =
+        normaliser(plat);
+
+
+      const recettesTrouvees =
+        recettes.filter(recette => {
+
+          return normaliser(
+            recette.platAdapte
+          ) === platRecherche;
+
         });
 
-        this.classList.add("active");
 
-        platSelectionne = this.dataset.dish;
+      if (recettesTrouvees.length === 0) {
 
-        if (platSelectionne === "Autre") {
+        garnitureList.innerHTML = `
 
-          customDish.classList.add("visible");
+          <div class="message">
 
-          setTimeout(() => {
-            customDishInput.focus();
-          }, 100);
+            🌱 Nous préparons encore les versions
+            adaptées de ce plat.
 
-        } else {
+            <br><br>
 
-          customDish.classList.remove("visible");
+            Cette famille sera bientôt disponible.
 
-        }
+          </div>
 
-      });
+        `;
 
-    });
-
-
-    /* =========================
-       CONSEILS
-    ========================= */
-
-    const adaptButton =
-      document.getElementById("adaptButton");
-
-    const result =
-      document.getElementById("result");
-
-    const resultTitle =
-      document.getElementById("resultTitle");
-
-    const resultSubtitle =
-      document.getElementById("resultSubtitle");
-
-    const modeAdvice =
-      document.getElementById("modeAdvice");
-
-
-    adaptButton.addEventListener("click", function() {
-
-      let nomPlat = platSelectionne;
-
-      if (platSelectionne === "Autre") {
-
-        nomPlat =
-          customDishInput.value.trim();
-
-        if (!nomPlat) {
-
-          customDishInput.focus();
-
-          alert(
-            "Écrivez d'abord le nom du plat que vous souhaitez adapter."
-          );
-
-          return;
-        }
-
-      }
-
-      if (!nomPlat) {
-
-        alert(
-          "Choisissez d'abord le plat que vous souhaitez adapter."
+        garnituresSection.classList.add(
+          "visible"
         );
 
         return;
@@ -680,47 +760,268 @@
       }
 
 
-      resultTitle.textContent =
-        "✨ " + nomPlat;
+      garnitureIntro.textContent =
+        recettesTrouvees.length +
+        " version" +
+        (recettesTrouvees.length > 1 ? "s" : "") +
+        " adaptée" +
+        (recettesTrouvees.length > 1 ? "s" : "") +
+        " disponible" +
+        (recettesTrouvees.length > 1 ? "s" : "") +
+        ".";
 
 
-      resultSubtitle.textContent =
-        "Voici quelques idées pour adapter " +
-        nomPlat.toLowerCase() +
-        " à votre façon de manger.";
+      recettesTrouvees.forEach(recette => {
+
+        const card =
+          document.createElement("button");
+
+        card.className =
+          "garniture-card";
 
 
-      if (modeSelectionne === "petite") {
-
-        modeAdvice.textContent =
-          "🥄 Mode Petite portion : préparez une petite quantité " +
-          "ou mettez de côté une partie du plat pour éviter de vous " +
-          "servir une quantité trop importante.";
-
-      } else if (modeSelectionne === "famille") {
-
-        modeAdvice.textContent =
-          "👨‍👩‍👧‍👦 Mode Famille : cuisinez une quantité familiale " +
-          "puis servez chacun selon son appétit.";
-
-      } else {
-
-        modeAdvice.textContent =
-          "🍲 Mode Petite portion + famille : préparez le plat " +
-          "pour tout le monde, puis prévoyez une portion adaptée " +
-          "pour vous.";
-
-      }
+        const nomGarniture =
+          recette.garniture ||
+          recette.nom;
 
 
-      result.classList.add("visible");
+        card.innerHTML = `
 
-      result.scrollIntoView({
+          <div>
+
+            <div class="garniture-name">
+              ${nomGarniture}
+            </div>
+
+            <span class="garniture-info">
+
+              ${recette.temps || "—"} min
+              ·
+              ${recette.proteines || "—"} g de protéines
+
+            </span>
+
+          </div>
+
+          <div class="garniture-arrow">
+            →
+          </div>
+
+        `;
+
+
+        card.addEventListener(
+          "click",
+          function() {
+
+            /*
+             * Le mode choisi est conservé.
+             * Recette.html utilisera ensuite
+             * modePortion pour sélectionner
+             * la quantité appropriée.
+             */
+
+            localStorage.setItem(
+              "modePortion",
+              modeSelectionne
+            );
+
+
+            window.location.href =
+              "Recette.html?id=" +
+              encodeURIComponent(
+                recette.id
+              );
+
+          }
+        );
+
+
+        garnitureList.appendChild(card);
+
+      });
+
+
+      garnituresSection.classList.add(
+        "visible"
+      );
+
+
+      garnituresSection.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
 
+    }
+
+
+    /* =========================
+       CHOIX DU PLAT
+    ========================= */
+
+    dishButtons.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          dishButtons.forEach(item => {
+
+            item.classList.remove(
+              "active"
+            );
+
+          });
+
+
+          this.classList.add("active");
+
+
+          const plat =
+            this.dataset.dish;
+
+
+          if (plat === "Autre") {
+
+            garnituresSection.classList.remove(
+              "visible"
+            );
+
+            autreSection.classList.add(
+              "visible"
+            );
+
+            customDish.focus();
+
+            return;
+
+          }
+
+
+          autreSection.classList.remove(
+            "visible"
+          );
+
+
+          /*
+           * Si le fichier JSON n'est pas encore
+           * chargé, on attend un court instant.
+           */
+
+          if (recettes.length === 0) {
+
+            garnitureList.innerHTML = `
+
+              <div class="message">
+                ⏳ Chargement des recettes...
+              </div>
+
+            `;
+
+            garnituresSection.classList.add(
+              "visible"
+            );
+
+            setTimeout(() => {
+
+              afficherGarnitures(
+                plat
+              );
+
+            }, 300);
+
+            return;
+
+          }
+
+
+          afficherGarnitures(plat);
+
+        }
+      );
+
     });
+
+
+    /* =========================
+       AUTRE
+    ========================= */
+
+    customButton.addEventListener(
+      "click",
+      function() {
+
+        const plat =
+          customDish.value.trim();
+
+
+        if (!plat) {
+
+          customDish.focus();
+
+          alert(
+            "Indiquez le nom du plat que vous souhaitez adapter."
+          );
+
+          return;
+
+        }
+
+
+        /*
+         * Pour "Autre", nous ne prétendons pas
+         * avoir une recette dans le catalogue.
+         *
+         * On prépare simplement la future
+         * fonctionnalité de création personnalisée.
+         */
+
+        garnituresSection.classList.add(
+          "visible"
+        );
+
+
+        garnitureList.innerHTML = `
+
+          <div class="message">
+
+            ✨ <strong>${plat}</strong>
+
+            <br><br>
+
+            Cette adaptation personnalisée
+            sera bientôt disponible.
+
+            <br><br>
+
+            En attendant, vous pouvez retrouver
+            vos recettes disponibles dans le catalogue.
+
+            <br><br>
+
+            <a
+              href="Recettes.html"
+              style="
+                color:#58734f;
+                font-weight:bold;
+                text-decoration:none;
+              "
+            >
+              🍽️ Voir toutes les recettes →
+            </a>
+
+          </div>
+
+        `;
+
+
+        garnituresSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+    );
 
   </script>
 
