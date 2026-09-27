@@ -1,98 +1,748 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Adapter mon plat - Ma Petite Assiette</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #fffaf6;
+        color: #3f4038;
+        padding-bottom: 85px;
+    }
+
+    .page {
+        max-width: 520px;
+        margin: auto;
+    }
+
+    /* HERO */
+    .hero {
+        background: linear-gradient(135deg, #f7d9c8, #dce9d5);
+        padding: 22px 20px 28px;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .back {
+        display: inline-block;
+        text-decoration: none;
+        color: #3f4038;
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* CONTENU */
+    main {
+        padding: 20px 16px;
+    }
+
+    .intro {
+        background: white;
+        border-radius: 22px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .intro h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .intro p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+    }
+
+    /* MODE DE CUISINE */
+    .mode-box {
+        background: #f1f6ed;
+        border-radius: 22px;
+        padding: 18px;
+        margin-bottom: 22px;
+    }
+
+    .mode-box h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .mode-box p {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 14px;
+    }
+
+    .mode-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+    }
+
+    .mode-btn {
+        border: 2px solid transparent;
+        background: white;
+        border-radius: 16px;
+        padding: 12px 5px;
+        cursor: pointer;
+        font-size: 12px;
+        color: #3f4038;
+    }
+
+    .mode-btn span {
+        display: block;
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    .mode-btn.active {
+        border-color: #78966d;
+        background: #e6f0df;
+    }
+
+    /* PLATS */
+    .section-title {
+        font-size: 20px;
+        margin: 22px 0 14px;
+    }
+
+    .recipe-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .recipe-card {
+        text-decoration: none;
+        color: #3f4038;
+        background: white;
+        border-radius: 20px;
+        padding: 18px 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+        transition: transform 0.2s;
+        cursor: pointer;
+    }
+
+    .recipe-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .recipe-icon {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .recipe-card strong {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .recipe-card small {
+        color: #777;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    /* RESULTAT */
+    .result {
+        display: none;
+        background: #fff;
+        border-radius: 22px;
+        padding: 20px;
+        margin-top: 22px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        border-left: 5px solid #8da77f;
+    }
+
+    .result.visible {
+        display: block;
+    }
+
+    .result h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .result p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .adaptation-list {
+        list-style: none;
+        margin-top: 12px;
+    }
+
+    .adaptation-list li {
+        background: #f7f3ed;
+        border-radius: 12px;
+        padding: 10px 12px;
+        margin-bottom: 8px;
+        font-size: 13px;
+    }
+
+    .recipe-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        background: #78966d;
+        color: white;
+        padding: 13px;
+        border-radius: 16px;
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    /* NOTE */
+    .note {
+        background: #fff3df;
+        border-radius: 18px;
+        padding: 16px;
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #665b4e;
+    }
+
+    /* NAVIGATION */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 72px;
+        background: white;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 100;
+        box-shadow: 0 -3px 15px rgba(0,0,0,0.05);
+    }
+
+    .bottom-nav a {
+        text-decoration: none;
+        color: #666;
+        text-align: center;
+        font-size: 20px;
+        min-width: 60px;
+    }
+
+    .bottom-nav small {
+        display: block;
+        font-size: 10px;
+        margin-top: 3px;
+    }
+
+    @media (min-width: 600px) {
+        .bottom-nav {
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 520px;
+        }
+    }
+</style>
 </head>
 
 <body>
 
-<header class="header">
-    <a href="index.html" class="logo">←</a>
-    <div>
-        <h1>ADAPTER MON PLAT</h1>
-        <p>Garder le plaisir, adapter la portion.</p>
-    </div>
-</header>
+<div class="page">
 
-<main>
+    <!-- HERO -->
+    <header class="hero">
 
-<section class="intro">
-    <h2>❤️ Mon plat préféré</h2>
-    <p>
-        Choisissez un plat et découvrez des idées pour
-        préparer une version en petite portion.
-    </p>
-</section>
+        <a href="../../index.html" class="back">←</a>
 
-<section class="features">
+        <h1>🍽️ Adapter mon plat</h1>
 
-<div class="feature-grid">
+        <p>
+            Garder le plaisir de vos plats préférés,
+            tout en adaptant les quantités à votre appétit.
+        </p>
 
-<a href="#" class="recipe-card">
-🍕
-<strong>Pizza</strong>
-<small>Version individuelle</small>
-</a>
+    </header>
 
-<a href="#" class="recipe-card">
-🍔
-<strong>Burger</strong>
-<small>Petit format</small>
-</a>
+    <main>
 
-<a href="#" class="recipe-card">
-🍝
-<strong>Lasagnes</strong>
-<small>Portion individuelle</small>
-</a>
+        <!-- INTRO -->
+        <section class="intro">
 
-<a href="#" class="recipe-card">
-🧀
-<strong>Raclette</strong>
-<small>Version adaptée</small>
-</a>
+            <h2>❤️ Mon plat préféré</h2>
 
-<a href="#" class="recipe-card">
-🥔
-<strong>Tartiflette</strong>
-<small>Petit format</small>
-</a>
+            <p>
+                Vous aimez la pizza, les lasagnes, la raclette
+                ou encore les pâtes ? Pas besoin de renoncer.
+                Découvrez comment adapter certains plats
+                pour préparer une quantité qui vous convient.
+            </p>
 
-<a href="#" class="recipe-card">
-🌮
-<strong>Fajitas</strong>
-<small>À composer</small>
-</a>
+        </section>
 
-<a href="#" class="recipe-card">
-🥘
-<strong>Couscous</strong>
-<small>Petite assiette</small>
-</a>
+        <!-- MODE -->
+        <section class="mode-box">
 
-<a href="#" class="recipe-card">
-🥓
-<strong>Carbonara</strong>
-<small>Portion individuelle</small>
-</a>
+            <h2>🥄 Comment souhaitez-vous cuisiner ?</h2>
+
+            <p>
+                Choisissez votre mode pour adapter les idées
+                proposées à votre façon de cuisiner.
+            </p>
+
+            <div class="mode-buttons">
+
+                <button class="mode-btn" data-mode="petite">
+                    <span>🥄</span>
+                    Petite portion
+                </button>
+
+                <button class="mode-btn" data-mode="famille">
+                    <span>👨‍👩‍👧‍👦</span>
+                    Famille
+                </button>
+
+                <button class="mode-btn" data-mode="mixte">
+                    <span>🍲</span>
+                    Les deux
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PLATS -->
+        <h2 class="section-title">✨ Que souhaitez-vous adapter ?</h2>
+
+        <section class="recipe-grid">
+
+            <div class="recipe-card" data-plat="Pizza">
+                <div class="recipe-icon">🍕</div>
+                <strong>Pizza</strong>
+                <small>Version individuelle</small>
+            </div>
+
+            <div class="recipe-card" data-plat="Burger">
+                <div class="recipe-icon">🍔</div>
+                <strong>Burger</strong>
+                <small>Petit format</small>
+            </div>
+
+            <div class="recipe-card" data-plat="Lasagnes">
+                <div class="recipe-icon">🍝</div>
+                <strong>Lasagnes</strong>
+                <small>Portion adaptée</small>
+            </div>
+
+            <div class="recipe-card" data-plat="Raclette">
+                <div class="recipe-icon">🧀</div>
+                <strong>Raclette</strong>
+                <small>À composer selon son appétit</small>
+            </div>
+
+            <div class="recipe-card" data-plat="Tartiflette">
+                <div class="recipe-icon">🥔</div>
+                <strong>Tartiflette</strong>
+                <small>Petit format</small>
+            </div>
+
+            <div class="recipe-card" data-plat="Fajitas">
+                <div class="recipe-icon">🌮</div>
+                <strong>Fajitas</strong>
+                <small>À composer</small>
+            </div>
+
+            <div class="recipe-card" data-plat="Couscous">
+                <div class="recipe-icon">🥘</div>
+                <strong>Couscous</strong>
+                <small>Petite assiette</small>
+            </div>
+
+            <div class="recipe-card" data-plat="Carbonara">
+                <div class="recipe-icon">🍝</div>
+                <strong>Carbonara</strong>
+                <small>Portion individuelle</small>
+            </div>
+
+        </section>
+
+        <!-- RESULTAT -->
+        <section id="result" class="result">
+
+            <h2 id="resultTitle">🍽️ Adapter mon plat</h2>
+
+            <p id="resultText"></p>
+
+            <ul id="adaptationList" class="adaptation-list"></ul>
+
+            <a href="../../src/screens/Recettes.html"
+               id="recipeLink"
+               class="recipe-link">
+                ✨ Voir les recettes adaptées
+            </a>
+
+        </section>
+
+        <!-- NOTE -->
+        <div class="note">
+
+            💚 <strong>À retenir :</strong><br>
+
+            Adapter un plat ne signifie pas forcément
+            supprimer les aliments que l'on aime.
+            On peut jouer sur la quantité, la composition,
+            la texture ou l'accompagnement.
+
+            <br><br>
+
+            Pour les personnes ayant subi une chirurgie bariatrique,
+            les quantités et textures doivent être adaptées
+            aux recommandations de leur équipe médicale.
+
+        </div>
+
+    </main>
 
 </div>
 
-</section>
-
-</main>
-
+<!-- NAVIGATION -->
 <nav class="bottom-nav">
-<a href="index.html">🏠<small>Accueil</small></a>
-<a href="recettes.html">🍽️<small>Recettes</small></a>
-<a href="menu.html">📅<small>Menu</small></a>
-<a href="courses.html">🛒<small>Courses</small></a>
+
+    <a href="../../index.html">
+        🏠
+        <small>Accueil</small>
+    </a>
+
+    <a href="Recettes.html">
+        🍽️
+        <small>Recettes</small>
+    </a>
+
+    <a href="Favoris.html">
+        ❤️
+        <small>Favoris</small>
+    </a>
+
+    <a href="MonProfil.html">
+        👤
+        <small>Profil</small>
+    </a>
+
 </nav>
+
+
+<script>
+
+    /* -----------------------------
+       MODE DE CUISINE
+    ----------------------------- */
+
+    const modeButtons = document.querySelectorAll(".mode-btn");
+
+    let modePortion =
+        localStorage.getItem("modePortion") || "petite";
+
+    function actualiserMode() {
+
+        modeButtons.forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.mode === modePortion
+            );
+
+        });
+
+    }
+
+    modeButtons.forEach(button => {
+
+        button.addEventListener("click", function() {
+
+            modePortion = this.dataset.mode;
+
+            localStorage.setItem(
+                "modePortion",
+                modePortion
+            );
+
+            actualiserMode();
+
+        });
+
+    });
+
+    actualiserMode();
+
+
+    /* -----------------------------
+       ADAPTATION DES PLATS
+    ----------------------------- */
+
+    const adaptations = {
+
+        "Pizza": {
+            petite: [
+                "Choisir une petite pâte ou préparer une demi-pizza.",
+                "Privilégier une garniture avec une source de protéines.",
+                "Ajouter quelques légumes plutôt qu'une grande quantité de fromage."
+            ],
+            famille: [
+                "Préparer une pizza familiale à partager.",
+                "Prévoir plusieurs garnitures pour satisfaire les envies de chacun.",
+                "Conserver une portion individuelle pour un autre repas si besoin."
+            ],
+            mixte: [
+                "Préparer une grande pizza familiale.",
+                "Prévoir une petite part adaptée à votre appétit.",
+                "Conserver le reste pour un autre repas."
+            ]
+        },
+
+        "Burger": {
+            petite: [
+                "Choisir un petit pain.",
+                "Privilégier une portion raisonnable de viande ou une alternative végétale.",
+                "Ajouter quelques crudités ou légumes."
+            ],
+            famille: [
+                "Préparer les burgers pour toute la famille.",
+                "Chacun compose son burger selon ses envies.",
+                "Prévoir les accompagnements séparément."
+            ],
+            mixte: [
+                "Préparer les ingrédients pour toute la famille.",
+                "Composer un petit burger pour soi.",
+                "Conserver les ingrédients restants pour un autre repas."
+            ]
+        },
+
+        "Lasagnes": {
+            petite: [
+                "Préparer un petit plat individuel ou utiliser une portion congelée.",
+                "Alterner pâte, légumes et protéines.",
+                "Éviter de remplir excessivement le plat individuel."
+            ],
+            famille: [
+                "Préparer un grand plat familial.",
+                "Découper ensuite en portions.",
+                "Conserver ou congeler les portions restantes."
+            ],
+            mixte: [
+                "Préparer un plat familial.",
+                "Découper en petites portions individuelles.",
+                "Congeler les portions supplémentaires si besoin."
+            ]
+        },
+
+        "Raclette": {
+            petite: [
+                "Prévoir seulement quelques tranches de fromage.",
+                "Ajouter une petite quantité de pommes de terre.",
+                "Compléter avec des légumes ou une salade."
+            ],
+            famille: [
+                "Installer les différents ingrédients au centre de la table.",
+                "Chacun compose son assiette.",
+                "Prévoir suffisamment de légumes et d'accompagnements."
+            ],
+            mixte: [
+                "Préparer une raclette pour toute la famille.",
+                "Composer une petite assiette pour soi.",
+                "Conserver les ingrédients non utilisés."
+            ]
+        },
+
+        "Tartiflette": {
+            petite: [
+                "Préparer une petite portion.",
+                "Augmenter la part de légumes si souhaité.",
+                "Conserver le reste pour un autre repas."
+            ],
+            famille: [
+                "Préparer un plat familial.",
+                "Découper en portions après cuisson.",
+                "Conserver les portions restantes au réfrigérateur ou au congélateur."
+            ],
+            mixte: [
+                "Préparer une quantité familiale.",
+                "Servir une petite portion.",
+                "Garder le surplus pour un autre repas."
+            ]
+        },
+
+        "Fajitas": {
+            petite: [
+                "Choisir une petite tortilla.",
+                "Garnir avec une quantité adaptée de protéines.",
+                "Ajouter des légumes et une sauce légère."
+            ],
+            famille: [
+                "Préparer les ingrédients séparément.",
+                "Chacun compose sa fajita.",
+                "Prévoir plusieurs garnitures."
+            ],
+            mixte: [
+                "Préparer toutes les garnitures pour la famille.",
+                "Composer une seule petite fajita pour soi.",
+                "Utiliser les restes dans une salade ou un autre repas."
+            ]
+        },
+
+        "Couscous": {
+            petite: [
+                "Privilégier une petite quantité de semoule.",
+                "Choisir une portion adaptée de viande ou de protéines.",
+                "Ajouter des légumes pour compléter l'assiette."
+            ],
+            famille: [
+                "Préparer le couscous en grande quantité.",
+                "Servir les différents éléments séparément.",
+                "Conserver les restes pour un autre repas."
+            ],
+            mixte: [
+                "Préparer une quantité familiale.",
+                "Composer une petite assiette.",
+                "Conserver séparément les légumes, protéines et semoule."
+            ]
+        },
+
+        "Carbonara": {
+            petite: [
+                "Réduire la quantité de pâtes.",
+                "Garder une source de protéines.",
+                "Préparer une sauce en quantité raisonnable."
+            ],
+            famille: [
+                "Préparer les pâtes pour toute la famille.",
+                "Adapter la sauce à la quantité de pâtes.",
+                "Conserver éventuellement les restes."
+            ],
+            mixte: [
+                "Préparer une quantité familiale.",
+                "Servir une petite portion.",
+                "Conserver le reste pour un autre repas."
+            ]
+        }
+
+    };
+
+
+    /* -----------------------------
+       AFFICHAGE DU RESULTAT
+    ----------------------------- */
+
+    const cards = document.querySelectorAll(".recipe-card");
+
+    const result = document.getElementById("result");
+    const resultTitle = document.getElementById("resultTitle");
+    const resultText = document.getElementById("resultText");
+    const adaptationList =
+        document.getElementById("adaptationList");
+
+    const recipeLink =
+        document.getElementById("recipeLink");
+
+
+    cards.forEach(card => {
+
+        card.addEventListener("click", function() {
+
+            const plat = this.dataset.plat;
+
+            const infos = adaptations[plat];
+
+            if (!infos) return;
+
+            let mode = modePortion;
+
+            if (!infos[mode]) {
+                mode = "petite";
+            }
+
+            resultTitle.textContent =
+                "🍽️ Adapter " + plat;
+
+            if (mode === "petite") {
+
+                resultText.textContent =
+                    "Voici quelques idées pour préparer " +
+                    plat.toLowerCase() +
+                    " en quantité adaptée à un petit appétit.";
+
+            } else if (mode === "famille") {
+
+                resultText.textContent =
+                    "Voici quelques idées pour préparer " +
+                    plat.toLowerCase() +
+                    " pour plusieurs personnes.";
+
+            } else {
+
+                resultText.textContent =
+                    "Voici comment préparer " +
+                    plat.toLowerCase() +
+                    " pour la famille tout en gardant une petite portion pour soi.";
+
+            }
+
+            adaptationList.innerHTML = "";
+
+            infos[mode].forEach(conseil => {
+
+                const li = document.createElement("li");
+
+                li.textContent = "✓ " + conseil;
+
+                adaptationList.appendChild(li);
+
+            });
+
+
+            /*
+             * On transmet également le mode
+             * à la page Recettes.
+             */
+
+            recipeLink.href =
+                "../../src/screens/Recettes.html?petite=" +
+                (mode === "petite" ? "true" : "false");
+
+
+            result.classList.add("visible");
+
+            result.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+</script>
 
 </body>
 </html>
-```
