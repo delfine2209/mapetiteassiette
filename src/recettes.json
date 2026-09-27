@@ -5707,5 +5707,339 @@
     "Cuire environ 15 minutes.",
     "Laisser tiédir avant de déguster."
   ]
-}  
+},
+     {
+  "id": "PD081",
+  "nom": "Fromage blanc, banane & flocons d'avoine",
+  "categorie": "Petit-déjeuner",
+  "type": "Petit-déjeuner",
+  "temps": 5,
+  "tempsPreparation": 5,
+  "tempsCuisson": 0,
+  "proteines": 9,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "rapide", "sucre"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "100 g de fromage blanc",
+    "1/2 banane",
+    "20 g de flocons d'avoine",
+    "1 cuillère à café de miel",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Déposer le fromage blanc dans un bol.",
+    "Écraser ou couper finement la banane.",
+    "Ajouter les flocons d'avoine.",
+    "Ajouter le miel et un peu de cannelle.",
+    "Mélanger et déguster."
+  ],
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "50 g",
+      "Banane": "1/4",
+      "Flocons d'avoine": "10 g",
+      "Miel": "1/2 cuillère à café"
+    },
+    "famille2": {
+      "Fromage blanc": "100 g",
+      "Banane": "1/2",
+      "Flocons d'avoine": "20 g",
+      "Miel": "1 cuillère à café"
+    },
+    "famille4": {
+      "Fromage blanc": "200 g",
+      "Banane": "1",
+      "Flocons d'avoine": "40 g",
+      "Miel": "2 cuillères à café"
+    }
+},
+{
+  "id": "PD082",
+  "nom": "Compote pomme-poire & fromage blanc",
+  "categorie": "Petit-déjeuner",
+  "type": "Petit-déjeuner",
+  "temps": 5,
+  "tempsPreparation": 5,
+  "tempsCuisson": 0,
+  "proteines": 7,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "rapide", "sucre"],
+  "texture": "lisse",
+  "ingredients": [
+    "100 g de compote pomme-poire sans sucre ajouté",
+    "100 g de fromage blanc",
+    "1 cuillère à café de flocons d'avoine très fins",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Verser la compote dans un petit bol.",
+    "Ajouter le fromage blanc.",
+    "Ajouter les flocons d'avoine.",
+    "Mélanger délicatement.",
+    "Ajouter un peu de cannelle si souhaité."
+  ],
+  "quantites": {
+    "petite": {
+      "Compote": "50 g",
+      "Fromage blanc": "50 g",
+      "Flocons d'avoine": "1/2 cuillère à café"
+    },
+    "famille2": {
+      "Compote": "100 g",
+      "Fromage blanc": "100 g",
+      "Flocons d'avoine": "1 cuillère à café"
+    },
+    "famille4": {
+      "Compote": "200 g",
+      "Fromage blanc": "200 g",
+      "Flocons d'avoine": "2 cuillères à café"
+    }
+},
+{
+  "id": "PD083",
+  "nom": "Mini pancakes à la banane",
+  "categorie": "Petit-déjeuner",
+  "type": "Petit-déjeuner",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 8,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Les pancakes peuvent être préparés à l'avance et réchauffés doucement.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "rapide"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "1 petite banane",
+    "1 œuf",
+    "30 g de farine d'avoine",
+    "30 g de fromage blanc",
+    "1/2 cuillère à café de levure"
+  ],
+  "preparation": [
+    "Écraser la banane.",
+    "Ajouter l'œuf et le fromage blanc.",
+    "Ajouter la farine d'avoine et la levure.",
+    "Mélanger jusqu'à obtenir une pâte homogène.",
+    "Cuire de petits pancakes dans une poêle légèrement huilée.",
+    "Retourner lorsque de petites bulles apparaissent.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": {
+      "Banane": "1/2",
+      "Œuf": "1/2",
+      "Farine d'avoine": "15 g",
+      "Fromage blanc": "15 g"
+    },
+    "famille2": {
+      "Banane": "1 petite",
+      "Œuf": "1",
+      "Farine d'avoine": "30 g",
+      "Fromage blanc": "30 g"
+    },
+    "famille4": {
+      "Banane": "2 petites",
+      "Œuf": "2",
+      "Farine d'avoine": "60 g",
+      "Fromage blanc": "60 g"
+    }
+},
+{
+  "id": "PD084",
+  "nom": "Tartine œuf brouillé & fromage frais",
+  "categorie": "Petit-déjeuner",
+  "type": "Petit-déjeuner",
+  "temps": 10,
+  "tempsPreparation": 5,
+  "tempsCuisson": 5,
+  "proteines": 10,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet", "rapide"],
+  "texture": "tendre",
+  "ingredients": [
+    "1 œuf",
+    "1 petite tranche de pain complet",
+    "20 g de fromage frais",
+    "1 cuillère à café de lait",
+    "Quelques herbes douces"
+  ],
+  "preparation": [
+    "Battre l'œuf avec le lait.",
+    "Cuire doucement l'œuf à la poêle en remuant.",
+    "Faire légèrement griller le pain.",
+    "Tartiner le fromage frais.",
+    "Ajouter l'œuf brouillé.",
+    "Terminer avec quelques herbes douces."
+  ],
+  "quantites": {
+    "petite": {
+      "Œuf": "1/2",
+      "Pain complet": "1/2 tranche",
+      "Fromage frais": "10 g",
+      "Lait": "1/2 cuillère à café"
+    },
+    "famille2": {
+      "Œuf": "1",
+      "Pain complet": "1 tranche",
+      "Fromage frais": "20 g",
+      "Lait": "1 cuillère à café"
+    },
+    "famille4": {
+      "Œuf": "2",
+      "Pain complet": "2 tranches",
+      "Fromage frais": "40 g",
+      "Lait": "2 cuillères à café"
+    }
+},
+{
+  "id": "PD085",
+  "nom": "Porridge pomme-cannelle",
+  "categorie": "Petit-déjeuner",
+  "type": "Petit-déjeuner",
+  "temps": 10,
+  "tempsPreparation": 3,
+  "tempsCuisson": 7,
+  "proteines": 7,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "sucre", "reconfort"],
+  "texture": "fondante",
+  "ingredients": [
+    "30 g de flocons d'avoine",
+    "100 ml de lait",
+    "1/2 pomme",
+    "1 cuillère à café de compote sans sucre ajouté",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Couper la pomme en petits morceaux.",
+    "Faire chauffer les flocons d'avoine avec le lait.",
+    "Ajouter la pomme.",
+    "Cuire doucement jusqu'à obtenir une texture crémeuse.",
+    "Ajouter la compote et la cannelle.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": {
+      "Flocons d'avoine": "15 g",
+      "Lait": "50 ml",
+      "Pomme": "1/4",
+      "Compote": "1/2 cuillère à café"
+    },
+    "famille2": {
+      "Flocons d'avoine": "30 g",
+      "Lait": "100 ml",
+      "Pomme": "1/2",
+      "Compote": "1 cuillère à café"
+    },
+    "famille4": {
+      "Flocons d'avoine": "60 g",
+      "Lait": "200 ml",
+      "Pomme": "1",
+      "Compote": "2 cuillères à café"
+    }
+},
+{
+  "id": "PD086",
+  "nom": "Mini omelette jambon-fromage",
+  "categorie": "Petit-déjeuner",
+  "type": "Petit-déjeuner",
+  "temps": 10,
+  "tempsPreparation": 3,
+  "tempsCuisson": 7,
+  "proteines": 13,
+  "portions": 2,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet", "rapide"],
+  "texture": "tendre",
+  "ingredients": [
+    "2 œufs",
+    "40 g de jambon blanc",
+    "20 g de fromage râpé",
+    "1 cuillère à café de lait",
+    "Herbes douces selon les goûts"
+  ],
+  "preparation": [
+    "Battre les œufs avec le lait.",
+    "Ajouter le jambon coupé en petits morceaux.",
+    "Verser dans une poêle chaude.",
+    "Ajouter le fromage.",
+    "Cuire doucement jusqu'à ce que l'omelette soit prise.",
+    "Plier et servir."
+  ],
+  "quantites": {
+    "petite": {
+      "Œufs": "1",
+      "Jambon": "20 g",
+      "Fromage râpé": "10 g",
+      "Lait": "1/2 cuillère à café"
+    },
+    "famille2": {
+      "Œufs": "2",
+      "Jambon": "40 g",
+      "Fromage râpé": "20 g",
+      "Lait": "1 cuillère à café"
+    },
+    "famille4": {
+      "Œufs": "4",
+      "Jambon": "80 g",
+      "Fromage râpé": "40 g",
+      "Lait": "2 cuillères à café"
+    ]
+},
 ]
