@@ -6,8 +6,6 @@
 
   <title>Ma Petite Assiette</title>
 
-  <link rel="stylesheet" href="src/style.css">
-
   <style>
     * {
       box-sizing: border-box;
@@ -15,161 +13,271 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f4ef;
-      color: #3f4038;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #4b4039;
     }
 
-    button,
-    a {
-      font-family: inherit;
-    }
-
-    .home {
-      max-width: 700px;
-      margin: 0 auto;
+    .page {
       min-height: 100vh;
       padding-bottom: 90px;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      padding: 28px 20px 30px;
+      padding: 32px 20px 30px;
+      background: linear-gradient(
+        135deg,
+        #f8d8c7,
+        #f4e5c8,
+        #dce8d5
+      );
       border-radius: 0 0 32px 32px;
-      background:
-        linear-gradient(
-          145deg,
-          #f4dfd0 0%,
-          #f5e9dc 45%,
-          #dfe8d8 100%
-        );
     }
 
     .logo {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.85);
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 18px rgba(80,70,60,0.08);
+      background: rgba(255,255,255,.72);
+      border-radius: 20px;
+      font-size: 34px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      margin: 0;
-      font-size: 32px;
-      line-height: 1.12;
-      color: #3f4038;
-      font-weight: 800;
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.15;
     }
 
     .hero p {
-      margin: 12px 0 0;
-      font-size: 16px;
+      margin: 0;
       line-height: 1.5;
-      color: #67685f;
+      font-size: 16px;
     }
-
-    /* MAIN */
 
     .content {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px 16px;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .card {
+      background: white;
+      border-radius: 22px;
       padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 5px 20px rgba(90,70,50,.07);
     }
 
-    .section-title {
-      margin: 10px 0 14px;
+    .card h2 {
+      margin: 0 0 8px;
       font-size: 21px;
-      font-weight: 800;
-      color: #3f4038;
     }
 
-    /* CARD PRINCIPALE */
-
-    .main-choice {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      padding: 22px;
-      border-radius: 25px;
-      background: linear-gradient(135deg, #78956d, #9eb392);
-      color: white;
-      box-shadow: 0 10px 25px rgba(95,120,85,0.20);
-      margin-bottom: 28px;
+    .card p {
+      margin: 0;
+      line-height: 1.5;
     }
 
-    .main-choice .icon {
-      font-size: 30px;
-      margin-bottom: 12px;
-      display: block;
+    /* =========================
+       MODE DE CUISINE
+    ========================= */
+
+    .mode-card {
+      background: linear-gradient(
+        135deg,
+        #fff8f1,
+        #f7f3e9
+      );
+      border: 1px solid #eadfd5;
     }
 
-    .main-choice h2 {
-      margin: 0 0 7px;
+    .mode-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 7px;
+    }
+
+    .mode-intro {
+      color: #71665e;
+      font-size: 14px;
+      margin-bottom: 16px !important;
+    }
+
+    .mode-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mode-option {
+      position: relative;
+    }
+
+    .mode-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .mode-option label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+      background: white;
+      border: 2px solid #eadfd5;
+      border-radius: 17px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .mode-option label:hover {
+      border-color: #b8c9ae;
+    }
+
+    .mode-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f7eee7;
+      border-radius: 13px;
       font-size: 22px;
     }
 
-    .main-choice p {
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.5;
-      opacity: 0.95;
+    .mode-text strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
     }
 
-    /* PARCOURS */
+    .mode-text small {
+      color: #81756d;
+      line-height: 1.35;
+    }
 
-    .path-grid {
+    .mode-option input:checked + label {
+      border-color: #8ba17e;
+      background: #edf4e9;
+    }
+
+    .mode-option input:checked + label .mode-icon {
+      background: #dcebd5;
+    }
+
+    .mode-status {
+      margin-top: 14px;
+      padding: 11px 13px;
+      background: #edf4e9;
+      color: #55704d;
+      border-radius: 14px;
+      font-size: 13px;
+      line-height: 1.45;
+      display: none;
+    }
+
+    .mode-status.visible {
+      display: block;
+    }
+
+    .profile-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: #607955;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       CHOIX PRINCIPAL
+    ========================= */
+
+    .main-choice {
+      background: linear-gradient(
+        135deg,
+        #fff,
+        #fff7f1
+      );
+    }
+
+    .main-button {
+      display: block;
+      margin-top: 15px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #dfead9;
+      color: #50684a;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* =========================
+       PARCOURS
+    ========================= */
+
+    .section-title {
+      margin: 25px 4px 12px;
+      font-size: 21px;
+    }
+
+    .journey-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 28px;
+      gap: 11px;
     }
 
-    .path-card {
+    .journey-card {
+      display: block;
       text-decoration: none;
-      color: inherit;
+      color: #4b4039;
       background: white;
-      border-radius: 22px;
-      padding: 18px 15px;
-      min-height: 135px;
-      box-shadow: 0 5px 18px rgba(70,60,50,0.07);
-      border: 1px solid #eee7df;
-      transition: transform 0.15s ease;
+      border-radius: 19px;
+      padding: 17px 14px;
+      min-height: 115px;
+      box-shadow: 0 5px 18px rgba(90,70,50,.06);
     }
 
-    .path-card:active {
-      transform: scale(0.97);
+    .journey-card .icon {
+      font-size: 25px;
+      margin-bottom: 9px;
     }
 
-    .path-card .icon {
-      font-size: 27px;
+    .journey-card strong {
       display: block;
-      margin-bottom: 12px;
+      font-size: 14px;
+      margin-bottom: 4px;
     }
 
-    .path-card strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 6px;
+    .journey-card small {
+      color: #81756d;
+      line-height: 1.35;
     }
 
-    .path-card span {
-      display: block;
-      font-size: 12px;
-      line-height: 1.4;
-      color: #77786f;
-    }
-
-    /* ENVIES */
+    /* =========================
+       ENVIES
+    ========================= */
 
     .envies-scroll {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       overflow-x: auto;
-      padding: 3px 2px 12px;
+      padding: 3px 2px 8px;
       scrollbar-width: none;
     }
 
@@ -177,137 +285,108 @@
       display: none;
     }
 
-    .envie-home-card {
+    .envie-button {
+      flex: 0 0 auto;
       border: none;
-      flex: 0 0 125px;
-      min-height: 115px;
-      border-radius: 22px;
-      padding: 15px;
-      text-align: left;
+      background: white;
+      border-radius: 18px;
+      padding: 13px 16px;
+      box-shadow: 0 4px 15px rgba(90,70,50,.06);
+      color: #5d5149;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(70,60,50,0.06);
-      transition: transform 0.15s ease;
-    }
-
-    .envie-home-card:active {
-      transform: scale(0.96);
-    }
-
-    .envie-home-card .icon {
-      display: block;
-      font-size: 27px;
-      margin-bottom: 13px;
-    }
-
-    .envie-home-card span:last-child {
-      display: block;
       font-size: 14px;
-      font-weight: 700;
     }
 
-    .envie-leger {
-      background: #e5efe1;
+    .envie-button span {
+      display: block;
+      font-size: 23px;
+      margin-bottom: 5px;
     }
 
-    .envie-complet {
-      background: #eee8dc;
-    }
-
-    .envie-rapide {
-      background: #f9e6c9;
-    }
-
-    .envie-sucre {
-      background: #f5dfe0;
-    }
-
-    .envie-vegetarien {
-      background: #dcebdc;
-    }
-
-    /* RECETTES */
+    /* =========================
+       RACCOURCIS
+    ========================= */
 
     .shortcut-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 12px;
+      gap: 10px;
     }
 
     .shortcut {
       display: block;
-      text-decoration: none;
-      color: #3f4038;
+      padding: 15px;
       background: white;
-      border-radius: 20px;
-      padding: 18px;
-      box-shadow: 0 5px 15px rgba(70,60,50,0.06);
-      border: 1px solid #eee7df;
-    }
-
-    .shortcut .icon {
-      font-size: 25px;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .shortcut strong {
+      border-radius: 17px;
+      text-decoration: none;
+      color: #5b5049;
+      box-shadow: 0 4px 15px rgba(90,70,50,.05);
       font-size: 14px;
+      font-weight: 600;
     }
 
-    /* MESSAGE */
+    /* =========================
+       MESSAGE
+    ========================= */
 
     .message {
-      margin-top: 26px;
-      padding: 20px;
-      border-radius: 22px;
-      background: #fff7e8;
-      border: 1px solid #f0dfbd;
-      font-size: 14px;
+      background: #f7eee7;
+      border-radius: 19px;
+      padding: 17px;
       line-height: 1.5;
-      color: #676052;
+      font-size: 14px;
+      margin-top: 18px;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .bottom-nav {
       position: fixed;
       bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(700px, 100%);
+      left: 0;
+      right: 0;
       height: 72px;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid #e9e2da;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      background: rgba(255,255,255,.97);
+      border-top: 1px solid #eee5dd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
       z-index: 100;
     }
 
     .bottom-nav a {
       text-decoration: none;
-      color: #77786f;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      font-size: 11px;
+      color: #82766e;
+      text-align: center;
+      font-size: 12px;
     }
 
-    .bottom-nav a:first-child {
-      color: #6f8b65;
+    .bottom-nav a span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+
+    .bottom-nav a.active {
+      color: #5c7552;
       font-weight: 700;
     }
 
-    .bottom-nav .nav-icon {
-      font-size: 22px;
-    }
+    @media (max-width: 380px) {
 
-    @media (min-width: 701px) {
-      .bottom-nav {
-        border-radius: 22px 22px 0 0;
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .journey-grid,
+      .shortcut-grid {
+        gap: 8px;
+      }
+
+      .journey-card {
+        padding: 14px 11px;
       }
     }
   </style>
@@ -315,12 +394,17 @@
 
 <body>
 
-<div class="home">
+<div class="page">
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
+
   <header class="hero">
 
-    <div class="logo">🍽️</div>
+    <div class="logo">
+      🍽️
+    </div>
 
     <h1>
       Aujourd'hui,<br>
@@ -328,8 +412,8 @@
     </h1>
 
     <p>
-      Une petite assiette adaptée à vos envies,
-      votre appétit et votre quotidien.
+      Des idées simples, adaptées à votre appétit,
+      vos envies et votre quotidien.
     </p>
 
   </header>
@@ -337,160 +421,369 @@
 
   <main class="content">
 
-    <!-- CHOIX PRINCIPAL -->
 
-    <a href="src/screens/MesEnvies.html" class="main-choice">
+    <!-- =========================
+         MODE DE CUISINE
+    ========================= -->
 
-      <span class="icon">✨</span>
+    <section class="card mode-card">
+
+      <h2 class="mode-title">
+        🍽️ Comment cuisinez-vous ?
+      </h2>
+
+      <p class="mode-intro">
+        Avant de commencer, choisissez votre mode de cuisine.
+        Les quantités des recettes pourront ensuite être adaptées
+        à votre façon de manger.
+      </p>
+
+
+      <div class="mode-options">
+
+        <div class="mode-option">
+
+          <input
+            type="radio"
+            id="modePetite"
+            name="modePortion"
+            value="petite"
+          >
+
+          <label for="modePetite">
+
+            <div class="mode-icon">
+              🥄
+            </div>
+
+            <div class="mode-text">
+
+              <strong>
+                Petite portion
+              </strong>
+
+              <small>
+                Pour cuisiner en petites quantités.
+              </small>
+
+            </div>
+
+          </label>
+
+        </div>
+
+
+        <div class="mode-option">
+
+          <input
+            type="radio"
+            id="modeFamille"
+            name="modePortion"
+            value="famille"
+          >
+
+          <label for="modeFamille">
+
+            <div class="mode-icon">
+              👨‍👩‍👧‍👦
+            </div>
+
+            <div class="mode-text">
+
+              <strong>
+                Famille
+              </strong>
+
+              <small>
+                Pour préparer les repas pour plusieurs personnes.
+              </small>
+
+            </div>
+
+          </label>
+
+        </div>
+
+
+        <div class="mode-option">
+
+          <input
+            type="radio"
+            id="modeMixte"
+            name="modePortion"
+            value="mixte"
+          >
+
+          <label for="modeMixte">
+
+            <div class="mode-icon">
+              🍲
+            </div>
+
+            <div class="mode-text">
+
+              <strong>
+                Petite portion + famille
+              </strong>
+
+              <small>
+                Une recette pour toute la famille,
+                avec votre petite portion.
+              </small>
+
+            </div>
+
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="modeStatus"
+        class="mode-status"
+      ></div>
+
+
+      <a
+        href="src/screens/MonProfil.html"
+        class="profile-link"
+      >
+        ⚙️ Modifier mon choix dans mon profil
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         CHOIX PRINCIPAL
+    ========================= -->
+
+    <section class="card main-choice">
 
       <h2>
-        Je choisis selon mes envies
+        💭 Je choisis selon mes envies
       </h2>
 
       <p>
-        Dites-moi ce qui vous ferait plaisir
-        et je vous propose des recettes adaptées.
+        Dites-nous ce dont vous avez envie
+        et découvrez des recettes qui vous correspondent.
       </p>
 
-    </a>
+      <a
+        href="src/screens/MesEnvies.html"
+        class="main-button"
+      >
+        Choisir mes envies →
+      </a>
+
+    </section>
 
 
-    <!-- MON PARCOURS -->
+    <!-- =========================
+         MON PARCOURS
+    ========================= -->
 
     <h2 class="section-title">
-      Mon parcours
+      🌿 Mon parcours
     </h2>
 
-    <div class="path-grid">
+    <div class="journey-grid">
 
-      <a href="src/screens/petit-appetit.html" class="path-card">
-        <span class="icon">🥄</span>
-        <strong>Petit appétit</strong>
-        <span>
-          Des portions adaptées et faciles à manger.
-        </span>
+      <a
+        href="src/screens/petit-appetit.html"
+        class="journey-card"
+      >
+
+        <div class="icon">
+          🥄
+        </div>
+
+        <strong>
+          Petit appétit
+        </strong>
+
+        <small>
+          Manger peu, mais bien.
+        </small>
+
       </a>
 
-      <a href="src/screens/chirurgie.html" class="path-card">
-        <span class="icon">🌿</span>
-        <strong>Préparer ma chirurgie</strong>
-        <span>
-          Organiser progressivement mes repas.
-        </span>
+
+      <a
+        href="src/screens/chirurgie.html"
+        class="journey-card"
+      >
+
+        <div class="icon">
+          🌸
+        </div>
+
+        <strong>
+          Préparer ma chirurgie
+        </strong>
+
+        <small>
+          Organiser mon alimentation.
+        </small>
+
       </a>
 
-      <a href="src/screens/batch-cooking.html" class="path-card">
-        <span class="icon">🍱</span>
-        <strong>Batch-cooking</strong>
-        <span>
+
+      <a
+        href="src/screens/batch-cooking.html"
+        class="journey-card"
+      >
+
+        <div class="icon">
+          📦
+        </div>
+
+        <strong>
+          Batch-cooking
+        </strong>
+
+        <small>
           Préparer plusieurs repas à l'avance.
-        </span>
+        </small>
+
       </a>
 
-      <a href="src/screens/adapter.html" class="path-card">
-        <span class="icon">🍽️</span>
-        <strong>Adapter mon assiette</strong>
-        <span>
-          Trouver le bon équilibre dans mon repas.
-        </span>
+
+      <a
+        href="src/screens/Recettes.html"
+        class="journey-card"
+      >
+
+        <div class="icon">
+          🍽️
+        </div>
+
+        <strong>
+          Adapter mon assiette
+        </strong>
+
+        <small>
+          Trouver la recette qui me convient.
+        </small>
+
       </a>
 
     </div>
 
 
-    <!-- ENVIES -->
+    <!-- =========================
+         ENVIES
+    ========================= -->
 
     <h2 class="section-title">
-      Aujourd'hui, j'ai envie de…
+      💕 Aujourd'hui, j'ai envie de…
     </h2>
 
     <div class="envies-scroll">
 
       <button
-        type="button"
-        class="envie-home-card envie-leger"
-        onclick="choisirEnvie('leger')"
+        class="envie-button"
+        data-envie="leger"
       >
-        <span class="icon">🥗</span>
-        <span>Léger</span>
+        <span>🥗</span>
+        Léger
       </button>
 
       <button
-        type="button"
-        class="envie-home-card envie-complet"
-        onclick="choisirEnvie('complet')"
+        class="envie-button"
+        data-envie="complet"
       >
-        <span class="icon">🍽️</span>
-        <span>Complet</span>
+        <span>🍛</span>
+        Complet
       </button>
 
       <button
-        type="button"
-        class="envie-home-card envie-rapide"
-        onclick="choisirEnvie('rapide')"
+        class="envie-button"
+        data-envie="rapide"
       >
-        <span class="icon">⚡</span>
-        <span>Rapide</span>
+        <span>⚡</span>
+        Rapide
       </button>
 
       <button
-        type="button"
-        class="envie-home-card envie-sucre"
-        onclick="choisirEnvie('sucre')"
+        class="envie-button"
+        data-envie="sucre"
       >
-        <span class="icon">🍰</span>
-        <span>Petite douceur</span>
+        <span>🍰</span>
+        Petite douceur
       </button>
 
       <button
-        type="button"
-        class="envie-home-card envie-vegetarien"
-        onclick="choisirEnvie('vegetarien')"
+        class="envie-button"
+        data-envie="vegetarien"
       >
-        <span class="icon">🌱</span>
-        <span>Végétarien</span>
+        <span>🌱</span>
+        Végétarien
       </button>
 
     </div>
 
 
-    <!-- RACCOURCIS -->
+    <!-- =========================
+         RACCOURCIS
+    ========================= -->
 
     <h2 class="section-title">
-      Mes recettes
+      ✨ Mes raccourcis
     </h2>
 
     <div class="shortcut-grid">
 
-      <a href="src/screens/Recettes.html" class="shortcut">
-        <span class="icon">📖</span>
-        <strong>Voir toutes les recettes</strong>
+      <a
+        href="src/screens/Recettes.html"
+        class="shortcut"
+      >
+        🍽️ Voir toutes les recettes
       </a>
 
-      <a href="src/screens/Favoris.html" class="shortcut">
-        <span class="icon">❤️</span>
-        <strong>Mes favoris</strong>
+      <a
+        href="src/screens/Favoris.html"
+        class="shortcut"
+      >
+        ❤️ Mes favoris
       </a>
 
-      <a href="src/screens/menu.html" class="shortcut">
-        <span class="icon">📅</span>
-        <strong>Mon menu</strong>
+      <a
+        href="src/screens/menu.html"
+        class="shortcut"
+      >
+        📅 Mon menu
       </a>
 
-      <a href="src/screens/courses.html" class="shortcut">
-        <span class="icon">🛒</span>
-        <strong>Mes courses</strong>
+      <a
+        href="src/screens/courses.html"
+        class="shortcut"
+      >
+        🛒 Mes courses
       </a>
 
     </div>
 
 
-    <!-- PETIT MESSAGE -->
+    <!-- =========================
+         MESSAGE
+    ========================= -->
 
     <div class="message">
-      💚 <strong>Ma Petite Assiette</strong><br>
-      Parce qu'un repas peut être simple,
-      gourmand et adapté à soi.
+
+      🌿 <strong>
+        Ma Petite Assiette
+      </strong>
+
+      <br><br>
+
+      Une cuisine pensée pour vous aider
+      à manger simplement, à votre rythme,
+      tout en gardant le plaisir de cuisiner
+      pour soi et pour les autres.
+
     </div>
 
   </main>
@@ -498,28 +791,39 @@
 </div>
 
 
-<!-- NAVIGATION BASSE -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav class="bottom-nav">
 
-  <a href="index.html">
-    <span class="nav-icon">⌂</span>
-    <span>Accueil</span>
+  <a
+    href="index.html"
+    class="active"
+  >
+    <span>🏠</span>
+    Accueil
   </a>
 
-  <a href="src/screens/Recettes.html">
-    <span class="nav-icon">🍴</span>
-    <span>Recettes</span>
+  <a
+    href="src/screens/Recettes.html"
+  >
+    <span>🍽️</span>
+    Recettes
   </a>
 
-  <a href="src/screens/Favoris.html">
-    <span class="nav-icon">❤️</span>
-    <span>Favoris</span>
+  <a
+    href="src/screens/Favoris.html"
+  >
+    <span>❤️</span>
+    Favoris
   </a>
 
-  <a href="src/screens/MonProfil.html">
-    <span class="nav-icon">👤</span>
-    <span>Profil</span>
+  <a
+    href="src/screens/MonProfil.html"
+  >
+    <span>👤</span>
+    Profil
   </a>
 
 </nav>
@@ -527,23 +831,135 @@
 
 <script>
 
-function choisirEnvie(envie) {
+  /* =========================================================
+     MODE DE CUISINE
+  ========================================================= */
 
-  localStorage.setItem("envie", envie);
+  const choixMode =
+    document.querySelectorAll(
+      'input[name="modePortion"]'
+    );
 
-  localStorage.setItem(
-    "preferences",
-    JSON.stringify([])
+  const modeStatus =
+    document.getElementById(
+      "modeStatus"
+    );
+
+
+  function afficherModeEnregistre() {
+
+    const mode =
+      localStorage.getItem(
+        "modePortion"
+      );
+
+    if (!mode) {
+
+      modeStatus.classList.remove(
+        "visible"
+      );
+
+      return;
+    }
+
+
+    const textes = {
+
+      petite:
+        "✓ Votre mode est enregistré : <strong>🥄 Petite portion</strong>. Les recettes compatibles pourront être adaptées à votre petite assiette.",
+
+      famille:
+        "✓ Votre mode est enregistré : <strong>👨‍👩‍👧‍👦 Famille</strong>. Les recettes sont préparées pour la cuisine familiale.",
+
+      mixte:
+        "✓ Votre mode est enregistré : <strong>🍲 Petite portion + famille</strong>. Vous pouvez cuisiner pour toute la famille tout en adaptant votre portion."
+    };
+
+
+    modeStatus.innerHTML =
+      textes[mode] || "";
+
+    modeStatus.classList.add(
+      "visible"
+    );
+
+
+    const radio =
+      document.querySelector(
+        'input[name="modePortion"][value="' +
+        mode +
+        '"]'
+      );
+
+    if (radio) {
+      radio.checked = true;
+    }
+  }
+
+
+  choixMode.forEach(
+    choix => {
+
+      choix.addEventListener(
+        "change",
+        function () {
+
+          localStorage.setItem(
+            "modePortion",
+            this.value
+          );
+
+          afficherModeEnregistre();
+
+        }
+      );
+
+    }
   );
 
-  localStorage.setItem(
-    "temps",
-    "plus"
-  );
 
-  window.location.href =
-    "src/screens/Resultats.html";
-}
+  afficherModeEnregistre();
+
+
+  /* =========================================================
+     ENVIES
+  ========================================================= */
+
+  document
+    .querySelectorAll(
+      ".envie-button"
+    )
+    .forEach(
+      bouton => {
+
+        bouton.addEventListener(
+          "click",
+          function () {
+
+            const envie =
+              this.dataset.envie;
+
+            localStorage.setItem(
+              "envie",
+              envie
+            );
+
+            localStorage.removeItem(
+              "temps"
+            );
+
+            localStorage.removeItem(
+              "preferences"
+            );
+
+            window.location.href =
+              "src/screens/Resultats.html";
+
+          }
+        );
+
+      }
+    );
 
 </script>
 
