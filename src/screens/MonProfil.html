@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Mon profil - Ma Petite Assiette</title>
 
   <style>
@@ -14,252 +13,182 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fffaf5;
-      color: #3f4038;
-      padding-bottom: 90px;
+      background: #f8f3ed;
+      color: #40534a;
     }
 
     .page {
-      max-width: 600px;
-      margin: 0 auto;
+      min-height: 100vh;
+      padding-bottom: 90px;
     }
-
-    /* HERO */
 
     .hero {
-      background: linear-gradient(
-        145deg,
-        #f4d8c8 0%,
-        #f8e5d8 45%,
-        #dce8d8 100%
-      );
-      padding: 24px 20px 30px;
-      border-radius: 0 0 30px 30px;
-    }
-
-    .top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 22px;
-    }
-
-    .back {
-      text-decoration: none;
-      color: #4d6250;
-      font-size: 14px;
-      font-weight: bold;
-      background: rgba(255,255,255,0.65);
-      padding: 9px 13px;
-      border-radius: 14px;
+      background: linear-gradient(135deg, #f4d8c8, #dce8d8);
+      padding: 32px 20px 28px;
+      border-radius: 0 0 32px 32px;
+      text-align: center;
     }
 
     .logo {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.75);
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.7);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 27px;
-      box-shadow: 0 5px 15px rgba(90,70,50,0.08);
+      font-size: 32px;
     }
 
     h1 {
-      margin: 0 0 8px;
-      font-size: 30px;
-      line-height: 1.15;
-      color: #39463b;
+      margin: 0;
+      font-size: 28px;
+      color: #40534a;
     }
 
     .subtitle {
-      margin: 0;
-      color: #687066;
+      margin: 10px 0 0;
       font-size: 15px;
       line-height: 1.5;
+      color: #617268;
     }
 
-    /* CONTENU */
-
-    .content {
+    main {
       padding: 22px 16px;
+      max-width: 700px;
+      margin: auto;
     }
 
-    .section {
-      margin-bottom: 22px;
-    }
-
-    .section-title {
-      margin: 0 0 10px 4px;
-      color: #566254;
-      font-size: 17px;
-    }
-
-    /* CARTE PROFIL */
-
-    .profile-card {
+    .card {
       background: white;
       border-radius: 24px;
       padding: 20px;
-      box-shadow: 0 5px 18px rgba(90,70,50,0.08);
-      display: flex;
-      align-items: center;
-      gap: 15px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 20px rgba(75, 80, 70, 0.08);
     }
 
-    .avatar {
-      width: 62px;
-      height: 62px;
-      flex-shrink: 0;
-      border-radius: 21px;
-      background: #e7eee2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-    }
-
-    .profile-info h2 {
-      margin: 0 0 5px;
+    .card h2 {
+      margin: 0 0 8px;
       font-size: 19px;
-      color: #424c42;
+      color: #40534a;
     }
 
-    .profile-info p {
-      margin: 0;
-      color: #7a8078;
+    .card p {
+      margin: 0 0 16px;
+      line-height: 1.5;
+      color: #6b776f;
+      font-size: 14px;
+    }
+
+    .portion-options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .portion-option {
+      position: relative;
+    }
+
+    .portion-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .portion-label {
+      display: block;
+      padding: 17px;
+      border: 2px solid #e7e1d9;
+      border-radius: 18px;
+      background: #fffdfb;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .portion-label:hover {
+      border-color: #a9c5ad;
+    }
+
+    .portion-option input:checked + .portion-label {
+      border-color: #789b80;
+      background: #edf5ed;
+      box-shadow: 0 4px 12px rgba(80, 110, 85, 0.10);
+    }
+
+    .portion-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #40534a;
+      margin-bottom: 5px;
+    }
+
+    .portion-description {
+      display: block;
+      padding-left: 31px;
       font-size: 13px;
       line-height: 1.4;
+      color: #718078;
     }
 
-    /* OPTIONS */
-
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .option {
+    .save-button {
       width: 100%;
       border: none;
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 16px;
+      background: #789b80;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .save-button:hover {
+      background: #668b6e;
+    }
+
+    .saved-message {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 14px;
+      background: #edf5ed;
+      color: #54705a;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .section-title {
+      margin: 24px 4px 12px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #40534a;
+    }
+
+    .menu-card {
+      display: block;
       text-decoration: none;
       background: white;
+      color: #40534a;
       border-radius: 20px;
       padding: 16px;
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      color: #444b43;
-      box-shadow: 0 4px 15px rgba(90,70,50,0.06);
-      cursor: pointer;
-      text-align: left;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 15px rgba(75, 80, 70, 0.06);
     }
 
-    .option-icon {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      border-radius: 15px;
-      background: #f6e7dc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 21px;
-    }
-
-    .option:nth-child(2) .option-icon {
-      background: #e4eddc;
-    }
-
-    .option:nth-child(3) .option-icon {
-      background: #e5edf1;
-    }
-
-    .option:nth-child(4) .option-icon {
-      background: #f2e5ef;
-    }
-
-    .option:nth-child(5) .option-icon {
-      background: #f4ecd9;
-    }
-
-    .option-text {
-      flex: 1;
-    }
-
-    .option-title {
+    .menu-card strong {
       display: block;
-      font-weight: bold;
-      font-size: 15px;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
-    .option-description {
-      display: block;
-      color: #858981;
-      font-size: 12px;
-      line-height: 1.35;
-    }
-
-    .arrow {
-      color: #9aa098;
-      font-size: 20px;
-    }
-
-    /* PARCOURS */
-
-    .journey {
-      background: linear-gradient(
-        135deg,
-        #eef3e9,
-        #f9eee6
-      );
-      border-radius: 24px;
-      padding: 19px;
-    }
-
-    .journey-title {
-      margin: 0 0 7px;
-      font-size: 17px;
-      color: #4d5d4b;
-    }
-
-    .journey-text {
-      margin: 0 0 15px;
-      color: #737970;
+    .menu-card span {
       font-size: 13px;
-      line-height: 1.5;
+      color: #748078;
     }
-
-    .journey-button {
-      display: inline-block;
-      text-decoration: none;
-      background: #70866a;
-      color: white;
-      padding: 11px 15px;
-      border-radius: 15px;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    /* INFORMATIONS */
-
-    .info-card {
-      background: #fff4ec;
-      border-radius: 20px;
-      padding: 17px;
-      color: #737970;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .info-card strong {
-      color: #5d665b;
-    }
-
-    /* NAVIGATION */
 
     .bottom-nav {
       position: fixed;
@@ -267,49 +196,30 @@
       left: 0;
       right: 0;
       height: 72px;
-      background: rgba(255,255,255,0.96);
-      border-top: 1px solid #eee5dd;
-      display: flex;
-      justify-content: center;
-      z-index: 100;
-      box-shadow: 0 -4px 18px rgba(90,70,50,0.06);
-    }
-
-    .nav-inner {
-      width: 100%;
-      max-width: 600px;
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid #e9e3dc;
       display: flex;
       justify-content: space-around;
       align-items: center;
+      z-index: 10;
     }
 
-    .nav-item {
+    .bottom-nav a {
       text-decoration: none;
-      color: #92978f;
-      font-size: 11px;
+      color: #77827b;
+      font-size: 12px;
       text-align: center;
-      min-width: 65px;
     }
 
-    .nav-item span {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 3px;
-    }
-
-    .nav-item.active {
-      color: #657b60;
+    .bottom-nav a.active {
+      color: #668b6e;
       font-weight: bold;
     }
 
-    @media (min-width: 601px) {
-      .bottom-nav {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        width: 600px;
-        border-radius: 25px 25px 0 0;
-      }
+    .bottom-nav .icon {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 3px;
     }
   </style>
 </head>
@@ -318,55 +228,100 @@
 
 <div class="page">
 
-  <!-- HERO -->
-
   <header class="hero">
-
-    <div class="top">
-
-      <a class="back" href="../../index.html">
-        ← Accueil
-      </a>
-
-      <div class="logo">
-        🍽️
-      </div>
-
-    </div>
-
+    <div class="logo">🍽️</div>
     <h1>Mon profil</h1>
-
     <p class="subtitle">
-      Personnalisez votre expérience et retrouvez facilement votre parcours.
+      Personnalisez votre façon d'utiliser<br>
+      Ma Petite Assiette.
     </p>
-
   </header>
 
+  <main>
 
-  <!-- CONTENU -->
+    <!-- CHOIX DES PORTIONS -->
+    <section class="card">
 
-  <main class="content">
+      <h2>🍽️ Comment cuisinez-vous ?</h2>
 
-    <!-- PROFIL -->
+      <p>
+        Choisissez le mode qui correspond le mieux à votre quotidien.
+        Vous pourrez ensuite adapter les quantités directement dans les recettes.
+      </p>
 
-    <section class="section">
+      <div class="portion-options">
 
-      <div class="profile-card">
+        <div class="portion-option">
+          <input
+            type="radio"
+            id="modePetite"
+            name="modePortion"
+            value="petite"
+          >
 
-        <div class="avatar">
-          👤
+          <label for="modePetite" class="portion-label">
+
+            <span class="portion-title">
+              🥄 Petite portion
+            </span>
+
+            <span class="portion-description">
+              Je souhaite privilégier les petites quantités et une assiette adaptée à mon appétit.
+            </span>
+
+          </label>
         </div>
 
-        <div class="profile-info">
+        <div class="portion-option">
+          <input
+            type="radio"
+            id="modeFamille"
+            name="modePortion"
+            value="famille"
+          >
 
-          <h2>Mon espace personnel</h2>
+          <label for="modeFamille" class="portion-label">
 
-          <p>
-            Retrouvez vos préférences, vos favoris et vos différents parcours.
-          </p>
+            <span class="portion-title">
+              👨‍👩‍👧‍👦 Famille
+            </span>
 
+            <span class="portion-description">
+              Je cuisine principalement pour plusieurs personnes.
+            </span>
+
+          </label>
         </div>
 
+        <div class="portion-option">
+          <input
+            type="radio"
+            id="modeMixte"
+            name="modePortion"
+            value="mixte"
+          >
+
+          <label for="modeMixte" class="portion-label">
+
+            <span class="portion-title">
+              🍲 Petite portion + famille
+            </span>
+
+            <span class="portion-description">
+              Je cuisine un plat familial tout en pouvant adapter ma propre portion.
+            </span>
+
+          </label>
+        </div>
+
+      </div>
+
+      <button class="save-button" onclick="enregistrerMode()">
+        Enregistrer mon choix
+      </button>
+
+      <div id="savedMessage" class="saved-message">
+        ✓ Votre préférence a bien été enregistrée.
       </div>
 
     </section>
@@ -374,240 +329,114 @@
 
     <!-- MON PARCOURS -->
 
-    <section class="section">
-
-      <h2 class="section-title">
-        Mon parcours
-      </h2>
-
-      <div class="journey">
-
-        <h3 class="journey-title">
-          🌿 Une assiette adaptée à vos besoins
-        </h3>
-
-        <p class="journey-text">
-          Ma Petite Assiette vous accompagne dans vos choix,
-          de la découverte des recettes jusqu'à la préparation
-          de votre chirurgie.
-        </p>
-
-        <a
-          class="journey-button"
-          href="petit-appetit.html"
-        >
-          Découvrir mon parcours
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- MES PRÉFÉRENCES -->
-
-    <section class="section">
-
-      <h2 class="section-title">
-        Mes préférences
-      </h2>
-
-      <div class="options">
-
-        <a class="option" href="MesEnvies.html">
-
-          <div class="option-icon">
-            🍽️
-          </div>
-
-          <div class="option-text">
-
-            <span class="option-title">
-              Mes envies
-            </span>
-
-            <span class="option-description">
-              Choisissez ce qui vous ferait plaisir aujourd'hui.
-            </span>
-
-          </div>
-
-          <span class="arrow">
-            ›
-          </span>
-
-        </a>
-
-
-        <a class="option" href="MesEnvies.html">
-
-          <div class="option-icon">
-            🥄
-          </div>
-
-          <div class="option-text">
-
-            <span class="option-title">
-              Petite portion
-            </span>
-
-            <span class="option-description">
-              Retrouvez des recettes adaptées aux petits appétits.
-            </span>
-
-          </div>
-
-          <span class="arrow">
-            ›
-          </span>
-
-        </a>
-
-
-        <a class="option" href="batch-cooking.html">
-
-          <div class="option-icon">
-            📦
-          </div>
-
-          <div class="option-text">
-
-            <span class="option-title">
-              Batch-cooking
-            </span>
-
-            <span class="option-description">
-              Préparez plusieurs repas à l'avance simplement.
-            </span>
-
-          </div>
-
-          <span class="arrow">
-            ›
-          </span>
-
-        </a>
-
-
-        <a class="option" href="chirurgie.html">
-
-          <div class="option-icon">
-            🌸
-          </div>
-
-          <div class="option-text">
-
-            <span class="option-title">
-              Préparer ma chirurgie
-            </span>
-
-            <span class="option-description">
-              Retrouvez les informations et les étapes de votre parcours.
-            </span>
-
-          </div>
-
-          <span class="arrow">
-            ›
-          </span>
-
-        </a>
-
-
-        <a class="option" href="Favoris.html">
-
-          <div class="option-icon">
-            ❤️
-          </div>
-
-          <div class="option-text">
-
-            <span class="option-title">
-              Mes favoris
-            </span>
-
-            <span class="option-description">
-              Retrouvez toutes vos recettes préférées.
-            </span>
-
-          </div>
-
-          <span class="arrow">
-            ›
-          </span>
-
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- INFORMATION -->
-
-    <section class="section">
-
-      <div class="info-card">
-
-        <strong>💡 À savoir</strong><br>
-
-        Les informations et recettes proposées dans
-        Ma Petite Assiette sont destinées à vous aider
-        à organiser vos repas. Pour la préparation et
-        le suivi après une chirurgie bariatrique,
-        les recommandations de votre équipe médicale
-        restent prioritaires.
-
-      </div>
-
-    </section>
+    <div class="section-title">
+      🌿 Mon parcours
+    </div>
+
+    <a href="petit-appetit.html" class="menu-card">
+      <strong>🥄 Petit appétit</strong>
+      <span>Des idées pour manger peu mais de façon équilibrée.</span>
+    </a>
+
+    <a href="batch-cooking.html" class="menu-card">
+      <strong>📦 Batch-cooking</strong>
+      <span>Préparer plusieurs repas à l'avance.</span>
+    </a>
+
+    <a href="chirurgie.html" class="menu-card">
+      <strong>🌸 Préparer ma chirurgie</strong>
+      <span>Découvrir le parcours et organiser ses repas.</span>
+    </a>
+
+
+    <!-- MES PREFERENCES -->
+
+    <div class="section-title">
+      ⚙️ Mes préférences
+    </div>
+
+    <a href="MesEnvies.html" class="menu-card">
+      <strong>💭 Mes envies</strong>
+      <span>Choisir selon ce qui vous ferait plaisir aujourd'hui.</span>
+    </a>
+
+    <a href="Favoris.html" class="menu-card">
+      <strong>❤️ Mes favoris</strong>
+      <span>Retrouver facilement vos recettes préférées.</span>
+    </a>
 
   </main>
+
+
+  <!-- NAVIGATION -->
+
+  <nav class="bottom-nav">
+
+    <a href="../../index.html">
+      <span class="icon">🏠</span>
+      Accueil
+    </a>
+
+    <a href="Recettes.html">
+      <span class="icon">🍴</span>
+      Recettes
+    </a>
+
+    <a href="Favoris.html">
+      <span class="icon">❤️</span>
+      Favoris
+    </a>
+
+    <a href="MonProfil.html" class="active">
+      <span class="icon">👤</span>
+      Profil
+    </a>
+
+  </nav>
 
 </div>
 
 
-<!-- NAVIGATION -->
+<script>
 
-<nav class="bottom-nav">
+  // Charger la préférence déjà enregistrée
+  const modeEnregistre = localStorage.getItem("modePortion");
 
-  <div class="nav-inner">
+  if (modeEnregistre) {
+    const choix = document.querySelector(
+      'input[name="modePortion"][value="' + modeEnregistre + '"]'
+    );
 
-    <a
-      class="nav-item"
-      href="../../index.html"
-    >
-      <span>🏠</span>
-      Accueil
-    </a>
+    if (choix) {
+      choix.checked = true;
+    }
+  }
 
-    <a
-      class="nav-item"
-      href="Recettes.html"
-    >
-      <span>🍽️</span>
-      Recettes
-    </a>
 
-    <a
-      class="nav-item"
-      href="Favoris.html"
-    >
-      <span>❤️</span>
-      Favoris
-    </a>
+  // Enregistrer le choix
+  function enregistrerMode() {
 
-    <a
-      class="nav-item active"
-      href="MonProfil.html"
-    >
-      <span>👤</span>
-      Profil
-    </a>
+    const choix = document.querySelector(
+      'input[name="modePortion"]:checked'
+    );
 
-  </div>
+    if (!choix) {
+      alert("Choisissez d'abord votre mode de portion.");
+      return;
+    }
 
-</nav>
+    localStorage.setItem("modePortion", choix.value);
+
+    const message = document.getElementById("savedMessage");
+
+    message.style.display = "block";
+
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 2500);
+  }
+
+</script>
 
 </body>
 </html>
