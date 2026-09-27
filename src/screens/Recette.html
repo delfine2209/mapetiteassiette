@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Recette - Ma Petite Assiette</title>
-
-  <link rel="stylesheet" href="../style.css">
 
   <style>
     * {
@@ -16,72 +15,230 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fffaf5;
-      color: #4b4039;
-    }
-
-    .page {
-      min-height: 100vh;
+      background: #fffaf7;
+      color: #4d403b;
       padding-bottom: 90px;
     }
 
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      padding: 28px 20px 30px;
       background: linear-gradient(
         135deg,
-        #f8d8c7,
-        #f4e5c8,
-        #dce8d5
+        #f7d9c9,
+        #f5e8d8,
+        #dcebdc
       );
+      padding: 28px 18px 30px;
       border-radius: 0 0 30px 30px;
     }
 
     .back {
       display: inline-block;
-      margin-bottom: 20px;
-      color: #5f7553;
       text-decoration: none;
-      font-weight: 600;
+      color: #5d7563;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
     .logo {
       width: 58px;
       height: 58px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255,255,255,.7);
-      border-radius: 18px;
       font-size: 30px;
       margin-bottom: 15px;
     }
 
     .hero h1 {
       margin: 0 0 8px;
-      font-size: 28px;
+      font-size: 29px;
       line-height: 1.15;
     }
 
     .hero p {
       margin: 0;
+      color: #6c5c54;
       line-height: 1.5;
     }
 
-    .content {
+    /* =========================
+       CONTENU
+    ========================= */
+
+    .container {
       padding: 20px 16px;
       max-width: 700px;
       margin: auto;
     }
 
-    .card {
-      background: white;
-      border-radius: 22px;
-      padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 5px 20px rgba(90,70,50,.07);
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
-    .meta {
+    .info-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 14px 8px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(100,80,60,0.08);
+    }
+
+    .info-icon {
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .info-label {
+      font-size: 12px;
+      color: #8a7970;
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .section {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(100,80,60,0.07);
+    }
+
+    .section h2 {
+      margin: 0 0 15px;
+      font-size: 20px;
+      color: #506456;
+    }
+
+    /* =========================
+       CHOIX DES QUANTITES
+    ========================= */
+
+    .quantity-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .quantity-button {
+      border: 2px solid #e6ddd6;
+      background: #fffaf7;
+      color: #5b504a;
+      border-radius: 16px;
+      padding: 12px 7px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .quantity-button:hover {
+      border-color: #9caf9d;
+    }
+
+    .quantity-button.active {
+      background: #dcebdc;
+      border-color: #7f9b82;
+      color: #435d48;
+    }
+
+    .quantity-note {
+      margin-top: 13px;
+      background: #f7f1eb;
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #6b5d55;
+    }
+
+    /* =========================
+       INGREDIENTS
+    ========================= */
+
+    .ingredients {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ingredients li {
+      position: relative;
+      padding: 10px 0 10px 28px;
+      border-bottom: 1px solid #eee5df;
+      line-height: 1.45;
+    }
+
+    .ingredients li:last-child {
+      border-bottom: none;
+    }
+
+    .ingredients li::before {
+      content: "•";
+      position: absolute;
+      left: 7px;
+      top: 7px;
+      color: #88a38c;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       PREPARATION
+    ========================= */
+
+    .preparation {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: etape;
+    }
+
+    .preparation li {
+      counter-increment: etape;
+      position: relative;
+      padding: 12px 0 12px 43px;
+      border-bottom: 1px solid #eee5df;
+      line-height: 1.5;
+    }
+
+    .preparation li:last-child {
+      border-bottom: none;
+    }
+
+    .preparation li::before {
+      content: counter(etape);
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #dcebdc;
+      color: #526b57;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* =========================
+       BADGES
+    ========================= */
+
+    .badges {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -90,204 +247,151 @@
 
     .badge {
       display: inline-block;
-      padding: 7px 11px;
+      background: #f4e7dd;
+      color: #755e52;
       border-radius: 20px;
-      background: #f5eee7;
-      font-size: 13px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: bold;
     }
 
     .badge.green {
-      background: #e4efdf;
-      color: #55704d;
+      background: #dcebdc;
+      color: #526b57;
     }
 
-    .badge.peach {
-      background: #fae3d7;
-      color: #805c4d;
+    .badge.blue {
+      background: #e1edf0;
+      color: #557079;
     }
 
-    .section-title {
-      margin: 0 0 15px;
-      font-size: 21px;
-      color: #51453e;
-    }
-
-    /* SELECTEUR DE QUANTITES */
-
-    .quantity-card {
-      background: linear-gradient(
-        135deg,
-        #fff8f1,
-        #f7f3e9
-      );
-      border: 1px solid #eee2d5;
-    }
-
-    .quantity-intro {
-      margin: -5px 0 16px;
-      color: #756961;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .quantity-options {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 9px;
-    }
-
-    .quantity-option {
-      position: relative;
-    }
-
-    .quantity-option input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .quantity-option label {
-      display: block;
-      padding: 13px 7px;
-      text-align: center;
-      border: 2px solid #eadfd5;
-      border-radius: 16px;
-      background: white;
-      cursor: pointer;
-      font-size: 13px;
-      line-height: 1.35;
-      transition: .2s;
-    }
-
-    .quantity-option label span {
-      display: block;
-      font-size: 21px;
-      margin-bottom: 5px;
-    }
-
-    .quantity-option input:checked + label {
-      border-color: #8ba17e;
-      background: #edf4e9;
-      color: #50684a;
-      font-weight: 600;
-    }
-
-    .quantity-info {
-      margin-top: 15px;
-      padding: 12px 14px;
-      background: #fff;
-      border-radius: 14px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #6e625a;
-    }
-
-    .ingredient-list {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .ingredient-list li {
-      margin-bottom: 10px;
-      line-height: 1.45;
-    }
-
-    .preparation-list {
-      margin: 0;
-      padding-left: 22px;
-    }
-
-    .preparation-list li {
-      margin-bottom: 13px;
-      line-height: 1.5;
-    }
+    /* =========================
+       FAVORI
+    ========================= */
 
     .favorite-button {
       width: 100%;
       border: none;
-      border-radius: 18px;
-      padding: 15px;
-      font-size: 16px;
-      font-weight: 600;
+      background: #f8eee8;
+      color: #70584e;
+      border-radius: 16px;
+      padding: 14px;
       cursor: pointer;
-      background: #f3dfd3;
-      color: #6b5146;
-      margin-top: 5px;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
     .favorite-button.active {
-      background: #e8efdf;
-      color: #55704d;
+      background: #f4d9d4;
+      color: #a65b59;
     }
 
-    .notice {
-      padding: 14px 16px;
-      background: #fff4df;
-      border-radius: 16px;
+    /* =========================
+       NOTICE POST-OP
+    ========================= */
+
+    .medical-note {
+      background: #fff5e9;
+      border-left: 4px solid #d6a66d;
+      border-radius: 12px;
+      padding: 13px 14px;
       font-size: 13px;
       line-height: 1.5;
-      color: #6c5b49;
+      color: #6d5b4e;
     }
 
-    .empty {
+    /* =========================
+       ERREUR
+    ========================= */
+
+    .error {
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
-    .empty a {
+    .error-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .error h2 {
+      margin: 0 0 10px;
+    }
+
+    .error a {
       display: inline-block;
       margin-top: 15px;
-      padding: 13px 18px;
-      border-radius: 16px;
-      background: #dfead9;
-      color: #50684a;
+      background: #dcebdc;
+      color: #506456;
       text-decoration: none;
-      font-weight: 600;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: bold;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .bottom-nav {
       position: fixed;
-      bottom: 0;
       left: 0;
       right: 0;
+      bottom: 0;
       height: 72px;
-      background: rgba(255,255,255,.96);
-      border-top: 1px solid #eee5dd;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid #eadfd8;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       z-index: 100;
+      box-shadow: 0 -3px 15px rgba(80,60,50,0.08);
     }
 
     .bottom-nav a {
       text-decoration: none;
-      color: #82766e;
-      text-align: center;
-      font-size: 12px;
+      color: #7b6d65;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 11px;
     }
 
-    .bottom-nav a span {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 2px;
+    .bottom-nav .nav-icon {
+      font-size: 21px;
     }
 
     .bottom-nav a.active {
-      color: #5c7552;
-      font-weight: 700;
+      color: #55705b;
+      font-weight: bold;
     }
 
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 380px) {
-      .quantity-options {
-        gap: 5px;
+
+      .hero h1 {
+        font-size: 25px;
       }
 
-      .quantity-option label {
+      .info-grid {
+        gap: 6px;
+      }
+
+      .info-card {
+        padding: 12px 5px;
+      }
+
+      .quantity-buttons {
+        gap: 6px;
+      }
+
+      .quantity-button {
         font-size: 12px;
-        padding-left: 4px;
-        padding-right: 4px;
       }
     }
   </style>
@@ -295,991 +399,1516 @@
 
 <body>
 
-<div class="page">
+  <!-- =========================
+       HERO
+  ========================= -->
 
-  <div id="app">
-    <div class="empty">
-      <p>Chargement de la recette…</p>
+  <header class="hero">
+
+    <a href="Recettes.html" class="back">
+      ← Retour aux recettes
+    </a>
+
+    <div class="logo">🍽️</div>
+
+    <h1 id="recipeName">
+      Chargement…
+    </h1>
+
+    <p id="recipeIntro">
+      Préparons cette petite assiette ensemble.
+    </p>
+
+  </header>
+
+
+  <main class="container">
+
+    <!-- =========================
+         ERREUR
+    ========================= -->
+
+    <div id="errorContainer" class="error" style="display:none;">
+
+      <div class="error-icon">🍽️</div>
+
+      <h2>Recette introuvable</h2>
+
+      <p>
+        Cette recette n'a pas pu être trouvée.
+      </p>
+
+      <a href="Recettes.html">
+        Voir toutes les recettes
+      </a>
+
     </div>
-  </div>
 
-</div>
 
-<nav class="bottom-nav">
-  <a href="../../index.html">
-    <span>🏠</span>
-    Accueil
-  </a>
+    <div id="recipeContainer" style="display:none;">
 
-  <a href="Recettes.html" class="active">
-    <span>🍽️</span>
-    Recettes
-  </a>
+      <!-- =========================
+           INFORMATIONS
+      ========================= -->
 
-  <a href="Favoris.html">
-    <span>❤️</span>
-    Favoris
-  </a>
+      <div class="info-grid">
 
-  <a href="MonProfil.html">
-    <span>👤</span>
-    Profil
-  </a>
-</nav>
+        <div class="info-card">
+          <div class="info-icon">⏱️</div>
+          <div class="info-label">Temps</div>
+          <div class="info-value" id="recipeTime">-</div>
+        </div>
 
+        <div class="info-card">
+          <div class="info-icon">💪</div>
+          <div class="info-label">Protéines</div>
+          <div class="info-value" id="recipeProtein">-</div>
+        </div>
 
-<script>
+        <div class="info-card">
+          <div class="info-icon">🍽️</div>
+          <div class="info-label">Base</div>
+          <div class="info-value" id="recipePortions">-</div>
+        </div>
 
-  /* =========================================================
-     PARAMETRES
-  ========================================================= */
+      </div>
 
-  const params = new URLSearchParams(window.location.search);
-  const recetteId = params.get("id");
 
-  let recetteActuelle = null;
-  let modeQuantiteActuel = "petite";
+      <!-- =========================
+           CATEGORIE / BADGES
+      ========================= -->
 
+      <div class="section">
 
-  /* =========================================================
-     OUTILS
-  ========================================================= */
-
-  function normaliserTexte(texte) {
-    return String(texte || "")
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
-      .trim();
-  }
-
-
-  /*
-   * Transforme une quantité écrite sous forme :
-   *
-   * 120
-   * 1/2
-   * 1,5
-   * 1 1/2
-   *
-   * en nombre.
-   */
-  function convertirNombre(texte) {
-
-    if (!texte) {
-      return null;
-    }
-
-    let valeur = String(texte)
-      .trim()
-      .replace(",", ".");
-
-    // Fraction simple : 1/2
-    if (/^\d+\s*\/\s*\d+$/.test(valeur)) {
-
-      const morceaux = valeur.split("/");
-
-      return (
-        Number(morceaux[0].trim()) /
-        Number(morceaux[1].trim())
-      );
-    }
-
-    // Nombre mixte : 1 1/2
-    const mixte = valeur.match(
-      /^(\d+(?:\.\d+)?)\s+(\d+)\s*\/\s*(\d+)$/
-    );
-
-    if (mixte) {
-
-      return (
-        Number(mixte[1]) +
-        Number(mixte[2]) / Number(mixte[3])
-      );
-    }
-
-    const nombre = Number(valeur);
-
-    return Number.isFinite(nombre)
-      ? nombre
-      : null;
-  }
-
-
-  /*
-   * Transforme 0.5 en 1/2 lorsque c'est plus lisible.
-   */
-  function afficherNombre(nombre) {
-
-    if (Math.abs(nombre - 0.5) < 0.001) {
-      return "1/2";
-    }
-
-    if (Math.abs(nombre - 0.25) < 0.001) {
-      return "1/4";
-    }
-
-    if (Math.abs(nombre - 0.75) < 0.001) {
-      return "3/4";
-    }
-
-    if (Math.abs(nombre - 1.5) < 0.001) {
-      return "1 1/2";
-    }
-
-    if (Math.abs(nombre - 2.5) < 0.001) {
-      return "2 1/2";
-    }
-
-    if (Number.isInteger(nombre)) {
-      return String(nombre);
-    }
-
-    return nombre
-      .toFixed(2)
-      .replace(/0+$/, "")
-      .replace(/\.$/, "")
-      .replace(".", ",");
-  }
-
-
-  /*
-   * Arrondit intelligemment les quantités.
-   *
-   * Les grammes / ml peuvent rester entiers.
-   * Les cuillères peuvent accepter des demi-unités.
-   */
-  function arrondirQuantite(nombre, unite) {
-
-    const u = normaliserTexte(unite);
-
-    if (
-      u.includes("g") ||
-      u.includes("ml") ||
-      u.includes("kg") ||
-      u.includes("cl")
-    ) {
-      return Math.round(nombre);
-    }
-
-    return Math.round(nombre * 4) / 4;
-  }
-
-
-  /* =========================================================
-     CALCUL AUTOMATIQUE
-  ========================================================= */
-
-  function calculerIngredient(ingredient, facteur) {
-
-    if (!ingredient || facteur === 1) {
-      return ingredient;
-    }
-
-    const texte = String(ingredient).trim();
-
-    /*
-     * On cherche une quantité uniquement au début
-     * de l'ingrédient.
-     *
-     * Exemples pris en charge :
-     *
-     * 120 g de poulet
-     * 2 courgettes
-     * 1/2 oignon
-     * 1,5 cuillère à soupe d'huile
-     * 1 petite courgette
-     */
-
-    const match = texte.match(
-      /^(\d+(?:[,.]\d+)?|\d+\s*\/\s*\d+|\d+\s+\d+\s*\/\s*\d+)(\s*)(.*)$/i
-    );
-
-    if (!match) {
-      return ingredient;
-    }
-
-    const valeurInitiale = convertirNombre(match[1]);
-
-    if (valeurInitiale === null) {
-      return ingredient;
-    }
-
-    const reste = match[3] || "";
-
-    /*
-     * Pour les quantités alimentaires très petites,
-     * on évite de produire 0.
-     */
-    let nouvelleValeur =
-      valeurInitiale * facteur;
-
-    nouvelleValeur =
-      arrondirQuantite(
-        nouvelleValeur,
-        reste
-      );
-
-    if (nouvelleValeur <= 0) {
-      nouvelleValeur = 0.25;
-    }
-
-    return afficherNombre(nouvelleValeur) +
-      " " +
-      reste;
-  }
-
-
-  /*
-   * Calcule le facteur en fonction du nombre de portions
-   * de la recette.
-   *
-   * Petite portion = 1 portion
-   * Famille = 2 portions
-   * Famille = 4 portions
-   */
-  function obtenirFacteur(mode) {
-
-    const portionsBase =
-      Number(recetteActuelle.portions) || 2;
-
-    let portionsCible = 1;
-
-    if (mode === "famille2") {
-      portionsCible = 2;
-    }
-
-    if (mode === "famille4") {
-      portionsCible = 4;
-    }
-
-    return portionsCible / portionsBase;
-  }
-
-
-  /* =========================================================
-     QUANTITES PREDEFINIES
-  ========================================================= */
-
-  function obtenirQuantitesPredefinies(mode) {
-
-    if (
-      !recetteActuelle.quantites ||
-      !recetteActuelle.quantites[mode]
-    ) {
-      return null;
-    }
-
-    return recetteActuelle.quantites[mode];
-  }
-
-
-  /*
-   * Transforme les quantités explicites du JSON
-   * en liste HTML.
-   */
-  function afficherQuantitesPredefinies(mode) {
-
-    const quantites =
-      obtenirQuantitesPredefinies(mode);
-
-    if (!quantites) {
-      return null;
-    }
-
-    const liste = [];
-
-    Object.entries(quantites).forEach(
-      ([nom, quantite]) => {
-
-        liste.push(
-          `<li><strong>${nom}</strong> : ${quantite}</li>`
-        );
-
-      }
-    );
-
-    return liste.join("");
-  }
-
-
-  /* =========================================================
-     INGREDIENTS
-  ========================================================= */
-
-  function afficherIngredients() {
-
-    const liste =
-      document.getElementById("ingredientsList");
-
-    if (!liste) {
-      return;
-    }
-
-    /*
-     * PRIORITE 1 :
-     * Les recettes ayant des quantites précises
-     * utilisent toujours ces quantités.
-     */
-    const quantitesPredefinies =
-      afficherQuantitesPredefinies(
-        modeQuantiteActuel
-      );
-
-    if (quantitesPredefinies) {
-
-      liste.innerHTML =
-        quantitesPredefinies;
-
-      return;
-    }
-
-
-    /*
-     * PRIORITE 2 :
-     * Les recettes post-opératoires sans quantités
-     * précises ne sont PAS recalculées automatiquement.
-     *
-     * On conserve leurs ingrédients d'origine.
-     */
-    if (recetteActuelle.postOperatoire === true) {
-
-      liste.innerHTML =
-        recetteActuelle.ingredients
-          .map(
-            ingredient =>
-              `<li>${ingredient}</li>`
-          )
-          .join("");
-
-      return;
-    }
-
-
-    /*
-     * PRIORITE 3 :
-     * Toutes les recettes classiques peuvent utiliser
-     * le calcul automatique.
-     */
-
-    const facteur =
-      obtenirFacteur(
-        modeQuantiteActuel
-      );
-
-    liste.innerHTML =
-      recetteActuelle.ingredients
-        .map(
-          ingredient =>
-            `<li>${calculerIngredient(
-              ingredient,
-              facteur
-            )}</li>`
-        )
-        .join("");
-  }
-
-
-  /* =========================================================
-     INFORMATIONS SUR LES QUANTITES
-  ========================================================= */
-
-  function afficherInformationQuantites() {
-
-    const zone =
-      document.getElementById(
-        "quantityInformation"
-      );
-
-    if (!zone) {
-      return;
-    }
-
-    /*
-     * Quantités explicites
-     */
-    if (
-      recetteActuelle.quantites &&
-      recetteActuelle.quantites[modeQuantiteActuel]
-    ) {
-
-      zone.innerHTML =
-        "✓ Quantités prévues spécifiquement pour cette recette.";
-
-      return;
-    }
-
-
-    /*
-     * Post-opératoire
-     */
-    if (recetteActuelle.postOperatoire === true) {
-
-      zone.innerHTML =
-        "🌸 Les quantités de cette recette ne sont pas recalculées automatiquement. Pour les repas post-opératoires, suivez les quantités et textures indiquées par votre équipe médicale.";
-
-      return;
-    }
-
-
-    /*
-     * Recette classique
-     */
-    zone.innerHTML =
-      "ℹ️ Les quantités sont calculées automatiquement à partir de la recette de base. Elles restent indicatives et peuvent être adaptées selon votre appétit.";
-  }
-
-
-  /* =========================================================
-     SELECTEUR
-  ========================================================= */
-
-  function modeInitial() {
-
-    const modeEnregistre =
-      localStorage.getItem(
-        "modePortion"
-      );
-
-    if (modeEnregistre === "famille") {
-      return "famille2";
-    }
-
-    if (
-      modeEnregistre === "petite" ||
-      modeEnregistre === "mixte"
-    ) {
-      return "petite";
-    }
-
-    return "petite";
-  }
-
-
-  function afficherSelecteurQuantites() {
-
-    return `
-      <div class="card quantity-card">
-
-        <h2 class="section-title">
-          🍽️ Pour combien ?
+        <h2 id="recipeCategory">
+          Recette
         </h2>
 
-        <p class="quantity-intro">
-          Adaptez les quantités selon votre façon de cuisiner.
-        </p>
+        <div class="badges" id="recipeBadges"></div>
 
-        <div class="quantity-options">
+        <button
+          type="button"
+          id="favoriteButton"
+          class="favorite-button"
+        >
+          ♡ Ajouter aux favoris
+        </button>
 
-          <div class="quantity-option">
-            <input
-              type="radio"
-              id="quantitePetite"
-              name="quantite"
-              value="petite"
-              ${modeQuantiteActuel === "petite" ? "checked" : ""}
-            >
-
-            <label for="quantitePetite">
-              <span>🥄</span>
-              Petite portion
-            </label>
-          </div>
+      </div>
 
 
-          <div class="quantity-option">
-            <input
-              type="radio"
-              id="quantiteFamille2"
-              name="quantite"
-              value="famille2"
-              ${modeQuantiteActuel === "famille2" ? "checked" : ""}
-            >
+      <!-- =========================
+           QUANTITES
+      ========================= -->
 
-            <label for="quantiteFamille2">
-              <span>👩‍🍳</span>
-              2 personnes
-            </label>
-          </div>
+      <div class="section">
 
+        <h2>🍽️ Pour combien de portions ?</h2>
 
-          <div class="quantity-option">
-            <input
-              type="radio"
-              id="quantiteFamille4"
-              name="quantite"
-              value="famille4"
-              ${modeQuantiteActuel === "famille4" ? "checked" : ""}
-            >
+        <div class="quantity-buttons">
 
-            <label for="quantiteFamille4">
-              <span>👨‍👩‍👧‍👦</span>
-              4 personnes
-            </label>
-          </div>
+          <button
+            type="button"
+            class="quantity-button"
+            data-quantity="petite"
+          >
+            🥄<br>
+            1 petite portion
+          </button>
+
+          <button
+            type="button"
+            class="quantity-button"
+            data-quantity="famille2"
+          >
+            🍽️<br>
+            2 portions
+          </button>
+
+          <button
+            type="button"
+            class="quantity-button"
+            data-quantity="famille4"
+          >
+            👨‍👩‍👧‍👦<br>
+            4 portions
+          </button>
 
         </div>
 
         <div
-          class="quantity-info"
           id="quantityInformation"
+          class="quantity-note"
         ></div>
 
       </div>
-    `;
-  }
 
 
-  function initialiserSelecteur() {
+      <!-- =========================
+           INGREDIENTS
+      ========================= -->
+
+      <div class="section">
+
+        <h2>🛒 Ingrédients</h2>
+
+        <ul
+          id="ingredientsList"
+          class="ingredients"
+        ></ul>
+
+      </div>
+
+
+      <!-- =========================
+           PREPARATION
+      ========================= -->
+
+      <div class="section">
+
+        <h2>👩‍🍳 Préparation</h2>
+
+        <ol
+          id="preparationList"
+          class="preparation"
+        ></ol>
+
+      </div>
+
+
+      <!-- =========================
+           BATCH COOKING
+      ========================= -->
+
+      <div
+        id="batchSection"
+        class="section"
+        style="display:none;"
+      >
+
+        <h2>📦 Batch-cooking</h2>
+
+        <p id="batchText"></p>
+
+        <div
+          id="conservationText"
+          class="badges"
+        ></div>
+
+      </div>
+
+
+      <!-- =========================
+           NOTE POST-OP
+      ========================= -->
+
+      <div
+        id="medicalSection"
+        class="section"
+        style="display:none;"
+      >
+
+        <div class="medical-note">
+
+          🌸 <strong>Après une chirurgie bariatrique :</strong><br><br>
+
+          Les quantités affichées ici correspondent aux quantités
+          nécessaires pour <strong>préparer la recette</strong>.
+          Elles peuvent être adaptées pour 1, 2 ou 4 portions.<br><br>
+
+          La quantité réellement consommée et l'évolution des textures
+          doivent toujours respecter les recommandations de votre
+          équipe médicale.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav class="bottom-nav">
+
+    <a href="../../index.html">
+      <span class="nav-icon">🏠</span>
+      <span>Accueil</span>
+    </a>
+
+    <a
+      href="Recettes.html"
+      class="active"
+    >
+      <span class="nav-icon">🍽️</span>
+      <span>Recettes</span>
+    </a>
+
+    <a href="Favoris.html">
+      <span class="nav-icon">❤️</span>
+      <span>Favoris</span>
+    </a>
+
+    <a href="MonProfil.html">
+      <span class="nav-icon">👤</span>
+      <span>Profil</span>
+    </a>
+
+  </nav>
+
+
+  <script>
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+    const recetteId =
+      params.get("id");
+
+    let recetteActuelle = null;
+
+    let modeQuantiteActuel =
+      "petite";
+
+
+    /* =====================================================
+       NORMALISATION
+    ===================================================== */
+
+    function normaliserTexte(texte) {
+
+      return String(texte || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+
+    }
+
+
+    /* =====================================================
+       NOMBRE
+    ===================================================== */
+
+    function convertirNombre(texte) {
+
+      if (!texte) {
+        return null;
+      }
+
+      let valeur =
+        String(texte)
+          .trim()
+          .replace(",", ".");
+
+      /* fraction simple : 1/2 */
+
+      let fraction =
+        valeur.match(
+          /^(\d+)\s*\/\s*(\d+)$/
+        );
+
+      if (fraction) {
+
+        const numerateur =
+          Number(fraction[1]);
+
+        const denominateur =
+          Number(fraction[2]);
+
+        if (
+          denominateur !== 0
+        ) {
+
+          return (
+            numerateur /
+            denominateur
+          );
+
+        }
+
+      }
+
+
+      /* nombre mixte : 1 1/2 */
+
+      let mixte =
+        valeur.match(
+          /^(\d+)\s+(\d+)\s*\/\s*(\d+)$/
+        );
+
+      if (mixte) {
+
+        const entier =
+          Number(mixte[1]);
+
+        const numerateur =
+          Number(mixte[2]);
+
+        const denominateur =
+          Number(mixte[3]);
+
+        if (
+          denominateur !== 0
+        ) {
+
+          return (
+            entier +
+            numerateur /
+            denominateur
+          );
+
+        }
+
+      }
+
+
+      const nombre =
+        Number(valeur);
+
+      if (!Number.isNaN(nombre)) {
+        return nombre;
+      }
+
+      return null;
+
+    }
+
+
+    /* =====================================================
+       AFFICHAGE DES NOMBRES
+    ===================================================== */
+
+    function afficherNombre(nombre) {
+
+      if (
+        Number.isInteger(nombre)
+      ) {
+
+        return String(nombre);
+
+      }
+
+      const fractions = [
+        {
+          valeur: 0.25,
+          texte: "1/4"
+        },
+        {
+          valeur: 0.5,
+          texte: "1/2"
+        },
+        {
+          valeur: 0.75,
+          texte: "3/4"
+        },
+        {
+          valeur: 1.25,
+          texte: "1 1/4"
+        },
+        {
+          valeur: 1.5,
+          texte: "1 1/2"
+        },
+        {
+          valeur: 1.75,
+          texte: "1 3/4"
+        },
+        {
+          valeur: 2.25,
+          texte: "2 1/4"
+        },
+        {
+          valeur: 2.5,
+          texte: "2 1/2"
+        },
+        {
+          valeur: 2.75,
+          texte: "2 3/4"
+        }
+      ];
+
+      for (
+        const fraction of fractions
+      ) {
+
+        if (
+          Math.abs(
+            nombre -
+            fraction.valeur
+          ) < 0.001
+        ) {
+
+          return fraction.texte;
+
+        }
+
+      }
+
+      return String(
+        Number(
+          nombre.toFixed(2)
+        )
+      );
+
+    }
+
+
+    /* =====================================================
+       ARRONDI DES QUANTITES
+    ===================================================== */
+
+    function arrondirQuantite(
+      nombre,
+      reste
+    ) {
+
+      const texte =
+        normaliserTexte(reste);
+
+      /*
+       * Grammes / kilogrammes / ml / cl :
+       * on conserve une valeur entière.
+       */
+
+      if (
+        /\bg\b/.test(texte) ||
+        /\bgramme/.test(texte) ||
+        /\bkg\b/.test(texte) ||
+        /\bml\b/.test(texte) ||
+        /\bcl\b/.test(texte)
+      ) {
+
+        return Math.round(nombre);
+
+      }
+
+
+      /*
+       * Cuillères, unités et autres quantités :
+       * on garde des quarts de quantité.
+       */
+
+      return (
+        Math.round(
+          nombre * 4
+        ) / 4
+      );
+
+    }
+
+
+    /* =====================================================
+       FACTEUR DE MULTIPLICATION
+    ===================================================== */
+
+    function obtenirFacteur(
+      mode
+    ) {
+
+      /*
+       * La recette possède un nombre de portions
+       * de référence.
+       *
+       * Exemple :
+       *
+       * recette de base = 1 portion
+       * 1 portion  = x1
+       * 2 portions = x2
+       * 4 portions = x4
+       *
+       * recette de base = 2 portions
+       * 1 portion  = x0,5
+       * 2 portions = x1
+       * 4 portions = x2
+       */
+
+      const portionsBase =
+        Number(
+          recetteActuelle.portions
+        ) || 2;
+
+
+      let portionsCible = 1;
+
+
+      if (
+        mode === "famille2"
+      ) {
+
+        portionsCible = 2;
+
+      }
+
+
+      if (
+        mode === "famille4"
+      ) {
+
+        portionsCible = 4;
+
+      }
+
+
+      return (
+        portionsCible /
+        portionsBase
+      );
+
+    }
+
+
+    /* =====================================================
+       CALCUL AUTOMATIQUE D'UN INGREDIENT
+    ===================================================== */
+
+    function calculerIngredient(
+      ingredient,
+      facteur
+    ) {
+
+      if (
+        !ingredient ||
+        facteur === 1
+      ) {
+
+        return ingredient;
+
+      }
+
+
+      const texte =
+        String(
+          ingredient
+        ).trim();
+
+
+      /*
+       * On recherche uniquement une quantité
+       * située au début de l'ingrédient.
+       *
+       * Exemples reconnus :
+       *
+       * 80 g de poulet
+       * 100 g de courgette
+       * 1 c. à café d'huile
+       * 1/2 courgette
+       * 1 1/2 cuillère
+       */
+
+      const match =
+        texte.match(
+          /^(\d+(?:[,.]\d+)?|\d+\s*\/\s*\d+|\d+\s+\d+\s*\/\s*\d+)(\s*)(.*)$/i
+        );
+
+
+      /*
+       * Si aucune quantité numérique n'est
+       * détectée, on conserve l'ingrédient.
+       */
+
+      if (!match) {
+
+        return ingredient;
+
+      }
+
+
+      const valeurInitiale =
+        convertirNombre(
+          match[1]
+        );
+
+
+      if (
+        valeurInitiale === null
+      ) {
+
+        return ingredient;
+
+      }
+
+
+      const reste =
+        match[3] || "";
+
+
+      let nouvelleValeur =
+        valeurInitiale *
+        facteur;
+
+
+      nouvelleValeur =
+        arrondirQuantite(
+          nouvelleValeur,
+          reste
+        );
+
+
+      /*
+       * On évite une quantité nulle.
+       */
+
+      if (
+        nouvelleValeur <= 0
+      ) {
+
+        nouvelleValeur = 0.25;
+
+      }
+
+
+      return (
+        afficherNombre(
+          nouvelleValeur
+        ) +
+        " " +
+        reste
+      );
+
+    }
+
+
+    /* =====================================================
+       QUANTITES PREDEFINIES
+    ===================================================== */
+
+    function afficherQuantitesPredefinies(
+      mode
+    ) {
+
+      /*
+       * Certaines recettes possèdent leurs propres
+       * quantités précises.
+       *
+       * Exemple REC081.
+       *
+       * Ces valeurs sont prioritaires sur le
+       * calcul automatique.
+       */
+
+      if (
+        !recetteActuelle.quantites
+      ) {
+
+        return null;
+
+      }
+
+
+      const quantites =
+        recetteActuelle.quantites[mode];
+
+
+      if (
+        !quantites
+      ) {
+
+        return null;
+
+      }
+
+
+      return Object.entries(
+        quantites
+      )
+        .map(
+          ([nom, quantite]) =>
+            `<li>${quantite} ${nom}</li>`
+        )
+        .join("");
+
+    }
+
+
+    /* =====================================================
+       AFFICHAGE DES INGREDIENTS
+    ===================================================== */
+
+    function afficherIngredients() {
+
+      const liste =
+        document.getElementById(
+          "ingredientsList"
+        );
+
+
+      if (!liste) {
+        return;
+      }
+
+
+      /*
+       * PRIORITE 1 :
+       * Si la recette possède des quantités
+       * personnalisées, elles sont utilisées.
+       */
+
+      const quantitesPredefinies =
+        afficherQuantitesPredefinies(
+          modeQuantiteActuel
+        );
+
+
+      if (
+        quantitesPredefinies
+      ) {
+
+        liste.innerHTML =
+          quantitesPredefinies;
+
+        return;
+
+      }
+
+
+      /*
+       * PRIORITE 2 :
+       *
+       * Toutes les recettes sans quantités
+       * personnalisées utilisent maintenant
+       * le calcul automatique.
+       *
+       * Cela concerne également les recettes
+       * post-opératoires.
+       */
+
+      const facteur =
+        obtenirFacteur(
+          modeQuantiteActuel
+        );
+
+
+      liste.innerHTML =
+        (recetteActuelle.ingredients || [])
+          .map(
+            ingredient =>
+              `<li>${calculerIngredient(
+                ingredient,
+                facteur
+              )}</li>`
+          )
+          .join("");
+
+    }
+
+
+    /* =====================================================
+       INFORMATION QUANTITES
+    ===================================================== */
+
+    function afficherInformationQuantites() {
+
+      const zone =
+        document.getElementById(
+          "quantityInformation"
+        );
+
+
+      if (!zone) {
+        return;
+      }
+
+
+      /*
+       * Les quantités servent à préparer
+       * 1, 2 ou 4 portions.
+       *
+       * Pour le post-opératoire, elles ne
+       * constituent pas une prescription
+       * de quantité à consommer.
+       */
+
+      if (
+        recetteActuelle.postOperatoire === true
+      ) {
+
+        zone.innerHTML =
+          "ℹ️ Les quantités sont calculées pour préparer les portions. Pour une recette post-opératoire, la quantité réellement consommée doit suivre les recommandations de votre équipe médicale.";
+
+        return;
+
+      }
+
+
+      zone.innerHTML =
+        "ℹ️ Les quantités sont calculées automatiquement à partir de la recette de base. Vous pouvez préparer 1, 2 ou 4 portions.";
+
+    }
+
+
+    /* =====================================================
+       AFFICHAGE DE LA RECETTE
+    ===================================================== */
+
+    function afficherRecette() {
+
+      if (
+        !recetteActuelle
+      ) {
+
+        document.getElementById(
+          "recipeContainer"
+        ).style.display = "none";
+
+        document.getElementById(
+          "errorContainer"
+        ).style.display = "block";
+
+        return;
+
+      }
+
+
+      document.getElementById(
+        "recipeContainer"
+      ).style.display = "block";
+
+
+      document.getElementById(
+        "errorContainer"
+      ).style.display = "none";
+
+
+      /* Nom */
+
+      document.getElementById(
+        "recipeName"
+      ).textContent =
+        recetteActuelle.nom ||
+        "Recette";
+
+
+      /* Introduction */
+
+      document.getElementById(
+        "recipeIntro"
+      ).textContent =
+        recetteActuelle.portion ||
+        "Une recette pensée pour votre quotidien.";
+
+
+      /* Temps */
+
+      document.getElementById(
+        "recipeTime"
+      ).textContent =
+        recetteActuelle.temps
+          ? recetteActuelle.temps + " min"
+          : "-";
+
+
+      /* Protéines */
+
+      document.getElementById(
+        "recipeProtein"
+      ).textContent =
+        recetteActuelle.proteines !== undefined
+          ? recetteActuelle.proteines + " g"
+          : "-";
+
+
+      /* Portions de base */
+
+      document.getElementById(
+        "recipePortions"
+      ).textContent =
+        recetteActuelle.portions
+          ? recetteActuelle.portions
+          : "-";
+
+
+      /* Catégorie */
+
+      document.getElementById(
+        "recipeCategory"
+      ).textContent =
+        recetteActuelle.categorie ||
+        "Recette";
+
+
+      /* =========================
+         BADGES
+      ========================= */
+
+      const badges =
+        document.getElementById(
+          "recipeBadges"
+        );
+
+      badges.innerHTML = "";
+
+
+      if (
+        recetteActuelle.vegetarien
+      ) {
+
+        badges.innerHTML +=
+          '<span class="badge green">🌱 Végétarien</span>';
+
+      }
+
+
+      if (
+        recetteActuelle.sansGluten
+      ) {
+
+        badges.innerHTML +=
+          '<span class="badge blue">🌾 Sans gluten</span>';
+
+      }
+
+
+      if (
+        recetteActuelle.sansLactose
+      ) {
+
+        badges.innerHTML +=
+          '<span class="badge blue">🥛 Sans lactose</span>';
+
+      }
+
+
+      if (
+        recetteActuelle.batchCooking
+      ) {
+
+        badges.innerHTML +=
+          '<span class="badge green">📦 Batch-cooking</span>';
+
+      }
+
+
+      if (
+        recetteActuelle.petitAppetit
+      ) {
+
+        badges.innerHTML +=
+          '<span class="badge">🥄 Petite assiette</span>';
+
+      }
+
+
+      if (
+        recetteActuelle.preOperatoire
+      ) {
+
+        badges.innerHTML +=
+          '<span class="badge">🌸 Pré-opératoire</span>';
+
+      }
+
+
+      if (
+        recetteActuelle.postOperatoire
+      ) {
+
+        badges.innerHTML +=
+          '<span class="badge blue">🌸 Post-opératoire</span>';
+
+      }
+
+
+      if (
+        recetteActuelle.texture
+      ) {
+
+        badges.innerHTML +=
+          '<span class="badge">' +
+          "Texture : " +
+          recetteActuelle.texture +
+          "</span>";
+
+      }
+
+
+      /* =========================
+         PREPARATION
+      ========================= */
+
+      const preparation =
+        document.getElementById(
+          "preparationList"
+        );
+
+
+      preparation.innerHTML =
+        (
+          recetteActuelle.preparation ||
+          []
+        )
+          .map(
+            etape =>
+              `<li>${etape}</li>`
+          )
+          .join("");
+
+
+      /* =========================
+         BATCH COOKING
+      ========================= */
+
+      const batchSection =
+        document.getElementById(
+          "batchSection"
+        );
+
+
+      if (
+        recetteActuelle.batchCooking
+      ) {
+
+        batchSection.style.display =
+          "block";
+
+
+        document.getElementById(
+          "batchText"
+        ).textContent =
+          recetteActuelle.batchCookingDetail ||
+          "Cette recette peut être préparée à l'avance.";
+
+
+        const conservation =
+          document.getElementById(
+            "conservationText"
+          );
+
+
+        conservation.innerHTML = "";
+
+
+        if (
+          recetteActuelle.conservation
+        ) {
+
+          conservation.innerHTML +=
+            `<span class="badge">❄️ ${recetteActuelle.conservation}</span>`;
+
+        }
+
+
+        if (
+          recetteActuelle.congelation
+        ) {
+
+          conservation.innerHTML +=
+            `<span class="badge">🧊 ${recetteActuelle.congelation}</span>`;
+
+        }
+
+      }
+      else {
+
+        batchSection.style.display =
+          "none";
+
+      }
+
+
+      /* =========================
+         POST-OPERATOIRE
+      ========================= */
+
+      const medicalSection =
+        document.getElementById(
+          "medicalSection"
+        );
+
+
+      if (
+        recetteActuelle.postOperatoire
+      ) {
+
+        medicalSection.style.display =
+          "block";
+
+      }
+      else {
+
+        medicalSection.style.display =
+          "none";
+
+      }
+
+
+      /* =========================
+         FAVORI
+      ========================= */
+
+      actualiserBoutonFavori();
+
+
+      /* =========================
+         QUANTITES
+      ========================= */
+
+      actualiserBoutonsQuantite();
+
+      afficherIngredients();
+
+      afficherInformationQuantites();
+
+    }
+
+
+    /* =====================================================
+       FAVORIS
+    ===================================================== */
+
+    function obtenirFavoris() {
+
+      try {
+
+        const favoris =
+          JSON.parse(
+            localStorage.getItem(
+              "favoris"
+            ) || "[]"
+          );
+
+        return Array.isArray(
+          favoris
+        )
+          ? favoris
+          : [];
+
+      }
+      catch (
+        erreur
+      ) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function enregistrerFavoris(
+      favoris
+    ) {
+
+      localStorage.setItem(
+        "favoris",
+        JSON.stringify(
+          favoris
+        )
+      );
+
+    }
+
+
+    function actualiserBoutonFavori() {
+
+      const bouton =
+        document.getElementById(
+          "favoriteButton"
+        );
+
+
+      const favoris =
+        obtenirFavoris();
+
+
+      const estFavori =
+        favoris.includes(
+          recetteActuelle.id
+        );
+
+
+      if (
+        estFavori
+      ) {
+
+        bouton.classList.add(
+          "active"
+        );
+
+        bouton.textContent =
+          "♥ Retirer des favoris";
+
+      }
+      else {
+
+        bouton.classList.remove(
+          "active"
+        );
+
+        bouton.textContent =
+          "♡ Ajouter aux favoris";
+
+      }
+
+    }
+
+
+    function basculerFavori() {
+
+      const favoris =
+        obtenirFavoris();
+
+
+      const index =
+        favoris.indexOf(
+          recetteActuelle.id
+        );
+
+
+      if (
+        index === -1
+      ) {
+
+        favoris.push(
+          recetteActuelle.id
+        );
+
+      }
+      else {
+
+        favoris.splice(
+          index,
+          1
+        );
+
+      }
+
+
+      enregistrerFavoris(
+        favoris
+      );
+
+
+      actualiserBoutonFavori();
+
+    }
+
+
+    /* =====================================================
+       BOUTONS QUANTITES
+    ===================================================== */
+
+    function actualiserBoutonsQuantite() {
+
+      document
+        .querySelectorAll(
+          ".quantity-button"
+        )
+        .forEach(
+          bouton => {
+
+            const mode =
+              bouton.dataset.quantity;
+
+
+            bouton.classList.toggle(
+              "active",
+              mode ===
+              modeQuantiteActuel
+            );
+
+          }
+        );
+
+    }
+
+
+    function choisirQuantite(
+      mode
+    ) {
+
+      modeQuantiteActuel =
+        mode;
+
+
+      actualiserBoutonsQuantite();
+
+      afficherIngredients();
+
+      afficherInformationQuantites();
+
+    }
+
+
+    /* =====================================================
+       PREFERENCE UTILISATEUR
+    ===================================================== */
+
+    function chargerModeUtilisateur() {
+
+      const modeEnregistre =
+        localStorage.getItem(
+          "modePortion"
+        );
+
+
+      /*
+       * Petite portion :
+       * on commence sur 1 petite portion.
+       */
+
+      if (
+        modeEnregistre === "petite"
+      ) {
+
+        modeQuantiteActuel =
+          "petite";
+
+      }
+
+
+      /*
+       * Famille :
+       * on commence sur 2 portions.
+       */
+
+      else if (
+        modeEnregistre === "famille"
+      ) {
+
+        modeQuantiteActuel =
+          "famille2";
+
+      }
+
+
+      /*
+       * Mixte :
+       * on commence sur la petite portion.
+       */
+
+      else if (
+        modeEnregistre === "mixte"
+      ) {
+
+        modeQuantiteActuel =
+          "petite";
+
+      }
+
+
+      /*
+       * Aucun choix enregistré :
+       * petite portion par défaut.
+       */
+
+      else {
+
+        modeQuantiteActuel =
+          "petite";
+
+      }
+
+    }
+
+
+    /* =====================================================
+       CHARGEMENT JSON
+    ===================================================== */
+
+    async function chargerRecette() {
+
+      try {
+
+        const reponse =
+          await fetch(
+            "../recettes.json"
+          );
+
+
+        if (
+          !reponse.ok
+        ) {
+
+          throw new Error(
+            "Impossible de charger recettes.json"
+          );
+
+        }
+
+
+        const recettes =
+          await reponse.json();
+
+
+        recetteActuelle =
+          recettes.find(
+            recette =>
+              recette.id ===
+              recetteId
+          );
+
+
+        if (
+          !recetteActuelle
+        ) {
+
+          afficherRecette();
+
+          return;
+
+        }
+
+
+        chargerModeUtilisateur();
+
+        afficherRecette();
+
+      }
+      catch (
+        erreur
+      ) {
+
+        console.error(
+          erreur
+        );
+
+
+        recetteActuelle =
+          null;
+
+
+        afficherRecette();
+
+      }
+
+    }
+
+
+    /* =====================================================
+       EVENEMENTS
+    ===================================================== */
 
     document
       .querySelectorAll(
-        'input[name="quantite"]'
+        ".quantity-button"
       )
       .forEach(
-        input => {
+        bouton => {
 
-          input.addEventListener(
-            "change",
-            function () {
+          bouton.addEventListener(
+            "click",
+            () => {
 
-              modeQuantiteActuel =
-                this.value;
-
-              afficherIngredients();
-
-              afficherInformationQuantites();
-
-              mettreAJourLibellePortion();
+              choisirQuantite(
+                bouton.dataset.quantity
+              );
 
             }
           );
 
         }
       );
-  }
-
-
-  /* =========================================================
-     LIBELLE PORTION
-  ========================================================= */
-
-  function obtenirLibellePortion() {
-
-    if (modeQuantiteActuel === "petite") {
-      return "🥄 Petite portion";
-    }
-
-    if (modeQuantiteActuel === "famille2") {
-      return "👩‍🍳 2 personnes";
-    }
-
-    if (modeQuantiteActuel === "famille4") {
-      return "👨‍👩‍👧‍👦 4 personnes";
-    }
-
-    return recetteActuelle.portion || "";
-  }
-
-
-  function mettreAJourLibellePortion() {
-
-    const element =
-      document.getElementById(
-        "portionBadge"
-      );
-
-    if (element) {
-      element.textContent =
-        obtenirLibellePortion();
-    }
-  }
-
-
-  /* =========================================================
-     FAVORIS
-  ========================================================= */
-
-  function estFavori(id) {
-
-    let favoris = [];
-
-    try {
-      favoris =
-        JSON.parse(
-          localStorage.getItem(
-            "favoris"
-          ) || "[]"
-        );
-    } catch (e) {
-      favoris = [];
-    }
-
-    return favoris.includes(id);
-  }
-
-
-  function gererFavori() {
-
-    let favoris = [];
-
-    try {
-      favoris =
-        JSON.parse(
-          localStorage.getItem(
-            "favoris"
-          ) || "[]"
-        );
-    } catch (e) {
-      favoris = [];
-    }
-
-    const index =
-      favoris.indexOf(
-        recetteActuelle.id
-      );
-
-    if (index >= 0) {
-
-      favoris.splice(index, 1);
-
-    } else {
-
-      favoris.push(
-        recetteActuelle.id
-      );
-
-    }
-
-    localStorage.setItem(
-      "favoris",
-      JSON.stringify(favoris)
-    );
-
-    mettreAJourBoutonFavori();
-  }
-
-
-  function mettreAJourBoutonFavori() {
-
-    const bouton =
-      document.getElementById(
-        "favoriteButton"
-      );
-
-    if (!bouton) {
-      return;
-    }
-
-    if (
-      estFavori(
-        recetteActuelle.id
-      )
-    ) {
-
-      bouton.classList.add(
-        "active"
-      );
-
-      bouton.innerHTML =
-        "❤️ Retirer des favoris";
-
-    } else {
-
-      bouton.classList.remove(
-        "active"
-      );
-
-      bouton.innerHTML =
-        "♡ Ajouter aux favoris";
-
-    }
-  }
-
-
-  /* =========================================================
-     AFFICHAGE DE LA RECETTE
-  ========================================================= */
-
-  function afficherRecette() {
-
-    const app =
-      document.getElementById(
-        "app"
-      );
-
-    if (!recetteActuelle) {
-
-      app.innerHTML = `
-        <div class="empty">
-
-          <div style="font-size:50px;">
-            🍽️
-          </div>
-
-          <h2>Recette introuvable</h2>
-
-          <p>
-            Cette recette n'existe pas ou
-            n'est plus disponible.
-          </p>
-
-          <a href="Recettes.html">
-            Voir toutes les recettes
-          </a>
-
-        </div>
-      `;
-
-      return;
-    }
-
-
-    modeQuantiteActuel =
-      modeInitial();
-
-
-    const envies =
-      Array.isArray(
-        recetteActuelle.envies
-      )
-        ? recetteActuelle.envies
-        : [];
-
-
-    const enviesHTML =
-      envies
-        .map(
-          envie =>
-            `<span class="badge">${envie}</span>`
-        )
-        .join("");
-
-
-    const textureHTML =
-      recetteActuelle.texture
-        ? `
-          <span class="badge green">
-            ${recetteActuelle.texture}
-          </span>
-        `
-        : "";
-
-
-    const batchHTML =
-      recetteActuelle.batchCooking
-        ? `
-          <span class="badge peach">
-            📦 Batch-cooking
-          </span>
-        `
-        : "";
-
-
-    const ingredientsHTML =
-      recetteActuelle.ingredients
-        .map(
-          ingredient =>
-            `<li>${ingredient}</li>`
-        )
-        .join("");
-
-
-    const preparationHTML =
-      recetteActuelle.preparation
-        .map(
-          (etape, index) =>
-            `<li>${etape}</li>`
-        )
-        .join("");
-
-
-    app.innerHTML = `
-
-      <header class="hero">
-
-        <a
-          href="Recettes.html"
-          class="back"
-        >
-          ← Retour aux recettes
-        </a>
-
-        <div class="logo">
-          🍽️
-        </div>
-
-        <h1>
-          ${recetteActuelle.nom}
-        </h1>
-
-        <p>
-          ${recetteActuelle.categorie || ""}
-        </p>
-
-        <div class="meta">
-
-          <span class="badge">
-            ⏱️ ${recetteActuelle.temps || "—"} min
-          </span>
-
-          <span class="badge">
-            💪 ${recetteActuelle.proteines || "—"} g protéines
-          </span>
-
-          <span
-            class="badge green"
-            id="portionBadge"
-          >
-            ${obtenirLibellePortion()}
-          </span>
-
-        </div>
-
-      </header>
-
-
-      <main class="content">
-
-        <div class="card">
-
-          <div class="meta">
-
-            ${enviesHTML}
-
-            ${textureHTML}
-
-            ${batchHTML}
-
-          </div>
-
-        </div>
-
-
-        ${afficherSelecteurQuantites()}
-
-
-        <div class="card">
-
-          <h2 class="section-title">
-            🛒 Ingrédients
-          </h2>
-
-          <ul
-            class="ingredient-list"
-            id="ingredientsList"
-          >
-            ${ingredientsHTML}
-          </ul>
-
-        </div>
-
-
-        <div class="card">
-
-          <h2 class="section-title">
-            👩‍🍳 Préparation
-          </h2>
-
-          <ol class="preparation-list">
-            ${preparationHTML}
-          </ol>
-
-        </div>
-
-
-        ${
-          recetteActuelle.batchCookingDetail
-            ? `
-              <div class="card">
-
-                <h2 class="section-title">
-                  📦 Batch-cooking
-                </h2>
-
-                <p>
-                  ${recetteActuelle.batchCookingDetail}
-                </p>
-
-                ${
-                  recetteActuelle.conservation
-                    ? `
-                      <p>
-                        <strong>
-                          🧊 Conservation :
-                        </strong>
-                        ${recetteActuelle.conservation}
-                      </p>
-                    `
-                    : ""
-                }
-
-                ${
-                  recetteActuelle.congelation
-                    ? `
-                      <p>
-                        <strong>
-                          ❄️ Congélation :
-                        </strong>
-                        ${recetteActuelle.congelation}
-                      </p>
-                    `
-                    : ""
-                }
-
-              </div>
-            `
-            : ""
-        }
-
-
-        ${
-          recetteActuelle.postOperatoire
-            ? `
-              <div class="notice">
-
-                🌸 <strong>
-                Repas post-opératoire
-                </strong>
-
-                <br><br>
-
-                Les textures et quantités après
-                une chirurgie bariatrique doivent
-                suivre les recommandations de votre
-                équipe médicale.
-
-                Ma Petite Assiette est un outil
-                d'organisation et d'inspiration,
-                et ne remplace pas le suivi médical.
-
-              </div>
-            `
-            : ""
-        }
-
-
-        <button
-          id="favoriteButton"
-          class="favorite-button"
-          type="button"
-        >
-          ♡ Ajouter aux favoris
-        </button>
-
-      </main>
-    `;
-
-
-    initialiserSelecteur();
-
-    afficherIngredients();
-
-    afficherInformationQuantites();
-
-    mettreAJourLibellePortion();
-
-    mettreAJourBoutonFavori();
 
 
     document
@@ -1288,88 +1917,18 @@
       )
       .addEventListener(
         "click",
-        gererFavori
+        basculerFavori
       );
-  }
 
 
-  /* =========================================================
-     CHARGEMENT DU CATALOGUE
-  ========================================================= */
+    /* =====================================================
+       DEMARRAGE
+    ===================================================== */
 
-  async function chargerRecette() {
+    chargerRecette();
 
-    if (!recetteId) {
-
-      afficherRecette();
-
-      return;
-    }
-
-    try {
-
-      const reponse =
-        await fetch(
-          "../recettes.json"
-        );
-
-      if (!reponse.ok) {
-        throw new Error(
-          "Impossible de charger recettes.json"
-        );
-      }
-
-      const recettes =
-        await reponse.json();
-
-      recetteActuelle =
-        recettes.find(
-          recette =>
-            String(recette.id) ===
-            String(recetteId)
-        );
-
-      afficherRecette();
-
-    } catch (erreur) {
-
-      console.error(erreur);
-
-      document.getElementById(
-        "app"
-      ).innerHTML = `
-
-        <div class="empty">
-
-          <div style="font-size:50px;">
-            ⚠️
-          </div>
-
-          <h2>
-            Impossible de charger la recette
-          </h2>
-
-          <p>
-            Vérifiez que le fichier
-            <strong>recettes.json</strong>
-            est bien présent dans le dossier
-            <strong>src</strong>.
-          </p>
-
-          <a href="Recettes.html">
-            Retour aux recettes
-          </a>
-
-        </div>
-
-      `;
-    }
-  }
-
-
-  chargerRecette();
-
-</script>
+  </script>
 
 </body>
 </html>
+```
