@@ -121,6 +121,23 @@
       accent-color: #7e9b72;
     }
 
+    .texture-banner {
+      background: #edf3e9;
+      border-radius: 18px;
+      padding: 13px 15px;
+      margin-bottom: 18px;
+      color: #5d7455;
+      font-size: 13px;
+      line-height: 1.4;
+      display: none;
+    }
+
+    .texture-banner strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
     .count {
       font-size: 14px;
       color: #7b6d64;
@@ -187,8 +204,13 @@
     }
 
     .badge.batch {
-      background: #e2ecdE;
+      background: #e2ecde;
       color: #5c7952;
+    }
+
+    .badge.texture {
+      background: #e8efe3;
+      color: #5f7757;
     }
 
     .favorite {
@@ -260,12 +282,18 @@
 <body>
 
   <header class="hero">
+
     <div class="logo">🍽️</div>
+
     <h1>Mes recettes</h1>
+
     <p class="intro">
-      Des idées adaptées à vos envies, votre appétit et votre organisation.
+      Des idées adaptées à vos envies, votre appétit,
+      votre organisation et votre parcours.
     </p>
+
   </header>
+
 
   <main class="content">
 
@@ -276,15 +304,45 @@
       placeholder="🔎 Rechercher une recette..."
     >
 
+
     <div class="categories">
-      <button class="category active" data-category="Toutes">Toutes</button>
-      <button class="category" data-category="Petit-déjeuner">Petit-déjeuner</button>
-      <button class="category" data-category="Déjeuner">Déjeuner</button>
-      <button class="category" data-category="Dîner">Dîner</button>
-      <button class="category" data-category="Collation">Collation</button>
-      <button class="category" data-category="Végétarien">Végétarien</button>
-      <button class="category" data-category="Salades">Salades</button>
+
+      <button class="category active" data-category="Toutes">
+        Toutes
+      </button>
+
+      <button class="category" data-category="Petit-déjeuner">
+        Petit-déjeuner
+      </button>
+
+      <button class="category" data-category="Déjeuner">
+        Déjeuner
+      </button>
+
+      <button class="category" data-category="Dîner">
+        Dîner
+      </button>
+
+      <button class="category" data-category="Collation">
+        Collation
+      </button>
+
+      <button class="category" data-category="Végétarien">
+        Végétarien
+      </button>
+
+      <button class="category" data-category="Salades">
+        Salades
+      </button>
+
     </div>
+
+
+    <div
+      id="textureBanner"
+      class="texture-banner"
+    ></div>
+
 
     <section class="filters">
 
@@ -326,17 +384,27 @@
 
       </div>
 
-      <button class="reset" onclick="resetFilters()">
+
+      <button
+        class="reset"
+        onclick="resetFilters()"
+      >
         Réinitialiser les filtres
       </button>
 
     </section>
 
-    <div id="count" class="count"></div>
+
+    <div
+      id="count"
+      class="count"
+    ></div>
+
 
     <div id="recipes"></div>
 
   </main>
+
 
   <nav class="bottom-nav">
 
@@ -345,7 +413,10 @@
       Accueil
     </a>
 
-    <a href="Recettes.html" class="active">
+    <a
+      href="Recettes.html"
+      class="active"
+    >
       <span class="nav-icon">🍴</span>
       Recettes
     </a>
@@ -362,27 +433,140 @@
 
   </nav>
 
+
   <script>
 
     let recettes = [];
+
     let categorieActive = "Toutes";
 
-    const params = new URLSearchParams(window.location.search);
-
-    const modePetite = params.get("petite") === "true";
-    const modeBatch = params.get("batch") === "true";
 
     /*
-      Si la page est ouverte depuis :
-      - Petit appétit → Petite portion automatiquement cochée
-      - Batch-cooking → Batch-cooking automatiquement coché
+      Lecture des paramètres envoyés par les autres écrans.
     */
 
-    document.getElementById("petite").checked = modePetite;
-    document.getElementById("batch").checked = modeBatch;
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    const modePetite =
+      params.get("petite") === "true";
+
+
+    const modeBatch =
+      params.get("batch") === "true";
+
+
+    const textureDemandee =
+      params.get("texture");
+
+
+    /*
+      Correspondance entre le nom utilisé dans l'URL
+      et le nom affiché à l'utilisateur.
+    */
+
+    const nomsTextures = {
+
+      liquide: "🥤 Texture liquide",
+
+      mixee: "🥣 Texture mixée",
+
+      mouline: "🍲 Texture moulinée",
+
+      tendre: "🍽️ Texture tendre",
+
+      petite: "🥄 Petite assiette"
+
+    };
+
+
+    /*
+      Préactivation des filtres provenant
+      des autres écrans.
+    */
+
+    document.getElementById("petite").checked =
+      modePetite;
+
+
+    document.getElementById("batch").checked =
+      modeBatch;
+
+
+    /*
+      Affichage du bandeau de contexte.
+    */
+
+    function afficherContexteTexture() {
+
+      const banner =
+        document.getElementById(
+          "textureBanner"
+        );
+
+
+      if (!textureDemandee) {
+
+        banner.style.display = "none";
+
+        return;
+
+      }
+
+
+      const texte =
+        nomsTextures[textureDemandee];
+
+
+      if (!texte) {
+
+        banner.style.display = "none";
+
+        return;
+
+      }
+
+
+      banner.innerHTML = `
+
+        <strong>${texte}</strong>
+
+        Les recettes affichées correspondent
+        à cette texture lorsqu'elle est renseignée
+        dans le catalogue.
+
+      `;
+
+
+      banner.style.display = "block";
+
+    }
+
+
+    afficherContexteTexture();
+
+
+    /*
+      Chargement du catalogue.
+    */
 
     fetch("../recettes.json")
-      .then(response => response.json())
+
+      .then(response => {
+
+        if (!response.ok) {
+          throw new Error(
+            "Impossible de charger recettes.json"
+          );
+        }
+
+        return response.json();
+
+      })
+
       .then(data => {
 
         recettes = data;
@@ -390,265 +574,580 @@
         afficherRecettes();
 
       })
+
       .catch(error => {
 
         console.error(error);
 
-        document.getElementById("recipes").innerHTML = `
+        document.getElementById(
+          "recipes"
+        ).innerHTML = `
+
           <div class="empty">
-            <strong>Oups...</strong>
-            <p>Impossible de charger les recettes pour le moment.</p>
+
+            <div style="font-size:38px;">
+              ⚠️
+            </div>
+
+            <strong>
+              Oups...
+            </strong>
+
+            <p>
+              Impossible de charger les recettes
+              pour le moment.
+            </p>
+
           </div>
+
         `;
 
       });
+
+
+    /*
+      Normalisation d'un texte.
+      Permet de comparer :
+      mixée / mixee
+      moulinée / moulinee
+      etc.
+    */
+
+    function normaliserTexte(texte) {
+
+      return String(texte || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(
+          /[\u0300-\u036f]/g,
+          ""
+        )
+        .replace(
+          /[\s-]/g,
+          ""
+        );
+
+    }
+
+
+    /*
+      Vérification de la texture.
+    */
+
+    function correspondTexture(
+      recette,
+      textureRecherchee
+    ) {
+
+      if (!textureRecherchee) {
+        return true;
+      }
+
+
+      /*
+        "petite" correspond à l'idée
+        de petite assiette / petit appétit.
+      */
+
+      if (
+        textureRecherchee === "petite"
+      ) {
+
+        return (
+          recette.petitAppetit === true
+        );
+
+      }
+
+
+      const textureRecette =
+        normaliserTexte(
+          recette.texture
+        );
+
+
+      const textureRechercheeNormalisee =
+        normaliserTexte(
+          textureRecherchee
+        );
+
+
+      /*
+        Pour le moment, une recette n'est
+        proposée que si sa texture est
+        explicitement renseignée.
+      */
+
+      return (
+        textureRecette ===
+        textureRechercheeNormalisee
+      );
+
+    }
 
 
     function afficherRecettes() {
 
       const recherche =
-        document.getElementById("search").value
+        document.getElementById(
+          "search"
+        ).value
           .toLowerCase()
           .trim();
 
+
       const petite =
-        document.getElementById("petite").checked;
+        document.getElementById(
+          "petite"
+        ).checked;
+
 
       const vegetarien =
-        document.getElementById("vegetarien").checked;
+        document.getElementById(
+          "vegetarien"
+        ).checked;
+
 
       const batch =
-        document.getElementById("batch").checked;
+        document.getElementById(
+          "batch"
+        ).checked;
+
 
       const preop =
-        document.getElementById("preop").checked;
+        document.getElementById(
+          "preop"
+        ).checked;
+
 
       const postop =
-        document.getElementById("postop").checked;
+        document.getElementById(
+          "postop"
+        ).checked;
+
 
       const gluten =
-        document.getElementById("gluten").checked;
+        document.getElementById(
+          "gluten"
+        ).checked;
 
 
-      let resultat = recettes.filter(recette => {
-
-        /* Recherche */
-        if (recherche) {
-
-          const texte = [
-
-            recette.nom,
-            recette.categorie,
-            recette.type,
-            ...(recette.ingredients || [])
-
-          ]
-          .join(" ")
-          .toLowerCase();
-
-          if (!texte.includes(recherche)) {
-            return false;
-          }
-        }
+      let resultat =
+        recettes.filter(recette => {
 
 
-        /* Catégorie */
+          /*
+            Recherche
+          */
 
-        if (categorieActive !== "Toutes") {
+          if (recherche) {
 
-          if (categorieActive === "Végétarien") {
+            const texte = [
 
-            if (recette.vegetarien !== true) {
-              return false;
-            }
+              recette.nom,
 
-          } else if (categorieActive === "Salades") {
+              recette.categorie,
 
-            const texte =
-              `${recette.nom} ${recette.categorie} ${recette.type}`
+              recette.type,
+
+              ...(recette.ingredients || [])
+
+            ]
+              .join(" ")
               .toLowerCase();
 
-            if (!texte.includes("salade")) {
-              return false;
-            }
-
-          } else {
-
-            const categorie =
-              (recette.categorie || "").toLowerCase();
 
             if (
-              !categorie.includes(
-                categorieActive.toLowerCase()
+              !texte.includes(
+                recherche
               )
             ) {
+
               return false;
+
             }
 
           }
-        }
 
 
-        /* Petite portion */
+          /*
+            Catégorie
+          */
 
-        if (
-          petite &&
-          recette.petitAppetit !== true
-        ) {
-          return false;
-        }
+          if (
+            categorieActive !==
+            "Toutes"
+          ) {
 
+            if (
+              categorieActive ===
+              "Végétarien"
+            ) {
 
-        /* Végétarien */
+              if (
+                recette.vegetarien !== true
+              ) {
 
-        if (
-          vegetarien &&
-          recette.vegetarien !== true
-        ) {
-          return false;
-        }
+                return false;
 
+              }
 
-        /* Batch-cooking */
+            }
 
-        if (
-          batch &&
-          recette.batchCooking !== true
-        ) {
-          return false;
-        }
+            else if (
+              categorieActive ===
+              "Salades"
+            ) {
 
+              const texte = `
 
-        /* Pré-opératoire */
+                ${recette.nom || ""}
 
-        if (
-          preop &&
-          recette.preOperatoire !== true
-        ) {
-          return false;
-        }
+                ${recette.categorie || ""}
 
+                ${recette.type || ""}
 
-        /* Post-opératoire */
-
-        if (
-          postop &&
-          recette.postOperatoire !== true
-        ) {
-          return false;
-        }
+              `.toLowerCase();
 
 
-        /* Sans gluten */
+              if (
+                !texte.includes(
+                  "salade"
+                )
+              ) {
 
-        if (
-          gluten &&
-          recette.sansGluten !== true
-        ) {
-          return false;
-        }
+                return false;
+
+              }
+
+            }
+
+            else {
+
+              const categorie =
+                (
+                  recette.categorie ||
+                  ""
+                ).toLowerCase();
 
 
-        return true;
+              if (
+                !categorie.includes(
+                  categorieActive.toLowerCase()
+                )
+              ) {
 
-      });
+                return false;
+
+              }
+
+            }
+
+          }
 
 
-      document.getElementById("count").textContent =
+          /*
+            TEXTURE POST-OPÉRATOIRE
+          */
+
+          if (
+            !correspondTexture(
+              recette,
+              textureDemandee
+            )
+          ) {
+
+            return false;
+
+          }
+
+
+          /*
+            Petite portion
+          */
+
+          if (
+            petite &&
+            recette.petitAppetit !== true
+          ) {
+
+            return false;
+
+          }
+
+
+          /*
+            Végétarien
+          */
+
+          if (
+            vegetarien &&
+            recette.vegetarien !== true
+          ) {
+
+            return false;
+
+          }
+
+
+          /*
+            Batch-cooking
+          */
+
+          if (
+            batch &&
+            recette.batchCooking !== true
+          ) {
+
+            return false;
+
+          }
+
+
+          /*
+            Pré-opératoire
+          */
+
+          if (
+            preop &&
+            recette.preOperatoire !== true
+          ) {
+
+            return false;
+
+          }
+
+
+          /*
+            Post-opératoire
+          */
+
+          if (
+            postop &&
+            recette.postOperatoire !== true
+          ) {
+
+            return false;
+
+          }
+
+
+          /*
+            Sans gluten
+          */
+
+          if (
+            gluten &&
+            recette.sansGluten !== true
+          ) {
+
+            return false;
+
+          }
+
+
+          return true;
+
+        });
+
+
+      /*
+        Compteur
+      */
+
+      document.getElementById(
+        "count"
+      ).textContent =
+
         resultat.length +
-        (resultat.length > 1
-          ? " recettes trouvées"
-          : " recette trouvée");
+        (
+          resultat.length > 1
+            ? " recettes trouvées"
+            : " recette trouvée"
+        );
 
 
       const container =
-        document.getElementById("recipes");
+        document.getElementById(
+          "recipes"
+        );
 
 
-      if (resultat.length === 0) {
+      /*
+        Aucune recette
+      */
+
+      if (
+        resultat.length === 0
+      ) {
 
         container.innerHTML = `
+
           <div class="empty">
 
-            <div style="font-size:38px;">🥄</div>
+            <div style="font-size:38px;">
+              🥄
+            </div>
 
-            <strong>Aucune recette trouvée</strong>
+            <strong>
+              Aucune recette trouvée
+            </strong>
 
             <p>
-              Essayez de modifier vos filtres ou votre recherche.
+              Cette texture n'a pas encore
+              de recette dans notre catalogue.
+            </p>
+
+            <p>
+              Nous allons progressivement
+              enrichir cette rubrique.
             </p>
 
           </div>
+
         `;
 
         return;
+
       }
 
 
+      /*
+        Affichage des recettes
+      */
+
       container.innerHTML =
+
         resultat
           .map(recette => {
 
+
             const favoris =
               JSON.parse(
-                localStorage.getItem("favoris") || "[]"
+                localStorage.getItem(
+                  "favoris"
+                ) || "[]"
               );
 
+
             const estFavori =
-              favoris.includes(recette.id);
+              favoris.includes(
+                recette.id
+              );
 
 
             return `
 
               <article
                 class="recipe-card"
-                onclick="ouvrirRecette('${recette.id}')"
+                onclick="
+                  ouvrirRecette(
+                    '${recette.id}'
+                  )
+                "
               >
 
                 <button
                   class="favorite"
-                  onclick="toggleFavori(event, '${recette.id}')"
-                  aria-label="Ajouter aux favoris"
+                  onclick="
+                    toggleFavori(
+                      event,
+                      '${recette.id}'
+                    )
+                  "
+                  aria-label="
+                    Ajouter aux favoris
+                  "
                 >
-                  ${estFavori ? "❤️" : "♡"}
+
+                  ${
+                    estFavori
+                      ? "❤️"
+                      : "♡"
+                  }
+
                 </button>
 
 
                 <div class="recipe-top">
 
                   <div class="recipe-icon">
+
                     ${iconeRecette(recette)}
+
                   </div>
 
+
                   <div class="recipe-category">
-                    ${recette.categorie || "Recette"}
+
+                    ${
+                      recette.categorie ||
+                      "Recette"
+                    }
+
                   </div>
 
                 </div>
 
 
                 <div class="recipe-name">
+
                   ${recette.nom}
+
                 </div>
 
 
                 <div class="recipe-meta">
 
                   <span class="badge">
-                    ⏱️ ${recette.temps || "-"} min
+
+                    ⏱️
+                    ${recette.temps || "-"}
+                    min
+
                   </span>
 
-                  <span class="badge">
-                    🥄 ${recette.portion || "-"}
-                  </span>
 
                   <span class="badge">
-                    💪 ${recette.proteines || 0} g protéines
+
+                    🥄
+                    ${recette.portion || "-"}
+
                   </span>
+
+
+                  <span class="badge">
+
+                    💪
+                    ${recette.proteines || 0}
+                    g protéines
+
+                  </span>
+
+
+                  ${
+                    recette.texture
+                      ? `
+                        <span class="badge texture">
+
+                          🥣
+                          ${recette.texture}
+
+                        </span>
+                      `
+                      : ""
+                  }
+
 
                   ${
                     recette.batchCooking
-                      ? `<span class="badge batch">📦 Batch-cooking</span>`
+                      ? `
+                        <span class="badge batch">
+
+                          📦 Batch-cooking
+
+                        </span>
+                      `
                       : ""
                   }
 
@@ -664,44 +1163,83 @@
     }
 
 
-    function iconeRecette(recette) {
+    /*
+      Icône selon le type de recette.
+    */
 
-      const categorie =
-        `${recette.categorie || ""} ${recette.type || ""}`
-        .toLowerCase();
+    function iconeRecette(
+      recette
+    ) {
+
+      const categorie = `
+
+        ${recette.categorie || ""}
+
+        ${recette.type || ""}
+
+      `.toLowerCase();
+
 
       if (
         categorie.includes("petit") ||
         categorie.includes("matin")
       ) {
+
         return "🥣";
+
       }
 
-      if (categorie.includes("collation")) {
+
+      if (
+        categorie.includes("collation")
+      ) {
+
         return "🍎";
+
       }
 
-      if (recette.vegetarien === true) {
+
+      if (
+        recette.vegetarien === true
+      ) {
+
         return "🥕";
+
       }
 
-      if (categorie.includes("salade")) {
+
+      if (
+        categorie.includes("salade")
+      ) {
+
         return "🥗";
+
       }
+
 
       if (
         categorie.includes("poisson") ||
         categorie.includes("saumon") ||
         categorie.includes("thon")
       ) {
+
         return "🐟";
+
       }
 
+
       return "🍽️";
+
     }
 
 
-    function ouvrirRecette(id) {
+    /*
+      Ouverture d'une fiche recette.
+    */
+
+    function ouvrirRecette(
+      id
+    ) {
 
       window.location.href =
         `Recette.html?id=${encodeURIComponent(id)}`;
@@ -709,24 +1247,39 @@
     }
 
 
-    function toggleFavori(event, id) {
+    /*
+      Gestion des favoris.
+    */
+
+    function toggleFavori(
+      event,
+      id
+    ) {
 
       event.stopPropagation();
 
+
       let favoris =
         JSON.parse(
-          localStorage.getItem("favoris") || "[]"
+          localStorage.getItem(
+            "favoris"
+          ) || "[]"
         );
 
 
-      if (favoris.includes(id)) {
+      if (
+        favoris.includes(id)
+      ) {
 
         favoris =
           favoris.filter(
-            favori => favori !== id
+            favori =>
+              favori !== id
           );
 
-      } else {
+      }
+
+      else {
 
         favoris.push(id);
 
@@ -735,7 +1288,9 @@
 
       localStorage.setItem(
         "favoris",
-        JSON.stringify(favoris)
+        JSON.stringify(
+          favoris
+        )
       );
 
 
@@ -744,84 +1299,160 @@
     }
 
 
+    /*
+      Réinitialisation.
+    */
+
     function resetFilters() {
 
-      document.getElementById("search").value = "";
-
-      document.getElementById("petite").checked = false;
-      document.getElementById("vegetarien").checked = false;
-      document.getElementById("batch").checked = false;
-      document.getElementById("preop").checked = false;
-      document.getElementById("postop").checked = false;
-      document.getElementById("gluten").checked = false;
+      document.getElementById(
+        "search"
+      ).value = "";
 
 
-      categorieActive = "Toutes";
+      document.getElementById(
+        "petite"
+      ).checked = false;
+
+
+      document.getElementById(
+        "vegetarien"
+      ).checked = false;
+
+
+      document.getElementById(
+        "batch"
+      ).checked = false;
+
+
+      document.getElementById(
+        "preop"
+      ).checked = false;
+
+
+      document.getElementById(
+        "postop"
+      ).checked = false;
+
+
+      document.getElementById(
+        "gluten"
+      ).checked = false;
+
+
+      categorieActive =
+        "Toutes";
 
 
       document
-        .querySelectorAll(".category")
+        .querySelectorAll(
+          ".category"
+        )
         .forEach(button => {
-          button.classList.remove("active");
+
+          button.classList.remove(
+            "active"
+          );
+
         });
 
 
       document
-        .querySelector('.category[data-category="Toutes"]')
-        .classList.add("active");
+        .querySelector(
+          '.category[data-category="Toutes"]'
+        )
+        .classList.add(
+          "active"
+        );
 
+
+      /*
+        Le paramètre texture reste volontairement
+        actif lorsqu'on vient du parcours
+        post-opératoire.
+      */
 
       afficherRecettes();
 
     }
 
 
+    /*
+      Catégories.
+    */
+
     document
-      .querySelectorAll(".category")
+      .querySelectorAll(
+        ".category"
+      )
       .forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+          "click",
+          () => {
 
-          categorieActive =
-            button.dataset.category;
+            categorieActive =
+              button.dataset.category;
 
 
-          document
-            .querySelectorAll(".category")
-            .forEach(btn =>
-              btn.classList.remove("active")
+            document
+              .querySelectorAll(
+                ".category"
+              )
+              .forEach(btn => {
+
+                btn.classList.remove(
+                  "active"
+                );
+
+              });
+
+
+            button.classList.add(
+              "active"
             );
 
 
-          button.classList.add("active");
+            afficherRecettes();
 
-          afficherRecettes();
-
-        });
+          }
+        );
 
       });
 
 
+    /*
+      Recherche.
+    */
+
     document
-      .getElementById("search")
+      .getElementById(
+        "search"
+      )
       .addEventListener(
         "input",
         afficherRecettes
       );
 
 
+    /*
+      Filtres.
+    */
+
     document
       .querySelectorAll(
         "#petite, #vegetarien, #batch, #preop, #postop, #gluten"
       )
-      .forEach(checkbox => {
+      .forEach(
+        checkbox => {
 
-        checkbox.addEventListener(
-          "change",
-          afficherRecettes
-        );
+          checkbox.addEventListener(
+            "change",
+            afficherRecettes
+          );
 
-      });
+        }
+      );
 
   </script>
 
