@@ -12,7 +12,7 @@ async function afficherRecettes() {
     try {
 
         const response =
-            await fetch("./src/recettes.json");
+            await fetch("../../recettes.json");
 
         const recettes =
             await response.json();
@@ -68,7 +68,7 @@ async function afficherRecette() {
             params.get("id");
 
         const response =
-            await fetch("../recettes.json");
+            await fetch("../../recettes.json");
 
         const recettes =
             await response.json();
