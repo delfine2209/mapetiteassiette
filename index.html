@@ -1,672 +1,1215 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ma Petite Assiette : idées de repas, petites portions et recettes adaptées à chaque envie." />
-    <title>Ma Petite Assiette</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-2E73FD8V9V');
-    </script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+  gtag('config', 'G-2E73FD8V9V');
+</script>
+  
+<head>
 
-      html {
-        scroll-behavior: smooth;
-      }
+  <meta charset="UTF-8">
 
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f8f3ee;
-        color: #4f4a46;
-        padding-bottom: 90px;
-      }
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
+  <title>Ma Petite Assiette</title>
 
-      button,
-      input {
-        font-family: inherit;
-      }
 
-      button {
-        cursor: pointer;
-      }
+  <style>
 
-      button:focus-visible,
-      input:focus-visible,
-      .main-choice-button:focus-visible,
-      .nav-item:focus-visible {
-        outline: 3px solid #7f9672;
-        outline-offset: 2px;
-      }
+    * {
+      box-sizing: border-box;
+    }
 
-      .hero {
-        background: linear-gradient(135deg, #f3d8c9, #e6eadb);
-        padding: 38px 20px 30px;
-        border-radius: 0 0 35px 35px;
-        text-align: center;
-      }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f3ee;
+      color: #4f4a46;
+      padding-bottom: 90px;
+    }
 
-      .logo {
-        width: 68px;
-        height: 68px;
-        margin: 0 auto 15px;
-        border-radius: 22px;
-        background: rgba(255, 255, 255, 0.75);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 34px;
-        box-shadow: 0 6px 18px rgba(80, 60, 40, 0.08);
-      }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* ========================= */
+    /* HERO */
+    /* ========================= */
+
+    .hero {
+
+      background:
+        linear-gradient(
+          135deg,
+          #f3d8c9,
+          #e6eadb
+        );
+
+      padding: 38px 20px 30px;
+
+      border-radius:
+        0 0 35px 35px;
+
+      text-align: center;
+    }
+
+    .logo {
+
+      width: 68px;
+      height: 68px;
+
+      margin: 0 auto 15px;
+
+      border-radius: 22px;
+
+      background:
+        rgba(255,255,255,0.75);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 34px;
+
+      box-shadow:
+        0 6px 18px
+        rgba(80,60,40,0.08);
+    }
+
+    .hero h1 {
+
+      margin: 0;
+
+      font-size: 28px;
+
+      color: #4f5f48;
+    }
+
+    .hero p {
+
+      margin: 12px auto 0;
+
+      max-width: 420px;
+
+      line-height: 1.5;
+
+      font-size: 15px;
+
+      color: #625b55;
+    }
+
+
+    /* ========================= */
+    /* CONTENEUR */
+    /* ========================= */
+
+    .container {
+
+      width:
+        calc(100% - 30px);
+
+      max-width: 600px;
+
+      margin: 20px auto;
+    }
+
+
+    /* ========================= */
+    /* CARTES */
+    /* ========================= */
+
+    .card {
+
+      background:
+        rgba(255,255,255,0.96);
+
+      border-radius: 25px;
+
+      padding: 22px;
+
+      margin-bottom: 18px;
+
+      box-shadow:
+        0 8px 24px
+        rgba(80,60,40,0.07);
+    }
+
+    .card h2 {
+
+      margin: 0 0 7px;
+
+      color: #4f5f48;
+
+      font-size: 20px;
+    }
+
+    .card-intro {
+
+      margin: 0 0 18px;
+
+      color: #777;
+
+      font-size: 14px;
+
+      line-height: 1.5;
+    }
+
+
+    /* ========================= */
+    /* MODE DE CUISINE */
+    /* ========================= */
+
+    .portion-options {
+
+      display: grid;
+
+      grid-template-columns: 1fr;
+
+      gap: 11px;
+    }
+
+    .portion-option {
+
+      position: relative;
+    }
+
+    .portion-option input {
+
+      position: absolute;
+
+      opacity: 0;
+    }
+
+    .portion-label {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      padding: 16px;
+
+      border-radius: 18px;
+
+      background: #f8eee7;
+
+      border:
+        2px solid transparent;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+    }
+
+    .portion-label:hover {
+
+      transform:
+        translateY(-1px);
+    }
+
+    .portion-option input:checked
+    + .portion-label {
+
+      background: #eaf1e5;
+
+      border-color:
+        #8da47f;
+    }
+
+    .portion-icon {
+
+      font-size: 28px;
+
+      flex-shrink: 0;
+    }
+
+    .portion-text strong {
+
+      display: block;
+
+      font-size: 15px;
+
+      margin-bottom: 3px;
+    }
+
+    .portion-text small {
+
+      color: #777;
+
+      line-height: 1.4;
+    }
+
+    .save-button {
+
+      width: 100%;
+
+      border: none;
+
+      margin-top: 15px;
+
+      padding: 14px;
+
+      border-radius: 17px;
+
+      background: #7f9672;
+
+      color: white;
+
+      font-size: 15px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+    }
+
+    .save-button:hover {
+
+      opacity: 0.9;
+    }
+
+    #portionStatus {
+
+      text-align: center;
+
+      margin-top: 10px;
+
+      font-size: 13px;
+
+      color: #607052;
+
+      font-weight: 600;
+
+      min-height: 18px;
+    }
+
+
+    /* ========================= */
+    /* TYPE DE REPAS */
+    /* ========================= */
+
+    .meal-type-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 12px;
+    }
+
+    .meal-type-btn {
+
+      border:
+        2px solid transparent;
+
+      background: #f8eee7;
+
+      border-radius: 20px;
+
+      padding: 15px 10px;
+
+      min-height: 95px;
+
+      cursor: pointer;
+
+      transition:
+        all 0.2s ease;
+
+      color: #4f4a46;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+    }
+
+    .meal-type-btn:hover {
+
+      transform:
+        translateY(-2px);
+    }
+
+    .meal-type-btn.selected {
+
+      border-color:
+        #8da47f;
+
+      background: #eaf1e5;
+
+      box-shadow:
+        0 5px 14px
+        rgba(80,100,70,0.12);
+    }
+
+    .meal-type-btn span {
+
+      font-size: 28px;
+
+      line-height: 1;
+    }
+
+    .meal-type-btn strong {
+
+      font-size: 14px;
+
+      font-weight: 600;
+    }
+
+    #mealTypeStatus {
+
+      margin-top: 14px;
+
+      text-align: center;
+
+      color: #607052;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      min-height: 18px;
+    }
+
+
+    /* ========================= */
+    /* CHOIX PRINCIPAL */
+    /* ========================= */
+
+    .main-choice {
+
+      display: block;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e6eadb,
+          #f3dfd2
+        );
+
+      border-radius: 25px;
+
+      padding: 23px;
+
+      margin-bottom: 18px;
+
+      box-shadow:
+        0 8px 24px
+        rgba(80,60,40,0.07);
+    }
+
+    .main-choice h2 {
+
+      margin: 0 0 7px;
+
+      color: #4f5f48;
+
+      font-size: 20px;
+    }
+
+    .main-choice p {
+
+      margin: 0 0 17px;
+
+      color: #625b55;
+
+      line-height: 1.5;
+
+      font-size: 14px;
+    }
+
+    .main-choice-button {
+
+      display: block;
+
+      background: white;
+
+      border-radius: 17px;
+
+      padding: 14px;
+
+      text-align: center;
+
+      color: #53634d;
+
+      font-weight: bold;
+
+      box-shadow:
+        0 4px 12px
+        rgba(80,60,40,0.06);
+    }
+
+
+    /* ========================= */
+    /* PARCOURS */
+    /* ========================= */
+
+    .section-title {
+
+      margin:
+        27px 3px 13px;
+
+      font-size: 20px;
+
+      color: #4f5f48;
+    }
+
+    .path-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 12px;
+    }
+
+    .path-card {
+
+      background: white;
+
+      border-radius: 21px;
+
+      padding: 18px 15px;
+
+      min-height: 130px;
+
+      box-shadow:
+        0 6px 18px
+        rgba(80,60,40,0.06);
+    }
+
+    .path-card span {
+
+      display: block;
+
+      font-size: 28px;
+
+      margin-bottom: 10px;
+    }
+
+    .path-card strong {
+
+      display: block;
+
+      font-size: 15px;
+
+      margin-bottom: 5px;
+
+      color: #4f5f48;
+    }
+
+    .path-card small {
+
+      color: #777;
+
+      line-height: 1.4;
+    }
+
+
+    /* ========================= */
+    /* ENVIES */
+    /* ========================= */
+
+    .envie-scroll {
+
+      display: flex;
+
+      gap: 10px;
+
+      overflow-x: auto;
+
+      padding:
+        3px 2px 10px;
+
+      scrollbar-width: none;
+    }
+
+    .envie-scroll::-webkit-scrollbar {
+
+      display: none;
+    }
+
+    .envie-button {
+
+      flex: 0 0 auto;
+
+      border: none;
+
+      background: white;
+
+      border-radius: 19px;
+
+      padding: 14px 17px;
+
+      min-width: 105px;
+
+      box-shadow:
+        0 5px 15px
+        rgba(80,60,40,0.06);
+
+      cursor: pointer;
+
+      color: #4f4a46;
+    }
+
+    .envie-button span {
+
+      display: block;
+
+      font-size: 25px;
+
+      margin-bottom: 7px;
+    }
+
+    .envie-button strong {
+
+      font-size: 13px;
+    }
+
+
+    /* ========================= */
+    /* RACCOURCIS */
+    /* ========================= */
+
+    .shortcut-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 12px;
+    }
+
+    .shortcut {
+
+      background: white;
+
+      border-radius: 19px;
+
+      padding: 17px;
+
+      box-shadow:
+        0 5px 15px
+        rgba(80,60,40,0.06);
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      color: #56634f;
+    }
+
+
+    /* ========================= */
+    /* MESSAGE */
+    /* ========================= */
+
+    .message-card {
+
+      background: #eef2e9;
+
+      border-radius: 22px;
+
+      padding: 19px;
+
+      margin-top: 22px;
+
+      color: #5d6957;
+
+      font-size: 14px;
+
+      line-height: 1.5;
+
+      text-align: center;
+    }
+
+
+    /* ========================= */
+    /* NAVIGATION */
+    /* ========================= */
+
+    .bottom-nav {
+
+      position: fixed;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(255,255,255,0.96);
+
+      backdrop-filter:
+        blur(10px);
+
+      border-top:
+        1px solid #eee4dc;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      padding:
+        9px 8px
+        calc(
+          9px +
+          env(safe-area-inset-bottom)
+        );
+    }
+
+    .nav-item {
+
+      text-align: center;
+
+      color: #777;
+
+      font-size: 11px;
+
+      padding: 4px;
+    }
+
+    .nav-item span {
+
+      display: block;
+
+      font-size: 22px;
+
+      margin-bottom: 3px;
+    }
+
+    .nav-item.active {
+
+      color: #607052;
+
+      font-weight: bold;
+    }
+
+
+    /* ========================= */
+    /* MOBILE */
+    /* ========================= */
+
+    @media (max-width: 380px) {
 
       .hero h1 {
-        margin: 0;
-        font-size: 28px;
-        color: #4f5f48;
-      }
 
-      .hero p {
-        margin: 12px auto 0;
-        max-width: 420px;
-        line-height: 1.5;
-        font-size: 15px;
-        color: #625b55;
+        font-size: 25px;
       }
 
       .container {
-        width: calc(100% - 30px);
-        max-width: 600px;
-        margin: 20px auto;
-      }
 
-      .card {
-        background: rgba(255, 255, 255, 0.96);
-        border-radius: 25px;
-        padding: 22px;
-        margin-bottom: 18px;
-        box-shadow: 0 8px 24px rgba(80, 60, 40, 0.07);
-      }
-
-      .card h2 {
-        margin: 0 0 7px;
-        color: #4f5f48;
-        font-size: 20px;
-      }
-
-      .card-intro {
-        margin: 0 0 18px;
-        color: #777;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-
-      .portion-options {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 11px;
-      }
-
-      .portion-option {
-        position: relative;
-      }
-
-      .portion-option input {
-        position: absolute;
-        opacity: 0;
-      }
-
-      .portion-label {
-        display: flex;
-        align-items: center;
-        gap: 13px;
-        padding: 16px;
-        border-radius: 18px;
-        background: #f8eee7;
-        border: 2px solid transparent;
-        cursor: pointer;
-        transition: 0.2s ease;
-      }
-
-      .portion-label:hover {
-        transform: translateY(-1px);
-      }
-
-      .portion-option input:checked + .portion-label {
-        background: #eaf1e5;
-        border-color: #8da47f;
-      }
-
-      .portion-icon {
-        font-size: 28px;
-        flex-shrink: 0;
-      }
-
-      .portion-text strong {
-        display: block;
-        font-size: 15px;
-        margin-bottom: 3px;
-      }
-
-      .portion-text small {
-        color: #777;
-        line-height: 1.4;
-      }
-
-      .save-button {
-        width: 100%;
-        border: none;
-        margin-top: 15px;
-        padding: 14px;
-        border-radius: 17px;
-        background: #7f9672;
-        color: white;
-        font-size: 15px;
-        font-weight: bold;
-      }
-
-      .save-button:hover {
-        opacity: 0.9;
-      }
-
-      #portionStatus {
-        text-align: center;
-        margin-top: 10px;
-        font-size: 13px;
-        color: #607052;
-        font-weight: 600;
-        min-height: 18px;
-      }
-
-      .meal-type-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        width:
+          calc(100% - 22px);
       }
 
       .meal-type-btn {
-        border: 2px solid transparent;
-        background: #f8eee7;
-        border-radius: 20px;
-        padding: 15px 10px;
-        min-height: 95px;
-        transition: all 0.2s ease;
-        color: #4f4a46;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-      }
 
-      .meal-type-btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .meal-type-btn.selected {
-        border-color: #8da47f;
-        background: #eaf1e5;
-        box-shadow: 0 5px 14px rgba(80, 100, 70, 0.12);
-      }
-
-      .meal-type-btn span {
-        font-size: 28px;
-        line-height: 1;
-      }
-
-      .meal-type-btn strong {
-        font-size: 14px;
-        font-weight: 600;
-      }
-
-      #mealTypeStatus {
-        margin-top: 14px;
-        text-align: center;
-        color: #607052;
-        font-size: 13px;
-        font-weight: 600;
-        min-height: 18px;
-      }
-
-      .main-choice {
-        display: block;
-        background: linear-gradient(135deg, #e6eadb, #f3dfd2);
-        border-radius: 25px;
-        padding: 23px;
-        margin-bottom: 18px;
-        box-shadow: 0 8px 24px rgba(80, 60, 40, 0.07);
-      }
-
-      .main-choice h2 {
-        margin: 0 0 7px;
-        color: #4f5f48;
-        font-size: 20px;
-      }
-
-      .main-choice p {
-        margin: 0 0 17px;
-        color: #625b55;
-        line-height: 1.5;
-        font-size: 14px;
-      }
-
-      .main-choice-button {
-        display: block;
-        background: white;
-        border-radius: 17px;
-        padding: 14px;
-        text-align: center;
-        color: #53634d;
-        font-weight: bold;
-        box-shadow: 0 4px 12px rgba(80, 60, 40, 0.06);
-      }
-
-      .section-title {
-        margin: 27px 3px 13px;
-        font-size: 20px;
-        color: #4f5f48;
-      }
-
-      .path-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        min-height: 88px;
       }
 
       .path-card {
-        background: white;
-        border-radius: 21px;
-        padding: 18px 15px;
-        min-height: 130px;
-        box-shadow: 0 6px 18px rgba(80, 60, 40, 0.06);
+
+        padding:
+          15px 12px;
       }
 
-      .path-card span {
-        display: block;
-        font-size: 28px;
-        margin-bottom: 10px;
-      }
+    }
 
-      .path-card strong {
-        display: block;
-        font-size: 15px;
-        margin-bottom: 5px;
-        color: #4f5f48;
-      }
+  </style>
 
-      .path-card small {
-        color: #777;
-        line-height: 1.4;
-      }
+</head>
 
-      .envie-scroll {
-        display: flex;
-        gap: 10px;
-        overflow-x: auto;
-        padding: 3px 2px 10px;
-        scrollbar-width: none;
-      }
 
-      .envie-scroll::-webkit-scrollbar {
-        display: none;
-      }
+<body>
 
-      .envie-button {
-        flex: 0 0 auto;
-        border: none;
-        background: white;
-        border-radius: 19px;
-        padding: 14px 17px;
-        min-width: 105px;
-        box-shadow: 0 5px 15px rgba(80, 60, 40, 0.06);
-        color: #4f4a46;
-      }
 
-      .envie-button span {
-        display: block;
-        font-size: 25px;
-        margin-bottom: 7px;
-      }
+  <!-- ========================= -->
+  <!-- HERO -->
+  <!-- ========================= -->
 
-      .envie-button strong {
-        font-size: 13px;
-      }
+  <header class="hero">
 
-      .shortcut-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
+    <div class="logo">
+      🍽️
+    </div>
 
-      .shortcut {
-        background: white;
-        border-radius: 19px;
-        padding: 17px;
-        box-shadow: 0 5px 15px rgba(80, 60, 40, 0.06);
-        font-size: 14px;
-        font-weight: 600;
-        color: #56634f;
-      }
+    <h1>
+      Aujourd'hui, on mange quoi ?
+    </h1>
 
-      .message-card {
-        background: #eef2e9;
-        border-radius: 22px;
-        padding: 19px;
-        margin-top: 22px;
-        color: #5d6957;
-        font-size: 14px;
-        line-height: 1.5;
-        text-align: center;
-      }
+    <p>
+      Des petites portions, mais un vrai repas.
+      Des idées simples, gourmandes et faciles
+      à adapter à votre appétit et à vos envies.
+    </p>
 
-      .bottom-nav {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(10px);
-        border-top: 1px solid #eee4dc;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        padding: 9px 8px calc(9px + env(safe-area-inset-bottom));
-      }
+  </header>
 
-      .nav-item {
-        text-align: center;
-        color: #777;
-        font-size: 11px;
-        padding: 4px;
-        background: transparent;
-        border: none;
-      }
 
-      .nav-item span {
-        display: block;
-        font-size: 22px;
-        margin-bottom: 3px;
-      }
+  <main class="container">
 
-      .nav-item.active {
-        color: #607052;
-        font-weight: bold;
-      }
 
-      @media (max-width: 380px) {
-        .hero h1 {
-          font-size: 25px;
-        }
+    <!-- ========================= -->
+    <!-- COMMENT CUISINEZ-VOUS ? -->
+    <!-- ========================= -->
 
-        .container {
-          width: calc(100% - 22px);
-        }
+    <section class="card">
 
-        .meal-type-btn {
-          min-height: 88px;
-        }
+      <h2>
+        🍽️ Comment cuisinez-vous ?
+      </h2>
 
-        .path-card {
-          padding: 15px 12px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header class="hero">
-      <div class="logo" aria-label="Logo Ma Petite Assiette">🍽️</div>
-      <h1>Aujourd'hui, on mange quoi ?</h1>
-      <p>
-        Des petites portions, mais un vrai repas. Des idées simples, gourmandes et faciles
-        à adapter à votre appétit et à vos envies.
+      <p class="card-intro">
+        Choisissez votre façon de préparer les repas.
+        Vous pourrez la modifier à tout moment.
       </p>
-    </header>
 
-    <main class="container">
-      <section class="card" aria-labelledby="mode-title">
-        <h2 id="mode-title">🍽️ Comment cuisinez-vous ?</h2>
-        <p class="card-intro">
-          Choisissez votre façon de préparer les repas. Vous pourrez la modifier à tout moment.
-        </p>
 
-        <div class="portion-options">
-          <div class="portion-option">
-            <input type="radio" name="modePortion" id="modePetite" value="petite" />
-            <label for="modePetite" class="portion-label">
-              <span class="portion-icon" aria-hidden="true">🥄</span>
-              <span class="portion-text">
-                <strong>Petite portion</strong>
-                <small>Des quantités adaptées à un petit appétit.</small>
-              </span>
-            </label>
-          </div>
+      <div class="portion-options">
 
-          <div class="portion-option">
-            <input type="radio" name="modePortion" id="modeFamille" value="famille" />
-            <label for="modeFamille" class="portion-label">
-              <span class="portion-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
-              <span class="portion-text">
-                <strong>Famille</strong>
-                <small>Des recettes à préparer pour plusieurs personnes.</small>
-              </span>
-            </label>
-          </div>
 
-          <div class="portion-option">
-            <input type="radio" name="modePortion" id="modeMixte" value="mixte" />
-            <label for="modeMixte" class="portion-label">
-              <span class="portion-icon" aria-hidden="true">🍲</span>
-              <span class="portion-text">
-                <strong>Petite portion + famille</strong>
-                <small>Je cuisine pour tous et j'adapte ma portion.</small>
-              </span>
-            </label>
-          </div>
+        <div class="portion-option">
+
+          <input
+            type="radio"
+            name="modePortion"
+            id="modePetite"
+            value="petite"
+          >
+
+          <label
+            for="modePetite"
+            class="portion-label"
+          >
+
+            <span class="portion-icon">
+              🥄
+            </span>
+
+            <span class="portion-text">
+
+              <strong>
+                Petite portion
+              </strong>
+
+              <small>
+                Des quantités adaptées
+                à un petit appétit.
+              </small>
+
+            </span>
+
+          </label>
+
         </div>
 
-        <button type="button" class="save-button" id="savePortion">Enregistrer mon choix</button>
-        <div id="portionStatus" aria-live="polite"></div>
-      </section>
 
-      <section class="card" aria-labelledby="meal-type-title">
-        <h2 id="meal-type-title">🕐 Quel type de repas ?</h2>
-        <p class="card-intro">Choisissez le moment de la journée qui vous concerne.</p>
+        <div class="portion-option">
 
-        <div class="meal-type-grid" role="group" aria-label="Type de repas">
-          <button type="button" class="meal-type-btn" data-type="petit-dejeuner" aria-pressed="false">
-            <span aria-hidden="true">🌅</span>
-            <strong>Petit-déjeuner</strong>
-          </button>
+          <input
+            type="radio"
+            name="modePortion"
+            id="modeFamille"
+            value="famille"
+          >
 
-          <button type="button" class="meal-type-btn" data-type="dejeuner" aria-pressed="false">
-            <span aria-hidden="true">🥗</span>
-            <strong>Déjeuner</strong>
-          </button>
+          <label
+            for="modeFamille"
+            class="portion-label"
+          >
 
-          <button type="button" class="meal-type-btn" data-type="diner" aria-pressed="false">
-            <span aria-hidden="true">🍽️</span>
-            <strong>Dîner</strong>
-          </button>
+            <span class="portion-icon">
+              👨‍👩‍👧‍👦
+            </span>
 
-          <button type="button" class="meal-type-btn" data-type="collation" aria-pressed="false">
-            <span aria-hidden="true">🍎</span>
-            <strong>Collation</strong>
-          </button>
+            <span class="portion-text">
+
+              <strong>
+                Famille
+              </strong>
+
+              <small>
+                Des recettes à préparer
+                pour plusieurs personnes.
+              </small>
+
+            </span>
+
+          </label>
+
         </div>
 
-        <div id="mealTypeStatus" aria-live="polite"></div>
-      </section>
 
-      <div class="main-choice" aria-label="Choix principal">
-        <h2>✨ Le choix du jour</h2>
-        <p>Tu peux partir sur une idée simple, rapide et équilibrée selon ton humeur du moment.</p>
-        <a href="#" class="main-choice-button">Voir une suggestion de repas</a>
+        <div class="portion-option">
+
+          <input
+            type="radio"
+            name="modePortion"
+            id="modeMixte"
+            value="mixte"
+          >
+
+          <label
+            for="modeMixte"
+            class="portion-label"
+          >
+
+            <span class="portion-icon">
+              🍲
+            </span>
+
+            <span class="portion-text">
+
+              <strong>
+                Petite portion + famille
+              </strong>
+
+              <small>
+                Je cuisine pour tous
+                et j'adapte ma portion.
+              </small>
+
+            </span>
+
+          </label>
+
+        </div>
+
+
       </div>
 
-      <section aria-labelledby="parcours-title">
-        <h2 id="parcours-title" class="section-title">🧭 Parcours du repas</h2>
-        <div class="path-grid">
-          <article class="path-card">
-            <span aria-hidden="true">🥬</span>
-            <strong>Starter</strong>
-            <small>Une base légère et colorée pour démarrer.</small>
-          </article>
 
-          <article class="path-card">
-            <span aria-hidden="true">🍗</span>
-            <strong>Protéine</strong>
-            <small>Du bon sens et un repas rassasiant.</small>
-          </article>
+      <button
+        type="button"
+        class="save-button"
+        id="savePortion"
+      >
+        Enregistrer mon choix
+      </button>
 
-          <article class="path-card">
-            <span aria-hidden="true">🥔</span>
-            <strong>Accompagnement</strong>
-            <small>Une touche gourmande sans trop compliquer.</small>
-          </article>
 
-          <article class="path-card">
-            <span aria-hidden="true">🍓</span>
-            <strong>Petit plus</strong>
-            <small>Un fruit, une sauce ou un dessert sympa.</small>
-          </article>
-        </div>
-      </section>
+      <div id="portionStatus"></div>
 
-      <section aria-labelledby="envies-title">
-        <h2 id="envies-title" class="section-title">💡 Envie du moment</h2>
-        <div class="envie-scroll" aria-label="Envies du moment">
-          <button type="button" class="envie-button">
-            <span aria-hidden="true">🥟</span>
-            <strong>Confort</strong>
-          </button>
-          <button type="button" class="envie-button">
-            <span aria-hidden="true">🌿</span>
-            <strong>Light</strong>
-          </button>
-          <button type="button" class="envie-button">
-            <span aria-hidden="true">🍝</span>
-            <strong>Italien</strong>
-          </button>
-          <button type="button" class="envie-button">
-            <span aria-hidden="true">🌮</span>
-            <strong>Texmex</strong>
-          </button>
-          <button type="button" class="envie-button">
-            <span aria-hidden="true">🥑</span>
-            <strong>Healthy</strong>
-          </button>
-        </div>
-      </section>
+    </section>
 
-      <section aria-labelledby="shortcut-title">
-        <h2 id="shortcut-title" class="section-title">⚡ Raccourcis</h2>
-        <div class="shortcut-grid">
-          <div class="shortcut">Recettes 15 min</div>
-          <div class="shortcut">Sans cuisson</div>
-          <div class="shortcut">Budget serré</div>
-          <div class="shortcut">Idées famille</div>
-        </div>
-      </section>
 
-      <div class="message-card">
-        Une bonne envie de repas commence souvent par un petit choix simple : un type de repas,
-        un mode de cuisine, et une idée qui vous fait plaisir.
+    <!-- ========================= -->
+    <!-- TYPE DE REPAS -->
+    <!-- ========================= -->
+
+    <section class="card">
+
+      <h2>
+        🕐 Quel type de repas ?
+      </h2>
+
+      <p class="card-intro">
+        Choisissez le moment de la journée
+        qui vous concerne.
+      </p>
+
+
+      <div class="meal-type-grid">
+
+
+        <button
+          type="button"
+          class="meal-type-btn"
+          data-type="petit-dejeuner"
+        >
+
+          <span>
+            🌅
+          </span>
+
+          <strong>
+            Petit-déjeuner
+          </strong>
+
+        </button>
+
+
+        <button
+          type="button"
+          class="meal-type-btn"
+          data-type="dejeuner"
+        >
+
+          <span>
+            🥗
+          </span>
+
+          <strong>
+            Déjeuner
+          </strong>
+
+        </button>
+
+
+        <button
+          type="button"
+          class="meal-type-btn"
+          data-type="diner"
+        >
+
+          <span>
+            🍽️
+          </span>
+
+          <strong>
+            Dîner
+          </strong>
+
+        </button>
+
+
+        <button
+          type="button"
+          class="meal-type-btn"
+          data-type="collation"
+        >
+
+          <span>
+            🍎
+          </span>
+
+          <strong>
+            Collation
+          </strong>
+
+        </button>
+
+
       </div>
-    </main>
 
-    <nav class="bottom-nav" aria-label="Navigation principale">
-      <button type="button" class="nav-item active" aria-label="Accueil">
-        <span aria-hidden="true">🏠</span>
-        Accueil
-      </button>
-      <button type="button" class="nav-item" aria-label="Repas">
-        <span aria-hidden="true">🍽️</span>
-        Repas
-      </button>
-      <button type="button" class="nav-item" aria-label="Favoris">
-        <span aria-hidden="true">❤️</span>
-        Favoris
-      </button>
-      <button type="button" class="nav-item" aria-label="Profil">
-        <span aria-hidden="true">👤</span>
-        Profil
-      </button>
-    </nav>
 
-    <script>
-      const portionInputs = document.querySelectorAll('input[name="modePortion"]');
-      const savePortionButton = document.getElementById('savePortion');
-      const portionStatus = document.getElementById('portionStatus');
-      const mealTypeButtons = document.querySelectorAll('.meal-type-btn');
-      const mealTypeStatus = document.getElementById('mealTypeStatus');
+      <div id="mealTypeStatus"></div>
 
-      const getSavedPortion = () => localStorage.getItem('modePortion');
-      const setSavedPortion = (value) => localStorage.setItem('modePortion', value);
+    </section>
 
-      const savedPortion = getSavedPortion();
-      if (savedPortion) {
-        const matchingInput = document.querySelector(`input[value="${savedPortion}"]`);
-        if (matchingInput) {
-          matchingInput.checked = true;
-        }
+
+    <div class="main-choice">
+
+      <h2>✨ Le choix du jour</h2>
+
+      <p>
+        Tu peux partir sur une idée simple,
+        rapide et équilibrée selon ton humeur du moment.
+      </p>
+
+      <a href="#" class="main-choice-button">
+        Voir une suggestion de repas
+      </a>
+
+    </div>
+
+
+    <section>
+
+      <h2 class="section-title">
+        🧭 Parcours du repas
+      </h2>
+
+      <div class="path-grid">
+
+        <div class="path-card">
+          <span>🥬</span>
+          <strong>Starter</strong>
+          <small>Une base légère et colorée pour démarrer.</small>
+        </div>
+
+        <div class="path-card">
+          <span>🍗</span>
+          <strong>Protéine</strong>
+          <small>Du bon sens et un repas rassasiant.</small>
+        </div>
+
+        <div class="path-card">
+          <span>🥔</span>
+          <strong>Accompagnement</strong>
+          <small>Une touche gourmande sans trop compliquer.</small>
+        </div>
+
+        <div class="path-card">
+          <span>🍓</span>
+          <strong>Petit plus</strong>
+          <small>Un fruit, une sauce ou un dessert sympa.</small>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2 class="section-title">
+        💡 Envie du moment
+      </h2>
+
+      <div class="envie-scroll">
+
+        <button class="envie-button">
+          <span>🥟</span>
+          <strong>Confort</strong>
+        </button>
+
+        <button class="envie-button">
+          <span>🌿</span>
+          <strong>Light</strong>
+        </button>
+
+        <button class="envie-button">
+          <span>🍝</span>
+          <strong>Italien</strong>
+        </button>
+
+        <button class="envie-button">
+          <span>🌮</span>
+          <strong>Texmex</strong>
+        </button>
+
+        <button class="envie-button">
+          <span>🥑</span>
+          <strong>Healthy</strong>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2 class="section-title">
+        ⚡ Raccourcis
+      </h2>
+
+      <div class="shortcut-grid">
+
+        <div class="shortcut">Recettes 15 min</div>
+        <div class="shortcut">Sans cuisson</div>
+        <div class="shortcut">Budget serré</div>
+        <div class="shortcut">Idées famille</div>
+
+      </div>
+
+    </section>
+
+
+    <div class="message-card">
+      Une bonne envie de repas commence souvent par un petit choix simple :
+      un type de repas, un mode de cuisine, et une idée qui vous fait plaisir.
+    </div>
+
+  </main>
+
+
+  <nav class="bottom-nav">
+
+    <div class="nav-item active">
+      <span>🏠</span>
+      Accueil
+    </div>
+
+    <div class="nav-item">
+      <span>🍽️</span>
+      Repas
+    </div>
+
+    <div class="nav-item">
+      <span>❤️</span>
+      Favoris
+    </div>
+
+    <div class="nav-item">
+      <span>👤</span>
+      Profil
+    </div>
+
+  </nav>
+
+
+  <script>
+
+    const portionInputs = document.querySelectorAll('input[name="modePortion"]');
+    const savePortionButton = document.getElementById('savePortion');
+    const portionStatus = document.getElementById('portionStatus');
+    const mealTypeButtons = document.querySelectorAll('.meal-type-btn');
+    const mealTypeStatus = document.getElementById('mealTypeStatus');
+
+    const savedPortion = localStorage.getItem('modePortion');
+
+    if (savedPortion) {
+      const option = document.querySelector(`input[value="${savedPortion}"]`);
+      if (option) option.checked = true;
+    }
+
+    portionInputs.forEach(input => {
+      input.addEventListener('change', () => {
+        localStorage.setItem('modePortion', input.value);
+        portionStatus.textContent = 'Choix enregistré';
+      });
+    });
+
+    savePortionButton.addEventListener('click', () => {
+      const checked = document.querySelector('input[name="modePortion"]:checked');
+
+      if (!checked) {
+        portionStatus.textContent = 'Veuillez choisir un mode de cuisine.';
+        return;
       }
 
-      portionInputs.forEach((input) => {
-        input.addEventListener('change', () => {
-          setSavedPortion(input.value);
-          portionStatus.textContent = 'Choix enregistré';
-        });
+      localStorage.setItem('modePortion', checked.value);
+      portionStatus.textContent = 'Votre mode de cuisine a bien été enregistré.';
+    });
+
+    mealTypeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        mealTypeButtons.forEach(btn => btn.classList.remove('selected'));
+        button.classList.add('selected');
+
+        const type = button.dataset.type;
+
+        const labels = {
+          'petit-dejeuner': 'Petit-déjeuner sélectionné',
+          'dejeuner': 'Déjeuner sélectionné',
+          'diner': 'Dîner sélectionné',
+          'collation': 'Collation sélectionnée'
+        };
+
+        mealTypeStatus.textContent = labels[type] || 'Choix enregistré';
       });
+    });
 
-      savePortionButton.addEventListener('click', () => {
-        const checkedInput = document.querySelector('input[name="modePortion"]:checked');
+  </script>
 
-        if (!checkedInput) {
-          portionStatus.textContent = 'Veuillez choisir un mode de cuisine.';
-          return;
-        }
+</body>
 
-        setSavedPortion(checkedInput.value);
-        portionStatus.textContent = 'Votre mode de cuisine a bien été enregistré.';
-      });
-
-      const mealLabels = {
-        'petit-dejeuner': 'Petit-déjeuner sélectionné',
-        'dejeuner': 'Déjeuner sélectionné',
-        'diner': 'Dîner sélectionné',
-        'collation': 'Collation sélectionnée'
-      };
-
-      mealTypeButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          mealTypeButtons.forEach((btn) => {
-            btn.classList.remove('selected');
-            btn.setAttribute('aria-pressed', 'false');
-          });
-
-          button.classList.add('selected');
-          button.setAttribute('aria-pressed', 'true');
-          const type = button.dataset.type;
-          mealTypeStatus.textContent = mealLabels[type] || 'Choix enregistré';
-        });
-      });
-    </script>
-  </body>
 </html>
