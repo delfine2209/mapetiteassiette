@@ -1,16 +1,6 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2E73FD8V9V');
-</script>
-  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -161,5 +151,582 @@
     }
 
     .main-button:hover {
-      b
+      background: #708764;
+    }
+
+    /* =========================
+       PARCOURS
+       ========================= */
+
+    .path-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      border-radius: 20px;
+      padding: 17px;
+      margin-bottom: 10px;
+      box-shadow: 0 5px 18px rgba(70, 70, 50, 0.07);
+      transition: 0.2s;
+    }
+
+    .path-card:hover {
+      transform: translateY(-1px);
+    }
+
+    .path-card strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .path-card span {
+      font-size: 14px;
+      color: #6b7266;
+      line-height: 1.4;
+    }
+
+    /* =========================
+       RACCOURCIS
+       ========================= */
+
+    .shortcuts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .shortcut {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      background: white;
+      color: #485244;
+      border-radius: 18px;
+      padding: 16px 8px;
+      box-shadow: 0 4px 14px rgba(70, 70, 50, 0.06);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       MESSAGE
+       ========================= */
+
+    .message {
+      display: none;
+      background: #edf4e9;
+      border-radius: 16px;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* =========================
+       NAVIGATION BASSE
+       ========================= */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255, 255, 255, 0.97);
+      border-top: 1px solid #e4e4dc;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 -5px 18px rgba(60, 60, 50, 0.08);
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #65705f;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .bottom-nav a span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- =========================
+         HERO
+         ========================= -->
+
+    <section class="hero">
+      <div class="logo">🍽️</div>
+
+      <h1>MA PETITE ASSIETTE</h1>
+
+      <p>
+        Aujourd'hui, on mange quoi ?
+      </p>
+
+      <p>
+        Des petites portions, mais un vrai repas.
+      </p>
+    </section>
+
+
+    <!-- =========================
+         COMMENT CUISINEZ-VOUS ?
+         ========================= -->
+
+    <section class="section">
+
+      <h2>🍽️ Comment cuisinez-vous ?</h2>
+
+      <div class="choices">
+
+        <button class="choice" data-mode="petite">
+          <span class="emoji">🥄</span>
+          <strong>Petite portion</strong>
+          <br>
+          Pour moi
+        </button>
+
+        <button class="choice" data-mode="famille">
+          <span class="emoji">👨‍👩‍👧‍👦</span>
+          <strong>Famille</strong>
+          <br>
+          Pour plusieurs
+        </button>
+
+        <button class="choice" data-mode="mixte">
+          <span class="emoji">🍲</span>
+          <strong>Petite portion + famille</strong>
+          <br>
+          Je cuisine pour tous
+        </button>
+
+      </div>
+
+      <button class="main-button" id="saveMode">
+        Enregistrer mon choix
+      </button>
+
+      <div class="message" id="modeMessage">
+        Votre préférence a été enregistrée 💚
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TYPE DE REPAS
+         ========================= -->
+
+    <section class="section">
+
+      <h2>🕐 Quel type de repas ?</h2>
+
+      <div class="choices">
+
+        <button class="choice meal-choice" data-meal="petit-dejeuner">
+          <span class="emoji">🌅</span>
+          <strong>Petit-déjeuner</strong>
+        </button>
+
+        <button class="choice meal-choice" data-meal="dejeuner">
+          <span class="emoji">🥗</span>
+          <strong>Déjeuner</strong>
+        </button>
+
+        <button class="choice meal-choice" data-meal="diner">
+          <span class="emoji">🍽️</span>
+          <strong>Dîner</strong>
+        </button>
+
+        <button class="choice meal-choice" data-meal="collation">
+          <span class="emoji">🍎</span>
+          <strong>Collation</strong>
+        </button>
+
+        <button class="choice meal-choice" data-meal="petite-douceur">
+          <span class="emoji">🍰</span>
+          <strong>Petite douceur</strong>
+        </button>
+
+        <button class="choice meal-choice" data-meal="peu-importe">
+          <span class="emoji">✨</span>
+          <strong>Peu importe</strong>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ENVIES
+         ========================= -->
+
+    <section class="section">
+
+      <h2>💚 Je choisis selon mes envies</h2>
+
+      <a
+        href="src/screens/MesEnvies.html"
+        class="path-card"
+      >
+        <strong>🔍 Choisir mes envies</strong>
+
+        <span>
+          Je choisis selon mon appétit, mon temps,
+          mes envies et mes préférences.
+        </span>
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         MON PARCOURS
+         ========================= -->
+
+    <section class="section">
+
+      <h2>🌿 Mon parcours</h2>
+
+      <a
+        href="src/screens/petit-appetit.html"
+        class="path-card"
+      >
+        <strong>🥄 J'ai un petit appétit</strong>
+
+        <span>
+          Des idées de repas simples et adaptés
+          aux petites quantités.
+        </span>
+      </a>
+
+      <a
+        href="src/screens/chirurgie.html"
+        class="path-card"
+      >
+        <strong>🏥 Je me prépare à une chirurgie</strong>
+
+        <span>
+          Un programme express pour se préparer
+          avant une chirurgie.
+        </span>
+      </a>
+
+      <a
+        href="src/screens/batch-cooking.html"
+        class="path-card"
+      >
+        <strong>🍱 Je prépare mes repas</strong>
+
+        <span>
+          Organiser plusieurs repas à l'avance
+          sans cuisiner tous les jours.
+        </span>
+      </a>
+
+      <a
+        href="src/screens/adapter.html"
+        class="path-card"
+      >
+        <strong>🍽️ J'adapte mon plat préféré</strong>
+
+        <span>
+          Pizza, burger, pâtes, raclette, tartiflette,
+          fajitas, couscous...
+        </span>
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         ENVIES RAPIDES
+         ========================= -->
+
+    <section class="section">
+
+      <h2>💚 Aujourd'hui, j'ai envie de…</h2>
+
+      <div class="choices">
+
+        <button class="choice quick-envie" data-envie="leger">
+          <span class="emoji">🌿</span>
+          Léger
+        </button>
+
+        <button class="choice quick-envie" data-envie="complet">
+          <span class="emoji">🍽️</span>
+          Complet
+        </button>
+
+        <button class="choice quick-envie" data-envie="rapide">
+          <span class="emoji">⚡</span>
+          Rapide
+        </button>
+
+        <button class="choice quick-envie" data-envie="sucre">
+          <span class="emoji">🍰</span>
+          Sucré
+        </button>
+
+        <button class="choice quick-envie" data-envie="vegetarien">
+          <span class="emoji">🥕</span>
+          Végétarien
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RACCOURCIS
+         ========================= -->
+
+    <section class="section">
+
+      <h2>✨ Mes raccourcis</h2>
+
+      <div class="shortcuts">
+
+        <a
+          href="src/screens/Recettes.html"
+          id="allRecipesLink"
+          class="shortcut"
+        >
+          🍴<br>
+          Toutes les recettes
+        </a>
+
+        <a
+          href="src/screens/Favoris.html"
+          class="shortcut"
+        >
+          ❤️<br>
+          Mes favoris
+        </a>
+
+        <a
+          href="src/screens/menu.html"
+          class="shortcut"
+        >
+          📋<br>
+          Mon menu
+        </a>
+
+        <a
+          href="src/screens/courses.html"
+          class="shortcut"
+        >
+          🛒<br>
+          Mes courses
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
+  <nav class="bottom-nav">
+
+    <a href="index.html">
+      <span>🏠</span>
+      Accueil
+    </a>
+
+    <a href="src/screens/Recettes.html">
+      <span>🍴</span>
+      Recettes
+    </a>
+
+    <a href="src/screens/Favoris.html">
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a href="src/screens/MonProfil.html">
+      <span>👤</span>
+      Profil
+    </a>
+
+  </nav>
+
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
+  <script>
+
+    /* -------------------------
+       MODE DE PORTION
+       ------------------------- */
+
+    let modePortion =
+      localStorage.getItem("modePortion") || "";
+
+    const modeButtons =
+      document.querySelectorAll("[data-mode]");
+
+    modeButtons.forEach(button => {
+
+      if (button.dataset.mode === modePortion) {
+        button.classList.add("selected");
+      }
+
+      button.addEventListener("click", () => {
+
+        modeButtons.forEach(btn =>
+          btn.classList.remove("selected")
+        );
+
+        button.classList.add("selected");
+
+        modePortion = button.dataset.mode;
+      });
+
+    });
+
+
+    document
+      .getElementById("saveMode")
+      .addEventListener("click", () => {
+
+        if (!modePortion) {
+          alert("Choisissez d'abord votre mode de cuisine.");
+          return;
+        }
+
+        localStorage.setItem(
+          "modePortion",
+          modePortion
+        );
+
+        const message =
+          document.getElementById("modeMessage");
+
+        message.style.display = "block";
+
+        setTimeout(() => {
+          message.style.display = "none";
+        }, 2500);
+
+      });
+
+
+    /* -------------------------
+       TYPE DE REPAS
+       ------------------------- */
+
+    let typeRepas =
+      localStorage.getItem("typeRepas") || "";
+
+    const mealButtons =
+      document.querySelectorAll(".meal-choice");
+
+    mealButtons.forEach(button => {
+
+      if (button.dataset.meal === typeRepas) {
+        button.classList.add("selected");
+      }
+
+      button.addEventListener("click", () => {
+
+        mealButtons.forEach(btn =>
+          btn.classList.remove("selected")
+        );
+
+        button.classList.add("selected");
+
+        typeRepas = button.dataset.meal;
+
+        localStorage.setItem(
+          "typeRepas",
+          typeRepas
+        );
+
+      });
+
+    });
+
+
+    /* -------------------------
+       ENVIES RAPIDES
+       ------------------------- */
+
+    const envieButtons =
+      document.querySelectorAll(".quick-envie");
+
+    envieButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        localStorage.setItem(
+          "envie",
+          button.dataset.envie
+        );
+
+        window.location.href =
+          "src/screens/Resultats.html";
+
+      });
+
+    });
+
+
+    /* -------------------------
+       TOUTES LES RECETTES
+       ------------------------- */
+
+    const allRecipesLink =
+      document.getElementById("allRecipesLink");
+
+    allRecipesLink.addEventListener("click", function(event) {
+
+      const repas =
+        localStorage.getItem("typeRepas");
+
+      if (
+        repas &&
+        repas !== "peu-importe"
+      ) {
+
+        event.preventDefault();
+
+        window.location.href =
+          "src/screens/Recettes.html?type="
+          + encodeURIComponent(repas);
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
 ```
