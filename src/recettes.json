@@ -4544,5 +4544,401 @@
     "Égrener la semoule.",
     "Servir avec les légumes et les pois chiches."
   ]
+},
+{
+  "id": "DOU081",
+  "nom": "Mini gâteau moelleux à la farine de pois chiches & vanille",
+  "categorie": "Petite douceur",
+  "type": "Gâteau",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 7,
+  "portions": 4,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Les petits gâteaux peuvent être préparés à l'avance et conservés individuellement.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "leger"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "40 g de farine de pois chiches",
+    "1 œuf",
+    "40 g de fromage blanc",
+    "30 g de compote de pomme sans sucre ajouté",
+    "1 cuillère à café de miel",
+    "1/2 cuillère à café de levure",
+    "Quelques gouttes d'extrait de vanille"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Mélanger l'œuf, le fromage blanc, la compote et le miel.",
+    "Ajouter la farine de pois chiches et la levure.",
+    "Ajouter la vanille et mélanger jusqu'à obtenir une pâte homogène.",
+    "Répartir dans de petits moules.",
+    "Cuire environ 15 minutes.",
+    "Laisser tiédir avant de déguster."
+  ],
+  "quantites": {
+    "petite": {
+      "Farine de pois chiches": "10 g",
+      "Œuf": "1/4",
+      "Fromage blanc": "10 g",
+      "Compote": "8 g",
+      "Miel": "1/4 cuillère à café"
+    },
+    "famille2": {
+      "Farine de pois chiches": "20 g",
+      "Œuf": "1/2",
+      "Fromage blanc": "20 g",
+      "Compote": "15 g",
+      "Miel": "1/2 cuillère à café"
+    },
+    "famille4": {
+      "Farine de pois chiches": "40 g",
+      "Œuf": "1",
+      "Fromage blanc": "40 g",
+      "Compote": "30 g",
+      "Miel": "1 cuillère à café"
+    }
+  }
+},
+{
+  "id": "DOU082",
+  "nom": "Mini gâteau pomme-cannelle à l'avoine",
+  "categorie": "Petite douceur",
+  "type": "Gâteau",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 6,
+  "portions": 4,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer plusieurs petits gâteaux et les conserver individuellement.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "leger"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "40 g de flocons d'avoine mixés",
+    "1 œuf",
+    "50 g de compote de pomme sans sucre ajouté",
+    "1/2 pomme",
+    "30 g de fromage blanc",
+    "1/2 cuillère à café de levure",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Mélanger l'œuf, la compote et le fromage blanc.",
+    "Ajouter les flocons d'avoine mixés et la levure.",
+    "Ajouter la pomme coupée en très petits dés.",
+    "Parfumer avec un peu de cannelle.",
+    "Répartir dans de petits moules.",
+    "Cuire environ 15 minutes.",
+    "Laisser refroidir quelques minutes avant de servir."
+  ],
+  "quantites": {
+    "petite": {
+      "Flocons d'avoine": "10 g",
+      "Œuf": "1/4",
+      "Compote": "13 g",
+      "Pomme": "1/8",
+      "Fromage blanc": "8 g"
+    },
+    "famille2": {
+      "Flocons d'avoine": "20 g",
+      "Œuf": "1/2",
+      "Compote": "25 g",
+      "Pomme": "1/4",
+      "Fromage blanc": "15 g"
+    },
+    "famille4": {
+      "Flocons d'avoine": "40 g",
+      "Œuf": "1",
+      "Compote": "50 g",
+      "Pomme": "1/2",
+      "Fromage blanc": "30 g"
+    }
+  }
+},
+{
+  "id": "DOU083",
+  "nom": "Mini gâteau banane & avoine",
+  "categorie": "Petite douceur",
+  "type": "Gâteau",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 6,
+  "portions": 4,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Se conserve facilement en petites portions.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "leger"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "40 g de flocons d'avoine mixés",
+    "1 petite banane",
+    "1 œuf",
+    "30 g de fromage blanc",
+    "1/2 cuillère à café de levure",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Écraser finement la banane.",
+    "Ajouter l'œuf et le fromage blanc.",
+    "Incorporer les flocons d'avoine mixés et la levure.",
+    "Ajouter éventuellement une pincée de cannelle.",
+    "Répartir dans de petits moules.",
+    "Cuire environ 15 minutes.",
+    "Laisser tiédir avant de déguster."
+  ],
+  "quantites": {
+    "petite": {
+      "Flocons d'avoine": "10 g",
+      "Banane": "1/4",
+      "Œuf": "1/4",
+      "Fromage blanc": "8 g"
+    },
+    "famille2": {
+      "Flocons d'avoine": "20 g",
+      "Banane": "1/2",
+      "Œuf": "1/2",
+      "Fromage blanc": "15 g"
+    },
+    "famille4": {
+      "Flocons d'avoine": "40 g",
+      "Banane": "1 petite",
+      "Œuf": "1",
+      "Fromage blanc": "30 g"
+    }
+  }
+},
+{
+  "id": "DOU084",
+  "nom": "Mini gâteau chocolat à la farine de pois chiches",
+  "categorie": "Petite douceur",
+  "type": "Gâteau",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 7,
+  "portions": 4,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Peut être préparé en plusieurs petits formats.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "reconfort"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "35 g de farine de pois chiches",
+    "5 g de cacao non sucré",
+    "1 œuf",
+    "40 g de compote de pomme sans sucre ajouté",
+    "30 g de fromage blanc",
+    "1 cuillère à café de miel",
+    "1/2 cuillère à café de levure"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Mélanger l'œuf, la compote, le fromage blanc et le miel.",
+    "Ajouter la farine de pois chiches, le cacao et la levure.",
+    "Mélanger jusqu'à obtenir une pâte homogène.",
+    "Répartir dans de petits moules.",
+    "Cuire environ 15 minutes.",
+    "Laisser tiédir avant de servir."
+  ],
+  "quantites": {
+    "petite": {
+      "Farine de pois chiches": "9 g",
+      "Cacao": "1 g",
+      "Œuf": "1/4",
+      "Compote": "10 g",
+      "Fromage blanc": "8 g"
+    },
+    "famille2": {
+      "Farine de pois chiches": "18 g",
+      "Cacao": "3 g",
+      "Œuf": "1/2",
+      "Compote": "20 g",
+      "Fromage blanc": "15 g"
+    },
+    "famille4": {
+      "Farine de pois chiches": "35 g",
+      "Cacao": "5 g",
+      "Œuf": "1",
+      "Compote": "40 g",
+      "Fromage blanc": "30 g"
+    }
+  }
+},
+{
+  "id": "DOU085",
+  "nom": "Mini gâteau poire & avoine",
+  "categorie": "Petite douceur",
+  "type": "Gâteau",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 6,
+  "portions": 4,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Idéal à préparer en petites portions individuelles.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "leger"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "40 g de flocons d'avoine mixés",
+    "1/2 poire",
+    "1 œuf",
+    "30 g de fromage blanc",
+    "30 g de compote de pomme sans sucre ajouté",
+    "1/2 cuillère à café de levure",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Mélanger l'œuf, le fromage blanc et la compote.",
+    "Ajouter les flocons d'avoine mixés et la levure.",
+    "Ajouter la poire coupée en petits dés.",
+    "Parfumer avec un peu de cannelle.",
+    "Répartir dans de petits moules.",
+    "Cuire environ 15 minutes.",
+    "Laisser tiédir avant de déguster."
+  ],
+  "quantites": {
+    "petite": {
+      "Flocons d'avoine": "10 g",
+      "Poire": "1/8",
+      "Œuf": "1/4",
+      "Fromage blanc": "8 g",
+      "Compote": "8 g"
+    },
+    "famille2": {
+      "Flocons d'avoine": "20 g",
+      "Poire": "1/4",
+      "Œuf": "1/2",
+      "Fromage blanc": "15 g",
+      "Compote": "15 g"
+    },
+    "famille4": {
+      "Flocons d'avoine": "40 g",
+      "Poire": "1/2",
+      "Œuf": "1",
+      "Fromage blanc": "30 g",
+      "Compote": "30 g"
+    }
+  }
+},
+{
+  "id": "DOU086",
+  "nom": "Mini gâteau carotte & avoine",
+  "categorie": "Petite douceur",
+  "type": "Gâteau",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 6,
+  "portions": 4,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Peut être préparé en plusieurs petits gâteaux individuels.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "leger"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "40 g de flocons d'avoine mixés",
+    "50 g de carotte râpée très finement",
+    "1 œuf",
+    "30 g de fromage blanc",
+    "30 g de compote de pomme sans sucre ajouté",
+    "1/2 cuillère à café de levure",
+    "Cannelle selon les goûts"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Râper très finement la carotte.",
+    "Mélanger l'œuf, le fromage blanc et la compote.",
+    "Ajouter les flocons d'avoine et la levure.",
+    "Incorporer la carotte et un peu de cannelle.",
+    "Répartir dans de petits moules.",
+    "Cuire environ 20 minutes.",
+    "Laisser refroidir quelques minutes avant de déguster."
+  ],
+  "quantites": {
+    "petite": {
+      "Flocons d'avoine": "10 g",
+      "Carotte": "13 g",
+      "Œuf": "1/4",
+      "Fromage blanc": "8 g",
+      "Compote": "8 g"
+    },
+    "famille2": {
+      "Flocons d'avoine": "20 g",
+      "Carotte": "25 g",
+      "Œuf": "1/2",
+      "Fromage blanc": "15 g",
+      "Compote": "15 g"
+    },
+    "famille4": {
+      "Flocons d'avoine": "40 g",
+      "Carotte": "50 g",
+      "Œuf": "1",
+      "Fromage blanc": "30 g",
+      "Compote": "30 g"
+    }
+  }
 }
 ]
