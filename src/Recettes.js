@@ -1,33 +1,44 @@
+```javascript
 // =========================
 // AFFICHAGE LISTE RECETTES
 // =========================
 
 async function afficherRecettes() {
 
-    const container =
-        document.getElementById("liste-recettes");
+    const container = document.getElementById("liste-recettes");
 
     if (!container) return;
 
     try {
 
-        const response =
-            await fetch("../../recettes.json");
+        const response = await fetch("../../recettes.json");
 
-        const recettes =
-            await response.json();
+        if (!response.ok) {
+            throw new Error("Impossible de charger recettes.json");
+        }
+
+        const recettes = await response.json();
+
+        // Nettoyage de la liste
+        container.innerHTML = "";
+
+        if (!recettes || recettes.length === 0) {
+            container.innerHTML = "<p>Aucune recette disponible.</p>";
+            return;
+        }
 
         recettes.forEach(recette => {
 
             container.innerHTML += `
 
-                <a href="src/screens/Recette.html?id=${recette.id}" class="recipe-card">
+                <a href="Recette.html?id=${encodeURIComponent(recette.id)}"
+                   class="recipe-card">
 
-                    <h3>${recette.nom}</h3>
+                    <h3>${recette.nom || "Recette sans nom"}</h3>
 
-                    <p>⏱ ${recette.temps} min</p>
+                    <p>⏱ ${recette.temps || "—"} min</p>
 
-                    <p>🥩 ${recette.proteines} g protéines</p>
+                    <p>🥩 ${recette.proteines || "—"} g protéines</p>
 
                 </a>
 
@@ -40,11 +51,12 @@ async function afficherRecettes() {
         container.innerHTML =
             "<p>Erreur de chargement des recettes.</p>";
 
-        console.error(error);
+        console.error("Erreur recettes :", error);
 
     }
 
 }
+
 
 // =========================
 // AFFICHAGE FICHE RECETTE
@@ -52,29 +64,35 @@ async function afficherRecettes() {
 
 async function afficherRecette() {
 
-    const fiche =
-        document.getElementById("fiche-recette");
+    const fiche = document.getElementById("fiche-recette");
 
     if (!fiche) return;
 
     try {
 
         const params =
-            new URLSearchParams(
-                window.location.search
-            );
+            new URLSearchParams(window.location.search);
 
-        const id =
-            params.get("id");
+        const id = params.get("id");
 
-        const response =
-            await fetch("../../recettes.json");
+        if (!id) {
 
-        const recettes =
-            await response.json();
+            fiche.innerHTML =
+                "<h2>Recette introuvable</h2>";
+
+            return;
+        }
+
+        const response = await fetch("../../recettes.json");
+
+        if (!response.ok) {
+            throw new Error("Impossible de charger recettes.json");
+        }
+
+        const recettes = await response.json();
 
         const recette =
-            recettes.find(r => r.id === id);
+            recettes.find(r => String(r.id) === String(id));
 
         if (!recette) {
 
@@ -82,84 +100,117 @@ async function afficherRecette() {
                 "<h2>Recette introuvable</h2>";
 
             return;
-
         }
+
+
+        // =========================
+        // INFORMATIONS PRINCIPALES
+        // =========================
 
         fiche.innerHTML = `
 
-            <h1>${recette.nom}</h1>
+            <h1>${recette.nom || "Recette"}</h1>
 
             <div class="recipe-card">
 
-                <p>⏱ ${recette.temps} min</p>
+                <p>⏱ ${recette.temps || "—"} min</p>
 
-                <p>🥩 ${recette.proteines} g protéines</p>
+                <p>🥩 ${recette.proteines || "—"} g protéines</p>
 
-                <p>🧵 Texture : ${recette.texture}</p>
+                ${recette.texture
+                    ? `<p>🧵 Texture : ${recette.texture}</p>`
+                    : ""
+                }
 
             </div>
+
 
             <h2>Compatible avec</h2>
 
             <ul>
 
-                ${recette.petitAppetit ? "<li>✅ Petit appétit</li>" : ""}
+                ${recette.petitAppetit
+                    ? "<li>✅ Petit appétit</li>"
+                    : ""
+                }
 
-                ${recette.preOperatoire ? "<li>✅ Pré-opératoire</li>" : ""}
+                ${recette.preOperatoire
+                    ? "<li>✅ Pré-opératoire</li>"
+                    : ""
+                }
 
-                ${recette.postOperatoire ? "<li>✅ Post-opératoire</li>" : ""}
+                ${recette.postOperatoire
+                    ? "<li>✅ Post-opératoire</li>"
+                    : ""
+                }
 
-                ${recette.sansGluten ? "<li>✅ Sans gluten</li>" : ""}
+                ${recette.sansGluten
+                    ? "<li>✅ Sans gluten</li>"
+                    : ""
+                }
 
-                ${recette.sansLactose ? "<li>✅ Sans lactose</li>" : ""}
+                ${recette.sansLactose
+                    ? "<li>✅ Sans lactose</li>"
+                    : ""
+                }
 
-                ${recette.vegetarien ? "<li>✅ Végétarien</li>" : ""}
+                ${recette.vegetarien
+                    ? "<li>✅ Végétarien</li>"
+                    : ""
+                }
 
-                ${recette.vegetalien ? "<li>✅ Végétalien</li>" : ""}
+                ${recette.vegetalien
+                    ? "<li>✅ Végétalien</li>"
+                    : ""
+                }
 
             </ul>
+
 
             <h2>Envies associées</h2>
 
             <ul>
 
-        `;
-
-        if (recette.envies && recette.envies.length > 0) {
-            recette.envies.forEach(envie => {
-                fiche.innerHTML += `<li>${envie}</li>`;
-            });
-        }
-
-        fiche.innerHTML += `
+                ${
+                    recette.envies &&
+                    recette.envies.length > 0
+                        ? recette.envies
+                            .map(envie => `<li>${envie}</li>`)
+                            .join("")
+                        : "<li>Aucune envie associée</li>"
+                }
 
             </ul>
+
 
             <h2>Ingrédients</h2>
 
             <ul>
 
-        `;
-
-        recette.ingredients.forEach(ingredient => {
-            fiche.innerHTML += `<li>${ingredient}</li>`;
-        });
-
-        fiche.innerHTML += `
+                ${
+                    recette.ingredients &&
+                    recette.ingredients.length > 0
+                        ? recette.ingredients
+                            .map(ingredient => `<li>${ingredient}</li>`)
+                            .join("")
+                        : "<li>Ingrédients non renseignés</li>"
+                }
 
             </ul>
+
 
             <h2>Préparation</h2>
 
             <ol>
 
-        `;
-
-        recette.preparation.forEach(etape => {
-            fiche.innerHTML += `<li>${etape}</li>`;
-        });
-
-        fiche.innerHTML += `
+                ${
+                    recette.preparation &&
+                    recette.preparation.length > 0
+                        ? recette.preparation
+                            .map(etape => `<li>${etape}</li>`)
+                            .join("")
+                        : "<li>Préparation non renseignée</li>"
+                }
 
             </ol>
 
@@ -170,8 +221,9 @@ async function afficherRecette() {
         fiche.innerHTML =
             "<p>Erreur de chargement de la recette.</p>";
 
-        console.error(error);
+        console.error("Erreur fiche recette :", error);
 
     }
 
 }
+```
