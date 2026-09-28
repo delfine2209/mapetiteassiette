@@ -12,7 +12,7 @@ async function afficherRecettes() {
     try {
 
         const response =
-            await fetch("../recettes.json");
+            await fetch("./src/recettes.json");
 
         const recettes =
             await response.json();
@@ -21,7 +21,7 @@ async function afficherRecettes() {
 
             container.innerHTML += `
 
-                <a href="Recette.html?id=${recette.id}" class="recipe-card">
+                <a href="src/screens/Recette.html?id=${recette.id}" class="recipe-card">
 
                     <h3>${recette.nom}</h3>
 
@@ -123,4 +123,55 @@ async function afficherRecette() {
 
             <ul>
 
-       
+        `;
+
+        if (recette.envies && recette.envies.length > 0) {
+            recette.envies.forEach(envie => {
+                fiche.innerHTML += `<li>${envie}</li>`;
+            });
+        }
+
+        fiche.innerHTML += `
+
+            </ul>
+
+            <h2>Ingrédients</h2>
+
+            <ul>
+
+        `;
+
+        recette.ingredients.forEach(ingredient => {
+            fiche.innerHTML += `<li>${ingredient}</li>`;
+        });
+
+        fiche.innerHTML += `
+
+            </ul>
+
+            <h2>Préparation</h2>
+
+            <ol>
+
+        `;
+
+        recette.preparation.forEach(etape => {
+            fiche.innerHTML += `<li>${etape}</li>`;
+        });
+
+        fiche.innerHTML += `
+
+            </ol>
+
+        `;
+
+    } catch (error) {
+
+        fiche.innerHTML =
+            "<p>Erreur de chargement de la recette.</p>";
+
+        console.error(error);
+
+    }
+
+}
