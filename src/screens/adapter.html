@@ -21,10 +21,6 @@
       padding-bottom: 90px;
     }
 
-    /* =========================
-       HERO
-    ========================= */
-
     .hero {
       background: linear-gradient(135deg, #f7d8c8, #dce8d2);
       padding: 25px 18px 30px;
@@ -50,10 +46,6 @@
       line-height: 1.5;
     }
 
-    /* =========================
-       MAIN
-    ========================= */
-
     main {
       max-width: 650px;
       margin: auto;
@@ -75,10 +67,6 @@
       font-size: 14px;
       line-height: 1.5;
     }
-
-    /* =========================
-       MODE
-    ========================= */
 
     .mode-grid {
       display: grid;
@@ -111,10 +99,6 @@
       background: #eef5e9;
     }
 
-    /* =========================
-       PLATS
-    ========================= */
-
     .dish-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -145,10 +129,6 @@
       border-color: #d79778;
       background: #fff1e9;
     }
-
-    /* =========================
-       GARNITURES
-    ========================= */
 
     #garnituresSection {
       display: none;
@@ -199,10 +179,6 @@
       font-size: 22px;
     }
 
-    /* =========================
-       CHARGEMENT / MESSAGE
-    ========================= */
-
     .message {
       background: white;
       border-radius: 18px;
@@ -217,10 +193,6 @@
       background: #fff0ec;
       color: #8b5145;
     }
-
-    /* =========================
-       AUTRE
-    ========================= */
 
     #autreSection {
       display: none;
@@ -270,10 +242,6 @@
       cursor: pointer;
     }
 
-    /* =========================
-       INFORMATION
-    ========================= */
-
     .info {
       margin-top: 20px;
       padding: 15px;
@@ -282,10 +250,6 @@
       font-size: 13px;
       line-height: 1.5;
     }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
 
     .bottom-nav {
       position: fixed;
@@ -317,10 +281,6 @@
       margin-bottom: 3px;
     }
 
-    /* =========================
-       DESKTOP
-    ========================= */
-
     @media (min-width: 600px) {
 
       .mode-grid {
@@ -336,12 +296,7 @@
   </style>
 </head>
 
-
 <body>
-
-  <!-- =========================
-       HERO
-  ========================= -->
 
   <header class="hero">
 
@@ -358,12 +313,7 @@
 
   </header>
 
-
   <main>
-
-    <!-- =========================
-         MODE DE CUISINE
-    ========================= -->
 
     <section class="section">
 
@@ -376,45 +326,23 @@
       <div class="mode-grid">
 
         <button class="mode-button" data-mode="petite">
-
           <strong>🥄 Petite portion</strong>
-
-          <span>
-            Je prépare une petite quantité pour moi.
-          </span>
-
+          <span>Je prépare une petite quantité pour moi.</span>
         </button>
-
 
         <button class="mode-button" data-mode="famille">
-
           <strong>👨‍👩‍👧‍👦 Famille</strong>
-
-          <span>
-            Je cuisine pour plusieurs personnes.
-          </span>
-
+          <span>Je cuisine pour plusieurs personnes.</span>
         </button>
 
-
         <button class="mode-button" data-mode="mixte">
-
           <strong>🍲 Les deux</strong>
-
-          <span>
-            Je cuisine pour moi et ma famille.
-          </span>
-
+          <span>Je cuisine pour moi et ma famille.</span>
         </button>
 
       </div>
 
     </section>
-
-
-    <!-- =========================
-         CHOIX DU PLAT
-    ========================= -->
 
     <section class="section">
 
@@ -425,7 +353,6 @@
         les différentes garnitures disponibles.
       </p>
 
-
       <div class="dish-grid">
 
         <button class="dish-button" data-dish="Pizza">
@@ -433,42 +360,35 @@
           <strong>Pizza</strong>
         </button>
 
-
         <button class="dish-button" data-dish="Burger">
           <span class="emoji">🍔</span>
           <strong>Burger</strong>
         </button>
-
 
         <button class="dish-button" data-dish="Pâtes">
           <span class="emoji">🍝</span>
           <strong>Pâtes</strong>
         </button>
 
-
         <button class="dish-button" data-dish="Raclette">
           <span class="emoji">🧀</span>
           <strong>Raclette</strong>
         </button>
-
 
         <button class="dish-button" data-dish="Tartiflette">
           <span class="emoji">🥔</span>
           <strong>Tartiflette</strong>
         </button>
 
-
         <button class="dish-button" data-dish="Fajitas">
           <span class="emoji">🌮</span>
           <strong>Fajitas</strong>
         </button>
 
-
         <button class="dish-button" data-dish="Couscous">
           <span class="emoji">🥘</span>
           <strong>Couscous</strong>
         </button>
-
 
         <button class="dish-button" data-dish="Autre">
           <span class="emoji">✨</span>
@@ -479,15 +399,7 @@
 
     </section>
 
-
-    <!-- =========================
-         GARNITURES
-    ========================= -->
-
-    <section
-      class="section"
-      id="garnituresSection"
-    >
+    <section class="section" id="garnituresSection">
 
       <h2>✨ Choisissez votre garniture</h2>
 
@@ -495,22 +407,11 @@
         Plusieurs versions sont disponibles.
       </p>
 
-      <div
-        class="garniture-list"
-        id="garnitureList"
-      ></div>
+      <div class="garniture-list" id="garnitureList"></div>
 
     </section>
 
-
-    <!-- =========================
-         AUTRE
-    ========================= -->
-
-    <section
-      class="section"
-      id="autreSection"
-    >
+    <section class="section" id="autreSection">
 
       <div class="custom-box">
 
@@ -525,21 +426,13 @@
           maxlength="80"
         >
 
-        <button
-          class="custom-button"
-          id="customButton"
-        >
+        <button class="custom-button" id="customButton">
           Créer mon idée adaptée
         </button>
 
       </div>
 
     </section>
-
-
-    <!-- =========================
-         INFORMATION
-    ========================= -->
 
     <div class="info">
 
@@ -554,11 +447,6 @@
     </div>
 
   </main>
-
-
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
 
   <nav class="bottom-nav">
 
@@ -584,181 +472,110 @@
 
   </nav>
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
   <script>
 
-    let modeSelectionne =
-      localStorage.getItem("modePortion") || "petite";
-
+    let modeSelectionne = localStorage.getItem("modePortion") || "petite";
     let recettes = [];
 
+    const modeButtons = document.querySelectorAll(".mode-button");
+    const dishButtons = document.querySelectorAll(".dish-button");
+    const garnituresSection = document.getElementById("garnituresSection");
+    const garnitureList = document.getElementById("garnitureList");
+    const garnitureIntro = document.getElementById("garnitureIntro");
+    const autreSection = document.getElementById("autreSection");
+    const customDish = document.getElementById("customDish");
+    const customButton = document.getElementById("customButton");
 
-    /* =========================
-       ELEMENTS
-    ========================= */
-
-    const modeButtons =
-      document.querySelectorAll(".mode-button");
-
-    const dishButtons =
-      document.querySelectorAll(".dish-button");
-
-    const garnituresSection =
-      document.getElementById("garnituresSection");
-
-    const garnitureList =
-      document.getElementById("garnitureList");
-
-    const garnitureIntro =
-      document.getElementById("garnitureIntro");
-
-    const autreSection =
-      document.getElementById("autreSection");
-
-    const customDish =
-      document.getElementById("customDish");
-
-    const customButton =
-      document.getElementById("customButton");
-
-
-    /* =========================
-       MODE
-    ========================= */
+    const fallbackDishMap = {
+      Pizza: ["REC012", "REC014", "REC004"],
+      Burger: ["REC013", "REC018", "REC015"],
+      "Pâtes": ["REC014", "REC012", "REC005"],
+      Raclette: ["REC015", "REC005", "REC021"],
+      Tartiflette: ["REC005", "REC015", "REC021"],
+      Fajitas: ["REC002", "REC017", "REC007"],
+      Couscous: ["REC007", "REC006", "REC020"],
+      Autre: []
+    };
 
     function afficherMode() {
-
       modeButtons.forEach(button => {
-
-        button.classList.toggle(
-          "active",
-          button.dataset.mode === modeSelectionne
-        );
-
+        button.classList.toggle("active", button.dataset.mode === modeSelectionne);
       });
-
     }
 
-
     modeButtons.forEach(button => {
-
       button.addEventListener("click", function() {
-
-        modeSelectionne =
-          this.dataset.mode;
-
-        localStorage.setItem(
-          "modePortion",
-          modeSelectionne
-        );
-
+        modeSelectionne = this.dataset.mode;
+        localStorage.setItem("modePortion", modeSelectionne);
         afficherMode();
-
       });
-
     });
-
 
     afficherMode();
 
-
-    /* =========================
-       CHARGEMENT DU CATALOGUE
-    ========================= */
-
     fetch("../recettes.json")
-
       .then(response => {
-
         if (!response.ok) {
-          throw new Error(
-            "Impossible de charger le catalogue."
-          );
+          throw new Error("Impossible de charger le catalogue.");
         }
-
         return response.json();
-
       })
-
       .then(data => {
-
         recettes = data;
-
       })
-
       .catch(error => {
-
         console.error(error);
-
       });
 
-
-    /* =========================
-       NORMALISATION
-    ========================= */
-
     function normaliser(texte) {
-
       return String(texte || "")
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
         .trim();
-
     }
 
+    function obtenirRecettesParPlat(plat) {
+      const platRecherche = normaliser(plat);
 
-    /* =========================
-       AFFICHER LES RECETTES
-    ========================= */
+      const recettesFiltrees = recettes.filter(recette => {
+        const champs = [
+          recette.platAdapte,
+          recette.nom,
+          recette.categorie,
+          recette.type,
+          recette.garniture
+        ];
 
-    function afficherGarnitures(plat) {
+        return champs.some(champ => normaliser(champ).includes(platRecherche));
+      });
 
-      garnitureList.innerHTML = "";
-
-      const platRecherche =
-        normaliser(plat);
-
-
-      const recettesTrouvees =
-        recettes.filter(recette => {
-
-          return normaliser(
-            recette.platAdapte
-          ) === platRecherche;
-
-        });
-
-
-      if (recettesTrouvees.length === 0) {
-
-        garnitureList.innerHTML = `
-
-          <div class="message">
-
-            🌱 Nous préparons encore les versions
-            adaptées de ce plat.
-
-            <br><br>
-
-            Cette famille sera bientôt disponible.
-
-          </div>
-
-        `;
-
-        garnituresSection.classList.add(
-          "visible"
-        );
-
-        return;
-
+      if (recettesFiltrees.length > 0) {
+        return recettesFiltrees;
       }
 
+      const idsFallback = fallbackDishMap[plat] || [];
+      return idsFallback
+        .map(id => recettes.find(recette => recette.id === id))
+        .filter(Boolean);
+    }
+
+    function afficherGarnitures(plat) {
+      garnitureList.innerHTML = "";
+
+      const recettesTrouvees = obtenirRecettesParPlat(plat);
+
+      if (recettesTrouvees.length === 0) {
+        garnitureList.innerHTML = `
+          <div class="message">
+            🌱 Nous préparons encore les versions adaptées de ce plat.
+            <br><br>
+            Cette famille sera bientôt disponible.
+          </div>
+        `;
+        garnituresSection.classList.add("visible");
+        return;
+      }
 
       garnitureIntro.textContent =
         recettesTrouvees.length +
@@ -770,260 +587,87 @@
         (recettesTrouvees.length > 1 ? "s" : "") +
         ".";
 
-
       recettesTrouvees.forEach(recette => {
+        const card = document.createElement("button");
+        card.className = "garniture-card";
 
-        const card =
-          document.createElement("button");
-
-        card.className =
-          "garniture-card";
-
-
-        const nomGarniture =
-          recette.garniture ||
-          recette.nom;
-
+        const nomGarniture = recette.garniture || recette.nom;
 
         card.innerHTML = `
-
           <div>
-
-            <div class="garniture-name">
-              ${nomGarniture}
-            </div>
-
+            <div class="garniture-name">${nomGarniture}</div>
             <span class="garniture-info">
-
-              ${recette.temps || "—"} min
-              ·
-              ${recette.proteines || "—"} g de protéines
-
+              ${recette.temps || "—"} min · ${recette.proteines || "—"} g de protéines
             </span>
-
           </div>
-
-          <div class="garniture-arrow">
-            →
-          </div>
-
+          <div class="garniture-arrow">→</div>
         `;
 
-
-        card.addEventListener(
-          "click",
-          function() {
-
-            /*
-             * Le mode choisi est conservé.
-             * Recette.html utilisera ensuite
-             * modePortion pour sélectionner
-             * la quantité appropriée.
-             */
-
-            localStorage.setItem(
-              "modePortion",
-              modeSelectionne
-            );
-
-
-            window.location.href =
-              "Recette.html?id=" +
-              encodeURIComponent(
-                recette.id
-              );
-
-          }
-        );
-
-
-        garnitureList.appendChild(card);
-
-      });
-
-
-      garnituresSection.classList.add(
-        "visible"
-      );
-
-
-      garnituresSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    }
-
-
-    /* =========================
-       CHOIX DU PLAT
-    ========================= */
-
-    dishButtons.forEach(button => {
-
-      button.addEventListener(
-        "click",
-        function() {
-
-          dishButtons.forEach(item => {
-
-            item.classList.remove(
-              "active"
-            );
-
-          });
-
-
-          this.classList.add("active");
-
-
-          const plat =
-            this.dataset.dish;
-
-
-          if (plat === "Autre") {
-
-            garnituresSection.classList.remove(
-              "visible"
-            );
-
-            autreSection.classList.add(
-              "visible"
-            );
-
-            customDish.focus();
-
-            return;
-
-          }
-
-
-          autreSection.classList.remove(
-            "visible"
-          );
-
-
-          /*
-           * Si le fichier JSON n'est pas encore
-           * chargé, on attend un court instant.
-           */
-
-          if (recettes.length === 0) {
-
-            garnitureList.innerHTML = `
-
-              <div class="message">
-                ⏳ Chargement des recettes...
-              </div>
-
-            `;
-
-            garnituresSection.classList.add(
-              "visible"
-            );
-
-            setTimeout(() => {
-
-              afficherGarnitures(
-                plat
-              );
-
-            }, 300);
-
-            return;
-
-          }
-
-
-          afficherGarnitures(plat);
-
-        }
-      );
-
-    });
-
-
-    /* =========================
-       AUTRE
-    ========================= */
-
-    customButton.addEventListener(
-      "click",
-      function() {
-
-        const plat =
-          customDish.value.trim();
-
-
-        if (!plat) {
-
-          customDish.focus();
-
-          alert(
-            "Indiquez le nom du plat que vous souhaitez adapter."
-          );
-
-          return;
-
-        }
-
-
-        /*
-         * Pour "Autre", nous ne prétendons pas
-         * avoir une recette dans le catalogue.
-         *
-         * On prépare simplement la future
-         * fonctionnalité de création personnalisée.
-         */
-
-        garnituresSection.classList.add(
-          "visible"
-        );
-
-
-        garnitureList.innerHTML = `
-
-          <div class="message">
-
-            ✨ <strong>${plat}</strong>
-
-            <br><br>
-
-            Cette adaptation personnalisée
-            sera bientôt disponible.
-
-            <br><br>
-
-            En attendant, vous pouvez retrouver
-            vos recettes disponibles dans le catalogue.
-
-            <br><br>
-
-            <a
-              href="Recettes.html"
-              style="
-                color:#58734f;
-                font-weight:bold;
-                text-decoration:none;
-              "
-            >
-              🍽️ Voir toutes les recettes →
-            </a>
-
-          </div>
-
-        `;
-
-
-        garnituresSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
+        card.addEventListener("click", function() {
+          localStorage.setItem("modePortion", modeSelectionne);
+          window.location.href = "Recette.html?id=" + encodeURIComponent(recette.id);
         });
 
+        garnitureList.appendChild(card);
+      });
+
+      garnituresSection.classList.add("visible");
+      garnituresSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    dishButtons.forEach(button => {
+      button.addEventListener("click", function() {
+        dishButtons.forEach(item => item.classList.remove("active"));
+        this.classList.add("active");
+
+        const plat = this.dataset.dish;
+
+        if (plat === "Autre") {
+          garnituresSection.classList.remove("visible");
+          autreSection.classList.add("visible");
+          customDish.focus();
+          return;
+        }
+
+        autreSection.classList.remove("visible");
+
+        if (recettes.length === 0) {
+          garnitureList.innerHTML = `
+            <div class="message">⏳ Chargement des recettes...</div>
+          `;
+          garnituresSection.classList.add("visible");
+          setTimeout(() => afficherGarnitures(plat), 300);
+          return;
+        }
+
+        afficherGarnitures(plat);
+      });
+    });
+
+    customButton.addEventListener("click", function() {
+      const plat = customDish.value.trim();
+
+      if (!plat) {
+        customDish.focus();
+        alert("Indiquez le nom du plat que vous souhaitez adapter.");
+        return;
       }
-    );
+
+      garnituresSection.classList.add("visible");
+
+      garnitureList.innerHTML = `
+        <div class="message">
+          ✨ <strong>${plat}</strong>
+          <br><br>
+          Cette adaptation personnalisée sera bientôt disponible.
+          <br><br>
+          En attendant, vous pouvez retrouver vos recettes disponibles dans le catalogue.
+        </div>
+      `;
+    });
 
   </script>
 
 </body>
+
 </html>
