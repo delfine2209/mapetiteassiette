@@ -5,25 +5,30 @@
 
 async function afficherRecettes() {
 
-    const container = document.getElementById("liste-recettes");
+    const container =
+        document.getElementById("liste-recettes");
 
     if (!container) return;
 
     try {
 
-        const response = await fetch("../../recettes.json");
+        const response =
+            await fetch("../recettes.json");
 
         if (!response.ok) {
             throw new Error("Impossible de charger recettes.json");
         }
 
-        const recettes = await response.json();
+        const recettes =
+            await response.json();
 
-        // Nettoyage de la liste
         container.innerHTML = "";
 
         if (!recettes || recettes.length === 0) {
-            container.innerHTML = "<p>Aucune recette disponible.</p>";
+
+            container.innerHTML =
+                "<p>Aucune recette disponible.</p>";
+
             return;
         }
 
@@ -51,7 +56,10 @@ async function afficherRecettes() {
         container.innerHTML =
             "<p>Erreur de chargement des recettes.</p>";
 
-        console.error("Erreur recettes :", error);
+        console.error(
+            "Erreur de chargement des recettes :",
+            error
+        );
 
     }
 
@@ -64,16 +72,20 @@ async function afficherRecettes() {
 
 async function afficherRecette() {
 
-    const fiche = document.getElementById("fiche-recette");
+    const fiche =
+        document.getElementById("fiche-recette");
 
     if (!fiche) return;
 
     try {
 
         const params =
-            new URLSearchParams(window.location.search);
+            new URLSearchParams(
+                window.location.search
+            );
 
-        const id = params.get("id");
+        const id =
+            params.get("id");
 
         if (!id) {
 
@@ -83,16 +95,20 @@ async function afficherRecette() {
             return;
         }
 
-        const response = await fetch("../../recettes.json");
+        const response =
+            await fetch("../recettes.json");
 
         if (!response.ok) {
             throw new Error("Impossible de charger recettes.json");
         }
 
-        const recettes = await response.json();
+        const recettes =
+            await response.json();
 
         const recette =
-            recettes.find(r => String(r.id) === String(id));
+            recettes.find(
+                r => String(r.id) === String(id)
+            );
 
         if (!recette) {
 
@@ -113,13 +129,18 @@ async function afficherRecette() {
 
             <div class="recipe-card">
 
-                <p>⏱ ${recette.temps || "—"} min</p>
+                <p>
+                    ⏱ ${recette.temps || "—"} min
+                </p>
 
-                <p>🥩 ${recette.proteines || "—"} g protéines</p>
+                <p>
+                    🥩 ${recette.proteines || "—"} g protéines
+                </p>
 
-                ${recette.texture
-                    ? `<p>🧵 Texture : ${recette.texture}</p>`
-                    : ""
+                ${
+                    recette.texture
+                        ? `<p>🧵 Texture : ${recette.texture}</p>`
+                        : ""
                 }
 
             </div>
@@ -129,39 +150,46 @@ async function afficherRecette() {
 
             <ul>
 
-                ${recette.petitAppetit
-                    ? "<li>✅ Petit appétit</li>"
-                    : ""
+                ${
+                    recette.petitAppetit
+                        ? "<li>✅ Petit appétit</li>"
+                        : ""
                 }
 
-                ${recette.preOperatoire
-                    ? "<li>✅ Pré-opératoire</li>"
-                    : ""
+                ${
+                    recette.preOperatoire
+                        ? "<li>✅ Pré-opératoire</li>"
+                        : ""
                 }
 
-                ${recette.postOperatoire
-                    ? "<li>✅ Post-opératoire</li>"
-                    : ""
+                ${
+                    recette.postOperatoire
+                        ? "<li>✅ Post-opératoire</li>"
+                        : ""
                 }
 
-                ${recette.sansGluten
-                    ? "<li>✅ Sans gluten</li>"
-                    : ""
+                ${
+                    recette.sansGluten
+                        ? "<li>✅ Sans gluten</li>"
+                        : ""
                 }
 
-                ${recette.sansLactose
-                    ? "<li>✅ Sans lactose</li>"
-                    : ""
+                ${
+                    recette.sansLactose
+                        ? "<li>✅ Sans lactose</li>"
+                        : ""
                 }
 
-                ${recette.vegetarien
-                    ? "<li>✅ Végétarien</li>"
-                    : ""
+                ${
+                    recette.vegetarien
+                        ? "<li>✅ Végétarien</li>"
+                        : ""
                 }
 
-                ${recette.vegetalien
-                    ? "<li>✅ Végétalien</li>"
-                    : ""
+                ${
+                    recette.vegetalien
+                        ? "<li>✅ Végétalien</li>"
+                        : ""
                 }
 
             </ul>
@@ -174,10 +202,15 @@ async function afficherRecette() {
                 ${
                     recette.envies &&
                     recette.envies.length > 0
-                        ? recette.envies
-                            .map(envie => `<li>${envie}</li>`)
-                            .join("")
-                        : "<li>Aucune envie associée</li>"
+
+                    ? recette.envies
+                        .map(
+                            envie =>
+                                `<li>${envie}</li>`
+                        )
+                        .join("")
+
+                    : "<li>Aucune envie associée</li>"
                 }
 
             </ul>
@@ -190,10 +223,15 @@ async function afficherRecette() {
                 ${
                     recette.ingredients &&
                     recette.ingredients.length > 0
-                        ? recette.ingredients
-                            .map(ingredient => `<li>${ingredient}</li>`)
-                            .join("")
-                        : "<li>Ingrédients non renseignés</li>"
+
+                    ? recette.ingredients
+                        .map(
+                            ingredient =>
+                                `<li>${ingredient}</li>`
+                        )
+                        .join("")
+
+                    : "<li>Ingrédients non renseignés</li>"
                 }
 
             </ul>
@@ -206,10 +244,15 @@ async function afficherRecette() {
                 ${
                     recette.preparation &&
                     recette.preparation.length > 0
-                        ? recette.preparation
-                            .map(etape => `<li>${etape}</li>`)
-                            .join("")
-                        : "<li>Préparation non renseignée</li>"
+
+                    ? recette.preparation
+                        .map(
+                            etape =>
+                                `<li>${etape}</li>`
+                        )
+                        .join("")
+
+                    : "<li>Préparation non renseignée</li>"
                 }
 
             </ol>
@@ -221,7 +264,10 @@ async function afficherRecette() {
         fiche.innerHTML =
             "<p>Erreur de chargement de la recette.</p>";
 
-        console.error("Erreur fiche recette :", error);
+        console.error(
+            "Erreur fiche recette :",
+            error
+        );
 
     }
 
