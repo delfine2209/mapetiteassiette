@@ -3957,7 +3957,7 @@
   {
   "id": "ADP007",
   "nom": "Petites pâtes poulet & courgette",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 25,
   "tempsPreparation": 10,
@@ -3997,7 +3997,7 @@
 {
   "id": "ADP008",
   "nom": "Petites pâtes jambon & petits pois",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 20,
   "tempsPreparation": 5,
@@ -4036,7 +4036,7 @@
 {
   "id": "ADP009",
   "nom": "Petites pâtes thon & tomate",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 20,
   "tempsPreparation": 5,
@@ -4075,7 +4075,7 @@
 {
   "id": "ADP010",
   "nom": "Raclette en petite portion",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 25,
   "tempsPreparation": 10,
@@ -4132,7 +4132,7 @@
 {
   "id": "ADP011",
   "nom": "Petite tartiflette",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 40,
   "tempsPreparation": 15,
@@ -4195,7 +4195,7 @@
 {
   "id": "ADP012",
   "nom": "Fajitas poulet et légumes",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Wrap",
   "temps": 25,
   "tempsPreparation": 10,
@@ -4265,7 +4265,7 @@
 {
   "id": "ADP013",
   "nom": "Petit couscous poulet et légumes",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 40,
   "tempsPreparation": 15,
@@ -4332,7 +4332,7 @@
 {
   "id": "ADP014",
   "nom": "Mini lasagnes bolognaise",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 45,
   "tempsPreparation": 15,
@@ -4399,7 +4399,7 @@
 {
   "id": "ADP015",
   "nom": "Pizza individuelle jambon mozzarella",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Pizza",
   "temps": 25,
   "tempsPreparation": 10,
@@ -4460,7 +4460,7 @@
 {
   "id": "ADP016",
   "nom": "Mini burger maison",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Burger",
   "temps": 20,
   "tempsPreparation": 10,
@@ -4526,7 +4526,7 @@
 {
   "id": "ADP017",
   "nom": "Hachis parmentier en petite portion",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 45,
   "tempsPreparation": 15,
@@ -4594,7 +4594,7 @@
 {
   "id": "ADP018",
   "nom": "Quiche individuelle jambon fromage",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Quiche",
   "temps": 35,
   "tempsPreparation": 10,
@@ -4661,7 +4661,7 @@
 {
   "id": "ADP019",
   "nom": "Chili con carne doux",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Plat complet",
   "temps": 35,
   "tempsPreparation": 10,
@@ -4729,7 +4729,7 @@
 {
   "id": "ADP020",
   "nom": "Gratin de pâtes jambon fromage",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Gratin",
   "temps": 35,
   "tempsPreparation": 10,
@@ -4792,7 +4792,7 @@
 {
   "id": "ADP021",
   "nom": "Petit gratin dauphinois",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Accompagnement",
   "temps": 50,
   "tempsPreparation": 10,
@@ -4852,7 +4852,7 @@
 {
   "id": "ADP022",
   "nom": "Spaghetti bolognaise petite portion",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Pâtes",
   "temps": 30,
   "tempsPreparation": 10,
@@ -4919,7 +4919,7 @@
 {
   "id": "ADP023",
   "nom": "Petit risotto crémeux au poulet",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Risotto",
   "temps": 35,
   "tempsPreparation": 10,
@@ -4986,7 +4986,7 @@
 {
   "id": "ADP024",
   "nom": "Tacos poulet fromage",
-  "categorie": ["Déjeuner","Plat plaisir"],
+  "categorie": "Déjeuner / Plat plaisir",
   "type": "Tacos",
   "temps": 25,
   "tempsPreparation": 10,
