@@ -1,466 +1,399 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Mes envies - Ma Petite Assiette</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
+      padding: 0 0 90px 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #fff8f0 0%, #f4f8f1 100%);
-      color: #3f4a3f;
-      min-height: 100vh;
-      padding-bottom: 90px;
+      background: #fffaf5;
+      color: #4f443d;
     }
-
-    .page {
-      width: 100%;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
 
     .hero {
-      background: linear-gradient(135deg, #f4d8c4, #dcebd8);
-      padding: 28px 20px 30px;
-      border-radius: 0 0 30px 30px;
+      background: #f1e8df;
+      padding: 22px 18px 26px 18px;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      border-radius: 0 0 28px 28px;
     }
 
-    .hero .logo {
-      font-size: 42px;
-      margin-bottom: 8px;
+    .retour {
+      display: block;
+      text-align: left;
+      color: #66805d;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      margin: 0;
+      margin: 0 0 10px 0;
       font-size: 26px;
-      color: #455443;
+      color: #5d5149;
     }
 
     .hero p {
-      margin: 10px 0 0;
-      font-size: 15px;
+      margin: 0;
       line-height: 1.5;
-      color: #596457;
+      color: #75665d;
     }
 
-    /* =========================
-       CONTENU
-    ========================= */
-
-    main {
+    .contenu {
+      max-width: 700px;
+      margin: auto;
       padding: 20px 16px;
     }
 
-    .section {
-      margin-bottom: 24px;
-    }
-
-    .section-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 0 0 12px;
-      color: #465442;
-    }
-
-    .section-subtitle {
-      font-size: 14px;
-      color: #707970;
-      margin: -4px 0 14px;
-      line-height: 1.4;
-    }
-
-    /* =========================
-       CARTES ENVIES
-    ========================= */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .choice {
-      border: 2px solid transparent;
-      border-radius: 18px;
-      padding: 16px 12px;
+    .bloc {
       background: white;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      cursor: pointer;
-      transition: 0.2s ease;
-      text-align: center;
-      color: #465442;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(91, 70, 55, 0.07);
     }
 
-    .choice:hover {
-      transform: translateY(-1px);
+    .bloc h2 {
+      margin: 0 0 8px 0;
+      color: #5d5149;
+      font-size: 20px;
     }
 
-    .choice.selected {
-      border-color: #91ad8a;
-      background: #edf5ea;
-      box-shadow: 0 4px 12px rgba(91,120,84,0.15);
+    .bloc-intro {
+      margin: 0 0 16px 0;
+      color: #75665d;
+      line-height: 1.45;
+      font-size: 14px;
     }
 
-    .choice .icon {
-      display: block;
-      font-size: 30px;
-      margin-bottom: 7px;
-    }
-
-    .choice strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-
-    .choice span {
-      display: block;
-      font-size: 12px;
-      color: #788078;
-      line-height: 1.3;
-    }
-
-    /* =========================
-       TEMPS
-    ========================= */
-
-    .time-grid {
+    .grille {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
 
-    .time-choice {
-      border: 2px solid transparent;
+    .choix {
+      border: 2px solid #eadfd7;
+      background: #fffdfb;
+      color: #5d5149;
       border-radius: 16px;
       padding: 14px 10px;
-      background: white;
+      min-height: 72px;
       cursor: pointer;
-      text-align: center;
+      font-size: 14px;
       font-weight: bold;
-      color: #4c5949;
-      box-shadow: 0 3px 9px rgba(0,0,0,0.04);
+      text-align: center;
+      transition: 0.15s;
     }
 
-    .time-choice.selected {
-      border-color: #91ad8a;
-      background: #edf5ea;
+    .choix:hover {
+      border-color: #a7b99f;
     }
 
-    /* =========================
-       PREFERENCES
-    ========================= */
-
-    .preferences {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .choix.selected {
+      background: #e7f0e3;
+      border-color: #78936d;
+      color: #4f6949;
+      box-shadow: 0 3px 10px rgba(120, 147, 109, 0.18);
     }
 
-    .preference {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px;
-      border-radius: 16px;
-      background: white;
-      box-shadow: 0 3px 9px rgba(0,0,0,0.04);
-      border: 2px solid transparent;
-      cursor: pointer;
-    }
-
-    .preference.selected {
-      border-color: #91ad8a;
-      background: #edf5ea;
-    }
-
-    .preference .icon {
+    .choix .emoji {
+      display: block;
       font-size: 25px;
-      width: 34px;
+      margin-bottom: 5px;
+    }
+
+    .ligne-temps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .temps {
+      border: 2px solid #eadfd7;
+      background: #fffdfb;
+      color: #5d5149;
+      border-radius: 14px;
+      padding: 12px 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 13px;
       text-align: center;
     }
 
-    .preference-content {
-      flex: 1;
+    .temps.selected {
+      background: #e7f0e3;
+      border-color: #78936d;
+      color: #4f6949;
     }
 
-    .preference-content strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 3px;
+    .message-selection {
+      background: #f7f1eb;
+      border-radius: 14px;
+      padding: 13px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #75665d;
+      line-height: 1.45;
     }
 
-    .preference-content span {
-      font-size: 12px;
-      color: #788078;
-    }
-
-    /* =========================
-       BOUTON
-    ========================= */
-
-    .cta {
+    .bouton-principal {
       width: 100%;
       border: none;
-      border-radius: 20px;
-      padding: 17px 20px;
-      background: linear-gradient(135deg, #78976f, #9bb78f);
+      background: #78936d;
       color: white;
-      font-size: 17px;
+      padding: 15px;
+      border-radius: 17px;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 5px 14px rgba(82,111,76,0.22);
-      margin-top: 8px;
+      margin-top: 5px;
     }
 
-    .cta:active {
-      transform: scale(0.98);
+    .bouton-principal:hover {
+      background: #66805d;
     }
 
-    .message {
-      text-align: center;
-      color: #b45d4c;
-      font-size: 14px;
-      margin: 10px 0 0;
-      min-height: 20px;
+    .bouton-secondaire {
+      display: block;
+      width: 100%;
+      border: 2px solid #78936d;
+      background: white;
+      color: #66805d;
+      padding: 13px;
+      border-radius: 17px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
     }
-
-    /* =========================
-       NAVIGATION BASSE
-    ========================= */
 
     .bottom-nav {
       position: fixed;
+      bottom: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      height: 70px;
-      background: rgba(255,255,255,0.97);
-      border-top: 1px solid #e5e5e5;
+      height: 72px;
+      background: rgba(255, 250, 245, 0.97);
+      border-top: 1px solid #eadfd7;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      z-index: 1000;
-      box-shadow: 0 -3px 12px rgba(0,0,0,0.05);
+      z-index: 100;
     }
 
     .bottom-nav a {
       text-decoration: none;
-      color: #687267;
+      color: #82736a;
       font-size: 11px;
       text-align: center;
-      min-width: 65px;
     }
 
-    .bottom-nav a .nav-icon {
+    .bottom-nav a span {
       display: block;
-      font-size: 23px;
+      font-size: 22px;
       margin-bottom: 3px;
     }
 
     .bottom-nav a.active {
-      color: #5d8057;
+      color: #66805d;
       font-weight: bold;
     }
 
-    /* =========================
-       PETITS ÉCRANS
-    ========================= */
+    @media (max-width: 420px) {
 
-    @media (max-width: 360px) {
-      .grid {
-        gap: 8px;
+      .grille {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .choice {
-        padding: 13px 8px;
+      .ligne-temps {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .hero h1 {
-        font-size: 23px;
-      }
     }
+
   </style>
+
 </head>
 
 <body>
 
-<div class="page">
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
   <header class="hero">
-    <div class="logo">💚</div>
 
-    <h1>Mes envies</h1>
+    <a
+      class="retour"
+      href="../../index.html"
+    >
+      ← Accueil
+    </a>
+
+    <h1>
+      ✨ Mes envies
+    </h1>
 
     <p>
-      Qu'est-ce qui vous ferait plaisir aujourd'hui ?
+      Choisissez une ou plusieurs envies.
+      Vous pouvez les combiner pour affiner vos suggestions.
     </p>
+
   </header>
 
 
-  <main>
+  <main class="contenu">
 
-    <!-- =========================
-         ENVIES
-    ========================= -->
 
-    <section class="section">
+    <!-- ENVIES -->
 
-      <h2 class="section-title">
-        🍽️ J'ai envie de...
+    <section class="bloc">
+
+      <h2>
+        💚 Qu'avez-vous envie de manger ?
       </h2>
 
-      <p class="section-subtitle">
-        Choisissez ce qui vous ferait plaisir aujourd'hui.
+      <p class="bloc-intro">
+        Vous pouvez sélectionner plusieurs réponses.
+        Par exemple : <strong>Léger + Végétarien</strong>.
       </p>
 
-      <div class="grid">
 
-        <button class="choice envie" data-value="leger">
-          <span class="icon">🌿</span>
-          <strong>Léger</strong>
-          <span>Frais et équilibré</span>
+      <div class="grille">
+
+        <button
+          type="button"
+          class="choix"
+          data-envie="leger"
+        >
+          <span class="emoji">🥗</span>
+          Léger
         </button>
 
-        <button class="choice envie" data-value="complet">
-          <span class="icon">🍽️</span>
-          <strong>Complet</strong>
-          <span>Un repas qui rassasie</span>
+
+        <button
+          type="button"
+          class="choix"
+          data-envie="complet"
+        >
+          <span class="emoji">🍽️</span>
+          Complet
         </button>
 
-        <button class="choice envie" data-value="rapide">
-          <span class="icon">⚡</span>
-          <strong>Rapide</strong>
-          <span>Peu de temps pour cuisiner</span>
+
+        <button
+          type="button"
+          class="choix"
+          data-envie="rapide"
+        >
+          <span class="emoji">⚡</span>
+          Rapide
         </button>
 
-        <button class="choice envie" data-value="sucre">
-          <span class="icon">🍰</span>
-          <strong>Sucré</strong>
-          <span>Une petite envie gourmande</span>
+
+        <button
+          type="button"
+          class="choix"
+          data-envie="sucre"
+        >
+          <span class="emoji">🍰</span>
+          Sucré
         </button>
 
-        <button class="choice envie" data-value="reconfort">
-          <span class="icon">🥰</span>
-          <strong>Réconfort</strong>
-          <span>Un plat qui fait plaisir</span>
+
+        <button
+          type="button"
+          class="choix"
+          data-envie="reconfort"
+        >
+          <span class="emoji">💚</span>
+          Réconfort
         </button>
 
-        <button class="choice envie" data-value="vegetarien">
-          <span class="icon">🥕</span>
-          <strong>Végétarien</strong>
-          <span>Sans viande ni poisson</span>
+
+        <button
+          type="button"
+          class="choix"
+          data-envie="vegetarien"
+        >
+          <span class="emoji">🥕</span>
+          Végétarien
         </button>
 
+      </div>
+
+
+      <div
+        class="message-selection"
+        id="messageSelection"
+      >
+        Aucune envie sélectionnée pour le moment.
       </div>
 
     </section>
 
 
-    <!-- =========================
-         TEMPS
-    ========================= -->
 
-    <section class="section">
+    <!-- TEMPS -->
 
-      <h2 class="section-title">
-        🕐 J'ai combien de temps ?
+    <section class="bloc">
+
+      <h2>
+        ⏱️ Combien de temps avez-vous ?
       </h2>
 
-      <div class="time-grid">
-
-        <button class="time-choice" data-time="10">
-          ⚡ 10 min
-        </button>
-
-        <button class="time-choice" data-time="20">
-          🕐 20 min
-        </button>
-
-        <button class="time-choice" data-time="30">
-          🍳 30 min
-        </button>
-
-        <button class="time-choice" data-time="plus">
-          🥘 Plus de temps
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         PRÉFÉRENCES
-    ========================= -->
-
-    <section class="section">
-
-      <h2 class="section-title">
-        💚 Mes préférences
-      </h2>
-
-      <p class="section-subtitle">
-        Vous pouvez choisir plusieurs préférences.
+      <p class="bloc-intro">
+        Vous pouvez choisir une seule durée.
       </p>
 
-      <div class="preferences">
 
-        <button class="preference" data-preference="petite">
-          <span class="icon">🥄</span>
+      <div class="ligne-temps">
 
-          <span class="preference-content">
-            <strong>Petite portion</strong>
-            <span>Des quantités adaptées à mon appétit</span>
-          </span>
+        <button
+          type="button"
+          class="temps"
+          data-time="10"
+        >
+          ≤ 10 min
         </button>
 
 
-        <button class="preference" data-preference="ingredients">
-          <span class="icon">🥕</span>
-
-          <span class="preference-content">
-            <strong>Peu d'ingrédients</strong>
-            <span>Des recettes simples à préparer</span>
-          </span>
+        <button
+          type="button"
+          class="temps"
+          data-time="20"
+        >
+          ≤ 20 min
         </button>
 
 
-        <button class="preference" data-preference="digeste">
-          <span class="icon">🌿</span>
-
-          <span class="preference-content">
-            <strong>Facile à digérer</strong>
-            <span>Des préparations douces et simples</span>
-          </span>
+        <button
+          type="button"
+          class="temps"
+          data-time="30"
+        >
+          ≤ 30 min
         </button>
 
 
-        <button class="preference" data-preference="avance">
-          <span class="icon">📦</span>
-
-          <span class="preference-content">
-            <strong>Préparable à l'avance</strong>
-            <span>Pratique pour organiser mes repas</span>
-          </span>
+        <button
+          type="button"
+          class="temps"
+          data-time="plus"
+        >
+          + de 30 min
         </button>
 
       </div>
@@ -468,208 +401,639 @@
     </section>
 
 
-    <!-- =========================
-         VALIDATION
-    ========================= -->
 
-    <button class="cta" id="voirRecettes">
-      ✨ Voir mes recettes
+    <!-- PREFERENCES -->
+
+    <section class="bloc">
+
+      <h2>
+        🥄 Mes préférences
+      </h2>
+
+      <p class="bloc-intro">
+        Vous pouvez également combiner plusieurs préférences.
+      </p>
+
+
+      <div class="grille">
+
+        <button
+          type="button"
+          class="choix preference"
+          data-preference="petite"
+        >
+          <span class="emoji">🥄</span>
+          Petite portion
+        </button>
+
+
+        <button
+          type="button"
+          class="choix preference"
+          data-preference="ingredients"
+        >
+          <span class="emoji">🛒</span>
+          Peu d'ingrédients
+        </button>
+
+
+        <button
+          type="button"
+          class="choix preference"
+          data-preference="digeste"
+        >
+          <span class="emoji">🌿</span>
+          Facile à digérer
+        </button>
+
+
+        <button
+          type="button"
+          class="choix preference"
+          data-preference="avance"
+        >
+          <span class="emoji">📦</span>
+          Préparable à l'avance
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <button
+      type="button"
+      class="bouton-principal"
+      id="voirRecettes"
+    >
+      🔍 Voir mes recettes
     </button>
 
-    <p class="message" id="message"></p>
+
+    <button
+      type="button"
+      class="bouton-secondaire"
+      id="effacerChoix"
+    >
+      Effacer mes choix
+    </button>
 
   </main>
 
-</div>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+  <nav class="bottom-nav">
 
-<nav class="bottom-nav">
+    <a href="../../index.html">
 
-  <a href="../../index.html">
-    <span class="nav-icon">🏠</span>
-    Accueil
-  </a>
+      <span>🏠</span>
+      Accueil
 
-  <a href="Recettes.html">
-    <span class="nav-icon">🍽️</span>
-    Recettes
-  </a>
-
-  <a href="Favoris.html">
-    <span class="nav-icon">❤️</span>
-    Favoris
-  </a>
-
-  <a href="MonProfil.html">
-    <span class="nav-icon">👤</span>
-    Profil
-  </a>
-
-</nav>
+    </a>
 
 
-<script>
+    <a href="Recettes.html">
 
-  /* =========================
-     VARIABLES
-  ========================= */
+      <span>🍽️</span>
+      Recettes
 
-  let envieSelectionnee = "";
-  let tempsSelectionne = "";
-  let preferencesSelectionnees = [];
+    </a>
 
 
-  /* =========================
-     ENVIES
-  ========================= */
+    <a href="Favoris.html">
 
-  document.querySelectorAll(".envie").forEach(button => {
+      <span>❤️</span>
+      Favoris
 
-    button.addEventListener("click", () => {
-
-      document.querySelectorAll(".envie").forEach(btn => {
-        btn.classList.remove("selected");
-      });
-
-      button.classList.add("selected");
-
-      envieSelectionnee = button.dataset.value;
-
-    });
-
-  });
+    </a>
 
 
-  /* =========================
-     TEMPS
-  ========================= */
+    <a
+      href="MonProfil.html"
+      class="active"
+    >
 
-  document.querySelectorAll(".time-choice").forEach(button => {
+      <span>👤</span>
+      Profil
 
-    button.addEventListener("click", () => {
+    </a>
 
-      document.querySelectorAll(".time-choice").forEach(btn => {
-        btn.classList.remove("selected");
-      });
-
-      button.classList.add("selected");
-
-      tempsSelectionne = button.dataset.time;
-
-    });
-
-  });
+  </nav>
 
 
-  /* =========================
-     PRÉFÉRENCES
-  ========================= */
 
-  document.querySelectorAll(".preference").forEach(button => {
+  <script>
 
-    button.addEventListener("click", () => {
+    /* ==================================================
+       RECUPERATION DES ANCIENS CHOIX
+    ================================================== */
 
-      const preference = button.dataset.preference;
+    let enviesSelectionnees = [];
 
-      button.classList.toggle("selected");
+    try {
 
-      if (preferencesSelectionnees.includes(preference)) {
+      enviesSelectionnees =
+        JSON.parse(
+          localStorage.getItem("envies") || "[]"
+        );
 
-        preferencesSelectionnees =
-          preferencesSelectionnees.filter(
-            item => item !== preference
-          );
+      if (!Array.isArray(enviesSelectionnees)) {
+        enviesSelectionnees = [];
+      }
 
-      } else {
+    } catch (e) {
 
-        preferencesSelectionnees.push(preference);
+      enviesSelectionnees = [];
+
+    }
+
+
+    /*
+      Compatibilité avec l'ancien système :
+      avant, une seule envie était enregistrée
+      dans localStorage avec la clé "envie".
+    */
+
+    if (
+      enviesSelectionnees.length === 0
+    ) {
+
+      const ancienneEnvie =
+        localStorage.getItem("envie") || "";
+
+      if (ancienneEnvie) {
+
+        enviesSelectionnees = [
+          ancienneEnvie
+        ];
 
       }
 
-    });
-
-  });
+    }
 
 
-  /* =========================
-     VALIDATION
-  ========================= */
+    let tempsSelectionne =
+      localStorage.getItem("temps") || "";
 
-  document.getElementById("voirRecettes").addEventListener("click", () => {
 
-    const message = document.getElementById("message");
+    let preferencesSelectionnees = [];
 
-    /*
-      Une envie est nécessaire pour obtenir
-      des résultats réellement personnalisés.
-    */
+    try {
 
-    if (!envieSelectionnee) {
+      preferencesSelectionnees =
+        JSON.parse(
+          localStorage.getItem("preferences") || "[]"
+        );
 
-      message.textContent =
-        "Choisissez d'abord ce qui vous ferait plaisir 💚";
+      if (!Array.isArray(preferencesSelectionnees)) {
+        preferencesSelectionnees = [];
+      }
 
-      return;
+    } catch (e) {
+
+      preferencesSelectionnees = [];
 
     }
 
 
-    /* =========================
-       SAUVEGARDE
-    ========================= */
 
-    localStorage.setItem(
-      "envie",
-      envieSelectionnee
-    );
+    /* ==================================================
+       NOMS DES ENVIES
+    ================================================== */
 
-    localStorage.setItem(
-      "temps",
-      tempsSelectionne
-    );
+    const nomsEnvies = {
 
-    localStorage.setItem(
-      "preferences",
-      JSON.stringify(preferencesSelectionnees)
-    );
+      leger: "🥗 Léger",
+
+      complet: "🍽️ Complet",
+
+      rapide: "⚡ Rapide",
+
+      sucre: "🍰 Sucré",
+
+      reconfort: "💚 Réconfort",
+
+      vegetarien: "🥕 Végétarien"
+
+    };
 
 
-    /* =========================
-       TYPE DE REPAS
-    ========================= */
 
-    /*
-      On conserve le type de repas choisi
-      précédemment sur l'accueil.
-    */
+    /* ==================================================
+       MISE A JOUR DE L'AFFICHAGE
+    ================================================== */
 
-    const typeRepas =
-      localStorage.getItem("typeRepas");
+    function actualiserAffichage() {
 
-    if (typeRepas) {
+      const boutonsEnvies =
+        document.querySelectorAll(
+          "[data-envie]"
+        );
 
-      localStorage.setItem(
-        "typeRepas",
-        typeRepas
+
+      boutonsEnvies.forEach(
+        function(bouton) {
+
+          const valeur =
+            bouton.getAttribute(
+              "data-envie"
+            );
+
+          if (
+            enviesSelectionnees.includes(
+              valeur
+            )
+          ) {
+
+            bouton.classList.add(
+              "selected"
+            );
+
+          } else {
+
+            bouton.classList.remove(
+              "selected"
+            );
+
+          }
+
+        }
       );
 
+
+
+      const boutonsTemps =
+        document.querySelectorAll(
+          "[data-time]"
+        );
+
+
+      boutonsTemps.forEach(
+        function(bouton) {
+
+          const valeur =
+            bouton.getAttribute(
+              "data-time"
+            );
+
+          if (
+            valeur === tempsSelectionne
+          ) {
+
+            bouton.classList.add(
+              "selected"
+            );
+
+          } else {
+
+            bouton.classList.remove(
+              "selected"
+            );
+
+          }
+
+        }
+      );
+
+
+
+      const boutonsPreferences =
+        document.querySelectorAll(
+          "[data-preference]"
+        );
+
+
+      boutonsPreferences.forEach(
+        function(bouton) {
+
+          const valeur =
+            bouton.getAttribute(
+              "data-preference"
+            );
+
+          if (
+            preferencesSelectionnees.includes(
+              valeur
+            )
+          ) {
+
+            bouton.classList.add(
+              "selected"
+            );
+
+          } else {
+
+            bouton.classList.remove(
+              "selected"
+            );
+
+          }
+
+        }
+      );
+
+
+
+      const message =
+        document.getElementById(
+          "messageSelection"
+        );
+
+
+      if (
+        enviesSelectionnees.length === 0
+      ) {
+
+        message.textContent =
+          "Aucune envie sélectionnée pour le moment.";
+
+      } else {
+
+        const textes =
+          enviesSelectionnees.map(
+            function(envie) {
+
+              return (
+                nomsEnvies[envie] ||
+                envie
+              );
+
+            }
+          );
+
+        message.innerHTML =
+          "<strong>Vos envies :</strong> " +
+          textes.join(" • ");
+
+      }
+
     }
 
 
-    /* =========================
-       REDIRECTION
-    ========================= */
 
-    window.location.href = "Resultats.html";
+    /* ==================================================
+       CLIC SUR UNE ENVIE
+    ================================================== */
 
-  });
+    document
+      .querySelectorAll("[data-envie]")
+      .forEach(
+        function(bouton) {
 
-</script>
+          bouton.addEventListener(
+            "click",
+            function() {
+
+              const valeur =
+                bouton.getAttribute(
+                  "data-envie"
+                );
+
+
+              const index =
+                enviesSelectionnees.indexOf(
+                  valeur
+                );
+
+
+              if (index === -1) {
+
+                enviesSelectionnees.push(
+                  valeur
+                );
+
+              } else {
+
+                enviesSelectionnees.splice(
+                  index,
+                  1
+                );
+
+              }
+
+
+              actualiserAffichage();
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* ==================================================
+       CLIC SUR LE TEMPS
+    ================================================== */
+
+    document
+      .querySelectorAll("[data-time]")
+      .forEach(
+        function(bouton) {
+
+          bouton.addEventListener(
+            "click",
+            function() {
+
+              const valeur =
+                bouton.getAttribute(
+                  "data-time"
+                );
+
+
+              if (
+                tempsSelectionne ===
+                valeur
+              ) {
+
+                tempsSelectionne = "";
+
+              } else {
+
+                tempsSelectionne =
+                  valeur;
+
+              }
+
+
+              actualiserAffichage();
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* ==================================================
+       CLIC SUR LES PREFERENCES
+    ================================================== */
+
+    document
+      .querySelectorAll(
+        "[data-preference]"
+      )
+      .forEach(
+        function(bouton) {
+
+          bouton.addEventListener(
+            "click",
+            function() {
+
+              const valeur =
+                bouton.getAttribute(
+                  "data-preference"
+                );
+
+
+              const index =
+                preferencesSelectionnees.indexOf(
+                  valeur
+                );
+
+
+              if (index === -1) {
+
+                preferencesSelectionnees.push(
+                  valeur
+                );
+
+              } else {
+
+                preferencesSelectionnees.splice(
+                  index,
+                  1
+                );
+
+              }
+
+
+              actualiserAffichage();
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* ==================================================
+       ENREGISTREMENT
+    ================================================== */
+
+    document
+      .getElementById("voirRecettes")
+      .addEventListener(
+        "click",
+        function() {
+
+
+          /*
+            Nouveau stockage multiple
+          */
+
+          localStorage.setItem(
+            "envies",
+            JSON.stringify(
+              enviesSelectionnees
+            )
+          );
+
+
+          /*
+            Ancienne clé conservée pour
+            compatibilité avec les autres écrans.
+            Elle contient la première envie.
+          */
+
+          if (
+            enviesSelectionnees.length > 0
+          ) {
+
+            localStorage.setItem(
+              "envie",
+              enviesSelectionnees[0]
+            );
+
+          } else {
+
+            localStorage.removeItem(
+              "envie"
+            );
+
+          }
+
+
+          localStorage.setItem(
+            "temps",
+            tempsSelectionne
+          );
+
+
+          localStorage.setItem(
+            "preferences",
+            JSON.stringify(
+              preferencesSelectionnees
+            )
+          );
+
+
+          window.location.href =
+            "Resultats.html";
+
+        }
+      );
+
+
+
+    /* ==================================================
+       EFFACER
+    ================================================== */
+
+    document
+      .getElementById("effacerChoix")
+      .addEventListener(
+        "click",
+        function() {
+
+          enviesSelectionnees = [];
+
+          tempsSelectionne = "";
+
+          preferencesSelectionnees = [];
+
+
+          localStorage.removeItem(
+            "envies"
+          );
+
+          localStorage.removeItem(
+            "envie"
+          );
+
+          localStorage.removeItem(
+            "temps"
+          );
+
+          localStorage.removeItem(
+            "preferences"
+          );
+
+
+          actualiserAffichage();
+
+        }
+      );
+
+
+
+    actualiserAffichage();
+
+  </script>
 
 </body>
+
 </html>
-```
