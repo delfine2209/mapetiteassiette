@@ -478,47 +478,75 @@
 
       /* TYPE REPAS */
 
-      if (
-        typeRepas &&
-        typeRepas !== "peu-importe"
-      ) {
+if (
+  typeRepas &&
+  typeRepas !== "peu-importe"
+) {
 
-        const nomRepas =
-          correspondanceTypeRepas[typeRepas] ||
-          typeRepas;
+  const typeNorm =
+    normaliser(typeRepas);
 
-        let emoji = "🍽️";
+  /*
+    Les salades ne sont pas enregistrées
+    dans le champ "type".
+    Elles sont notamment identifiées
+    par leur catégorie ou leur nom.
+  */
 
+  if (
+    typeNorm === "salades" ||
+    typeNorm === "salade"
+  ) {
 
-        if (typeRepas === "petit-dejeuner") {
-          emoji = "🌅";
+    const nomNorm =
+      normaliser(recette.nom || "");
+
+    const categorieNorm =
+      normaliser(recette.categorie || "");
+
+    const typeRecetteNorm =
+      normaliser(recette.type || "");
+
+    const estSalade =
+      nomNorm.includes("salade") ||
+      categorieNorm.includes("salade") ||
+      typeRecetteNorm.includes("salade");
+
+    if (!estSalade) {
+      return false;
+    }
+
+  } else {
+
+    const typesRecetteNorm =
+      (recette.type || "")
+        .split(",")
+        .map(function(t) {
+
+          return normaliser(t);
+
+        });
+
+    if (
+      !typesRecetteNorm.some(
+        function(t) {
+
+          return (
+            t.includes(typeNorm) ||
+            typeNorm.includes(t)
+          );
+
         }
+      )
+    ) {
 
-        if (typeRepas === "dejeuner") {
-          emoji = "🥗";
-        }
+      return false;
 
-        if (typeRepas === "diner") {
-          emoji = "🍽️";
-        }
+    }
 
-        if (typeRepas === "collation") {
-          emoji = "🍎";
-        }
+  }
 
-        if (typeRepas === "petite-douceur") {
-          emoji = "🍰";
-        }
-
-
-        html +=
-          "<span class='repas'>" +
-          emoji +
-          " " +
-          nomRepas +
-          "</span>";
-
-      }
+}
 
 
       /* ENVIE */
