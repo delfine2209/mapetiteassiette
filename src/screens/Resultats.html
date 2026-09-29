@@ -1,16 +1,15 @@
+```html
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
 
   <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Mes suggestions - Ma Petite Assiette</title>
 
@@ -22,477 +21,257 @@ content="width=device-width, initial-scale=1.0"
       padding: 0;
     }
 
-
     body {
-
       font-family: Arial, sans-serif;
-
       background: #fffaf5;
-
       color: #4d4038;
-
       padding-bottom: 85px;
-
     }
-
-
-    /* HERO */
 
     .hero {
-
-      background:
-        linear-gradient(
-          135deg,
-          #f6d9c8,
-          #dce8d5
-        );
+      background: linear-gradient(
+        135deg,
+        #f6d9c8,
+        #dce8d5
+      );
 
       padding: 25px 20px 30px;
-
-      border-radius:
-        0 0 30px 30px;
-
+      border-radius: 0 0 30px 30px;
     }
-
 
     .retour {
-
       display: inline-block;
-
       color: #5b7153;
-
       text-decoration: none;
-
       font-weight: bold;
-
       margin-bottom: 18px;
-
     }
-
 
     .hero h1 {
-
       font-size: 27px;
-
       margin-bottom: 8px;
-
     }
-
 
     .hero p {
-
       line-height: 1.5;
-
       font-size: 15px;
-
     }
-
-
-    /* CONTENU */
 
     .contenu {
-
       max-width: 700px;
-
       margin: auto;
-
       padding: 20px 16px;
-
     }
-
-
-    /* RESUME DES CHOIX */
 
     .resume {
-
       background: white;
-
       border-radius: 22px;
-
       padding: 17px;
-
-      box-shadow:
-        0 4px 16px
-        rgba(91, 70, 55, 0.08);
-
+      box-shadow: 0 4px 16px rgba(91,70,55,0.08);
       margin-bottom: 20px;
-
     }
-
 
     .resume h2 {
-
       font-size: 18px;
-
       margin-bottom: 12px;
-
     }
-
 
     .choix {
-
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 7px;
-
     }
-
 
     .choix span {
-
       background: #eef4ea;
-
       color: #5d7355;
-
       border-radius: 15px;
-
       padding: 7px 10px;
-
       font-size: 12px;
-
     }
-
 
     .choix span.repas {
-
       background: #f8e5d9;
-
       color: #986b54;
-
     }
-
-
-    /* RESULTATS */
 
     .titre-resultats {
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       margin-bottom: 13px;
-
     }
-
 
     .titre-resultats h2 {
-
       font-size: 20px;
-
     }
-
 
     #compteur {
-
       font-size: 13px;
-
       color: #87776d;
-
     }
-
 
     .liste {
-
       display: grid;
-
       gap: 14px;
-
     }
-
-
-    /* CARTE RECETTE */
 
     .recette {
-
       background: white;
-
       border-radius: 22px;
-
       padding: 17px;
-
-      box-shadow:
-        0 4px 16px
-        rgba(91, 70, 55, 0.08);
-
-      border:
-        1px solid #f0e5dd;
-
+      box-shadow: 0 4px 16px rgba(91,70,55,0.08);
+      border: 1px solid #f0e5dd;
     }
-
 
     .haut-recette {
-
       display: flex;
-
       justify-content: space-between;
-
       gap: 12px;
-
     }
-
 
     .recette h3 {
-
       font-size: 18px;
-
       line-height: 1.3;
-
       margin-bottom: 7px;
-
     }
-
 
     .meta {
-
       color: #887970;
-
       font-size: 13px;
-
       line-height: 1.5;
-
     }
-
 
     .favori {
-
       width: 38px;
-
       height: 38px;
-
       min-width: 38px;
-
       border: none;
-
       border-radius: 50%;
-
       background: #fff3ed;
-
       font-size: 20px;
-
       cursor: pointer;
-
     }
-
 
     .favori.active {
-
       background: #f5d7c7;
-
     }
-
 
     .badges {
-
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 6px;
-
       margin-top: 12px;
-
     }
-
 
     .badge {
-
       background: #eef4ea;
-
       color: #5d7355;
-
       border-radius: 12px;
-
       padding: 5px 8px;
-
       font-size: 11px;
-
     }
-
 
     .badge.douceur {
-
       background: #f8e2dc;
-
       color: #a36562;
-
     }
-
 
     .badge.post {
-
       background: #f6e5ef;
-
       color: #8c6177;
-
     }
 
+    .badge.batch {
+      background: #e6edf7;
+      color: #58708f;
+    }
 
     .ouvrir {
-
       width: 100%;
-
       border: none;
-
       background: #78936d;
-
       color: white;
-
       border-radius: 15px;
-
       padding: 12px;
-
       margin-top: 14px;
-
       font-weight: bold;
-
       cursor: pointer;
-
     }
-
-
-    /* VIDE */
 
     .vide {
-
       background: white;
-
       border-radius: 22px;
-
       padding: 25px 18px;
-
       text-align: center;
-
-      box-shadow:
-        0 4px 16px
-        rgba(91, 70, 55, 0.06);
-
+      box-shadow: 0 4px 16px rgba(91,70,55,0.06);
     }
-
 
     .vide .emoji {
-
       font-size: 40px;
-
       margin-bottom: 12px;
-
     }
-
 
     .vide h3 {
-
       margin-bottom: 8px;
-
     }
-
 
     .vide p {
-
       line-height: 1.5;
-
       color: #75665d;
-
       margin-bottom: 17px;
-
     }
-
 
     .bouton {
-
       display: inline-block;
-
       border: none;
-
       background: #78936d;
-
       color: white;
-
       text-decoration: none;
-
       padding: 12px 18px;
-
       border-radius: 15px;
-
       font-weight: bold;
-
       cursor: pointer;
-
     }
-
-
-    /* NAVIGATION */
 
     .bottom-nav {
-
       position: fixed;
-
       bottom: 0;
-
       left: 0;
-
       right: 0;
-
       height: 72px;
-
-      background:
-        rgba(255,250,245,0.97);
-
-      border-top:
-        1px solid #eadfd7;
-
+      background: rgba(255,250,245,0.97);
+      border-top: 1px solid #eadfd7;
       display: flex;
-
       justify-content: space-around;
-
       align-items: center;
-
       z-index: 100;
-
     }
-
 
     .bottom-nav a {
-
       text-decoration: none;
-
       color: #82736a;
-
       font-size: 11px;
-
       text-align: center;
-
     }
-
 
     .bottom-nav a span {
-
       display: block;
-
       font-size: 22px;
-
       margin-bottom: 3px;
-
     }
 
-
     .bottom-nav a.active {
-
       color: #66805d;
-
       font-weight: bold;
-
     }
 
   </style>
 
 </head>
 
-<body>
 
-  <!-- HERO -->
+<body>
 
   <header class="hero">
 
@@ -514,9 +293,8 @@ content="width=device-width, initial-scale=1.0"
 
   </header>
 
-  <main class="contenu">
 
-    <!-- RESUME DES CHOIX -->
+  <main class="contenu">
 
     <section class="resume">
 
@@ -528,16 +306,13 @@ content="width=device-width, initial-scale=1.0"
         class="choix"
         id="resumeChoix"
       >
-
         <span>
           Recherche en cours...
         </span>
-
       </div>
 
     </section>
 
-    <!-- RESULTATS -->
 
     <div class="titre-resultats">
 
@@ -551,6 +326,7 @@ content="width=device-width, initial-scale=1.0"
 
     </div>
 
+
     <div
       id="liste"
       class="liste"
@@ -558,1235 +334,1165 @@ content="width=device-width, initial-scale=1.0"
 
   </main>
 
-  <!-- NAVIGATION -->
 
   <nav class="bottom-nav">
 
     <a href="../../index.html">
-
       <span>🏠</span>
-
       Accueil
-
-    </a>
-
-    <a href="Recettes.html">
-
-      <span>🍽️</span>
-
-      Recettes
-
-    </a>
-
-    <a href="Favoris.html">
-
-      <span>❤️</span>
-
-      Favoris
-
     </a>
 
     <a
-      href="MonProfil.html"
+      href="Recettes.html"
       class="active"
     >
+      <span>🍽️</span>
+      Recettes
+    </a>
 
+    <a href="Favoris.html">
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a href="MonProfil.html">
       <span>👤</span>
-
       Profil
-
     </a>
 
   </nav>
 
-  <script>
+
+<script>
+
+  /* ==================================================
+     DONNÉES
+  ================================================== */
+
+  let recettes = [];
 
 
-    /* ==================================================
-       DONNEES
-    ================================================== */
-
-    let recettes = [];
+  const envie =
+    localStorage.getItem("envie") || "";
 
 
-    const envie =
-      localStorage.getItem(
-        "envie"
-      ) || "";
+  const temps =
+    localStorage.getItem("temps") || "";
 
 
-    const temps =
-      localStorage.getItem(
-        "temps"
-      ) || "";
+  const modePortion =
+    localStorage.getItem("modePortion") || "";
 
 
-    const modePortion =
-      localStorage.getItem(
-        "modePortion"
-      ) || "";
+  let preferences = [];
+
+  try {
+
+    preferences = JSON.parse(
+      localStorage.getItem("preferences") || "[]"
+    );
+
+  } catch (e) {
+
+    preferences = [];
+
+  }
 
 
-    let preferences = [];
+  const typeRepas =
+    localStorage.getItem("typeRepas") || "";
 
 
-    try {
+  /* ==================================================
+     NORMALISATION
+  ================================================== */
 
-      preferences =
-        JSON.parse(
-          localStorage.getItem(
-            "preferences"
-          ) || "[]"
-        );
+  function normaliser(texte) {
 
-    } catch (e) {
+    return String(texte || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[-_]/g, " ")
+      .trim();
 
-      preferences = [];
+  }
 
+
+  /* ==================================================
+     TYPE DE REPAS
+  ================================================== */
+
+  const correspondanceTypeRepas = {
+
+    "petit-dejeuner": "petit-dejeuner",
+
+    "dejeuner": "dejeuner",
+
+    "diner": "diner",
+
+    "collation": "collation",
+
+    "petite-douceur": "petite-douceur"
+
+  };
+
+
+  /* ==================================================
+     OUTIL : VALEUR EN TABLEAU
+  ================================================== */
+
+  function enTableau(valeur) {
+
+    if (Array.isArray(valeur)) {
+      return valeur;
     }
 
-
-    /*
-      Nouveau :
-      on récupère également le type
-      de repas choisi sur l'accueil.
-    */
-
-    const typeRepas =
-      localStorage.getItem(
-        "typeRepas"
-      ) || "";
-
-
-    /* ==================================================
-       NORMALISATION
-    ================================================== */
-
-    function normaliser(
-      texte
+    if (
+      valeur === null ||
+      valeur === undefined ||
+      valeur === ""
     ) {
-
-      return String(
-        texte || ""
-      )
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(
-          /[\u0300-\u036f]/g,
-          ""
-        )
-        .replace(
-          /[-_]/g,
-          " "
-        )
-        .trim();
-
+      return [];
     }
 
-
-    /* ==================================================
-       CORRESPONDANCE TYPE REPAS
-    ================================================== */
-
-    const correspondanceTypeRepas = {
-
-      "petit-dejeuner":
-        "Petit-déjeuner",
-
-      "dejeuner":
-        "Déjeuner",
-
-      "diner":
-        "Dîner",
-
-      "collation":
-        "Collation",
-
-      "petite-douceur":
-        "Petite douceur"
-
-    };
-
-
-    /* ==================================================
-       CHARGEMENT
-    ================================================== */
-
-    fetch("../recettes.json")
-
-      .then(function(response) {
-
-        if (!response.ok) {
-
-          throw new Error(
-            "Impossible de charger recettes.json"
-          );
-
-        }
-
-        return response.json();
-
+    return String(valeur)
+      .split(",")
+      .map(function(item) {
+        return item.trim();
       })
+      .filter(Boolean);
 
-      .then(function(data) {
-
-        recettes =
-          Array.isArray(data)
-            ? data
-            : [];
+  }
 
 
-        afficherResume();
+  /* ==================================================
+     CHARGEMENT DU JSON
+  ================================================== */
 
-        afficherResultats();
+  fetch("../recettes.json")
 
-      })
+    .then(function(response) {
 
-      .catch(function(error) {
+      if (!response.ok) {
 
-        console.error(error);
+        throw new Error(
+          "Impossible de charger recettes.json"
+        );
 
+      }
 
-        document.getElementById(
-          "liste"
-        ).innerHTML = `
+      return response.json();
 
-          <div class="vide">
+    })
 
-            <div class="emoji">
-              ⚠️
-            </div>
+    .then(function(data) {
 
-            <h3>
-              Oups...
-            </h3>
+      recettes =
+        Array.isArray(data)
+          ? data
+          : [];
 
-            <p>
-              Impossible de charger les recettes.
-            </p>
+      afficherResume();
 
+      afficherResultats();
+
+    })
+
+    .catch(function(error) {
+
+      console.error(error);
+
+      document.getElementById("liste").innerHTML = `
+
+        <div class="vide">
+
+          <div class="emoji">
+            ⚠️
           </div>
 
-        `;
-
-      });
-
-
-    /* ==================================================
-       RESUME DES CHOIX
-    ================================================== */
-
-    function afficherResume() {
-
-      const zone =
-        document.getElementById(
-          "resumeChoix"
-        );
-
-
-      let html = "";
-
-
-      /* TYPE REPAS */
-
-      if (
-        typeRepas &&
-        typeRepas !==
-        "peu-importe"
-      ) {
-
-        const nomRepas =
-          correspondanceTypeRepas[
-            typeRepas
-          ] ||
-          typeRepas;
-
-
-        let emoji = "🍽️";
-
-
-        if (
-          typeRepas ===
-          "petit-dejeuner"
-        ) {
-
-          emoji = "🌅";
-
-        }
-
-
-        if (
-          typeRepas ===
-          "dejeuner"
-        ) {
-
-          emoji = "🥗";
-
-        }
-
-
-        if (
-          typeRepas ===
-          "diner"
-        ) {
-
-          emoji = "🍽️";
-
-        }
-
-
-        if (
-          typeRepas ===
-          "collation"
-        ) {
-
-          emoji = "🍎";
-
-        }
-
-
-        if (
-          typeRepas ===
-          "petite-douceur"
-        ) {
-
-          emoji = "🍰";
-
-        }
-
-
-        html += `
-
-          <span class="repas">
-
-            ${emoji}
-            ${nomRepas}
-
-          </span>
-
-        `;
-
-      }
-
-
-      /* ENVIE */
-
-      if (envie) {
-
-        const envies = {
-
-          leger:
-            "🥗 Léger",
-
-          complet:
-            "🍽️ Complet",
-
-          rapide:
-            "⚡ Rapide",
-
-          sucre:
-            "🍰 Sucré",
-
-          reconfort:
-            "💚 Réconfort",
-
-          vegetarien:
-            "🥕 Végétarien"
-
-        };
-
-
-        html += `
-
-          <span>
-
-            ${
-              envies[envie]
-              || envie
-            }
-
-          </span>
-
-        `;
-
-      }
-
-
-      /* TEMPS */
-
-      if (temps) {
-
-        html += `
-
-          <span>
-            ⏱️ ${temps}
-          </span>
-
-        `;
-
-      }
-
-
-      /* MODE PORTION */
-
-      if (
-        modePortion ===
-        "petite"
-      ) {
-
-        html += `
-
-          <span>
-            🥄 Petite portion
-          </span>
-
-        `;
-
-      }
-
-
-      if (
-        modePortion ===
-        "famille"
-      ) {
-
-        html += `
-
-          <span>
-            👨‍👩‍👧‍👦 Famille
-          </span>
-
-        `;
-
-      }
-
-
-      if (
-        modePortion ===
-        "mixte"
-      ) {
-
-        html += `
-
-          <span>
-            🍲 Petite portion + famille
-          </span>
-
-        `;
-
-      }
-
-
-      /* PREFERENCES */
-
-      const labelsPreferences = {
-
-        petite:
-          "🥄 Petite assiette",
-
-        ingredients:
-          "🛒 Peu d'ingrédients",
-
-        digeste:
-          "🌿 Facile à digérer",
-
-        avance:
-          "🥘 À préparer à l'avance"
-
-      };
-
-
-      preferences.forEach(function(pref) {
-
-        const label =
-          labelsPreferences[pref];
-
-        if (label) {
-
-          html += `
-
-            <span>
-              ${label}
-            </span>
-
-          `;
-
-        }
-
-      });
-
-
-      zone.innerHTML = html;
-
-    }
-
-
-    /* ==================================================
-       AFFICHAGE RESULTATS
-    ================================================== */
-
-    function afficherResultats() {
-
-      const liste =
-        document.getElementById(
-          "liste"
-        );
-
-      const compteur =
-        document.getElementById(
-          "compteur"
-        );
-
-
-      /* FILTRER */
-
-      let resultats =
-        recettes.filter(function(recette) {
-
-          return verifierRecette(
-            recette
-          );
-
-        });
-
-
-      /* AFFICHER COMPTEUR */
-
-      const nbResultats =
-        resultats.length;
-
-      const textCompteur =
-        nbResultats === 1
-          ? "1 recette"
-          : nbResultats + " recettes";
-
-      compteur.textContent =
-        textCompteur;
-
-
-      /* AFFICHER RESULTATS */
-
-      if (
-        nbResultats === 0
-      ) {
-
-        liste.innerHTML = `
-
-          <div class="vide">
-
-            <div class="emoji">
-              🤔
-            </div>
-
-            <h3>
-              Pas de match pour l'instant
-            </h3>
-
-            <p>
-              Essayez d'ajuster vos préférences
-              pour découvrir plus de recettes.
-            </p>
-
-            <button
-              class="bouton"
-              onclick="
-                window.location.href =
-                  'MesEnvies.html'
-              "
-            >
-              Modifier mes envies
-            </button>
-
-          </div>
-
-        `;
-
-        return;
-
-      }
-
-
-      liste.innerHTML =
-        resultats
-          .map(function(recette, index) {
-
-            return construireCartRecette(
-              recette,
-              index
-            );
-
-          })
-          .join("");
-
-
-      /* EVENT LISTENERS */
-
-      document
-        .querySelectorAll(
-          ".favori"
-        )
-        .forEach(function(btn) {
-
-          btn.addEventListener(
-            "click",
-            function(e) {
-
-              e.preventDefault();
-
-              const index =
-                parseInt(
-                  btn.getAttribute(
-                    "data-index"
-                  )
-                );
-
-              const recette =
-                resultats[index];
-
-              if (recette) {
-
-                basculerFavori(
-                  recette
-                );
-
-              }
-
-            }
-          );
-
-        });
-
-      document
-        .querySelectorAll(
-          ".ouvrir"
-        )
-        .forEach(function(btn) {
-
-          btn.addEventListener(
-            "click",
-            function() {
-
-              const index =
-                parseInt(
-                  btn.getAttribute(
-                    "data-index"
-                  )
-                );
-
-              const recette =
-                resultats[index];
-
-              if (recette) {
-
-                localStorage.setItem(
-                  "recetteSelectionnee",
-                  JSON.stringify(
-                    recette
-                  )
-                );
-
-                window.location.href =
-                  "Recette.html";
-
-              }
-
-            }
-          );
-
-        });
-
-    }
-
-
-    /* ==================================================
-       VERIFIER RECETTE
-    ================================================== */
-
-    function verifierRecette(
-      recette
-    ) {
-
-      /* TYPE REPAS */
-
-      if (
-        typeRepas &&
-        typeRepas !==
-        "peu-importe"
-      ) {
-
-        const typeNorm =
-          normaliser(
-            typeRepas
-          );
-
-        const typesRecetteNorm =
-          (recette.type || "")
-            .split(",")
-            .map(function(t) {
-
-              return normaliser(
-                t
-              );
-
-            });
-
-        if (
-          !typesRecetteNorm
-            .some(function(t) {
-
-              return (
-                t.includes(
-                  typeNorm
-                ) ||
-                typeNorm.includes(
-                  t
-                )
-              );
-
-            })
-        ) {
-
-          return false;
-
-        }
-
-      }
-
-
-      /* ENVIE */
-
-      if (envie) {
-
-        const envieNorm =
-          normaliser(
-            envie
-          );
-
-        const tagsNorm =
-          (recette.tags || "")
-            .split(",")
-            .map(function(tag) {
-
-              return normaliser(
-                tag
-              );
-
-            });
-
-        if (
-          !tagsNorm
-            .some(function(tag) {
-
-              return (
-                tag.includes(
-                  envieNorm
-                ) ||
-                envieNorm.includes(
-                  tag
-                )
-              );
-
-            })
-        ) {
-
-          return false;
-
-        }
-
-      }
-
-
-      /* TEMPS */
-
-      if (temps) {
-
-        const tempsNorm =
-          normaliser(
-            temps
-          );
-
-        const recetteTempNorm =
-          normaliser(
-            recette.temps || ""
-          );
-
-        let tempsMinutes = 0;
-
-        if (
-          tempsNorm.includes(
-            "10"
-          )
-        ) {
-
-          tempsMinutes = 10;
-
-        } else if (
-          tempsNorm.includes(
-            "20"
-          )
-        ) {
-
-          tempsMinutes = 20;
-
-        } else if (
-          tempsNorm.includes(
-            "30"
-          )
-        ) {
-
-          tempsMinutes = 30;
-
-        }
-
-        if (
-          tempsMinutes > 0 &&
-          recetteTempNorm !==
-          "plus"
-        ) {
-
-          const recetteMinutes =
-            parseInt(
-              recetteTempNorm
-            ) || 0;
-
-          if (
-            recetteMinutes >
-            tempsMinutes + 5
-          ) {
-
-            return false;
-
-          }
-
-        }
-
-      }
-
-
-      /* MODE PORTION */
-
-      if (
-        modePortion &&
-        modePortion !==
-        "peu-importe"
-      ) {
-
-        const modeNorm =
-          normaliser(
-            modePortion
-          );
-
-        const portionNorm =
-          normaliser(
-            recette.portion || ""
-          );
-
-        if (
-          modeNorm ===
-          "petite"
-        ) {
-
-          if (
-            !portionNorm.includes(
-              "petite"
-            ) &&
-            !portionNorm.includes(
-              "une"
-            )
-          ) {
-
-            return false;
-
-          }
-
-        } else if (
-          modeNorm ===
-          "famille"
-        ) {
-
-          if (
-            !portionNorm.includes(
-              "famille"
-            ) &&
-            !portionNorm.includes(
-              "quatre"
-            )
-          ) {
-
-            return false;
-
-          }
-
-        }
-
-      }
-
-
-      /* PREFERENCES */
-
-      if (
-        preferences.length > 0
-      ) {
-
-        const prefsNorm =
-          preferences
-            .map(function(pref) {
-
-              return normaliser(
-                pref
-              );
-
-            });
-
-        const recettePrefsNorm =
-          (recette.preferences || "")
-            .split(",")
-            .map(function(pref) {
-
-              return normaliser(
-                pref
-              );
-
-            });
-
-        const toutesPreferences =
-          prefsNorm.every(
-            function(pref) {
-
-              return (
-                recettePrefsNorm
-                  .some(function(rp) {
-
-                    return (
-                      rp.includes(
-                        pref
-                      ) ||
-                      pref.includes(
-                        rp
-                      )
-                    );
-
-                  })
-              );
-
-            }
-          );
-
-        if (
-          !toutesPreferences
-        ) {
-
-          return false;
-
-        }
-
-      }
-
-
-      return true;
-
-    }
-
-
-    /* ==================================================
-       CONSTRUIRE CARTE
-    ================================================== */
-
-    function construireCartRecette(
-      recette,
-      index
-    ) {
-
-      const favoriActif =
-        estFavori(
-          recette
-        );
-
-      let html = `
-
-        <div class="recette">
-
-          <div class="haut-recette">
-
-            <div>
-
-              <h3>
-                ${recette.nom}
-              </h3>
-
-              <p class="meta">
-                ⏱️ ${recette.temps || "?"} min
-                <br>
-                🍽️ ${recette.portion || "1 part"}
-              </p>
-
-            </div>
-
-            <button
-              class="favori ${
-                favoriActif
-                  ? "active"
-                  : ""
-              }"
-              data-index="${index}"
-              title="Ajouter aux favoris"
-            >
-              ${
-                favoriActif
-                  ? "❤️"
-                  : "🤍"
-              }
-            </button>
-
-          </div>
-
-      `;
-
-      if (
-        recette.description
-      ) {
-
-        html += `
-
-          <p
-            style="
-              margin-top: 10px;
-              color: #75665d;
-              font-size: 13px;
-              line-height: 1.5;
-            "
-          >
-            ${recette.description}
+          <h3>
+            Oups...
+          </h3>
+
+          <p>
+            Impossible de charger les recettes.
           </p>
-
-        `;
-
-      }
-
-      if (
-        recette.tags ||
-        recette.preferences
-      ) {
-
-        html += `
-
-          <div class="badges">
-
-        `;
-
-        if (recette.tags) {
-
-          const tags =
-            recette.tags
-              .split(",");
-
-          tags.forEach(
-            function(tag) {
-
-              tag = tag.trim();
-
-              let classe = "";
-
-              if (
-                tag.toLowerCase()
-                  .includes("sucr")
-              ) {
-
-                classe = "douceur";
-
-              }
-
-              html += `
-
-                <span
-                  class="badge ${classe}"
-                >
-                  ${tag}
-                </span>
-
-              `;
-
-            }
-          );
-
-        }
-
-        if (
-          recette.preferences
-        ) {
-
-          const prefs =
-            recette.preferences
-              .split(",");
-
-          prefs.forEach(
-            function(pref) {
-
-              pref = pref.trim();
-
-              let classe = "";
-
-              if (
-                pref.toLowerCase()
-                  .includes("sucr")
-              ) {
-
-                classe = "douceur";
-
-              } else if (
-                pref.toLowerCase()
-                  .includes(
-                    "post"
-                  )
-              ) {
-
-                classe = "post";
-
-              }
-
-              html += `
-
-                <span
-                  class="badge ${classe}"
-                >
-                  ${pref}
-                </span>
-
-              `;
-
-            }
-          );
-
-        }
-
-        html += `
-
-          </div>
-
-        `;
-
-      }
-
-      html += `
-
-        <button
-          class="ouvrir"
-          data-index="${index}"
-        >
-          Voir la recette
-        </button>
 
         </div>
 
       `;
 
-      return html;
+    });
+
+
+  /* ==================================================
+     RÉSUMÉ
+  ================================================== */
+
+  function afficherResume() {
+
+    const zone =
+      document.getElementById("resumeChoix");
+
+    let html = "";
+
+
+    /* TYPE DE REPAS */
+
+    if (
+      typeRepas &&
+      typeRepas !== "peu-importe"
+    ) {
+
+      const noms = {
+
+        "petit-dejeuner":
+          "🌅 Petit-déjeuner",
+
+        "dejeuner":
+          "🥗 Déjeuner",
+
+        "diner":
+          "🍽️ Dîner",
+
+        "collation":
+          "🍎 Collation",
+
+        "petite-douceur":
+          "🍰 Petite douceur"
+
+      };
+
+      html += `
+        <span class="repas">
+          ${noms[typeRepas] || typeRepas}
+        </span>
+      `;
+
+    }
+
+
+    /* ENVIE */
+
+    if (envie) {
+
+      const envies = {
+
+        leger: "🥗 Léger",
+
+        complet: "🍽️ Complet",
+
+        rapide: "⚡ Rapide",
+
+        sucre: "🍰 Sucré",
+
+        reconfort: "💚 Réconfort",
+
+        vegetarien: "🥕 Végétarien"
+
+      };
+
+      html += `
+        <span>
+          ${envies[envie] || envie}
+        </span>
+      `;
+
+    }
+
+
+    /* TEMPS */
+
+    if (temps) {
+
+      html += `
+        <span>
+          ⏱️ ${temps} min
+        </span>
+      `;
+
+    }
+
+
+    /* MODE PORTION */
+
+    if (modePortion === "petite") {
+
+      html += `
+        <span>
+          🥄 Petite portion
+        </span>
+      `;
+
+    }
+
+    if (modePortion === "famille") {
+
+      html += `
+        <span>
+          👨‍👩‍👧‍👦 Famille
+        </span>
+      `;
+
+    }
+
+    if (modePortion === "mixte") {
+
+      html += `
+        <span>
+          🍲 Petite portion + famille
+        </span>
+      `;
+
+    }
+
+
+    /* PRÉFÉRENCES */
+
+    const labels = {
+
+      petite:
+        "🥄 Petite assiette",
+
+      ingredients:
+        "🛒 Peu d'ingrédients",
+
+      digeste:
+        "🌿 Facile à digérer",
+
+      avance:
+        "📦 À préparer à l'avance"
+
+    };
+
+
+    preferences.forEach(function(pref) {
+
+      if (labels[pref]) {
+
+        html += `
+          <span>
+            ${labels[pref]}
+          </span>
+        `;
+
+      }
+
+    });
+
+
+    zone.innerHTML =
+      html ||
+      "<span>✨ Toutes les recettes</span>";
+
+  }
+
+
+  /* ==================================================
+     AFFICHAGE
+  ================================================== */
+
+  function afficherResultats() {
+
+    const liste =
+      document.getElementById("liste");
+
+    const compteur =
+      document.getElementById("compteur");
+
+
+    let resultats =
+      recettes.filter(function(recette) {
+
+        return verifierRecette(recette);
+
+      });
+
+
+    /* ==================================================
+       SÉCURITÉ :
+       SI LES FILTRES SONT TROP RESTRICTIFS
+    ================================================== */
+
+    /*
+      On ne modifie pas le catalogue.
+      On montre simplement toutes les recettes
+      si aucune recette ne correspond aux critères.
+      
+      Cela évite le "Pas de match" alors que
+      le catalogue contient bien des recettes.
+    */
+
+    if (
+      resultats.length === 0 &&
+      recettes.length > 0
+    ) {
+
+      resultats = recettes.slice();
+
+    }
+
+
+    const nb =
+      resultats.length;
+
+
+    compteur.textContent =
+      nb === 1
+        ? "1 recette"
+        : nb + " recettes";
+
+
+    if (nb === 0) {
+
+      liste.innerHTML = `
+
+        <div class="vide">
+
+          <div class="emoji">
+            🍽️
+          </div>
+
+          <h3>
+            Aucune recette disponible
+          </h3>
+
+          <p>
+            Votre catalogue de recettes est actuellement vide.
+          </p>
+
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    liste.innerHTML =
+      resultats
+        .map(function(recette, index) {
+
+          return construireCarteRecette(
+            recette,
+            index
+          );
+
+        })
+        .join("");
+
+
+    /* FAVORIS */
+
+    document
+      .querySelectorAll(".favori")
+      .forEach(function(btn) {
+
+        btn.addEventListener(
+          "click",
+          function(e) {
+
+            e.preventDefault();
+
+            const index =
+              parseInt(
+                btn.dataset.index
+              );
+
+            const recette =
+              resultats[index];
+
+            if (recette) {
+
+              basculerFavori(recette);
+
+            }
+
+          }
+        );
+
+      });
+
+
+    /* OUVERTURE */
+
+    document
+      .querySelectorAll(".ouvrir")
+      .forEach(function(btn) {
+
+        btn.addEventListener(
+          "click",
+          function() {
+
+            const index =
+              parseInt(
+                btn.dataset.index
+              );
+
+            const recette =
+              resultats[index];
+
+            if (recette) {
+
+              /*
+                On garde la recette sélectionnée
+                pour Recette.html
+              */
+
+              localStorage.setItem(
+                "recetteSelectionnee",
+                JSON.stringify(recette)
+              );
+
+
+              window.location.href =
+                "Recette.html?id=" +
+                encodeURIComponent(
+                  recette.id
+                );
+
+            }
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /* ==================================================
+     VÉRIFICATION D'UNE RECETTE
+  ================================================== */
+
+  function verifierRecette(recette) {
+
+
+    /* ==================================================
+       1. TYPE DE REPAS
+       
+       IMPORTANT :
+       Le type de repas est dans "categorie"
+       et non dans "type".
+    ================================================== */
+
+    if (
+      typeRepas &&
+      typeRepas !== "peu-importe"
+    ) {
+
+      const categorie =
+        normaliser(
+          recette.categorie
+        );
+
+      const recherche =
+        normaliser(
+          correspondanceTypeRepas[typeRepas]
+            || typeRepas
+        );
+
+
+      /*
+        Comparaison souple.
+        Exemple :
+        "Petit-déjeuner"
+        devient
+        "petit dejeuner"
+      */
+
+      if (
+        !categorie.includes(recherche) &&
+        !recherche.includes(categorie)
+      ) {
+
+        return false;
+
+      }
 
     }
 
 
     /* ==================================================
-       FAVORIS
+       2. ENVIE
+       
+       IMPORTANT :
+       Tes recettes utilisent "envies".
+       Exemple :
+       "envies": ["complet","leger","rapide"]
     ================================================== */
 
-    function estFavori(
-      recette
-    ) {
+    if (envie) {
 
-      let favoris = [];
+      const enviesRecette =
+        enTableau(
+          recette.envies
+        ).map(function(item) {
 
-      try {
+          return normaliser(item);
 
-        favoris =
-          JSON.parse(
-            localStorage
-              .getItem(
-                "favoris"
-              ) || "[]"
-          );
+        });
 
-      } catch (e) {
 
-        favoris = [];
+      const envieRecherche =
+        normaliser(envie);
+
+
+      /*
+        Cas spécial végétarien :
+        on utilise directement le champ
+        vegetarien de la recette.
+      */
+
+      if (
+        envieRecherche ===
+        "vegetarien"
+      ) {
+
+        if (
+          recette.vegetarien !== true
+        ) {
+
+          return false;
+
+        }
+
+      } else {
+
+        if (
+          !enviesRecette.some(
+            function(item) {
+
+              return (
+                item === envieRecherche ||
+                item.includes(envieRecherche) ||
+                envieRecherche.includes(item)
+              );
+
+            }
+          )
+        ) {
+
+          return false;
+
+        }
 
       }
 
-      return favoris.some(
+    }
+
+
+    /* ==================================================
+       3. TEMPS
+    ================================================== */
+
+    if (
+      temps &&
+      temps !== "plus"
+    ) {
+
+      const tempsRecherche =
+        parseInt(temps);
+
+
+      const tempsRecette =
+        parseInt(recette.temps) || 0;
+
+
+      if (
+        tempsRecherche &&
+        tempsRecette >
+          tempsRecherche
+      ) {
+
+        return false;
+
+      }
+
+    }
+
+
+    /* ==================================================
+       4. PRÉFÉRENCES
+       
+       On utilise les VRAIS champs de tes recettes.
+    ================================================== */
+
+    if (
+      preferences.length > 0
+    ) {
+
+      for (
+        let i = 0;
+        i < preferences.length;
+        i++
+      ) {
+
+        const pref =
+          preferences[i];
+
+
+        /* Petite portion */
+
+        if (
+          pref === "petite"
+        ) {
+
+          if (
+            recette.petitAppetit !== true &&
+            !normaliser(
+              recette.portion
+            ).includes("petite")
+          ) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* Peu d'ingrédients */
+
+        if (
+          pref === "ingredients"
+        ) {
+
+          const nombreIngredients =
+            Array.isArray(
+              recette.ingredients
+            )
+              ? recette.ingredients.length
+              : 0;
+
+
+          /*
+            Une recette avec 6 ingrédients
+            ou moins est considérée comme simple.
+          */
+
+          if (
+            nombreIngredients > 6
+          ) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* Facile à digérer */
+
+        if (
+          pref === "digeste"
+        ) {
+
+          const texture =
+            normaliser(
+              recette.texture
+            );
+
+
+          const motsDigestes = [
+            "tendre",
+            "fondant",
+            "moelleux",
+            "mou",
+            "lisse",
+            "mixé",
+            "mouline",
+            "cremeux"
+          ];
+
+
+          /*
+            Si aucune texture n'est renseignée,
+            on ne bloque pas la recette.
+          */
+
+          if (
+            texture &&
+            !motsDigestes.some(
+              function(mot) {
+
+                return texture.includes(mot);
+
+              }
+            )
+          ) {
+
+            return false;
+
+          }
+
+        }
+
+
+        /* Préparable à l'avance */
+
+        if (
+          pref === "avance"
+        ) {
+
+          if (
+            recette.batchCooking !== true &&
+            !recette.conservation &&
+            !recette.batchCookingDetail
+          ) {
+
+            return false;
+
+          }
+
+        }
+
+      }
+
+    }
+
+
+    /*
+      Le mode de portion ne doit PAS éliminer
+      une recette.
+
+      Les quantités sont gérées dans Recette.html.
+    */
+
+    return true;
+
+  }
+
+
+  /* ==================================================
+     CARTE RECETTE
+  ================================================== */
+
+  function construireCarteRecette(
+    recette,
+    index
+  ) {
+
+    const favoriActif =
+      estFavori(recette);
+
+
+    let html = `
+
+      <div class="recette">
+
+        <div class="haut-recette">
+
+          <div>
+
+            <h3>
+              ${recette.nom || "Recette"}
+            </h3>
+
+            <p class="meta">
+
+              ⏱️
+              ${recette.temps || "?"}
+              min
+
+              <br>
+
+              🍽️
+              ${recette.portion || "Portion adaptable"}
+
+            </p>
+
+          </div>
+
+
+          <button
+            class="favori ${
+              favoriActif
+                ? "active"
+                : ""
+            }"
+            data-index="${index}"
+            title="Ajouter aux favoris"
+          >
+
+            ${
+              favoriActif
+                ? "❤️"
+                : "🤍"
+            }
+
+          </button>
+
+        </div>
+
+    `;
+
+
+    /* DESCRIPTION */
+
+    if (
+      recette.description
+    ) {
+
+      html += `
+
+        <p
+          style="
+            margin-top: 10px;
+            color: #75665d;
+            font-size: 13px;
+            line-height: 1.5;
+          "
+        >
+
+          ${recette.description}
+
+        </p>
+
+      `;
+
+    }
+
+
+    /* BADGES */
+
+    html += `
+      <div class="badges">
+    `;
+
+
+    if (
+      recette.categorie
+    ) {
+
+      html += `
+        <span class="badge">
+          ${recette.categorie}
+        </span>
+      `;
+
+    }
+
+
+    if (
+      recette.petitAppetit === true
+    ) {
+
+      html += `
+        <span class="badge">
+          🥄 Petite portion
+        </span>
+      `;
+
+    }
+
+
+    if (
+      recette.batchCooking === true
+    ) {
+
+      html += `
+        <span class="badge batch">
+          📦 Batch-cooking
+        </span>
+      `;
+
+    }
+
+
+    if (
+      recette.preOperatoire === true
+    ) {
+
+      html += `
+        <span class="badge">
+          🌿 Pré-opératoire
+        </span>
+      `;
+
+    }
+
+
+    if (
+      recette.postOperatoire === true
+    ) {
+
+      html += `
+        <span class="badge post">
+          💚 Post-opératoire
+        </span>
+      `;
+
+    }
+
+
+    if (
+      recette.vegetarien === true
+    ) {
+
+      html += `
+        <span class="badge">
+          🥕 Végétarien
+        </span>
+      `;
+
+    }
+
+
+    if (
+      recette.sansGluten === true
+    ) {
+
+      html += `
+        <span class="badge">
+          🌾 Sans gluten
+        </span>
+      `;
+
+    }
+
+
+    html += `
+      </div>
+    `;
+
+
+    /* BOUTON */
+
+    html += `
+
+      <button
+        class="ouvrir"
+        data-index="${index}"
+      >
+        Voir la recette
+      </button>
+
+    `;
+
+
+    html += `
+      </div>
+    `;
+
+
+    return html;
+
+  }
+
+
+  /* ==================================================
+     FAVORIS
+  ================================================== */
+
+  function estFavori(
+    recette
+  ) {
+
+    let favoris = [];
+
+    try {
+
+      favoris =
+        JSON.parse(
+          localStorage.getItem(
+            "favoris"
+          ) || "[]"
+        );
+
+    } catch (e) {
+
+      favoris = [];
+
+    }
+
+
+    return favoris.some(
+      function(fav) {
+
+        return (
+          fav.id &&
+          recette.id &&
+          fav.id === recette.id
+        );
+
+      }
+    );
+
+  }
+
+
+  function basculerFavori(
+    recette
+  ) {
+
+    let favoris = [];
+
+    try {
+
+      favoris =
+        JSON.parse(
+          localStorage.getItem(
+            "favoris"
+          ) || "[]"
+        );
+
+    } catch (e) {
+
+      favoris = [];
+
+    }
+
+
+    const index =
+      favoris.findIndex(
         function(fav) {
 
           return (
-            fav.nom ===
-            recette.nom
+            fav.id &&
+            recette.id &&
+            fav.id === recette.id
           );
 
         }
       );
 
-    }
 
-
-    function basculerFavori(
-      recette
+    if (
+      index > -1
     ) {
 
-      let favoris = [];
-
-      try {
-
-        favoris =
-          JSON.parse(
-            localStorage
-              .getItem(
-                "favoris"
-              ) || "[]"
-          );
-
-      } catch (e) {
-
-        favoris = [];
-
-      }
-
-      const index =
-        favoris.findIndex(
-          function(fav) {
-
-            return (
-              fav.nom ===
-              recette.nom
-            );
-
-          }
-        );
-
-      if (index > -1) {
-
-        favoris.splice(
-          index,
-          1
-        );
-
-      } else {
-
-        favoris.push(
-          recette
-        );
-
-      }
-
-      localStorage.setItem(
-        "favoris",
-        JSON.stringify(
-          favoris
-        )
+      favoris.splice(
+        index,
+        1
       );
 
-      afficherResultats();
+    } else {
+
+      favoris.push(
+        recette
+      );
 
     }
 
-  </script>
+
+    localStorage.setItem(
+      "favoris",
+      JSON.stringify(
+        favoris
+      )
+    );
+
+
+    afficherResultats();
+
+  }
+
+</script>
 
 </body>
 
 </html>
+```
