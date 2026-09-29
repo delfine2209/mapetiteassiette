@@ -304,5 +304,123 @@ function chargerDonneesRecettes() {
     });
 }
 
+// ==========================================
+// 6. GESTION DE "MON MENU" (LOCALSTORAGE)
+// ==========================================
+
+// Structure par défaut d'un menu hebdomadaire vide
+const menuVide = {
+  lundi: { petitDejeuner: null, dejeuner: null, diner: null },
+  mardi: { petitDejeuner: null, dejeuner: null, diner: null },
+  mercredi: { petitDejeuner: null, dejeuner: null, diner: null },
+  jeudi: { petitDejeuner: null, dejeuner: null, diner: null },
+  vendredi: { petitDejeuner: null, dejeuner: null, diner: null },
+  samedi: { petitDejeuner: null, dejeuner: null, diner: null },
+  dimanche: { petitDejeuner: null, dejeuner: null, diner: null }
+};
+
+/**
+ * Récupère le menu stocké dans l'appareil ou en crée un vide si inexistant
+ */
+function obtenirMenu() {
+  const menuStocke = localStorage.getItem('monMenuHebdo');
+  return menuStocke ? JSON.parse(menuStocke) : { ...menuVide };
+}
+
+/**
+ * Enregistre une recette dans le planning hebdomadaire
+ * @param {string} jour - Ex: 'lundi'
+ * @param {string} repas - Ex: 'dejeuner'
+ * @param {string} recetteId - Ex: 'REC100'
+ */
+function ajouterAuMenu(jour, repas, recetteId) {
+  const menuActuel = obtenirMenu();
+  menuActuel[jour][repas] = recetteId;
+  localStorage.setItem('monMenuHebdo', JSON.stringify(menuActuel));
+  console.log(`Recette ${recetteId} ajoutée au ${repas} du ${jour}.`);
+}
+
+/**
+ * Supprime un repas spécifique du planning
+ */
+function supprimerDuMenu(jour, repas) {
+  const menuActuel = obtenirMenu();
+  menuActuel[jour][repas] = null;
+  localStorage.setItem('monMenuHebdo', JSON.stringify(menuActuel));
+  afficherMenuEcran(); // Rafraîchit l'affichage
+}
+
+/**
+ * Rendu graphique du menu sur la page menu.html
+ */
+function afficherMenuEcran() {
+  const conteneurMenu = document.getElementById('planning-hebdo');
+  if (!conteneurMenu) return; // Sécurité si on n'est pas sur menu.html
+
+  const menu = obtenirMenu();
+
+  // Attendre que la base de données globale soit chargée pour faire la correspondance d'ID
+  if (mesRecettesJson.length === 0) {
+    setTimeout(afficherMenuEcran, 100); // Réessaye un peu plus tard si le fetch n'est pas fini
+    return;
+  }
+
+  conteneurMenu.innerHTML = "";
+
+  // Boucle à travers chaque jour de la semaine
+  Object.keys(menu).forEach(jour => {
+    let htmlJour = `
+      <div class="colonne-jour">
+        <h2>${jour.charAt(0).toUpperCase() + jour.slice(1)}</h2>
+        <div class="repas-blocs">
+    `;
+
+    // Boucle à travers les 3 types de repas
+    ['petitDejeuner', 'dejeuner', 'diner'].forEach(repas => {
+      const nomRepasAffiche = repas === 'petitDejeuner' ? '🌅 Matin' : repas === 'dejeuner' ? '☀️ Midi' : '🌙 Soir';
+      const idRecette = menu[jour][repas];
+      
+      // Recherche de la recette associée dans notre JSON globale
+      const recette = idRecette ? mesRecettesJson.find(r => r.id === idRecette) : null;
+
+      htmlJour += `
+        <div class="case-repas ${recette ? 'occupee' : 'vide'}">
+          <span class="label-moment">${nomRepasAffiche}</span>
+          ${recette ? `
+            <div class="details-repas-choisi">
+              <h4>\${recette.nom}</h4>
+              <p>⏱️ recette.temps min | 💪 {recette.proteines}g P</p>
+              <div class="actions-case">
+                <a href="Recette.html?id=\${recette.id}" class="btn-lien">Voir</a>
+                <button onclick="supprimerDuMenu('jour', '{repas}')" class="btn-supprimer">❌</button>
+              </div>
+            </div>
+          ` : `
+            <div class="details-repas-vide">
+              <p>Aucun plat sélectionné</p>
+              <a href="MesEnvies.html?choix=\({jour}_\){repas}" class="btn-ajouter-plat">+ Choisir</a>
+            </div>
+          `}
+        </div>
+      `;
+    });
+
+    htmlJour += `
+        </div>
+      </div>
+    `;
+    conteneurMenu.insertAdjacentHTML('beforeend', htmlJour);
+  });
+}
+
+// Ajouter le rafraîchissement au chargement du DOM
+document.addEventListener("DOMContentLoaded", () => {
+  // Si nous sommes sur la page du menu, on l'affiche
+  if (document.getElementById('planning-hebdo')) {
+    // Petit délai technique pour laisser le temps au fetch("../recettes.json") de peupler la variable globale
+    setTimeout(afficherMenuEcran, 200);
+  }
+});
+
 
 ```
