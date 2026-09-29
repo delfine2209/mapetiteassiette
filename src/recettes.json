@@ -3714,6 +3714,46 @@
       "Répartir dans deux petites portions."
     ]
   },
+  {
+    "id": "REC092",
+    "nom": "Velouté de cabillaud aux poireaux et riz",
+    "categorie": "Déjeuner / dîner",
+    "type": "poisson",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 18,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": true,
+    "batchCookingDetail": "Se mixe très bien et se conserve en petits bocaux en verre.",
+    "conservation": "2 jours au réfrigérateur.",
+    "congelation": "Oui, après mixage complet.",
+    "envies": ["leger", "reconfortant", "digeste"],
+    "texture": "Mixée",
+    "ingredients": [
+      "70 g de cabillaud",
+      "50 g de blanc de poireau",
+      "20 g de riz très cuit",
+      "1 cuillère à soupe de fromage blanc 0%",
+      "Bouillon de légumes léger"
+    ],
+    "preparation": [
+      "Laver et émincer finement le blanc de poireau.",
+      "Faire cuire le poireau et le riz dans le bouillon de légumes.",
+      "Ajouter le cabillaud 5 minutes avant la fin de la cuisson.",
+      "Ajouter le fromage blanc hors du feu.",
+      "Mixer le tout jusqu'à obtention d'une texture ultra-lisse sans aucun morceau.",
+      "Servir tiède."
+    ]
+  },
  {
   "id": "ADP001",
   "nom": "Petite pizza poulet & courgette",
