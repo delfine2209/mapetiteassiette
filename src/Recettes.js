@@ -413,6 +413,22 @@ function afficherMenuEcran() {
   });
 }
 
+// Écouteur pour le bouton d'ajout au planning sur la page Recette.html
+const btnPlanifier = document.getElementById('btn-valider-planning');
+if (btnPlanifier) {
+  btnPlanifier.addEventListener('click', () => {
+    const jourChoisi = document.getElementById('select-jour').value;
+    const momentChoisi = document.getElementById('select-moment').value;
+    
+    // Ajoute au localStorage
+    ajouterAuMenu(jourChoisi, momentChoisi, recetteId);
+    
+    alert("Le plat a bien été ajouté à votre semaine !");
+    window.location.href = "menu.html"; // Redirige vers le planning
+  });
+}
+
+
 // Ajouter le rafraîchissement au chargement du DOM
 document.addEventListener("DOMContentLoaded", () => {
   // Si nous sommes sur la page du menu, on l'affiche
