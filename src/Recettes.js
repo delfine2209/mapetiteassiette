@@ -272,4 +272,77 @@ async function afficherRecette() {
     }
 
 }
+
+// ==========================================
+// 1. LOGIQUE DE FILTRAGE DES DONNÉES
+// ==========================================
+function filtrerLesRecettes(toutesLesRecettes, typeAction) {
+  switch (typeAction) {
+    case 'leger':
+      return toutesLesRecettes.filter(r => r.envies && (r.envies.includes('leger') || r.envies.includes('acidule')));
+    case 'complet':
+      return toutesLesRecettes.filter(r => r.envies && (r.envies.includes('complet') || r.envies.includes('reconfortant')));
+    case 'rapide':
+      return toutesLesRecettes.filter(r => r.temps <= 15);
+    case 'sucre':
+      return toutesLesRecettes.filter(r => r.categorie === "Dessert / collation" || r.type === "sucre");
+    case 'vegetarien':
+      return toutesLesRecettes.filter(r => r.vegetarien === true);
+    case 'mixe':
+      return toutesLesRecettes.filter(r => r.texture === "Mixée");
+    default:
+      return toutesLesRecettes;
+  }
+}
+
+// ==========================================
+// 2. INITIALISATION ET ÉCOUTE DES CLICS
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+  const boutons = document.querySelectorAll('.btn-filtre');
+  
+  if (boutons.length > 0) {
+    boutons.forEach(bouton => {
+      bouton.addEventListener('click', (evenement) => {
+        const filtreChoisi = evenement.currentTarget.getAttribute('data-envie');
+        
+        // Supposons que 'mesRecettesJson' est votre variable globale contenant les recettes
+        if (typeof mesRecettesJson !== 'undefined') {
+          const recettesFiltrees = filtrerLesRecettes(mesRecettesJson, filtreChoisi);
+          mettreAJourAffichage(recettesFiltrees);
+        }
+      });
+    });
+  }
+});
+
+// ==========================================
+// 3. FONCTION DE RENDU DYNAMIQUE HTML
+// ==========================================
+function mettreAJourAffichage(recettes) {
+  const zoneAffichage = document.getElementById('zone-recettes');
+  if (!zoneAffichage) return;
+
+  // On vide la zone avant de réafficher
+  zoneAffichage.innerHTML = "";
+
+  if (recettes.length === 0) {
+    zoneAffichage.innerHTML = "<p class='no-result'>Aucune recette ne correspond à cette envie pour le moment.</p>";
+    return;
+  }
+
+  // On génère les cartes HTML dynamiquement
+  recettes.forEach(recette => {
+    const carteHtml = `
+      <div class="carte-recette" data-id="${recette.id}">
+        <h3>${recette.nom}</h3>
+        <p class="badge-texture">Texture : ${recette.texture}</p>
+        <p class="infos">🕒 ${recette.temps} min | 💪 ${recette.proteines}g protéines</p>
+        <a href="Recette.html?id=${recette.id}" class="btn-voir">Voir la recette</a>
+      </div>
+    `;
+    zoneAffichage.insertAdjacentHTML('beforeend', carteHtml);
+  });
+}
+
 ```
