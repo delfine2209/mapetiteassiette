@@ -5,26 +5,162 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🧊 Mon frigo</title>
+<title>🧊 Mon frigo - Ma Petite Assiette</title>
 
 <link rel="stylesheet" href="style.css">
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-2E73FD8V9V');
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+gtag('config', 'G-2E73FD8V9V');
 </script>
-  
+
+<style>
+
+.frigo-intro {
+  background: linear-gradient(135deg, #dce8d8, #f4d8c8);
+  border-radius: 24px;
+  padding: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.frigo-intro h2 {
+  margin: 0 0 10px;
+  color: #40534a;
+}
+
+.frigo-intro p {
+  margin: 0;
+  line-height: 1.5;
+  color: #617268;
+}
+
+.aliments-section {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(75, 80, 70, 0.08);
+}
+
+.aliments-section h3 {
+  margin: 0 0 8px;
+  color: #40534a;
+}
+
+.aliments-section > p {
+  margin: 0 0 18px;
+  color: #6b776f;
+  font-size: 14px;
+}
+
+.aliments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.aliment {
+  position: relative;
+}
+
+.aliment input {
+  position: absolute;
+  opacity: 0;
+}
+
+.aliment label {
+  display: block;
+  padding: 13px 10px;
+  border: 2px solid #e7e1d9;
+  border-radius: 16px;
+  background: #fffdfb;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.aliment label:hover {
+  border-color: #a9c5ad;
+}
+
+.aliment input:checked + label {
+  border-color: #789b80;
+  background: #edf5ed;
+  color: #40534a;
+  font-weight: bold;
+}
+
+.compteur {
+  text-align: center;
+  margin: 18px 0 10px;
+  font-size: 14px;
+  color: #617268;
+}
+
+.compteur strong {
+  color: #668b6e;
+}
+
+.anti-gaspi-button {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 15px;
+  background: #789b80;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.anti-gaspi-button:hover {
+  background: #668b6e;
+}
+
+.reset-button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #718078;
+  padding: 12px;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.info-card {
+  margin-top: 18px;
+  background: #fffdfb;
+  border: 1px solid #e7e1d9;
+  border-radius: 18px;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b776f;
+}
+
+</style>
+
 </head>
 
+
 <body>
+
 
 <header class="header">
 
@@ -43,84 +179,192 @@ content="width=device-width, initial-scale=1.0">
 
 <main>
 
-<section class="intro">
 
-<h2>📱 TITRE DE LA PAGE</h2>
+<!-- INTRODUCTION -->
+
+<section class="frigo-intro">
+
+<h2>🧊 Mon frigo</h2>
 
 <p>
-DESCRIPTION DE LA PAGE
+Qu'avez-vous déjà à la maison ?
+Sélectionnez les aliments que vous souhaitez utiliser
+et Ma Petite Assiette vous proposera des idées pour éviter le gaspillage.
 </p>
 
 </section>
 
 
-<section class="features">
+<!-- ALIMENTS -->
+
+<section class="aliments-section">
+
+<h3>🥕 Ce que j'ai dans mon frigo</h3>
+
+<p>
+Sélectionnez tout ce que vous souhaitez utiliser.
+</p>
 
 
-<div class="feature-grid">
+<div class="aliments-grid">
 
 
-<a href="recettes.html">
+<div class="aliment">
+<input type="checkbox" id="oeufs" value="oeuf">
+<label for="oeufs">🥚 Œufs</label>
+</div>
 
-🍽️
 
-<strong>Mes recettes</strong>
+<div class="aliment">
+<input type="checkbox" id="lait" value="lait">
+<label for="lait">🥛 Lait</label>
+</div>
 
-<small>
-Découvrir les recettes
-</small>
 
+<div class="aliment">
+<input type="checkbox" id="fromage" value="fromage">
+<label for="fromage">🧀 Fromage</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="yaourt" value="yaourt">
+<label for="yaourt">🥛 Yaourt</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="poulet" value="poulet">
+<label for="poulet">🍗 Poulet</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="jambon" value="jambon">
+<label for="jambon">🥩 Jambon</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="thon" value="thon">
+<label for="thon">🐟 Thon</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="saumon" value="saumon">
+<label for="saumon">🐟 Saumon</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="courgette" value="courgette">
+<label for="courgette">🥒 Courgette</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="tomate" value="tomate">
+<label for="tomate">🍅 Tomate</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="carotte" value="carotte">
+<label for="carotte">🥕 Carotte</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="pommeTerre" value="pomme de terre">
+<label for="pommeTerre">🥔 Pomme de terre</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="poireau" value="poireau">
+<label for="poireau">🥬 Poireau</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="champignon" value="champignon">
+<label for="champignon">🍄 Champignon</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="oignon" value="oignon">
+<label for="oignon">🧅 Oignon</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="salade" value="salade">
+<label for="salade">🥗 Salade</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="riz" value="riz">
+<label for="riz">🍚 Riz</label>
+</div>
+
+
+<div class="aliment">
+<input type="checkbox" id="pates" value="pates">
+<label for="pates">🍝 Pâtes</label>
+</div>
+
+
+</div>
+
+
+<div class="compteur">
+
+<strong id="nombreSelection">0</strong>
+aliment(s) sélectionné(s)
+
+</div>
+
+
+<a
+href="anti-gaspi.html"
+class="anti-gaspi-button"
+onclick="preparerRecherche()"
+>
+♻️ Trouver mes recettes anti-gaspi
 </a>
 
 
-<a href="menu.html">
-
-📅
-
-<strong>Mon menu</strong>
-
-<small>
-Organiser mes repas
-</small>
-
-</a>
+<button
+class="reset-button"
+onclick="reinitialiserFrigo()"
+>
+Effacer ma sélection
+</button>
 
 
-<a href="courses.html">
+<div class="info-card">
 
-🛒
-
-<strong>Mes courses</strong>
-
-<small>
-Préparer ma liste
-</small>
-
-</a>
-
-
-<a href="index.html">
-
-🏠
-
-<strong>Accueil</strong>
-
-<small>
-Retour à l'accueil
-</small>
-
-</a>
-
+💡 <strong>Astuce :</strong>
+sélectionnez plusieurs aliments.
+Les recettes seront ensuite recherchées à partir
+de ce que vous avez déjà chez vous.
 
 </div>
 
 
 </section>
 
+
 </main>
 
 
+<!-- NAVIGATION -->
+
 <nav class="bottom-nav">
+
 
 <a href="index.html">
 
@@ -140,11 +384,11 @@ Retour à l'accueil
 </a>
 
 
-<a href="menu.html">
+<a href="frigo.html">
 
-📅
+🧊
 
-<small>Menu</small>
+<small>Frigo</small>
 
 </a>
 
@@ -157,7 +401,137 @@ Retour à l'accueil
 
 </a>
 
+
 </nav>
+
+
+<script>
+
+
+/* ==========================================
+   GESTION DE LA SELECTION
+========================================== */
+
+
+const cases =
+document.querySelectorAll(
+  '.aliment input[type="checkbox"]'
+);
+
+
+/* Charger une sélection déjà enregistrée */
+
+const alimentsEnregistres =
+JSON.parse(
+  localStorage.getItem("monFrigo") || "[]"
+);
+
+
+cases.forEach(caseAliment => {
+
+  if (
+    alimentsEnregistres.includes(
+      caseAliment.value
+    )
+  ) {
+
+    caseAliment.checked = true;
+
+  }
+
+});
+
+
+/* Mettre à jour le compteur */
+
+function mettreAJourCompteur() {
+
+  const selection =
+    Array.from(cases)
+      .filter(c => c.checked)
+      .map(c => c.value);
+
+
+  document.getElementById(
+    "nombreSelection"
+  ).textContent = selection.length;
+
+
+  localStorage.setItem(
+    "monFrigo",
+    JSON.stringify(selection)
+  );
+
+}
+
+
+cases.forEach(caseAliment => {
+
+  caseAliment.addEventListener(
+    "change",
+    mettreAJourCompteur
+  );
+
+});
+
+
+/* Préparer la recherche anti-gaspi */
+
+function preparerRecherche() {
+
+  const selection =
+    Array.from(cases)
+      .filter(c => c.checked)
+      .map(c => c.value);
+
+
+  localStorage.setItem(
+    "monFrigo",
+    JSON.stringify(selection)
+  );
+
+
+  if (selection.length === 0) {
+
+    alert(
+      "Sélectionnez au moins un aliment dans votre frigo."
+    );
+
+    return false;
+
+  }
+
+
+  return true;
+
+}
+
+
+/* Réinitialiser */
+
+function reinitialiserFrigo() {
+
+  cases.forEach(
+    caseAliment => caseAliment.checked = false
+  );
+
+
+  localStorage.removeItem(
+    "monFrigo"
+  );
+
+
+  mettreAJourCompteur();
+
+}
+
+
+/* Initialisation */
+
+mettreAJourCompteur();
+
+
+</script>
 
 
 </body>
