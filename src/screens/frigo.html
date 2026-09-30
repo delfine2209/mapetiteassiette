@@ -4,12 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>🧊 Mon frigo - Ma Petite Assiette</title>
-
-<link rel="stylesheet" href="style.css">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
@@ -26,6 +23,71 @@ gtag('config', 'G-2E73FD8V9V');
 
 <style>
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 90px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #fff8f2 0%, #f7f4ea 100%);
+  color: #3f463d;
+}
+
+/* =========================
+   CONTENEUR
+========================= */
+
+main {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 18px;
+}
+
+/* =========================
+   EN-TÊTE
+========================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 18px;
+  background: white;
+  box-shadow: 0 3px 12px rgba(70, 70, 50, 0.06);
+}
+
+.header .logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #edf4e9;
+  color: #65705f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 23px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+  color: #43503f;
+}
+
+.header p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #6b7266;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
 .frigo-intro {
   background: linear-gradient(135deg, #dce8d8, #f4d8c8);
   border-radius: 24px;
@@ -37,13 +99,19 @@ gtag('config', 'G-2E73FD8V9V');
 .frigo-intro h2 {
   margin: 0 0 10px;
   color: #40534a;
+  font-size: 22px;
 }
 
 .frigo-intro p {
   margin: 0;
   line-height: 1.5;
   color: #617268;
+  font-size: 14px;
 }
+
+/* =========================
+   SECTION ALIMENTS
+========================= */
 
 .aliments-section {
   background: white;
@@ -55,6 +123,7 @@ gtag('config', 'G-2E73FD8V9V');
 .aliments-section h3 {
   margin: 0 0 8px;
   color: #40534a;
+  font-size: 18px;
 }
 
 .aliments-section > p {
@@ -62,6 +131,10 @@ gtag('config', 'G-2E73FD8V9V');
   color: #6b776f;
   font-size: 14px;
 }
+
+/* =========================
+   GRILLE ALIMENTS
+========================= */
 
 .aliments-grid {
   display: grid;
@@ -101,6 +174,10 @@ gtag('config', 'G-2E73FD8V9V');
   font-weight: bold;
 }
 
+/* =========================
+   COMPTEUR
+========================= */
+
 .compteur {
   text-align: center;
   margin: 18px 0 10px;
@@ -110,7 +187,12 @@ gtag('config', 'G-2E73FD8V9V');
 
 .compteur strong {
   color: #668b6e;
+  font-size: 17px;
 }
+
+/* =========================
+   BOUTON ANTI-GASPI
+========================= */
 
 .anti-gaspi-button {
   display: block;
@@ -132,6 +214,10 @@ gtag('config', 'G-2E73FD8V9V');
   background: #668b6e;
 }
 
+/* =========================
+   BOUTON EFFACER
+========================= */
+
 .reset-button {
   width: 100%;
   border: none;
@@ -142,6 +228,10 @@ gtag('config', 'G-2E73FD8V9V');
   cursor: pointer;
   font-size: 13px;
 }
+
+/* =========================
+   INFO
+========================= */
 
 .info-card {
   margin-top: 18px;
@@ -154,6 +244,38 @@ gtag('config', 'G-2E73FD8V9V');
   color: #6b776f;
 }
 
+/* =========================
+   NAVIGATION BASSE
+========================= */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid #e4e4dc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 -5px 18px rgba(60, 60, 50, 0.08);
+}
+
+.bottom-nav a {
+  text-decoration: none;
+  color: #65705f;
+  font-size: 12px;
+  text-align: center;
+}
+
+.bottom-nav a span {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+
 </style>
 
 </head>
@@ -161,207 +283,200 @@ gtag('config', 'G-2E73FD8V9V');
 
 <body>
 
+<!-- =========================
+     EN-TÊTE
+========================= -->
 
 <header class="header">
 
-<a href="index.html" class="logo">←</a>
+  <a href="../../index.html" class="logo">←</a>
 
-<div>
-
-<h1>MA PETITE ASSIETTE</h1>
-
-<p>Des petites portions, mais un vrai repas.</p>
-
-</div>
+  <div>
+    <h1>MA PETITE ASSIETTE</h1>
+    <p>Des petites portions, mais un vrai repas.</p>
+  </div>
 
 </header>
 
 
 <main>
 
-
-<!-- INTRODUCTION -->
+<!-- =========================
+     INTRODUCTION
+========================= -->
 
 <section class="frigo-intro">
 
-<h2>🧊 Mon frigo</h2>
+  <h2>🧊 Mon frigo</h2>
 
-<p>
-Qu'avez-vous déjà à la maison ?
-Sélectionnez les aliments que vous souhaitez utiliser
-et Ma Petite Assiette vous proposera des idées pour éviter le gaspillage.
-</p>
+  <p>
+    Qu'avez-vous déjà à la maison ?
+    Sélectionnez les aliments que vous souhaitez utiliser
+    et Ma Petite Assiette vous proposera des idées
+    pour éviter le gaspillage.
+  </p>
 
 </section>
 
 
-<!-- ALIMENTS -->
+<!-- =========================
+     ALIMENTS
+========================= -->
 
 <section class="aliments-section">
 
-<h3>🥕 Ce que j'ai dans mon frigo</h3>
+  <h3>🥕 Ce que j'ai dans mon frigo</h3>
 
-<p>
-Sélectionnez tout ce que vous souhaitez utiliser.
-</p>
-
-
-<div class="aliments-grid">
+  <p>
+    Sélectionnez tout ce que vous souhaitez utiliser.
+  </p>
 
 
-<div class="aliment">
-<input type="checkbox" id="oeufs" value="oeuf">
-<label for="oeufs">🥚 Œufs</label>
-</div>
+  <div class="aliments-grid">
+
+    <div class="aliment">
+      <input type="checkbox" id="oeufs" value="oeuf">
+      <label for="oeufs">🥚 Œufs</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="lait" value="lait">
+      <label for="lait">🥛 Lait</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="fromage" value="fromage">
+      <label for="fromage">🧀 Fromage</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="yaourt" value="yaourt">
+      <label for="yaourt">🥛 Yaourt</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="poulet" value="poulet">
+      <label for="poulet">🍗 Poulet</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="jambon" value="jambon">
+      <label for="jambon">🥩 Jambon</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="thon" value="thon">
+      <label for="thon">🐟 Thon</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="saumon" value="saumon">
+      <label for="saumon">🐟 Saumon</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="courgette" value="courgette">
+      <label for="courgette">🥒 Courgette</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="tomate" value="tomate">
+      <label for="tomate">🍅 Tomate</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="carotte" value="carotte">
+      <label for="carotte">🥕 Carotte</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="pommeTerre" value="pomme de terre">
+      <label for="pommeTerre">🥔 Pomme de terre</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="poireau" value="poireau">
+      <label for="poireau">🥬 Poireau</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="champignon" value="champignon">
+      <label for="champignon">🍄 Champignon</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="oignon" value="oignon">
+      <label for="oignon">🧅 Oignon</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="salade" value="salade">
+      <label for="salade">🥗 Salade</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="riz" value="riz">
+      <label for="riz">🍚 Riz</label>
+    </div>
+
+    <div class="aliment">
+      <input type="checkbox" id="pates" value="pates">
+      <label for="pates">🍝 Pâtes</label>
+    </div>
+
+  </div>
 
 
-<div class="aliment">
-<input type="checkbox" id="lait" value="lait">
-<label for="lait">🥛 Lait</label>
-</div>
+  <!-- COMPTEUR -->
+
+  <div class="compteur">
+
+    <strong id="nombreSelection">0</strong>
+    aliment(s) sélectionné(s)
+
+  </div>
 
 
-<div class="aliment">
-<input type="checkbox" id="fromage" value="fromage">
-<label for="fromage">🧀 Fromage</label>
-</div>
+  <!-- BOUTON ANTI-GASPI -->
+
+  <a
+    href="restes.html"
+    class="anti-gaspi-button"
+    onclick="return preparerRecherche()"
+  >
+    ♻️ Trouver mes recettes anti-gaspi
+  </a>
 
 
-<div class="aliment">
-<input type="checkbox" id="yaourt" value="yaourt">
-<label for="yaourt">🥛 Yaourt</label>
-</div>
+  <!-- EFFACER -->
+
+  <button
+    class="reset-button"
+    onclick="reinitialiserFrigo()"
+  >
+    Effacer ma sélection
+  </button>
 
 
-<div class="aliment">
-<input type="checkbox" id="poulet" value="poulet">
-<label for="poulet">🍗 Poulet</label>
-</div>
+  <!-- CONSEIL -->
 
+  <div class="info-card">
 
-<div class="aliment">
-<input type="checkbox" id="jambon" value="jambon">
-<label for="jambon">🥩 Jambon</label>
-</div>
+    💡 <strong>Astuce :</strong>
+    sélectionnez plusieurs aliments.
+    Les recettes seront ensuite recherchées à partir
+    de ce que vous avez déjà chez vous.
 
-
-<div class="aliment">
-<input type="checkbox" id="thon" value="thon">
-<label for="thon">🐟 Thon</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="saumon" value="saumon">
-<label for="saumon">🐟 Saumon</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="courgette" value="courgette">
-<label for="courgette">🥒 Courgette</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="tomate" value="tomate">
-<label for="tomate">🍅 Tomate</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="carotte" value="carotte">
-<label for="carotte">🥕 Carotte</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="pommeTerre" value="pomme de terre">
-<label for="pommeTerre">🥔 Pomme de terre</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="poireau" value="poireau">
-<label for="poireau">🥬 Poireau</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="champignon" value="champignon">
-<label for="champignon">🍄 Champignon</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="oignon" value="oignon">
-<label for="oignon">🧅 Oignon</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="salade" value="salade">
-<label for="salade">🥗 Salade</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="riz" value="riz">
-<label for="riz">🍚 Riz</label>
-</div>
-
-
-<div class="aliment">
-<input type="checkbox" id="pates" value="pates">
-<label for="pates">🍝 Pâtes</label>
-</div>
-
-
-</div>
-
-
-<div class="compteur">
-
-<strong id="nombreSelection">0</strong>
-aliment(s) sélectionné(s)
-
-</div>
-
-
-<a
-href="restes.html"
-class="anti-gaspi-button"
-onclick="preparerRecherche()"
->
-♻️ Trouver mes recettes anti-gaspi
-</a>
-
-
-<button
-class="reset-button"
-onclick="reinitialiserFrigo()"
->
-Effacer ma sélection
-</button>
-
-
-<div class="info-card">
-
-💡 <strong>Astuce :</strong>
-sélectionnez plusieurs aliments.
-Les recettes seront ensuite recherchées à partir
-de ce que vous avez déjà chez vous.
-
-</div>
-
+  </div>
 
 </section>
-
 
 </main>
 
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION BASSE
+========================= -->
 
 <nav class="bottom-nav">
 
@@ -387,21 +502,27 @@ de ce que vous avez déjà chez vous.
 
 </nav>
 
-/* ==========================================
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* =========================
    GESTION DE LA SELECTION
-========================================== */
+========================= */
 
-
-const cases =
-document.querySelectorAll(
+const cases = document.querySelectorAll(
   '.aliment input[type="checkbox"]'
 );
 
 
-/* Charger une sélection déjà enregistrée */
+/* =========================
+   CHARGER LA SELECTION
+========================= */
 
-const alimentsEnregistres =
-JSON.parse(
+const alimentsEnregistres = JSON.parse(
   localStorage.getItem("monFrigo") || "[]"
 );
 
@@ -409,9 +530,7 @@ JSON.parse(
 cases.forEach(caseAliment => {
 
   if (
-    alimentsEnregistres.includes(
-      caseAliment.value
-    )
+    alimentsEnregistres.includes(caseAliment.value)
   ) {
 
     caseAliment.checked = true;
@@ -421,14 +540,15 @@ cases.forEach(caseAliment => {
 });
 
 
-/* Mettre à jour le compteur */
+/* =========================
+   METTRE A JOUR LE COMPTEUR
+========================= */
 
 function mettreAJourCompteur() {
 
-  const selection =
-    Array.from(cases)
-      .filter(c => c.checked)
-      .map(c => c.value);
+  const selection = Array.from(cases)
+    .filter(c => c.checked)
+    .map(c => c.value);
 
 
   document.getElementById(
@@ -444,6 +564,10 @@ function mettreAJourCompteur() {
 }
 
 
+/* =========================
+   ECOUTER LES CASES
+========================= */
+
 cases.forEach(caseAliment => {
 
   caseAliment.addEventListener(
@@ -454,14 +578,15 @@ cases.forEach(caseAliment => {
 });
 
 
-/* Préparer la recherche anti-gaspi */
+/* =========================
+   RECHERCHE ANTI-GASPI
+========================= */
 
 function preparerRecherche() {
 
-  const selection =
-    Array.from(cases)
-      .filter(c => c.checked)
-      .map(c => c.value);
+  const selection = Array.from(cases)
+    .filter(c => c.checked)
+    .map(c => c.value);
 
 
   localStorage.setItem(
@@ -486,12 +611,16 @@ function preparerRecherche() {
 }
 
 
-/* Réinitialiser */
+/* =========================
+   REINITIALISER
+========================= */
 
 function reinitialiserFrigo() {
 
   cases.forEach(
-    caseAliment => caseAliment.checked = false
+    caseAliment => {
+      caseAliment.checked = false;
+    }
   );
 
 
@@ -505,14 +634,13 @@ function reinitialiserFrigo() {
 }
 
 
-/* Initialisation */
+/* =========================
+   INITIALISATION
+========================= */
 
 mettreAJourCompteur();
 
-
 </script>
 
-
 </body>
-
 </html>
