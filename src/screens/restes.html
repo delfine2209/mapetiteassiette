@@ -1,1075 +1,1300 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>♻️ Anti-gaspi - Ma Petite Assiette</title>
-
-<link rel="stylesheet" href="style.css">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
-
-<script>
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){
-  dataLayer.push(arguments);
-}
-
-gtag('js', new Date());
-
-gtag('config', 'G-2E73FD8V9V');
-
-</script>
-
-
-<style>
-
-/* =========================================
-   INTRODUCTION
-========================================= */
-
-.anti-intro {
-
-  background: linear-gradient(
-    135deg,
-    #dce8d8,
-    #f4d8c8
-  );
-
-  border-radius: 24px;
-
-  padding: 22px;
-
-  margin-bottom: 20px;
-
-  text-align: center;
-
-}
-
-.anti-intro h2 {
-
-  margin: 0 0 10px;
-
-  color: #40534a;
-
-}
-
-.anti-intro p {
-
-  margin: 0;
-
-  line-height: 1.5;
-
-  color: #617268;
-
-}
-
-
-/* =========================================
-   SELECTION FRIGO
-========================================= */
-
-.selection-card {
-
-  background: white;
-
-  border-radius: 24px;
-
-  padding: 20px;
-
-  margin-bottom: 20px;
-
-  box-shadow:
-    0 6px 20px rgba(75,80,70,0.08);
-
-}
-
-.selection-card h3 {
-
-  margin: 0 0 8px;
-
-  color: #40534a;
-
-}
-
-.selection-card p {
-
-  margin: 0 0 15px;
-
-  color: #6b776f;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-
-}
-
-.aliments-selection {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 8px;
-
-}
-
-.aliment-tag {
-
-  background: #edf5ed;
-
-  border: 1px solid #c9ddcc;
-
-  color: #54705a;
-
-  padding: 7px 11px;
-
-  border-radius: 20px;
-
-  font-size: 13px;
-
-}
-
-
-/* =========================================
-   BOUTON FRIGO
-========================================= */
-
-.frigo-button {
-
-  display: block;
-
-  width: 100%;
-
-  text-align: center;
-
-  padding: 15px;
-
-  border-radius: 18px;
-
-  background: #789b80;
-
-  color: white;
-
-  text-decoration: none;
-
-  font-weight: bold;
-
-  margin-top: 15px;
-
-}
-
-.frigo-button:hover {
-
-  background: #668b6e;
-
-}
-
-
-/* =========================================
-   RESULTATS
-========================================= */
-
-.resultats-header {
-
-  margin: 25px 4px 12px;
-
-}
-
-.resultats-header h3 {
-
-  margin: 0 0 5px;
-
-  color: #40534a;
-
-}
-
-.resultats-header p {
-
-  margin: 0;
-
-  color: #748078;
-
-  font-size: 14px;
-
-}
-
-
-/* =========================================
-   CARTE RECETTE
-========================================= */
-
-.recette-card {
-
-  background: white;
-
-  border-radius: 22px;
-
-  padding: 18px;
-
-  margin-bottom: 14px;
-
-  box-shadow:
-    0 5px 18px rgba(75,80,70,0.07);
-
-}
-
-.recette-card h4 {
-
-  margin: 0 0 8px;
-
-  font-size: 17px;
-
-  color: #40534a;
-
-}
-
-.recette-info {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 7px;
-
-  margin-bottom: 12px;
-
-}
-
-.info {
-
-  background: #f6f1eb;
-
-  border-radius: 14px;
-
-  padding: 5px 9px;
-
-  font-size: 11px;
-
-  color: #68746d;
-
-}
-
-.correspondance {
-
-  padding: 10px 12px;
-
-  border-radius: 14px;
-
-  background: #edf5ed;
-
-  color: #54705a;
-
-  font-size: 13px;
-
-  margin-bottom: 12px;
-
-}
-
-.correspondance.attention {
-
-  background: #fff5df;
-
-  color: #896d38;
-
-}
-
-.ingredients-trouves {
-
-  font-size: 12px;
-
-  color: #748078;
-
-  line-height: 1.5;
-
-  margin-bottom: 12px;
-
-}
-
-.recette-button {
-
-  display: block;
-
-  text-align: center;
-
-  padding: 12px;
-
-  border-radius: 15px;
-
-  background: #789b80;
-
-  color: white;
-
-  text-decoration: none;
-
-  font-weight: bold;
-
-  font-size: 14px;
-
-}
-
-.recette-button:hover {
-
-  background: #668b6e;
-
-}
-
-
-/* =========================================
-   AUCUN RESULTAT
-========================================= */
-
-.empty {
-
-  background: white;
-
-  border-radius: 22px;
-
-  padding: 25px 20px;
-
-  text-align: center;
-
-  box-shadow:
-    0 5px 18px rgba(75,80,70,0.07);
-
-}
-
-.empty-icon {
-
-  font-size: 40px;
-
-  margin-bottom: 10px;
-
-}
-
-.empty h3 {
-
-  margin: 0 0 8px;
-
-  color: #40534a;
-
-}
-
-.empty p {
-
-  margin: 0;
-
-  color: #748078;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-
-}
-
-
-/* =========================================
-   CHARGEMENT
-========================================= */
-
-.loading {
-
-  text-align: center;
-
-  padding: 25px;
-
-  color: #748078;
-
-}
-
-
-/* =========================================
-   BADGE
-========================================= */
-
-.badge-match {
-
-  display: inline-block;
-
-  background: #789b80;
-
-  color: white;
-
-  border-radius: 15px;
-
-  padding: 4px 9px;
-
-  font-size: 11px;
-
-  margin-bottom: 8px;
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Anti-gaspi - Ma Petite Assiette</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2E73FD8V9V');
+  </script>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3d342e;
+      padding-bottom: 90px;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background: #fff;
+      padding: 18px 20px 15px;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back {
+      text-decoration: none;
+      font-size: 26px;
+      color: #5b4a42;
+    }
+
+    header h1 {
+      font-size: 23px;
+      color: #5b4a42;
+    }
+
+    /* =========================
+       CONTENU
+    ========================= */
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px 16px 30px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .intro h2 {
+      font-size: 25px;
+      margin-bottom: 8px;
+      color: #6d5145;
+    }
+
+    .intro p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #6f625b;
+    }
+
+    /* =========================
+       EXPLICATION
+    ========================= */
+
+    .info-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .info-card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: #6d5145;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #6f625b;
+    }
+
+    /* =========================
+       ALIMENTS À CONSOMMER
+    ========================= */
+
+    .section-title {
+      margin: 24px 0 12px;
+      font-size: 19px;
+      color: #5b4a42;
+    }
+
+    .urgence {
+      background: white;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .urgence-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 13px;
+    }
+
+    .urgence-title {
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .urgence-count {
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* =========================
+       ALIMENTS
+    ========================= */
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    .food {
+      border: 1px solid #e6ddd7;
+      background: #fffaf7;
+      border-radius: 12px;
+      padding: 11px 8px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .food:hover {
+      transform: translateY(-1px);
+    }
+
+    .food.selected {
+      border: 2px solid #9b705d;
+      background: #f7ebe4;
+      font-weight: bold;
+    }
+
+    .food span {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+
+    /* =========================
+       BOUTON
+    ========================= */
+
+    .main-button {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 15px;
+      padding: 15px;
+      margin: 20px 0;
+      background: #8c6655;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .secondary-button {
+      display: block;
+      width: 100%;
+      border: 1px solid #cdbeb5;
+      border-radius: 15px;
+      padding: 13px;
+      margin-top: 10px;
+      background: white;
+      color: #654f44;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* =========================
+       RESULTATS
+    ========================= */
+
+    .results {
+      margin-top: 25px;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 18px;
+      padding: 17px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .result-card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: #5b4a42;
+    }
+
+    .match {
+      display: inline-block;
+      background: #f2e6de;
+      color: #684e42;
+      border-radius: 20px;
+      padding: 5px 9px;
+      margin: 3px;
+      font-size: 12px;
+    }
+
+    .recipe-info {
+      font-size: 13px;
+      color: #777;
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
+    .recipe-link {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #f4ebe5;
+      color: #624b40;
+      padding: 11px;
+      border-radius: 12px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .empty {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+      color: #766a64;
+      line-height: 1.5;
+      margin-top: 15px;
+    }
+
+    /* =========================
+       NAVIGATION BASSE
+    ========================= */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: white;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 20;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #766a64;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    .bottom-nav span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+  </style>
 </head>
-
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-<!-- =========================================
-     HEADER
-========================================= -->
+  <header>
+    <div class="header-top">
 
-<header class="header">
+      <a href="../../index.html" class="back">←</a>
 
-<a href="frigo.html" class="logo">
-←
-</a>
+      <h1>♻️ Anti-gaspi</h1>
 
-<div>
+    </div>
+  </header>
 
-<h1>MA PETITE ASSIETTE</h1>
 
-<p>
-Des petites portions, mais un vrai repas.
-</p>
+  <!-- =========================
+       CONTENU
+  ========================= -->
 
-</div>
+  <main>
 
-</header>
+    <section class="intro">
 
+      <h2>♻️ À manger en priorité</h2>
 
+      <p>
+        Ici, pas besoin de refaire la liste de votre frigo.
+        Indiquez simplement les aliments qui doivent être consommés rapidement.
+      </p>
 
-<main>
+    </section>
 
 
-<!-- =========================================
-     INTRO
-========================================= -->
+    <!-- =========================
+         EXPLICATION
+    ========================= -->
 
-<section class="anti-intro">
+    <div class="info-card">
 
-<h2>♻️ Anti-gaspi</h2>
+      <h3>💡 Comment ça marche ?</h3>
 
-<p>
+      <p>
+        Sélectionnez les aliments dont la date limite approche
+        ou ceux qui sont déjà ouverts et doivent être consommés rapidement.
+        Ma Petite Assiette vous proposera ensuite des recettes
+        pour éviter le gaspillage.
+      </p>
 
-Utilisez ce que vous avez déjà chez vous
-et découvrez des recettes adaptées à vos restes.
+    </div>
 
-</p>
 
-</section>
+    <!-- =========================
+         AUJOURD'HUI
+    ========================= -->
 
+    <h2 class="section-title">
+      🔴 À consommer aujourd'hui
+    </h2>
 
+    <div class="urgence">
 
-<!-- =========================================
-     SELECTION ACTUELLE
-========================================= -->
+      <div class="urgence-header">
 
-<section
-class="selection-card"
-id="selectionCard"
->
-
-<h3>
-🧊 Ce que j'ai dans mon frigo
-</h3>
-
-<p>
-Voici les aliments sélectionnés dans votre frigo.
-</p>
-
-<div
-class="aliments-selection"
-id="alimentsSelection"
->
-
-</div>
-
-
-<a
-href="frigo.html"
-class="frigo-button"
->
-
-🧊 Modifier mon frigo
-
-</a>
-
-</section>
-
-
-
-<!-- =========================================
-     RESULTATS
-========================================= -->
-
-<div class="resultats-header">
-
-<h3>
-🍽️ Mes idées anti-gaspi
-</h3>
-
-<p id="nombreResultats">
-Recherche en cours...
-</p>
-
-</div>
-
-
-<div id="resultats">
-
-<div class="loading">
-
-♻️ Recherche des recettes...
-
-</div>
-
-</div>
-
-
-</main>
-
-
-
-<!-- =========================================
-     NAVIGATION
-========================================= -->
-
-<nav class="bottom-nav">
-
-  <a href="../../index.html">
-    <span>🏠</span>
-    Accueil
-  </a>
-
-  <a href="Recettes.html">
-    <span>🍴</span>
-    Recettes
-  </a>
-
-  <a href="Favoris.html">
-    <span>❤️</span>
-    Favoris
-  </a>
-
-  <a href="MonProfil.html">
-    <span>👤</span>
-    Profil
-  </a>
-
-</nav>
-
-/* =========================================
-   NORMALISATION DES TEXTES
-========================================= */
-
-function normaliser(texte) {
-
-  return texte
-
-    .toLowerCase()
-
-    .normalize("NFD")
-
-    .replace(/[\u0300-\u036f]/g, "")
-
-    .replace(/œ/g, "oe")
-
-    .replace(/æ/g, "ae");
-
-}
-
-
-
-/* =========================================
-   ALIMENTS SELECTIONNES
-========================================= */
-
-const aliments = JSON.parse(
-
-  localStorage.getItem("monFrigo") || "[]"
-
-);
-
-
-
-/* =========================================
-   AFFICHER LA SELECTION
-========================================= */
-
-function afficherSelection() {
-
-  const zone =
-    document.getElementById(
-      "alimentsSelection"
-    );
-
-
-  zone.innerHTML = "";
-
-
-  if (aliments.length === 0) {
-
-    zone.innerHTML = `
-
-      <span class="aliment-tag">
-        Aucun aliment sélectionné
-      </span>
-
-    `;
-
-    return;
-
-  }
-
-
-  aliments.forEach(aliment => {
-
-    const tag =
-      document.createElement("span");
-
-    tag.className = "aliment-tag";
-
-    tag.textContent =
-      "✓ " + aliment;
-
-    zone.appendChild(tag);
-
-  });
-
-}
-
-
-
-/* =========================================
-   RECHERCHE DES RECETTES
-========================================= */
-
-async function rechercherRecettes() {
-
-
-  const zone =
-    document.getElementById(
-      "resultats"
-    );
-
-
-  const compteur =
-    document.getElementById(
-      "nombreResultats"
-    );
-
-
-  if (aliments.length === 0) {
-
-    compteur.textContent =
-      "Aucun aliment sélectionné";
-
-
-    zone.innerHTML = `
-
-      <div class="empty">
-
-        <div class="empty-icon">
-          🧊
+        <div class="urgence-title">
+          Produits très urgents
         </div>
 
-        <h3>
-          Votre frigo est vide
-        </h3>
-
-        <p>
-          Sélectionnez quelques aliments
-          dans votre frigo pour découvrir
-          des recettes anti-gaspi.
-        </p>
-
-        <a
-          href="frigo.html"
-          class="frigo-button"
-        >
-          🧊 Ouvrir mon frigo
-        </a>
+        <div class="urgence-count" id="countAujourdHui">
+          0 sélectionné
+        </div>
 
       </div>
 
-    `;
+      <div class="food-grid">
 
-    return;
+        <button class="food" data-food="jambon" data-urgence="aujourdhui">
+          <span>🥩</span>
+          Jambon
+        </button>
 
-  }
+        <button class="food" data-food="poulet" data-urgence="aujourdhui">
+          <span>🍗</span>
+          Poulet
+        </button>
+
+        <button class="food" data-food="poisson" data-urgence="aujourdhui">
+          <span>🐟</span>
+          Poisson
+        </button>
+
+        <button class="food" data-food="saumon" data-urgence="aujourdhui">
+          <span>🐟</span>
+          Saumon
+        </button>
+
+        <button class="food" data-food="viande hachee" data-urgence="aujourdhui">
+          <span>🥩</span>
+          Viande hachée
+        </button>
+
+        <button class="food" data-food="produit entame" data-urgence="aujourdhui">
+          <span>🥡</span>
+          Produit entamé
+        </button>
+
+      </div>
+
+    </div>
 
 
+    <!-- =========================
+         SOUS 2 JOURS
+    ========================= -->
 
-  try {
+    <h2 class="section-title">
+      🟠 À consommer sous 2 jours
+    </h2>
+
+    <div class="urgence">
+
+      <div class="urgence-header">
+
+        <div class="urgence-title">
+          Produits à surveiller
+        </div>
+
+        <div class="urgence-count" id="countDeuxJours">
+          0 sélectionné
+        </div>
+
+      </div>
+
+      <div class="food-grid">
+
+        <button class="food" data-food="oeuf" data-urgence="deuxjours">
+          <span>🥚</span>
+          Œufs
+        </button>
+
+        <button class="food" data-food="yaourt" data-urgence="deuxjours">
+          <span>🥛</span>
+          Yaourt
+        </button>
+
+        <button class="food" data-food="fromage blanc" data-urgence="deuxjours">
+          <span>🥣</span>
+          Fromage blanc
+        </button>
+
+        <button class="food" data-food="fromage frais" data-urgence="deuxjours">
+          <span>🧀</span>
+          Fromage frais
+        </button>
+
+        <button class="food" data-food="creme" data-urgence="deuxjours">
+          <span>🥛</span>
+          Crème
+        </button>
+
+        <button class="food" data-food="tofu" data-urgence="deuxjours">
+          <span>🌱</span>
+          Tofu
+        </button>
+
+      </div>
+
+    </div>
 
 
-    /* -----------------------------------------
-       CHARGEMENT DU JSON
-    ----------------------------------------- */
+    <!-- =========================
+         SOUS 4 JOURS
+    ========================= -->
 
-    const reponse =
-      await fetch("../recettes.json");
+    <h2 class="section-title">
+      🟡 À consommer sous 4 jours
+    </h2>
+
+    <div class="urgence">
+
+      <div class="urgence-header">
+
+        <div class="urgence-title">
+          À prévoir bientôt
+        </div>
+
+        <div class="urgence-count" id="countQuatreJours">
+          0 sélectionné
+        </div>
+
+      </div>
+
+      <div class="food-grid">
+
+        <button class="food" data-food="courgette" data-urgence="quatrejours">
+          <span>🥒</span>
+          Courgette
+        </button>
+
+        <button class="food" data-food="tomate" data-urgence="quatrejours">
+          <span>🍅</span>
+          Tomate
+        </button>
+
+        <button class="food" data-food="champignon" data-urgence="quatrejours">
+          <span>🍄</span>
+          Champignons
+        </button>
+
+        <button class="food" data-food="salade" data-urgence="quatrejours">
+          <span>🥬</span>
+          Salade
+        </button>
+
+        <button class="food" data-food="poireau" data-urgence="quatrejours">
+          <span>🥬</span>
+          Poireau
+        </button>
+
+        <button class="food" data-food="carotte" data-urgence="quatrejours">
+          <span>🥕</span>
+          Carotte
+        </button>
+
+        <button class="food" data-food="pomme de terre" data-urgence="quatrejours">
+          <span>🥔</span>
+          Pomme de terre
+        </button>
+
+        <button class="food" data-food="oignon" data-urgence="quatrejours">
+          <span>🧅</span>
+          Oignon
+        </button>
+
+      </div>
+
+    </div>
 
 
-    if (!reponse.ok) {
+    <!-- =========================
+         BOUTON RECHERCHE
+    ========================= -->
 
-      throw new Error(
-        "Impossible de charger recettes.json"
+    <button class="main-button" onclick="chercherRecettes()">
+      🍽️ Trouver mes recettes anti-gaspi
+    </button>
+
+
+    <a href="frigo.html" class="secondary-button">
+      🧊 Gérer mon frigo
+    </a>
+
+
+    <!-- =========================
+         RESULTATS
+    ========================= -->
+
+    <section class="results">
+
+      <h2 class="section-title">
+        🍽️ Mes idées anti-gaspi
+      </h2>
+
+      <div id="resultats">
+
+        <div class="empty">
+          Sélectionnez les aliments à consommer rapidement,
+          puis cliquez sur « Trouver mes recettes anti-gaspi ».
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav class="bottom-nav">
+
+    <a href="../../index.html">
+      <span>🏠</span>
+      Accueil
+    </a>
+
+    <a href="Recettes.html">
+      <span>🍴</span>
+      Recettes
+    </a>
+
+    <a href="Favoris.html">
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a href="MonProfil.html">
+      <span>👤</span>
+      Profil
+    </a>
+
+  </nav>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* =====================================
+       NORMALISATION DES TEXTES
+    ===================================== */
+
+    function normaliser(texte) {
+
+      return String(texte || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+    }
+
+
+    /* =====================================
+       ALIMENTS SELECTIONNES
+    ===================================== */
+
+    let alimentsUrgents = [];
+
+
+    /* =====================================
+       CHARGEMENT DES SELECTIONS
+    ===================================== */
+
+    function chargerSelection() {
+
+      const sauvegarde =
+        localStorage.getItem("antiGaspi");
+
+      if (!sauvegarde) {
+        alimentsUrgents = [];
+        return;
+      }
+
+      try {
+
+        alimentsUrgents = JSON.parse(sauvegarde);
+
+        if (!Array.isArray(alimentsUrgents)) {
+          alimentsUrgents = [];
+        }
+
+      } catch (erreur) {
+
+        alimentsUrgents = [];
+
+      }
+
+    }
+
+
+    /* =====================================
+       SAUVEGARDE
+    ===================================== */
+
+    function sauvegarderSelection() {
+
+      localStorage.setItem(
+        "antiGaspi",
+        JSON.stringify(alimentsUrgents)
       );
 
     }
 
 
-    const recettes =
-      await reponse.json();
+    /* =====================================
+       SELECTION DES ALIMENTS
+    ===================================== */
 
+    function initialiserBoutons() {
 
+      const boutons =
+        document.querySelectorAll(".food");
 
-    /* -----------------------------------------
-       RECHERCHE
-    ----------------------------------------- */
+      boutons.forEach(function(bouton) {
 
-    const resultats = recettes
+        const aliment =
+          bouton.dataset.food;
 
-      .map(recette => {
-
-
-        const ingredients =
-          Array.isArray(
-            recette.ingredients
+        if (
+          alimentsUrgents.some(
+            item => item.aliment === aliment
           )
-            ? recette.ingredients
-            : [];
+        ) {
+
+          bouton.classList.add("selected");
+
+        }
 
 
-        const ingredientsNormalises =
-          ingredients.map(
-            ingredient =>
-              normaliser(
-                ingredient
-              )
-          );
+        bouton.addEventListener("click", function() {
 
+          const urgence =
+            bouton.dataset.urgence;
 
-        const correspondances = [];
-
-
-        aliments.forEach(aliment => {
-
-
-          const alimentNormalise =
-            normaliser(aliment);
-
-
-          const trouve =
-            ingredientsNormalises.some(
-              ingredient =>
-                ingredient.includes(
-                  alimentNormalise
-                )
+          const index =
+            alimentsUrgents.findIndex(
+              item => item.aliment === aliment
             );
 
 
-          if (trouve) {
+          if (index === -1) {
 
-            correspondances.push(
-              aliment
-            );
+            alimentsUrgents.push({
+              aliment: aliment,
+              urgence: urgence
+            });
+
+            bouton.classList.add("selected");
+
+          } else {
+
+            alimentsUrgents.splice(index, 1);
+
+            bouton.classList.remove("selected");
 
           }
+
+
+          sauvegarderSelection();
+
+          mettreAJourCompteurs();
+
+        });
+
+      });
+
+    }
+
+
+    /* =====================================
+       COMPTEURS
+    ===================================== */
+
+    function mettreAJourCompteurs() {
+
+      const aujourdHui =
+        alimentsUrgents.filter(
+          item => item.urgence === "aujourdhui"
+        ).length;
+
+      const deuxJours =
+        alimentsUrgents.filter(
+          item => item.urgence === "deuxjours"
+        ).length;
+
+      const quatreJours =
+        alimentsUrgents.filter(
+          item => item.urgence === "quatrejours"
+        ).length;
+
+
+      document.getElementById("countAujourdHui").textContent =
+        aujourdHui + (
+          aujourdHui > 1
+            ? " sélectionnés"
+            : " sélectionné"
+        );
+
+
+      document.getElementById("countDeuxJours").textContent =
+        deuxJours + (
+          deuxJours > 1
+            ? " sélectionnés"
+            : " sélectionné"
+        );
+
+
+      document.getElementById("countQuatreJours").textContent =
+        quatreJours + (
+          quatreJours > 1
+            ? " sélectionnés"
+            : " sélectionné"
+        );
+
+    }
+
+
+    /* =====================================
+       CORRESPONDANCE ALIMENT / INGREDIENT
+    ===================================== */
+
+    function alimentCorrespond(
+      aliment,
+      ingredients
+    ) {
+
+      const texteIngredients =
+        normaliser(
+          ingredients.join(" ")
+        );
+
+
+      const recherche =
+        normaliser(aliment);
+
+
+      /* Synonymes utiles */
+
+      const synonymes = {
+
+        "oeuf": [
+          "oeuf",
+          "oeufs",
+          "blanc doeuf",
+          "blancs doeufs"
+        ],
+
+        "jambon": [
+          "jambon"
+        ],
+
+        "poulet": [
+          "poulet"
+        ],
+
+        "poisson": [
+          "poisson",
+          "cabillaud",
+          "colin",
+          "merlu"
+        ],
+
+        "saumon": [
+          "saumon"
+        ],
+
+        "viande hachee": [
+          "viande hachee",
+          "boeuf hache",
+          "steak hache"
+        ],
+
+        "produit entame": [],
+
+        "yaourt": [
+          "yaourt",
+          "yogourt"
+        ],
+
+        "fromage blanc": [
+          "fromage blanc"
+        ],
+
+        "fromage frais": [
+          "fromage frais",
+          "carre frais",
+          "cottage cheese",
+          "ricotta"
+        ],
+
+        "creme": [
+          "creme"
+        ],
+
+        "tofu": [
+          "tofu"
+        ],
+
+        "courgette": [
+          "courgette",
+          "courgettes"
+        ],
+
+        "tomate": [
+          "tomate",
+          "tomates"
+        ],
+
+        "champignon": [
+          "champignon",
+          "champignons"
+        ],
+
+        "salade": [
+          "salade",
+          "laitue"
+        ],
+
+        "poireau": [
+          "poireau",
+          "poireaux"
+        ],
+
+        "carotte": [
+          "carotte",
+          "carottes"
+        ],
+
+        "pomme de terre": [
+          "pomme de terre",
+          "pommes de terre"
+        ],
+
+        "oignon": [
+          "oignon",
+          "oignons"
+        ]
+
+      };
+
+
+      const termes =
+        synonymes[recherche] || [recherche];
+
+
+      return termes.some(function(terme) {
+
+        return texteIngredients.includes(
+          normaliser(terme)
+        );
+
+      });
+
+    }
+
+
+    /* =====================================
+       CHERCHE LES RECETTES
+    ===================================== */
+
+    async function chercherRecettes() {
+
+      const zone =
+        document.getElementById("resultats");
+
+
+      if (alimentsUrgents.length === 0) {
+
+        zone.innerHTML = `
+          <div class="empty">
+            ⚠️ Vous n'avez sélectionné aucun aliment
+            à consommer rapidement.
+            <br><br>
+            Sélectionnez au moins un aliment ci-dessus.
+          </div>
+        `;
+
+        return;
+
+      }
+
+
+      zone.innerHTML = `
+        <div class="empty">
+          🔎 Recherche de recettes...
+        </div>
+      `;
+
+
+      try {
+
+        const reponse =
+          await fetch("../recettes.json");
+
+
+        if (!reponse.ok) {
+          throw new Error(
+            "Impossible de charger recettes.json"
+          );
+        }
+
+
+        const recettes =
+          await reponse.json();
+
+
+        const resultats =
+          recettes.map(function(recette) {
+
+            const alimentsTrouves =
+              alimentsUrgents.filter(function(item) {
+
+                return alimentCorrespond(
+                  item.aliment,
+                  recette.ingredients || []
+                );
+
+              });
+
+
+            let score = 0;
+
+            alimentsTrouves.forEach(function(item) {
+
+              /* Un aliment à consommer aujourd'hui
+                 donne davantage de priorité */
+
+              if (
+                item.urgence === "aujourdhui"
+              ) {
+
+                score += 3;
+
+              } else if (
+                item.urgence === "deuxjours"
+              ) {
+
+                score += 2;
+
+              } else {
+
+                score += 1;
+
+              }
+
+            });
+
+
+            return {
+              recette: recette,
+              alimentsTrouves: alimentsTrouves,
+              score: score
+            };
+
+          })
+          .filter(function(resultat) {
+
+            return resultat.alimentsTrouves.length > 0;
+
+          });
+
+
+        /* =================================
+           TRI
+        ================================= */
+
+        resultats.sort(function(a, b) {
+
+          if (b.score !== a.score) {
+            return b.score - a.score;
+          }
+
+          return (
+            b.alimentsTrouves.length -
+            a.alimentsTrouves.length
+          );
 
         });
 
 
-        return {
-
-          recette: recette,
-
-          correspondances:
-            correspondances,
-
-          score:
-            correspondances.length
-
-        };
-
-      })
-
-      .filter(
-        resultat =>
-          resultat.score > 0
-      )
-
-      .sort(
-        (a, b) =>
-          b.score - a.score
-      );
+        afficherResultats(resultats);
 
 
+        /* Google Analytics */
 
-    /* -----------------------------------------
-       AFFICHAGE
-    ----------------------------------------- */
+        if (typeof gtag === "function") {
 
-    compteur.textContent =
-      resultats.length +
-      (
-        resultats.length > 1
-          ? " recettes correspondent"
-          : " recette correspond"
-      );
+          gtag(
+            "event",
+            "recherche_anti_gaspi",
+            {
+              nombre_aliments:
+                alimentsUrgents.length,
+
+              nombre_recettes:
+                resultats.length
+            }
+          );
+
+        }
 
 
+      } catch (erreur) {
 
-    if (resultats.length === 0) {
+        console.error(erreur);
 
 
-      zone.innerHTML = `
+        zone.innerHTML = `
+          <div class="empty">
 
-        <div class="empty">
+            ❌ Impossible de charger les recettes.
 
-          <div class="empty-icon">
-            🌱
+            <br><br>
+
+            Vérifiez que le fichier
+            <strong>recettes.json</strong>
+            est bien présent dans le dossier
+            <strong>src</strong>.
+
           </div>
+        `;
 
-          <h3>
-            Pas encore de recette
-          </h3>
+      }
 
-          <p>
+    }
 
-            Nous n'avons pas trouvé
-            de recette utilisant les aliments
-            sélectionnés.
+
+    /* =====================================
+       AFFICHAGE DES RESULTATS
+    ===================================== */
+
+    function afficherResultats(resultats) {
+
+      const zone =
+        document.getElementById("resultats");
+
+
+      if (resultats.length === 0) {
+
+        zone.innerHTML = `
+          <div class="empty">
+
+            😕 Aucune recette ne correspond
+            aux aliments sélectionnés.
 
             <br><br>
 
             Essayez de sélectionner
-            d'autres aliments.
-
-          </p>
-
-
-          <a
-            href="frigo.html"
-            class="frigo-button"
-          >
-
-            🧊 Modifier ma sélection
-
-          </a>
-
-        </div>
-
-      `;
-
-
-      return;
-
-    }
-
-
-
-    zone.innerHTML = "";
-
-
-
-    resultats.forEach(
-      resultat => {
-
-
-        const recette =
-          resultat.recette;
-
-
-        const correspondances =
-          resultat.correspondances;
-
-
-        const carte =
-          document.createElement(
-            "div"
-          );
-
-
-        carte.className =
-          "recette-card";
-
-
-
-        const pourcentage =
-          Math.round(
-            (
-              correspondances.length /
-              aliments.length
-            ) * 100
-          );
-
-
-
-        const message =
-          correspondances.length ===
-          aliments.length
-
-            ? "🟢 Vous avez tous les aliments sélectionnés"
-
-            : "🟠 Vous avez " +
-              correspondances.length +
-              " aliment(s) correspondant(s)";
-
-
-
-        carte.innerHTML = `
-
-          <span class="badge-match">
-
-            ${pourcentage}% de correspondance
-
-          </span>
-
-
-          <h4>
-
-            ${recette.nom}
-
-          </h4>
-
-
-          <div class="recette-info">
-
-            <span class="info">
-              ⏱️ ${recette.temps || "—"} min
-            </span>
-
-            <span class="info">
-              🍽️ ${recette.portion || "Petite portion"}
-            </span>
-
-            <span class="info">
-              💪 ${recette.proteines || "—"} g protéines
-            </span>
+            plusieurs aliments différents.
 
           </div>
-
-
-          <div
-            class="correspondance
-            ${correspondances.length === aliments.length
-              ? ""
-              : "attention"}"
-          >
-
-            ${message}
-
-          </div>
-
-
-          <div class="ingredients-trouves">
-
-            <strong>Aliments utilisés :</strong>
-
-            ${correspondances.join(", ")}
-
-          </div>
-
-
-          <a
-            href="Recette.html?id=${encodeURIComponent(recette.id)}"
-            class="recette-button"
-          >
-
-            🍽️ Voir la recette
-
-          </a>
-
         `;
 
-
-        zone.appendChild(carte);
+        return;
 
       }
 
-    );
+
+      zone.innerHTML = "";
 
 
-    /* -----------------------------------------
-       GOOGLE ANALYTICS
-    ----------------------------------------- */
+      resultats
+        .slice(0, 20)
+        .forEach(function(resultat) {
 
-    if (
-      typeof gtag === "function"
-    ) {
+          const recette =
+            resultat.recette;
 
-      gtag(
-        "event",
-        "recherche_anti_gaspi",
-        {
-          "nombre_aliments":
-            aliments.length,
 
-          "nombre_resultats":
-            resultats.length
-        }
-      );
+          const aliments =
+            resultat.alimentsTrouves;
+
+
+          const totalUrgents =
+            aliments.length;
+
+
+          const correspondance =
+            Math.round(
+              (
+                totalUrgents /
+                alimentsUrgents.length
+              ) * 100
+            );
+
+
+          const carte =
+            document.createElement("div");
+
+
+          carte.className =
+            "result-card";
+
+
+          let badges = "";
+
+
+          aliments.forEach(function(item) {
+
+            const bouton =
+              document.querySelector(
+                `.food[data-food="${CSS.escape(item.aliment)}"]`
+              );
+
+
+            let nom =
+              item.aliment;
+
+
+            if (bouton) {
+
+              nom =
+                bouton.textContent
+                  .replace(/\s+/g, " ")
+                  .trim();
+
+            }
+
+
+            let couleur = "";
+
+            if (
+              item.urgence === "aujourdhui"
+            ) {
+
+              couleur = "🔴 ";
+
+            } else if (
+              item.urgence === "deuxjours"
+            ) {
+
+              couleur = "🟠 ";
+
+            } else {
+
+              couleur = "🟡 ";
+
+            }
+
+
+            badges +=
+              `<span class="match">
+                ${couleur}${nom}
+              </span>`;
+
+          });
+
+
+          carte.innerHTML = `
+
+            <h3>
+              ${recette.nom}
+            </h3>
+
+            <div class="recipe-info">
+
+              ♻️ ${correspondance}% de vos aliments urgents retrouvés
+
+              <br>
+
+              ⏱️ ${recette.temps || "—"} min
+
+              ${
+                recette.portion
+                  ? `<br>🍽️ ${recette.portion}`
+                  : ""
+              }
+
+              ${
+                recette.proteines
+                  ? `<br>💪 ${recette.proteines} g de protéines`
+                  : ""
+              }
+
+            </div>
+
+            <div>
+              ${badges}
+            </div>
+
+            <a
+              class="recipe-link"
+              href="Recette.html?id=${encodeURIComponent(recette.id)}"
+            >
+              👩‍🍳 Voir la recette
+            </a>
+
+          `;
+
+
+          zone.appendChild(carte);
+
+        });
 
     }
 
 
-  } catch (erreur) {
+    /* =====================================
+       INITIALISATION
+    ===================================== */
 
+    chargerSelection();
 
-    console.error(
-      "Erreur Anti-gaspi :",
-      erreur
-    );
+    initialiserBoutons();
 
+    mettreAJourCompteurs();
 
-    compteur.textContent =
-      "Erreur de chargement";
-
-
-    zone.innerHTML = `
-
-      <div class="empty">
-
-        <div class="empty-icon">
-          ⚠️
-        </div>
-
-        <h3>
-          Impossible de charger les recettes
-        </h3>
-
-        <p>
-          Vérifiez que le fichier
-          <strong>recettes.json</strong>
-          est bien accessible.
-        </p>
-
-      </div>
-
-    `;
-
-  }
-
-}
-
-
-
-/* =========================================
-   INITIALISATION
-========================================= */
-
-afficherSelection();
-
-rechercherRecettes();
-
-
-</script>
-
+  </script>
 
 </body>
-
 </html>
