@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Statistiques - Ma Petite Assiette</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-2E73FD8V9V');
+  </script>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #333;
+      padding-bottom: 90px;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .back {
+      text-decoration: none;
+      font-size: 25px;
+      color: #333;
+    }
+
+    header h1 {
+      font-size: 20px;
+      color: #5d4037;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px 16px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .intro h2 {
+      font-size: 25px;
+      color: #5d4037;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* INDICATEURS */
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 16px;
+      padding: 18px 12px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .stat-icon {
+      font-size: 28px;
+      margin-bottom: 7px;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: bold;
+      color: #6d4c41;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    /* SECTIONS */
+
+    .section {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .section h3 {
+      color: #5d4037;
+      margin-bottom: 18px;
+      font-size: 19px;
+    }
+
+    /* BARRES */
+
+    .bar-item {
+      margin-bottom: 16px;
+    }
+
+    .bar-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .bar-container {
+      height: 12px;
+      background: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      width: 0%;
+      border-radius: 20px;
+      background: #8d6e63;
+      transition: width 0.6s ease;
+    }
+
+    /* NOTES */
+
+    .rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      gap: 10px;
+    }
+
+    .rating-name {
+      font-size: 14px;
+      flex: 1;
+    }
+
+    .stars {
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .rating-value {
+      font-weight: bold;
+      min-width: 45px;
+      text-align: right;
+    }
+
+    /* PROFILS */
+
+    .profile-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 11px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .profile-row:last-child {
+      border-bottom: none;
+    }
+
+    .profile-count {
+      font-weight: bold;
+      color: #6d4c41;
+    }
+
+    /* TEXTES */
+
+    .feedback {
+      background: #fffaf5;
+      padding: 13px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .feedback strong {
+      color: #5d4037;
+    }
+
+    .empty {
+      text-align: center;
+      color: #777;
+      padding: 20px 5px;
+      line-height: 1.5;
+    }
+
+    /* BOUTONS */
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    button,
+    .button {
+      width: 100%;
+      border: none;
+      border-radius: 14px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+
+    .export {
+      background: #6d4c41;
+      color: white;
+    }
+
+    .refresh {
+      background: #eee;
+      color: #444;
+    }
+
+    .delete {
+      background: #f5e4e4;
+      color: #8b3a3a;
+    }
+
+    /* NAVIGATION */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: white;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 20;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .bottom-nav span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+
+    @media (min-width: 700px) {
+
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .buttons {
+        flex-direction: row;
+      }
+
+      .buttons button {
+        flex: 1;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<header>
+
+  <a href="../../index.html" class="back">←</a>
+
+  <h1>📊 Statistiques</h1>
+
+</header>
+
+
+<main>
+
+  <div class="intro">
+
+    <h2>Les retours utilisateurs</h2>
+
+    <p>
+      Voici les principaux indicateurs issus des questionnaires
+      de Ma Petite Assiette.
+    </p>
+
+  </div>
+
+
+  <!-- INDICATEURS PRINCIPAUX -->
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+
+      <div class="stat-icon">👥</div>
+
+      <div class="stat-value" id="totalResponses">
+        0
+      </div>
+
+      <div class="stat-label">
+        questionnaires
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon">⭐</div>
+
+      <div class="stat-value" id="globalRating">
+        -
+      </div>
+
+      <div class="stat-label">
+        satisfaction moyenne
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon">🍽️</div>
+
+      <div class="stat-value" id="recipesRating">
+        -
+      </div>
+
+      <div class="stat-label">
+        recettes
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon">😊</div>
+
+      <div class="stat-value" id="easyRating">
+        -
+      </div>
+
+      <div class="stat-label">
+        facilité d'utilisation
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- NOTES -->
+
+  <section class="section">
+
+    <h3>⭐ Évaluation de l'application</h3>
+
+    <div class="rating">
+
+      <div class="rating-name">
+        Facilité d'utilisation
+      </div>
+
+      <div class="stars" id="starsEasy">
+        -
+      </div>
+
+      <div class="rating-value" id="valueEasy">
+        -
+      </div>
+
+    </div>
+
+
+    <div class="rating">
+
+      <div class="rating-name">
+        Pertinence des recettes
+      </div>
+
+      <div class="stars" id="starsRecipes">
+        -
+      </div>
+
+      <div class="rating-value" id="valueRecipes">
+        -
+      </div>
+
+    </div>
+
+
+    <div class="rating">
+
+      <div class="rating-name">
+        Présentation
+      </div>
+
+      <div class="stars" id="starsPresentation">
+        -
+      </div>
+
+      <div class="rating-value" id="valuePresentation">
+        -
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROFILS -->
+
+  <section class="section">
+
+    <h3>👤 Profils des utilisateurs</h3>
+
+    <div id="profiles">
+
+      <div class="empty">
+        Aucune réponse pour le moment.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FONCTIONNALITES -->
+
+  <section class="section">
+
+    <h3>🔥 Fonctionnalités utilisées</h3>
+
+    <div id="features">
+
+      <div class="empty">
+        Aucune donnée disponible.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUGGESTIONS -->
+
+  <section class="section">
+
+    <h3>💡 Suggestions d'amélioration</h3>
+
+    <div id="suggestions">
+
+      <div class="empty">
+        Aucune suggestion pour le moment.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FONCTIONNALITES DEMANDEES -->
+
+  <section class="section">
+
+    <h3>🆕 Fonctionnalités demandées</h3>
+
+    <div id="requestedFeatures">
+
+      <div class="empty">
+        Aucune demande pour le moment.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DERNIERS COMMENTAIRES -->
+
+  <section class="section">
+
+    <h3>💬 Derniers commentaires</h3>
+
+    <div id="comments">
+
+      <div class="empty">
+        Aucun commentaire pour le moment.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ACTIONS -->
+
+  <div class="buttons">
+
+    <button
+      class="export"
+      onclick="exportCSV()"
+    >
+      📥 Exporter les réponses
+    </button>
+
+    <button
+      class="refresh"
+      onclick="chargerStatistiques()"
+    >
+      🔄 Actualiser
+    </button>
+
+    <button
+      class="delete"
+      onclick="supprimerDonnees()"
+    >
+      🗑️ Effacer les données locales
+    </button>
+
+  </div>
+
+</main>
+
+
+<!-- NAVIGATION -->
+
+<nav class="bottom-nav">
+
+  <a href="../../index.html">
+    <span>🏠</span>
+    Accueil
+  </a>
+
+  <a href="Recettes.html">
+    <span>🍴</span>
+    Recettes
+  </a>
+
+  <a href="Favoris.html">
+    <span>❤️</span>
+    Favoris
+  </a>
+
+  <a href="MonProfil.html">
+    <span>👤</span>
+    Profil
+  </a>
+
+</nav>
+
+
+<script>
+
+  /* =========================
+     RECUPERATION DES DONNEES
+  ========================= */
+
+  function recupererQuestionnaires() {
+
+    try {
+
+      const donnees =
+        localStorage.getItem("questionnairesMPA");
+
+      if (!donnees) {
+        return [];
+      }
+
+      const questionnaires = JSON.parse(donnees);
+
+      if (!Array.isArray(questionnaires)) {
+        return [];
+      }
+
+      return questionnaires;
+
+    } catch (erreur) {
+
+      console.error(
+        "Erreur lecture questionnaires :",
+        erreur
+      );
+
+      return [];
+
+    }
+
+  }
+
+
+  /* =========================
+     MOYENNE
+  ========================= */
+
+  function moyenne(valeurs) {
+
+    const nombres = valeurs
+      .map(Number)
+      .filter(
+        valeur =>
+          !isNaN(valeur) &&
+          valeur > 0
+      );
+
+    if (nombres.length === 0) {
+      return null;
+    }
+
+    const total =
+      nombres.reduce(
+        (somme, valeur) =>
+          somme + valeur,
+        0
+      );
+
+    return total / nombres.length;
+
+  }
+
+
+  /* =========================
+     ETOILES
+  ========================= */
+
+  function afficherEtoiles(note) {
+
+    if (note === null) {
+      return "-";
+    }
+
+    const arrondi =
+      Math.round(note);
+
+    return "★".repeat(arrondi) +
+           "☆".repeat(5 - arrondi);
+
+  }
+
+
+  /* =========================
+     STATISTIQUES
+  ========================= */
+
+  function chargerStatistiques() {
+
+    const questionnaires =
+      recupererQuestionnaires();
+
+
+    document.getElementById(
+      "totalResponses"
+    ).textContent =
+      questionnaires.length;
+
+
+    if (questionnaires.length === 0) {
+
+      document.getElementById(
+        "globalRating"
+      ).textContent = "-";
+
+      document.getElementById(
+        "recipesRating"
+      ).textContent = "-";
+
+      document.getElementById(
+        "easyRating"
+      ).textContent = "-";
+
+      return;
+
+    }
+
+
+    /* NOTES */
+
+    const facilite =
+      moyenne(
+        questionnaires.map(
+          q => q.notes?.facilite
+        )
+      );
+
+    const recettes =
+      moyenne(
+        questionnaires.map(
+          q => q.notes?.recettes
+        )
+      );
+
+    const presentation =
+      moyenne(
+        questionnaires.map(
+          q => q.notes?.presentation
+        )
+      );
+
+
+    const notesGlobales = [];
+
+    questionnaires.forEach(q => {
+
+      const notes = [
+        Number(q.notes?.facilite),
+        Number(q.notes?.recettes),
+        Number(q.notes?.presentation)
+      ].filter(n => !isNaN(n) && n > 0);
+
+      if (notes.length > 0) {
+
+        notesGlobales.push(
+          ...notes
+        );
+
+      }
+
+    });
+
+
+    const globale =
+      moyenne(notesGlobales);
+
+
+    document.getElementById(
+      "globalRating"
+    ).textContent =
+      globale !== null
+        ? globale.toFixed(1) + "/5"
+        : "-";
+
+
+    document.getElementById(
+      "recipesRating"
+    ).textContent =
+      recettes !== null
+        ? recettes.toFixed(1) + "/5"
+        : "-";
+
+
+    document.getElementById(
+      "easyRating"
+    ).textContent =
+      facilite !== null
+        ? facilite.toFixed(1) + "/5"
+        : "-";
+
+
+    document.getElementById(
+      "starsEasy"
+    ).textContent =
+      afficherEtoiles(facilite);
+
+
+    document.getElementById(
+      "valueEasy"
+    ).textContent =
+      facilite !== null
+        ? facilite.toFixed(1) + "/5"
+        : "-";
+
+
+    document.getElementById(
+      "starsRecipes"
+    ).textContent =
+      afficherEtoiles(recettes);
+
+
+    document.getElementById(
+      "valueRecipes"
+    ).textContent =
+      recettes !== null
+        ? recettes.toFixed(1) + "/5"
+        : "-";
+
+
+    document.getElementById(
+      "starsPresentation"
+    ).textContent =
+      afficherEtoiles(presentation);
+
+
+    document.getElementById(
+      "valuePresentation"
+    ).textContent =
+      presentation !== null
+        ? presentation.toFixed(1) + "/5"
+        : "-";
+
+
+    afficherProfils(questionnaires);
+
+    afficherFonctionnalites(questionnaires);
+
+    afficherSuggestions(questionnaires);
+
+    afficherDemandes(questionnaires);
+
+    afficherCommentaires(questionnaires);
+
+  }
+
+
+  /* =========================
+     PROFILS
+  ========================= */
+
+  function afficherProfils(questionnaires) {
+
+    const compteur = {};
+
+    questionnaires.forEach(q => {
+
+      const profil =
+        q.profil ||
+        "Non renseigné";
+
+      compteur[profil] =
+        (compteur[profil] || 0) + 1;
+
+    });
+
+
+    const container =
+      document.getElementById(
+        "profiles"
+      );
+
+    container.innerHTML = "";
+
+
+    const profils =
+      Object.entries(compteur)
+      .sort(
+        (a, b) =>
+          b[1] - a[1]
+      );
+
+
+    if (profils.length === 0) {
+
+      container.innerHTML =
+        '<div class="empty">Aucune donnée disponible.</div>';
+
+      return;
+
+    }
+
+
+    profils.forEach(
+      ([profil, nombre]) => {
+
+        const ligne =
+          document.createElement("div");
+
+        ligne.className =
+          "profile-row";
+
+        ligne.innerHTML = `
+          <span>${profil}</span>
+          <span class="profile-count">
+            ${nombre}
+          </span>
+        `;
+
+        container.appendChild(ligne);
+
+      }
+    );
+
+  }
+
+
+  /* =========================
+     FONCTIONNALITES
+  ========================= */
+
+  function afficherFonctionnalites(questionnaires) {
+
+    const compteur = {};
+
+    questionnaires.forEach(q => {
+
+      let fonctions =
+        q.fonctionnalites ||
+        q.features ||
+        [];
+
+      if (!Array.isArray(fonctions)) {
+        fonctions = [];
+      }
+
+      fonctions.forEach(
+        fonction => {
+
+          if (!fonction) {
+            return;
+          }
+
+          compteur[fonction] =
+            (compteur[fonction] || 0) + 1;
+
+        }
+      );
+
+    });
+
+
+    const container =
+      document.getElementById(
+        "features"
+      );
+
+    container.innerHTML = "";
+
+
+    const fonctions =
+      Object.entries(compteur)
+      .sort(
+        (a, b) =>
+          b[1] - a[1]
+      );
+
+
+    if (fonctions.length === 0) {
+
+      container.innerHTML =
+        '<div class="empty">Aucune fonctionnalité renseignée.</div>';
+
+      return;
+
+    }
+
+
+    const maximum =
+      fonctions[0][1];
+
+
+    fonctions.forEach(
+      ([nom, nombre]) => {
+
+        const pourcentage =
+          (nombre / maximum) * 100;
+
+
+        const item =
+          document.createElement("div");
+
+        item.className =
+          "bar-item";
+
+        item.innerHTML = `
+          <div class="bar-header">
+            <span>${nom}</span>
+            <strong>${nombre}</strong>
+          </div>
+
+          <div class="bar-container">
+            <div
+              class="bar"
+              style="width:${pourcentage}%"
+            ></div>
+          </div>
+        `;
+
+        container.appendChild(item);
+
+      }
+    );
+
+  }
+
+
+  /* =========================
+     SUGGESTIONS
+  ========================= */
+
+  function afficherSuggestions(questionnaires) {
+
+    const container =
+      document.getElementById(
+        "suggestions"
+      );
+
+    container.innerHTML = "";
+
+
+    let trouve = false;
+
+
+    [...questionnaires]
+      .reverse()
+      .forEach(q => {
+
+        const texte =
+          q.suggestions ||
+          q.amelioration ||
+          q.idees ||
+          "";
+
+
+        if (!texte || !texte.trim()) {
+          return;
+        }
+
+
+        trouve = true;
+
+
+        const div =
+          document.createElement("div");
+
+        div.className =
+          "feedback";
+
+        div.innerHTML =
+          "<strong>💡</strong> " +
+          escapeHTML(texte);
+
+
+        container.appendChild(div);
+
+      });
+
+
+    if (!trouve) {
+
+      container.innerHTML =
+        '<div class="empty">Aucune suggestion pour le moment.</div>';
+
+    }
+
+  }
+
+
+  /* =========================
+     DEMANDES
+  ========================= */
+
+  function afficherDemandes(questionnaires) {
+
+    const container =
+      document.getElementById(
+        "requestedFeatures"
+      );
+
+    container.innerHTML = "";
+
+
+    let trouve = false;
+
+
+    [...questionnaires]
+      .reverse()
+      .forEach(q => {
+
+        const texte =
+          q.fonctionnaliteDemandee ||
+          q.fonctionDemandee ||
+          q.demande ||
+          "";
+
+
+        if (!texte || !texte.trim()) {
+          return;
+        }
+
+
+        trouve = true;
+
+
+        const div =
+          document.createElement("div");
+
+        div.className =
+          "feedback";
+
+        div.innerHTML =
+          "<strong>🆕</strong> " +
+          escapeHTML(texte);
+
+
+        container.appendChild(div);
+
+      });
+
+
+    if (!trouve) {
+
+      container.innerHTML =
+        '<div class="empty">Aucune fonctionnalité demandée.</div>';
+
+    }
+
+  }
+
+
+  /* =========================
+     COMMENTAIRES
+  ========================= */
+
+  function afficherCommentaires(questionnaires) {
+
+    const container =
+      document.getElementById(
+        "comments"
+      );
+
+    container.innerHTML = "";
+
+
+    let trouve = false;
+
+
+    [...questionnaires]
+      .reverse()
+      .slice(0, 20)
+      .forEach(q => {
+
+        const texte =
+          q.commentaire ||
+          q.commentaires ||
+          q.message ||
+          "";
+
+
+        if (!texte || !texte.trim()) {
+          return;
+        }
+
+
+        trouve = true;
+
+
+        const div =
+          document.createElement("div");
+
+        div.className =
+          "feedback";
+
+        div.innerHTML =
+          "<strong>💬</strong> " +
+          escapeHTML(texte);
+
+
+        container.appendChild(div);
+
+      });
+
+
+    if (!trouve) {
+
+      container.innerHTML =
+        '<div class="empty">Aucun commentaire pour le moment.</div>';
+
+    }
+
+  }
+
+
+  /* =========================
+     SECURITE AFFICHAGE TEXTE
+  ========================= */
+
+  function escapeHTML(texte) {
+
+    return String(texte)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =========================
+     EXPORT CSV
+  ========================= */
+
+  function exportCSV() {
+
+    const questionnaires =
+      recupererQuestionnaires();
+
+
+    if (questionnaires.length === 0) {
+
+      alert(
+        "Aucune réponse à exporter."
+      );
+
+      return;
+
+    }
+
+
+    const lignes = [
+
+      [
+        "Date",
+        "Identifiant",
+        "Profil",
+        "Fonctionnalités",
+        "Facilité",
+        "Recettes",
+        "Présentation",
+        "Amélioration",
+        "Fonctionnalité demandée",
+        "Commentaire"
+      ]
+
+    ];
+
+
+    questionnaires.forEach(q => {
+
+      lignes.push([
+
+        q.date || "",
+
+        q.identifiantUtilisateur || "",
+
+        q.profil || "",
+
+        Array.isArray(q.fonctionnalites)
+          ? q.fonctionnalites.join(" | ")
+          : "",
+
+        q.notes?.facilite || "",
+
+        q.notes?.recettes || "",
+
+        q.notes?.presentation || "",
+
+        q.suggestions ||
+        q.amelioration ||
+        "",
+
+        q.fonctionnaliteDemandee ||
+        q.fonctionDemandee ||
+        "",
+
+        q.commentaire ||
+        q.commentaires ||
+        ""
+
+      ]);
+
+    });
+
+
+    const csv =
+      lignes
+        .map(
+          ligne =>
+            ligne
+              .map(
+                cellule =>
+                  '"' +
+                  String(cellule)
+                    .replace(/"/g, '""') +
+                  '"'
+              )
+              .join(";")
+        )
+        .join("\n");
+
+
+    const blob =
+      new Blob(
+        ["\ufeff" + csv],
+        {
+          type:
+            "text/csv;charset=utf-8;"
+        }
+      );
+
+
+    const url =
+      URL.createObjectURL(blob);
+
+
+    const lien =
+      document.createElement("a");
+
+    lien.href = url;
+
+    lien.download =
+      "questionnaires-ma-petite-assiette.csv";
+
+    document.body.appendChild(lien);
+
+    lien.click();
+
+    document.body.removeChild(lien);
+
+    URL.revokeObjectURL(url);
+
+
+    if (typeof gtag === "function") {
+
+      gtag(
+        "event",
+        "export_questionnaires",
+        {
+          nombre_reponses:
+            questionnaires.length
+        }
+      );
+
+    }
+
+  }
+
+
+  /* =========================
+     SUPPRESSION
+  ========================= */
+
+  function supprimerDonnees() {
+
+    const confirmation =
+      confirm(
+        "Voulez-vous vraiment supprimer toutes les réponses enregistrées sur cet appareil ?"
+      );
+
+
+    if (!confirmation) {
+      return;
+    }
+
+
+    localStorage.removeItem(
+      "questionnairesMPA"
+    );
+
+
+    chargerStatistiques();
+
+
+    alert(
+      "Les données locales ont été supprimées."
+    );
+
+  }
+
+
+  /* =========================
+     CHARGEMENT INITIAL
+  ========================= */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    chargerStatistiques
+  );
+
+</script>
+
+</body>
+</html>
