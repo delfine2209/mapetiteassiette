@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Mon profil - Ma Petite Assiette</title>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-2E73FD8V9V');
-</script>
-  
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-2E73FD8V9V');
+  </script>
+
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -90,6 +95,43 @@
       color: #6b776f;
       font-size: 14px;
     }
+
+    /* STATISTIQUES */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 20px;
+      padding: 16px 8px;
+      text-align: center;
+      box-shadow: 0 5px 16px rgba(75, 80, 70, 0.07);
+    }
+
+    .stat-icon {
+      font-size: 25px;
+      margin-bottom: 6px;
+    }
+
+    .stat-number {
+      font-size: 22px;
+      font-weight: bold;
+      color: #668b6e;
+    }
+
+    .stat-label {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #748078;
+      line-height: 1.3;
+    }
+
+    /* PORTIONS */
 
     .portion-options {
       display: grid;
@@ -172,6 +214,8 @@
       font-size: 14px;
     }
 
+    /* MENUS */
+
     .section-title {
       margin: 24px 4px 12px;
       font-size: 18px;
@@ -199,6 +243,8 @@
       font-size: 13px;
       color: #748078;
     }
+
+    /* NAVIGATION */
 
     .bottom-nav {
       position: fixed;
@@ -231,6 +277,27 @@
       font-size: 21px;
       margin-bottom: 3px;
     }
+
+    @media (max-width: 360px) {
+
+      .stats {
+        gap: 7px;
+      }
+
+      .stat-card {
+        padding: 14px 5px;
+      }
+
+      .stat-number {
+        font-size: 19px;
+      }
+
+      .stat-label {
+        font-size: 10px;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -238,18 +305,87 @@
 
 <div class="page">
 
+  <!-- EN-TÊTE -->
+
   <header class="hero">
+
     <div class="logo">🍽️</div>
+
     <h1>Mon profil</h1>
+
     <p class="subtitle">
       Personnalisez votre façon d'utiliser<br>
       Ma Petite Assiette.
     </p>
+
   </header>
+
 
   <main>
 
+
+    <!-- STATISTIQUES -->
+
+    <section class="stats">
+
+      <div class="stat-card">
+
+        <div class="stat-icon">🍴</div>
+
+        <div
+          class="stat-number"
+          id="nombreRecettes"
+        >
+          ...
+        </div>
+
+        <div class="stat-label">
+          recettes disponibles
+        </div>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon">❤️</div>
+
+        <div
+          class="stat-number"
+          id="nombreFavoris"
+        >
+          0
+        </div>
+
+        <div class="stat-label">
+          recettes favorites
+        </div>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon">📅</div>
+
+        <div
+          class="stat-number"
+          id="nombrePlanning"
+        >
+          0
+        </div>
+
+        <div class="stat-label">
+          repas planifiés
+        </div>
+
+      </div>
+
+    </section>
+
+
     <!-- CHOIX DES PORTIONS -->
+
     <section class="card">
 
       <h2>🍽️ Comment cuisinez-vous ?</h2>
@@ -259,9 +395,12 @@
         Vous pourrez ensuite adapter les quantités directement dans les recettes.
       </p>
 
+
       <div class="portion-options">
 
+
         <div class="portion-option">
+
           <input
             type="radio"
             id="modePetite"
@@ -269,7 +408,10 @@
             value="petite"
           >
 
-          <label for="modePetite" class="portion-label">
+          <label
+            for="modePetite"
+            class="portion-label"
+          >
 
             <span class="portion-title">
               🥄 Petite portion
@@ -280,9 +422,12 @@
             </span>
 
           </label>
+
         </div>
 
+
         <div class="portion-option">
+
           <input
             type="radio"
             id="modeFamille"
@@ -290,7 +435,10 @@
             value="famille"
           >
 
-          <label for="modeFamille" class="portion-label">
+          <label
+            for="modeFamille"
+            class="portion-label"
+          >
 
             <span class="portion-title">
               👨‍👩‍👧‍👦 Famille
@@ -301,9 +449,12 @@
             </span>
 
           </label>
+
         </div>
 
+
         <div class="portion-option">
+
           <input
             type="radio"
             id="modeMixte"
@@ -311,7 +462,10 @@
             value="mixte"
           >
 
-          <label for="modeMixte" class="portion-label">
+          <label
+            for="modeMixte"
+            class="portion-label"
+          >
 
             <span class="portion-title">
               🍲 Petite portion + famille
@@ -322,15 +476,24 @@
             </span>
 
           </label>
+
         </div>
 
       </div>
 
-      <button class="save-button" onclick="enregistrerMode()">
+
+      <button
+        class="save-button"
+        onclick="enregistrerMode()"
+      >
         Enregistrer mon choix
       </button>
 
-      <div id="savedMessage" class="saved-message">
+
+      <div
+        id="savedMessage"
+        class="saved-message"
+      >
         ✓ Votre préférence a bien été enregistrée.
       </div>
 
@@ -343,19 +506,43 @@
       🌿 Mon parcours
     </div>
 
-    <a href="petit-appetit.html" class="menu-card">
+
+    <a
+      href="petit-appetit.html"
+      class="menu-card"
+    >
       <strong>🥄 Petit appétit</strong>
-      <span>Des idées pour manger peu mais de façon équilibrée.</span>
+
+      <span>
+        Des idées pour manger peu mais de façon équilibrée.
+      </span>
+
     </a>
 
-    <a href="batch-cooking.html" class="menu-card">
+
+    <a
+      href="batch-cooking.html"
+      class="menu-card"
+    >
       <strong>📦 Batch-cooking</strong>
-      <span>Préparer plusieurs repas à l'avance.</span>
+
+      <span>
+        Préparer plusieurs repas à l'avance.
+      </span>
+
     </a>
 
-    <a href="chirurgie.html" class="menu-card">
+
+    <a
+      href="chirurgie.html"
+      class="menu-card"
+    >
       <strong>🌸 Préparer ma chirurgie</strong>
-      <span>Découvrir le parcours et organiser ses repas.</span>
+
+      <span>
+        Découvrir le parcours et organiser ses repas.
+      </span>
+
     </a>
 
 
@@ -365,15 +552,32 @@
       ⚙️ Mes préférences
     </div>
 
-    <a href="MesEnvies.html" class="menu-card">
+
+    <a
+      href="MesEnvies.html"
+      class="menu-card"
+    >
       <strong>💭 Mes envies</strong>
-      <span>Choisir selon ce qui vous ferait plaisir aujourd'hui.</span>
+
+      <span>
+        Choisir selon ce qui vous ferait plaisir aujourd'hui.
+      </span>
+
     </a>
 
-    <a href="Favoris.html" class="menu-card">
+
+    <a
+      href="Favoris.html"
+      class="menu-card"
+    >
       <strong>❤️ Mes favoris</strong>
-      <span>Retrouver facilement vos recettes préférées.</span>
+
+      <span>
+        Retrouver facilement vos recettes préférées.
+      </span>
+
     </a>
+
 
   </main>
 
@@ -383,70 +587,251 @@
   <nav class="bottom-nav">
 
     <a href="../../index.html">
+
       <span class="icon">🏠</span>
+
       Accueil
+
     </a>
+
 
     <a href="Recettes.html">
+
       <span class="icon">🍴</span>
+
       Recettes
+
     </a>
+
 
     <a href="Favoris.html">
+
       <span class="icon">❤️</span>
+
       Favoris
+
     </a>
 
-    <a href="MonProfil.html" class="active">
+
+    <a
+      href="MonProfil.html"
+      class="active"
+    >
+
       <span class="icon">👤</span>
+
       Profil
+
     </a>
 
   </nav>
+
 
 </div>
 
 
 <script>
 
-  // Charger la préférence déjà enregistrée
-  const modeEnregistre = localStorage.getItem("modePortion");
+
+  /* =====================================================
+     PREFERENCE DE PORTION
+  ===================================================== */
+
+
+  const modeEnregistre =
+    localStorage.getItem("modePortion");
+
 
   if (modeEnregistre) {
-    const choix = document.querySelector(
-      'input[name="modePortion"][value="' + modeEnregistre + '"]'
-    );
+
+    const choix =
+      document.querySelector(
+        'input[name="modePortion"][value="' +
+        modeEnregistre +
+        '"]'
+      );
+
 
     if (choix) {
+
       choix.checked = true;
+
     }
+
   }
 
 
-  // Enregistrer le choix
   function enregistrerMode() {
 
-    const choix = document.querySelector(
-      'input[name="modePortion"]:checked'
-    );
+    const choix =
+      document.querySelector(
+        'input[name="modePortion"]:checked'
+      );
+
 
     if (!choix) {
-      alert("Choisissez d'abord votre mode de portion.");
+
+      alert(
+        "Choisissez d'abord votre mode de portion."
+      );
+
       return;
+
     }
 
-    localStorage.setItem("modePortion", choix.value);
 
-    const message = document.getElementById("savedMessage");
+    localStorage.setItem(
+      "modePortion",
+      choix.value
+    );
+
+
+    const message =
+      document.getElementById(
+        "savedMessage"
+      );
+
 
     message.style.display = "block";
 
+
     setTimeout(() => {
+
       message.style.display = "none";
+
     }, 2500);
+
   }
 
+
+
+  /* =====================================================
+     STATISTIQUES DU PROFIL
+  ===================================================== */
+
+
+  async function chargerStatistiques() {
+
+
+    /* ---------------------------------------------
+       1. NOMBRE TOTAL DE RECETTES
+       --------------------------------------------- */
+
+    try {
+
+      const reponse =
+        await fetch("../recettes.json");
+
+
+      if (!reponse.ok) {
+
+        throw new Error(
+          "Impossible de charger recettes.json"
+        );
+
+      }
+
+
+      const recettes =
+        await reponse.json();
+
+
+      document.getElementById(
+        "nombreRecettes"
+      ).textContent = recettes.length;
+
+
+    } catch (erreur) {
+
+      console.error(
+        "Erreur chargement recettes :",
+        erreur
+      );
+
+
+      document.getElementById(
+        "nombreRecettes"
+      ).textContent = "0";
+
+    }
+
+
+
+    /* ---------------------------------------------
+       2. NOMBRE DE FAVORIS
+       --------------------------------------------- */
+
+    try {
+
+      const favoris =
+        JSON.parse(
+          localStorage.getItem("favoris") || "[]"
+        );
+
+
+      document.getElementById(
+        "nombreFavoris"
+      ).textContent = favoris.length;
+
+
+    } catch (erreur) {
+
+      console.error(
+        "Erreur favoris :",
+        erreur
+      );
+
+
+      document.getElementById(
+        "nombreFavoris"
+      ).textContent = "0";
+
+    }
+
+
+
+    /* ---------------------------------------------
+       3. NOMBRE DE REPAS PLANIFIES
+       --------------------------------------------- */
+
+    try {
+
+      const planning =
+        JSON.parse(
+          localStorage.getItem("planningRepas") || "[]"
+        );
+
+
+      document.getElementById(
+        "nombrePlanning"
+      ).textContent = planning.length;
+
+
+    } catch (erreur) {
+
+      console.error(
+        "Erreur planning :",
+        erreur
+      );
+
+
+      document.getElementById(
+        "nombrePlanning"
+      ).textContent = "0";
+
+    }
+
+  }
+
+
+
+  /* Charger les statistiques */
+
+  chargerStatistiques();
+
+
 </script>
+
 
 </body>
 </html>
