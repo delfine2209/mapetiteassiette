@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>À propos - Ma Petite Assiette</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-2E73FD8V9V');
+  </script>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3d342e;
+      padding-bottom: 90px;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background: #ffffff;
+      padding: 17px 20px;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back {
+      text-decoration: none;
+      font-size: 27px;
+      color: #5b4a42;
+    }
+
+    header h1 {
+      font-size: 22px;
+      color: #5b4a42;
+    }
+
+    /* =========================
+       CONTENU
+    ========================= */
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 22px 16px 30px;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .hero {
+      text-align: center;
+      padding: 12px 8px 25px;
+    }
+
+    .hero-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 27px;
+      color: #6d5145;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-size: 17px;
+      font-weight: bold;
+      color: #8c6655;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #6f625b;
+    }
+
+    /* =========================
+       CARTES
+    ========================= */
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      color: #6d5145;
+      margin-bottom: 11px;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #5f554f;
+    }
+
+    /* =========================
+       VALEURS
+    ========================= */
+
+    .value {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      margin-top: 16px;
+    }
+
+    .value-icon {
+      font-size: 27px;
+      width: 36px;
+      flex-shrink: 0;
+    }
+
+    .value-content strong {
+      display: block;
+      color: #5b4a42;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .value-content span {
+      display: block;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #716761;
+    }
+
+    /* =========================
+       FONCTIONNALITES
+    ========================= */
+
+    .feature {
+      padding: 14px 0;
+      border-bottom: 1px solid #eee5df;
+    }
+
+    .feature:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 16px;
+      color: #5b4a42;
+      margin-bottom: 5px;
+    }
+
+    .feature p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       PHRASE FORTE
+    ========================= */
+
+    .highlight {
+      background: #f3e5dc;
+      border-radius: 20px;
+      padding: 23px 18px;
+      text-align: center;
+      margin: 22px 0;
+    }
+
+    .highlight p {
+      font-size: 19px;
+      line-height: 1.5;
+      font-weight: bold;
+      color: #684d41;
+    }
+
+    /* =========================
+       TEST
+    ========================= */
+
+    .test-card {
+      background: #ffffff;
+      border: 2px solid #eadbd1;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .test-card h3 {
+      color: #6d5145;
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .test-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #6f625b;
+      margin-bottom: 16px;
+    }
+
+    .test-button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #8c6655;
+      color: white;
+      text-decoration: none;
+      border-radius: 14px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    /* =========================
+       NOTE
+    ========================= */
+
+    .note {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #827770;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* =========================
+       NAVIGATION BASSE
+    ========================= */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 20;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #766a64;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    .bottom-nav span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="header-top">
+
+      <a href="../../index.html" class="back">
+        ←
+      </a>
+
+      <h1>À propos</h1>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       CONTENU
+  ========================= -->
+
+  <main>
+
+
+    <!-- INTRO -->
+
+    <section class="hero">
+
+      <div class="hero-icon">
+        🍽️
+      </div>
+
+      <h2>Ma Petite Assiette</h2>
+
+      <div class="tagline">
+        Des petites portions, mais un vrai repas.
+      </div>
+
+      <p>
+        Une application pensée pour aider à trouver
+        simplement quoi manger lorsque l'on mange
+        en petites quantités.
+      </p>
+
+    </section>
+
+
+    <!-- POURQUOI -->
+
+    <section class="card">
+
+      <h3>💡 Pourquoi Ma Petite Assiette ?</h3>
+
+      <p>
+        Tout le monde n'a pas le même appétit,
+        les mêmes envies ou les mêmes besoins.
+      </p>
+
+      <br>
+
+      <p>
+        Pourtant, trouver une idée de repas adaptée
+        à une petite quantité peut parfois être compliqué.
+      </p>
+
+      <br>
+
+      <p>
+        Ma Petite Assiette est née de cette idée :
+        proposer des repas simples, gourmands
+        et faciles à adapter, sans avoir l'impression
+        de manger « moins bien ».
+      </p>
+
+    </section>
+
+
+    <!-- POUR QUI -->
+
+    <section class="card">
+
+      <h3>👥 Pour qui ?</h3>
+
+      <div class="value">
+
+        <div class="value-icon">
+          🍽️
+        </div>
+
+        <div class="value-content">
+
+          <strong>
+            Les personnes qui ont un petit appétit
+          </strong>
+
+          <span>
+            Pour trouver facilement des repas adaptés
+            à de petites quantités.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="value">
+
+        <div class="value-icon">
+          🏥
+        </div>
+
+        <div class="value-content">
+
+          <strong>
+            Les personnes qui se préparent à une chirurgie
+          </strong>
+
+          <span>
+            Avec un parcours permettant de découvrir
+            progressivement différentes possibilités
+            de repas.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="value">
+
+        <div class="value-icon">
+          🌿
+        </div>
+
+        <div class="value-content">
+
+          <strong>
+            Ceux qui souhaitent simplement manger en petites quantités
+          </strong>
+
+          <span>
+            Parce qu'une petite assiette peut aussi être
+            un repas complet et agréable.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="value">
+
+        <div class="value-icon">
+          👵
+        </div>
+
+        <div class="value-content">
+
+          <strong>
+            Les personnes ayant moins d'appétit
+          </strong>
+
+          <span>
+            Des idées simples lorsque les grosses portions
+            ne donnent plus envie.
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMMENT CA MARCHE -->
+
+    <section class="card">
+
+      <h3>✨ Une application qui s'adapte</h3>
+
+
+      <div class="feature">
+
+        <strong>
+          🍽️ Des portions adaptées
+        </strong>
+
+        <p>
+          Des quantités pensées pour les petites assiettes,
+          avec la possibilité d'adapter les portions.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          💭 Selon vos envies
+        </strong>
+
+        <p>
+          Salé, sucré, léger, réconfortant,
+          petit-déjeuner, déjeuner, dîner ou collation.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          🧊 Mon frigo
+        </strong>
+
+        <p>
+          Indiquez ce que vous avez déjà chez vous
+          pour découvrir des recettes correspondantes.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          ♻️ Anti-gaspi
+        </strong>
+
+        <p>
+          Identifiez les aliments à consommer rapidement
+          et trouvez des idées pour les utiliser.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          ❤️ Mes favoris
+        </strong>
+
+        <p>
+          Gardez facilement vos recettes préférées
+          pour les retrouver plus tard.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          📅 Organisation des repas
+        </strong>
+
+        <p>
+          Préparez vos repas à l'avance et découvrez
+          progressivement les possibilités du batch cooking.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          🏥 Mon parcours
+        </strong>
+
+        <p>
+          Un espace dédié à la préparation d'une chirurgie
+          et à la découverte progressive des recettes.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHRASE FORTE -->
+
+    <div class="highlight">
+
+      <p>
+        Ma Petite Assiette ne vous dit pas
+        ce que vous devez manger.
+        <br><br>
+        Elle vous aide à trouver
+        ce qui vous ferait envie aujourd'hui.
+      </p>
+
+    </div>
+
+
+    <!-- NOTRE PHILOSOPHIE -->
+
+    <section class="card">
+
+      <h3>🌱 Notre philosophie</h3>
+
+      <p>
+        Manger en petite quantité ne devrait pas
+        signifier renoncer au plaisir de manger.
+      </p>
+
+      <br>
+
+      <p>
+        L'objectif de Ma Petite Assiette est de rendre
+        les repas plus simples, plus accessibles
+        et plus agréables, tout en limitant
+        le gaspillage alimentaire.
+      </p>
+
+      <br>
+
+      <p>
+        Une petite portion peut être gourmande,
+        variée et adaptée à chacun.
+      </p>
+
+    </section>
+
+
+    <!-- TEST -->
+
+    <section class="test-card">
+
+      <h3>🧪 Vous souhaitez nous aider ?</h3>
+
+      <p>
+        Ma Petite Assiette est un projet en construction.
+        Vos retours sont précieux pour améliorer
+        l'application et imaginer les prochaines fonctionnalités.
+      </p>
+
+      <a
+        href="Test.html"
+        class="test-button"
+      >
+        🧪 Tester Ma Petite Assiette
+      </a>
+
+    </section>
+
+
+    <!-- NOTE -->
+
+    <p class="note">
+      Ma Petite Assiette est un outil d'aide à la recherche
+      d'idées de repas. Il ne remplace pas les conseils
+      d'un professionnel de santé ou d'un professionnel
+      de la nutrition.
+    </p>
+
+
+  </main>
+
+
+  <!-- =========================
+       NAVIGATION BASSE
+  ========================= -->
+
+  <nav class="bottom-nav">
+
+    <a href="../../index.html">
+      <span>🏠</span>
+      Accueil
+    </a>
+
+    <a href="Recettes.html">
+      <span>🍴</span>
+      Recettes
+    </a>
+
+    <a href="Favoris.html">
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a href="MonProfil.html">
+      <span>👤</span>
+      Profil
+    </a>
+
+  </nav>
+
+
+</body>
+</html>
