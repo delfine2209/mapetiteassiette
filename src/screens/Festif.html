@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Festif - Ma Petite Assiette</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #333;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 20px 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .conteneur {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px 15px;
+    }
+
+    .retour {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #555;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .intro h2 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .filtres {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filtre {
+      flex-shrink: 0;
+      border: none;
+      background: #eee;
+      padding: 9px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .filtre.actif {
+      background: #333;
+      color: white;
+    }
+
+    #liste-recettes {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .recette {
+      display: block;
+      background: white;
+      border-radius: 14px;
+      padding: 16px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .recette h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .infos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .badge {
+      background: #f3f3f3;
+      padding: 5px 8px;
+      border-radius: 10px;
+    }
+
+    .aucune {
+      text-align: center;
+      padding: 30px 15px;
+      color: #777;
+      background: white;
+      border-radius: 14px;
+    }
+
+    .chargement {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 5px;
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎉 Festif</h1>
+  <p>Des petites recettes pour les fêtes et les moments conviviaux</p>
+</header>
+
+<main class="conteneur">
+
+  <a href="Accueil.html" class="retour">
+    ← Retour à l'accueil
+  </a>
+
+  <section class="intro">
+    <h2>Mes recettes festives</h2>
+    <p>
+      Apéro-dînatoire, crêpes, Noël, Pâques, Épiphanie
+      et petites douceurs pour les occasions spéciales.
+    </p>
+  </section>
+
+  <div class="filtres">
+
+    <button class="filtre actif" data-filtre="toutes">
+      Toutes
+    </button>
+
+    <button class="filtre" data-filtre="APE">
+      🥂 Apéro
+    </button>
+
+    <button class="filtre" data-filtre="CRE">
+      🥞 Crêpes
+    </button>
+
+    <button class="filtre" data-filtre="NOE">
+      🎄 Noël
+    </button>
+
+    <button class="filtre" data-filtre="PAQ">
+      🐣 Pâques
+    </button>
+
+    <button class="filtre" data-filtre="GAL">
+      👑 Galette
+    </button>
+
+    <button class="filtre" data-filtre="FES">
+      ✨ Festif
+    </button>
+
+  </div>
+
+  <div id="liste-recettes">
+    <div class="chargement">
+      Chargement des recettes...
+    </div>
+  </div>
+
+</main>
+
+<nav>
+  <a href="Accueil.html">🏠<br>Accueil</a>
+  <a href="MesEnvies.html">🔍<br>Envies</a>
+  <a href="Recettes.html">🍽️<br>Recettes</a>
+  <a href="Favoris.html">❤️<br>Favoris</a>
+  <a href="MonProfil.html">👤<br>Profil</a>
+</nav>
+
+<script>
+
+  /*
+   * Préfixes utilisés pour les recettes festives :
+   *
+   * APE = Apéro-dînatoire
+   * CRE = Crêpes
+   * NOE = Noël
+   * PAQ = Pâques
+   * GAL = Galette des rois
+   * FES = Festif / desserts festifs
+   */
+
+  const prefixesFestifs = [
+    "APE",
+    "CRE",
+    "NOE",
+    "PAQ",
+    "GAL",
+    "FES"
+  ];
+
+  let toutesLesRecettes = [];
+
+  async function chargerRecettes() {
+
+    const liste = document.getElementById("liste-recettes");
+
+    try {
+
+      /*
+       * Même emplacement que celui utilisé
+       * par ton système actuel.
+       */
+      const reponse = await fetch("../recettes.json");
+
+      if (!reponse.ok) {
+        throw new Error("Impossible de charger recettes.json");
+      }
+
+      toutesLesRecettes = await reponse.json();
+
+      afficherRecettes("toutes");
+
+    } catch (erreur) {
+
+      console.error(erreur);
+
+      liste.innerHTML = `
+        <div class="aucune">
+          <strong>Impossible de charger les recettes.</strong>
+          <br><br>
+          Vérifiez que le fichier
+          <strong>recettes.json</strong>
+          est bien présent dans le même dossier que cette page.
+        </div>
+      `;
+    }
+  }
+
+
+  function estRecetteFestive(recette) {
+
+    if (!recette.id) {
+      return false;
+    }
+
+    const id = recette.id.toUpperCase();
+
+    return prefixesFestifs.some(prefixe =>
+      id.startsWith(prefixe)
+    );
+  }
+
+
+  function afficherRecettes(filtre) {
+
+    const liste = document.getElementById("liste-recettes");
+
+    let recettes = toutesLesRecettes.filter(estRecetteFestive);
+
+    if (filtre !== "toutes") {
+
+      recettes = recettes.filter(recette => {
+
+        const id = recette.id.toUpperCase();
+
+        return id.startsWith(filtre);
+      });
+    }
+
+
+    if (recettes.length === 0) {
+
+      liste.innerHTML = `
+        <div class="aucune">
+          Aucune recette trouvée pour cette catégorie.
+        </div>
+      `;
+
+      return;
+    }
+
+
+    liste.innerHTML = recettes.map(recette => {
+
+      return `
+        <a
+          href="Recette.html?id=${encodeURIComponent(recette.id)}"
+          class="recette"
+        >
+
+          <h3>${recette.nom || "Recette sans nom"}</h3>
+
+          <div class="infos">
+
+            ${
+              recette.temps
+              ? `<span class="badge">⏱️ ${recette.temps} min</span>`
+              : ""
+            }
+
+            ${
+              recette.proteines
+              ? `<span class="badge">🥩 ${recette.proteines} g protéines</span>`
+              : ""
+            }
+
+            ${
+              recette.sansGluten
+              ? `<span class="badge">🌾 Sans gluten</span>`
+              : ""
+            }
+
+          </div>
+
+        </a>
+      `;
+
+    }).join("");
+  }
+
+
+  document.querySelectorAll(".filtre").forEach(bouton => {
+
+    bouton.addEventListener("click", function() {
+
+      document
+        .querySelectorAll(".filtre")
+        .forEach(btn => btn.classList.remove("actif"));
+
+      this.classList.add("actif");
+
+      const filtre = this.dataset.filtre;
+
+      afficherRecettes(filtre);
+
+    });
+
+  });
+
+
+  chargerRecettes();
+
+</script>
+
+</body>
+</html>
