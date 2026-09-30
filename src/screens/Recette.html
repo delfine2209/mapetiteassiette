@@ -1,381 +1,1045 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Recette - Ma Petite Assiette</title>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-2E73FD8V9V');
-</script>
-  
+  <!-- =========================
+       GOOGLE ANALYTICS
+  ========================= -->
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"
+  ></script>
+
+  <script>
+
+    window.dataLayer =
+      window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag(
+      'js',
+      new Date()
+    );
+
+    gtag(
+      'config',
+      'G-2E73FD8V9V'
+    );
+
+  </script>
+
+
   <style>
+
     * {
       box-sizing: border-box;
     }
 
+
     body {
+
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fffaf7;
-      color: #4d403b;
-      padding-bottom: 90px;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      background:
+        #fffaf7;
+
+      color:
+        #4d403b;
+
+      padding-bottom:
+        90px;
+
     }
+
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
-      background: linear-gradient(
-        135deg,
-        #f7d9c9,
-        #f5e8d8,
-        #dcebdc
-      );
-      padding: 28px 18px 30px;
-      border-radius: 0 0 30px 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f7d9c9,
+          #f5e8d8,
+          #dcebdc
+        );
+
+      padding:
+        28px 18px 30px;
+
+      border-radius:
+        0 0 30px 30px;
+
     }
+
 
     .back {
-      display: inline-block;
-      text-decoration: none;
-      color: #5d7563;
-      font-weight: bold;
-      margin-bottom: 20px;
+
+      display:
+        inline-block;
+
+      text-decoration:
+        none;
+
+      color:
+        #5d7563;
+
+      font-weight:
+        bold;
+
+      margin-bottom:
+        20px;
+
     }
+
 
     .logo {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.75);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      margin-bottom: 15px;
+
+      width:
+        58px;
+
+      height:
+        58px;
+
+      border-radius:
+        18px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.75
+        );
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      font-size:
+        30px;
+
+      margin-bottom:
+        15px;
+
     }
+
 
     .hero h1 {
-      margin: 0 0 8px;
-      font-size: 29px;
-      line-height: 1.15;
+
+      margin:
+        0 0 8px;
+
+      font-size:
+        29px;
+
+      line-height:
+        1.15;
+
     }
 
+
     .hero p {
-      margin: 0;
-      color: #6c5c54;
-      line-height: 1.5;
+
+      margin:
+        0;
+
+      color:
+        #6c5c54;
+
+      line-height:
+        1.5;
+
     }
+
 
     /* =========================
        CONTENU
     ========================= */
 
     .container {
-      padding: 20px 16px;
-      max-width: 700px;
-      margin: auto;
+
+      padding:
+        20px 16px;
+
+      max-width:
+        700px;
+
+      margin:
+        auto;
+
     }
+
 
     .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 20px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap:
+        10px;
+
+      margin-bottom:
+        20px;
+
     }
+
 
     .info-card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 14px 8px;
-      text-align: center;
-      box-shadow: 0 4px 14px rgba(100,80,60,0.08);
+
+      background:
+        #ffffff;
+
+      border-radius:
+        18px;
+
+      padding:
+        14px 8px;
+
+      text-align:
+        center;
+
+      box-shadow:
+        0 4px 14px
+        rgba(
+          100,
+          80,
+          60,
+          0.08
+        );
+
     }
+
 
     .info-icon {
-      font-size: 21px;
-      margin-bottom: 5px;
+
+      font-size:
+        21px;
+
+      margin-bottom:
+        5px;
+
     }
+
 
     .info-label {
-      font-size: 12px;
-      color: #8a7970;
-      margin-bottom: 4px;
+
+      font-size:
+        12px;
+
+      color:
+        #8a7970;
+
+      margin-bottom:
+        4px;
+
     }
+
 
     .info-value {
-      font-weight: bold;
-      font-size: 14px;
+
+      font-weight:
+        bold;
+
+      font-size:
+        14px;
+
     }
+
 
     .section {
-      background: #ffffff;
-      border-radius: 22px;
-      padding: 18px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 14px rgba(100,80,60,0.07);
+
+      background:
+        #ffffff;
+
+      border-radius:
+        22px;
+
+      padding:
+        18px;
+
+      margin-bottom:
+        18px;
+
+      box-shadow:
+        0 4px 14px
+        rgba(
+          100,
+          80,
+          60,
+          0.07
+        );
+
     }
 
+
     .section h2 {
-      margin: 0 0 15px;
-      font-size: 20px;
-      color: #506456;
+
+      margin:
+        0 0 15px;
+
+      font-size:
+        20px;
+
+      color:
+        #506456;
+
     }
+
 
     /* =========================
        CHOIX DES QUANTITES
     ========================= */
 
     .quantity-buttons {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap:
+        10px;
+
     }
+
 
     .quantity-button {
-      border: 2px solid #e6ddd6;
-      background: #fffaf7;
-      color: #5b504a;
-      border-radius: 16px;
-      padding: 12px 7px;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: bold;
-      transition: 0.2s;
+
+      border:
+        2px solid #e6ddd6;
+
+      background:
+        #fffaf7;
+
+      color:
+        #5b504a;
+
+      border-radius:
+        16px;
+
+      padding:
+        12px 7px;
+
+      cursor:
+        pointer;
+
+      font-size:
+        13px;
+
+      font-weight:
+        bold;
+
+      transition:
+        0.2s;
+
     }
+
 
     .quantity-button:hover {
-      border-color: #9caf9d;
+
+      border-color:
+        #9caf9d;
+
     }
+
 
     .quantity-button.active {
-      background: #dcebdc;
-      border-color: #7f9b82;
-      color: #435d48;
+
+      background:
+        #dcebdc;
+
+      border-color:
+        #7f9b82;
+
+      color:
+        #435d48;
+
     }
 
+
     .quantity-note {
-      margin-top: 13px;
-      background: #f7f1eb;
-      border-radius: 14px;
-      padding: 12px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #6b5d55;
+
+      margin-top:
+        13px;
+
+      background:
+        #f7f1eb;
+
+      border-radius:
+        14px;
+
+      padding:
+        12px;
+
+      font-size:
+        13px;
+
+      line-height:
+        1.5;
+
+      color:
+        #6b5d55;
+
     }
+
 
     /* =========================
        INGREDIENTS
     ========================= */
 
     .ingredients {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+
+      list-style:
+        none;
+
+      padding:
+        0;
+
+      margin:
+        0;
+
     }
+
 
     .ingredients li {
-      position: relative;
-      padding: 10px 0 10px 28px;
-      border-bottom: 1px solid #eee5df;
-      line-height: 1.45;
+
+      position:
+        relative;
+
+      padding:
+        10px 0 10px 28px;
+
+      border-bottom:
+        1px solid #eee5df;
+
+      line-height:
+        1.45;
+
     }
+
 
     .ingredients li:last-child {
-      border-bottom: none;
+
+      border-bottom:
+        none;
+
     }
 
+
     .ingredients li::before {
-      content: "•";
-      position: absolute;
-      left: 7px;
-      top: 7px;
-      color: #88a38c;
-      font-size: 22px;
-      font-weight: bold;
+
+      content:
+        "•";
+
+      position:
+        absolute;
+
+      left:
+        7px;
+
+      top:
+        7px;
+
+      color:
+        #88a38c;
+
+      font-size:
+        22px;
+
+      font-weight:
+        bold;
+
     }
+
 
     /* =========================
        PREPARATION
     ========================= */
 
     .preparation {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      counter-reset: etape;
+
+      list-style:
+        none;
+
+      padding:
+        0;
+
+      margin:
+        0;
+
+      counter-reset:
+        etape;
+
     }
+
 
     .preparation li {
-      counter-increment: etape;
-      position: relative;
-      padding: 12px 0 12px 43px;
-      border-bottom: 1px solid #eee5df;
-      line-height: 1.5;
+
+      counter-increment:
+        etape;
+
+      position:
+        relative;
+
+      padding:
+        12px 0 12px 43px;
+
+      border-bottom:
+        1px solid #eee5df;
+
+      line-height:
+        1.5;
+
     }
+
 
     .preparation li:last-child {
-      border-bottom: none;
+
+      border-bottom:
+        none;
+
     }
 
+
     .preparation li::before {
-      content: counter(etape);
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: #dcebdc;
-      color: #526b57;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
+
+      content:
+        counter(etape);
+
+      position:
+        absolute;
+
+      left:
+        0;
+
+      top:
+        10px;
+
+      width:
+        30px;
+
+      height:
+        30px;
+
+      border-radius:
+        50%;
+
+      background:
+        #dcebdc;
+
+      color:
+        #526b57;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      font-weight:
+        bold;
+
     }
+
 
     /* =========================
        BADGES
     ========================= */
 
     .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 15px;
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        8px;
+
+      margin-top:
+        15px;
+
     }
+
 
     .badge {
-      display: inline-block;
-      background: #f4e7dd;
-      color: #755e52;
-      border-radius: 20px;
-      padding: 7px 11px;
-      font-size: 12px;
-      font-weight: bold;
+
+      display:
+        inline-block;
+
+      background:
+        #f4e7dd;
+
+      color:
+        #755e52;
+
+      border-radius:
+        20px;
+
+      padding:
+        7px 11px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        bold;
+
     }
+
 
     .badge.green {
-      background: #dcebdc;
-      color: #526b57;
+
+      background:
+        #dcebdc;
+
+      color:
+        #526b57;
+
     }
 
+
     .badge.blue {
-      background: #e1edf0;
-      color: #557079;
+
+      background:
+        #e1edf0;
+
+      color:
+        #557079;
+
     }
+
 
     /* =========================
        FAVORI
     ========================= */
 
     .favorite-button {
-      width: 100%;
-      border: none;
-      background: #f8eee8;
-      color: #70584e;
-      border-radius: 16px;
-      padding: 14px;
-      cursor: pointer;
-      font-size: 15px;
-      font-weight: bold;
-      margin-top: 10px;
+
+      width:
+        100%;
+
+      border:
+        none;
+
+      background:
+        #f8eee8;
+
+      color:
+        #70584e;
+
+      border-radius:
+        16px;
+
+      padding:
+        14px;
+
+      cursor:
+        pointer;
+
+      font-size:
+        15px;
+
+      font-weight:
+        bold;
+
+      margin-top:
+        10px;
+
     }
 
+
     .favorite-button.active {
-      background: #f4d9d4;
-      color: #a65b59;
+
+      background:
+        #f4d9d4;
+
+      color:
+        #a65b59;
+
     }
+
+
+    /* =========================
+       PLANIFICATION
+    ========================= */
+
+    .action-planification {
+
+      background:
+        #ffffff;
+
+      border-radius:
+        22px;
+
+      padding:
+        18px;
+
+      margin-bottom:
+        18px;
+
+      box-shadow:
+        0 4px 14px
+        rgba(
+          100,
+          80,
+          60,
+          0.07
+        );
+
+    }
+
+
+    .action-planification h3 {
+
+      margin:
+        0 0 15px;
+
+      font-size:
+        20px;
+
+      color:
+        #506456;
+
+    }
+
+
+    .action-planification select {
+
+      width:
+        100%;
+
+      padding:
+        12px;
+
+      margin-bottom:
+        10px;
+
+      border:
+        2px solid #e6ddd6;
+
+      border-radius:
+        14px;
+
+      background:
+        #fffaf7;
+
+      color:
+        #4d403b;
+
+      font-size:
+        14px;
+
+    }
+
+
+    .btn-principal {
+
+      width:
+        100%;
+
+      border:
+        none;
+
+      border-radius:
+        16px;
+
+      padding:
+        14px;
+
+      background:
+        #dcebdc;
+
+      color:
+        #435d48;
+
+      font-weight:
+        bold;
+
+      font-size:
+        15px;
+
+      cursor:
+        pointer;
+
+    }
+
+
+    .btn-principal:hover {
+
+      background:
+        #cfe3d1;
+
+    }
+
+
+    .planning-message {
+
+      margin-top:
+        12px;
+
+      padding:
+        10px;
+
+      border-radius:
+        12px;
+
+      background:
+        #f7f1eb;
+
+      color:
+        #5f544e;
+
+      font-size:
+        13px;
+
+      text-align:
+        center;
+
+      display:
+        none;
+
+    }
+
 
     /* =========================
        NOTICE POST-OP
     ========================= */
 
     .medical-note {
-      background: #fff5e9;
-      border-left: 4px solid #d6a66d;
-      border-radius: 12px;
-      padding: 13px 14px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #6d5b4e;
+
+      background:
+        #fff5e9;
+
+      border-left:
+        4px solid #d6a66d;
+
+      border-radius:
+        12px;
+
+      padding:
+        13px 14px;
+
+      font-size:
+        13px;
+
+      line-height:
+        1.5;
+
+      color:
+        #6d5b4e;
+
     }
+
 
     /* =========================
        ERREUR
     ========================= */
 
     .error {
-      text-align: center;
-      padding: 40px 20px;
+
+      text-align:
+        center;
+
+      padding:
+        40px 20px;
+
     }
+
 
     .error-icon {
-      font-size: 42px;
-      margin-bottom: 15px;
+
+      font-size:
+        42px;
+
+      margin-bottom:
+        15px;
+
     }
+
 
     .error h2 {
-      margin: 0 0 10px;
+
+      margin:
+        0 0 10px;
+
     }
 
+
     .error a {
-      display: inline-block;
-      margin-top: 15px;
-      background: #dcebdc;
-      color: #506456;
-      text-decoration: none;
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-weight: bold;
+
+      display:
+        inline-block;
+
+      margin-top:
+        15px;
+
+      background:
+        #dcebdc;
+
+      color:
+        #506456;
+
+      text-decoration:
+        none;
+
+      padding:
+        12px 18px;
+
+      border-radius:
+        14px;
+
+      font-weight:
+        bold;
+
     }
+
 
     /* =========================
        NAVIGATION
     ========================= */
 
     .bottom-nav {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 72px;
-      background: rgba(255,255,255,0.97);
-      border-top: 1px solid #eadfd8;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      z-index: 100;
-      box-shadow: 0 -3px 15px rgba(80,60,50,0.08);
+
+      position:
+        fixed;
+
+      left:
+        0;
+
+      right:
+        0;
+
+      bottom:
+        0;
+
+      height:
+        72px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.97
+        );
+
+      border-top:
+        1px solid #eadfd8;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          1fr
+        );
+
+      z-index:
+        100;
+
+      box-shadow:
+        0 -3px 15px
+        rgba(
+          80,
+          60,
+          50,
+          0.08
+        );
+
     }
+
 
     .bottom-nav a {
-      text-decoration: none;
-      color: #7b6d65;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      font-size: 11px;
+
+      text-decoration:
+        none;
+
+      color:
+        #7b6d65;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        4px;
+
+      font-size:
+        11px;
+
     }
+
 
     .bottom-nav .nav-icon {
-      font-size: 21px;
+
+      font-size:
+        21px;
+
     }
 
+
     .bottom-nav a.active {
-      color: #55705b;
-      font-weight: bold;
+
+      color:
+        #55705b;
+
+      font-weight:
+        bold;
+
     }
+
 
     /* =========================
        MOBILE
@@ -384,29 +1048,53 @@
     @media (max-width: 380px) {
 
       .hero h1 {
-        font-size: 25px;
+
+        font-size:
+          25px;
+
       }
+
 
       .info-grid {
-        gap: 6px;
+
+        gap:
+          6px;
+
       }
+
 
       .info-card {
-        padding: 12px 5px;
+
+        padding:
+          12px 5px;
+
       }
+
 
       .quantity-buttons {
-        gap: 6px;
+
+        gap:
+          6px;
+
       }
+
 
       .quantity-button {
-        font-size: 12px;
+
+        font-size:
+          12px;
+
       }
+
     }
+
   </style>
+
 </head>
 
+
 <body>
+
 
   <!-- =========================
        HERO
@@ -414,15 +1102,23 @@
 
   <header class="hero">
 
-    <a href="Recettes.html" class="back">
+    <a
+      href="Recettes.html"
+      class="back"
+    >
       ← Retour aux recettes
     </a>
 
-    <div class="logo">🍽️</div>
+
+    <div class="logo">
+      🍽️
+    </div>
+
 
     <h1 id="recipeName">
       Chargement…
     </h1>
+
 
     <p id="recipeIntro">
       Préparons cette petite assiette ensemble.
@@ -433,19 +1129,31 @@
 
   <main class="container">
 
+
     <!-- =========================
          ERREUR
     ========================= -->
 
-    <div id="errorContainer" class="error" style="display:none;">
+    <div
+      id="errorContainer"
+      class="error"
+      style="display:none;"
+    >
 
-      <div class="error-icon">🍽️</div>
+      <div class="error-icon">
+        🍽️
+      </div>
 
-      <h2>Recette introuvable</h2>
+
+      <h2>
+        Recette introuvable
+      </h2>
+
 
       <p>
         Cette recette n'a pas pu être trouvée.
       </p>
+
 
       <a href="Recettes.html">
         Voir toutes les recettes
@@ -454,7 +1162,11 @@
     </div>
 
 
-    <div id="recipeContainer" style="display:none;">
+    <div
+      id="recipeContainer"
+      style="display:none;"
+    >
+
 
       <!-- =========================
            INFORMATIONS
@@ -463,21 +1175,62 @@
       <div class="info-grid">
 
         <div class="info-card">
-          <div class="info-icon">⏱️</div>
-          <div class="info-label">Temps</div>
-          <div class="info-value" id="recipeTime">-</div>
+
+          <div class="info-icon">
+            ⏱️
+          </div>
+
+          <div class="info-label">
+            Temps
+          </div>
+
+          <div
+            class="info-value"
+            id="recipeTime"
+          >
+            -
+          </div>
+
         </div>
 
-        <div class="info-card">
-          <div class="info-icon">💪</div>
-          <div class="info-label">Protéines</div>
-          <div class="info-value" id="recipeProtein">-</div>
-        </div>
 
         <div class="info-card">
-          <div class="info-icon">🍽️</div>
-          <div class="info-label">Base</div>
-          <div class="info-value" id="recipePortions">-</div>
+
+          <div class="info-icon">
+            💪
+          </div>
+
+          <div class="info-label">
+            Protéines
+          </div>
+
+          <div
+            class="info-value"
+            id="recipeProtein"
+          >
+            -
+          </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="info-icon">
+            🍽️
+          </div>
+
+          <div class="info-label">
+            Base
+          </div>
+
+          <div
+            class="info-value"
+            id="recipePortions"
+          >
+            -
+          </div>
+
         </div>
 
       </div>
@@ -493,7 +1246,12 @@
           Recette
         </h2>
 
-        <div class="badges" id="recipeBadges"></div>
+
+        <div
+          class="badges"
+          id="recipeBadges"
+        ></div>
+
 
         <button
           type="button"
@@ -512,7 +1270,10 @@
 
       <div class="section">
 
-        <h2>🍽️ Pour combien de portions ?</h2>
+        <h2>
+          🍽️ Pour combien de portions ?
+        </h2>
+
 
         <div class="quantity-buttons">
 
@@ -525,6 +1286,7 @@
             1 petite portion
           </button>
 
+
           <button
             type="button"
             class="quantity-button"
@@ -533,6 +1295,7 @@
             🍽️<br>
             2 portions
           </button>
+
 
           <button
             type="button"
@@ -544,6 +1307,7 @@
           </button>
 
         </div>
+
 
         <div
           id="quantityInformation"
@@ -559,7 +1323,10 @@
 
       <div class="section">
 
-        <h2>🛒 Ingrédients</h2>
+        <h2>
+          🛒 Ingrédients
+        </h2>
+
 
         <ul
           id="ingredientsList"
@@ -575,7 +1342,10 @@
 
       <div class="section">
 
-        <h2>👩‍🍳 Préparation</h2>
+        <h2>
+          👩‍🍳 Préparation
+        </h2>
+
 
         <ol
           id="preparationList"
@@ -595,9 +1365,13 @@
         style="display:none;"
       >
 
-        <h2>📦 Batch-cooking</h2>
+        <h2>
+          📦 Batch-cooking
+        </h2>
+
 
         <p id="batchText"></p>
+
 
         <div
           id="conservationText"
@@ -619,14 +1393,26 @@
 
         <div class="medical-note">
 
-          🌸 <strong>Après une chirurgie bariatrique :</strong><br><br>
+          🌸 <strong>
+            Après une chirurgie bariatrique :
+          </strong>
 
-          Les quantités affichées ici correspondent aux quantités
-          nécessaires pour <strong>préparer la recette</strong>.
-          Elles peuvent être adaptées pour 1, 2 ou 4 portions.<br><br>
+          <br><br>
 
-          La quantité réellement consommée et l'évolution des textures
-          doivent toujours respecter les recommandations de votre
+          Les quantités affichées ici correspondent
+          aux quantités nécessaires pour
+          <strong>
+            préparer la recette
+          </strong>.
+
+          Elles peuvent être adaptées pour
+          1, 2 ou 4 portions.
+
+          <br><br>
+
+          La quantité réellement consommée et
+          l'évolution des textures doivent toujours
+          respecter les recommandations de votre
           équipe médicale.
 
         </div>
@@ -634,6 +1420,84 @@
       </div>
 
     </div>
+
+
+    <!-- =========================
+         PLANIFICATION DU REPAS
+    ========================= -->
+
+    <section class="action-planification">
+
+      <h3>
+        📅 Planifier ce repas
+      </h3>
+
+
+      <select id="select-jour">
+
+        <option value="lundi">
+          Lundi
+        </option>
+
+        <option value="mardi">
+          Mardi
+        </option>
+
+        <option value="mercredi">
+          Mercredi
+        </option>
+
+        <option value="jeudi">
+          Jeudi
+        </option>
+
+        <option value="vendredi">
+          Vendredi
+        </option>
+
+        <option value="samedi">
+          Samedi
+        </option>
+
+        <option value="dimanche">
+          Dimanche
+        </option>
+
+      </select>
+
+
+      <select id="select-moment">
+
+        <option value="petitDejeuner">
+          Matin (Petit-déjeuner)
+        </option>
+
+        <option value="dejeuner">
+          Midi (Déjeuner)
+        </option>
+
+        <option value="diner">
+          Soir (Dîner)
+        </option>
+
+      </select>
+
+
+      <button
+        id="btn-valider-planning"
+        class="btn-principal"
+        type="button"
+      >
+        Ajouter au planning
+      </button>
+
+
+      <div
+        id="planning-message"
+        class="planning-message"
+      ></div>
+
+    </section>
 
   </main>
 
@@ -645,32 +1509,68 @@
   <nav class="bottom-nav">
 
     <a href="../../index.html">
-      <span class="nav-icon">🏠</span>
-      <span>Accueil</span>
+
+      <span class="nav-icon">
+        🏠
+      </span>
+
+      <span>
+        Accueil
+      </span>
+
     </a>
+
 
     <a
       href="Recettes.html"
       class="active"
     >
-      <span class="nav-icon">🍽️</span>
-      <span>Recettes</span>
+
+      <span class="nav-icon">
+        🍽️
+      </span>
+
+      <span>
+        Recettes
+      </span>
+
     </a>
+
 
     <a href="Favoris.html">
-      <span class="nav-icon">❤️</span>
-      <span>Favoris</span>
+
+      <span class="nav-icon">
+        ❤️
+      </span>
+
+      <span>
+        Favoris
+      </span>
+
     </a>
 
+
     <a href="MonProfil.html">
-      <span class="nav-icon">👤</span>
-      <span>Profil</span>
+
+      <span class="nav-icon">
+        👤
+      </span>
+
+      <span>
+        Profil
+      </span>
+
     </a>
 
   </nav>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
+
 
     /* =====================================================
        VARIABLES
@@ -681,10 +1581,14 @@
         window.location.search
       );
 
+
     const recetteId =
       params.get("id");
 
-    let recetteActuelle = null;
+
+    let recetteActuelle =
+      null;
+
 
     let modeQuantiteActuel =
       "petite";
@@ -696,9 +1600,14 @@
 
     function normaliserTexte(texte) {
 
-      return String(texte || "")
+      return String(
+        texte || ""
+      )
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
+        .replace(
+          /[\u0300-\u036f]/g,
+          ""
+        )
         .toLowerCase()
         .trim();
 
@@ -712,28 +1621,40 @@
     function convertirNombre(texte) {
 
       if (!texte) {
+
         return null;
+
       }
+
 
       let valeur =
         String(texte)
           .trim()
-          .replace(",", ".");
+          .replace(
+            ",",
+            "."
+          );
 
-      /* fraction simple : 1/2 */
 
       let fraction =
         valeur.match(
           /^(\d+)\s*\/\s*(\d+)$/
         );
 
+
       if (fraction) {
 
         const numerateur =
-          Number(fraction[1]);
+          Number(
+            fraction[1]
+          );
+
 
         const denominateur =
-          Number(fraction[2]);
+          Number(
+            fraction[2]
+          );
+
 
         if (
           denominateur !== 0
@@ -749,23 +1670,31 @@
       }
 
 
-      /* nombre mixte : 1 1/2 */
-
       let mixte =
         valeur.match(
           /^(\d+)\s+(\d+)\s*\/\s*(\d+)$/
         );
 
+
       if (mixte) {
 
         const entier =
-          Number(mixte[1]);
+          Number(
+            mixte[1]
+          );
+
 
         const numerateur =
-          Number(mixte[2]);
+          Number(
+            mixte[2]
+          );
+
 
         const denominateur =
-          Number(mixte[3]);
+          Number(
+            mixte[3]
+          );
+
 
         if (
           denominateur !== 0
@@ -783,11 +1712,21 @@
 
 
       const nombre =
-        Number(valeur);
+        Number(
+          valeur
+        );
 
-      if (!Number.isNaN(nombre)) {
+
+      if (
+        !Number.isNaN(
+          nombre
+        )
+      ) {
+
         return nombre;
+
       }
+
 
       return null;
 
@@ -801,54 +1740,71 @@
     function afficherNombre(nombre) {
 
       if (
-        Number.isInteger(nombre)
+        Number.isInteger(
+          nombre
+        )
       ) {
 
-        return String(nombre);
+        return String(
+          nombre
+        );
 
       }
 
+
       const fractions = [
+
         {
           valeur: 0.25,
           texte: "1/4"
         },
+
         {
           valeur: 0.5,
           texte: "1/2"
         },
+
         {
           valeur: 0.75,
           texte: "3/4"
         },
+
         {
           valeur: 1.25,
           texte: "1 1/4"
         },
+
         {
           valeur: 1.5,
           texte: "1 1/2"
         },
+
         {
           valeur: 1.75,
           texte: "1 3/4"
         },
+
         {
           valeur: 2.25,
           texte: "2 1/4"
         },
+
         {
           valeur: 2.5,
           texte: "2 1/2"
         },
+
         {
           valeur: 2.75,
           texte: "2 3/4"
         }
+
       ];
 
+
       for (
-        const fraction of fractions
+        const fraction
+        of fractions
       ) {
 
         if (
@@ -864,9 +1820,12 @@
 
       }
 
+
       return String(
         Number(
-          nombre.toFixed(2)
+          nombre.toFixed(
+            2
+          )
         )
       );
 
@@ -874,7 +1833,7 @@
 
 
     /* =====================================================
-       ARRONDI DES QUANTITES
+       ARRONDI
     ===================================================== */
 
     function arrondirQuantite(
@@ -883,30 +1842,49 @@
     ) {
 
       const texte =
-        normaliserTexte(reste);
+        normaliserTexte(
+          reste
+        );
 
-      /*
-       * Grammes / kilogrammes / ml / cl :
-       * on conserve une valeur entière.
-       */
 
       if (
-        /\bg\b/.test(texte) ||
-        /\bgramme/.test(texte) ||
-        /\bkg\b/.test(texte) ||
-        /\bml\b/.test(texte) ||
-        /\bcl\b/.test(texte)
+
+        /\bg\b/.test(
+          texte
+        )
+
+        ||
+
+        /\bgramme/.test(
+          texte
+        )
+
+        ||
+
+        /\bkg\b/.test(
+          texte
+        )
+
+        ||
+
+        /\bml\b/.test(
+          texte
+        )
+
+        ||
+
+        /\bcl\b/.test(
+          texte
+        )
+
       ) {
 
-        return Math.round(nombre);
+        return Math.round(
+          nombre
+        );
 
       }
 
-
-      /*
-       * Cuillères, unités et autres quantités :
-       * on garde des quarts de quantité.
-       */
 
       return (
         Math.round(
@@ -918,29 +1896,12 @@
 
 
     /* =====================================================
-       FACTEUR DE MULTIPLICATION
+       FACTEUR
     ===================================================== */
 
     function obtenirFacteur(
       mode
     ) {
-
-      /*
-       * La recette possède un nombre de portions
-       * de référence.
-       *
-       * Exemple :
-       *
-       * recette de base = 1 portion
-       * 1 portion  = x1
-       * 2 portions = x2
-       * 4 portions = x4
-       *
-       * recette de base = 2 portions
-       * 1 portion  = x0,5
-       * 2 portions = x1
-       * 4 portions = x2
-       */
 
       const portionsBase =
         Number(
@@ -948,14 +1909,16 @@
         ) || 2;
 
 
-      let portionsCible = 1;
+      let portionsCible =
+        1;
 
 
       if (
         mode === "famille2"
       ) {
 
-        portionsCible = 2;
+        portionsCible =
+          2;
 
       }
 
@@ -964,7 +1927,8 @@
         mode === "famille4"
       ) {
 
-        portionsCible = 4;
+        portionsCible =
+          4;
 
       }
 
@@ -978,7 +1942,7 @@
 
 
     /* =====================================================
-       CALCUL AUTOMATIQUE D'UN INGREDIENT
+       CALCUL INGREDIENT
     ===================================================== */
 
     function calculerIngredient(
@@ -987,8 +1951,13 @@
     ) {
 
       if (
-        !ingredient ||
+
+        !ingredient
+
+        ||
+
         facteur === 1
+
       ) {
 
         return ingredient;
@@ -1002,29 +1971,11 @@
         ).trim();
 
 
-      /*
-       * On recherche uniquement une quantité
-       * située au début de l'ingrédient.
-       *
-       * Exemples reconnus :
-       *
-       * 80 g de poulet
-       * 100 g de courgette
-       * 1 c. à café d'huile
-       * 1/2 courgette
-       * 1 1/2 cuillère
-       */
-
       const match =
         texte.match(
           /^(\d+(?:[,.]\d+)?|\d+\s*\/\s*\d+|\d+\s+\d+\s*\/\s*\d+)(\s*)(.*)$/i
         );
 
-
-      /*
-       * Si aucune quantité numérique n'est
-       * détectée, on conserve l'ingrédient.
-       */
 
       if (!match) {
 
@@ -1064,25 +2015,30 @@
         );
 
 
-      /*
-       * On évite une quantité nulle.
-       */
-
       if (
         nouvelleValeur <= 0
       ) {
 
-        nouvelleValeur = 0.25;
+        nouvelleValeur =
+          0.25;
 
       }
 
 
       return (
+
         afficherNombre(
           nouvelleValeur
-        ) +
-        " " +
+        )
+
+        +
+
+        " "
+
+        +
+
         reste
+
       );
 
     }
@@ -1096,16 +2052,6 @@
       mode
     ) {
 
-      /*
-       * Certaines recettes possèdent leurs propres
-       * quantités précises.
-       *
-       * Exemple REC081.
-       *
-       * Ces valeurs sont prioritaires sur le
-       * calcul automatique.
-       */
-
       if (
         !recetteActuelle.quantites
       ) {
@@ -1116,12 +2062,11 @@
 
 
       const quantites =
-        recetteActuelle.quantites[mode];
+        recetteActuelle
+          .quantites[mode];
 
 
-      if (
-        !quantites
-      ) {
+      if (!quantites) {
 
         return null;
 
@@ -1141,7 +2086,7 @@
 
 
     /* =====================================================
-       AFFICHAGE DES INGREDIENTS
+       INGREDIENTS
     ===================================================== */
 
     function afficherIngredients() {
@@ -1153,15 +2098,11 @@
 
 
       if (!liste) {
+
         return;
+
       }
 
-
-      /*
-       * PRIORITE 1 :
-       * Si la recette possède des quantités
-       * personnalisées, elles sont utilisées.
-       */
 
       const quantitesPredefinies =
         afficherQuantitesPredefinies(
@@ -1181,17 +2122,6 @@
       }
 
 
-      /*
-       * PRIORITE 2 :
-       *
-       * Toutes les recettes sans quantités
-       * personnalisées utilisent maintenant
-       * le calcul automatique.
-       *
-       * Cela concerne également les recettes
-       * post-opératoires.
-       */
-
       const facteur =
         obtenirFacteur(
           modeQuantiteActuel
@@ -1199,7 +2129,10 @@
 
 
       liste.innerHTML =
-        (recetteActuelle.ingredients || [])
+        (
+          recetteActuelle.ingredients ||
+          []
+        )
           .map(
             ingredient =>
               `<li>${calculerIngredient(
@@ -1225,18 +2158,11 @@
 
 
       if (!zone) {
+
         return;
+
       }
 
-
-      /*
-       * Les quantités servent à préparer
-       * 1, 2 ou 4 portions.
-       *
-       * Pour le post-opératoire, elles ne
-       * constituent pas une prescription
-       * de quantité à consommer.
-       */
 
       if (
         recetteActuelle.postOperatoire === true
@@ -1257,7 +2183,7 @@
 
 
     /* =====================================================
-       AFFICHAGE DE LA RECETTE
+       AFFICHAGE RECETTE
     ===================================================== */
 
     function afficherRecette() {
@@ -1268,11 +2194,15 @@
 
         document.getElementById(
           "recipeContainer"
-        ).style.display = "none";
+        ).style.display =
+          "none";
+
 
         document.getElementById(
           "errorContainer"
-        ).style.display = "block";
+        ).style.display =
+          "block";
+
 
         return;
 
@@ -1281,15 +2211,15 @@
 
       document.getElementById(
         "recipeContainer"
-      ).style.display = "block";
+      ).style.display =
+        "block";
 
 
       document.getElementById(
         "errorContainer"
-      ).style.display = "none";
+      ).style.display =
+        "none";
 
-
-      /* Nom */
 
       document.getElementById(
         "recipeName"
@@ -1298,8 +2228,6 @@
         "Recette";
 
 
-      /* Introduction */
-
       document.getElementById(
         "recipeIntro"
       ).textContent =
@@ -1307,27 +2235,23 @@
         "Une recette pensée pour votre quotidien.";
 
 
-      /* Temps */
-
       document.getElementById(
         "recipeTime"
       ).textContent =
         recetteActuelle.temps
-          ? recetteActuelle.temps + " min"
+          ? recetteActuelle.temps +
+            " min"
           : "-";
 
-
-      /* Protéines */
 
       document.getElementById(
         "recipeProtein"
       ).textContent =
         recetteActuelle.proteines !== undefined
-          ? recetteActuelle.proteines + " g"
+          ? recetteActuelle.proteines +
+            " g"
           : "-";
 
-
-      /* Portions de base */
 
       document.getElementById(
         "recipePortions"
@@ -1336,8 +2260,6 @@
           ? recetteActuelle.portions
           : "-";
 
-
-      /* Catégorie */
 
       document.getElementById(
         "recipeCategory"
@@ -1355,7 +2277,9 @@
           "recipeBadges"
         );
 
-      badges.innerHTML = "";
+
+      badges.innerHTML =
+        "";
 
 
       if (
@@ -1433,10 +2357,9 @@
       ) {
 
         badges.innerHTML +=
-          '<span class="badge">' +
-          "Texture : " +
+          '<span class="badge">Texture : ' +
           recetteActuelle.texture +
-          "</span>";
+          '</span>';
 
       }
 
@@ -1494,7 +2417,8 @@
           );
 
 
-        conservation.innerHTML = "";
+        conservation.innerHTML =
+          "";
 
 
         if (
@@ -1517,6 +2441,7 @@
         }
 
       }
+
       else {
 
         batchSection.style.display =
@@ -1526,7 +2451,7 @@
 
 
       /* =========================
-         POST-OPERATOIRE
+         POST OPERATOIRE
       ========================= */
 
       const medicalSection =
@@ -1543,6 +2468,7 @@
           "block";
 
       }
+
       else {
 
         medicalSection.style.display =
@@ -1586,6 +2512,7 @@
             ) || "[]"
           );
 
+
         return Array.isArray(
           favoris
         )
@@ -1593,6 +2520,7 @@
           : [];
 
       }
+
       catch (
         erreur
       ) {
@@ -1626,6 +2554,15 @@
         );
 
 
+      if (
+        !recetteActuelle
+      ) {
+
+        return;
+
+      }
+
+
       const favoris =
         obtenirFavoris();
 
@@ -1644,15 +2581,18 @@
           "active"
         );
 
+
         bouton.textContent =
           "♥ Retirer des favoris";
 
       }
+
       else {
 
         bouton.classList.remove(
           "active"
         );
+
 
         bouton.textContent =
           "♡ Ajouter aux favoris";
@@ -1663,6 +2603,15 @@
 
 
     function basculerFavori() {
+
+      if (
+        !recetteActuelle
+      ) {
+
+        return;
+
+      }
+
 
       const favoris =
         obtenirFavoris();
@@ -1683,6 +2632,7 @@
         );
 
       }
+
       else {
 
         favoris.splice(
@@ -1699,6 +2649,29 @@
 
 
       actualiserBoutonFavori();
+
+
+      /* Google Analytics */
+
+      if (
+        typeof gtag ===
+        "function"
+      ) {
+
+        gtag(
+          "event",
+          index === -1
+            ? "ajout_favori"
+            : "retrait_favori",
+          {
+            recette_id:
+              recetteActuelle.id,
+            recette_nom:
+              recetteActuelle.nom
+          }
+        );
+
+      }
 
     }
 
@@ -1761,13 +2734,9 @@
         );
 
 
-      /*
-       * Petite portion :
-       * on commence sur 1 petite portion.
-       */
-
       if (
-        modeEnregistre === "petite"
+        modeEnregistre ===
+        "petite"
       ) {
 
         modeQuantiteActuel =
@@ -1775,14 +2744,9 @@
 
       }
 
-
-      /*
-       * Famille :
-       * on commence sur 2 portions.
-       */
-
       else if (
-        modeEnregistre === "famille"
+        modeEnregistre ===
+        "famille"
       ) {
 
         modeQuantiteActuel =
@@ -1790,26 +2754,15 @@
 
       }
 
-
-      /*
-       * Mixte :
-       * on commence sur la petite portion.
-       */
-
       else if (
-        modeEnregistre === "mixte"
+        modeEnregistre ===
+        "mixte"
       ) {
 
         modeQuantiteActuel =
           "petite";
 
       }
-
-
-      /*
-       * Aucun choix enregistré :
-       * petite portion par défaut.
-       */
 
       else {
 
@@ -1828,6 +2781,14 @@
     async function chargerRecette() {
 
       try {
+
+        /*
+         * IMPORTANT :
+         *
+         * Recette.html et recettes.json
+         * doivent être au même niveau
+         * dans ton organisation actuelle.
+         */
 
         const reponse =
           await fetch(
@@ -1850,11 +2811,28 @@
           await reponse.json();
 
 
+        if (
+          !Array.isArray(
+            recettes
+          )
+        ) {
+
+          throw new Error(
+            "Le fichier recettes.json ne contient pas un tableau de recettes."
+          );
+
+        }
+
+
         recetteActuelle =
           recettes.find(
             recette =>
-              recette.id ===
-              recetteId
+              String(
+                recette.id
+              ) ===
+              String(
+                recetteId
+              )
           );
 
 
@@ -1873,12 +2851,37 @@
 
         afficherRecette();
 
+
+        /* Google Analytics */
+
+        if (
+          typeof gtag ===
+          "function"
+        ) {
+
+          gtag(
+            "event",
+            "consultation_recette",
+            {
+              recette_id:
+                recetteActuelle.id,
+              recette_nom:
+                recetteActuelle.nom,
+              recette_categorie:
+                recetteActuelle.categorie
+            }
+          );
+
+        }
+
       }
+
       catch (
         erreur
       ) {
 
         console.error(
+          "Erreur chargement recette :",
           erreur
         );
 
@@ -1890,6 +2893,179 @@
         afficherRecette();
 
       }
+
+    }
+
+
+    /* =====================================================
+       PLANIFICATION
+    ===================================================== */
+
+    function obtenirPlanning() {
+
+      try {
+
+        const planning =
+          JSON.parse(
+            localStorage.getItem(
+              "planningRepas"
+            ) || "[]"
+          );
+
+
+        return Array.isArray(
+          planning
+        )
+          ? planning
+          : [];
+
+      }
+
+      catch (
+        erreur
+      ) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function enregistrerPlanning(
+      planning
+    ) {
+
+      localStorage.setItem(
+        "planningRepas",
+        JSON.stringify(
+          planning
+        )
+      );
+
+    }
+
+
+    function ajouterAuPlanning() {
+
+      if (
+        !recetteActuelle
+      ) {
+
+        return;
+
+      }
+
+
+      const jour =
+        document.getElementById(
+          "select-jour"
+        ).value;
+
+
+      const moment =
+        document.getElementById(
+          "select-moment"
+        ).value;
+
+
+      const planning =
+        obtenirPlanning();
+
+
+      const nouveauRepas = {
+
+        id:
+          Date.now(),
+
+        recetteId:
+          recetteActuelle.id,
+
+        recetteNom:
+          recetteActuelle.nom,
+
+        jour:
+          jour,
+
+        moment:
+          moment,
+
+        portion:
+          modeQuantiteActuel,
+
+        dateAjout:
+          new Date().toISOString()
+
+      };
+
+
+      planning.push(
+        nouveauRepas
+      );
+
+
+      enregistrerPlanning(
+        planning
+      );
+
+
+      const message =
+        document.getElementById(
+          "planning-message"
+        );
+
+
+      message.textContent =
+        "✅ " +
+        recetteActuelle.nom +
+        " a été ajouté à votre planning.";
+
+
+      message.style.display =
+        "block";
+
+
+      /* Google Analytics */
+
+      if (
+        typeof gtag ===
+        "function"
+      ) {
+
+        gtag(
+          "event",
+          "ajout_planning",
+          {
+            recette_id:
+              recetteActuelle.id,
+
+            recette_nom:
+              recetteActuelle.nom,
+
+            jour:
+              jour,
+
+            moment:
+              moment,
+
+            portion:
+              modeQuantiteActuel
+
+          }
+        );
+
+      }
+
+
+      setTimeout(
+        () => {
+
+          message.style.display =
+            "none";
+
+        },
+        3000
+      );
 
     }
 
@@ -1929,29 +3105,17 @@
         basculerFavori
       );
 
-<!-- À placer quelque part sur votre page Recette.html -->
-<section class="action-planification">
-    <h3>📅 Planifier ce repas</h3>
-    <select id="select-jour">
-        <option value="lundi">Lundi</option>
-        <option value="mardi">Mardi</option>
-        <option value="mercredi">Mercredi</option>
-        <option value="jeudi">Jeudi</option>
-        <option value="vendredi">Vendredi</option>
-        <option value="samedi">Samedi</option>
-        <option value="dimanche">Dimanche</option>
-    </select>
-    
-    <select id="select-moment">
-        <option value="petitDejeuner">Matin (Petit-déjeuner)</option>
-        <option value="dejeuner">Midi (Déjeuner)</option>
-        <option value="diner">Soir (Dîner)</option>
-    </select>
-    
-    <button id="btn-valider-planning" class="btn-principal">Ajouter au planning</button>
-</section>
 
-    
+    document
+      .getElementById(
+        "btn-valider-planning"
+      )
+      .addEventListener(
+        "click",
+        ajouterAuPlanning
+      );
+
+
     /* =====================================================
        DEMARRAGE
     ===================================================== */
@@ -1961,5 +3125,6 @@
   </script>
 
 </body>
-</html>
 
+</html>
+```
