@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Votre avis - Ma Petite Assiette</title>
+
+  <!-- Google Analytics -->
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V">
+  </script>
+
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag(
+      'config',
+      'G-2E73FD8V9V'
+    );
+
+  </script>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      background: #fffaf5;
+
+      color: #3d342e;
+
+      padding-bottom: 90px;
+
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+
+      background: white;
+
+      padding: 17px 20px;
+
+      border-bottom: 1px solid #eee;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 10;
+
+    }
+
+
+    .header-top {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+
+    .back {
+
+      text-decoration: none;
+
+      font-size: 27px;
+
+      color: #5b4a42;
+
+    }
+
+
+    header h1 {
+
+      font-size: 21px;
+
+      color: #5b4a42;
+
+    }
+
+
+    /* =========================
+       CONTENU
+    ========================= */
+
+    main {
+
+      max-width: 700px;
+
+      margin: auto;
+
+      padding: 22px 16px 30px;
+
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+
+      text-align: center;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .intro-icon {
+
+      font-size: 45px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .intro h2 {
+
+      font-size: 25px;
+
+      color: #6d5145;
+
+      margin-bottom: 9px;
+
+    }
+
+
+    .intro p {
+
+      font-size: 15px;
+
+      line-height: 1.6;
+
+      color: #6f625b;
+
+    }
+
+
+    /* =========================
+       PROGRESSION
+    ========================= */
+
+    .progress-container {
+
+      background: #eadfd8;
+
+      height: 7px;
+
+      border-radius: 10px;
+
+      margin-bottom: 25px;
+
+      overflow: hidden;
+
+    }
+
+
+    .progress-bar {
+
+      height: 100%;
+
+      width: 25%;
+
+      background: #8c6655;
+
+      border-radius: 10px;
+
+      transition: width 0.3s ease;
+
+    }
+
+
+    .progress-text {
+
+      text-align: center;
+
+      font-size: 12px;
+
+      color: #81756e;
+
+      margin-top: -18px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    /* =========================
+       QUESTIONS
+    ========================= */
+
+    .question-card {
+
+      background: white;
+
+      border-radius: 20px;
+
+      padding: 20px;
+
+      margin-bottom: 18px;
+
+      box-shadow:
+        0 3px 14px rgba(0,0,0,0.06);
+
+    }
+
+
+    .question-card h3 {
+
+      font-size: 19px;
+
+      color: #6d5145;
+
+      line-height: 1.4;
+
+      margin-bottom: 16px;
+
+    }
+
+
+    .question-number {
+
+      font-size: 12px;
+
+      color: #9a7b6c;
+
+      margin-bottom: 6px;
+
+      font-weight: bold;
+
+    }
+
+
+    /* =========================
+       CHOIX
+    ========================= */
+
+    .choices {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 9px;
+
+    }
+
+
+    .choice {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 12px;
+
+      border: 1px solid #e4d9d2;
+
+      border-radius: 13px;
+
+      background: #fffaf7;
+
+      cursor: pointer;
+
+      font-size: 14px;
+
+      line-height: 1.4;
+
+      transition: 0.2s;
+
+    }
+
+
+    .choice:hover {
+
+      background: #f8eee8;
+
+    }
+
+
+    .choice.selected {
+
+      border: 2px solid #8c6655;
+
+      background: #f5e9e1;
+
+      font-weight: bold;
+
+    }
+
+
+    .choice input {
+
+      width: 18px;
+
+      height: 18px;
+
+      accent-color: #8c6655;
+
+      flex-shrink: 0;
+
+    }
+
+
+    /* =========================
+       NOTES
+    ========================= */
+
+    .rating {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 6px;
+
+    }
+
+
+    .rating label {
+
+      flex: 1;
+
+      text-align: center;
+
+    }
+
+
+    .rating input {
+
+      display: none;
+
+    }
+
+
+    .rating span {
+
+      display: block;
+
+      padding: 12px 5px;
+
+      border: 1px solid #e4d9d2;
+
+      border-radius: 12px;
+
+      background: #fffaf7;
+
+      font-size: 13px;
+
+      cursor: pointer;
+
+    }
+
+
+    .rating input:checked + span {
+
+      background: #f5e9e1;
+
+      border: 2px solid #8c6655;
+
+      font-weight: bold;
+
+    }
+
+
+    /* =========================
+       TEXTE LIBRE
+    ========================= */
+
+    textarea {
+
+      width: 100%;
+
+      min-height: 130px;
+
+      border: 1px solid #ded2ca;
+
+      border-radius: 14px;
+
+      padding: 13px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 14px;
+
+      resize: vertical;
+
+      background: #fffaf7;
+
+    }
+
+
+    textarea:focus {
+
+      outline: none;
+
+      border-color: #8c6655;
+
+    }
+
+
+    .hint {
+
+      font-size: 12px;
+
+      color: #887b74;
+
+      margin-top: 7px;
+
+      line-height: 1.4;
+
+    }
+
+
+    /* =========================
+       BOUTONS
+    ========================= */
+
+    .button {
+
+      width: 100%;
+
+      border: none;
+
+      border-radius: 15px;
+
+      padding: 15px;
+
+      font-size: 16px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+    }
+
+
+    .next-button {
+
+      background: #8c6655;
+
+      color: white;
+
+      margin-top: 5px;
+
+    }
+
+
+    .previous-button {
+
+      background: white;
+
+      color: #654f44;
+
+      border: 1px solid #d9ccc4;
+
+      margin-top: 10px;
+
+    }
+
+
+    /* =========================
+       ERREUR
+    ========================= */
+
+    .error {
+
+      display: none;
+
+      background: #fbe8e5;
+
+      color: #8b4037;
+
+      border-radius: 13px;
+
+      padding: 12px;
+
+      margin-bottom: 15px;
+
+      font-size: 14px;
+
+      line-height: 1.4;
+
+    }
+
+
+    /* =========================
+       CONFIRMATION
+    ========================= */
+
+    .success {
+
+      display: none;
+
+      background: white;
+
+      border-radius: 22px;
+
+      padding: 28px 20px;
+
+      text-align: center;
+
+      box-shadow:
+        0 3px 14px rgba(0,0,0,0.06);
+
+    }
+
+
+    .success-icon {
+
+      font-size: 55px;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .success h2 {
+
+      color: #6d5145;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .success p {
+
+      font-size: 15px;
+
+      line-height: 1.6;
+
+      color: #6f625b;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .home-button {
+
+      display: block;
+
+      background: #8c6655;
+
+      color: white;
+
+      text-decoration: none;
+
+      border-radius: 14px;
+
+      padding: 14px;
+
+      font-weight: bold;
+
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .bottom-nav {
+
+      position: fixed;
+
+      bottom: 0;
+
+      left: 0;
+
+      right: 0;
+
+      height: 72px;
+
+      background: white;
+
+      border-top: 1px solid #ddd;
+
+      display: flex;
+
+      justify-content: space-around;
+
+      align-items: center;
+
+      z-index: 20;
+
+    }
+
+
+    .bottom-nav a {
+
+      text-decoration: none;
+
+      color: #766a64;
+
+      text-align: center;
+
+      font-size: 11px;
+
+    }
+
+
+    .bottom-nav span {
+
+      display: block;
+
+      font-size: 22px;
+
+      margin-bottom: 3px;
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="header-top">
+
+      <a
+        href="APropos.html"
+        class="back"
+      >
+        ←
+      </a>
+
+      <h1>Votre avis</h1>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- =========================
+         INTRO
+    ========================= -->
+
+    <section class="intro">
+
+      <div class="intro-icon">
+        💬
+      </div>
+
+      <h2>
+        Votre avis compte
+      </h2>
+
+      <p>
+        Ma Petite Assiette évolue avec vous.
+        Quelques minutes suffisent pour nous aider
+        à améliorer l'application.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         PROGRESSION
+    ========================= -->
+
+    <div class="progress-container">
+
+      <div
+        class="progress-bar"
+        id="progressBar">
+      </div>
+
+    </div>
+
+
+    <div
+      class="progress-text"
+      id="progressText">
+      Étape 1 sur 4
+    </div>
+
+
+    <!-- =========================
+         ERREUR
+    ========================= -->
+
+    <div
+      class="error"
+      id="errorMessage">
+    </div>
+
+
+    <!-- =========================
+         FORMULAIRE
+    ========================= -->
+
+    <form id="questionnaire">
+
+
+      <!-- =========================
+           ETAPE 1
+      ========================= -->
+
+      <section
+        class="question-card step"
+        data-step="1"
+      >
+
+        <div class="question-number">
+          QUESTION 1
+        </div>
+
+        <h3>
+          Qu'est-ce qui vous amène sur Ma Petite Assiette ?
+        </h3>
+
+
+        <div class="choices">
+
+          <label class="choice">
+
+            <input
+              type="radio"
+              name="profil"
+              value="petit_appetit"
+            >
+
+            🍽️ J'ai un petit appétit
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="radio"
+              name="profil"
+              value="preparation_chirurgie"
+            >
+
+            🏥 Je me prépare à une chirurgie
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="radio"
+              name="profil"
+              value="apres_chirurgie"
+            >
+
+            🌱 Je cherche des idées après une chirurgie
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="radio"
+              name="profil"
+              value="petites_portions"
+            >
+
+            🍴 Je souhaite simplement manger en petites portions
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="radio"
+              name="profil"
+              value="pour_un_proche"
+            >
+
+            👥 Je cherche des idées pour un proche
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="radio"
+              name="profil"
+              value="autre"
+            >
+
+            💡 Autre
+
+          </label>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           ETAPE 2
+      ========================= -->
+
+      <section
+        class="question-card step"
+        data-step="2"
+        style="display:none;"
+      >
+
+        <div class="question-number">
+          QUESTION 2
+        </div>
+
+        <h3>
+          Quelles fonctionnalités utilisez-vous ?
+        </h3>
+
+        <p class="hint">
+          Vous pouvez sélectionner plusieurs réponses.
+        </p>
+
+
+        <div class="choices">
+
+          <label class="choice">
+
+            <input
+              type="checkbox"
+              name="fonctionnalites"
+              value="recettes"
+            >
+
+            🍴 Je consulte les recettes
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="checkbox"
+              name="fonctionnalites"
+              value="envies"
+            >
+
+            💭 Je cherche selon mes envies
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="checkbox"
+              name="fonctionnalites"
+              value="frigo"
+            >
+
+            🧊 J'utilise Mon frigo
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="checkbox"
+              name="fonctionnalites"
+              value="anti_gaspi"
+            >
+
+            ♻️ J'utilise Anti-gaspi
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="checkbox"
+              name="fonctionnalites"
+              value="favoris"
+            >
+
+            ❤️ J'utilise Mes favoris
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="checkbox"
+              name="fonctionnalites"
+              value="planning"
+            >
+
+            📅 Je prépare mes repas
+
+          </label>
+
+
+          <label class="choice">
+
+            <input
+              type="checkbox"
+              name="fonctionnalites"
+              value="parcours"
+            >
+
+            🏥 Je consulte les parcours
+
+          </label>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           ETAPE 3
+      ========================= -->
+
+      <section
+        class="question-card step"
+        data-step="3"
+        style="display:none;"
+      >
+
+        <div class="question-number">
+          QUESTION 3
+        </div>
+
+        <h3>
+          Comment trouvez-vous l'application ?
+        </h3>
+
+
+        <p class="hint">
+          1 = pas du tout satisfait · 5 = très satisfait
+        </p>
+
+
+        <br>
+
+
+        <p style="margin-bottom:8px;">
+          Facilité d'utilisation
+        </p>
+
+        <div class="rating">
+
+          <label>
+            <input
+              type="radio"
+              name="facilite"
+              value="1"
+            >
+            <span>1</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="facilite"
+              value="2"
+            >
+            <span>2</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="facilite"
+              value="3"
+            >
+            <span>3</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="facilite"
+              value="4"
+            >
+            <span>4</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="facilite"
+              value="5"
+            >
+            <span>5</span>
+          </label>
+
+        </div>
+
+
+        <br>
+
+
+        <p style="margin-bottom:8px;">
+          Pertinence des recettes
+        </p>
+
+        <div class="rating">
+
+          <label>
+            <input
+              type="radio"
+              name="recettes_note"
+              value="1"
+            >
+            <span>1</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="recettes_note"
+              value="2"
+            >
+            <span>2</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="recettes_note"
+              value="3"
+            >
+            <span>3</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="recettes_note"
+              value="4"
+            >
+            <span>4</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="recettes_note"
+              value="5"
+            >
+            <span>5</span>
+          </label>
+
+        </div>
+
+
+        <br>
+
+
+        <p style="margin-bottom:8px;">
+          Présentation de l'application
+        </p>
+
+        <div class="rating">
+
+          <label>
+            <input
+              type="radio"
+              name="presentation"
+              value="1"
+            >
+            <span>1</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="presentation"
+              value="2"
+            >
+            <span>2</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="presentation"
+              value="3"
+            >
+            <span>3</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="presentation"
+              value="4"
+            >
+            <span>4</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="presentation"
+              value="5"
+            >
+            <span>5</span>
+          </label>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           ETAPE 4
+      ========================= -->
+
+      <section
+        class="question-card step"
+        data-step="4"
+        style="display:none;"
+      >
+
+        <div class="question-number">
+          QUESTION 4
+        </div>
+
+        <h3>
+          Que souhaiteriez-vous améliorer ?
+        </h3>
+
+
+        <textarea
+          id="ameliorations"
+          name="ameliorations"
+          placeholder="Votre idée, votre remarque ou votre suggestion..."
+        ></textarea>
+
+
+        <p class="hint">
+          Dites-nous ce qui vous manque, ce qui pourrait
+          être plus simple ou ce que vous aimeriez voir
+          apparaître dans Ma Petite Assiette.
+        </p>
+
+
+        <br>
+
+
+        <h3>
+          💡 Quelle fonctionnalité aimeriez-vous voir apparaître ?
+        </h3>
+
+
+        <textarea
+          id="fonctionnalite"
+          name="fonctionnalite"
+          placeholder="Une nouvelle idée de fonctionnalité..."
+        ></textarea>
+
+
+        <br>
+
+
+        <h3>
+          ⭐ Une dernière chose à nous dire ?
+        </h3>
+
+
+        <textarea
+          id="commentaire"
+          name="commentaire"
+          placeholder="Un encouragement, une remarque, une idée..."
+        ></textarea>
+
+      </section>
+
+
+      <!-- =========================
+           BOUTONS
+      ========================= -->
+
+      <button
+        type="button"
+        class="button next-button"
+        id="nextButton"
+      >
+        Continuer →
+      </button>
+
+
+      <button
+        type="button"
+        class="button previous-button"
+        id="previousButton"
+        style="display:none;"
+      >
+        ← Retour
+      </button>
+
+
+    </form>
+
+
+    <!-- =========================
+         CONFIRMATION
+    ========================= -->
+
+    <section
+      class="success"
+      id="success"
+    >
+
+      <div class="success-icon">
+        💚
+      </div>
+
+      <h2>
+        Merci pour votre avis !
+      </h2>
+
+      <p>
+        Votre réponse a bien été enregistrée.
+        Elle nous aidera à améliorer Ma Petite Assiette
+        et à construire les prochaines fonctionnalités.
+      </p>
+
+      <a
+        href="../../index.html"
+        class="home-button"
+      >
+        🏠 Retour à l'accueil
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       NAVIGATION BASSE
+  ========================= -->
+
+  <nav class="bottom-nav">
+
+    <a href="../../index.html">
+
+      <span>🏠</span>
+
+      Accueil
+
+    </a>
+
+
+    <a href="Recettes.html">
+
+      <span>🍴</span>
+
+      Recettes
+
+    </a>
+
+
+    <a href="Favoris.html">
+
+      <span>❤️</span>
+
+      Favoris
+
+    </a>
+
+
+    <a href="MonProfil.html">
+
+      <span>👤</span>
+
+      Profil
+
+    </a>
+
+  </nav>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+
+    let etapeActuelle = 1;
+
+    const totalEtapes = 4;
+
+
+    const etapes =
+      document.querySelectorAll(".step");
+
+
+    const boutonSuivant =
+      document.getElementById("nextButton");
+
+
+    const boutonPrecedent =
+      document.getElementById("previousButton");
+
+
+    const progressBar =
+      document.getElementById("progressBar");
+
+
+    const progressText =
+      document.getElementById("progressText");
+
+
+    const errorMessage =
+      document.getElementById("errorMessage");
+
+
+    /* =========================
+       AFFICHER UNE ETAPE
+    ========================= */
+
+    function afficherEtape(numero) {
+
+      etapes.forEach(function(etape) {
+
+        if (
+          Number(etape.dataset.step) === numero
+        ) {
+
+          etape.style.display = "block";
+
+        } else {
+
+          etape.style.display = "none";
+
+        }
+
+      });
+
+
+      const pourcentage =
+        (numero / totalEtapes) * 100;
+
+
+      progressBar.style.width =
+        pourcentage + "%";
+
+
+      progressText.textContent =
+        "Étape " +
+        numero +
+        " sur " +
+        totalEtapes;
+
+
+      if (numero === 1) {
+
+        boutonPrecedent.style.display =
+          "none";
+
+      } else {
+
+        boutonPrecedent.style.display =
+          "block";
+
+      }
+
+
+      if (numero === totalEtapes) {
+
+        boutonSuivant.textContent =
+          "💚 Envoyer mon avis";
+
+      } else {
+
+        boutonSuivant.textContent =
+          "Continuer →";
+
+      }
+
+
+      errorMessage.style.display =
+        "none";
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* =========================
+       VERIFICATION
+    ========================= */
+
+    function verifierEtape() {
+
+      errorMessage.style.display =
+        "none";
+
+
+      if (etapeActuelle === 1) {
+
+        const profil =
+          document.querySelector(
+            'input[name="profil"]:checked'
+          );
+
+
+        if (!profil) {
+
+          afficherErreur(
+            "Choisissez une réponse pour continuer."
+          );
+
+          return false;
+
+        }
+
+      }
+
+
+      if (etapeActuelle === 2) {
+
+        const fonctions =
+          document.querySelectorAll(
+            'input[name="fonctionnalites"]:checked'
+          );
+
+
+        if (fonctions.length === 0) {
+
+          afficherErreur(
+            "Sélectionnez au moins une fonctionnalité."
+          );
+
+          return false;
+
+        }
+
+      }
+
+
+      if (etapeActuelle === 3) {
+
+        const facilite =
+          document.querySelector(
+            'input[name="facilite"]:checked'
+          );
+
+
+        const recettes =
+          document.querySelector(
+            'input[name="recettes_note"]:checked'
+          );
+
+
+        const presentation =
+          document.querySelector(
+            'input[name="presentation"]:checked'
+          );
+
+
+        if (
+          !facilite ||
+          !recettes ||
+          !presentation
+        ) {
+
+          afficherErreur(
+            "Merci de donner une note aux trois éléments."
+          );
+
+          return false;
+
+        }
+
+      }
+
+
+      return true;
+
+    }
+
+
+    /* =========================
+       ERREUR
+    ========================= */
+
+    function afficherErreur(message) {
+
+      errorMessage.textContent =
+        "⚠️ " + message;
+
+      errorMessage.style.display =
+        "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* =========================
+       BOUTON SUIVANT
+    ========================= */
+
+    boutonSuivant.addEventListener(
+      "click",
+      function() {
+
+        if (!verifierEtape()) {
+
+          return;
+
+        }
+
+
+        if (
+          etapeActuelle <
+          totalEtapes
+        ) {
+
+          etapeActuelle++;
+
+          afficherEtape(
+            etapeActuelle
+          );
+
+        } else {
+
+          enregistrerQuestionnaire();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       BOUTON RETOUR
+    ========================= */
+
+    boutonPrecedent.addEventListener(
+      "click",
+      function() {
+
+        if (etapeActuelle > 1) {
+
+          etapeActuelle--;
+
+          afficherEtape(
+            etapeActuelle
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       ENREGISTREMENT
+    ========================= */
+
+    function enregistrerQuestionnaire() {
+
+
+      const profil =
+        document.querySelector(
+          'input[name="profil"]:checked'
+        );
+
+
+      const fonctions =
+        Array.from(
+          document.querySelectorAll(
+            'input[name="fonctionnalites"]:checked'
+          )
+        ).map(function(element) {
+
+          return element.value;
+
+        });
+
+
+      const facilite =
+        document.querySelector(
+          'input[name="facilite"]:checked'
+        );
+
+
+      const recettesNote =
+        document.querySelector(
+          'input[name="recettes_note"]:checked'
+        );
+
+
+      const presentation =
+        document.querySelector(
+          'input[name="presentation"]:checked'
+        );
+
+
+      /* =========================
+         IDENTIFIANT ANONYME
+      ========================= */
+
+      let utilisateur =
+        localStorage.getItem(
+          "identifiantUtilisateur"
+        );
+
+
+      if (!utilisateur) {
+
+        utilisateur =
+          "MPA-" +
+          Date.now() +
+          "-" +
+          Math.floor(
+            Math.random() * 10000
+          );
+
+
+        localStorage.setItem(
+          "identifiantUtilisateur",
+          utilisateur
+        );
+
+      }
+
+
+      /* =========================
+         REPONSE
+      ========================= */
+
+      const reponse = {
+
+        identifiant:
+          utilisateur,
+
+        date:
+          new Date().toISOString(),
+
+        profil:
+          profil.value,
+
+        fonctionnalites:
+          fonctions,
+
+        notes: {
+
+          facilite:
+            Number(facilite.value),
+
+          recettes:
+            Number(recettesNote.value),
+
+          presentation:
+            Number(presentation.value)
+
+        },
+
+        ameliorations:
+          document.getElementById(
+            "ameliorations"
+          ).value.trim(),
+
+        fonctionnaliteDemandee:
+          document.getElementById(
+            "fonctionnalite"
+          ).value.trim(),
+
+        commentaire:
+          document.getElementById(
+            "commentaire"
+          ).value.trim()
+
+      };
+
+
+      /* =========================
+         STOCKAGE LOCAL
+      ========================= */
+
+      let reponses = [];
+
+
+      try {
+
+        reponses =
+          JSON.parse(
+            localStorage.getItem(
+              "questionnairesMPA"
+            )
+          ) || [];
+
+      } catch (erreur) {
+
+        reponses = [];
+
+      }
+
+
+      reponses.push(reponse);
+
+
+      localStorage.setItem(
+        "questionnairesMPA",
+        JSON.stringify(reponses)
+      );
+
+
+      /* =========================
+         GOOGLE ANALYTICS
+      ========================= */
+
+      if (
+        typeof gtag === "function"
+      ) {
+
+        gtag(
+          "event",
+          "questionnaire_avis",
+          {
+
+            profil:
+              profil.value,
+
+            nombre_fonctionnalites:
+              fonctions.length,
+
+            note_facilite:
+              Number(facilite.value),
+
+            note_recettes:
+              Number(recettesNote.value),
+
+            note_presentation:
+              Number(presentation.value)
+
+          }
+        );
+
+      }
+
+
+      /* =========================
+         AFFICHAGE CONFIRMATION
+      ========================= */
+
+      document.getElementById(
+        "questionnaire"
+      ).style.display = "none";
+
+
+      document.querySelector(
+        ".progress-container"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "progressText"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "success"
+      ).style.display = "block";
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* =========================
+       STYLE DES CHOIX
+    ========================= */
+
+    document
+      .querySelectorAll(".choice")
+      .forEach(function(label) {
+
+        const input =
+          label.querySelector("input");
+
+
+        input.addEventListener(
+          "change",
+          function() {
+
+            if (
+              input.type === "radio"
+            ) {
+
+              document
+                .querySelectorAll(
+                  `input[name="${input.name}"]`
+                )
+                .forEach(function(other) {
+
+                  other
+                    .closest(".choice")
+                    ?.classList.remove(
+                      "selected"
+                    );
+
+                });
+
+            }
+
+
+            if (input.checked) {
+
+              label.classList.add(
+                "selected"
+              );
+
+            } else {
+
+              label.classList.remove(
+                "selected"
+              );
+
+            }
+
+          }
+        );
+
+      });
+
+
+    /* =========================
+       INITIALISATION
+    ========================= */
+
+    afficherEtape(1);
+
+  </script>
+
+
+</body>
+
+</html>
