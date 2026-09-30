@@ -8753,47 +8753,1281 @@
   ]
 },
   {
-  "id": "APE001",
-  "nom": "Mini brochette mozzarella, tomate & jambon",
-  "categorie": "Apéro-dînatoire",
-  "type": "Bouchée salée",
-  "temps": 10,
-  "tempsPreparation": 10,
-  "tempsCuisson": 0,
-  "proteines": 9,
-  "portions": 1,
-  "portion": "1 petite portion",
-  "petitAppetit": true,
-  "ingredients": [
-    "2 tomates cerises",
-    "30 g de mozzarella",
-    "30 g de jambon blanc",
-    "Quelques feuilles de basilic"
-  ],
-  "quantites": {
-    "petite": [
+    "id": "APE001",
+    "nom": "Mini brochette mozzarella, tomate & jambon",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée salée",
+    "temps": 10,
+    "tempsPreparation": 10,
+    "tempsCuisson": 0,
+    "proteines": 9,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
       "2 tomates cerises",
       "30 g de mozzarella",
       "30 g de jambon blanc",
       "Quelques feuilles de basilic"
     ],
-    "famille2": [
-      "4 tomates cerises",
-      "60 g de mozzarella",
-      "60 g de jambon blanc",
-      "Quelques feuilles de basilic"
-    ],
-    "famille4": [
-      "8 tomates cerises",
-      "120 g de mozzarella",
-      "120 g de jambon blanc",
-      "Quelques feuilles de basilic"
+    "quantites": {
+      "petite": [
+        "2 tomates cerises",
+        "30 g de mozzarella",
+        "30 g de jambon blanc",
+        "Quelques feuilles de basilic"
+      ],
+      "famille2": [
+        "4 tomates cerises",
+        "60 g de mozzarella",
+        "60 g de jambon blanc",
+        "Quelques feuilles de basilic"
+      ],
+      "famille4": [
+        "8 tomates cerises",
+        "120 g de mozzarella",
+        "120 g de jambon blanc",
+        "Quelques feuilles de basilic"
+      ]
+    },
+    "preparation": [
+      "Couper la mozzarella et le jambon en petits morceaux.",
+      "Monter une petite brochette avec les tomates cerises, la mozzarella, le jambon et le basilic.",
+      "Servir frais."
     ]
   },
-  "preparation": [
-    "Couper la mozzarella et le jambon en petits morceaux.",
-    "Monter une petite brochette avec les tomates cerises, la mozzarella, le jambon et le basilic.",
-    "Servir frais."
-  ]
-}
+  {
+    "id": "APE002",
+    "nom": "Mini œuf mimosa au fromage frais",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée salée",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 8,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "1 œuf",
+      "15 g de fromage frais léger",
+      "1 cuillère à café de moutarde douce",
+      "Ciboulette",
+      "Poivre"
+    ],
+    "quantites": {
+      "petite": [
+        "1 œuf",
+        "15 g de fromage frais léger",
+        "1 cuillère à café de moutarde douce",
+        "Ciboulette",
+        "Poivre"
+      ],
+      "famille2": [
+        "2 œuf",
+        "30 g de fromage frais léger",
+        "2 cuillère à café de moutarde douce",
+        "Ciboulette",
+        "Poivre"
+      ],
+      "famille4": [
+        "4 œuf",
+        "60 g de fromage frais léger",
+        "4 cuillère à café de moutarde douce",
+        "Ciboulette",
+        "Poivre"
+      ]
+    },
+    "preparation": [
+      "Cuire l'œuf 9 à 10 minutes dans l'eau bouillante.",
+      "Le refroidir, l'écaler et le couper en deux.",
+      "Mélanger le jaune avec le fromage frais et la moutarde.",
+      "Garnir les blancs et ajouter la ciboulette."
+    ]
+  },
+  {
+    "id": "APE003",
+    "nom": "Roulé de jambon au fromage frais",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée salée",
+    "temps": 5,
+    "tempsPreparation": 5,
+    "tempsCuisson": 0,
+    "proteines": 10,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "1 tranche de jambon blanc",
+      "30 g de fromage frais",
+      "Quelques lamelles de concombre",
+      "Ciboulette"
+    ],
+    "quantites": {
+      "petite": [
+        "1 tranche de jambon blanc",
+        "30 g de fromage frais",
+        "Quelques lamelles de concombre",
+        "Ciboulette"
+      ],
+      "famille2": [
+        "2 tranche de jambon blanc",
+        "60 g de fromage frais",
+        "Quelques lamelles de concombre",
+        "Ciboulette"
+      ],
+      "famille4": [
+        "4 tranche de jambon blanc",
+        "120 g de fromage frais",
+        "Quelques lamelles de concombre",
+        "Ciboulette"
+      ]
+    },
+    "preparation": [
+      "Étaler le fromage frais sur le jambon.",
+      "Ajouter les lamelles de concombre et la ciboulette.",
+      "Rouler puis couper en deux petites bouchées."
+    ]
+  },
+  {
+    "id": "APE004",
+    "nom": "Mini tomate farcie au thon",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée salée",
+    "temps": 10,
+    "tempsPreparation": 10,
+    "tempsCuisson": 0,
+    "proteines": 11,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "2 petites tomates cerises",
+      "40 g de thon au naturel égoutté",
+      "20 g de fromage frais",
+      "Ciboulette",
+      "Poivre"
+    ],
+    "quantites": {
+      "petite": [
+        "2 petites tomates cerises",
+        "40 g de thon au naturel égoutté",
+        "20 g de fromage frais",
+        "Ciboulette",
+        "Poivre"
+      ],
+      "famille2": [
+        "4 petites tomates cerises",
+        "80 g de thon au naturel égoutté",
+        "40 g de fromage frais",
+        "Ciboulette",
+        "Poivre"
+      ],
+      "famille4": [
+        "8 petites tomates cerises",
+        "160 g de thon au naturel égoutté",
+        "80 g de fromage frais",
+        "Ciboulette",
+        "Poivre"
+      ]
+    },
+    "preparation": [
+      "Couper le haut des tomates et les vider délicatement.",
+      "Mélanger le thon avec le fromage frais et la ciboulette.",
+      "Garnir les tomates et servir frais."
+    ]
+  },
+  {
+    "id": "APE005",
+    "nom": "Mini boulettes de poulet",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée chaude",
+    "temps": 20,
+    "tempsPreparation": 10,
+    "tempsCuisson": 10,
+    "proteines": 14,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "60 g de blanc de poulet haché",
+      "10 g de fromage blanc",
+      "1 cuillère à café de chapelure",
+      "Persil",
+      "Paprika doux"
+    ],
+    "quantites": {
+      "petite": [
+        "60 g de blanc de poulet haché",
+        "10 g de fromage blanc",
+        "1 cuillère à café de chapelure",
+        "Persil",
+        "Paprika doux"
+      ],
+      "famille2": [
+        "120 g de blanc de poulet haché",
+        "20 g de fromage blanc",
+        "2 cuillère à café de chapelure",
+        "Persil",
+        "Paprika doux"
+      ],
+      "famille4": [
+        "240 g de blanc de poulet haché",
+        "40 g de fromage blanc",
+        "4 cuillère à café de chapelure",
+        "Persil",
+        "Paprika doux"
+      ]
+    },
+    "preparation": [
+      "Mélanger le poulet avec le fromage blanc, la chapelure et les herbes.",
+      "Former deux ou trois petites boulettes.",
+      "Cuire à la poêle ou au four jusqu'à cuisson complète du poulet."
+    ]
+  },
+  {
+    "id": "APE006",
+    "nom": "Verrine avocat & crevettes",
+    "categorie": "Apéro-dînatoire",
+    "type": "Verrine",
+    "temps": 10,
+    "tempsPreparation": 10,
+    "tempsCuisson": 0,
+    "proteines": 9,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "40 g de crevettes cuites",
+      "30 g d'avocat",
+      "30 g de fromage blanc",
+      "Quelques gouttes de citron",
+      "Ciboulette"
+    ],
+    "quantites": {
+      "petite": [
+        "40 g de crevettes cuites",
+        "30 g d'avocat",
+        "30 g de fromage blanc",
+        "Quelques gouttes de citron",
+        "Ciboulette"
+      ],
+      "famille2": [
+        "80 g de crevettes cuites",
+        "60 g d'avocat",
+        "60 g de fromage blanc",
+        "Quelques gouttes de citron",
+        "Ciboulette"
+      ],
+      "famille4": [
+        "160 g de crevettes cuites",
+        "120 g d'avocat",
+        "120 g de fromage blanc",
+        "Quelques gouttes de citron",
+        "Ciboulette"
+      ]
+    },
+    "preparation": [
+      "Écraser l'avocat avec quelques gouttes de citron.",
+      "Déposer l'avocat dans une petite verrine, ajouter le fromage blanc puis les crevettes.",
+      "Terminer avec la ciboulette."
+    ]
+  },
+  {
+    "id": "APE007",
+    "nom": "Mini blini saumon & fromage frais",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée salée",
+    "temps": 10,
+    "tempsPreparation": 5,
+    "tempsCuisson": 5,
+    "proteines": 9,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "1 mini blini",
+      "20 g de saumon fumé",
+      "20 g de fromage frais",
+      "Quelques gouttes de citron",
+      "Aneth"
+    ],
+    "quantites": {
+      "petite": [
+        "1 mini blini",
+        "20 g de saumon fumé",
+        "20 g de fromage frais",
+        "Quelques gouttes de citron",
+        "Aneth"
+      ],
+      "famille2": [
+        "2 mini blini",
+        "40 g de saumon fumé",
+        "40 g de fromage frais",
+        "Quelques gouttes de citron",
+        "Aneth"
+      ],
+      "famille4": [
+        "4 mini blini",
+        "80 g de saumon fumé",
+        "80 g de fromage frais",
+        "Quelques gouttes de citron",
+        "Aneth"
+      ]
+    },
+    "preparation": [
+      "Réchauffer légèrement le blini.",
+      "Ajouter le fromage frais, le saumon fumé, quelques gouttes de citron et l'aneth."
+    ]
+  },
+  {
+    "id": "APE008",
+    "nom": "Mini quiche jambon & fromage",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée chaude",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 11,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "20 g de pâte brisée",
+      "25 g de jambon blanc",
+      "1 petit œuf",
+      "20 ml de lait",
+      "15 g de fromage râpé",
+      "Poivre"
+    ],
+    "quantites": {
+      "petite": [
+        "20 g de pâte brisée",
+        "25 g de jambon blanc",
+        "1 petit œuf",
+        "20 ml de lait",
+        "15 g de fromage râpé",
+        "Poivre"
+      ],
+      "famille2": [
+        "40 g de pâte brisée",
+        "50 g de jambon blanc",
+        "2 petit œuf",
+        "40 ml de lait",
+        "30 g de fromage râpé",
+        "Poivre"
+      ],
+      "famille4": [
+        "80 g de pâte brisée",
+        "100 g de jambon blanc",
+        "4 petit œuf",
+        "80 ml de lait",
+        "60 g de fromage râpé",
+        "Poivre"
+      ]
+    },
+    "preparation": [
+      "Préchauffer le four à 180 °C.",
+      "Déposer la pâte dans un petit moule.",
+      "Mélanger l'œuf, le lait, le jambon et le fromage.",
+      "Verser sur la pâte et cuire environ 15 minutes."
+    ]
+  },
+  {
+    "id": "APE009",
+    "nom": "Mini pizza jambon mozzarella",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée chaude",
+    "temps": 20,
+    "tempsPreparation": 8,
+    "tempsCuisson": 12,
+    "proteines": 12,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "30 g de pâte à pizza",
+      "20 g de sauce tomate",
+      "20 g de jambon blanc",
+      "20 g de mozzarella",
+      "Origan"
+    ],
+    "quantites": {
+      "petite": [
+        "30 g de pâte à pizza",
+        "20 g de sauce tomate",
+        "20 g de jambon blanc",
+        "20 g de mozzarella",
+        "Origan"
+      ],
+      "famille2": [
+        "60 g de pâte à pizza",
+        "40 g de sauce tomate",
+        "40 g de jambon blanc",
+        "40 g de mozzarella",
+        "Origan"
+      ],
+      "famille4": [
+        "120 g de pâte à pizza",
+        "80 g de sauce tomate",
+        "80 g de jambon blanc",
+        "80 g de mozzarella",
+        "Origan"
+      ]
+    },
+    "preparation": [
+      "Étaler la pâte en petit cercle.",
+      "Ajouter la sauce tomate, le jambon et la mozzarella.",
+      "Saupoudrer d'origan et cuire environ 12 minutes à 200 °C."
+    ]
+  },
+  {
+    "id": "APE010",
+    "nom": "Mini wrap poulet & fromage frais",
+    "categorie": "Apéro-dînatoire",
+    "type": "Bouchée froide",
+    "temps": 10,
+    "tempsPreparation": 10,
+    "tempsCuisson": 0,
+    "proteines": 13,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "1/2 petite tortilla",
+      "40 g de poulet cuit",
+      "20 g de fromage frais",
+      "Quelques feuilles de salade",
+      "Quelques lamelles de tomate"
+    ],
+    "quantites": {
+      "petite": [
+        "1/2 petite tortilla",
+        "40 g de poulet cuit",
+        "20 g de fromage frais",
+        "Quelques feuilles de salade",
+        "Quelques lamelles de tomate"
+      ],
+      "famille2": [
+        "1 petite tortilla",
+        "80 g de poulet cuit",
+        "40 g de fromage frais",
+        "Quelques feuilles de salade",
+        "Quelques lamelles de tomate"
+      ],
+      "famille4": [
+        "2 petite tortilla",
+        "160 g de poulet cuit",
+        "80 g de fromage frais",
+        "Quelques feuilles de salade",
+        "Quelques lamelles de tomate"
+      ]
+    },
+    "preparation": [
+      "Étaler le fromage frais sur la tortilla.",
+      "Ajouter le poulet, la salade et la tomate.",
+      "Rouler fermement puis couper en petites bouchées."
+    ]
+  },
+  {
+    "id": "CRE001",
+    "nom": "Mini crêpe salée jambon & fromage",
+    "categorie": "Crêpes",
+    "type": "Crêpe salée",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 13,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "30 g de farine de blé",
+      "1 petit œuf",
+      "50 ml de lait",
+      "30 g de jambon blanc",
+      "20 g de fromage râpé"
+    ],
+    "quantites": {
+      "petite": [
+        "30 g de farine de blé",
+        "1 petit œuf",
+        "50 ml de lait",
+        "30 g de jambon blanc",
+        "20 g de fromage râpé"
+      ],
+      "famille2": [
+        "60 g de farine de blé",
+        "2 petit œuf",
+        "100 ml de lait",
+        "60 g de jambon blanc",
+        "40 g de fromage râpé"
+      ],
+      "famille4": [
+        "120 g de farine de blé",
+        "4 petit œuf",
+        "200 ml de lait",
+        "120 g de jambon blanc",
+        "80 g de fromage râpé"
+      ]
+    },
+    "preparation": [
+      "Préparer une petite pâte avec la farine, l'œuf et le lait.",
+      "Cuire une petite crêpe.",
+      "Garnir avec le jambon et le fromage puis plier et réchauffer quelques instants."
+    ]
+  },
+  {
+    "id": "CRE002",
+    "nom": "Mini crêpe salée jambon & fromage sans gluten",
+    "categorie": "Crêpes",
+    "type": "Crêpe salée",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 13,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "30 g de farine de sarrasin certifiée sans gluten",
+      "1 petit œuf",
+      "50 ml de lait",
+      "30 g de jambon garanti sans gluten",
+      "20 g de fromage râpé"
+    ],
+    "quantites": {
+      "petite": [
+        "30 g de farine de sarrasin certifiée sans gluten",
+        "1 petit œuf",
+        "50 ml de lait",
+        "30 g de jambon garanti sans gluten",
+        "20 g de fromage râpé"
+      ],
+      "famille2": [
+        "60 g de farine de sarrasin certifiée sans gluten",
+        "2 petit œuf",
+        "100 ml de lait",
+        "60 g de jambon garanti sans gluten",
+        "40 g de fromage râpé"
+      ],
+      "famille4": [
+        "120 g de farine de sarrasin certifiée sans gluten",
+        "4 petit œuf",
+        "200 ml de lait",
+        "120 g de jambon garanti sans gluten",
+        "80 g de fromage râpé"
+      ]
+    },
+    "preparation": [
+      "Mélanger la farine de sarrasin, l'œuf et le lait.",
+      "Cuire une petite crêpe.",
+      "Ajouter le jambon et le fromage puis plier et réchauffer."
+    ]
+  },
+  {
+    "id": "CRE003",
+    "nom": "Mini crêpe sucrée pomme cannelle",
+    "categorie": "Crêpes",
+    "type": "Crêpe sucrée",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 7,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "30 g de farine de blé",
+      "1 petit œuf",
+      "50 ml de lait",
+      "50 g de pomme",
+      "Cannelle"
+    ],
+    "quantites": {
+      "petite": [
+        "30 g de farine de blé",
+        "1 petit œuf",
+        "50 ml de lait",
+        "50 g de pomme",
+        "Cannelle"
+      ],
+      "famille2": [
+        "60 g de farine de blé",
+        "2 petit œuf",
+        "100 ml de lait",
+        "100 g de pomme",
+        "Cannelle"
+      ],
+      "famille4": [
+        "120 g de farine de blé",
+        "4 petit œuf",
+        "200 ml de lait",
+        "200 g de pomme",
+        "Cannelle"
+      ]
+    },
+    "preparation": [
+      "Préparer la pâte avec la farine, l'œuf et le lait.",
+      "Cuire une petite crêpe.",
+      "Faire revenir les dés de pomme avec la cannelle puis garnir la crêpe."
+    ]
+  },
+  {
+    "id": "CRE004",
+    "nom": "Mini crêpe sucrée pomme cannelle sans gluten",
+    "categorie": "Crêpes",
+    "type": "Crêpe sucrée",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 7,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": true,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "30 g de farine de riz certifiée sans gluten",
+      "1 petit œuf",
+      "50 ml de lait",
+      "50 g de pomme",
+      "Cannelle"
+    ],
+    "quantites": {
+      "petite": [
+        "30 g de farine de riz certifiée sans gluten",
+        "1 petit œuf",
+        "50 ml de lait",
+        "50 g de pomme",
+        "Cannelle"
+      ],
+      "famille2": [
+        "60 g de farine de riz certifiée sans gluten",
+        "2 petit œuf",
+        "100 ml de lait",
+        "100 g de pomme",
+        "Cannelle"
+      ],
+      "famille4": [
+        "120 g de farine de riz certifiée sans gluten",
+        "4 petit œuf",
+        "200 ml de lait",
+        "200 g de pomme",
+        "Cannelle"
+      ]
+    },
+    "preparation": [
+      "Mélanger la farine de riz, l'œuf et le lait.",
+      "Cuire une petite crêpe.",
+      "Faire revenir les dés de pomme avec la cannelle puis garnir."
+    ]
+  },
+  {
+    "id": "NOE001",
+    "nom": "Mini bouchée de Noël au saumon",
+    "categorie": "Noël",
+    "type": "Bouchée festive",
+    "temps": 15,
+    "tempsPreparation": 10,
+    "tempsCuisson": 5,
+    "proteines": 11,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "1 mini toast",
+      "25 g de saumon fumé",
+      "20 g de fromage frais",
+      "Citron",
+      "Aneth"
+    ],
+    "quantites": {
+      "petite": [
+        "1 mini toast",
+        "25 g de saumon fumé",
+        "20 g de fromage frais",
+        "Citron",
+        "Aneth"
+      ],
+      "famille2": [
+        "2 mini toast",
+        "50 g de saumon fumé",
+        "40 g de fromage frais",
+        "Citron",
+        "Aneth"
+      ],
+      "famille4": [
+        "4 mini toast",
+        "100 g de saumon fumé",
+        "80 g de fromage frais",
+        "Citron",
+        "Aneth"
+      ]
+    },
+    "preparation": [
+      "Toaster légèrement le pain.",
+      "Étaler le fromage frais puis déposer le saumon fumé.",
+      "Ajouter quelques gouttes de citron et l'aneth."
+    ]
+  },
+  {
+    "id": "NOE002",
+    "nom": "Mini gratin de Saint-Jacques",
+    "categorie": "Noël",
+    "type": "Plat festif",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 14,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "2 noix de Saint-Jacques",
+      "30 g de poireau",
+      "30 ml de crème légère",
+      "10 g de fromage râpé",
+      "Poivre"
+    ],
+    "quantites": {
+      "petite": [
+        "2 noix de Saint-Jacques",
+        "30 g de poireau",
+        "30 ml de crème légère",
+        "10 g de fromage râpé",
+        "Poivre"
+      ],
+      "famille2": [
+        "4 noix de Saint-Jacques",
+        "60 g de poireau",
+        "60 ml de crème légère",
+        "20 g de fromage râpé",
+        "Poivre"
+      ],
+      "famille4": [
+        "8 noix de Saint-Jacques",
+        "120 g de poireau",
+        "120 ml de crème légère",
+        "40 g de fromage râpé",
+        "Poivre"
+      ]
+    },
+    "preparation": [
+      "Émincer le poireau et le faire fondre doucement.",
+      "Déposer dans une petite cassolette avec les noix de Saint-Jacques.",
+      "Ajouter la crème et le fromage puis gratiner au four à 180 °C pendant environ 15 minutes."
+    ]
+  },
+  {
+    "id": "NOE003",
+    "nom": "Mini parmentier de canard festif",
+    "categorie": "Noël",
+    "type": "Plat festif",
+    "temps": 30,
+    "tempsPreparation": 15,
+    "tempsCuisson": 15,
+    "proteines": 15,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "50 g de confit de canard effiloché",
+      "70 g de pomme de terre",
+      "20 g de carotte",
+      "10 ml de lait",
+      "Poivre"
+    ],
+    "quantites": {
+      "petite": [
+        "50 g de confit de canard effiloché",
+        "70 g de pomme de terre",
+        "20 g de carotte",
+        "10 ml de lait",
+        "Poivre"
+      ],
+      "famille2": [
+        "100 g de confit de canard effiloché",
+        "140 g de pomme de terre",
+        "40 g de carotte",
+        "20 ml de lait",
+        "Poivre"
+      ],
+      "famille4": [
+        "200 g de confit de canard effiloché",
+        "280 g de pomme de terre",
+        "80 g de carotte",
+        "40 ml de lait",
+        "Poivre"
+      ]
+    },
+    "preparation": [
+      "Cuire la pomme de terre et la carotte puis les écraser avec le lait.",
+      "Déposer le canard dans une petite cocotte et couvrir avec la purée.",
+      "Faire gratiner quelques minutes."
+    ]
+  },
+  {
+    "id": "PAQ001",
+    "nom": "Mini nid de Pâques au poulet",
+    "categorie": "Pâques",
+    "type": "Plat festif",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 16,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "60 g de blanc de poulet",
+      "70 g de pommes de terre",
+      "1 petit œuf de caille",
+      "20 g de fromage blanc",
+      "Ciboulette"
+    ],
+    "quantites": {
+      "petite": [
+        "60 g de blanc de poulet",
+        "70 g de pommes de terre",
+        "1 petit œuf de caille",
+        "20 g de fromage blanc",
+        "Ciboulette"
+      ],
+      "famille2": [
+        "120 g de blanc de poulet",
+        "140 g de pommes de terre",
+        "2 petit œuf de caille",
+        "40 g de fromage blanc",
+        "Ciboulette"
+      ],
+      "famille4": [
+        "240 g de blanc de poulet",
+        "280 g de pommes de terre",
+        "4 petit œuf de caille",
+        "80 g de fromage blanc",
+        "Ciboulette"
+      ]
+    },
+    "preparation": [
+      "Cuire les pommes de terre et les écraser avec le fromage blanc.",
+      "Cuire le poulet puis le couper finement.",
+      "Disposer la purée en forme de nid, ajouter le poulet au centre et déposer l'œuf de caille cuit."
+    ]
+  },
+  {
+    "id": "PAQ002",
+    "nom": "Mini œuf cocotte au saumon",
+    "categorie": "Pâques",
+    "type": "Plat festif",
+    "temps": 20,
+    "tempsPreparation": 5,
+    "tempsCuisson": 15,
+    "proteines": 12,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "1 œuf",
+      "25 g de saumon fumé",
+      "20 ml de crème légère",
+      "Ciboulette",
+      "Poivre"
+    ],
+    "quantites": {
+      "petite": [
+        "1 œuf",
+        "25 g de saumon fumé",
+        "20 ml de crème légère",
+        "Ciboulette",
+        "Poivre"
+      ],
+      "famille2": [
+        "2 œuf",
+        "50 g de saumon fumé",
+        "40 ml de crème légère",
+        "Ciboulette",
+        "Poivre"
+      ],
+      "famille4": [
+        "4 œuf",
+        "100 g de saumon fumé",
+        "80 ml de crème légère",
+        "Ciboulette",
+        "Poivre"
+      ]
+    },
+    "preparation": [
+      "Déposer le saumon dans une petite cocotte.",
+      "Ajouter la crème puis casser l'œuf par-dessus.",
+      "Cuire au bain-marie au four à 180 °C jusqu'à ce que le blanc soit pris."
+    ]
+  },
+  {
+    "id": "GAL001",
+    "nom": "Mini galette des rois à la frangipane",
+    "categorie": "Épiphanie",
+    "type": "Dessert festif",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 6,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "40 g de pâte feuilletée",
+      "15 g de poudre d'amandes",
+      "10 g de sucre",
+      "10 g de beurre",
+      "1 petit morceau d'œuf battu",
+      "Quelques gouttes d'extrait d'amande"
+    ],
+    "quantites": {
+      "petite": [
+        "40 g de pâte feuilletée",
+        "15 g de poudre d'amandes",
+        "10 g de sucre",
+        "10 g de beurre",
+        "1 petit morceau d'œuf battu",
+        "Quelques gouttes d'extrait d'amande"
+      ],
+      "famille2": [
+        "80 g de pâte feuilletée",
+        "30 g de poudre d'amandes",
+        "20 g de sucre",
+        "20 g de beurre",
+        "2 petit morceau d'œuf battu",
+        "Quelques gouttes d'extrait d'amande"
+      ],
+      "famille4": [
+        "160 g de pâte feuilletée",
+        "60 g de poudre d'amandes",
+        "40 g de sucre",
+        "40 g de beurre",
+        "4 petit morceau d'œuf battu",
+        "Quelques gouttes d'extrait d'amande"
+      ]
+    },
+    "preparation": [
+      "Mélanger la poudre d'amandes, le sucre, le beurre et un peu d'œuf battu.",
+      "Déposer la crème d'amande sur un petit disque de pâte.",
+      "Recouvrir d'un second disque, souder les bords et dorer.",
+      "Cuire environ 20 minutes à 180 °C."
+    ]
+  },
+  {
+    "id": "GAL002",
+    "nom": "Mini galette des rois pomme amande",
+    "categorie": "Épiphanie",
+    "type": "Dessert festif",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 5,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "40 g de pâte feuilletée",
+      "30 g de pomme",
+      "10 g de poudre d'amandes",
+      "5 g de sucre",
+      "5 g de beurre",
+      "Cannelle"
+    ],
+    "quantites": {
+      "petite": [
+        "40 g de pâte feuilletée",
+        "30 g de pomme",
+        "10 g de poudre d'amandes",
+        "5 g de sucre",
+        "5 g de beurre",
+        "Cannelle"
+      ],
+      "famille2": [
+        "80 g de pâte feuilletée",
+        "60 g de pomme",
+        "20 g de poudre d'amandes",
+        "10 g de sucre",
+        "10 g de beurre",
+        "Cannelle"
+      ],
+      "famille4": [
+        "160 g de pâte feuilletée",
+        "120 g de pomme",
+        "40 g de poudre d'amandes",
+        "20 g de sucre",
+        "20 g de beurre",
+        "Cannelle"
+      ]
+    },
+    "preparation": [
+      "Faire revenir les dés de pomme avec la cannelle.",
+      "Mélanger la poudre d'amandes, le sucre et le beurre.",
+      "Déposer la préparation sur un petit disque de pâte, ajouter la pomme puis refermer avec un second disque.",
+      "Dorer et cuire 20 minutes à 180 °C."
+    ]
+  },
+  {
+    "id": "FES001",
+    "nom": "Mini bûche légère chocolat & poire",
+    "categorie": "Noël",
+    "type": "Dessert festif",
+    "temps": 35,
+    "tempsPreparation": 20,
+    "tempsCuisson": 15,
+    "proteines": 7,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "20 g de farine",
+      "1/2 œuf",
+      "10 g de sucre",
+      "30 g de poire",
+      "30 g de fromage blanc",
+      "5 g de cacao non sucré"
+    ],
+    "quantites": {
+      "petite": [
+        "20 g de farine",
+        "1/2 œuf",
+        "10 g de sucre",
+        "30 g de poire",
+        "30 g de fromage blanc",
+        "5 g de cacao non sucré"
+      ],
+      "famille2": [
+        "40 g de farine",
+        "1 œuf",
+        "20 g de sucre",
+        "60 g de poire",
+        "60 g de fromage blanc",
+        "10 g de cacao non sucré"
+      ],
+      "famille4": [
+        "80 g de farine",
+        "2 œuf",
+        "40 g de sucre",
+        "120 g de poire",
+        "120 g de fromage blanc",
+        "20 g de cacao non sucré"
+      ]
+    },
+    "preparation": [
+      "Préparer un petit biscuit avec la farine, l'œuf et le sucre.",
+      "Cuire quelques minutes.",
+      "Mélanger le fromage blanc avec le cacao.",
+      "Garnir le biscuit avec la crème et les dés de poire puis rouler délicatement."
+    ]
+  },
+  {
+    "id": "FES002",
+    "nom": "Mini fondant chocolat",
+    "categorie": "Desserts festifs",
+    "type": "Gâteau individuel",
+    "temps": 20,
+    "tempsPreparation": 5,
+    "tempsCuisson": 15,
+    "proteines": 6,
+    "portions": 1,
+    "portion": "1 petite portion",
+    "petitAppetit": true,
+    "preOperatoire": true,
+    "postOperatoire": true,
+    "vegetarien": false,
+    "vegetalien": false,
+    "sansGluten": false,
+    "sansLactose": false,
+    "batchCooking": false,
+    "ingredients": [
+      "15 g de chocolat noir",
+      "10 g de farine",
+      "1 petit œuf",
+      "10 g de fromage blanc",
+      "5 g de sucre"
+    ],
+    "quantites": {
+      "petite": [
+        "15 g de chocolat noir",
+        "10 g de farine",
+        "1 petit œuf",
+        "10 g de fromage blanc",
+        "5 g de sucre"
+      ],
+      "famille2": [
+        "30 g de chocolat noir",
+        "20 g de farine",
+        "2 petit œuf",
+        "20 g de fromage blanc",
+        "10 g de sucre"
+      ],
+      "famille4": [
+        "60 g de chocolat noir",
+        "40 g de farine",
+        "4 petit œuf",
+        "40 g de fromage blanc",
+        "20 g de sucre"
+      ]
+    },
+    "preparation": [
+      "Faire fondre le chocolat.",
+      "Mélanger avec l'œuf, le fromage blanc, le sucre et la farine.",
+      "Verser dans un petit moule individuel.",
+      "Cuire environ 12 à 15 minutes à 180 °C."
+    ]
+  }
 ]
