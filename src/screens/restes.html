@@ -8,156 +8,1096 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>♻️ Mes restes</title>
+<title>♻️ Anti-gaspi - Ma Petite Assiette</title>
 
 <link rel="stylesheet" href="style.css">
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-2E73FD8V9V');
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'G-2E73FD8V9V');
+
 </script>
-  
+
+
+<style>
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.anti-intro {
+
+  background: linear-gradient(
+    135deg,
+    #dce8d8,
+    #f4d8c8
+  );
+
+  border-radius: 24px;
+
+  padding: 22px;
+
+  margin-bottom: 20px;
+
+  text-align: center;
+
+}
+
+.anti-intro h2 {
+
+  margin: 0 0 10px;
+
+  color: #40534a;
+
+}
+
+.anti-intro p {
+
+  margin: 0;
+
+  line-height: 1.5;
+
+  color: #617268;
+
+}
+
+
+/* =========================================
+   SELECTION FRIGO
+========================================= */
+
+.selection-card {
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 6px 20px rgba(75,80,70,0.08);
+
+}
+
+.selection-card h3 {
+
+  margin: 0 0 8px;
+
+  color: #40534a;
+
+}
+
+.selection-card p {
+
+  margin: 0 0 15px;
+
+  color: #6b776f;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+}
+
+.aliments-selection {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+}
+
+.aliment-tag {
+
+  background: #edf5ed;
+
+  border: 1px solid #c9ddcc;
+
+  color: #54705a;
+
+  padding: 7px 11px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+}
+
+
+/* =========================================
+   BOUTON FRIGO
+========================================= */
+
+.frigo-button {
+
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 15px;
+
+  border-radius: 18px;
+
+  background: #789b80;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  margin-top: 15px;
+
+}
+
+.frigo-button:hover {
+
+  background: #668b6e;
+
+}
+
+
+/* =========================================
+   RESULTATS
+========================================= */
+
+.resultats-header {
+
+  margin: 25px 4px 12px;
+
+}
+
+.resultats-header h3 {
+
+  margin: 0 0 5px;
+
+  color: #40534a;
+
+}
+
+.resultats-header p {
+
+  margin: 0;
+
+  color: #748078;
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================
+   CARTE RECETTE
+========================================= */
+
+.recette-card {
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 18px;
+
+  margin-bottom: 14px;
+
+  box-shadow:
+    0 5px 18px rgba(75,80,70,0.07);
+
+}
+
+.recette-card h4 {
+
+  margin: 0 0 8px;
+
+  font-size: 17px;
+
+  color: #40534a;
+
+}
+
+.recette-info {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 12px;
+
+}
+
+.info {
+
+  background: #f6f1eb;
+
+  border-radius: 14px;
+
+  padding: 5px 9px;
+
+  font-size: 11px;
+
+  color: #68746d;
+
+}
+
+.correspondance {
+
+  padding: 10px 12px;
+
+  border-radius: 14px;
+
+  background: #edf5ed;
+
+  color: #54705a;
+
+  font-size: 13px;
+
+  margin-bottom: 12px;
+
+}
+
+.correspondance.attention {
+
+  background: #fff5df;
+
+  color: #896d38;
+
+}
+
+.ingredients-trouves {
+
+  font-size: 12px;
+
+  color: #748078;
+
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+
+}
+
+.recette-button {
+
+  display: block;
+
+  text-align: center;
+
+  padding: 12px;
+
+  border-radius: 15px;
+
+  background: #789b80;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  font-size: 14px;
+
+}
+
+.recette-button:hover {
+
+  background: #668b6e;
+
+}
+
+
+/* =========================================
+   AUCUN RESULTAT
+========================================= */
+
+.empty {
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 25px 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 5px 18px rgba(75,80,70,0.07);
+
+}
+
+.empty-icon {
+
+  font-size: 40px;
+
+  margin-bottom: 10px;
+
+}
+
+.empty h3 {
+
+  margin: 0 0 8px;
+
+  color: #40534a;
+
+}
+
+.empty p {
+
+  margin: 0;
+
+  color: #748078;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================
+   CHARGEMENT
+========================================= */
+
+.loading {
+
+  text-align: center;
+
+  padding: 25px;
+
+  color: #748078;
+
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.badge-match {
+
+  display: inline-block;
+
+  background: #789b80;
+
+  color: white;
+
+  border-radius: 15px;
+
+  padding: 4px 9px;
+
+  font-size: 11px;
+
+  margin-bottom: 8px;
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
 <header class="header">
 
-<a href="index.html" class="logo">←</a>
+<a href="frigo.html" class="logo">
+←
+</a>
 
 <div>
 
 <h1>MA PETITE ASSIETTE</h1>
 
-<p>Des petites portions, mais un vrai repas.</p>
+<p>
+Des petites portions, mais un vrai repas.
+</p>
 
 </div>
 
 </header>
 
 
+
 <main>
 
-<section class="intro">
 
-<h2>📱 TITRE DE LA PAGE</h2>
+<!-- =========================================
+     INTRO
+========================================= -->
+
+<section class="anti-intro">
+
+<h2>♻️ Anti-gaspi</h2>
 
 <p>
-DESCRIPTION DE LA PAGE
+
+Utilisez ce que vous avez déjà chez vous
+et découvrez des recettes adaptées à vos restes.
+
 </p>
 
 </section>
 
 
-<section class="features">
 
+<!-- =========================================
+     SELECTION ACTUELLE
+========================================= -->
 
-<div class="feature-grid">
+<section
+class="selection-card"
+id="selectionCard"
+>
 
+<h3>
+🧊 Ce que j'ai dans mon frigo
+</h3>
 
-<a href="recettes.html">
+<p>
+Voici les aliments sélectionnés dans votre frigo.
+</p>
 
-🍽️
-
-<strong>Mes recettes</strong>
-
-<small>
-Découvrir les recettes
-</small>
-
-</a>
-
-
-<a href="menu.html">
-
-📅
-
-<strong>Mon menu</strong>
-
-<small>
-Organiser mes repas
-</small>
-
-</a>
-
-
-<a href="courses.html">
-
-🛒
-
-<strong>Mes courses</strong>
-
-<small>
-Préparer ma liste
-</small>
-
-</a>
-
-
-<a href="index.html">
-
-🏠
-
-<strong>Accueil</strong>
-
-<small>
-Retour à l'accueil
-</small>
-
-</a>
-
+<div
+class="aliments-selection"
+id="alimentsSelection"
+>
 
 </div>
 
 
+<a
+href="frigo.html"
+class="frigo-button"
+>
+
+🧊 Modifier mon frigo
+
+</a>
+
 </section>
+
+
+
+<!-- =========================================
+     RESULTATS
+========================================= -->
+
+<div class="resultats-header">
+
+<h3>
+🍽️ Mes idées anti-gaspi
+</h3>
+
+<p id="nombreResultats">
+Recherche en cours...
+</p>
+
+</div>
+
+
+<div id="resultats">
+
+<div class="loading">
+
+♻️ Recherche des recettes...
+
+</div>
+
+</div>
+
 
 </main>
 
 
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
 <nav class="bottom-nav">
+
 
 <a href="index.html">
 
 🏠
 
-<small>Accueil</small>
+<small>
+Accueil
+</small>
 
 </a>
 
 
-<a href="recettes.html">
+<a href="Recettes.html">
 
 🍽️
 
-<small>Recettes</small>
+<small>
+Recettes
+</small>
 
 </a>
 
 
-<a href="menu.html">
+<a href="restes.html">
 
-📅
+♻️
 
-<small>Menu</small>
+<small>
+Anti-gaspi
+</small>
+
+</a>
+
+
+<a href="MonProfil.html">
+
+👤
+
+<small>
+Profil
+</small>
 
 </a>
 
-
-<a href="courses.html">
-
-🛒
-
-<small>Courses</small>
-
-</a>
 
 </nav>
+
+
+
+<script>
+
+
+/* =========================================
+   NORMALISATION DES TEXTES
+========================================= */
+
+function normaliser(texte) {
+
+  return texte
+
+    .toLowerCase()
+
+    .normalize("NFD")
+
+    .replace(/[\u0300-\u036f]/g, "")
+
+    .replace(/œ/g, "oe")
+
+    .replace(/æ/g, "ae");
+
+}
+
+
+
+/* =========================================
+   ALIMENTS SELECTIONNES
+========================================= */
+
+const aliments = JSON.parse(
+
+  localStorage.getItem("monFrigo") || "[]"
+
+);
+
+
+
+/* =========================================
+   AFFICHER LA SELECTION
+========================================= */
+
+function afficherSelection() {
+
+  const zone =
+    document.getElementById(
+      "alimentsSelection"
+    );
+
+
+  zone.innerHTML = "";
+
+
+  if (aliments.length === 0) {
+
+    zone.innerHTML = `
+
+      <span class="aliment-tag">
+        Aucun aliment sélectionné
+      </span>
+
+    `;
+
+    return;
+
+  }
+
+
+  aliments.forEach(aliment => {
+
+    const tag =
+      document.createElement("span");
+
+    tag.className = "aliment-tag";
+
+    tag.textContent =
+      "✓ " + aliment;
+
+    zone.appendChild(tag);
+
+  });
+
+}
+
+
+
+/* =========================================
+   RECHERCHE DES RECETTES
+========================================= */
+
+async function rechercherRecettes() {
+
+
+  const zone =
+    document.getElementById(
+      "resultats"
+    );
+
+
+  const compteur =
+    document.getElementById(
+      "nombreResultats"
+    );
+
+
+  if (aliments.length === 0) {
+
+    compteur.textContent =
+      "Aucun aliment sélectionné";
+
+
+    zone.innerHTML = `
+
+      <div class="empty">
+
+        <div class="empty-icon">
+          🧊
+        </div>
+
+        <h3>
+          Votre frigo est vide
+        </h3>
+
+        <p>
+          Sélectionnez quelques aliments
+          dans votre frigo pour découvrir
+          des recettes anti-gaspi.
+        </p>
+
+        <a
+          href="frigo.html"
+          class="frigo-button"
+        >
+          🧊 Ouvrir mon frigo
+        </a>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+
+  try {
+
+
+    /* -----------------------------------------
+       CHARGEMENT DU JSON
+    ----------------------------------------- */
+
+    const reponse =
+      await fetch("../recettes.json");
+
+
+    if (!reponse.ok) {
+
+      throw new Error(
+        "Impossible de charger recettes.json"
+      );
+
+    }
+
+
+    const recettes =
+      await reponse.json();
+
+
+
+    /* -----------------------------------------
+       RECHERCHE
+    ----------------------------------------- */
+
+    const resultats = recettes
+
+      .map(recette => {
+
+
+        const ingredients =
+          Array.isArray(
+            recette.ingredients
+          )
+            ? recette.ingredients
+            : [];
+
+
+        const ingredientsNormalises =
+          ingredients.map(
+            ingredient =>
+              normaliser(
+                ingredient
+              )
+          );
+
+
+        const correspondances = [];
+
+
+        aliments.forEach(aliment => {
+
+
+          const alimentNormalise =
+            normaliser(aliment);
+
+
+          const trouve =
+            ingredientsNormalises.some(
+              ingredient =>
+                ingredient.includes(
+                  alimentNormalise
+                )
+            );
+
+
+          if (trouve) {
+
+            correspondances.push(
+              aliment
+            );
+
+          }
+
+        });
+
+
+        return {
+
+          recette: recette,
+
+          correspondances:
+            correspondances,
+
+          score:
+            correspondances.length
+
+        };
+
+      })
+
+      .filter(
+        resultat =>
+          resultat.score > 0
+      )
+
+      .sort(
+        (a, b) =>
+          b.score - a.score
+      );
+
+
+
+    /* -----------------------------------------
+       AFFICHAGE
+    ----------------------------------------- */
+
+    compteur.textContent =
+      resultats.length +
+      (
+        resultats.length > 1
+          ? " recettes correspondent"
+          : " recette correspond"
+      );
+
+
+
+    if (resultats.length === 0) {
+
+
+      zone.innerHTML = `
+
+        <div class="empty">
+
+          <div class="empty-icon">
+            🌱
+          </div>
+
+          <h3>
+            Pas encore de recette
+          </h3>
+
+          <p>
+
+            Nous n'avons pas trouvé
+            de recette utilisant les aliments
+            sélectionnés.
+
+            <br><br>
+
+            Essayez de sélectionner
+            d'autres aliments.
+
+          </p>
+
+
+          <a
+            href="frigo.html"
+            class="frigo-button"
+          >
+
+            🧊 Modifier ma sélection
+
+          </a>
+
+        </div>
+
+      `;
+
+
+      return;
+
+    }
+
+
+
+    zone.innerHTML = "";
+
+
+
+    resultats.forEach(
+      resultat => {
+
+
+        const recette =
+          resultat.recette;
+
+
+        const correspondances =
+          resultat.correspondances;
+
+
+        const carte =
+          document.createElement(
+            "div"
+          );
+
+
+        carte.className =
+          "recette-card";
+
+
+
+        const pourcentage =
+          Math.round(
+            (
+              correspondances.length /
+              aliments.length
+            ) * 100
+          );
+
+
+
+        const message =
+          correspondances.length ===
+          aliments.length
+
+            ? "🟢 Vous avez tous les aliments sélectionnés"
+
+            : "🟠 Vous avez " +
+              correspondances.length +
+              " aliment(s) correspondant(s)";
+
+
+
+        carte.innerHTML = `
+
+          <span class="badge-match">
+
+            ${pourcentage}% de correspondance
+
+          </span>
+
+
+          <h4>
+
+            ${recette.nom}
+
+          </h4>
+
+
+          <div class="recette-info">
+
+            <span class="info">
+              ⏱️ ${recette.temps || "—"} min
+            </span>
+
+            <span class="info">
+              🍽️ ${recette.portion || "Petite portion"}
+            </span>
+
+            <span class="info">
+              💪 ${recette.proteines || "—"} g protéines
+            </span>
+
+          </div>
+
+
+          <div
+            class="correspondance
+            ${correspondances.length === aliments.length
+              ? ""
+              : "attention"}"
+          >
+
+            ${message}
+
+          </div>
+
+
+          <div class="ingredients-trouves">
+
+            <strong>Aliments utilisés :</strong>
+
+            ${correspondances.join(", ")}
+
+          </div>
+
+
+          <a
+            href="Recette.html?id=${encodeURIComponent(recette.id)}"
+            class="recette-button"
+          >
+
+            🍽️ Voir la recette
+
+          </a>
+
+        `;
+
+
+        zone.appendChild(carte);
+
+      }
+
+    );
+
+
+    /* -----------------------------------------
+       GOOGLE ANALYTICS
+    ----------------------------------------- */
+
+    if (
+      typeof gtag === "function"
+    ) {
+
+      gtag(
+        "event",
+        "recherche_anti_gaspi",
+        {
+          "nombre_aliments":
+            aliments.length,
+
+          "nombre_resultats":
+            resultats.length
+        }
+      );
+
+    }
+
+
+  } catch (erreur) {
+
+
+    console.error(
+      "Erreur Anti-gaspi :",
+      erreur
+    );
+
+
+    compteur.textContent =
+      "Erreur de chargement";
+
+
+    zone.innerHTML = `
+
+      <div class="empty">
+
+        <div class="empty-icon">
+          ⚠️
+        </div>
+
+        <h3>
+          Impossible de charger les recettes
+        </h3>
+
+        <p>
+          Vérifiez que le fichier
+          <strong>recettes.json</strong>
+          est bien accessible.
+        </p>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+
+/* =========================================
+   INITIALISATION
+========================================= */
+
+afficherSelection();
+
+rechercherRecettes();
+
+
+</script>
 
 
 </body>
