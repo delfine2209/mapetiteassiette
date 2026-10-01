@@ -7,7 +7,7 @@
 
   <title>Ma Petite Assiette</title>
 
-  <meta name="description" content="Ma Petite Assiette : des idées de recettes simples, gourmandes et adaptées aux petites quantités.">
+  <meta name="description" content="Ma Petite Assiette : des recettes simples, gourmandes et adaptées aux petites quantités.">
 
   <style>
     * {
@@ -18,6 +18,7 @@
 
     :root {
       --rose: #d96b7d;
+      --rose-fonce: #c65368;
       --rose-clair: #f9e6e9;
       --rose-tres-clair: #fff5f6;
       --vert: #7b9b78;
@@ -26,6 +27,7 @@
       --texte: #3f3a38;
       --gris: #77716e;
       --blanc: #ffffff;
+      --or: #d2a84b;
       --ombre: 0 8px 25px rgba(80, 60, 60, 0.10);
       --rayon: 22px;
     }
@@ -57,7 +59,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
     }
 
@@ -82,7 +84,7 @@
     }
 
     .hero {
-      max-width: 650px;
+      max-width: 700px;
       margin: 30px auto 0;
     }
 
@@ -105,7 +107,7 @@
       font-size: 16px;
       line-height: 1.6;
       color: var(--gris);
-      max-width: 520px;
+      max-width: 560px;
     }
 
     /* =========================
@@ -116,7 +118,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 650px;
+      max-width: 700px;
       margin: 22px auto 0;
       padding: 18px 20px;
       background: var(--rose);
@@ -140,7 +142,7 @@
     ========================= */
 
     main {
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
       padding: 28px 16px 30px;
     }
@@ -150,6 +152,7 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 16px;
+      margin-top: 10px;
     }
 
     .section-title h2 {
@@ -165,7 +168,7 @@
     }
 
     /* =========================
-       CARTES CATÉGORIES
+       CATÉGORIES
     ========================= */
 
     .categories {
@@ -198,7 +201,7 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(35, 30, 30, 0.60),
+        rgba(35, 30, 30, 0.65),
         rgba(35, 30, 30, 0.05)
       );
       z-index: 1;
@@ -218,7 +221,7 @@
       width: 43px;
       height: 43px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.90);
+      background: rgba(255,255,255,0.92);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -233,7 +236,6 @@
     .category p {
       font-size: 12px;
       line-height: 1.4;
-      opacity: 0.95;
     }
 
     .petit-appetit {
@@ -320,7 +322,7 @@
     .values {
       display: grid;
       gap: 12px;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .value {
@@ -357,13 +359,193 @@
     }
 
     /* =========================
-       PETIT MESSAGE
+       À PROPOS
+    ========================= */
+
+    .about {
+      background: white;
+      border-radius: var(--rayon);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--ombre);
+    }
+
+    .about-header {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 15px;
+    }
+
+    .about-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--rose-clair);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .about h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+    }
+
+    .about p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--gris);
+      margin-bottom: 12px;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      color: var(--rose);
+      font-weight: bold;
+    }
+
+    /* =========================
+       QUESTIONNAIRE TESTEURS
+    ========================= */
+
+    .tester-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #d96b7d, #c65368);
+      color: white;
+      border-radius: var(--rayon);
+      padding: 26px 21px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 28px rgba(198,83,104,0.25);
+    }
+
+    .tester-card::after {
+      content: "💬";
+      position: absolute;
+      right: -5px;
+      top: -12px;
+      font-size: 90px;
+      opacity: 0.12;
+      transform: rotate(12deg);
+    }
+
+    .tester-card .mini-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      opacity: 0.85;
+      margin-bottom: 7px;
+    }
+
+    .tester-card h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tester-card p {
+      font-size: 13px;
+      line-height: 1.55;
+      opacity: 0.95;
+      margin-bottom: 18px;
+      max-width: 550px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tester-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: white;
+      color: var(--rose-fonce);
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =========================
+       STATISTIQUES
+    ========================= */
+
+    .stats-card {
+      background: white;
+      border-radius: var(--rayon);
+      padding: 22px 17px;
+      margin-bottom: 24px;
+      box-shadow: var(--ombre);
+    }
+
+    .stats-card-header {
+      text-align: center;
+      margin-bottom: 19px;
+    }
+
+    .stats-card-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      margin-bottom: 6px;
+    }
+
+    .stats-card-header p {
+      color: var(--gris);
+      font-size: 12px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+
+    .stat {
+      text-align: center;
+      background: var(--rose-tres-clair);
+      border-radius: 16px;
+      padding: 17px 6px;
+    }
+
+    .stat-number {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--rose);
+      font-size: 27px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      color: var(--gris);
+      font-size: 10px;
+      line-height: 1.3;
+    }
+
+    .stats-note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 10px;
+      color: #99918d;
+    }
+
+    /* =========================
+       MESSAGE FINAL
     ========================= */
 
     .welcome {
       background: var(--vert-clair);
       border-radius: var(--rayon);
-      padding: 22px;
+      padding: 23px;
       text-align: center;
       margin-top: 10px;
     }
@@ -430,10 +612,11 @@
     }
 
     /* =========================
-       DESKTOP
+       RESPONSIVE
     ========================= */
 
     @media (min-width: 700px) {
+
       header {
         padding-top: 38px;
         padding-bottom: 35px;
@@ -469,30 +652,60 @@
         padding: 20px 15px;
       }
     }
+
+    @media (max-width: 390px) {
+
+      .stats {
+        gap: 6px;
+      }
+
+      .stat {
+        padding: 15px 4px;
+      }
+
+      .stat-number {
+        font-size: 23px;
+      }
+
+      .stat-label {
+        font-size: 9px;
+      }
+    }
   </style>
 
 </head>
 
 <body>
 
-  <!-- =========================
+  <!-- =====================================================
        HEADER
-  ========================= -->
+  ====================================================== -->
 
   <header>
 
 ```
 <div class="header-top">
-  <div class="logo">Ma Petite Assiette</div>
 
-  <a href="src/screens/Favoris.html" class="heart" aria-label="Mes favoris">
+  <div class="logo">
+    Ma Petite Assiette
+  </div>
+
+  <a
+    href="src/screens/Favoris.html"
+    class="heart"
+    aria-label="Mes favoris"
+  >
     ♡
   </a>
+
 </div>
+
 
 <div class="hero">
 
-  <div class="hero-small">Bienvenue 👋</div>
+  <div class="hero-small">
+    Bienvenue 👋
+  </div>
 
   <h1>
     Des petites portions,<br>
@@ -504,7 +717,11 @@
     quand on mange en petites quantités.
   </p>
 
-  <a href="src/screens/MesEnvies.html" class="main-button">
+
+  <a
+    href="src/screens/MesEnvies.html"
+    class="main-button"
+  >
     <span>✨ Trouver une recette</span>
     <span>→</span>
   </a>
@@ -514,86 +731,133 @@
 
   </header>
 
-  <!-- =========================
-       CONTENU
-  ========================= -->
+  <!-- =====================================================
+       CONTENU PRINCIPAL
+  ====================================================== -->
 
   <main>
 
 ```
+<!-- CATÉGORIES -->
+
 <div class="section-title">
-  <h2>Que souhaitez-vous faire ?</h2>
-  <span>À vous de choisir</span>
+
+  <h2>
+    Que souhaitez-vous faire ?
+  </h2>
+
+  <span>
+    À vous de choisir
+  </span>
+
 </div>
 
 
-<!-- CATÉGORIES PRINCIPALES -->
-
 <section class="categories">
 
-  <a href="src/screens/petit-appetit.html" class="category petit-appetit">
 
-    <div class="category-icon">🥣</div>
+  <a
+    href="src/screens/petit-appetit.html"
+    class="category petit-appetit"
+  >
+
+    <div class="category-icon">
+      🥣
+    </div>
 
     <div class="category-content">
-      <h3>Petit appétit</h3>
+
+      <h3>
+        Petit appétit
+      </h3>
+
       <p>
         Des portions adaptées, sans gaspillage.
       </p>
+
     </div>
 
   </a>
 
 
-  <a href="src/screens/chirurgie.html" class="category chirurgie">
+  <a
+    href="src/screens/chirurgie.html"
+    class="category chirurgie"
+  >
 
-    <div class="category-icon">💗</div>
+    <div class="category-icon">
+      💗
+    </div>
 
     <div class="category-content">
-      <h3>Chirurgie</h3>
+
+      <h3>
+        Chirurgie
+      </h3>
+
       <p>
         Avant et après l'intervention.
       </p>
+
     </div>
 
   </a>
 
 
-  <a href="src/screens/batch-cooking.html" class="category batch">
+  <a
+    href="src/screens/batch-cooking.html"
+    class="category batch"
+  >
 
-    <div class="category-icon">🍱</div>
+    <div class="category-icon">
+      🍱
+    </div>
 
     <div class="category-content">
-      <h3>Batch cooking</h3>
+
+      <h3>
+        Batch cooking
+      </h3>
+
       <p>
         Préparer plusieurs petits repas à l'avance.
       </p>
+
     </div>
 
   </a>
 
 
-  <!-- FESTIF -->
+  <a
+    href="src/screens/Recettes.html?codes=APE,CRE,NOE,PAQ,GAL,FES"
+    class="category festif"
+  >
 
-  <a href="src/screens/Recettes.html?categorie=festif" class="category festif">
-
-    <div class="category-icon">🎉</div>
+    <div class="category-icon">
+      🎉
+    </div>
 
     <div class="category-content">
-      <h3>Festif</h3>
+
+      <h3>
+        Festif
+      </h3>
+
       <p>
         Apéros, fêtes et recettes à partager.
       </p>
+
     </div>
 
   </a>
+
 
 </section>
 
 
-<!-- =========================
-     ESPACE FESTIF
-========================= -->
+<!-- =====================================================
+     BANDEAU FESTIF
+====================================================== -->
 
 <section class="festive-banner">
 
@@ -604,16 +868,22 @@
     </div>
 
     <div>
-      <h3>Les petites assiettes festives</h3>
+
+      <h3>
+        Les petites assiettes festives
+      </h3>
+
     </div>
 
   </div>
+
 
   <p>
     Noël, Pâques, crêpes, galette des rois,
     apéritifs dînatoires et autres moments gourmands :
     des recettes festives pensées aussi en petites portions.
   </p>
+
 
   <a
     href="src/screens/Recettes.html?codes=APE,CRE,NOE,PAQ,GAL,FES"
@@ -625,15 +895,21 @@
 </section>
 
 
-<!-- =========================
-     POURQUOI MA PETITE ASSIETTE
-========================= -->
+<!-- =====================================================
+     POURQUOI MA PETITE ASSIETTE ?
+====================================================== -->
 
 <div class="section-title">
-  <h2>Pourquoi Ma Petite Assiette ?</h2>
+
+  <h2>
+    Pourquoi Ma Petite Assiette ?
+  </h2>
+
 </div>
 
+
 <section class="values">
+
 
   <div class="value">
 
@@ -642,12 +918,16 @@
     </div>
 
     <div>
-      <h3>Portions adaptées</h3>
+
+      <h3>
+        Portions adaptées
+      </h3>
 
       <p>
         Des quantités raisonnables pour éviter
         le gaspillage et respecter son appétit.
       </p>
+
     </div>
 
   </div>
@@ -660,12 +940,16 @@
     </div>
 
     <div>
-      <h3>Selon vos envies</h3>
+
+      <h3>
+        Selon vos envies
+      </h3>
 
       <p>
         Salé, sucré, léger, réconfortant ou festif :
         choisissez ce qui vous fait envie.
       </p>
+
     </div>
 
   </div>
@@ -678,22 +962,200 @@
     </div>
 
     <div>
-      <h3>Simple à préparer</h3>
+
+      <h3>
+        Simple à préparer
+      </h3>
 
       <p>
         Des recettes accessibles pour tous les jours,
         même quand on a peu d'énergie.
       </p>
+
     </div>
 
+  </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     À PROPOS
+====================================================== -->
+
+<section class="about">
+
+  <div class="about-header">
+
+    <div class="about-icon">
+      💕
+    </div>
+
+    <h2>
+      À propos
+    </h2>
+
+  </div>
+
+
+  <p>
+    <strong>Ma Petite Assiette</strong> est un projet né
+    d'une idée simple : lorsque l'on mange en petites quantités,
+    il n'est pas toujours facile de trouver des recettes
+    réellement adaptées.
+  </p>
+
+
+  <p>
+    L'objectif est de proposer des
+    <span class="highlight">
+      petites portions gourmandes, simples et variées
+    </span>,
+    sans donner l'impression de renoncer au plaisir de manger.
+  </p>
+
+
+  <p>
+    L'application propose également des idées pour les
+    petits appétits, la préparation à une chirurgie,
+    les différentes étapes après une chirurgie,
+    les collations, les petits-déjeuners,
+    le batch cooking et les repas festifs.
+  </p>
+
+
+  <p>
+    Le projet évolue grâce aux retours des personnes
+    qui testent l'application.
+    <strong>Votre avis permet de construire la suite.</strong>
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     APPEL AUX TESTEURS / QUESTIONNAIRE
+====================================================== -->
+
+<section class="tester-card">
+
+  <div class="mini-title">
+    Participez au projet
+  </div>
+
+
+  <h2>
+    Devenez testeur de<br>
+    Ma Petite Assiette 💕
+  </h2>
+
+
+  <p>
+    L'application est encore en développement.
+    Quelques minutes suffisent pour découvrir
+    les recettes et nous dire ce que vous en pensez.
+    Vos réponses nous aident à améliorer
+    Ma Petite Assiette avant son lancement.
+  </p>
+
+
+  <!--
+    IMPORTANT :
+    Remplacez le lien ci-dessous par le lien
+    de votre questionnaire Google Forms lorsque
+    vous souhaitez le mettre en ligne.
+  -->
+
+  <a
+    href="https://docs.google.com/forms/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="tester-button"
+  >
+    📝 Répondre au questionnaire →
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     STATISTIQUES
+====================================================== -->
+
+<section class="stats-card">
+
+  <div class="stats-card-header">
+
+    <h2>
+      Ma Petite Assiette en chiffres
+    </h2>
+
+    <p>
+      Le projet grandit petit à petit grâce à vous.
+    </p>
+
+  </div>
+
+
+  <div class="stats">
+
+
+    <div class="stat">
+
+      <div class="stat-number">
+        218
+      </div>
+
+      <div class="stat-label">
+        recettes<br>
+        actuellement
+      </div>
+
+    </div>
+
+
+    <div class="stat">
+
+      <div class="stat-number">
+        6
+      </div>
+
+      <div class="stat-label">
+        univers<br>
+        festifs
+      </div>
+
+    </div>
+
+
+    <div class="stat">
+
+      <div class="stat-number">
+        100%
+      </div>
+
+      <div class="stat-label">
+        pensé pour<br>
+        les petites portions
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="stats-note">
+    Statistiques indicatives — le nombre de recettes évolue régulièrement.
   </div>
 
 </section>
 
 
-<!-- =========================
-     MESSAGE
-========================= -->
+<!-- =====================================================
+     MESSAGE FINAL
+====================================================== -->
 
 <section class="welcome">
 
@@ -701,10 +1163,12 @@
     🥄
   </div>
 
+
   <h2>
     Ici, on mange petit…<br>
     mais on se fait plaisir.
   </h2>
+
 
   <p>
     Parce qu'une petite assiette peut être
@@ -716,45 +1180,79 @@
 
   </main>
 
-  <!-- =========================
-       NAVIGATION MOBILE
-  ========================= -->
+  <!-- =====================================================
+       NAVIGATION BAS
+  ====================================================== -->
 
   <nav class="bottom-nav">
 
 ```
 <div class="bottom-nav-inner">
 
-  <a href="index.html" class="nav-item active">
 
-    <span class="nav-icon">⌂</span>
-    <span>Accueil</span>
+  <a
+    href="index.html"
+    class="nav-item active"
+  >
 
-  </a>
+    <span class="nav-icon">
+      ⌂
+    </span>
 
-
-  <a href="src/screens/Recettes.html" class="nav-item">
-
-    <span class="nav-icon">🍽️</span>
-    <span>Recettes</span>
-
-  </a>
-
-
-  <a href="src/screens/Favoris.html" class="nav-item">
-
-    <span class="nav-icon">♡</span>
-    <span>Favoris</span>
+    <span>
+      Accueil
+    </span>
 
   </a>
 
 
-  <a href="src/screens/Profil.html" class="nav-item">
+  <a
+    href="src/screens/Recettes.html"
+    class="nav-item"
+  >
 
-    <span class="nav-icon">♙</span>
-    <span>Profil</span>
+    <span class="nav-icon">
+      🍽️
+    </span>
+
+    <span>
+      Recettes
+    </span>
 
   </a>
+
+
+  <a
+    href="src/screens/Favoris.html"
+    class="nav-item"
+  >
+
+    <span class="nav-icon">
+      ♡
+    </span>
+
+    <span>
+      Favoris
+    </span>
+
+  </a>
+
+
+  <a
+    href="src/screens/Profil.html"
+    class="nav-item"
+  >
+
+    <span class="nav-icon">
+      ♙
+    </span>
+
+    <span>
+      Profil
+    </span>
+
+  </a>
+
 
 </div>
 ```
