@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="fr">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Recettes - Ma Petite Assiette</title>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2E73FD8V9V');
-</script>
-  
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -30,6 +22,10 @@
       color: #4d4038;
       padding-bottom: 85px;
     }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       background: linear-gradient(135deg, #f6d9c8, #dce8d5);
@@ -62,7 +58,9 @@
       margin: auto;
     }
 
-    /* CONTEXTE */
+    /* =========================
+       CONTEXTE
+    ========================= */
 
     .contexte {
       display: none;
@@ -82,7 +80,9 @@
       font-size: 15px;
     }
 
-    /* RECHERCHE */
+    /* =========================
+       RECHERCHE
+    ========================= */
 
     .recherche {
       margin-bottom: 18px;
@@ -102,7 +102,9 @@
       border-color: #9db58f;
     }
 
-    /* TITRES */
+    /* =========================
+       TITRES
+    ========================= */
 
     .titre-section {
       font-size: 19px;
@@ -110,7 +112,9 @@
       color: #4d4038;
     }
 
-    /* CATEGORIES */
+    /* =========================
+       CATEGORIES
+    ========================= */
 
     .categories {
       display: flex;
@@ -140,7 +144,9 @@
       color: white;
     }
 
-    /* FILTRES */
+    /* =========================
+       FILTRES
+    ========================= */
 
     .filtres {
       display: flex;
@@ -164,28 +170,64 @@
       border-color: #e1bda8;
     }
 
-    /* RESULTATS */
+    /* =========================
+       TRI
+    ========================= */
 
-    .resultats-er {
+    .tri {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tri-btn {
+      border: 1px solid #dfd1c6;
+      background: white;
+      color: #65574e;
+      border-radius: 18px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .tri-btn.active {
+      background: #dce8d5;
+      border-color: #9db58f;
+      color: #506448;
+      font-weight: bold;
+    }
+
+    /* =========================
+       RESULTATS
+    ========================= */
+
+    .resultats-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 22px 0 12px;
+      gap: 10px;
     }
 
-    .resultats-er h2 {
+    .resultats-header h2 {
       font-size: 19px;
     }
 
     #compteur {
       font-size: 13px;
       color: #85756b;
+      text-align: right;
     }
 
     .liste-recettes {
       display: grid;
       gap: 14px;
     }
+
+    /* =========================
+       CARTE RECETTE
+    ========================= */
 
     .recette-card {
       background: white;
@@ -249,6 +291,11 @@
       color: #9a6a51;
     }
 
+    .badge.proteines {
+      background: #f0e8dc;
+      color: #78634e;
+    }
+
     .ouvrir {
       display: block;
       width: 100%;
@@ -262,7 +309,9 @@
       cursor: pointer;
     }
 
-    /* VIDE */
+    /* =========================
+       VIDE
+    ========================= */
 
     .vide {
       background: white;
@@ -293,7 +342,9 @@
       font-weight: bold;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .bottom-nav {
       position: fixed;
@@ -326,233 +377,293 @@
       color: #66805d;
       font-weight: bold;
     }
+
   </style>
 
-  <link rel="stylesheet" href="../styles/theme.css">
-  
 </head>
+
 
 <body>
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <header class="hero">
 
-<a href="../../index.html" class="retour">
-  ← Accueil
-</a>
+    <a class="retour" href="../../index.html">
+      ← Accueil
+    </a>
 
-<h1>🍽️ Mes recettes</h1>
+    <h1>🍽️ Mes recettes</h1>
 
-<p>
-  Des idées simples, gourmandes et adaptées à votre façon de manger.
-</p>
-```
+    <p>
+      Des idées simples, gourmandes et adaptées à votre façon de manger.
+    </p>
 
   </header>
+
 
   <main class="contenu">
 
 
-<!-- CONTEXTE -->
+    <!-- =========================
+         CONTEXTE
+    ========================= -->
 
-<div class="contexte" id="contexte">
+    <div class="contexte" id="contexte">
 
-  <strong id="contexteTitre"></strong>
+      <strong id="contexteTitre"></strong>
 
-  <span id="contexteTexte"></span>
+      <span id="contexteTexte"></span>
 
-</div>
-
-
-<!-- RECHERCHE -->
-
-<div class="recherche">
-
-  <input
-    type="search"
-    id="recherche"
-    placeholder="🔎 Rechercher une recette..."
-  >
-
-</div>
+    </div>
 
 
-<!-- CATEGORIES -->
+    <!-- =========================
+         RECHERCHE
+    ========================= -->
 
-<h2 class="titre-section">
-  Quel repas ?
-</h2>
+    <div class="recherche">
 
-<div class="categories">
+      <input
+        type="search"
+        id="recherche"
+        placeholder="🔎 Rechercher une recette..."
+      >
 
-  <button
-    class="categorie-btn active"
-    data-categorie="Toutes">
-    Toutes
-  </button>
-
-  <button
-    class="categorie-btn"
-    data-categorie="Petit-déjeuner">
-    🌅 Petit-déjeuner
-  </button>
-
-  <button
-    class="categorie-btn"
-    data-categorie="Déjeuner">
-    🥗 Déjeuner
-  </button>
-
-  <button
-    class="categorie-btn"
-    data-categorie="Dîner">
-    🍽️ Dîner
-  </button>
-
-  <button
-    class="categorie-btn"
-    data-categorie="Collation">
-    🍎 Collation
-  </button>
-
-  <button
-    class="categorie-btn"
-    data-categorie="Petite douceur">
-    🍰 Petite douceur
-  </button>
-
-  <button
-    class="categorie-btn"
-    data-categorie="Végétarien">
-    🥕 Végétarien
-  </button>
-
-  <button
-    class="categorie-btn"
-    data-categorie="Salades">
-    🥗 Salades
-  </button>
-
-</div>
+    </div>
 
 
-<!-- FILTRES -->
+    <!-- =========================
+         CATEGORIES
+    ========================= -->
 
-<h2 class="titre-section">
-  Affiner mes recettes
-</h2>
-
-<div class="filtres">
-
-  <button
-    class="filtre"
-    data-filtre="petite">
-    🥄 Petite portion
-  </button>
-
-  <button
-    class="filtre"
-    data-filtre="vegetarien">
-    🥕 Végétarien
-  </button>
-
-  <button
-    class="filtre"
-    data-filtre="batch">
-    📦 Batch-cooking
-  </button>
-
-  <button
-    class="filtre"
-    data-filtre="pre">
-    🌿 Pré-opératoire
-  </button>
-
-  <button
-    class="filtre"
-    data-filtre="post">
-    🌸 Post-opératoire
-  </button>
-
-  <button
-    class="filtre"
-    data-filtre="gluten">
-    🌾 Sans gluten
-  </button>
-
-</div>
+    <h2 class="titre-section">
+      Quel repas ?
+    </h2>
 
 
-<!-- RESULTATS -->
+    <div class="categories">
 
-<div class="resultats-header">
+      <button
+        class="categorie-btn active"
+        data-categorie="Toutes">
+        Toutes
+      </button>
 
-  <h2>Mes recettes</h2>
+      <button
+        class="categorie-btn"
+        data-categorie="Petit-déjeuner">
+        🌅 Petit-déjeuner
+      </button>
 
-  <span id="compteur">
-    0 recette
-  </span>
+      <button
+        class="categorie-btn"
+        data-categorie="Déjeuner">
+        🥗 Déjeuner
+      </button>
 
-</div>
+      <button
+        class="categorie-btn"
+        data-categorie="Dîner">
+        🍽️ Dîner
+      </button>
 
-<div
-  id="listeRecettes"
-  class="liste-recettes">
-</div>
-```
+      <button
+        class="categorie-btn"
+        data-categorie="Collation">
+        🍎 Collation
+      </button>
+
+      <button
+        class="categorie-btn"
+        data-categorie="Petite douceur">
+        🍰 Petite douceur
+      </button>
+
+      <button
+        class="categorie-btn"
+        data-categorie="Végétarien">
+        🥕 Végétarien
+      </button>
+
+      <button
+        class="categorie-btn"
+        data-categorie="Salades">
+        🥗 Salades
+      </button>
+
+    </div>
+
+
+    <!-- =========================
+         FILTRES
+    ========================= -->
+
+    <h2 class="titre-section">
+      Affiner mes recettes
+    </h2>
+
+
+    <div class="filtres">
+
+      <button
+        class="filtre"
+        data-filtre="petite">
+        🥄 Petite portion
+      </button>
+
+      <button
+        class="filtre"
+        data-filtre="vegetarien">
+        🥕 Végétarien
+      </button>
+
+      <button
+        class="filtre"
+        data-filtre="batch">
+        📦 Batch-cooking
+      </button>
+
+      <button
+        class="filtre"
+        data-filtre="pre">
+        🌿 Pré-opératoire
+      </button>
+
+      <button
+        class="filtre"
+        data-filtre="post">
+        🌸 Post-opératoire
+      </button>
+
+      <button
+        class="filtre"
+        data-filtre="gluten">
+        🌾 Sans gluten
+      </button>
+
+    </div>
+
+
+    <!-- =========================
+         TRI PROTEINES
+    ========================= -->
+
+    <h2 class="titre-section">
+      💪 Trier par protéines
+    </h2>
+
+
+    <div class="tri">
+
+      <button
+        class="tri-btn active"
+        data-tri="defaut">
+        ↕️ Ordre du catalogue
+      </button>
+
+      <button
+        class="tri-btn"
+        data-tri="croissant">
+        ↗️ Protéines croissantes
+      </button>
+
+      <button
+        class="tri-btn"
+        data-tri="decroissant">
+        ↘️ Protéines décroissantes
+      </button>
+
+    </div>
+
+
+    <!-- =========================
+         RESULTATS
+    ========================= -->
+
+    <div class="resultats-header">
+
+      <h2>
+        Mes recettes
+      </h2>
+
+      <span id="compteur">
+        0 recette
+      </span>
+
+    </div>
+
+
+    <div
+      id="listeRecettes"
+      class="liste-recettes">
+    </div>
+
 
   </main>
 
-  <!-- NAVIGATION -->
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
   <nav class="bottom-nav">
 
-```
-<a href="../../index.html">
+    <a href="../../index.html">
 
-  <span>🏠</span>
+      <span>🏠</span>
 
-  Accueil
+      Accueil
 
-</a>
+    </a>
 
-<a
-  href="Recettes.html"
-  class="active">
 
-  <span>🍽️</span>
+    <a
+      href="Recettes.html"
+      class="active">
 
-  Recettes
+      <span>🍽️</span>
 
-</a>
+      Recettes
 
-<a href="Favoris.html">
+    </a>
 
-  <span>❤️</span>
 
-  Favoris
+    <a href="Favoris.html">
 
-</a>
+      <span>❤️</span>
 
-<a href="MonProfil.html">
+      Favoris
 
-  <span>👤</span>
+    </a>
 
-  Profil
 
-</a>
-```
+    <a href="MonProfil.html">
+
+      <span>👤</span>
+
+      Profil
+
+    </a>
 
   </nav>
 
+
   <script>
+
+    /* ==================================================
+       VARIABLES
+    ================================================== */
 
     let recettes = [];
 
     let categorieActive = "Toutes";
 
     let recherche = "";
+
+    let triActif = "defaut";
 
 
     const filtresActifs = {
@@ -572,9 +683,9 @@
     };
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        NORMALISATION
-    -------------------------------------------------- */
+    ================================================== */
 
     function normaliser(texte) {
 
@@ -588,9 +699,9 @@
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        PARAMETRES URL
-    -------------------------------------------------- */
+    ================================================== */
 
     const params =
       new URLSearchParams(
@@ -611,9 +722,9 @@
       params.get("texture");
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        CORRESPONDANCE TYPE REPAS
-    -------------------------------------------------- */
+    ================================================== */
 
     const correspondanceTypeRepas = {
 
@@ -635,18 +746,23 @@
     };
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        INITIALISATION TYPE REPAS
-    -------------------------------------------------- */
+    ================================================== */
 
     if (
+
       typeRepas &&
+
       typeRepas !== "peu-importe" &&
+
       correspondanceTypeRepas[typeRepas]
+
     ) {
 
       categorieActive =
         correspondanceTypeRepas[typeRepas];
+
 
       afficherContexte(
         correspondanceTypeRepas[typeRepas]
@@ -655,47 +771,65 @@
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        PARAMETRE PETITE PORTION
-    -------------------------------------------------- */
+    ================================================== */
 
     if (
+
       filtrePetite === "true"
+
     ) {
 
       filtresActifs.petite = true;
 
-      document
-        .querySelector(
+
+      const bouton =
+        document.querySelector(
           '[data-filtre="petite"]'
-        )
-        .classList.add("active");
+        );
+
+
+      if (bouton) {
+
+        bouton.classList.add("active");
+
+      }
 
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        PARAMETRE BATCH
-    -------------------------------------------------- */
+    ================================================== */
 
     if (
+
       filtreBatch === "true"
+
     ) {
 
       filtresActifs.batch = true;
 
-      document
-        .querySelector(
+
+      const bouton =
+        document.querySelector(
           '[data-filtre="batch"]'
-        )
-        .classList.add("active");
+        );
+
+
+      if (bouton) {
+
+        bouton.classList.add("active");
+
+      }
 
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        CONTEXTE
-    -------------------------------------------------- */
+    ================================================== */
 
     function afficherContexte(type) {
 
@@ -704,10 +838,12 @@
           "contexte"
         );
 
+
       const titre =
         document.getElementById(
           "contexteTitre"
         );
+
 
       const texte =
         document.getElementById(
@@ -715,7 +851,8 @@
         );
 
 
-      bloc.style.display = "block";
+      bloc.style.display =
+        "block";
 
 
       titre.textContent =
@@ -729,192 +866,260 @@
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        ACTIVER LA CATEGORIE
-    -------------------------------------------------- */
+    ================================================== */
 
     document
       .querySelectorAll(
         ".categorie-btn"
       )
-      .forEach(function(button) {
+      .forEach(
+        function(button) {
 
-        if (
-          normaliser(
-            button.dataset.categorie
-          ) ===
-          normaliser(
-            categorieActive
-          )
-        ) {
+          if (
 
-          document
-            .querySelectorAll(
-              ".categorie-btn"
+            normaliser(
+              button.dataset.categorie
+            ) ===
+
+            normaliser(
+              categorieActive
             )
-            .forEach(function(btn) {
 
-              btn.classList.remove(
-                "active"
-              );
-
-            });
-
-
-          button.classList.add(
-            "active"
-          );
-
-        }
-
-      });
-
-
-    /* --------------------------------------------------
-       CHARGEMENT RECETTES
-    -------------------------------------------------- */
-
-    fetch("../recettes.json")
-
-      .then(function(response) {
-
-        if (!response.ok) {
-
-          throw new Error(
-            "Impossible de charger recettes.json"
-          );
-
-        }
-
-        return response.json();
-
-      })
-
-      .then(function(data) {
-
-        recettes =
-          Array.isArray(data)
-            ? data
-            : [];
-
-
-        afficherRecettes();
-
-      })
-
-      .catch(function(error) {
-
-        console.error(error);
-
-
-        document.getElementById(
-          "listeRecettes"
-        ).innerHTML = `
-
-          <div class="vide">
-
-            <div class="emoji">
-              ⚠️
-            </div>
-
-            <p>
-              Impossible de charger les recettes.
-              Vérifiez que le fichier
-              <strong>recettes.json</strong>
-              est bien présent dans le dossier
-              <strong>src</strong>.
-            </p>
-
-          </div>
-
-        `;
-
-      });
-
-
-    /* --------------------------------------------------
-       CATEGORIES
-    -------------------------------------------------- */
-
-    document
-      .querySelectorAll(
-        ".categorie-btn"
-      )
-      .forEach(function(button) {
-
-        button.addEventListener(
-          "click",
-          function() {
-
-            categorieActive =
-              button.dataset.categorie;
-
+          ) {
 
             document
               .querySelectorAll(
                 ".categorie-btn"
               )
-              .forEach(function(btn) {
+              .forEach(
+                function(btn) {
 
-                btn.classList.remove(
-                  "active"
-                );
+                  btn.classList.remove(
+                    "active"
+                  );
 
-              });
+                }
+              );
 
 
             button.classList.add(
               "active"
             );
 
+          }
 
-            afficherRecettes();
+        }
+      );
+
+
+    /* ==================================================
+       CHARGEMENT RECETTES
+    ================================================== */
+
+    fetch("../recettes.json")
+
+      .then(
+        function(response) {
+
+          if (!response.ok) {
+
+            throw new Error(
+              "Impossible de charger recettes.json"
+            );
 
           }
-        );
-
-      });
 
 
-    /* --------------------------------------------------
+          return response.json();
+
+        }
+      )
+
+      .then(
+        function(data) {
+
+          recettes =
+            Array.isArray(data)
+              ? data
+              : [];
+
+
+          afficherRecettes();
+
+        }
+      )
+
+      .catch(
+        function(error) {
+
+          console.error(error);
+
+
+          document.getElementById(
+            "listeRecettes"
+          ).innerHTML = `
+
+            <div class="vide">
+
+              <div class="emoji">
+                ⚠️
+              </div>
+
+              <p>
+                Impossible de charger les recettes.
+                Vérifiez que le fichier
+                <strong>recettes.json</strong>
+                est bien présent dans le dossier
+                <strong>src</strong>.
+              </p>
+
+            </div>
+
+          `;
+
+        }
+      );
+
+
+    /* ==================================================
+       CATEGORIES
+    ================================================== */
+
+    document
+      .querySelectorAll(
+        ".categorie-btn"
+      )
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function() {
+
+              categorieActive =
+                button.dataset.categorie;
+
+
+              document
+                .querySelectorAll(
+                  ".categorie-btn"
+                )
+                .forEach(
+                  function(btn) {
+
+                    btn.classList.remove(
+                      "active"
+                    );
+
+                  }
+                );
+
+
+              button.classList.add(
+                "active"
+              );
+
+
+              afficherRecettes();
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ==================================================
        FILTRES
-    -------------------------------------------------- */
+    ================================================== */
 
     document
       .querySelectorAll(
         ".filtre"
       )
-      .forEach(function(button) {
+      .forEach(
+        function(button) {
 
-        button.addEventListener(
-          "click",
-          function() {
+          button.addEventListener(
+            "click",
+            function() {
 
-            const filtre =
-              button.dataset.filtre;
-
-
-            filtresActifs[filtre] =
-              !filtresActifs[filtre];
+              const filtre =
+                button.dataset.filtre;
 
 
-            button.classList.toggle(
-              "active",
-              filtresActifs[filtre]
-            );
+              filtresActifs[filtre] =
+                !filtresActifs[filtre];
 
 
-            afficherRecettes();
-
-          }
-        );
-
-      });
+              button.classList.toggle(
+                "active",
+                filtresActifs[filtre]
+              );
 
 
-    /* --------------------------------------------------
+              afficherRecettes();
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ==================================================
+       TRI PAR PROTEINES
+    ================================================== */
+
+    document
+      .querySelectorAll(
+        ".tri-btn"
+      )
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function() {
+
+              triActif =
+                button.dataset.tri;
+
+
+              document
+                .querySelectorAll(
+                  ".tri-btn"
+                )
+                .forEach(
+                  function(btn) {
+
+                    btn.classList.remove(
+                      "active"
+                    );
+
+                  }
+                );
+
+
+              button.classList.add(
+                "active"
+              );
+
+
+              afficherRecettes();
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ==================================================
        RECHERCHE
-    -------------------------------------------------- */
+    ================================================== */
 
     document
       .getElementById("recherche")
@@ -934,243 +1139,491 @@
       );
 
 
-    /* --------------------------------------------------
+    /* ==================================================
+       VALEUR DES PROTEINES
+    ================================================== */
+
+    function obtenirProteines(recette) {
+
+      if (
+        recette.proteines === null ||
+        recette.proteines === undefined ||
+        recette.proteines === ""
+      ) {
+
+        return null;
+
+      }
+
+
+      /*
+        On accepte :
+        15
+        "15"
+        "15 g"
+        "15g"
+        "15,5"
+        "15.5"
+      */
+
+      const texte =
+        String(
+          recette.proteines
+        )
+        .replace(",", ".");
+
+
+      const correspondance =
+        texte.match(
+          /-?\d+(?:\.\d+)?/
+        );
+
+
+      if (!correspondance) {
+
+        return null;
+
+      }
+
+
+      const valeur =
+        parseFloat(
+          correspondance[0]
+        );
+
+
+      return Number.isFinite(
+        valeur
+      )
+        ? valeur
+        : null;
+
+    }
+
+
+    /* ==================================================
        FILTRAGE
-    -------------------------------------------------- */
+    ================================================== */
 
     function filtrerRecettes() {
 
-      return recettes.filter(
-        function(recette) {
+      const resultat =
+        recettes.filter(
+          function(recette) {
 
 
-          /* CATEGORIE */
-
-          if (
-            categorieActive !== "Toutes"
-          ) {
-
-            const categorieRecette =
-              normaliser(
-                recette.categorie
-              );
-
-
-            const categorieChoisie =
-              normaliser(
-                categorieActive
-              );
-
+            /* ------------------------------------------
+               CATEGORIE
+            ------------------------------------------ */
 
             if (
-              categorieRecette !==
-              categorieChoisie
+              categorieActive !==
+              "Toutes"
             ) {
 
-              return false;
+              const categorieRecette =
+                normaliser(
+                  recette.categorie
+                );
+
+
+              const categorieChoisie =
+                normaliser(
+                  categorieActive
+                );
+
+
+              /*
+                Pour les salades :
+                certaines recettes sont classées
+                "Salade complète" et non simplement
+                "Salades".
+              */
+
+              if (
+                categorieChoisie ===
+                "salades"
+              ) {
+
+                const nom =
+                  normaliser(
+                    recette.nom
+                  );
+
+
+                const type =
+                  normaliser(
+                    recette.type
+                  );
+
+
+                if (
+
+                  !nom.includes(
+                    "salade"
+                  ) &&
+
+                  !categorieRecette.includes(
+                    "salade"
+                  ) &&
+
+                  !type.includes(
+                    "salade"
+                  )
+
+                ) {
+
+                  return false;
+
+                }
+
+              }
+
+              else if (
+
+                categorieRecette !==
+                categorieChoisie
+
+              ) {
+
+                return false;
+
+              }
 
             }
 
-          }
 
+            /* ------------------------------------------
+               RECHERCHE
+            ------------------------------------------ */
 
-          /* RECHERCHE */
+            if (recherche) {
 
-          if (recherche) {
+              const texteRecherche =
+                normaliser(
 
-            const texteRecherche =
-              normaliser(
-
-                (recette.nom || "") +
-                " " +
-                (recette.categorie || "") +
-                " " +
-                (recette.type || "") +
-                " " +
-                (
-                  Array.isArray(
-                    recette.envies
+                  (recette.nom || "") +
+                  " " +
+                  (recette.categorie || "") +
+                  " " +
+                  (recette.type || "") +
+                  " " +
+                  (
+                    Array.isArray(
+                      recette.envies
+                    )
+                      ? recette.envies.join(" ")
+                      : ""
                   )
-                    ? recette.envies.join(" ")
-                    : ""
+
+                );
+
+
+              if (
+                !texteRecherche.includes(
+                  recherche
+                )
+              ) {
+
+                return false;
+
+              }
+
+            }
+
+
+            /* ------------------------------------------
+               PETITE PORTION
+            ------------------------------------------ */
+
+            if (
+              filtresActifs.petite
+            ) {
+
+              if (
+
+                !recette.petitAppetit &&
+
+                !recette.portion &&
+
+                !(
+                  recette.quantites &&
+
+                  recette.quantites.petite
                 )
 
-              );
+              ) {
 
+                return false;
 
-            if (
-              !texteRecherche.includes(
-                recherche
-              )
-            ) {
-
-              return false;
+              }
 
             }
 
-          }
 
-
-          /* PETITE PORTION */
-
-          if (
-            filtresActifs.petite
-          ) {
+            /* ------------------------------------------
+               VEGETARIEN
+            ------------------------------------------ */
 
             if (
-              !recette.petitAppetit &&
-              !recette.portion &&
-              !(
-                recette.quantites &&
-                recette.quantites.petite
-              )
+              filtresActifs.vegetarien
             ) {
 
-              return false;
+              if (
+                !recette.vegetarien
+              ) {
+
+                return false;
+
+              }
 
             }
 
-          }
 
-
-          /* VEGETARIEN */
-
-          if (
-            filtresActifs.vegetarien
-          ) {
+            /* ------------------------------------------
+               BATCH
+            ------------------------------------------ */
 
             if (
-              !recette.vegetarien
+              filtresActifs.batch
             ) {
 
-              return false;
+              if (
+                !recette.batchCooking
+              ) {
+
+                return false;
+
+              }
 
             }
 
-          }
 
-
-          /* BATCH */
-
-          if (
-            filtresActifs.batch
-          ) {
+            /* ------------------------------------------
+               PRE-OPERATOIRE
+            ------------------------------------------ */
 
             if (
-              !recette.batchCooking
+              filtresActifs.pre
             ) {
 
-              return false;
+              if (
+                !recette.preOperatoire
+              ) {
+
+                return false;
+
+              }
 
             }
 
-          }
 
-
-          /* PRE-OPERATOIRE */
-
-          if (
-            filtresActifs.pre
-          ) {
+            /* ------------------------------------------
+               POST-OPERATOIRE
+            ------------------------------------------ */
 
             if (
-              !recette.preOperatoire
+              filtresActifs.post
             ) {
 
-              return false;
+              if (
+                !recette.postOperatoire
+              ) {
+
+                return false;
+
+              }
 
             }
 
-          }
 
-
-          /* POST-OPERATOIRE */
-
-          if (
-            filtresActifs.post
-          ) {
+            /* ------------------------------------------
+               SANS GLUTEN
+            ------------------------------------------ */
 
             if (
-              !recette.postOperatoire
+              filtresActifs.gluten
             ) {
 
-              return false;
+              if (
+                !recette.sansGluten
+              ) {
+
+                return false;
+
+              }
 
             }
 
-          }
 
-
-          /* SANS GLUTEN */
-
-          if (
-            filtresActifs.gluten
-          ) {
+            /* ------------------------------------------
+               TEXTURE
+            ------------------------------------------ */
 
             if (
-              !recette.sansGluten
+              filtreTexture
             ) {
 
-              return false;
+              const textureRecette =
+                normaliser(
+                  recette.texture
+                );
+
+
+              const textureDemandee =
+                normaliser(
+                  filtreTexture
+                );
+
+
+              if (
+                textureRecette !==
+                textureDemandee
+              ) {
+
+                return false;
+
+              }
 
             }
 
+
+            return true;
+
           }
+        );
 
 
-        /* TEXTURE */
+      /* ==================================================
+         TRI DES RESULTATS
+      ================================================== */
 
-if (filtreTexture) {
+      if (
+        triActif ===
+        "croissant"
+      ) {
 
-  const textureDemandee =
-    normaliser(filtreTexture);
+        resultat.sort(
+          function(a, b) {
 
-  /* PETITE ASSIETTE */
+            const proteinesA =
+              obtenirProteines(a);
 
-  if (textureDemandee === "petite") {
+            const proteinesB =
+              obtenirProteines(b);
 
-    if (
-      !recette.petitAppetit &&
-      !recette.portion &&
-      !(
-        recette.quantites &&
-        recette.quantites.petite
-      )
-    ) {
-      return false;
+
+            /*
+              Les recettes sans protéines
+              sont placées à la fin.
+            */
+
+            if (
+              proteinesA === null &&
+              proteinesB === null
+            ) {
+
+              return 0;
+
+            }
+
+
+            if (
+              proteinesA === null
+            ) {
+
+              return 1;
+
+            }
+
+
+            if (
+              proteinesB === null
+            ) {
+
+              return -1;
+
+            }
+
+
+            return (
+              proteinesA -
+              proteinesB
+            );
+
+          }
+        );
+
+      }
+
+
+      if (
+        triActif ===
+        "decroissant"
+      ) {
+
+        resultat.sort(
+          function(a, b) {
+
+            const proteinesA =
+              obtenirProteines(a);
+
+            const proteinesB =
+              obtenirProteines(b);
+
+
+            /*
+              Les recettes sans protéines
+              sont placées à la fin.
+            */
+
+            if (
+              proteinesA === null &&
+              proteinesB === null
+            ) {
+
+              return 0;
+
+            }
+
+
+            if (
+              proteinesA === null
+            ) {
+
+              return 1;
+
+            }
+
+
+            if (
+              proteinesB === null
+            ) {
+
+              return -1;
+
+            }
+
+
+            return (
+              proteinesB -
+              proteinesA
+            );
+
+          }
+        );
+
+      }
+
+
+      return resultat;
+
     }
 
-  } else {
 
-    /* AUTRES TEXTURES */
-
-    const textureRecette =
-      normaliser(
-        recette.texture
-      );
-
-    if (
-      textureRecette !==
-      textureDemandee
-    ) {
-      return false;
-    }
-
-  }
-
-}
-
-          return true;
-
-        }
-      );
-
-    }
-
-
-    /* --------------------------------------------------
+    /* ==================================================
        AFFICHAGE
-    -------------------------------------------------- */
+    ================================================== */
 
     function afficherRecettes() {
 
@@ -1238,9 +1691,9 @@ if (filtreTexture) {
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        CARTE RECETTE
-    -------------------------------------------------- */
+    ================================================== */
 
     function creerCarteRecette(
       recette
@@ -1324,6 +1777,24 @@ if (filtreTexture) {
       }
 
 
+      const proteines =
+        obtenirProteines(
+          recette
+        );
+
+
+      if (
+        proteines !== null
+      ) {
+
+        badges +=
+          '<span class="badge proteines">💪 ' +
+          proteines +
+          ' g protéines</span>';
+
+      }
+
+
       return `
 
         <article class="recette-card">
@@ -1345,14 +1816,6 @@ if (filtreTexture) {
                     ? " · ⏱️ " +
                       recette.temps +
                       " min"
-                    : ""
-                }
-
-                ${
-                  recette.proteines
-                    ? " · 💪 " +
-                      recette.proteines +
-                      " g protéines"
                     : ""
                 }
 
@@ -1405,9 +1868,9 @@ if (filtreTexture) {
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        OUVRIR RECETTE
-    -------------------------------------------------- */
+    ================================================== */
 
     function ouvrirRecette(id) {
 
@@ -1418,9 +1881,9 @@ if (filtreTexture) {
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        FAVORIS
-    -------------------------------------------------- */
+    ================================================== */
 
     function toggleFavori(
       id,
@@ -1451,7 +1914,9 @@ if (filtreTexture) {
             }
           );
 
-      } else {
+      }
+
+      else {
 
         favoris.push(id);
 
@@ -1469,9 +1934,9 @@ if (filtreTexture) {
     }
 
 
-    /* --------------------------------------------------
+    /* ==================================================
        REINITIALISER
-    -------------------------------------------------- */
+    ================================================== */
 
     function reinitialiser() {
 
@@ -1480,6 +1945,10 @@ if (filtreTexture) {
 
 
       recherche = "";
+
+
+      triActif =
+        "defaut";
 
 
       document.getElementById(
@@ -1516,6 +1985,30 @@ if (filtreTexture) {
 
       document
         .querySelectorAll(
+          ".tri-btn"
+        )
+        .forEach(
+          function(button) {
+
+            button.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+      document
+        .querySelector(
+          '[data-tri="defaut"]'
+        )
+        .classList.add(
+          "active"
+        );
+
+
+      document
+        .querySelectorAll(
           ".categorie-btn"
         )
         .forEach(
@@ -1545,4 +2038,5 @@ if (filtreTexture) {
   </script>
 
 </body>
+
 </html>
