@@ -10029,5 +10029,249 @@
       "Verser dans un petit moule individuel.",
       "Cuire environ 12 à 15 minutes à 180 °C."
     ]
-  }
+  },
+  {
+"id": "NEW201",
+"nom": "Quiche sans pâte chou-fleur et comté",
+"categorie": "Plat",
+"type": "Quiche sans pâte",
+"temps": 30,
+"proteines": 16,
+"portions": 2,
+"petitAppetit": true,
+"preOperatoire": true,
+"postOperatoire": false,
+"vegetarien": true,
+"vegetalien": false,
+"sansGluten": true,
+"sansLactose": false,
+"batchCooking": true,
+"conservation": "3 jours au réfrigérateur",
+"congelation": true,
+"envies": ["réconfortant", "léger"],
+"texture": "fondante",
+"ingredients": ["chou-fleur", "œufs", "lait", "comté"],
+"preparation": [
+"Cuire le chou-fleur à la vapeur.",
+"Battre les œufs avec le lait.",
+"Ajouter le comté râpé.",
+"Incorporer le chou-fleur.",
+"Cuire 25 minutes à 180°C."
+],
+"quantites": {
+"petite": {
+"chou-fleur": "120 g",
+"œufs": "1",
+"lait": "50 ml",
+"comté": "20 g"
+},
+"2": {
+"chou-fleur": "250 g",
+"œufs": "2",
+"lait": "100 ml",
+"comté": "40 g"
+},
+"4": {
+"chou-fleur": "500 g",
+"œufs": "4",
+"lait": "200 ml",
+"comté": "80 g"
+}
+}
+},
+{
+"id": "NEW202",
+"nom": "Quiche sans pâte betterave et chèvre",
+"categorie": "Plat",
+"type": "Quiche sans pâte",
+"temps": 25,
+"proteines": 14,
+"portions": 2,
+"petitAppetit": true,
+"preOperatoire": true,
+"postOperatoire": false,
+"vegetarien": true,
+"vegetalien": false,
+"sansGluten": true,
+"sansLactose": false,
+"batchCooking": true,
+"conservation": "3 jours",
+"congelation": true,
+"envies": ["original", "coloré"],
+"texture": "moelleuse",
+"ingredients": ["betterave", "œufs", "lait", "chèvre"],
+"preparation": [
+"Couper la betterave en dés.",
+"Mélanger œufs et lait.",
+"Ajouter le chèvre émietté.",
+"Incorporer la betterave.",
+"Cuire au four 25 minutes."
+],
+"quantites": {
+"petite": {
+"betterave": "80 g",
+"œufs": "1",
+"lait": "50 ml",
+"chèvre": "20 g"
+},
+"2": {
+"betterave": "180 g",
+"œufs": "2",
+"lait": "100 ml",
+"chèvre": "40 g"
+},
+"4": {
+"betterave": "360 g",
+"œufs": "4",
+"lait": "200 ml",
+"chèvre": "80 g"
+}
+}
+},
+{
+"id": "NEW203",
+"nom": "Quiche sans pâte petits pois et jambon",
+"categorie": "Plat",
+"type": "Quiche sans pâte",
+"temps": 25,
+"proteines": 18,
+"portions": 2,
+"petitAppetit": true,
+"preOperatoire": true,
+"postOperatoire": false,
+"vegetarien": false,
+"vegetalien": false,
+"sansGluten": true,
+"sansLactose": false,
+"batchCooking": true,
+"conservation": "3 jours",
+"congelation": true,
+"envies": ["familial"],
+"texture": "fondante",
+"ingredients": ["petits pois", "jambon", "œufs", "lait"],
+"preparation": [
+"Cuire les petits pois.",
+"Couper le jambon en petits morceaux.",
+"Battre les œufs avec le lait.",
+"Assembler puis enfourner 25 minutes."
+],
+"quantites": {
+"petite": {
+"petits pois": "70 g",
+"jambon": "30 g",
+"œufs": "1",
+"lait": "50 ml"
+},
+"2": {
+"petits pois": "150 g",
+"jambon": "60 g",
+"œufs": "2",
+"lait": "100 ml"
+},
+"4": {
+"petits pois": "300 g",
+"jambon": "120 g",
+"œufs": "4",
+"lait": "200 ml"
+}
+}
+},
+{
+"id": "NEW204",
+"nom": "Quiche sans pâte brocoli et ricotta",
+"categorie": "Plat",
+"type": "Quiche sans pâte",
+"temps": 30,
+"proteines": 15,
+"portions": 2,
+"petitAppetit": true,
+"preOperatoire": true,
+"postOperatoire": false,
+"vegetarien": true,
+"vegetalien": false,
+"sansGluten": true,
+"sansLactose": false,
+"batchCooking": true,
+"conservation": "3 jours",
+"congelation": true,
+"envies": ["équilibré"],
+"texture": "moelleuse",
+"ingredients": ["brocoli", "ricotta", "œufs", "lait"],
+"preparation": [
+"Cuire le brocoli.",
+"Battre œufs et lait.",
+"Ajouter la ricotta.",
+"Mélanger avec le brocoli.",
+"Cuire 25 minutes."
+],
+"quantites": {
+"petite": {
+"brocoli": "100 g",
+"ricotta": "25 g",
+"œufs": "1",
+"lait": "50 ml"
+},
+"2": {
+"brocoli": "200 g",
+"ricotta": "50 g",
+"œufs": "2",
+"lait": "100 ml"
+},
+"4": {
+"brocoli": "400 g",
+"ricotta": "100 g",
+"œufs": "4",
+"lait": "200 ml"
+}
+}
+},
+{
+"id": "NEW205",
+"nom": "Quiche sans pâte fenouil et saumon",
+"categorie": "Plat",
+"type": "Quiche sans pâte",
+"temps": 30,
+"proteines": 22,
+"portions": 2,
+"petitAppetit": true,
+"preOperatoire": true,
+"postOperatoire": false,
+"vegetarien": false,
+"vegetalien": false,
+"sansGluten": true,
+"sansLactose": false,
+"batchCooking": true,
+"conservation": "2 jours",
+"congelation": true,
+"envies": ["raffiné"],
+"texture": "fondante",
+"ingredients": ["fenouil", "saumon", "œufs", "lait"],
+"preparation": [
+"Émincer et cuire le fenouil.",
+"Couper le saumon en morceaux.",
+"Battre œufs et lait.",
+"Assembler tous les ingrédients.",
+"Cuire au four 25 minutes."
+],
+"quantites": {
+"petite": {
+"fenouil": "80 g",
+"saumon": "50 g",
+"œufs": "1",
+"lait": "50 ml"
+},
+"2": {
+"fenouil": "180 g",
+"saumon": "100 g",
+"œufs": "2",
+"lait": "100 ml"
+},
+"4": {
+"fenouil": "360 g",
+"saumon": "200 g",
+"œufs": "4",
+"lait": "200 ml"
+}
+}
+}
 ]
