@@ -1,0 +1,801 @@
+/* =========================================================
+   MA PETITE ASSIETTE
+   NOUVELLE IDENTITE VISUELLE
+   ========================================================= */
+
+:root {
+  --vert: #6f9272;
+  --vert-fonce: #41634b;
+  --vert-clair: #e5f0e4;
+
+  --peche: #f5cdbb;
+  --peche-clair: #fff0e8;
+
+  --rose: #f4d9d4;
+  --creme: #fffaf4;
+  --creme-fonce: #f7efe7;
+
+  --blanc: #ffffff;
+
+  --texte: #405047;
+  --texte-doux: #718078;
+
+  --bordure: #eaded4;
+
+  --ombre:
+    0 8px 25px rgba(67, 77, 67, 0.08);
+
+  --ombre-forte:
+    0 12px 30px rgba(67, 77, 67, 0.12);
+
+  --rayon: 22px;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(245, 205, 187, 0.25),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf4 0%,
+      #f8f3ec 100%
+    ) !important;
+
+  color: var(--texte) !important;
+
+  font-family:
+    "Trebuchet MS",
+    Arial,
+    sans-serif !important;
+
+  padding-bottom: 95px !important;
+}
+
+
+/* =========================================================
+   CONTENEURS
+   ========================================================= */
+
+.container,
+.contenu {
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+
+/* =========================================================
+   HERO / EN-TETE
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7d7c6 0%,
+      #f7eadf 45%,
+      #dcebdc 100%
+    ) !important;
+
+  border-radius:
+    0 0 32px 32px !important;
+
+  padding:
+    28px 20px 30px !important;
+
+  box-shadow:
+    0 8px 25px rgba(80, 80, 60, 0.08);
+}
+
+.hero::after {
+  content: "♡";
+
+  position: absolute;
+
+  right: 22px;
+  bottom: 15px;
+
+  font-size: 30px;
+
+  color: rgba(65, 99, 75, 0.28);
+}
+
+.hero h1 {
+  color: var(--vert-fonce) !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0.4px;
+
+  line-height: 1.15 !important;
+}
+
+.hero p {
+  color: #657268 !important;
+
+  line-height: 1.55 !important;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+  background: rgba(255,255,255,0.78) !important;
+
+  border-radius: 20px !important;
+
+  box-shadow:
+    0 5px 15px rgba(60, 80, 60, 0.08);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   TITRES
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+  color: var(--texte);
+}
+
+.section h2,
+.titre-section {
+  color: var(--vert-fonce) !important;
+
+  font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   CARTES GENERALES
+   ========================================================= */
+
+.card,
+.bloc,
+.section,
+.main-card,
+.path-card,
+.shortcut,
+.recette-card,
+.info-card,
+.vide {
+
+  background:
+    rgba(255,255,255,0.96) !important;
+
+  border:
+    1px solid rgba(234,222,212,0.75);
+
+  border-radius:
+    var(--rayon) !important;
+
+  box-shadow:
+    var(--ombre) !important;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover,
+.path-card:hover,
+.shortcut:hover,
+.recette-card:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    var(--ombre-forte) !important;
+}
+
+
+/* =========================================================
+   TEXTES
+   ========================================================= */
+
+.card-text,
+.path-card span,
+.header p,
+.intro p,
+.bloc-intro,
+.recette-meta,
+.recherche input::placeholder {
+
+  color:
+    var(--texte-doux) !important;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   CHOIX / BOUTONS
+   ========================================================= */
+
+.choice,
+.choix,
+.temps,
+.filtre,
+.categorie-btn {
+
+  border:
+    2px solid var(--bordure) !important;
+
+  background:
+    #fffdfb !important;
+
+  color:
+    var(--texte) !important;
+
+  border-radius:
+    18px !important;
+
+  transition:
+    all 0.2s ease !important;
+}
+
+.choice:hover,
+.choix:hover,
+.temps:hover,
+.filtre:hover,
+.categorie-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  border-color:
+    #9bb29b !important;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+.choice.selected,
+.choix.selected,
+.temps.selected {
+
+  background:
+    var(--vert-clair) !important;
+
+  border-color:
+    var(--vert) !important;
+
+  color:
+    var(--vert-fonce) !important;
+
+  box-shadow:
+    0 5px 15px rgba(111,146,114,0.15);
+}
+
+
+/* =========================================================
+   EMOJIS
+   ========================================================= */
+
+.choice .emoji,
+.choix .emoji {
+
+  font-size:
+    28px !important;
+
+  margin-bottom:
+    7px;
+}
+
+
+/* =========================================================
+   BOUTONS PRINCIPAUX
+   ========================================================= */
+
+.main-button,
+.bouton-principal,
+.ouvrir,
+.reset {
+
+  border:
+    none !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6f9272,
+      #52765a
+    ) !important;
+
+  color:
+    white !important;
+
+  border-radius:
+    18px !important;
+
+  padding:
+    15px !important;
+
+  font-weight:
+    800 !important;
+
+  box-shadow:
+    0 6px 16px rgba(82,118,90,0.20);
+
+  transition:
+    all 0.2s ease;
+}
+
+.main-button:hover,
+.bouton-principal:hover,
+.ouvrir:hover,
+.reset:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 9px 20px rgba(82,118,90,0.25);
+}
+
+
+/* =========================================================
+   BOUTONS SECONDAIRES
+   ========================================================= */
+
+.bouton-secondaire {
+
+  background:
+    white !important;
+
+  color:
+    var(--vert-fonce) !important;
+
+  border:
+    2px solid var(--vert) !important;
+
+  border-radius:
+    18px !important;
+}
+
+
+/* =========================================================
+   MESSAGE / INFORMATIONS
+   ========================================================= */
+
+.message,
+.message-selection,
+.contexte {
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf5ea,
+      #f7eee8
+    ) !important;
+
+  border:
+    1px solid #dce8d8 !important;
+
+  border-radius:
+    18px !important;
+
+  color:
+    #58705d !important;
+}
+
+
+/* =========================================================
+   RECHERCHE
+   ========================================================= */
+
+.recherche input {
+
+  background:
+    white !important;
+
+  border:
+    2px solid var(--bordure) !important;
+
+  border-radius:
+    18px !important;
+
+  padding:
+    15px 17px !important;
+
+  color:
+    var(--texte) !important;
+
+  box-shadow:
+    0 4px 14px rgba(70,70,50,0.04);
+}
+
+.recherche input:focus {
+
+  outline:
+    none !important;
+
+  border-color:
+    var(--vert) !important;
+
+  box-shadow:
+    0 0 0 4px rgba(111,146,114,0.12);
+}
+
+
+/* =========================================================
+   CATEGORIES
+   ========================================================= */
+
+.categorie-btn {
+
+  background:
+    var(--creme-fonce) !important;
+
+  border:
+    1px solid var(--bordure) !important;
+
+  border-radius:
+    24px !important;
+}
+
+.categorie-btn.active {
+
+  background:
+    var(--vert) !important;
+
+  color:
+    white !important;
+
+  border-color:
+    var(--vert) !important;
+}
+
+
+/* =========================================================
+   FILTRES
+   ========================================================= */
+
+.filtre.active {
+
+  background:
+    var(--peche) !important;
+
+  border-color:
+    #e5b59e !important;
+
+  color:
+    #755242 !important;
+}
+
+
+/* =========================================================
+   CARTES RECETTES
+   ========================================================= */
+
+.recette-card {
+
+  padding:
+    18px !important;
+
+  border-radius:
+    24px !important;
+}
+
+.recette-card h3 {
+
+  color:
+    var(--vert-fonce) !important;
+
+  font-size:
+    18px !important;
+}
+
+.favori {
+
+  background:
+    var(--peche-clair) !important;
+
+  border:
+    none !important;
+}
+
+.favori.active {
+
+  background:
+    var(--peche) !important;
+}
+
+.badge {
+
+  background:
+    var(--vert-clair) !important;
+
+  color:
+    var(--vert-fonce) !important;
+
+  border-radius:
+    14px !important;
+}
+
+.badge.peche {
+
+  background:
+    var(--peche-clair) !important;
+
+  color:
+    #9a6a51 !important;
+}
+
+
+/* =========================================================
+   RACCOURCIS
+   ========================================================= */
+
+.shortcuts {
+
+  gap:
+    12px !important;
+}
+
+.shortcut {
+
+  min-height:
+    82px;
+
+  display:
+    flex !important;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex-direction:
+    column;
+
+  background:
+    white !important;
+}
+
+.shortcut:hover {
+
+  background:
+    var(--vert-clair) !important;
+}
+
+
+/* =========================================================
+   NAVIGATION BASSE
+   ========================================================= */
+
+.bottom-nav {
+
+  height:
+    76px !important;
+
+  left:
+    10px !important;
+
+  right:
+    10px !important;
+
+  bottom:
+    10px !important;
+
+  border:
+    1px solid rgba(220,210,200,0.9) !important;
+
+  border-radius:
+    24px !important;
+
+  background:
+    rgba(255,255,255,0.96) !important;
+
+  box-shadow:
+    0 8px 25px rgba(60,70,60,0.13) !important;
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  padding:
+    5px 4px;
+}
+
+.bottom-nav a {
+
+  color:
+    #7b877e !important;
+
+  font-weight:
+    600;
+
+  border-radius:
+    16px;
+
+  padding:
+    5px 12px;
+
+  transition:
+    all 0.2s ease;
+}
+
+.bottom-nav a span {
+
+  font-size:
+    22px !important;
+}
+
+.bottom-nav a:hover {
+
+  color:
+    var(--vert-fonce) !important;
+
+  background:
+    var(--vert-clair);
+}
+
+.bottom-nav a.active {
+
+  color:
+    var(--vert-fonce) !important;
+
+  background:
+    var(--vert-clair);
+
+  font-weight:
+    800;
+}
+
+
+/* =========================================================
+   PETITS DETAILS
+   ========================================================= */
+
+.retour,
+.back {
+
+  color:
+    var(--vert-fonce) !important;
+
+  font-weight:
+    800 !important;
+}
+
+.info-card {
+
+  border-radius:
+    20px !important;
+}
+
+.quantity-button {
+
+  border-radius:
+    18px !important;
+
+  border:
+    2px solid var(--bordure) !important;
+}
+
+.quantity-button.active {
+
+  background:
+    var(--vert-clair) !important;
+
+  border-color:
+    var(--vert) !important;
+
+  color:
+    var(--vert-fonce) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+
+    padding:
+      25px 17px 28px !important;
+  }
+
+  .hero h1 {
+
+    font-size:
+      26px !important;
+  }
+
+  .container,
+  .contenu {
+
+    padding-left:
+      14px !important;
+
+    padding-right:
+      14px !important;
+  }
+
+  .bottom-nav {
+
+    left:
+      7px !important;
+
+    right:
+      7px !important;
+
+    bottom:
+      7px !important;
+  }
+
+  .bottom-nav a {
+
+    padding:
+      5px 9px;
+  }
+}
+
+
+/* =========================================================
+   ANIMATION LEGERE
+   ========================================================= */
+
+@keyframes apparition {
+
+  from {
+
+    opacity:
+      0;
+
+    transform:
+      translateY(8px);
+  }
+
+  to {
+
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+.hero,
+.card,
+.bloc,
+.recette-card,
+.path-card {
+
+  animation:
+    apparition 0.35s ease both;
+}
