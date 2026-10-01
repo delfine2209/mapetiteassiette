@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -159,6 +160,7 @@
       text-align: center;
     }
   </style>
+
 </head>
 
 <body>
@@ -170,47 +172,53 @@
 
 <main class="conteneur">
 
-  <a href="Accueil.html" class="retour">
+  <a href="../../index.html" class="retour">
     ← Retour à l'accueil
   </a>
 
   <section class="intro">
     <h2>Mes recettes festives</h2>
-    <p>
-      Apéro-dînatoire, crêpes, Noël, Pâques, Épiphanie
-      et petites douceurs pour les occasions spéciales.
-    </p>
+
+```
+<p>
+  Apéro-dînatoire, crêpes, Noël, Pâques, Épiphanie
+  et petites douceurs pour les occasions spéciales.
+</p>
+```
+
   </section>
 
   <div class="filtres">
 
-    <button class="filtre actif" data-filtre="toutes">
-      Toutes
-    </button>
+```
+<button class="filtre actif" data-filtre="toutes">
+  Toutes
+</button>
 
-    <button class="filtre" data-filtre="APE">
-      🥂 Apéro
-    </button>
+<button class="filtre" data-filtre="APE">
+  🥂 Apéro
+</button>
 
-    <button class="filtre" data-filtre="CRE">
-      🥞 Crêpes
-    </button>
+<button class="filtre" data-filtre="CRE">
+  🥞 Crêpes
+</button>
 
-    <button class="filtre" data-filtre="NOE">
-      🎄 Noël
-    </button>
+<button class="filtre" data-filtre="NOE">
+  🎄 Noël
+</button>
 
-    <button class="filtre" data-filtre="PAQ">
-      🐣 Pâques
-    </button>
+<button class="filtre" data-filtre="PAQ">
+  🐣 Pâques
+</button>
 
-    <button class="filtre" data-filtre="GAL">
-      👑 Galette
-    </button>
+<button class="filtre" data-filtre="GAL">
+  👑 Galette
+</button>
 
-    <button class="filtre" data-filtre="FES">
-      ✨ Festif
-    </button>
+<button class="filtre" data-filtre="FES">
+  ✨ Festif
+</button>
+```
 
   </div>
 
@@ -223,7 +231,7 @@
 </main>
 
 <nav>
-  <a href="Accueil.html">🏠<br>Accueil</a>
+  <a href="../../index.html">🏠<br>Accueil</a>
   <a href="MesEnvies.html">🔍<br>Envies</a>
   <a href="Recettes.html">🍽️<br>Recettes</a>
   <a href="Favoris.html">❤️<br>Favoris</a>
@@ -233,14 +241,14 @@
 <script>
 
   /*
-   * Préfixes utilisés pour les recettes festives :
+   * Préfixes utilisés pour les recettes festives
    *
    * APE = Apéro-dînatoire
    * CRE = Crêpes
    * NOE = Noël
    * PAQ = Pâques
    * GAL = Galette des rois
-   * FES = Festif / desserts festifs
+   * FES = Festif
    */
 
   const prefixesFestifs = [
@@ -254,50 +262,18 @@
 
   let toutesLesRecettes = [];
 
-  async function chargerRecettes() {
-
-    const liste = document.getElementById("liste-recettes");
-
-    try {
-
-      /*
-       * Même emplacement que celui utilisé
-       * par ton système actuel.
-       */
-      const reponse = await fetch("../recettes.json");
-
-      if (!reponse.ok) {
-        throw new Error("Impossible de charger recettes.json");
-      }
-
-      toutesLesRecettes = await reponse.json();
-
-      afficherRecettes("toutes");
-
-    } catch (erreur) {
-
-      console.error(erreur);
-
-      liste.innerHTML = `
-        <div class="aucune">
-          <strong>Impossible de charger les recettes.</strong>
-          <br><br>
-          Vérifiez que le fichier
-          <strong>recettes.json</strong>
-          est bien présent dans le même dossier que cette page.
-        </div>
-      `;
-    }
-  }
-
+  /*
+   * Vérifie qu'une recette appartient bien
+   * à l'univers festif.
+   */
 
   function estRecetteFestive(recette) {
 
-    if (!recette.id) {
+    if (!recette || !recette.id) {
       return false;
     }
 
-    const id = recette.id.toUpperCase();
+    const id = String(recette.id).trim().toUpperCase();
 
     return prefixesFestifs.some(prefixe =>
       id.startsWith(prefixe)
@@ -305,28 +281,201 @@
   }
 
 
-  function afficherRecettes(filtre) {
+  /*
+   * Charge le fichier recettes.json.
+   */
+
+  async function chargerRecettes() {
 
     const liste = document.getElementById("liste-recettes");
 
-    let recettes = toutesLesRecettes.filter(estRecetteFestive);
+    try {
+
+      const reponse = await fetch("../recettes.json");
+
+      if (!reponse.ok) {
+        throw new Error(
+          "Impossible de charger recettes.json"
+        );
+      }
+
+      toutesLesRecettes = await reponse.json();
+
+      /*
+       * On vérifie que le fichier contient bien
+       * un tableau de recettes.
+       */
+
+      if (!Array.isArray(toutesLesRecettes)) {
+        throw new Error(
+          "Le fichier recettes.json ne contient pas une liste de recettes."
+        );
+      }
+
+      /*
+       * Vérifie si une catégorie a été demandée
+       * dans l'adresse :
+       *
+       * Festif.html?filtre=NOE
+       *
+       * ou
+       *
+       * Festif.html?filtre=APE
+       */
+
+      const parametres = new URLSearchParams(
+        window.location.search
+      );
+
+      let filtreInitial =
+        parametres.get("filtre");
+
+      if (filtreInitial) {
+
+        filtreInitial =
+          filtreInitial.trim().toUpperCase();
+
+      } else {
+
+        filtreInitial = "toutes";
+
+      }
+
+      /*
+       * Sécurité :
+       * si le filtre reçu n'est pas l'un des
+       * filtres autorisés, on revient à Toutes.
+       */
+
+      if (
+        filtreInitial !== "toutes" &&
+        !prefixesFestifs.includes(filtreInitial)
+      ) {
+
+        filtreInitial = "toutes";
+
+      }
+
+      /*
+       * Active automatiquement le bon bouton.
+       */
+
+      activerBouton(filtreInitial);
+
+      /*
+       * Affiche les recettes.
+       */
+
+      afficherRecettes(filtreInitial);
+
+    } catch (erreur) {
+
+      console.error(erreur);
+
+      liste.innerHTML = `
+        <div class="aucune">
+
+          <strong>
+            Impossible de charger les recettes.
+          </strong>
+
+          <br><br>
+
+          Vérifiez que le fichier
+          <strong>recettes.json</strong>
+          est bien présent dans le dossier
+          <strong>src</strong>.
+
+        </div>
+      `;
+    }
+  }
+
+
+  /*
+   * Active visuellement le bouton correspondant.
+   */
+
+  function activerBouton(filtre) {
+
+    document
+      .querySelectorAll(".filtre")
+      .forEach(bouton => {
+
+        bouton.classList.remove("actif");
+
+        if (
+          bouton.dataset.filtre === filtre
+        ) {
+
+          bouton.classList.add("actif");
+
+        }
+
+      });
+
+  }
+
+
+  /*
+   * Affiche les recettes selon le filtre.
+   */
+
+  function afficherRecettes(filtre) {
+
+    const liste =
+      document.getElementById("liste-recettes");
+
+    /*
+     * Première étape :
+     * on ne garde QUE les recettes festives.
+     */
+
+    let recettes =
+      toutesLesRecettes.filter(estRecetteFestive);
+
+
+    /*
+     * Deuxième étape :
+     * si un filtre précis est demandé,
+     * on filtre selon le préfixe de l'identifiant.
+     */
 
     if (filtre !== "toutes") {
 
-      recettes = recettes.filter(recette => {
+      recettes =
+        recettes.filter(recette => {
 
-        const id = recette.id.toUpperCase();
+          const id =
+            String(recette.id)
+              .trim()
+              .toUpperCase();
 
-        return id.startsWith(filtre);
-      });
+          return id.startsWith(filtre);
+
+        });
+
     }
 
+
+    /*
+     * Aucune recette trouvée.
+     */
 
     if (recettes.length === 0) {
 
       liste.innerHTML = `
         <div class="aucune">
-          Aucune recette trouvée pour cette catégorie.
+
+          <strong>
+            Aucune recette trouvée.
+          </strong>
+
+          <br><br>
+
+          Cette catégorie ne contient
+          actuellement aucune recette.
+
         </div>
       `;
 
@@ -334,63 +483,127 @@
     }
 
 
-    liste.innerHTML = recettes.map(recette => {
+    /*
+     * Création des cartes recettes.
+     */
 
-      return `
-        <a
-          href="Recette.html?id=${encodeURIComponent(recette.id)}"
-          class="recette"
-        >
+    liste.innerHTML =
+      recettes.map(recette => {
 
-          <h3>${recette.nom || "Recette sans nom"}</h3>
+        return `
 
-          <div class="infos">
+          <a
+            href="Recette.html?id=${encodeURIComponent(recette.id)}"
+            class="recette"
+          >
 
-            ${
-              recette.temps
-              ? `<span class="badge">⏱️ ${recette.temps} min</span>`
-              : ""
-            }
+            <h3>
+              ${recette.nom || "Recette sans nom"}
+            </h3>
 
-            ${
-              recette.proteines
-              ? `<span class="badge">🥩 ${recette.proteines} g protéines</span>`
-              : ""
-            }
+            <div class="infos">
 
-            ${
-              recette.sansGluten
-              ? `<span class="badge">🌾 Sans gluten</span>`
-              : ""
-            }
+              ${
+                recette.temps
+                  ? `
+                    <span class="badge">
+                      ⏱️ ${recette.temps} min
+                    </span>
+                  `
+                  : ""
+              }
 
-          </div>
+              ${
+                recette.proteines
+                  ? `
+                    <span class="badge">
+                      🥩 ${recette.proteines} g protéines
+                    </span>
+                  `
+                  : ""
+              }
 
-        </a>
-      `;
+              ${
+                recette.sansGluten
+                  ? `
+                    <span class="badge">
+                      🌾 Sans gluten
+                    </span>
+                  `
+                  : ""
+              }
 
-    }).join("");
+            </div>
+
+          </a>
+
+        `;
+
+      }).join("");
+
   }
 
 
-  document.querySelectorAll(".filtre").forEach(bouton => {
+  /*
+   * Gestion des boutons des 6 catégories.
+   */
 
-    bouton.addEventListener("click", function() {
+  document
+    .querySelectorAll(".filtre")
+    .forEach(bouton => {
 
-      document
-        .querySelectorAll(".filtre")
-        .forEach(btn => btn.classList.remove("actif"));
+      bouton.addEventListener("click", function() {
 
-      this.classList.add("actif");
+        const filtre =
+          this.dataset.filtre;
 
-      const filtre = this.dataset.filtre;
+        /*
+         * Met à jour le bouton actif.
+         */
 
-      afficherRecettes(filtre);
+        activerBouton(filtre);
+
+        /*
+         * Affiche immédiatement
+         * les recettes correspondantes.
+         */
+
+        afficherRecettes(filtre);
+
+        /*
+         * Met à jour l'adresse dans le navigateur.
+         *
+         * Cela permet aussi de partager directement
+         * une catégorie festive.
+         */
+
+        if (filtre === "toutes") {
+
+          history.replaceState(
+            null,
+            "",
+            "Festif.html"
+          );
+
+        } else {
+
+          history.replaceState(
+            null,
+            "",
+            "Festif.html?filtre=" +
+            encodeURIComponent(filtre)
+          );
+
+        }
+
+      });
 
     });
 
-  });
 
+  /*
+   * Lancement.
+   */
 
   chargerRecettes();
 
