@@ -7,7 +7,11 @@
 
   <title>Ma Petite Assiette</title>
 
-  <meta name="description" content="Ma Petite Assiette : des recettes simples, gourmandes et adaptées aux petites quantités.">
+<meta
+name="description"
+content="Ma Petite Assiette : des petites portions, des recettes gourmandes et des idées simples pour tous les jours."
+
+>
 
   <style>
     * {
@@ -20,14 +24,20 @@
       --rose: #d96b7d;
       --rose-fonce: #c65368;
       --rose-clair: #f9e6e9;
-      --rose-tres-clair: #fff5f6;
+      --rose-pale: #fff5f6;
+
       --vert: #7b9b78;
       --vert-clair: #e8f0e5;
+
       --beige: #faf7f2;
-      --texte: #3f3a38;
-      --gris: #77716e;
       --blanc: #ffffff;
-      --or: #d2a84b;
+
+      --texte: #403936;
+      --gris: #77716e;
+
+      --orange: #d99054;
+      --jaune: #d5ad52;
+
       --ombre: 0 8px 25px rgba(80, 60, 60, 0.10);
       --rayon: 22px;
     }
@@ -41,255 +51,353 @@
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    /* =========================
+    /* ==================================================
        HEADER
-    ========================= */
+    ================================================== */
 
     header {
-      background: linear-gradient(145deg, #fff8f8, #f8e5e8);
-      padding: 28px 20px 25px;
+      background: linear-gradient(145deg, #fff9f9, #f8e5e8);
+      padding: 27px 18px 28px;
       border-radius: 0 0 32px 32px;
     }
 
     .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
+      color: var(--rose);
       font-size: 13px;
       font-weight: bold;
       letter-spacing: 2px;
-      color: var(--rose);
       text-transform: uppercase;
     }
 
-    .heart {
+    .header-favorite {
       width: 42px;
       height: 42px;
-      background: white;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 21px;
+      background: white;
+      border-radius: 50%;
+      font-size: 22px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.07);
     }
 
     .hero {
-      max-width: 700px;
+      max-width: 720px;
       margin: 30px auto 0;
     }
 
     .hero-small {
-      font-size: 15px;
-      color: var(--vert);
-      font-weight: bold;
       margin-bottom: 7px;
+      color: var(--vert);
+      font-size: 15px;
+      font-weight: bold;
     }
 
     .hero h1 {
+      margin-bottom: 15px;
+      color: var(--texte);
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(34px, 9vw, 55px);
       line-height: 1;
-      color: #403936;
-      margin-bottom: 15px;
     }
 
     .hero p {
+      max-width: 570px;
+      color: var(--gris);
       font-size: 16px;
       line-height: 1.6;
-      color: var(--gris);
-      max-width: 560px;
     }
 
-    /* =========================
-       BOUTON PRINCIPAL
-    ========================= */
-
     .main-button {
+      max-width: 720px;
+      margin-top: 22px;
+      padding: 18px 20px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 700px;
-      margin: 22px auto 0;
-      padding: 18px 20px;
-      background: var(--rose);
+
       color: white;
+      background: var(--rose);
       border-radius: 18px;
+
+      font-size: 15px;
       font-weight: bold;
+
       box-shadow: 0 8px 20px rgba(217,107,125,0.25);
-      transition: transform 0.2s ease;
     }
 
-    .main-button:hover {
-      transform: translateY(-2px);
-    }
-
-    .main-button span:last-child {
+    .main-button-arrow {
       font-size: 24px;
     }
 
-    /* =========================
-       CONTENU
-    ========================= */
+    /* ==================================================
+       MAIN
+    ================================================== */
 
     main {
       max-width: 720px;
       margin: auto;
-      padding: 28px 16px 30px;
+      padding: 30px 16px;
     }
 
     .section-title {
+      margin: 10px 0 16px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 16px;
-      margin-top: 10px;
+      gap: 10px;
     }
 
     .section-title h2 {
+      color: var(--texte);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 25px;
-      color: #403936;
     }
 
     .section-title span {
-      font-size: 13px;
       color: var(--rose);
+      font-size: 12px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
-    /* =========================
-       CATÉGORIES
-    ========================= */
+    /* ==================================================
+       MES OUTILS
+    ================================================== */
 
-    .categories {
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .tool {
+      position: relative;
+      min-height: 135px;
+      padding: 18px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--ombre);
+
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .tool:hover {
+      transform: translateY(-3px);
+    }
+
+    .tool-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+
+      width: 43px;
+      height: 43px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      background: var(--rose-clair);
+
+      font-size: 22px;
+    }
+
+    .tool h3 {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .tool p {
+      color: var(--gris);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .tool.adapter {
+      border-top: 4px solid var(--rose);
+    }
+
+    .tool.frigo {
+      border-top: 4px solid var(--vert);
+    }
+
+    .tool.restes {
+      border-top: 4px solid #8b9c72;
+    }
+
+    .tool.courses {
+      border-top: 4px solid var(--orange);
+    }
+
+    .tool.menu {
+      grid-column: 1 / -1;
+      min-height: 110px;
+      border-top: 4px solid var(--jaune);
+    }
+
+    /* ==================================================
+       UNIVERS
+    ================================================== */
+
+    .univers {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 13px;
       margin-bottom: 30px;
     }
 
-    .category {
+    .univers-card {
       position: relative;
-      min-height: 145px;
-      border-radius: var(--rayon);
+      min-height: 155px;
+
       padding: 18px;
-      overflow: hidden;
-      box-shadow: var(--ombre);
+
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+
+      overflow: hidden;
+      border-radius: var(--rayon);
+
+      color: white;
+      box-shadow: var(--ombre);
+
       transition: transform 0.2s ease;
     }
 
-    .category:hover {
+    .univers-card:hover {
       transform: translateY(-3px);
     }
 
-    .category::before {
+    .univers-card::before {
       content: "";
       position: absolute;
       inset: 0;
+
       background: linear-gradient(
         to top,
-        rgba(35, 30, 30, 0.65),
-        rgba(35, 30, 30, 0.05)
+        rgba(30,25,25,0.70),
+        rgba(30,25,25,0.05)
       );
+
       z-index: 1;
     }
 
-    .category-content {
+    .univers-content {
       position: relative;
       z-index: 2;
-      color: white;
     }
 
-    .category-icon {
+    .univers-icon {
       position: absolute;
       z-index: 2;
-      top: 15px;
-      right: 15px;
+
+      top: 14px;
+      right: 14px;
+
       width: 43px;
       height: 43px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.92);
+
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+
+      font-size: 21px;
     }
 
-    .category h3 {
-      font-size: 18px;
+    .univers-card h3 {
       margin-bottom: 4px;
+      font-size: 18px;
     }
 
-    .category p {
-      font-size: 12px;
+    .univers-card p {
+      font-size: 11px;
       line-height: 1.4;
     }
 
     .petit-appetit {
       background:
         url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80")
-        center/cover;
+        center / cover;
     }
 
     .chirurgie {
       background:
         url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80")
-        center/cover;
+        center / cover;
     }
 
     .batch {
       background:
         url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80")
-        center/cover;
+        center / cover;
     }
 
     .festif {
       background:
         url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=80")
-        center/cover;
+        center / cover;
     }
 
-    /* =========================
-       BANDEAU FESTIF
-    ========================= */
+    /* ==================================================
+       FESTIF
+    ================================================== */
 
     .festive-banner {
-      background: linear-gradient(135deg, #fff0f2, #f6e9df);
-      border-radius: var(--rayon);
-      padding: 21px;
       margin-bottom: 30px;
-      box-shadow: var(--ombre);
+      padding: 22px;
+
+      background: linear-gradient(135deg, #fff0f2, #f6e9df);
       border: 1px solid rgba(217,107,125,0.12);
+      border-radius: var(--rayon);
+
+      box-shadow: var(--ombre);
     }
 
-    .festive-banner-top {
+    .festive-title {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
 
-    .festive-banner-icon {
+    .festive-icon {
       width: 45px;
       height: 45px;
-      background: white;
-      border-radius: 50%;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      background: white;
+      border-radius: 50%;
+
       font-size: 23px;
       flex-shrink: 0;
     }
@@ -300,56 +408,59 @@
     }
 
     .festive-banner p {
+      margin-bottom: 15px;
       color: var(--gris);
       font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 15px;
+      line-height: 1.55;
     }
 
     .festive-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
       color: var(--rose);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: bold;
     }
 
-    /* =========================
-       VALEURS
-    ========================= */
+    /* ==================================================
+       POURQUOI
+    ================================================== */
 
     .values {
       display: grid;
       gap: 12px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .value {
-      background: white;
-      border-radius: 18px;
       padding: 17px;
+
       display: flex;
       align-items: center;
       gap: 14px;
+
+      background: white;
+      border-radius: 18px;
+
       box-shadow: 0 5px 18px rgba(80,60,60,0.06);
     }
 
     .value-icon {
       width: 46px;
       height: 46px;
-      border-radius: 15px;
-      background: var(--rose-clair);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      background: var(--rose-clair);
+      border-radius: 15px;
+
       font-size: 22px;
       flex-shrink: 0;
     }
 
     .value h3 {
-      font-size: 15px;
       margin-bottom: 4px;
+      font-size: 15px;
     }
 
     .value p {
@@ -358,15 +469,17 @@
       line-height: 1.4;
     }
 
-    /* =========================
+    /* ==================================================
        À PROPOS
-    ========================= */
+    ================================================== */
 
     .about {
+      margin-bottom: 24px;
+      padding: 24px 20px;
+
       background: white;
       border-radius: var(--rayon);
-      padding: 24px 20px;
-      margin-bottom: 24px;
+
       box-shadow: var(--ombre);
     }
 
@@ -380,11 +493,14 @@
     .about-icon {
       width: 48px;
       height: 48px;
-      border-radius: 16px;
-      background: var(--rose-clair);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      background: var(--rose-clair);
+      border-radius: 16px;
+
       font-size: 24px;
       flex-shrink: 0;
     }
@@ -395,111 +511,130 @@
     }
 
     .about p {
+      margin-bottom: 12px;
+      color: var(--gris);
       font-size: 14px;
       line-height: 1.65;
-      color: var(--gris);
-      margin-bottom: 12px;
     }
 
-    .about p:last-child {
-      margin-bottom: 0;
+    .about p:last-of-type {
+      margin-bottom: 18px;
     }
 
-    .highlight {
+    .about-link {
       color: var(--rose);
+      font-size: 13px;
       font-weight: bold;
     }
 
-    /* =========================
-       QUESTIONNAIRE TESTEURS
-    ========================= */
+    /* ==================================================
+       TESTEURS
+    ================================================== */
 
     .tester-card {
       position: relative;
       overflow: hidden;
+
+      margin-bottom: 24px;
+      padding: 26px 21px;
+
       background: linear-gradient(135deg, #d96b7d, #c65368);
       color: white;
+
       border-radius: var(--rayon);
-      padding: 26px 21px;
-      margin-bottom: 24px;
+
       box-shadow: 0 10px 28px rgba(198,83,104,0.25);
     }
 
     .tester-card::after {
       content: "💬";
+
       position: absolute;
       right: -5px;
-      top: -12px;
+      top: -15px;
+
       font-size: 90px;
       opacity: 0.12;
       transform: rotate(12deg);
     }
 
-    .tester-card .mini-title {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: bold;
-      opacity: 0.85;
+    .tester-mini {
       margin-bottom: 7px;
+
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.85;
     }
 
     .tester-card h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 27px;
-      margin-bottom: 10px;
       position: relative;
       z-index: 2;
+
+      margin-bottom: 10px;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
     }
 
     .tester-card p {
-      font-size: 13px;
-      line-height: 1.55;
-      opacity: 0.95;
-      margin-bottom: 18px;
-      max-width: 550px;
       position: relative;
       z-index: 2;
+
+      max-width: 570px;
+      margin-bottom: 18px;
+
+      font-size: 13px;
+      line-height: 1.55;
     }
 
     .tester-button {
+      position: relative;
+      z-index: 2;
+
       display: inline-flex;
       align-items: center;
       gap: 9px;
+
+      padding: 13px 18px;
+
       background: white;
       color: var(--rose-fonce);
-      padding: 13px 18px;
+
       border-radius: 14px;
+
       font-size: 13px;
       font-weight: bold;
-      position: relative;
-      z-index: 2;
     }
 
-    /* =========================
+    /* ==================================================
        STATISTIQUES
-    ========================= */
+    ================================================== */
 
     .stats-card {
+      margin-bottom: 24px;
+      padding: 22px 17px;
+
       background: white;
       border-radius: var(--rayon);
-      padding: 22px 17px;
-      margin-bottom: 24px;
+
       box-shadow: var(--ombre);
     }
 
-    .stats-card-header {
-      text-align: center;
+    .stats-header {
       margin-bottom: 19px;
+      text-align: center;
     }
 
-    .stats-card-header h2 {
+    .stats-header h2 {
+      margin-bottom: 6px;
+
       font-family: Georgia, "Times New Roman", serif;
       font-size: 25px;
-      margin-bottom: 6px;
     }
 
-    .stats-card-header p {
+    .stats-header p {
       color: var(--gris);
       font-size: 12px;
     }
@@ -511,18 +646,21 @@
     }
 
     .stat {
-      text-align: center;
-      background: var(--rose-tres-clair);
-      border-radius: 16px;
       padding: 17px 6px;
+
+      background: var(--rose-pale);
+      border-radius: 16px;
+
+      text-align: center;
     }
 
     .stat-number {
-      font-family: Georgia, "Times New Roman", serif;
+      margin-bottom: 4px;
+
       color: var(--rose);
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 27px;
       font-weight: bold;
-      margin-bottom: 4px;
     }
 
     .stat-label {
@@ -531,34 +669,40 @@
       line-height: 1.3;
     }
 
-    .stats-note {
+    .stats-link {
+      display: block;
+      margin-top: 16px;
+
+      color: var(--rose);
+      font-size: 12px;
+      font-weight: bold;
       text-align: center;
-      margin-top: 15px;
-      font-size: 10px;
-      color: #99918d;
     }
 
-    /* =========================
+    /* ==================================================
        MESSAGE FINAL
-    ========================= */
+    ================================================== */
 
     .welcome {
+      margin-top: 10px;
+      padding: 23px;
+
       background: var(--vert-clair);
       border-radius: var(--rayon);
-      padding: 23px;
+
       text-align: center;
-      margin-top: 10px;
     }
 
-    .welcome .emoji {
-      font-size: 28px;
+    .welcome-emoji {
       margin-bottom: 8px;
+      font-size: 28px;
     }
 
     .welcome h2 {
+      margin-bottom: 8px;
+
       font-family: Georgia, "Times New Roman", serif;
       font-size: 23px;
-      margin-bottom: 8px;
     }
 
     .welcome p {
@@ -567,9 +711,9 @@
       line-height: 1.5;
     }
 
-    /* =========================
-       NAVIGATION BAS
-    ========================= */
+    /* ==================================================
+       NAVIGATION
+    ================================================== */
 
     .bottom-nav {
       position: fixed;
@@ -577,18 +721,22 @@
       right: 0;
       bottom: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.96);
+
+      background: rgba(255,255,255,0.97);
       backdrop-filter: blur(12px);
+
       border-top: 1px solid rgba(0,0,0,0.06);
+
       box-shadow: 0 -5px 20px rgba(50,40,40,0.08);
     }
 
     .bottom-nav-inner {
       max-width: 650px;
+      height: 70px;
       margin: auto;
+
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      height: 70px;
     }
 
     .nav-item {
@@ -597,12 +745,14 @@
       align-items: center;
       justify-content: center;
       gap: 4px;
+
       color: #8b8582;
+
       font-size: 10px;
       font-weight: bold;
     }
 
-    .nav-item .nav-icon {
+    .nav-icon {
       font-size: 21px;
       line-height: 1;
     }
@@ -611,9 +761,9 @@
       color: var(--rose);
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+    /* ==================================================
+       DESKTOP
+    ================================================== */
 
     @media (min-width: 700px) {
 
@@ -626,20 +776,21 @@
         padding-top: 38px;
       }
 
-      .categories {
+      .tools {
         grid-template-columns: repeat(4, 1fr);
       }
 
-      .category {
+      .tool.menu {
+        grid-column: auto;
+        min-height: 135px;
+      }
+
+      .univers {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .univers-card {
         min-height: 230px;
-      }
-
-      .category h3 {
-        font-size: 17px;
-      }
-
-      .category p {
-        font-size: 11px;
       }
 
       .values {
@@ -648,8 +799,8 @@
 
       .value {
         flex-direction: column;
-        text-align: center;
         padding: 20px 15px;
+        text-align: center;
       }
     }
 
@@ -677,9 +828,9 @@
 
 <body>
 
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
+  <!-- ==================================================
+       EN-TÊTE
+  ================================================== -->
 
   <header>
 
@@ -692,7 +843,7 @@
 
   <a
     href="src/screens/Favoris.html"
-    class="heart"
+    class="header-favorite"
     aria-label="Mes favoris"
   >
     ♡
@@ -722,8 +873,15 @@
     href="src/screens/MesEnvies.html"
     class="main-button"
   >
-    <span>✨ Trouver une recette</span>
-    <span>→</span>
+
+    <span>
+      ✨ Trouver une recette
+    </span>
+
+    <span class="main-button-arrow">
+      →
+    </span>
+
   </a>
 
 </div>
@@ -731,48 +889,189 @@
 
   </header>
 
-  <!-- =====================================================
-       CONTENU PRINCIPAL
-  ====================================================== -->
+  <!-- ==================================================
+       CONTENU
+  ================================================== -->
 
   <main>
 
 ```
-<!-- CATÉGORIES -->
+<!-- ==================================================
+     MES OUTILS
+================================================== -->
 
 <div class="section-title">
 
   <h2>
-    Que souhaitez-vous faire ?
+    Mes outils
   </h2>
 
   <span>
-    À vous de choisir
+    Pratique au quotidien
   </span>
 
 </div>
 
 
-<section class="categories">
+<section class="tools">
+
+
+  <!-- ADAPTER -->
+
+  <a
+    href="src/screens/adapter.html"
+    class="tool adapter"
+  >
+
+    <div class="tool-icon">
+      🥗
+    </div>
+
+    <h3>
+      Adapter mon repas
+    </h3>
+
+    <p>
+      Adaptez votre assiette avec
+      les 3 choix de garnitures.
+    </p>
+
+  </a>
+
+
+  <!-- FRIGO -->
+
+  <a
+    href="src/screens/frigo.html"
+    class="tool frigo"
+  >
+
+    <div class="tool-icon">
+      🧊
+    </div>
+
+    <h3>
+      Mon frigo
+    </h3>
+
+    <p>
+      Trouvez des idées à partir
+      de ce que vous avez déjà.
+    </p>
+
+  </a>
+
+
+  <!-- ANTI-GASPI -->
+
+  <a
+    href="src/screens/restes.html"
+    class="tool restes"
+  >
+
+    <div class="tool-icon">
+      ♻️
+    </div>
+
+    <h3>
+      Anti-gaspi
+    </h3>
+
+    <p>
+      Transformez vos restes
+      en petites assiettes.
+    </p>
+
+  </a>
+
+
+  <!-- COURSES -->
+
+  <a
+    href="src/screens/courses.html"
+    class="tool courses"
+  >
+
+    <div class="tool-icon">
+      🛒
+    </div>
+
+    <h3>
+      Mes courses
+    </h3>
+
+    <p>
+      Préparez vos achats simplement
+      à partir de vos recettes.
+    </p>
+
+  </a>
+
+
+  <!-- MENU -->
+
+  <a
+    href="src/screens/menu.html"
+    class="tool menu"
+  >
+
+    <div class="tool-icon">
+      🍽️
+    </div>
+
+    <h3>
+      Composer mon menu
+    </h3>
+
+    <p>
+      Organisez vos repas et composez
+      votre petite assiette selon vos envies.
+    </p>
+
+  </a>
+
+
+</section>
+
+
+<!-- ==================================================
+     MES UNIVERS
+================================================== -->
+
+<div class="section-title">
+
+  <h2>
+    Mes univers
+  </h2>
+
+  <span>
+    À chacun son besoin
+  </span>
+
+</div>
+
+
+<section class="univers">
 
 
   <a
     href="src/screens/petit-appetit.html"
-    class="category petit-appetit"
+    class="univers-card petit-appetit"
   >
 
-    <div class="category-icon">
+    <div class="univers-icon">
       🥣
     </div>
 
-    <div class="category-content">
+    <div class="univers-content">
 
       <h3>
         Petit appétit
       </h3>
 
       <p>
-        Des portions adaptées, sans gaspillage.
+        Des portions adaptées,
+        sans gaspillage.
       </p>
 
     </div>
@@ -782,21 +1081,22 @@
 
   <a
     href="src/screens/chirurgie.html"
-    class="category chirurgie"
+    class="univers-card chirurgie"
   >
 
-    <div class="category-icon">
+    <div class="univers-icon">
       💗
     </div>
 
-    <div class="category-content">
+    <div class="univers-content">
 
       <h3>
         Chirurgie
       </h3>
 
       <p>
-        Avant et après l'intervention.
+        Se préparer et trouver
+        des idées adaptées.
       </p>
 
     </div>
@@ -806,21 +1106,22 @@
 
   <a
     href="src/screens/batch-cooking.html"
-    class="category batch"
+    class="univers-card batch"
   >
 
-    <div class="category-icon">
+    <div class="univers-icon">
       🍱
     </div>
 
-    <div class="category-content">
+    <div class="univers-content">
 
       <h3>
         Batch cooking
       </h3>
 
       <p>
-        Préparer plusieurs petits repas à l'avance.
+        Préparer plusieurs repas
+        à l'avance.
       </p>
 
     </div>
@@ -829,22 +1130,23 @@
 
 
   <a
-    href="src/screens/Recettes.html?codes=APE,CRE,NOE,PAQ,GAL,FES"
-    class="category festif"
+    href="src/screens/Festif.html"
+    class="univers-card festif"
   >
 
-    <div class="category-icon">
+    <div class="univers-icon">
       🎉
     </div>
 
-    <div class="category-content">
+    <div class="univers-content">
 
       <h3>
         Festif
       </h3>
 
       <p>
-        Apéros, fêtes et recettes à partager.
+        Apéritifs, fêtes et recettes
+        gourmandes en petites portions.
       </p>
 
     </div>
@@ -855,25 +1157,21 @@
 </section>
 
 
-<!-- =====================================================
-     BANDEAU FESTIF
-====================================================== -->
+<!-- ==================================================
+     ESPACE FESTIF
+================================================== -->
 
 <section class="festive-banner">
 
-  <div class="festive-banner-top">
+  <div class="festive-title">
 
-    <div class="festive-banner-icon">
+    <div class="festive-icon">
       🎄
     </div>
 
-    <div>
-
-      <h3>
-        Les petites assiettes festives
-      </h3>
-
-    </div>
+    <h3>
+      Les petites assiettes festives
+    </h3>
 
   </div>
 
@@ -886,18 +1184,18 @@
 
 
   <a
-    href="src/screens/Recettes.html?codes=APE,CRE,NOE,PAQ,GAL,FES"
+    href="src/screens/Festif.html"
     class="festive-link"
   >
-    Découvrir les recettes festives →
+    Découvrir l'univers festif →
   </a>
 
 </section>
 
 
-<!-- =====================================================
-     POURQUOI MA PETITE ASSIETTE ?
-====================================================== -->
+<!-- ==================================================
+     POURQUOI
+================================================== -->
 
 <div class="section-title">
 
@@ -969,7 +1267,7 @@
 
       <p>
         Des recettes accessibles pour tous les jours,
-        même quand on a peu d'énergie.
+        avec des quantités faciles à adapter.
       </p>
 
     </div>
@@ -980,9 +1278,9 @@
 </section>
 
 
-<!-- =====================================================
+<!-- ==================================================
      À PROPOS
-====================================================== -->
+================================================== -->
 
 <section class="about">
 
@@ -1000,47 +1298,45 @@
 
 
   <p>
-    <strong>Ma Petite Assiette</strong> est un projet né
-    d'une idée simple : lorsque l'on mange en petites quantités,
-    il n'est pas toujours facile de trouver des recettes
-    réellement adaptées.
+    <strong>Ma Petite Assiette</strong> est un projet
+    né d'une idée simple : lorsque l'on mange en petites
+    quantités, il n'est pas toujours facile de trouver
+    des recettes réellement adaptées.
   </p>
 
 
   <p>
     L'objectif est de proposer des
-    <span class="highlight">
-      petites portions gourmandes, simples et variées
-    </span>,
-    sans donner l'impression de renoncer au plaisir de manger.
+    <strong>petites portions gourmandes, simples et variées</strong>,
+    sans renoncer au plaisir de manger.
   </p>
 
 
   <p>
-    L'application propose également des idées pour les
-    petits appétits, la préparation à une chirurgie,
-    les différentes étapes après une chirurgie,
-    les collations, les petits-déjeuners,
+    L'application rassemble des idées pour les petits appétits,
+    la préparation à une chirurgie, les différentes étapes
+    après une chirurgie, les petits-déjeuners, les collations,
     le batch cooking et les repas festifs.
   </p>
 
 
-  <p>
-    Le projet évolue grâce aux retours des personnes
-    qui testent l'application.
-    <strong>Votre avis permet de construire la suite.</strong>
-  </p>
+  <a
+    href="src/screens/APropos.html"
+    class="about-link"
+  >
+    En savoir plus sur le projet →
+  </a>
 
 </section>
 
 
-<!-- =====================================================
-     APPEL AUX TESTEURS / QUESTIONNAIRE
-====================================================== -->
+<!-- ==================================================
+     TESTEURS
+================================================== -->
 
 <section class="tester-card">
 
-  <div class="mini-title">
+  <div class="tester-mini">
     Participez au projet
   </div>
 
@@ -1052,47 +1348,39 @@
 
 
   <p>
-    L'application est encore en développement.
-    Quelques minutes suffisent pour découvrir
-    les recettes et nous dire ce que vous en pensez.
-    Vos réponses nous aident à améliorer
-    Ma Petite Assiette avant son lancement.
+    L'application évolue grâce aux personnes qui la testent.
+    Découvrez les recettes, essayez les différentes fonctionnalités
+    et dites-nous ce que vous en pensez.
+    Quelques minutes suffisent pour contribuer au projet.
   </p>
 
 
-  <!--
-    IMPORTANT :
-    Remplacez le lien ci-dessous par le lien
-    de votre questionnaire Google Forms lorsque
-    vous souhaitez le mettre en ligne.
-  -->
-
   <a
-  href="https://forms.gle/PzaTscEpMSdng32p7"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="tester-button"
->
-  📝 Répondre au questionnaire →
-</a>
+    href="https://forms.gle/PzaTscEpMSdng32p7"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="tester-button"
+  >
+    📝 Répondre au questionnaire →
+  </a>
 
 </section>
 
 
-<!-- =====================================================
+<!-- ==================================================
      STATISTIQUES
-====================================================== -->
+================================================== -->
 
 <section class="stats-card">
 
-  <div class="stats-card-header">
+  <div class="stats-header">
 
     <h2>
       Ma Petite Assiette en chiffres
     </h2>
 
     <p>
-      Le projet grandit petit à petit grâce à vous.
+      Le projet grandit petit à petit.
     </p>
 
   </div>
@@ -1108,8 +1396,7 @@
       </div>
 
       <div class="stat-label">
-        recettes<br>
-        actuellement
+        recettes
       </div>
 
     </div>
@@ -1122,8 +1409,7 @@
       </div>
 
       <div class="stat-label">
-        univers<br>
-        festifs
+        univers festifs
       </div>
 
     </div>
@@ -1132,12 +1418,12 @@
     <div class="stat">
 
       <div class="stat-number">
-        100%
+        ∞
       </div>
 
       <div class="stat-label">
-        pensé pour<br>
-        les petites portions
+        idées à
+        imaginer
       </div>
 
     </div>
@@ -1146,20 +1432,23 @@
   </div>
 
 
-  <div class="stats-note">
-    Statistiques indicatives — le nombre de recettes évolue régulièrement.
-  </div>
+  <a
+    href="src/screens/Statistiques.html"
+    class="stats-link"
+  >
+    Voir les statistiques du projet →
+  </a>
 
 </section>
 
 
-<!-- =====================================================
+<!-- ==================================================
      MESSAGE FINAL
-====================================================== -->
+================================================== -->
 
 <section class="welcome">
 
-  <div class="emoji">
+  <div class="welcome-emoji">
     🥄
   </div>
 
@@ -1172,7 +1461,7 @@
 
   <p>
     Parce qu'une petite assiette peut être
-    gourmande, équilibrée et pleine de plaisir.
+    gourmande, variée et pleine de plaisir.
   </p>
 
 </section>
@@ -1180,9 +1469,9 @@
 
   </main>
 
-  <!-- =====================================================
+  <!-- ==================================================
        NAVIGATION BAS
-  ====================================================== -->
+  ================================================== -->
 
   <nav class="bottom-nav">
 
@@ -1239,12 +1528,12 @@
 
 
   <a
-    href="src/screens/Profil.html"
+    href="src/screens/MonProfil.html"
     class="nav-item"
   >
 
     <span class="nav-icon">
-      ♙
+      👤
     </span>
 
     <span>
