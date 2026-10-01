@@ -1,731 +1,765 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2E73FD8V9V');
-  
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Ma Petite Assiette</title>
 
+  <meta name="description" content="Ma Petite Assiette : des idées de recettes simples, gourmandes et adaptées aux petites quantités.">
+
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --rose: #d96b7d;
+      --rose-clair: #f9e6e9;
+      --rose-tres-clair: #fff5f6;
+      --vert: #7b9b78;
+      --vert-clair: #e8f0e5;
+      --beige: #faf7f2;
+      --texte: #3f3a38;
+      --gris: #77716e;
+      --blanc: #ffffff;
+      --ombre: 0 8px 25px rgba(80, 60, 60, 0.10);
+      --rayon: 22px;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #fff8f2 0%, #f7f4ea 100%);
-      color: #3f463d;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--beige);
+      color: var(--texte);
+      min-height: 100vh;
       padding-bottom: 90px;
     }
 
-    .container {
-      width: 100%;
-      max-width: 520px;
-      margin: auto;
-      padding: 18px;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     /* =========================
-       HERO
-       ========================= */
+       HEADER
+    ========================= */
 
-    .hero {
-      background: linear-gradient(135deg, #f8d8c8, #dce9d5);
-      border-radius: 28px;
-      padding: 28px 20px;
-      text-align: center;
-      margin-bottom: 20px;
-      box-shadow: 0 8px 25px rgba(80, 80, 60, 0.08);
+    header {
+      background: linear-gradient(145deg, #fff8f8, #f8e5e8);
+      padding: 28px 20px 25px;
+      border-radius: 0 0 32px 32px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 650px;
+      margin: auto;
     }
 
     .logo {
-      font-size: 42px;
-      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: var(--rose);
+      text-transform: uppercase;
+    }
+
+    .heart {
+      width: 42px;
+      height: 42px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    }
+
+    .hero {
+      max-width: 650px;
+      margin: 30px auto 0;
+    }
+
+    .hero-small {
+      font-size: 15px;
+      color: var(--vert);
+      font-weight: bold;
+      margin-bottom: 7px;
     }
 
     .hero h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #43503f;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 9vw, 55px);
+      line-height: 1;
+      color: #403936;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      margin: 10px 0 0;
       font-size: 16px;
-      line-height: 1.5;
-    }
-
-    /* =========================
-       TITRES
-       ========================= */
-
-    .section {
-      margin-bottom: 22px;
-    }
-
-    .section h2 {
-      font-size: 19px;
-      margin: 0 0 12px;
-      color: #485244;
-    }
-
-    /* =========================
-       CARTES
-       ========================= */
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 16px;
-      margin-bottom: 10px;
-      box-shadow: 0 5px 18px rgba(70, 70, 50, 0.07);
-    }
-
-    .card-title {
-      font-weight: bold;
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    .card-text {
-      font-size: 14px;
-      color: #6b7266;
-      line-height: 1.4;
-    }
-
-    /* =========================
-       BOUTONS CHOIX
-       ========================= */
-
-    .choices {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .choice {
-      border: 2px solid transparent;
-      background: white;
-      border-radius: 18px;
-      padding: 15px 10px;
-      text-align: center;
-      cursor: pointer;
-      font-size: 14px;
-      color: #465044;
-      box-shadow: 0 4px 14px rgba(70, 70, 50, 0.06);
-      transition: 0.2s;
-    }
-
-    .choice:hover {
-      transform: translateY(-1px);
-    }
-
-    .choice.selected {
-      border-color: #91a982;
-      background: #edf4e9;
-    }
-
-    .choice .emoji {
-      display: block;
-      font-size: 27px;
-      margin-bottom: 7px;
+      line-height: 1.6;
+      color: var(--gris);
+      max-width: 520px;
     }
 
     /* =========================
        BOUTON PRINCIPAL
-       ========================= */
+    ========================= */
 
     .main-button {
-      width: 100%;
-      border: none;
-      border-radius: 20px;
-      padding: 16px;
-      background: #819874;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 650px;
+      margin: 22px auto 0;
+      padding: 18px 20px;
+      background: var(--rose);
       color: white;
-      font-size: 16px;
+      border-radius: 18px;
       font-weight: bold;
-      cursor: pointer;
-      margin-top: 12px;
+      box-shadow: 0 8px 20px rgba(217,107,125,0.25);
+      transition: transform 0.2s ease;
     }
 
     .main-button:hover {
-      background: #708764;
+      transform: translateY(-2px);
+    }
+
+    .main-button span:last-child {
+      font-size: 24px;
     }
 
     /* =========================
-       PARCOURS
-       ========================= */
+       CONTENU
+    ========================= */
 
-    .path-card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: white;
-      border-radius: 20px;
-      padding: 17px;
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 28px 16px 30px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      color: #403936;
+    }
+
+    .section-title span {
+      font-size: 13px;
+      color: var(--rose);
+      font-weight: bold;
+    }
+
+    /* =========================
+       CARTES CATÉGORIES
+    ========================= */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin-bottom: 30px;
+    }
+
+    .category {
+      position: relative;
+      min-height: 145px;
+      border-radius: var(--rayon);
+      padding: 18px;
+      overflow: hidden;
+      box-shadow: var(--ombre);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: transform 0.2s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+    }
+
+    .category::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(35, 30, 30, 0.60),
+        rgba(35, 30, 30, 0.05)
+      );
+      z-index: 1;
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .category-icon {
+      position: absolute;
+      z-index: 2;
+      top: 15px;
+      right: 15px;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.90);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .category h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .category p {
+      font-size: 12px;
+      line-height: 1.4;
+      opacity: 0.95;
+    }
+
+    .petit-appetit {
+      background:
+        url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80")
+        center/cover;
+    }
+
+    .chirurgie {
+      background:
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80")
+        center/cover;
+    }
+
+    .batch {
+      background:
+        url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80")
+        center/cover;
+    }
+
+    .festif {
+      background:
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=80")
+        center/cover;
+    }
+
+    /* =========================
+       BANDEAU FESTIF
+    ========================= */
+
+    .festive-banner {
+      background: linear-gradient(135deg, #fff0f2, #f6e9df);
+      border-radius: var(--rayon);
+      padding: 21px;
+      margin-bottom: 30px;
+      box-shadow: var(--ombre);
+      border: 1px solid rgba(217,107,125,0.12);
+    }
+
+    .festive-banner-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       margin-bottom: 10px;
-      box-shadow: 0 5px 18px rgba(70, 70, 50, 0.07);
-      transition: 0.2s;
     }
 
-    .path-card:hover {
-      transform: translateY(-1px);
+    .festive-banner-icon {
+      width: 45px;
+      height: 45px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      flex-shrink: 0;
     }
 
-    .path-card strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 5px;
+    .festive-banner h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
     }
 
-    .path-card span {
+    .festive-banner p {
+      color: var(--gris);
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .festive-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--rose);
       font-size: 14px;
-      color: #6b7266;
+      font-weight: bold;
+    }
+
+    /* =========================
+       VALEURS
+    ========================= */
+
+    .values {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .value {
+      background: white;
+      border-radius: 18px;
+      padding: 17px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 5px 18px rgba(80,60,60,0.06);
+    }
+
+    .value-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      background: var(--rose-clair);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .value h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .value p {
+      color: var(--gris);
+      font-size: 12px;
       line-height: 1.4;
     }
 
     /* =========================
-       RACCOURCIS
-       ========================= */
+       PETIT MESSAGE
+    ========================= */
 
-    .shortcuts {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .shortcut {
-      display: block;
-      text-decoration: none;
+    .welcome {
+      background: var(--vert-clair);
+      border-radius: var(--rayon);
+      padding: 22px;
       text-align: center;
-      background: white;
-      color: #485244;
-      border-radius: 18px;
-      padding: 16px 8px;
-      box-shadow: 0 4px 14px rgba(70, 70, 50, 0.06);
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    /* =========================
-       MESSAGE
-       ========================= */
-
-    .message {
-      display: none;
-      background: #edf4e9;
-      border-radius: 16px;
-      padding: 12px;
       margin-top: 10px;
-      font-size: 14px;
-      text-align: center;
+    }
+
+    .welcome .emoji {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .welcome h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      color: #647060;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     /* =========================
-       NAVIGATION BASSE
-       ========================= */
+       NAVIGATION BAS
+    ========================= */
 
     .bottom-nav {
       position: fixed;
-      bottom: 0;
       left: 0;
       right: 0;
-      height: 72px;
-      background: rgba(255, 255, 255, 0.97);
-      border-top: 1px solid #e4e4dc;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      bottom: 0;
       z-index: 1000;
-      box-shadow: 0 -5px 18px rgba(60, 60, 50, 0.08);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 -5px 20px rgba(50,40,40,0.08);
     }
 
-    .bottom-nav a {
-      text-decoration: none;
-      color: #65705f;
-      font-size: 12px;
-      text-align: center;
+    .bottom-nav-inner {
+      max-width: 650px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 70px;
     }
 
-    .bottom-nav a span {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 3px;
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: #8b8582;
+      font-size: 10px;
+      font-weight: bold;
     }
 
-    @media (min-width: 600px) {
-      .container {
-        padding: 25px;
+    .nav-item .nav-icon {
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .nav-item.active {
+      color: var(--rose);
+    }
+
+    /* =========================
+       DESKTOP
+    ========================= */
+
+    @media (min-width: 700px) {
+      header {
+        padding-top: 38px;
+        padding-bottom: 35px;
+      }
+
+      main {
+        padding-top: 38px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .category {
+        min-height: 230px;
+      }
+
+      .category h3 {
+        font-size: 17px;
+      }
+
+      .category p {
+        font-size: 11px;
+      }
+
+      .values {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .value {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
       }
     }
   </style>
-  
-  <link rel="stylesheet" href="src/styles/theme.css">
-  
+
 </head>
 
 <body>
 
-  <main class="container">
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-    <!-- =========================
-         HERO
-         ========================= -->
+  <header>
 
-    <section class="hero">
-      <div class="logo">🍽️</div>
+```
+<div class="header-top">
+  <div class="logo">Ma Petite Assiette</div>
 
-      <h1>MA PETITE ASSIETTE</h1>
-
-      <p>
-        Aujourd'hui, on mange quoi ?
-      </p>
-
-      <p>
-        Des petites portions, mais un vrai repas.
-      </p>
-    </section>
-
-
-    <!-- =========================
-         COMMENT CUISINEZ-VOUS ?
-         ========================= -->
-
-    <section class="section">
-
-      <h2>🍽️ Comment cuisinez-vous ?</h2>
-
-      <div class="choices">
-
-        <button class="choice" data-mode="petite">
-          <span class="emoji">🥄</span>
-          <strong>Petite portion</strong>
-          <br>
-          Pour moi
-        </button>
-
-        <button class="choice" data-mode="famille">
-          <span class="emoji">👨‍👩‍👧‍👦</span>
-          <strong>Famille</strong>
-          <br>
-          Pour plusieurs
-        </button>
-
-        <button class="choice" data-mode="mixte">
-          <span class="emoji">🍲</span>
-          <strong>Petite portion + famille</strong>
-          <br>
-          Je cuisine pour tous
-        </button>
-
-      </div>
-
-      <button class="main-button" id="saveMode">
-        Enregistrer mon choix
-      </button>
-
-      <div class="message" id="modeMessage">
-        Votre préférence a été enregistrée 💚
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         TYPE DE REPAS
-         ========================= -->
-
-    <section class="section">
-
-      <h2>🕐 Quel type de repas ?</h2>
-
-      <div class="choices">
-
-        <button class="choice meal-choice" data-meal="petit-dejeuner">
-          <span class="emoji">🌅</span>
-          <strong>Petit-déjeuner</strong>
-        </button>
-
-        <button class="choice meal-choice" data-meal="dejeuner">
-          <span class="emoji">🥗</span>
-          <strong>Déjeuner</strong>
-        </button>
-
-        <button class="choice meal-choice" data-meal="diner">
-          <span class="emoji">🍽️</span>
-          <strong>Dîner</strong>
-        </button>
-
-        <button class="choice meal-choice" data-meal="collation">
-          <span class="emoji">🍎</span>
-          <strong>Collation</strong>
-        </button>
-
-        <button class="choice meal-choice" data-meal="petite-douceur">
-          <span class="emoji">🍰</span>
-          <strong>Petite douceur</strong>
-        </button>
-
-        <button class="choice meal-choice" data-meal="peu-importe">
-          <span class="emoji">✨</span>
-          <strong>Peu importe</strong>
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         ENVIES
-         ========================= -->
- 
-    <section class="section">
-
-      <h2>💚 Je choisis selon mes envies</h2>
-
-      <a
-        href="src/screens/MesEnvies.html"
-        class="path-card"
-      >
-        <strong>🔍 Choisir mes envies</strong>
-
-        <span>
-          Je choisis selon mon appétit, mon temps,
-          mes envies et mes préférences.
-        </span>
-      </a>
-
-    </section>
-
-
-    <!-- =========================
-         MON PARCOURS
-         ========================= -->
-
-    <section class="section">
-
-      <h2>🌿 Mon parcours</h2>
-
-      <a
-        href="src/screens/petit-appetit.html"
-        class="path-card"
-      >
-        <strong>🥄 J'ai un petit appétit</strong>
-
-        <span>
-          Des idées de repas simples et adaptés
-          aux petites quantités.
-        </span>
-      </a>
-
-      <a
-        href="src/screens/chirurgie.html"
-        class="path-card"
-      >
-        <strong>🏥 Je me prépare à une chirurgie</strong>
-
-        <span>
-          Un programme express pour se préparer
-          avant une chirurgie.
-        </span>
-      </a>
-
-      <a
-        href="src/screens/batch-cooking.html"
-        class="path-card"
-      >
-        <strong>🍱 Je prépare mes repas</strong>
-
-        <span>
-          Organiser plusieurs repas à l'avance
-          sans cuisiner tous les jours.
-        </span>
-      </a>
-
-      <a
-        href="src/screens/adapter.html"
-        class="path-card"
-      >
-        <strong>🍽️ J'adapte mon plat préféré</strong>
-
-        <span>
-          Pizza, burger, pâtes, raclette, tartiflette,
-          fajitas, couscous...
-        </span>
-      </a>
-
-    </section>
-
-
-    <!-- =========================
-         ENVIES RAPIDES
-         ========================= -->
-
-    <section class="section">
-
-      <h2>💚 Aujourd'hui, j'ai envie de…</h2>
-
-      <div class="choices">
-
-        <button class="choice quick-envie" data-envie="leger">
-          <span class="emoji">🌿</span>
-          Léger
-        </button>
-
-        <button class="choice quick-envie" data-envie="complet">
-          <span class="emoji">🍽️</span>
-          Complet
-        </button>
-
-        <button class="choice quick-envie" data-envie="rapide">
-          <span class="emoji">⚡</span>
-          Rapide
-        </button>
-
-        <button class="choice quick-envie" data-envie="sucre">
-          <span class="emoji">🍰</span>
-          Sucré
-        </button>
-
-        <button class="choice quick-envie" data-envie="vegetarien">
-          <span class="emoji">🥕</span>
-          Végétarien
-        </button>
-
-      </div>
-
-    </section>
-
-
-<!-- =========================
-     RACCOURCIS
-     ========================= -->
-
-<section class="section">
-
-  <h2>✨ Mes raccourcis</h2>
-
-  <div class="shortcuts">
-
-  <a href="src/screens/Recettes.html" class="shortcut">
-    🍴<br>
-    Toutes les recettes
+  <a href="src/screens/Favoris.html" class="heart" aria-label="Mes favoris">
+    ♡
   </a>
+</div>
 
-  <a href="src/screens/Favoris.html" class="shortcut">
-    ❤️<br>
-    Mes favoris
-  </a>
+<div class="hero">
 
-  <a href="src/screens/frigo.html" class="shortcut">
-    🧊<br>
-    Mon frigo
-  </a>
+  <div class="hero-small">Bienvenue 👋</div>
 
-  <a href="src/screens/restes.html" class="shortcut">
-    ♻️<br>
-    Anti-gaspi
-  </a>
+  <h1>
+    Des petites portions,<br>
+    mais un vrai repas.
+  </h1>
 
-  <a href="src/screens/APropos.html" class="shortcut">
-    ℹ️<br>
-    À propos
+  <p>
+    Des idées simples, gourmandes et faciles à adapter
+    quand on mange en petites quantités.
+  </p>
+
+  <a href="src/screens/MesEnvies.html" class="main-button">
+    <span>✨ Trouver une recette</span>
+    <span>→</span>
   </a>
 
 </div>
-  
+```
+
+  </header>
+
   <!-- =========================
-       NAVIGATION
-       ========================= -->
+       CONTENU
+  ========================= -->
+
+  <main>
+
+```
+<div class="section-title">
+  <h2>Que souhaitez-vous faire ?</h2>
+  <span>À vous de choisir</span>
+</div>
+
+
+<!-- CATÉGORIES PRINCIPALES -->
+
+<section class="categories">
+
+  <a href="src/screens/petit-appetit.html" class="category petit-appetit">
+
+    <div class="category-icon">🥣</div>
+
+    <div class="category-content">
+      <h3>Petit appétit</h3>
+      <p>
+        Des portions adaptées, sans gaspillage.
+      </p>
+    </div>
+
+  </a>
+
+
+  <a href="src/screens/chirurgie.html" class="category chirurgie">
+
+    <div class="category-icon">💗</div>
+
+    <div class="category-content">
+      <h3>Chirurgie</h3>
+      <p>
+        Avant et après l'intervention.
+      </p>
+    </div>
+
+  </a>
+
+
+  <a href="src/screens/batch-cooking.html" class="category batch">
+
+    <div class="category-icon">🍱</div>
+
+    <div class="category-content">
+      <h3>Batch cooking</h3>
+      <p>
+        Préparer plusieurs petits repas à l'avance.
+      </p>
+    </div>
+
+  </a>
+
+
+  <!-- FESTIF -->
+
+  <a href="src/screens/Recettes.html?categorie=festif" class="category festif">
+
+    <div class="category-icon">🎉</div>
+
+    <div class="category-content">
+      <h3>Festif</h3>
+      <p>
+        Apéros, fêtes et recettes à partager.
+      </p>
+    </div>
+
+  </a>
+
+</section>
+
+
+<!-- =========================
+     ESPACE FESTIF
+========================= -->
+
+<section class="festive-banner">
+
+  <div class="festive-banner-top">
+
+    <div class="festive-banner-icon">
+      🎄
+    </div>
+
+    <div>
+      <h3>Les petites assiettes festives</h3>
+    </div>
+
+  </div>
+
+  <p>
+    Noël, Pâques, crêpes, galette des rois,
+    apéritifs dînatoires et autres moments gourmands :
+    des recettes festives pensées aussi en petites portions.
+  </p>
+
+  <a
+    href="src/screens/Recettes.html?codes=APE,CRE,NOE,PAQ,GAL,FES"
+    class="festive-link"
+  >
+    Découvrir les recettes festives →
+  </a>
+
+</section>
+
+
+<!-- =========================
+     POURQUOI MA PETITE ASSIETTE
+========================= -->
+
+<div class="section-title">
+  <h2>Pourquoi Ma Petite Assiette ?</h2>
+</div>
+
+<section class="values">
+
+  <div class="value">
+
+    <div class="value-icon">
+      🍽️
+    </div>
+
+    <div>
+      <h3>Portions adaptées</h3>
+
+      <p>
+        Des quantités raisonnables pour éviter
+        le gaspillage et respecter son appétit.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="value">
+
+    <div class="value-icon">
+      ❤️
+    </div>
+
+    <div>
+      <h3>Selon vos envies</h3>
+
+      <p>
+        Salé, sucré, léger, réconfortant ou festif :
+        choisissez ce qui vous fait envie.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="value">
+
+    <div class="value-icon">
+      ✨
+    </div>
+
+    <div>
+      <h3>Simple à préparer</h3>
+
+      <p>
+        Des recettes accessibles pour tous les jours,
+        même quand on a peu d'énergie.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MESSAGE
+========================= -->
+
+<section class="welcome">
+
+  <div class="emoji">
+    🥄
+  </div>
+
+  <h2>
+    Ici, on mange petit…<br>
+    mais on se fait plaisir.
+  </h2>
+
+  <p>
+    Parce qu'une petite assiette peut être
+    gourmande, équilibrée et pleine de plaisir.
+  </p>
+
+</section>
+```
+
+  </main>
+
+  <!-- =========================
+       NAVIGATION MOBILE
+  ========================= -->
 
   <nav class="bottom-nav">
 
-    <a href="index.html">
-      <span>🏠</span>
-      Accueil
-    </a>
+```
+<div class="bottom-nav-inner">
 
-    <a href="src/screens/Recettes.html">
-      <span>🍴</span>
-      Recettes
-    </a>
+  <a href="index.html" class="nav-item active">
 
-    <a href="src/screens/Favoris.html">
-      <span>❤️</span>
-      Favoris
-    </a>
+    <span class="nav-icon">⌂</span>
+    <span>Accueil</span>
 
-    <a href="src/screens/MonProfil.html">
-      <span>👤</span>
-      Profil
-    </a>
+  </a>
+
+
+  <a href="src/screens/Recettes.html" class="nav-item">
+
+    <span class="nav-icon">🍽️</span>
+    <span>Recettes</span>
+
+  </a>
+
+
+  <a href="src/screens/Favoris.html" class="nav-item">
+
+    <span class="nav-icon">♡</span>
+    <span>Favoris</span>
+
+  </a>
+
+
+  <a href="src/screens/Profil.html" class="nav-item">
+
+    <span class="nav-icon">♙</span>
+    <span>Profil</span>
+
+  </a>
+
+</div>
+```
 
   </nav>
 
-
-  <!-- =========================
-       JAVASCRIPT
-       ========================= -->
-
-  <script>
-
-    /* -------------------------
-       MODE DE PORTION
-       ------------------------- */
-
-    let modePortion =
-      localStorage.getItem("modePortion") || "";
-
-    const modeButtons =
-      document.querySelectorAll("[data-mode]");
-
-    modeButtons.forEach(button => {
-
-      if (button.dataset.mode === modePortion) {
-        button.classList.add("selected");
-      }
-
-      button.addEventListener("click", () => {
-
-        modeButtons.forEach(btn =>
-          btn.classList.remove("selected")
-        );
-
-        button.classList.add("selected");
-
-        modePortion = button.dataset.mode;
-      });
-
-    });
-
-
-    document
-      .getElementById("saveMode")
-      .addEventListener("click", () => {
-
-        if (!modePortion) {
-          alert("Choisissez d'abord votre mode de cuisine.");
-          return;
-        }
-
-        localStorage.setItem(
-          "modePortion",
-          modePortion
-        );
-
-        const message =
-          document.getElementById("modeMessage");
-
-        message.style.display = "block";
-
-        setTimeout(() => {
-          message.style.display = "none";
-        }, 2500);
-
-      });
-
-
-    /* -------------------------
-       TYPE DE REPAS
-       ------------------------- */
-
-    let typeRepas =
-      localStorage.getItem("typeRepas") || "";
-
-    const mealButtons =
-      document.querySelectorAll(".meal-choice");
-
-    mealButtons.forEach(button => {
-
-      if (button.dataset.meal === typeRepas) {
-        button.classList.add("selected");
-      }
-
-      button.addEventListener("click", () => {
-
-        mealButtons.forEach(btn =>
-          btn.classList.remove("selected")
-        );
-
-        button.classList.add("selected");
-
-        typeRepas = button.dataset.meal;
-
-        localStorage.setItem(
-          "typeRepas",
-          typeRepas
-        );
-
-      });
-
-    });
-
-
-    /* -------------------------
-       ENVIES RAPIDES
-       ------------------------- */
-
-    const envieButtons =
-      document.querySelectorAll(".quick-envie");
-
-    envieButtons.forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        localStorage.setItem(
-          "envie",
-          button.dataset.envie
-        );
-
-        window.location.href =
-          "src/screens/Resultats.html";
-
-      });
-
-    });
-
-
-    /* -------------------------
-       TOUTES LES RECETTES
-       ------------------------- */
-
-    const allRecipesLink =
-      document.getElementById("allRecipesLink");
-
-    allRecipesLink.addEventListener("click", function(event) {
-
-      const repas =
-        localStorage.getItem("typeRepas");
-
-      if (
-        repas &&
-        repas !== "peu-importe"
-      ) {
-
-        event.preventDefault();
-
-        window.location.href =
-          "src/screens/Recettes.html?type="
-          + encodeURIComponent(repas);
-
-      }
-
-    });
-
-  </script>
-
 </body>
 </html>
-
