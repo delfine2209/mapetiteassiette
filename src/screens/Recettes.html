@@ -1118,33 +1118,47 @@
           }
 
 
-          /* TEXTURE */
+        /* TEXTURE */
 
-          if (filtreTexture) {
+if (filtreTexture) {
 
-            const textureRecette =
-              normaliser(
-                recette.texture
-              );
+  const textureDemandee =
+    normaliser(filtreTexture);
 
+  /* PETITE ASSIETTE */
 
-            const textureDemandee =
-              normaliser(
-                filtreTexture
-              );
+  if (textureDemandee === "petite") {
 
+    if (
+      !recette.petitAppetit &&
+      !recette.portion &&
+      !(
+        recette.quantites &&
+        recette.quantites.petite
+      )
+    ) {
+      return false;
+    }
 
-            if (
-              textureRecette !==
-              textureDemandee
-            ) {
+  } else {
 
-              return false;
+    /* AUTRES TEXTURES */
 
-            }
+    const textureRecette =
+      normaliser(
+        recette.texture
+      );
 
-          }
+    if (
+      textureRecette !==
+      textureDemandee
+    ) {
+      return false;
+    }
 
+  }
+
+}
 
           return true;
 
