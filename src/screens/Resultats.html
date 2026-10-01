@@ -836,54 +836,65 @@
        VERIFICATION D'UNE ENVIE
     ================================================== */
 
-    function correspondAUneEnvie(
-      recette,
-      envie
-    ) {
+   function correspondAUneEnvie(
+  recette,
+  envie
+) {
 
-      const enviesRecette =
-        Array.isArray(
-          recette.envies
+  const enviesRecette =
+    Array.isArray(recette.envies)
+      ? recette.envies.map(item =>
+          normaliser(item)
         )
-          ? recette.envies.map(
-              function(item) {
+      : [];
 
-                return normaliser(
-                  item
-                );
+  const envieNorm =
+    normaliser(envie);
 
-              }
-            )
-          : [];
+  const correspondances = {
 
+    leger: [
+      "leger",
+      "light",
+      "léger"
+    ],
 
-      const envieNorm =
-        normaliser(
-          envie
-        );
+    reconfort: [
+      "reconfort",
+      "reconfortant"
+    ],
 
+    sucre: [
+      "sucre",
+      "gourmand"
+    ],
 
-      /*
-        Végétarien :
-        on accepte le champ
-        vegetarien = true
-        même si le tag manque.
-      */
+    vegetarien: [
+      "vegetarien"
+    ],
 
-      if (
-        envieNorm ===
-        "vegetarien"
-      ) {
+    rapide: [
+      "rapide"
+    ],
 
-        return (
-          recette.vegetarien === true ||
-          enviesRecette.includes(
-            "vegetarien"
-          )
-        );
+    complet: [
+      "complet",
+      "equilibre",
+      "equilibré"
+    ]
 
-      }
+  };
 
+  const equivalents =
+    correspondances[envieNorm] ||
+    [envieNorm];
+
+  return equivalents.some(
+    valeur =>
+      enviesRecette.includes(valeur)
+  );
+
+}
 
 
       /*
