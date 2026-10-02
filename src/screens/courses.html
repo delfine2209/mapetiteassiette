@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>Mes Courses - Ma Petite Assiette</title>
 
-  <title>Mes courses - Ma Petite Assiette</title>
-
-<!-- Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -29,1516 +23,444 @@
       padding: 0;
     }
 
-
     body {
-
-      font-family:
-        Arial,
-        sans-serif;
-
-      background: #fffaf3;
-
-      color: #3f4a42;
-
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3d4038;
       padding-bottom: 90px;
-
     }
-
-
-    .page {
-
-      max-width: 700px;
-
-      margin: auto;
-
-      padding:
-        20px
-        16px
-        30px;
-
-    }
-
 
     .hero {
-
-      background:
-        linear-gradient(
-          135deg,
-          #6f8f72,
-          #8fae91
-        );
-
-      color: white;
-
-      border-radius: 24px;
-
-      padding:
-        24px
-        20px;
-
-      margin-bottom: 18px;
-
-      box-shadow:
-        0 8px 22px
-        rgba(0,0,0,0.08);
-
+      background: linear-gradient(135deg, #f7d9c4, #dce8d5);
+      padding: 28px 18px 25px;
+      text-align: center;
+      border-radius: 0 0 28px 28px;
     }
 
+    .hero .emoji {
+      font-size: 42px;
+      margin-bottom: 7px;
+    }
 
     .hero h1 {
-
-      font-size: 28px;
-
+      color: #496044;
+      font-size: 27px;
       margin-bottom: 8px;
-
     }
-
 
     .hero p {
-
       font-size: 15px;
-
       line-height: 1.5;
-
-      opacity: 0.95;
-
     }
 
-
-    .actions {
-
-      display: flex;
-
-      gap: 10px;
-
-      margin-bottom: 18px;
-
-      flex-wrap: wrap;
-
+    .container {
+      max-width: 760px;
+      margin: auto;
+      padding: 18px 15px;
     }
-
-
-    .btn {
-
-      border: none;
-
-      border-radius: 14px;
-
-      padding:
-        12px
-        16px;
-
-      font-size: 14px;
-
-      font-weight: bold;
-
-      cursor: pointer;
-
-      text-decoration: none;
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-    }
-
-
-    .btn-primary {
-
-      background: #6f8f72;
-
-      color: white;
-
-    }
-
-
-    .btn-secondary {
-
-      background: #f0e8dc;
-
-      color: #4b5a50;
-
-    }
-
-
-    .btn-light {
-
-      background: white;
-
-      color: #6f8f72;
-
-      border:
-        1px solid
-        #dce5dc;
-
-    }
-
-
-    .intro {
-
-      background: white;
-
-      border-radius: 18px;
-
-      padding: 18px;
-
-      margin-bottom: 16px;
-
-      box-shadow:
-        0 4px 14px
-        rgba(0,0,0,0.05);
-
-      line-height: 1.5;
-
-    }
-
-
-    .stats {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 10px;
-
-      margin-bottom: 18px;
-
-    }
-
-
-    .stat {
-
-      background: white;
-
-      border-radius: 16px;
-
-      padding:
-        15px 8px;
-
-      text-align: center;
-
-      box-shadow:
-        0 4px 14px
-        rgba(0,0,0,0.05);
-
-    }
-
-
-    .stat strong {
-
-      display: block;
-
-      font-size: 22px;
-
-      color: #6f8f72;
-
-      margin-bottom: 4px;
-
-    }
-
-
-    .stat span {
-
-      font-size: 12px;
-
-      color: #777;
-
-    }
-
 
     .section {
-
       background: white;
-
       border-radius: 20px;
-
       padding: 18px;
-
-      margin-bottom: 16px;
-
-      box-shadow:
-        0 4px 14px
-        rgba(0,0,0,0.05);
-
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
     }
-
 
     .section h2 {
-
+      color: #496044;
       font-size: 19px;
-
       margin-bottom: 14px;
-
-      color: #45564a;
-
     }
 
-
-    .recipe-list {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 8px;
-
-    }
-
-
-    .recipe-item {
-
-      background: #f8f5ef;
-
-      border-radius: 12px;
-
-      padding:
-        11px 13px;
-
+    .summary {
+      background: #edf6ea;
+      border-radius: 15px;
+      padding: 13px;
+      color: #52784d;
       font-size: 14px;
-
+      line-height: 1.5;
+      margin-bottom: 15px;
     }
 
-
-    .search-box {
-
-      margin-bottom: 14px;
-
-    }
-
-
-    .search-box input {
-
+    .search {
       width: 100%;
-
-      border:
-        1px solid
-        #ddd6ca;
-
-      border-radius: 14px;
-
-      padding:
-        13px 15px;
-
-      font-size: 14px;
-
-      outline: none;
-
-      background: #fffdf9;
-
+      padding: 13px;
+      border: 1px solid #ddd6cd;
+      border-radius: 13px;
+      font-size: 15px;
+      margin-bottom: 12px;
     }
 
-
-    .course-actions {
-
+    .actions {
       display: flex;
-
       gap: 8px;
-
       flex-wrap: wrap;
-
-      margin-bottom: 14px;
-
+      margin-bottom: 15px;
     }
 
-
-    .ingredient-list {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 8px;
-
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 10px 13px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
     }
 
+    .btn-primary {
+      background: #6d9565;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #f1e9df;
+      color: #59604f;
+    }
+
+    .btn-danger {
+      background: #f5e3df;
+      color: #a34e49;
+    }
+
+    .btn-finish {
+      background: #52784d;
+      color: white;
+      width: 100%;
+      padding: 14px;
+      font-size: 15px;
+      margin-top: 10px;
+    }
 
     .ingredient {
-
       display: flex;
-
-      align-items: flex-start;
-
-      gap: 10px;
-
-      padding: 12px;
-
-      background: #faf8f4;
-
-      border-radius: 13px;
-
-      transition: 0.2s;
-
+      align-items: center;
+      gap: 11px;
+      padding: 11px 5px;
+      border-bottom: 1px solid #eee8e0;
     }
 
-
-    .ingredient.checked {
-
-      opacity: 0.55;
-
+    .ingredient:last-child {
+      border-bottom: none;
     }
-
-
-    .ingredient.checked
-    .ingredient-name {
-
-      text-decoration: line-through;
-
-    }
-
 
     .ingredient input {
-
-      margin-top: 3px;
-
-      width: 18px;
-
-      height: 18px;
-
-      accent-color: #6f8f72;
-
+      width: 20px;
+      height: 20px;
+      accent-color: #52784d;
       flex-shrink: 0;
-
     }
 
-
-    .ingredient-content {
-
-      flex: 1;
-
-      min-width: 0;
-
-    }
-
-
-    .ingredient-name {
-
+    .ingredient label {
       font-size: 14px;
-
       line-height: 1.4;
-
+      cursor: pointer;
     }
 
-
-    .ingredient-sources {
-
-      margin-top: 4px;
-
-      font-size: 11px;
-
-      color: #8a8a8a;
-
+    .ingredient.checked label {
+      text-decoration: line-through;
+      color: #999;
     }
 
+    .recipe-source {
+      background: #faf7f2;
+      border-radius: 13px;
+      padding: 10px 12px;
+      margin-bottom: 7px;
+      color: #59604f;
+      font-size: 13px;
+    }
 
     .empty {
-
       text-align: center;
-
-      padding:
-        28px 15px;
-
       color: #777;
-
+      padding: 25px 10px;
       line-height: 1.6;
-
     }
-
-
-    .empty .emoji {
-
-      font-size: 42px;
-
-      margin-bottom: 10px;
-
-    }
-
 
     .message {
-
-      display: none;
-
-      background: #e8f2e9;
-
-      color: #46634b;
-
-      padding:
-        12px 15px;
-
-      border-radius: 14px;
-
-      margin-bottom: 15px;
-
-      font-size: 14px;
-
+      position: fixed;
+      left: 15px;
+      right: 15px;
+      bottom: 82px;
+      z-index: 50;
+      background: #52784d;
+      color: white;
+      padding: 14px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.18);
     }
 
+    .hidden {
+      display: none !important;
+    }
 
     .bottom-nav {
-
       position: fixed;
-
-      bottom: 0;
-
       left: 0;
-
       right: 0;
-
-      background:
-        rgba(255,255,255,0.97);
-
-      border-top:
-        1px solid
-        #e5dfd5;
-
+      bottom: 0;
+      background: white;
+      border-top: 1px solid #e6e0d8;
       display: flex;
-
-      justify-content:
-        space-around;
-
-      padding:
-        10px 6px;
-
-      z-index: 100;
-
-      backdrop-filter:
-        blur(8px);
-
+      justify-content: space-around;
+      padding: 9px 5px;
+      z-index: 40;
     }
-
 
     .bottom-nav a {
-
       text-decoration: none;
-
-      color: #6d766f;
-
+      color: #68705f;
       font-size: 11px;
-
       text-align: center;
-
-      line-height: 1.3;
-
     }
 
-
-    .bottom-nav .icon {
-
+    .bottom-nav span {
       display: block;
-
-      font-size: 20px;
-
-      margin-bottom: 3px;
-
-    }
-
-
-    @media print {
-
-      body {
-
-        background: white;
-
-        padding: 0;
-
-      }
-
-
-      .actions,
-      .bottom-nav,
-      .search-box,
-      .course-actions,
-      .message {
-
-        display: none !important;
-
-      }
-
-
-      .page {
-
-        max-width: none;
-
-        padding: 0;
-
-      }
-
-
-      .hero {
-
-        box-shadow: none;
-
-      }
-
-
-      .section,
-      .stat,
-      .intro {
-
-        box-shadow: none;
-
-        border:
-          1px solid
-          #ddd;
-
-      }
-
+      font-size: 22px;
+      margin-bottom: 2px;
     }
 
   </style>
-
 </head>
-
 
 <body>
 
+<header class="hero">
 
-<div class="page">
+  <div class="emoji">🛒</div>
 
+  <h1>Mes Courses</h1>
 
-  <div class="hero">
+  <p>
+    Tous les ingrédients nécessaires à vos menus,
+    regroupés automatiquement.
+  </p>
 
-    <h1>🛒 Mes courses</h1>
-
-    <p>
-      Retrouvez les ingrédients nécessaires
-      pour préparer vos petites assiettes.
-    </p>
-
-  </div>
+</header>
 
 
-  <div class="actions">
-
-    <a
-      href="MesMenus.html"
-      class="btn btn-secondary"
-    >
-      ← Mes menus
-    </a>
+<main class="container">
 
 
-    <button
-      class="btn btn-primary"
-      onclick="window.print()"
-    >
-      🖨️ Imprimer
-    </button>
+  <!-- RESUME -->
 
-  </div>
-
-
-  <div
-    id="message"
-    class="message"
-  ></div>
-
-
-  <div
-    class="intro"
-    id="intro"
-  >
-    Calcul de votre liste de courses...
-  </div>
-
-
-  <div class="stats">
-
-    <div class="stat">
-
-      <strong id="nombreRepas">
-        0
-      </strong>
-
-      <span>
-        repas
-      </span>
-
-    </div>
-
-
-    <div class="stat">
-
-      <strong id="nombreRecettes">
-        0
-      </strong>
-
-      <span>
-        recettes
-      </span>
-
-    </div>
-
-
-    <div class="stat">
-
-      <strong id="nombreIngredients">
-        0
-      </strong>
-
-      <span>
-        ingrédients
-      </span>
-
-    </div>
-
-  </div>
-
-
-  <div class="section">
-
-    <h2>
-      🍽️ Recettes prévues
-    </h2>
-
+  <section class="section">
 
     <div
-      id="recettesPrevues"
-      class="recipe-list"
-    ></div>
-
-  </div>
-
-
-  <div class="section">
-
-    <h2>
-      🛒 Ma liste de courses
-    </h2>
-
-
-    <div class="search-box">
-
-      <input
-        type="search"
-        id="recherche"
-        placeholder="🔎 Rechercher un ingrédient..."
-      >
-
+      class="summary"
+      id="resume"
+    >
+      Chargement de votre liste...
     </div>
 
+    <input
+      type="search"
+      id="recherche"
+      class="search"
+      placeholder="🔎 Rechercher un ingrédient..."
+      oninput="afficherIngredients()"
+    >
 
-    <div class="course-actions">
+    <div class="actions">
 
       <button
-        class="btn btn-light"
+        class="btn btn-primary"
         onclick="toutCocher()"
       >
         ☑️ Tout cocher
       </button>
 
-
       <button
-        class="btn btn-light"
+        class="btn btn-secondary"
         onclick="toutDecocher()"
       >
         ⬜ Tout décocher
       </button>
 
-
-      <button
-        class="btn btn-light"
-        onclick="reinitialiserCases()"
-      >
-        🔄 Réinitialiser
-      </button>
-
     </div>
 
-
-    <div
-      id="listeIngredients"
-      class="ingredient-list"
-    ></div>
-
-  </div>
+  </section>
 
 
-</div>
+  <!-- RECETTES -->
+
+  <section class="section">
+
+    <h2>🍽️ Recettes concernées</h2>
+
+    <div id="recettesSources"></div>
+
+  </section>
+
+
+  <!-- INGREDIENTS -->
+
+  <section class="section">
+
+    <h2>🥕 Ma liste de courses</h2>
+
+    <div id="ingredients">
+      Chargement...
+    </div>
+
+    <button
+      class="btn btn-finish"
+      onclick="coursesTerminees()"
+    >
+      ✅ Courses terminées
+    </button>
+
+  </section>
+
+
+</main>
+
+
+<div
+  id="message"
+  class="message hidden"
+></div>
 
 
 <nav class="bottom-nav">
 
-
   <a href="../../index.html">
-
-    <span class="icon">
-      🏠
-    </span>
-
+    <span>🏠</span>
     Accueil
-
   </a>
-
 
   <a href="Recettes.html">
-
-    <span class="icon">
-      🍽️
-    </span>
-
+    <span>🍴</span>
     Recettes
-
   </a>
-
-
-  <a href="Favoris.html">
-
-    <span class="icon">
-      ❤️
-    </span>
-
-    Favoris
-
-  </a>
-
 
   <a href="MesMenus.html">
-
-    <span class="icon">
-      📋
-    </span>
-
-    Mes menus
-
+    <span>📋</span>
+    Mes Menus
   </a>
 
+  <a href="courses.html">
+    <span>🛒</span>
+    Mes Courses
+  </a>
 
 </nav>
 
 
 <script>
 
+  let recettesCatalogue = [];
 
-let recettesCatalogue = [];
+  let recettesSelectionnees = [];
 
-let recettesUtilisees = [];
+  let ingredientsCourses = [];
 
-let ingredients = [];
+  let casesCochees =
+    JSON.parse(
+      localStorage.getItem(
+        "ingredientsCoursesCoches"
+      ) || "[]"
+    );
 
-let ingredientsAffiches = [];
 
+  /* =====================================================
+     CHARGEMENT
+  ===================================================== */
 
-let casesCochees =
-  JSON.parse(
-    localStorage.getItem(
-      "ingredientsCoursesCoches"
-    ) || "[]"
+  document.addEventListener(
+    "DOMContentLoaded",
+    charger
   );
 
 
-/* =====================================================
-   OUTILS
-===================================================== */
+  async function charger() {
 
+    try {
 
-function nettoyerTexte(
-  valeur
-) {
+      const response =
+        await fetch("../recettes.json");
 
-  return String(
-    valeur || ""
-  )
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(
-      /[\u0300-\u036f]/g,
-      ""
-    )
-    .replace(
-      /[’']/g,
-      "'"
-    )
-    .replace(
-      /\s+/g,
-      " "
-    )
-    .trim();
+      if (!response.ok) {
+        throw new Error();
+      }
 
-}
+      recettesCatalogue =
+        await response.json();
 
+      chargerRecettesSelectionnees();
 
-/* =====================================================
-   MESSAGE
-===================================================== */
+      construireListeCourses();
 
+      afficherRecettesSources();
 
-function afficherMessage(
-  texte
-) {
+      afficherIngredients();
 
-  const message =
-    document.getElementById(
-      "message"
-    );
+    } catch (error) {
 
-
-  message.textContent =
-    texte;
-
-
-  message.style.display =
-    "block";
-
-
-  setTimeout(
-    () => {
-
-      message.style.display =
-        "none";
-
-    },
-    2500
-  );
-
-}
-
-
-/* =====================================================
-   EXTRACTION D'UNE QUANTITE
-===================================================== */
-
-
-/*
-   Cette fonction reconnaît notamment :
-
-   50 g de fromage
-   150 ml de lait
-   20 cl de crème
-   1 kg de pommes
-   1 œuf
-   2 petits œufs
-   1 mini toast
-
-   Elle conserve le reste de la phrase
-   comme nom de l'ingrédient.
-*/
-
-
-function analyserIngredient(
-  texte
-) {
-
-  const original =
-    String(
-      texte || ""
-    ).trim();
-
-
-  if (!original) {
-
-    return null;
-
-  }
-
-
-  /*
-     Nombre décimal :
-     1
-     1,5
-     1.5
-  */
-
-
-  const nombre =
-    "(\\d+(?:[,.]\\d+)?)";
-
-
-  /*
-     Unités de mesure.
-  */
-
-
-  const unite =
-    "(kg|g|mg|l|cl|ml|dl|cs|c\\.?\\s*à\\s*soupe|cc|c\\.?\\s*à\\s*café)";
-
-
-  const regexMesure =
-    new RegExp(
-      "^\\s*" +
-      nombre +
-      "\\s*" +
-      unite +
-      "\\s+(?:de\\s+|d['’]\\s*)?" +
-      "(.+?)\\s*$",
-      "i"
-    );
-
-
-  const matchMesure =
-    original.match(
-      regexMesure
-    );
-
-
-  if (matchMesure) {
-
-    return {
-
-      quantite:
-        parseFloat(
-          matchMesure[1]
-            .replace(",", ".")
-        ),
-
-      unite:
-        normaliserUnite(
-          matchMesure[2]
-        ),
-
-      nom:
-        nettoyerNomIngredient(
-          matchMesure[3]
-        ),
-
-      texteOriginal:
-        original
-
-    };
-
-  }
-
-
-  /*
-     Cas avec nombre + mot :
-
-     1 œuf
-     2 œufs
-     1 petit œuf
-     1 mini toast
-     2 tomates
-  */
-
-
-  const regexPiece =
-    new RegExp(
-      "^\\s*" +
-      nombre +
-      "\\s+" +
-      "(.+?)" +
-      "\\s*$",
-      "i"
-    );
-
-
-  const matchPiece =
-    original.match(
-      regexPiece
-    );
-
-
-  if (matchPiece) {
-
-    let nom =
-      nettoyerNomIngredient(
-        matchPiece[2]
-      );
-
-
-    return {
-
-      quantite:
-        parseFloat(
-          matchPiece[1]
-            .replace(",", ".")
-        ),
-
-      unite:
-        "piece",
-
-      nom:
-        nom,
-
-      texteOriginal:
-        original
-
-    };
-
-  }
-
-
-  /*
-     Aucun nombre.
-
-     Exemple :
-     Cannelle
-     Sel
-     Poivre
-  */
-
-
-  return {
-
-    quantite: null,
-
-    unite: null,
-
-    nom:
-      nettoyerNomIngredient(
-        original
-      ),
-
-    texteOriginal:
-      original
-
-  };
-
-}
-
-
-/* =====================================================
-   NORMALISATION UNITES
-===================================================== */
-
-
-function normaliserUnite(
-  unite
-) {
-
-  const valeur =
-    nettoyerTexte(
-      unite
-    );
-
-
-  if (
-    valeur === "kg"
-  ) {
-
-    return "kg";
-
-  }
-
-
-  if (
-    valeur === "g"
-  ) {
-
-    return "g";
-
-  }
-
-
-  if (
-    valeur === "mg"
-  ) {
-
-    return "mg";
-
-  }
-
-
-  if (
-    valeur === "l"
-  ) {
-
-    return "l";
-
-  }
-
-
-  if (
-    valeur === "cl"
-  ) {
-
-    return "cl";
-
-  }
-
-
-  if (
-    valeur === "ml"
-  ) {
-
-    return "ml";
-
-  }
-
-
-  if (
-    valeur === "dl"
-  ) {
-
-    return "dl";
-
-  }
-
-
-  if (
-    valeur === "cs"
-    ||
-    valeur.includes(
-      "soupe"
-    )
-  ) {
-
-    return "cs";
-
-  }
-
-
-  if (
-    valeur === "cc"
-    ||
-    valeur.includes(
-      "cafe"
-    )
-  ) {
-
-    return "cc";
-
-  }
-
-
-  return valeur;
-
-}
-
-
-/* =====================================================
-   NOM DE L'INGREDIENT
-===================================================== */
-
-
-function nettoyerNomIngredient(
-  nom
-) {
-
-  let resultat =
-    String(
-      nom || ""
-    ).trim();
-
-
-  /*
-     Retire les espaces multiples.
-  */
-
-
-  resultat =
-    resultat.replace(
-      /\s+/g,
-      " "
-    );
-
-
-  /*
-     Retire un éventuel "de"
-     restant au début.
-  */
-
-
-  resultat =
-    resultat.replace(
-      /^de\s+/i,
-      ""
-    );
-
-
-  /*
-     Harmonise le pluriel de quelques
-     unités très fréquentes.
-
-     Cela permet par exemple :
-
-     œuf
-     œufs
-
-     de devenir le même ingrédient.
-  */
-
-
-  resultat =
-    resultat.replace(
-      /^oeufs\b/i,
-      "œuf"
-    );
-
-
-  resultat =
-    resultat.replace(
-      /^œufs\b/i,
-      "œuf"
-    );
-
-
-  resultat =
-    resultat.replace(
-      /^oeuf\b/i,
-      "œuf"
-    );
-
-
-  /*
-     Pour la comparaison uniquement,
-     on retire le pluriel final
-     de certains mots simples.
-
-     On ne modifie pas le texte affiché.
-  */
-
-
-  return resultat;
-
-}
-
-
-/* =====================================================
-   CLE DE COMPARAISON
-===================================================== */
-
-
-function cleIngredient(
-  nom
-) {
-
-  let cle =
-    nettoyerTexte(
-      nom
-    );
-
-
-  /*
-     œufs / oeufs / oeuf
-     deviennent la même clé.
-  */
-
-
-  cle =
-    cle.replace(
-      /^oeufs\b/,
-      "oeuf"
-    );
-
-
-  cle =
-    cle.replace(
-      /^oeuf\b/,
-      "oeuf"
-    );
-
-
-  cle =
-    cle.replace(
-      /^œufs\b/,
-      "œuf"
-    );
-
-
-  /*
-     Petites variations de pluriel
-     pour faciliter le regroupement.
-  */
-
-
-  if (
-    cle.endsWith("s")
-    &&
-    !cle.endsWith("is")
-    &&
-    !cle.endsWith("us")
-  ) {
-
-    cle =
-      cle.slice(
-        0,
-        -1
-      );
-
-  }
-
-
-  return cle;
-
-}
-
-
-/* =====================================================
-   FORMATAGE D'UN NOMBRE
-===================================================== */
-
-
-function formaterNombre(
-  nombre
-) {
-
-  if (
-    !Number.isFinite(
-      nombre
-    )
-  ) {
-
-    return "";
-
-  }
-
-
-  if (
-    Number.isInteger(
-      nombre
-    )
-  ) {
-
-    return String(
-      nombre
-    );
-
-  }
-
-
-  return String(
-    Math.round(
-      nombre * 100
-    ) / 100
-  ).replace(
-    ".",
-    ","
-  );
-
-}
-
-
-/* =====================================================
-   PLURIEL SIMPLE
-===================================================== */
-
-
-function adapterPluriel(
-  nom,
-  quantite
-) {
-
-  if (
-    !Number.isFinite(
-      quantite
-    )
-  ) {
-
-    return nom;
-
-  }
-
-
-  /*
-     On garde le nom tel qu'il est
-     dans la recette lorsque ce n'est
-     pas nécessaire de le modifier.
-  */
-
-
-  if (
-    quantite <= 1
-  ) {
-
-    return nom;
-
-  }
-
-
-  const propre =
-    nom.trim();
-
-
-  /*
-     œuf → œufs
-  */
-
-
-  if (
-    nettoyerTexte(
-      propre
-    ) === "oeuf"
-    ||
-    propre === "œuf"
-  ) {
-
-    return "œufs";
-
-  }
-
-
-  /*
-     toast → toasts
-  */
-
-
-  if (
-    propre.endsWith("toast")
-  ) {
-
-    return propre + "s";
-
-  }
-
-
-  /*
-     tomate → tomates
-     pomme → pommes
-     etc.
-
-     On évite de modifier les mots
-     déjà terminés par s/x/z.
-  */
-
-
-  if (
-    !/[sxz]$/i.test(
-      propre
-    )
-  ) {
-
-    return propre + "s";
-
-  }
-
-
-  return propre;
-
-}
-
-
-/* =====================================================
-   CHARGEMENT
-===================================================== */
-
-
-async function chargerCourses() {
-
-  try {
-
-
-    const reponse =
-      await fetch(
-        "../recettes.json"
-      );
-
-
-    if (
-      !reponse.ok
-    ) {
-
-      throw new Error(
-        "Impossible de charger recettes.json"
-      );
+      document.getElementById(
+        "ingredients"
+      ).innerHTML = `
+        <div class="empty">
+          ❌ Impossible de charger les recettes.
+        </div>
+      `;
 
     }
 
+  }
 
-    recettesCatalogue =
-      await reponse.json();
 
+  /* =====================================================
+     RECUPERATION DES RECETTES DES MENUS
+  ===================================================== */
+
+  function chargerRecettesSelectionnees() {
+
+    const ids = [];
+
+    /*
+      Planning de la semaine
+    */
 
     const planning =
       JSON.parse(
         localStorage.getItem(
           "planningSemaine"
-        ) || "null"
+        ) || "{}"
       );
 
+    Object.values(planning)
+      .forEach(jour => {
 
-    const menusSauvegardes =
+        if (!jour) return;
+
+        ["dejeuner", "diner"]
+          .forEach(repas => {
+
+            if (
+              jour[repas] &&
+              jour[repas].id
+            ) {
+
+              ids.push(
+                String(jour[repas].id)
+              );
+
+            }
+
+          });
+
+      });
+
+
+    /*
+      Menus enregistrés
+    */
+
+    const menus =
       JSON.parse(
         localStorage.getItem(
           "menusSauvegardes"
@@ -1546,1308 +468,922 @@ async function chargerCourses() {
       );
 
 
-    const recettesIds = [];
+    menus.forEach(menu => {
 
-    const repasSources = [];
+      if (
+        !Array.isArray(menu.recettes)
+      ) {
+        return;
+      }
 
+      menu.recettes.forEach(recette => {
 
-    /* =================================================
-       PLANNING SEMAINE
-    ================================================= */
+        if (recette && recette.id) {
 
-
-    if (
-      planning
-      &&
-      typeof planning === "object"
-    ) {
-
-      const jours = [
-
-        "lundi",
-        "mardi",
-        "mercredi",
-        "jeudi",
-        "vendredi",
-        "samedi",
-        "dimanche"
-
-      ];
-
-
-      jours.forEach(
-        jour => {
-
-          const jourPlanning =
-            planning[jour];
-
-
-          if (
-            !jourPlanning
-          ) {
-
-            return;
-
-          }
-
-
-          [
-            "dejeuner",
-            "diner"
-          ].forEach(
-            repas => {
-
-              const selection =
-                jourPlanning[
-                  repas
-                ];
-
-
-              if (
-                selection
-                &&
-                selection.id
-              ) {
-
-                recettesIds.push(
-                  selection.id
-                );
-
-
-                repasSources.push({
-
-                  id:
-                    selection.id,
-
-                  source:
-                    jour
-                      .charAt(0)
-                      .toUpperCase()
-                    +
-                    jour.slice(1)
-                    +
-                    " - "
-                    +
-                    (
-                      repas ===
-                      "dejeuner"
-                        ? "Déjeuner"
-                        : "Dîner"
-                    )
-
-                });
-
-              }
-
-            }
+          ids.push(
+            String(recette.id)
           );
 
         }
-      );
 
-    }
+      });
 
-
-    /* =================================================
-       MENUS SAUVEGARDES
-    ================================================= */
+    });
 
 
-    if (
-      Array.isArray(
-        menusSauvegardes
-      )
-      &&
-      menusSauvegardes.length
-      > 0
-    ) {
-
-
-      menusSauvegardes.forEach(
-        menu => {
-
-
-          if (
-            !menu
-            ||
-            !Array.isArray(
-              menu.recettes
-            )
-          ) {
-
-            return;
-
-          }
-
-
-          menu.recettes.forEach(
-            recette => {
-
-
-              if (
-                recette
-                &&
-                recette.id
-              ) {
-
-                recettesIds.push(
-                  recette.id
-                );
-
-
-                repasSources.push({
-
-                  id:
-                    recette.id,
-
-                  source:
-                    menu.repas
-                      ? traduireRepas(
-                          menu.repas
-                        )
-                      : "Menu sauvegardé"
-
-                });
-
-              }
-
-            }
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =================================================
-       AUCUNE RECETTE
-    ================================================= */
-
-
-    if (
-      recettesIds.length === 0
-    ) {
-
-      afficherEtatVide();
-
-      return;
-
-    }
-
+    /*
+      Suppression des doublons
+    */
 
     const idsUniques =
-      [
-        ...new Set(
-          recettesIds
-        )
-      ];
+      [...new Set(ids)];
 
 
-    recettesUtilisees =
+    recettesSelectionnees =
       idsUniques
-        .map(
-          id =>
-            recettesCatalogue.find(
-              recette =>
-                String(
-                  recette.id
-                )
-                ===
-                String(id)
-            )
+        .map(id =>
+          recettesCatalogue.find(
+            recette =>
+              String(recette.id) ===
+              String(id)
+          )
         )
         .filter(Boolean);
 
+  }
 
-    if (
-      recettesUtilisees.length
-      === 0
-    ) {
 
-      afficherEtatVide();
+  /* =====================================================
+     CONSTRUCTION LISTE COURSES
+  ===================================================== */
+
+  function construireListeCourses() {
+
+    const agregats = {};
+
+
+    recettesSelectionnees
+      .forEach(recette => {
+
+        const quantite =
+          recette.quantites &&
+          recette.quantites.petite;
+
+        const ingredients =
+          Array.isArray(quantite)
+            ? quantite
+            : (
+                Array.isArray(recette.ingredients)
+                  ? recette.ingredients
+                  : []
+              );
+
+
+        ingredients.forEach(ingredient => {
+
+          analyserEtAjouter(
+            ingredient,
+            agregats
+          );
+
+        });
+
+      });
+
+
+    ingredientsCourses =
+      Object.values(agregats);
+
+  }
+
+
+  /* =====================================================
+     ANALYSE INGREDIENT
+  ===================================================== */
+
+  function analyserEtAjouter(
+    texte,
+    agregats
+  ) {
+
+    const original =
+      String(texte || "").trim();
+
+    if (!original) return;
+
+
+    let match;
+
+
+    /*
+      g / kg / mg
+    */
+
+    match =
+      original.match(
+        /^(\d+(?:[,.]\d+)?)\s*(kg|g|mg)\s+(?:de\s+)?(.+)$/i
+      );
+
+    if (match) {
+
+      ajouterQuantite(
+        agregats,
+        match[3],
+        match[2].toLowerCase(),
+        parseFloat(
+          match[1].replace(",", ".")
+        )
+      );
 
       return;
 
     }
 
 
-    afficherResume(
-      recettesUtilisees,
-      repasSources
-    );
-
-
-    construireIngredients();
-
-
-  }
-  catch (
-    erreur
-  ) {
-
-
-    console.error(
-      erreur
-    );
-
-
-    document.getElementById(
-      "intro"
-    ).innerHTML =
-
-      `
-        <strong>
-          Impossible de charger les courses.
-        </strong>
-
-        <br><br>
-
-        Vérifiez que le fichier
-        <strong>src/recettes.json</strong>
-        est bien présent.
-      `;
-
-  }
-
-}
-
-
-/* =====================================================
-   TRADUCTION REPAS
-===================================================== */
-
-
-function traduireRepas(
-  repas
-) {
-
-  const valeur =
-    nettoyerTexte(
-      repas
-    );
-
-
-  const correspondances = {
-
-    "petit-dejeuner":
-      "Petit-déjeuner",
-
-    "petit dejeuner":
-      "Petit-déjeuner",
-
-    "dejeuner":
-      "Déjeuner",
-
-    "diner":
-      "Dîner",
-
-    "collation":
-      "Collation",
-
-    "petite-douceur":
-      "Petite douceur",
-
-    "petite douceur":
-      "Petite douceur",
-
-    "peu-importe":
-      "Repas"
-
-  };
-
-
-  return (
-    correspondances[
-      valeur
-    ]
-    ||
-    repas
-    ||
-    "Menu"
-  );
-
-}
-
-
-/* =====================================================
-   ETAT VIDE
-===================================================== */
-
-
-function afficherEtatVide() {
-
-
-  document.getElementById(
-    "intro"
-  ).innerHTML =
-
-    `
-      <div class="empty">
-
-        <div class="emoji">
-          🛒
-        </div>
-
-        <strong>
-          Votre liste de courses est vide.
-        </strong>
-
-        <br><br>
-
-        Commencez par composer
-        une petite assiette
-        ou organiser votre semaine.
-
-      </div>
-    `;
-
-
-  document.getElementById(
-    "recettesPrevues"
-  ).innerHTML =
-
-    `
-      <div class="empty">
-
-        Aucune recette prévue
-        pour le moment.
-
-        <br><br>
-
-        <a
-          href="menu.html"
-          class="btn btn-primary"
-        >
-          🍽️ Composer mon menu
-        </a>
-
-      </div>
-    `;
-
-
-  document.getElementById(
-    "listeIngredients"
-  ).innerHTML = "";
-
-
-  document.getElementById(
-    "nombreRepas"
-  ).textContent = "0";
-
-
-  document.getElementById(
-    "nombreRecettes"
-  ).textContent = "0";
-
-
-  document.getElementById(
-    "nombreIngredients"
-  ).textContent = "0";
-
-}
-
-
-/* =====================================================
-   RESUME
-===================================================== */
-
-
-function afficherResume(
-  recettes,
-  repasSources
-) {
-
-
-  const repasUniques =
-    [
-      ...new Set(
-        repasSources.map(
-          item =>
-            item.source
-        )
-      )
-    ];
-
-
-  document.getElementById(
-    "nombreRepas"
-  ).textContent =
-    repasUniques.length;
-
-
-  document.getElementById(
-    "nombreRecettes"
-  ).textContent =
-    recettes.length;
-
-
-  document.getElementById(
-    "intro"
-  ).innerHTML =
-
-    `
-      <strong>
-        Votre liste est prête 💚
-      </strong>
-
-      <br><br>
-
-      Les quantités communes ont été
-      regroupées automatiquement lorsque
-      leur unité est compatible.
-
-      <br><br>
-
-      Vous pouvez cocher les ingrédients
-      au fur et à mesure de vos achats.
-    `;
-
-
-  const conteneur =
-    document.getElementById(
-      "recettesPrevues"
-    );
-
-
-  conteneur.innerHTML = "";
-
-
-  recettes.forEach(
-    recette => {
-
-      const div =
-        document.createElement(
-          "div"
-        );
-
-
-      div.className =
-        "recipe-item";
-
-
-      div.textContent =
-        "🍽️ "
-        +
-        recette.nom;
-
-
-      conteneur.appendChild(
-        div
+    /*
+      ml / cl / dl / l
+    */
+
+    match =
+      original.match(
+        /^(\d+(?:[,.]\d+)?)\s*(ml|cl|dl|l)\s+(?:de\s+)?(.+)$/i
       );
 
+    if (match) {
+
+      ajouterQuantite(
+        agregats,
+        match[3],
+        match[2].toLowerCase(),
+        parseFloat(
+          match[1].replace(",", ".")
+        )
+      );
+
+      return;
+
     }
-  );
-
-}
 
 
-/* =====================================================
-   CONSTRUCTION DES COURSES
-===================================================== */
+    /*
+      cuillères
+    */
+
+    match =
+      original.match(
+        /^(\d+(?:[,.]\d+)?)\s*(cs|cc|c\.\s*à\s*soupe|c\.\s*à\s*café)\s+(?:de\s+)?(.+)$/i
+      );
+
+    if (match) {
+
+      let unite =
+        match[2]
+          .toLowerCase()
+          .replace(/\s+/g, " ");
+
+      if (
+        unite.startsWith("c.") &&
+        unite.includes("soupe")
+      ) {
+        unite = "cs";
+      }
+
+      if (
+        unite.startsWith("c.") &&
+        unite.includes("café")
+      ) {
+        unite = "cc";
+      }
+
+      ajouterQuantite(
+        agregats,
+        match[3],
+        unite,
+        parseFloat(
+          match[1].replace(",", ".")
+        )
+      );
+
+      return;
+
+    }
 
 
-function construireIngredients() {
+    /*
+      Quantité en pièces :
+      1 œuf
+      1 petit œuf
+      2 mini toast
+    */
 
+    match =
+      original.match(
+        /^(\d+(?:[,.]\d+)?)\s+(.+)$/i
+      );
 
-  const dictionnaire =
-    new Map();
+    if (match) {
 
+      const quantite =
+        parseFloat(
+          match[1].replace(",", ".")
+        );
 
-  recettesUtilisees.forEach(
-    recette => {
-
-
-      let listeIngredients = [];
+      const nom =
+        match[2].trim();
 
 
       /*
-         On privilégie la petite portion.
+        On ne considère comme pièce
+        que les ingrédients dont le nom
+        n'est pas manifestement une unité
+        de poids/volume.
       */
 
-
-      if (
-        recette.quantites
-        &&
-        Array.isArray(
-          recette.quantites.petite
-        )
-      ) {
-
-        listeIngredients =
-          recette.quantites.petite;
-
-      }
-      else if (
-        Array.isArray(
-          recette.ingredients
-        )
-      ) {
-
-        listeIngredients =
-          recette.ingredients;
-
-      }
-
-
-      listeIngredients.forEach(
-        ingredient => {
-
-
-          let texte = "";
-
-
-          if (
-            typeof ingredient
-            ===
-            "string"
-          ) {
-
-            texte =
-              ingredient.trim();
-
-          }
-          else if (
-            ingredient
-            &&
-            typeof ingredient
-            ===
-            "object"
-          ) {
-
-            texte =
-              ingredient.nom
-              ||
-              ingredient.ingredient
-              ||
-              ingredient.libelle
-              ||
-              "";
-
-          }
-
-
-          if (!texte) {
-
-            return;
-
-          }
-
-
-          const analyse =
-            analyserIngredient(
-              texte
-            );
-
-
-          if (!analyse) {
-
-            return;
-
-          }
-
-
-          const cleNom =
-            cleIngredient(
-              analyse.nom
-            );
-
-
-          /*
-             La clé tient compte
-             de l'unité lorsqu'il y en a une.
-
-             Exemple :
-
-             fromage + g
-             fromage + ml
-
-             restent séparés.
-          */
-
-
-          const cle =
-            cleNom
-            +
-            "|"
-            +
-            (
-              analyse.unite
-              ||
-              "sans-unite"
-            );
-
-
-          if (
-            !dictionnaire.has(
-              cle
-            )
-          ) {
-
-            dictionnaire.set(
-              cle,
-              {
-
-                nom:
-                  analyse.nom,
-
-                unite:
-                  analyse.unite,
-
-                quantite:
-                  analyse.quantite,
-
-                sansQuantite:
-                  analyse.quantite
-                    === null,
-
-                textesOriginaux:
-                  [
-                    analyse.texteOriginal
-                  ],
-
-                recettes:
-                  [
-                    recette.nom
-                  ]
-
-              }
-            );
-
-          }
-          else {
-
-            const element =
-              dictionnaire.get(
-                cle
-              );
-
-
-            /*
-               Si les deux ingrédients
-               possèdent une quantité,
-               on additionne.
-            */
-
-
-            if (
-              analyse.quantite
-              !== null
-              &&
-              element.quantite
-              !== null
-            ) {
-
-              element.quantite +=
-                analyse.quantite;
-
-            }
-            else {
-
-              element.sansQuantite =
-                true;
-
-            }
-
-
-            if (
-              !element.recettes.includes(
-                recette.nom
-              )
-            ) {
-
-              element.recettes.push(
-                recette.nom
-              );
-
-            }
-
-
-            if (
-              !element.textesOriginaux.includes(
-                analyse.texteOriginal
-              )
-            ) {
-
-              element.textesOriginaux.push(
-                analyse.texteOriginal
-              );
-
-            }
-
-          }
-
-        }
+      ajouterQuantite(
+        agregats,
+        nom,
+        "piece",
+        quantite
       );
 
+      return;
+
     }
-  );
 
 
-  ingredients =
-    [
-      ...dictionnaire.values()
-    ];
+    /*
+      Sans quantité :
+      Cannelle
+      Sel
+      Poivre...
+    */
 
+    const cle =
+      cleIngredient(
+        original,
+        ""
+      );
 
-  ingredients.sort(
-    (
-      a,
-      b
-    ) =>
+    if (!agregats[cle]) {
 
-      nettoyerTexte(
-        a.nom
-      ).localeCompare(
-        nettoyerTexte(
-          b.nom
-        ),
-        "fr"
-      )
-  );
+      agregats[cle] = {
 
+        nom: original,
 
-  document.getElementById(
-    "nombreIngredients"
-  ).textContent =
-    ingredients.length;
+        unite: "",
 
+        quantite: null
 
-  afficherIngredients();
+      };
 
-}
-
-
-/* =====================================================
-   TEXTE FINAL D'UN INGREDIENT
-===================================================== */
-
-
-function texteIngredient(
-  ingredient
-) {
-
-
-  const nom =
-    adapterPluriel(
-      ingredient.nom,
-      ingredient.quantite
-    );
-
-
-  /*
-     Sans quantité :
-
-     Cannelle
-     Sel
-     Poivre
-  */
-
-
-  if (
-    ingredient.quantite
-    ===
-    null
-  ) {
-
-    return nom;
+    }
 
   }
 
 
-  const quantite =
-    formaterNombre(
-      ingredient.quantite
-    );
+  /* =====================================================
+     AJOUT QUANTITE
+  ===================================================== */
 
-
-  let unite =
-    ingredient.unite;
-
-
-  /*
-     Pour "piece", on n'affiche
-     pas le mot "piece".
-
-     Exemple :
-
-     2 œufs
-     3 toasts
-  */
-
-
-  if (
-    unite === "piece"
+  function ajouterQuantite(
+    agregats,
+    nom,
+    unite,
+    quantite
   ) {
+
+    const uniteNormalisee =
+      normaliserUnite(unite);
+
+    const nomPropre =
+      nettoyerNomIngredient(nom);
+
+    const cle =
+      cleIngredient(
+        nomPropre,
+        uniteNormalisee
+      );
+
+
+    if (!agregats[cle]) {
+
+      agregats[cle] = {
+
+        nom: nomPropre,
+
+        unite: uniteNormalisee,
+
+        quantite: 0
+
+      };
+
+    }
+
+    agregats[cle].quantite += quantite;
+
+  }
+
+
+  /* =====================================================
+     NORMALISATION UNITES
+  ===================================================== */
+
+  function normaliserUnite(unite) {
+
+    const u =
+      String(unite || "")
+        .toLowerCase()
+        .trim();
+
+    if (u === "kilogramme" || u === "kilogrammes") {
+      return "kg";
+    }
+
+    if (u === "gramme" || u === "grammes") {
+      return "g";
+    }
+
+    if (u === "milligramme" || u === "milligrammes") {
+      return "mg";
+    }
+
+    if (u === "millilitre" || u === "millilitres") {
+      return "ml";
+    }
+
+    if (u === "centilitre" || u === "centilitres") {
+      return "cl";
+    }
+
+    if (u === "litre" || u === "litres") {
+      return "l";
+    }
+
+    return u;
+
+  }
+
+
+  /* =====================================================
+     NETTOYAGE NOM
+  ===================================================== */
+
+  function nettoyerNomIngredient(nom) {
+
+    return String(nom || "")
+      .trim()
+      .replace(/^de\s+/i, "")
+      .replace(/^d['’]\s*/i, "");
+
+  }
+
+
+  /* =====================================================
+     CLE INGREDIENT
+  ===================================================== */
+
+  function cleIngredient(
+    nom,
+    unite
+  ) {
+
+    let texte =
+      nettoyerNomIngredient(nom)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    /*
+      Petit nettoyage uniquement pour
+      faciliter les regroupements.
+    */
+
+    texte =
+      texte
+        .replace(/\s+/g, " ");
 
     return (
-      quantite
-      +
-      " "
-      +
-      nom
+      texte +
+      "|" +
+      unite
     );
 
   }
 
 
-  return (
-    quantite
-    +
-    " "
-    +
-    unite
-    +
-    " de "
-    +
-    nom
-  );
+  /* =====================================================
+     AFFICHAGE INGREDIENTS
+  ===================================================== */
 
-}
+  function afficherIngredients() {
 
+    const container =
+      document.getElementById(
+        "ingredients"
+      );
 
-/* =====================================================
-   AFFICHAGE
-===================================================== */
-
-
-function afficherIngredients(
-  recherche = ""
-) {
+    const recherche =
+      String(
+        document.getElementById(
+          "recherche"
+        ).value || ""
+      )
+        .toLowerCase()
+        .trim();
 
 
-  const conteneur =
-    document.getElementById(
-      "listeIngredients"
-    );
-
-
-  const terme =
-    nettoyerTexte(
-      recherche
-    );
-
-
-  ingredientsAffiches =
-    ingredients.filter(
-      ingredient => {
-
-
-        if (!terme) {
-
-          return true;
-
-        }
-
-
-        return nettoyerTexte(
+    const filtres =
+      ingredientsCourses.filter(
+        ingredient =>
           ingredient.nom
-        ).includes(
-          terme
-        );
-
-      }
-    );
+            .toLowerCase()
+            .includes(recherche)
+      );
 
 
-  if (
-    ingredientsAffiches.length
-    === 0
-  ) {
+    if (!filtres.length) {
 
-    conteneur.innerHTML =
-
-      `
+      container.innerHTML = `
         <div class="empty">
-          Aucun ingrédient trouvé.
+          🛒 Aucun ingrédient à afficher.
         </div>
       `;
 
-    return;
+      mettreAJourResume();
+
+      return;
+
+    }
+
+
+    container.innerHTML =
+      filtres.map(
+        (ingredient, index) => {
+
+          const cle =
+            cleIngredient(
+              ingredient.nom,
+              ingredient.unite
+            );
+
+          const cochee =
+            casesCochees.includes(cle);
+
+          return `
+
+            <div
+              class="ingredient ${cochee ? "checked" : ""}"
+              data-cle="${echapperAttribut(cle)}"
+            >
+
+              <input
+                type="checkbox"
+                id="ingredient-${index}"
+                ${cochee ? "checked" : ""}
+                onchange="changerCase(
+                  '${echapperJS(cle)}'
+                )"
+              >
+
+              <label
+                for="ingredient-${index}"
+              >
+                ${texteIngredient(ingredient)}
+              </label>
+
+            </div>
+
+          `;
+
+        }
+      ).join("");
+
+
+    mettreAJourResume();
 
   }
 
 
-  conteneur.innerHTML = "";
+  /* =====================================================
+     TEXTE INGREDIENT
+  ===================================================== */
 
+  function texteIngredient(
+    ingredient
+  ) {
 
-  ingredientsAffiches.forEach(
-    ingredient => {
+    if (
+      ingredient.quantite === null
+    ) {
 
-
-      const cle =
-        cleIngredient(
-          ingredient.nom
-        )
-        +
-        "|"
-        +
-        (
-          ingredient.unite
-          ||
-          "sans-unite"
-        );
-
-
-      const coche =
-        casesCochees.includes(
-          cle
-        );
-
-
-      const ligne =
-        document.createElement(
-          "label"
-        );
-
-
-      ligne.className =
-        "ingredient"
-        +
-        (
-          coche
-            ? " checked"
-            : ""
-        );
-
-
-      const checkbox =
-        document.createElement(
-          "input"
-        );
-
-
-      checkbox.type =
-        "checkbox";
-
-
-      checkbox.checked =
-        coche;
-
-
-      checkbox.addEventListener(
-        "change",
-        () => {
-
-
-          modifierCase(
-            cle,
-            checkbox.checked
-          );
-
-
-          ligne.classList.toggle(
-            "checked",
-            checkbox.checked
-          );
-
-        }
-      );
-
-
-      const contenu =
-        document.createElement(
-          "div"
-        );
-
-
-      contenu.className =
-        "ingredient-content";
-
-
-      const nom =
-        document.createElement(
-          "div"
-        );
-
-
-      nom.className =
-        "ingredient-name";
-
-
-      nom.textContent =
-        texteIngredient(
-          ingredient
-        );
-
-
-      contenu.appendChild(
-        nom
-      );
-
-
-      if (
-        ingredient.recettes
-        &&
-        ingredient.recettes.length
-        > 0
-      ) {
-
-
-        const sources =
-          document.createElement(
-            "div"
-          );
-
-
-        sources.className =
-          "ingredient-sources";
-
-
-        sources.textContent =
-          "Pour : "
-          +
-          ingredient.recettes.join(
-            ", "
-          );
-
-
-        contenu.appendChild(
-          sources
-        );
-
-      }
-
-
-      ligne.appendChild(
-        checkbox
-      );
-
-
-      ligne.appendChild(
-        contenu
-      );
-
-
-      conteneur.appendChild(
-        ligne
+      return echapper(
+        ingredient.nom
       );
 
     }
-  );
-
-}
 
 
-/* =====================================================
-   MODIFIER UNE CASE
-===================================================== */
-
-
-function modifierCase(
-  cle,
-  coche
-) {
-
-
-  if (coche) {
+    const nombre =
+      formaterNombre(
+        ingredient.quantite
+      );
 
 
     if (
-      !casesCochees.includes(
-        cle
-      )
+      ingredient.unite === "piece"
     ) {
 
-      casesCochees.push(
-        cle
+      return (
+        nombre +
+        " " +
+        adapterPluriel(
+          ingredient.nom,
+          ingredient.quantite
+        )
       );
 
     }
 
+
+    return (
+      nombre +
+      " " +
+      ingredient.unite +
+      " de " +
+      echapper(
+        ingredient.nom
+      )
+    );
+
   }
-  else {
 
 
-    casesCochees =
-      casesCochees.filter(
-        element =>
-          element !== cle
-      );
+  /* =====================================================
+     PLURIEL
+  ===================================================== */
 
-  }
-
-
-  localStorage.setItem(
-    "ingredientsCoursesCoches",
-    JSON.stringify(
-      casesCochees
-    )
-  );
-
-}
-
-
-/* =====================================================
-   TOUT COCHER
-===================================================== */
-
-
-function toutCocher() {
-
-
-  ingredients.forEach(
-    ingredient => {
-
-
-      const cle =
-        cleIngredient(
-          ingredient.nom
-        )
-        +
-        "|"
-        +
-        (
-          ingredient.unite
-          ||
-          "sans-unite"
-        );
-
-
-      if (
-        !casesCochees.includes(
-          cle
-        )
-      ) {
-
-        casesCochees.push(
-          cle
-        );
-
-      }
-
-    }
-  );
-
-
-  localStorage.setItem(
-    "ingredientsCoursesCoches",
-    JSON.stringify(
-      casesCochees
-    )
-  );
-
-
-  afficherIngredients(
-    document.getElementById(
-      "recherche"
-    ).value
-  );
-
-
-  afficherMessage(
-    "Tous les ingrédients sont cochés."
-  );
-
-}
-
-
-/* =====================================================
-   TOUT DECOCHER
-===================================================== */
-
-
-function toutDecocher() {
-
-
-  casesCochees = [];
-
-
-  localStorage.setItem(
-    "ingredientsCoursesCoches",
-    JSON.stringify(
-      casesCochees
-    )
-  );
-
-
-  afficherIngredients(
-    document.getElementById(
-      "recherche"
-    ).value
-  );
-
-
-  afficherMessage(
-    "Tous les ingrédients sont décochés."
-  );
-
-}
-
-
-/* =====================================================
-   REINITIALISER
-===================================================== */
-
-
-function reinitialiserCases() {
-
-
-  if (
-    !confirm(
-      "Réinitialiser toutes les cases cochées ?"
-    )
+  function adapterPluriel(
+    nom,
+    quantite
   ) {
 
-    return;
+    if (
+      quantite <= 1
+    ) {
+      return echapper(nom);
+    }
+
+    const texte =
+      String(nom);
+
+    if (
+      /s$/i.test(texte)
+    ) {
+      return echapper(texte);
+    }
+
+    return echapper(
+      texte + "s"
+    );
 
   }
 
 
-  casesCochees = [];
+  /* =====================================================
+     FORMAT NOMBRE
+  ===================================================== */
 
+  function formaterNombre(
+    nombre
+  ) {
 
-  localStorage.removeItem(
-    "ingredientsCoursesCoches"
-  );
+    if (
+      Number.isInteger(nombre)
+    ) {
 
-
-  afficherIngredients(
-    document.getElementById(
-      "recherche"
-    ).value
-  );
-
-
-  afficherMessage(
-    "Les cases ont été réinitialisées."
-  );
-
-}
-
-
-/* =====================================================
-   RECHERCHE
-===================================================== */
-
-
-document
-  .getElementById(
-    "recherche"
-  )
-  .addEventListener(
-    "input",
-    function() {
-
-      afficherIngredients(
-        this.value
-      );
+      return String(nombre);
 
     }
-  );
+
+    return String(
+      Math.round(
+        nombre * 100
+      ) / 100
+    )
+      .replace(".", ",");
+
+  }
 
 
-/* =====================================================
-   DEMARRAGE
-===================================================== */
+  /* =====================================================
+     CASES
+  ===================================================== */
+
+  function changerCase(cle) {
+
+    const index =
+      casesCochees.indexOf(cle);
 
 
-chargerCourses();
+    if (index >= 0) {
 
+      casesCochees.splice(
+        index,
+        1
+      );
+
+    } else {
+
+      casesCochees.push(cle);
+
+    }
+
+
+    localStorage.setItem(
+      "ingredientsCoursesCoches",
+      JSON.stringify(
+        casesCochees
+      )
+    );
+
+
+    afficherIngredients();
+
+  }
+
+
+  /* =====================================================
+     TOUT COCHER
+  ===================================================== */
+
+  function toutCocher() {
+
+    ingredientsCourses
+      .forEach(ingredient => {
+
+        const cle =
+          cleIngredient(
+            ingredient.nom,
+            ingredient.unite
+          );
+
+        if (
+          !casesCochees.includes(cle)
+        ) {
+
+          casesCochees.push(cle);
+
+        }
+
+      });
+
+
+    sauvegarderCases();
+
+    afficherIngredients();
+
+  }
+
+
+  /* =====================================================
+     TOUT DECOCHER
+  ===================================================== */
+
+  function toutDecocher() {
+
+    casesCochees = [];
+
+    sauvegarderCases();
+
+    afficherIngredients();
+
+  }
+
+
+  /* =====================================================
+     COURSES TERMINEES
+  ===================================================== */
+
+  function coursesTerminees() {
+
+    const confirmation =
+      confirm(
+        "Vos courses sont terminées ?\n\n" +
+        "Les cases cochées vont être réinitialisées " +
+        "pour votre prochaine liste.\n\n" +
+        "Vos menus, votre planning et vos recettes " +
+        "seront conservés."
+      );
+
+
+    if (!confirmation) {
+      return;
+    }
+
+
+    /*
+      IMPORTANT :
+      On supprime UNIQUEMENT
+      les cases cochées.
+    */
+
+    casesCochees = [];
+
+
+    localStorage.removeItem(
+      "ingredientsCoursesCoches"
+    );
+
+
+    afficherIngredients();
+
+
+    afficherMessage(
+      "🎉 Courses terminées ! Votre liste est prête pour la prochaine fois."
+    );
+
+  }
+
+
+  function sauvegarderCases() {
+
+    localStorage.setItem(
+      "ingredientsCoursesCoches",
+      JSON.stringify(
+        casesCochees
+      )
+    );
+
+  }
+
+
+  /* =====================================================
+     SOURCES RECETTES
+  ===================================================== */
+
+  function afficherRecettesSources() {
+
+    const container =
+      document.getElementById(
+        "recettesSources"
+      );
+
+
+    if (
+      recettesSelectionnees.length === 0
+    ) {
+
+      container.innerHTML = `
+        <div class="empty">
+          🍽️ Aucun menu ou planning enregistré.
+          <br><br>
+          Commencez par composer un menu.
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    container.innerHTML =
+      recettesSelectionnees
+        .map(
+          recette => `
+
+            <div class="recipe-source">
+
+              🍽️
+
+              <a
+                href="Recette.html?id=${encodeURIComponent(recette.id)}"
+                style="color:#496044;font-weight:bold;text-decoration:none;"
+              >
+                ${echapper(recette.nom)}
+              </a>
+
+            </div>
+
+          `
+        )
+        .join("");
+
+  }
+
+
+  /* =====================================================
+     RESUME
+  ===================================================== */
+
+  function mettreAJourResume() {
+
+    const resume =
+      document.getElementById(
+        "resume"
+      );
+
+    const total =
+      ingredientsCourses.length;
+
+
+    const cochees =
+      ingredientsCourses.filter(
+        ingredient =>
+          casesCochees.includes(
+            cleIngredient(
+              ingredient.nom,
+              ingredient.unite
+            )
+          )
+      ).length;
+
+
+    if (!total) {
+
+      resume.innerHTML =
+        "🛒 Votre liste de courses est vide.";
+
+      return;
+
+    }
+
+
+    resume.innerHTML =
+      `
+        🛒 <strong>${total}</strong>
+        ingrédients à prévoir
+        ·
+        <strong>${cochees}</strong>
+        déjà cochés
+      `;
+
+  }
+
+
+  /* =====================================================
+     SECURITE
+  ===================================================== */
+
+  function echapper(texte) {
+
+    return String(texte || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  function echapperAttribut(texte) {
+
+    return echapper(texte);
+
+  }
+
+
+  function echapperJS(texte) {
+
+    return String(texte || "")
+      .replace(/\\/g, "\\\\")
+      .replace(/'/g, "\\'")
+      .replace(/\n/g, "\\n")
+      .replace(/\r/g, "");
+
+  }
+
+
+  /* =====================================================
+     MESSAGE
+  ===================================================== */
+
+  function afficherMessage(texte) {
+
+    const message =
+      document.getElementById(
+        "message"
+      );
+
+    message.textContent =
+      texte;
+
+    message.classList.remove(
+      "hidden"
+    );
+
+    setTimeout(() => {
+
+      message.classList.add(
+        "hidden"
+      );
+
+    }, 2200);
+
+  }
 
 </script>
 
-
 </body>
-
 </html>
