@@ -25,22 +25,26 @@
     body {
       font-family: Arial, sans-serif;
       background: #f8f4ec;
-      color: #334238;
+      color: #34463a;
       padding-bottom: 90px;
     }
 
     button,
-    a {
+    select {
       font-family: inherit;
     }
 
+    button {
+      cursor: pointer;
+    }
+
     /* =====================================================
-       HEADER
+       HERO
     ===================================================== */
 
     .hero {
-      background: linear-gradient(135deg, #dce9d7, #f7dfcf);
-      padding: 28px 20px 30px;
+      background: linear-gradient(135deg, #dce9d7, #f6dfcf);
+      padding: 28px 18px 30px;
       text-align: center;
       border-radius: 0 0 30px 30px;
     }
@@ -51,17 +55,17 @@
     }
 
     .hero h1 {
-      font-size: 26px;
+      font-size: 27px;
       color: #35513d;
       margin-bottom: 8px;
     }
 
     .hero p {
+      max-width: 450px;
+      margin: auto;
       font-size: 15px;
       line-height: 1.5;
-      max-width: 420px;
-      margin: auto;
-      color: #53645a;
+      color: #58675e;
     }
 
     /* =====================================================
@@ -70,56 +74,104 @@
 
     .container {
       width: 100%;
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
       padding: 20px 16px 30px;
     }
 
+    /* =====================================================
+       BLOCS
+    ===================================================== */
+
     .section {
       background: #fffdf8;
-      border-radius: 20px;
+      border-radius: 21px;
       padding: 18px;
       margin-bottom: 18px;
-      box-shadow: 0 4px 14px rgba(70, 80, 65, 0.07);
+      box-shadow: 0 4px 15px rgba(70, 80, 65, 0.07);
     }
 
     .section h2 {
-      font-size: 18px;
+      font-size: 19px;
       color: #35513d;
-      margin-bottom: 5px;
+      margin-bottom: 7px;
     }
 
     .section-intro {
       font-size: 13px;
-      color: #758078;
-      margin-bottom: 15px;
-      line-height: 1.4;
+      line-height: 1.45;
+      color: #748078;
+      margin-bottom: 17px;
     }
 
     /* =====================================================
-       CHOIX
+       CHOIX DU MODE
+    ===================================================== */
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .mode-card {
+      width: 100%;
+      border: 2px solid #e5e1d8;
+      background: white;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: left;
+      transition: 0.2s;
+    }
+
+    .mode-card:hover {
+      border-color: #9bb596;
+      transform: translateY(-1px);
+    }
+
+    .mode-card.active {
+      background: #e8f1e4;
+      border-color: #789b72;
+    }
+
+    .mode-icon {
+      font-size: 32px;
+      margin-bottom: 7px;
+    }
+
+    .mode-title {
+      display: block;
+      font-size: 17px;
+      font-weight: bold;
+      color: #35513d;
+      margin-bottom: 4px;
+    }
+
+    .mode-description {
+      display: block;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #68746c;
+    }
+
+    /* =====================================================
+       CHOIX REPAS
     ===================================================== */
 
     .choices {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      gap: 9px;
     }
 
     .choice {
       border: 2px solid #e5e1d8;
-      background: #fff;
-      border-radius: 15px;
-      padding: 13px 8px;
-      cursor: pointer;
+      background: white;
+      border-radius: 14px;
+      padding: 12px 7px;
       text-align: center;
-      transition: 0.2s;
       color: #405046;
-    }
-
-    .choice:hover {
-      border-color: #a9c3a2;
-      transform: translateY(-1px);
+      transition: 0.2s;
     }
 
     .choice.selected {
@@ -131,55 +183,32 @@
 
     .choice-icon {
       display: block;
-      font-size: 25px;
+      font-size: 24px;
       margin-bottom: 5px;
     }
 
     .choice-label {
-      font-size: 13px;
-    }
-
-    /* =====================================================
-       NOMBRE D'ELEMENTS
-    ===================================================== */
-
-    .number-choice {
-      display: flex;
-      gap: 10px;
-    }
-
-    .number-choice button {
-      flex: 1;
-      border: 2px solid #e5e1d8;
-      background: white;
-      border-radius: 14px;
-      padding: 14px 8px;
-      cursor: pointer;
-      color: #405046;
-    }
-
-    .number-choice button.selected {
-      background: #e7f0e3;
-      border-color: #82a67b;
-      color: #31533a;
-      font-weight: bold;
-    }
-
-    .number-choice strong {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    .number-choice span {
       font-size: 12px;
     }
 
     /* =====================================================
-       BOUTON GENERER
+       ENVIES
     ===================================================== */
 
-    .generate {
+    .hint {
+      background: #f5f1e9;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #68746c;
+      margin-bottom: 14px;
+    }
+
+    /* =====================================================
+       BOUTON PRINCIPAL
+    ===================================================== */
+
+    .main-button {
       width: 100%;
       border: none;
       background: linear-gradient(135deg, #73966e, #557c5e);
@@ -188,160 +217,312 @@
       padding: 17px;
       font-size: 16px;
       font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(82, 119, 88, 0.25);
-    }
-
-    .generate:hover {
-      transform: translateY(-1px);
-    }
-
-    /* =====================================================
-       RESULTAT
-    ===================================================== */
-
-    #resultat {
-      display: none;
-    }
-
-    .menu-title {
-      text-align: center;
+      box-shadow: 0 5px 15px rgba(82, 119, 88, 0.22);
       margin-bottom: 18px;
     }
 
-    .menu-title .emoji {
-      font-size: 34px;
-      margin-bottom: 6px;
-    }
-
-    .menu-title h2 {
-      color: #35513d;
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
-
-    .menu-title p {
-      font-size: 13px;
-      color: #718078;
+    .main-button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      box-shadow: none;
     }
 
     /* =====================================================
-       CARTE RECETTE
+       PROPOSITIONS
     ===================================================== */
+
+    #propositionsSection {
+      display: none;
+    }
+
+    .proposition-count {
+      display: inline-block;
+      background: #e7f0e3;
+      color: #48684e;
+      border-radius: 20px;
+      padding: 6px 10px;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
 
     .recipe-card {
       background: white;
-      border-radius: 18px;
-      padding: 16px;
-      margin-bottom: 13px;
-      border: 1px solid #e8e4db;
+      border: 1px solid #e5e1d8;
+      border-radius: 17px;
+      padding: 15px;
+      margin-bottom: 11px;
     }
 
-    .recipe-type {
-      font-size: 11px;
+    .recipe-category {
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #759070;
+      color: #769071;
       font-weight: bold;
       margin-bottom: 5px;
     }
 
     .recipe-name {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: bold;
       color: #34463a;
-      margin-bottom: 8px;
-      line-height: 1.3;
+      line-height: 1.35;
+      margin-bottom: 9px;
     }
 
     .recipe-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 12px;
+      gap: 6px;
+      margin-bottom: 11px;
     }
 
     .info {
       background: #f4f1ea;
+      color: #69746c;
       border-radius: 20px;
-      padding: 5px 9px;
+      padding: 5px 8px;
       font-size: 11px;
-      color: #68736c;
     }
 
     .recipe-actions {
       display: flex;
-      gap: 8px;
+      gap: 7px;
     }
 
     .recipe-actions a,
     .recipe-actions button {
       flex: 1;
-      border-radius: 11px;
-      padding: 10px 7px;
-      font-size: 12px;
-      text-align: center;
-      cursor: pointer;
       text-decoration: none;
+      text-align: center;
+      border-radius: 10px;
+      padding: 10px 6px;
+      font-size: 11px;
     }
 
-    .view-recipe {
+    .view-button {
+      background: #f3f0e9;
+      border: 1px solid #ddd8cd;
+      color: #59655d;
+    }
+
+    .add-button {
       background: #e7f0e3;
-      color: #31533a;
       border: 1px solid #c8dbc3;
+      color: #31533a;
       font-weight: bold;
     }
 
-    .favorite {
-      background: #fff5f0;
-      color: #a26050;
-      border: 1px solid #ead5cc;
-    }
-
-    .favorite.active {
-      background: #f8dfd7;
-    }
-
-    .change {
-      width: 100%;
-      margin-top: 8px;
-      border: none;
-      background: transparent;
-      color: #658160;
-      padding: 7px;
-      cursor: pointer;
-      font-size: 12px;
+    .add-button.added {
+      background: #d4e7d0;
     }
 
     /* =====================================================
-       ACTIONS MENU
+       MENU ACTUEL
     ===================================================== */
 
-    .menu-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 18px;
+    #menuSection {
+      display: none;
     }
 
-    .menu-actions button {
-      border-radius: 13px;
-      padding: 13px 8px;
-      cursor: pointer;
+    .selected-menu {
+      display: grid;
+      gap: 10px;
+    }
+
+    .selected-item {
+      background: #f7f4ed;
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .selected-item-icon {
+      font-size: 24px;
+    }
+
+    .selected-item-content {
+      flex: 1;
+    }
+
+    .selected-item-label {
+      font-size: 10px;
+      color: #779071;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 3px;
+    }
+
+    .selected-item-name {
       font-size: 13px;
+      font-weight: bold;
+      color: #3f5045;
+      line-height: 1.3;
+    }
+
+    .remove-button {
+      border: none;
+      background: transparent;
+      color: #9a756b;
+      font-size: 18px;
+      padding: 5px;
+    }
+
+    .save-button {
+      width: 100%;
+      margin-top: 14px;
+      border: none;
+      background: #e7f0e3;
+      color: #31533a;
+      border-radius: 13px;
+      padding: 13px;
       font-weight: bold;
     }
 
-    .save-menu {
-      background: #e7f0e3;
-      color: #31533a;
-      border: 1px solid #c6dac1;
+    /* =====================================================
+       MODE SEMAINE
+    ===================================================== */
+
+    #weekSection {
+      display: none;
     }
 
-    .new-menu {
+    .week-intro {
+      background: #f5f1e9;
+      border-radius: 13px;
+      padding: 11px;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #68746c;
+      margin-bottom: 15px;
+    }
+
+    .week-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .day-card {
       background: white;
-      color: #59675d;
-      border: 1px solid #ddd9d0;
+      border: 1px solid #e5e1d8;
+      border-radius: 17px;
+      overflow: hidden;
+    }
+
+    .day-header {
+      background: #edf3e9;
+      padding: 11px 13px;
+      font-weight: bold;
+      color: #3d5943;
+    }
+
+    .meal-slot {
+      padding: 11px 12px;
+      border-top: 1px solid #eeeae1;
+    }
+
+    .meal-slot-title {
+      font-size: 11px;
+      color: #748078;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .week-recipe {
+      background: #f8f5ee;
+      border-radius: 11px;
+      padding: 9px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #405046;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .week-recipe button {
+      border: none;
+      background: transparent;
+      color: #9a756b;
+      float: right;
+      font-size: 15px;
+    }
+
+    .add-slot {
+      width: 100%;
+      border: 1px dashed #b9c5b5;
+      background: #fbfaf6;
+      border-radius: 10px;
+      padding: 9px;
+      color: #648061;
+      font-size: 11px;
+    }
+
+    .week-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 15px;
+    }
+
+    .week-actions button {
+      border-radius: 12px;
+      padding: 12px 7px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .save-week {
+      border: none;
+      background: #e7f0e3;
+      color: #31533a;
+    }
+
+    .courses-button {
+      border: 1px solid #ddd8cd;
+      background: white;
+      color: #59655d;
+    }
+
+    /* =====================================================
+       CHOIX POUR UNE CASE DE LA SEMAINE
+    ===================================================== */
+
+    #weekChooser {
+      display: none;
+    }
+
+    .chooser-title {
+      font-size: 17px;
+      color: #35513d;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .chooser-subtitle {
+      font-size: 12px;
+      color: #758078;
+      margin-bottom: 13px;
+    }
+
+    .chooser-buttons {
+      display: grid;
+      gap: 8px;
+    }
+
+    .chooser-button {
+      border: 1px solid #ded9cf;
+      background: white;
+      border-radius: 12px;
+      padding: 11px;
+      text-align: left;
+      color: #435249;
+      font-size: 12px;
+    }
+
+    .chooser-button:hover {
+      background: #edf3e9;
     }
 
     /* =====================================================
@@ -349,10 +530,14 @@
     ===================================================== */
 
     .message {
+      display: none;
+      background: #fffdf8;
+      border-radius: 17px;
+      padding: 18px;
       text-align: center;
-      padding: 20px 10px;
+      margin-bottom: 18px;
       color: #68746c;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.5;
     }
 
@@ -360,11 +545,11 @@
       display: block;
       color: #405046;
       font-size: 16px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     /* =====================================================
-       NAVIGATION BAS
+       NAVIGATION
     ===================================================== */
 
     .bottom-nav {
@@ -400,14 +585,25 @@
     }
 
     /* =====================================================
-       RESPONSIVE
+       DESKTOP
     ===================================================== */
 
     @media (min-width: 600px) {
+
+      .mode-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .choices {
         grid-template-columns: repeat(3, 1fr);
       }
+
+      .week-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
     }
+
   </style>
 </head>
 
@@ -418,6 +614,7 @@
   ===================================================== -->
 
   <header class="hero">
+
     <div class="hero-icon">🍽️</div>
 
     <h1>Composer mon menu</h1>
@@ -426,53 +623,61 @@
       Organisez vos repas et composez votre petite assiette
       selon vos envies.
     </p>
+
   </header>
 
 
   <main class="container">
 
     <!-- ===================================================
-         ETAPE 1
+         CHOIX DU MODE
     ==================================================== -->
 
     <section class="section">
 
-      <h2>🕐 Quel repas souhaitez-vous composer ?</h2>
+      <h2>Que souhaitez-vous faire ?</h2>
 
       <p class="section-intro">
-        Choisissez le moment de la journée.
+        Choisissez votre façon de préparer vos repas.
       </p>
 
-      <div class="choices">
+      <div class="mode-grid">
 
-        <button class="choice meal-choice" data-meal="petit-dejeuner">
-          <span class="choice-icon">🌅</span>
-          <span class="choice-label">Petit-déjeuner</span>
+        <button
+          class="mode-card"
+          id="singleMode"
+        >
+
+          <div class="mode-icon">🍽️</div>
+
+          <span class="mode-title">
+            Une petite assiette
+          </span>
+
+          <span class="mode-description">
+            Je cherche maintenant une ou plusieurs recettes
+            pour composer mon repas.
+          </span>
+
         </button>
 
-        <button class="choice meal-choice" data-meal="dejeuner">
-          <span class="choice-icon">🥗</span>
-          <span class="choice-label">Déjeuner</span>
-        </button>
 
-        <button class="choice meal-choice" data-meal="diner">
-          <span class="choice-icon">🌙</span>
-          <span class="choice-label">Dîner</span>
-        </button>
+        <button
+          class="mode-card"
+          id="weekMode"
+        >
 
-        <button class="choice meal-choice" data-meal="collation">
-          <span class="choice-icon">🍎</span>
-          <span class="choice-label">Collation</span>
-        </button>
+          <div class="mode-icon">📅</div>
 
-        <button class="choice meal-choice" data-meal="petite-douceur">
-          <span class="choice-icon">🍰</span>
-          <span class="choice-label">Petite douceur</span>
-        </button>
+          <span class="mode-title">
+            Ma semaine
+          </span>
 
-        <button class="choice meal-choice" data-meal="peu-importe">
-          <span class="choice-icon">✨</span>
-          <span class="choice-label">Peu importe</span>
+          <span class="mode-description">
+            J'organise mes repas de la semaine et je pourrai
+            ensuite créer ma liste de courses.
+          </span>
+
         </button>
 
       </div>
@@ -481,151 +686,346 @@
 
 
     <!-- ===================================================
-         ETAPE 2
+         MODE PETITE ASSIETTE
     ==================================================== -->
 
-    <section class="section">
+    <div id="singleModeContent">
 
-      <h2>💚 Qu'avez-vous envie de manger ?</h2>
+      <section class="section">
 
-      <p class="section-intro">
-        Vous pouvez choisir plusieurs envies.
-      </p>
+        <h2>1️⃣ Pour quel repas ?</h2>
 
-      <div class="choices">
+        <p class="section-intro">
+          Choisissez le moment de la journée.
+        </p>
 
-        <button class="choice envie-choice" data-envie="leger">
-          <span class="choice-icon">🥬</span>
-          <span class="choice-label">Léger</span>
-        </button>
+        <div class="choices">
 
-        <button class="choice envie-choice" data-envie="complet">
-          <span class="choice-icon">🍽️</span>
-          <span class="choice-label">Complet</span>
-        </button>
-
-        <button class="choice envie-choice" data-envie="proteine">
-          <span class="choice-icon">💪</span>
-          <span class="choice-label">Riche en protéines</span>
-        </button>
-
-        <button class="choice envie-choice" data-envie="rapide">
-          <span class="choice-icon">⚡</span>
-          <span class="choice-label">Rapide</span>
-        </button>
-
-        <button class="choice envie-choice" data-envie="vegetarien">
-          <span class="choice-icon">🥕</span>
-          <span class="choice-label">Végétarien</span>
-        </button>
-
-        <button class="choice envie-choice" data-envie="reconfort">
-          <span class="choice-icon">🧀</span>
-          <span class="choice-label">Réconfortant</span>
-        </button>
-
-        <button class="choice envie-choice" data-envie="sucre">
-          <span class="choice-icon">🍓</span>
-          <span class="choice-label">Sucré</span>
-        </button>
-
-        <button class="choice envie-choice" data-envie="salade">
-          <span class="choice-icon">🥗</span>
-          <span class="choice-label">Salade</span>
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         ETAPE 3
-    ==================================================== -->
-
-    <section class="section">
-
-      <h2>🍽️ Comment composer votre assiette ?</h2>
-
-      <p class="section-intro">
-        Choisissez le nombre de recettes que vous souhaitez réunir.
-      </p>
-
-      <div class="number-choice">
-
-        <button class="portion-choice selected" data-count="1">
-          <strong>1</strong>
-          <span>Petite assiette</span>
-        </button>
-
-        <button class="portion-choice" data-count="2">
-          <strong>2</strong>
-          <span>Deux éléments</span>
-        </button>
-
-        <button class="portion-choice" data-count="3">
-          <strong>3</strong>
-          <span>Menu complet</span>
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         GENERATION
-    ==================================================== -->
-
-    <button class="generate" id="generateButton">
-      ✨ Composer mon menu
-    </button>
-
-
-    <!-- ===================================================
-         RESULTAT
-    ==================================================== -->
-
-    <section id="resultat">
-
-      <div class="section">
-
-        <div class="menu-title">
-          <div class="emoji">🍽️</div>
-
-          <h2>Votre petite assiette</h2>
-
-          <p id="menuDescription">
-            Un menu composé selon vos envies.
-          </p>
-        </div>
-
-        <div id="recipesContainer"></div>
-
-        <div class="menu-actions">
-
-          <button class="save-menu" id="saveMenuButton">
-            💚 Enregistrer
+          <button
+            class="choice meal-choice"
+            data-meal="petit-dejeuner"
+          >
+            <span class="choice-icon">🌅</span>
+            <span class="choice-label">Petit-déjeuner</span>
           </button>
 
-          <button class="new-menu" id="newMenuButton">
-            🔄 Nouveau menu
+          <button
+            class="choice meal-choice"
+            data-meal="dejeuner"
+          >
+            <span class="choice-icon">🥗</span>
+            <span class="choice-label">Déjeuner</span>
+          </button>
+
+          <button
+            class="choice meal-choice"
+            data-meal="diner"
+          >
+            <span class="choice-icon">🌙</span>
+            <span class="choice-label">Dîner</span>
+          </button>
+
+          <button
+            class="choice meal-choice"
+            data-meal="collation"
+          >
+            <span class="choice-icon">🍎</span>
+            <span class="choice-label">Collation</span>
+          </button>
+
+          <button
+            class="choice meal-choice"
+            data-meal="petite-douceur"
+          >
+            <span class="choice-icon">🍰</span>
+            <span class="choice-label">Petite douceur</span>
+          </button>
+
+          <button
+            class="choice meal-choice"
+            data-meal="peu-importe"
+          >
+            <span class="choice-icon">✨</span>
+            <span class="choice-label">Peu importe</span>
           </button>
 
         </div>
 
-      </div>
+      </section>
 
-    </section>
+
+      <section class="section">
+
+        <h2>2️⃣ Qu'est-ce qui vous ferait plaisir ?</h2>
+
+        <p class="section-intro">
+          Choisissez une ou plusieurs envies.
+        </p>
+
+        <div class="hint">
+          💡 Vous pouvez sélectionner plusieurs envies pour affiner
+          les propositions.
+        </div>
+
+        <div class="choices">
+
+          <button
+            class="choice envie-choice"
+            data-envie="leger"
+          >
+            <span class="choice-icon">🥬</span>
+            <span class="choice-label">Léger</span>
+          </button>
+
+          <button
+            class="choice envie-choice"
+            data-envie="complet"
+          >
+            <span class="choice-icon">🍽️</span>
+            <span class="choice-label">Complet</span>
+          </button>
+
+          <button
+            class="choice envie-choice"
+            data-envie="proteine"
+          >
+            <span class="choice-icon">💪</span>
+            <span class="choice-label">Riche en protéines</span>
+          </button>
+
+          <button
+            class="choice envie-choice"
+            data-envie="rapide"
+          >
+            <span class="choice-icon">⚡</span>
+            <span class="choice-label">Rapide</span>
+          </button>
+
+          <button
+            class="choice envie-choice"
+            data-envie="vegetarien"
+          >
+            <span class="choice-icon">🥕</span>
+            <span class="choice-label">Végétarien</span>
+          </button>
+
+          <button
+            class="choice envie-choice"
+            data-envie="reconfort"
+          >
+            <span class="choice-icon">🧀</span>
+            <span class="choice-label">Réconfortant</span>
+          </button>
+
+          <button
+            class="choice envie-choice"
+            data-envie="sucre"
+          >
+            <span class="choice-icon">🍓</span>
+            <span class="choice-label">Sucré</span>
+          </button>
+
+          <button
+            class="choice envie-choice"
+            data-envie="salade"
+          >
+            <span class="choice-icon">🥗</span>
+            <span class="choice-label">Salade</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <button
+        class="main-button"
+        id="showPropositions"
+      >
+        ✨ Voir mes propositions
+      </button>
+
+
+      <!-- ===============================================
+           PROPOSITIONS
+      ================================================ -->
+
+      <section
+        class="section"
+        id="propositionsSection"
+      >
+
+        <h2>3️⃣ Mes propositions</h2>
+
+        <p class="section-intro">
+          Voici les recettes qui correspondent à vos choix.
+          Choisissez celles que vous souhaitez ajouter à votre menu.
+        </p>
+
+        <div
+          class="proposition-count"
+          id="propositionCount"
+        >
+        </div>
+
+        <div id="propositionsContainer"></div>
+
+      </section>
+
+
+      <!-- ===============================================
+           MENU ACTUEL
+      ================================================ -->
+
+      <section
+        class="section"
+        id="menuSection"
+      >
+
+        <h2>4️⃣ Mon menu</h2>
+
+        <p class="section-intro">
+          Voici les recettes que vous avez choisies.
+          Vous pouvez encore les modifier.
+        </p>
+
+        <div
+          class="selected-menu"
+          id="selectedMenu"
+        ></div>
+
+        <button
+          class="save-button"
+          id="saveSingleMenu"
+        >
+          💚 Enregistrer mon menu
+        </button>
+
+      </section>
+
+    </div>
+
+
+    <!-- ===================================================
+         MODE SEMAINE
+    ==================================================== -->
+
+    <div id="weekModeContent" style="display:none;">
+
+      <section class="section">
+
+        <h2>📅 Organisons votre semaine</h2>
+
+        <p class="section-intro">
+          Ajoutez les repas que vous souhaitez préparer.
+          Vous n'êtes pas obligé de remplir tous les jours.
+        </p>
+
+        <div class="week-intro">
+          💡 Cliquez sur <strong>+ Ajouter un repas</strong>,
+          choisissez le moment et vos envies, puis sélectionnez
+          une recette parmi les propositions.
+        </div>
+
+        <div
+          class="week-grid"
+          id="weekGrid"
+        ></div>
+
+
+        <div class="week-actions">
+
+          <button
+            class="save-week"
+            id="saveWeek"
+          >
+            💚 Enregistrer ma semaine
+          </button>
+
+          <button
+            class="courses-button"
+            id="goToCourses"
+          >
+            🛒 Préparer mes courses
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===============================================
+           CHOIX D'UNE CASE
+      ================================================ -->
+
+      <section
+        class="section"
+        id="weekChooser"
+      >
+
+        <div class="chooser-title">
+          Ajouter un repas
+        </div>
+
+        <div class="chooser-subtitle">
+          Choisissez le moment puis sélectionnez une recette.
+        </div>
+
+        <div class="choices">
+
+          <button
+            class="choice chooser-meal"
+            data-meal="petit-dejeuner"
+          >
+            <span class="choice-icon">🌅</span>
+            <span class="choice-label">Petit-déjeuner</span>
+          </button>
+
+          <button
+            class="choice chooser-meal"
+            data-meal="dejeuner"
+          >
+            <span class="choice-icon">🥗</span>
+            <span class="choice-label">Déjeuner</span>
+          </button>
+
+          <button
+            class="choice chooser-meal"
+            data-meal="diner"
+          >
+            <span class="choice-icon">🌙</span>
+            <span class="choice-label">Dîner</span>
+          </button>
+
+          <button
+            class="choice chooser-meal"
+            data-meal="collation"
+          >
+            <span class="choice-icon">🍎</span>
+            <span class="choice-label">Collation</span>
+          </button>
+
+        </div>
+
+        <div
+          class="chooser-buttons"
+          id="weekRecipeChoices"
+          style="margin-top:14px;"
+        ></div>
+
+      </section>
+
+    </div>
 
 
     <!-- ===================================================
          MESSAGE
     ==================================================== -->
 
-    <section class="section" id="messageSection" style="display:none;">
-      <div class="message" id="message"></div>
-    </section>
+    <div
+      class="message"
+      id="message"
+    ></div>
 
   </main>
 
@@ -636,22 +1036,30 @@
 
   <nav class="bottom-nav">
 
-    <a href="../../index.html">
+    <a
+      href="../../index.html"
+    >
       <span>🏠</span>
       Accueil
     </a>
 
-    <a href="Recettes.html">
+    <a
+      href="Recettes.html"
+    >
       <span>🍽️</span>
       Recettes
     </a>
 
-    <a href="Favoris.html">
+    <a
+      href="Favoris.html"
+    >
       <span>❤️</span>
       Favoris
     </a>
 
-    <a href="MonProfil.html">
+    <a
+      href="MonProfil.html"
+    >
       <span>👤</span>
       Profil
     </a>
@@ -667,13 +1075,55 @@
 
     let recettes = [];
 
+    let modeActuel = "single";
+
     let repasSelectionne = "";
 
     let enviesSelectionnees = [];
 
-    let nombreRecettes = 1;
+    let propositions = [];
 
     let menuActuel = [];
+
+    let jourSelectionne = "";
+
+    let repasSemaineSelectionne = "";
+
+
+    const jours = [
+      {
+        id: "lundi",
+        nom: "Lundi"
+      },
+      {
+        id: "mardi",
+        nom: "Mardi"
+      },
+      {
+        id: "mercredi",
+        nom: "Mercredi"
+      },
+      {
+        id: "jeudi",
+        nom: "Jeudi"
+      },
+      {
+        id: "vendredi",
+        nom: "Vendredi"
+      },
+      {
+        id: "samedi",
+        nom: "Samedi"
+      },
+      {
+        id: "dimanche",
+        nom: "Dimanche"
+      }
+    ];
+
+
+    let planningSemaine =
+      chargerPlanning();
 
 
     /* =====================================================
@@ -695,16 +1145,18 @@
 
 
     /* =====================================================
-       NORMALISATION DES ENVIES
+       ENVIES
     ===================================================== */
 
     function normaliserEnvie(valeur) {
 
-      const texte = nettoyerTexte(valeur);
+      const texte =
+        nettoyerTexte(valeur);
 
       if (!texte) {
         return "";
       }
+
 
       if (
         texte === "reconfort" ||
@@ -716,12 +1168,14 @@
         return "reconfort";
       }
 
+
       if (
         texte === "salade" ||
         texte === "salades"
       ) {
         return "salade";
       }
+
 
       if (
         texte === "sucre" ||
@@ -734,6 +1188,7 @@
         return "sucre";
       }
 
+
       if (
         texte === "vegetarien" ||
         texte === "vegetarienne" ||
@@ -742,6 +1197,7 @@
       ) {
         return "vegetarien";
       }
+
 
       if (
         texte === "leger" ||
@@ -756,6 +1212,7 @@
         return "leger";
       }
 
+
       if (
         texte === "rapide" ||
         texte === "rapides" ||
@@ -763,6 +1220,7 @@
       ) {
         return "rapide";
       }
+
 
       if (
         texte === "complet" ||
@@ -773,6 +1231,7 @@
         return "complet";
       }
 
+
       if (
         texte === "proteine" ||
         texte === "proteines" ||
@@ -780,6 +1239,7 @@
       ) {
         return "proteine";
       }
+
 
       if (
         texte === "petit appetit" ||
@@ -789,45 +1249,45 @@
         return "petit-appetit";
       }
 
+
       return texte;
 
     }
 
 
     /* =====================================================
-       NORMALISATION DU TYPE DE REPAS
+       TYPE DE REPAS
     ===================================================== */
 
     function normaliserRepas(valeur) {
 
-      const texte = nettoyerTexte(valeur);
+      const texte =
+        nettoyerTexte(valeur);
 
-      if (
-        texte === "petit dejeuner" ||
-        texte === "petit-dejeuner"
-      ) {
+
+      if (texte === "petit dejeuner") {
         return "petit-dejeuner";
       }
 
-      if (
-        texte === "dejeuner"
-      ) {
+
+      if (texte === "dejeuner") {
         return "dejeuner";
       }
 
-      if (
-        texte === "diner"
-      ) {
+
+      if (texte === "diner") {
         return "diner";
       }
+
 
       if (
         texte === "collation" ||
         texte === "gouter" ||
-        texte === "goûter"
+        texte === "encas"
       ) {
         return "collation";
       }
+
 
       if (
         texte === "petite douceur" ||
@@ -835,6 +1295,7 @@
       ) {
         return "petite-douceur";
       }
+
 
       if (
         texte === "peu importe" ||
@@ -844,30 +1305,47 @@
         return "peu-importe";
       }
 
+
       return texte;
 
     }
 
 
     /* =====================================================
-       CHARGEMENT DES RECETTES
+       CHARGER RECETTES
     ===================================================== */
 
     async function chargerRecettes() {
 
       try {
 
-        const response = await fetch("../recettes.json");
+        const response =
+          await fetch("../recettes.json");
+
 
         if (!response.ok) {
-          throw new Error("Impossible de charger recettes.json");
+          throw new Error(
+            "Impossible de charger recettes.json"
+          );
         }
 
-        recettes = await response.json();
+
+        recettes =
+          await response.json();
+
 
         if (!Array.isArray(recettes)) {
-          throw new Error("Le fichier recettes.json n'est pas un tableau.");
+          throw new Error(
+            "recettes.json doit contenir un tableau."
+          );
         }
+
+
+        console.log(
+          recettes.length +
+          " recettes chargées."
+        );
+
 
       } catch (erreur) {
 
@@ -875,7 +1353,7 @@
 
         afficherMessage(
           "⚠️ Impossible de charger les recettes.",
-          "Vérifiez que le fichier recettes.json se trouve bien dans le dossier src."
+          "Vérifiez que recettes.json se trouve bien dans le dossier src."
         );
 
       }
@@ -884,18 +1362,20 @@
 
 
     /* =====================================================
-       RECUPERER LES ENVIES D'UNE RECETTE
+       ENVIES D'UNE RECETTE
     ===================================================== */
 
     function obtenirEnviesRecette(recette) {
 
       const resultat = [];
 
+
       if (Array.isArray(recette.envies)) {
 
         recette.envies.forEach(envie => {
 
-          const valeur = normaliserEnvie(envie);
+          const valeur =
+            normaliserEnvie(envie);
 
           if (valeur) {
             resultat.push(valeur);
@@ -903,13 +1383,16 @@
 
         });
 
-      } else if (typeof recette.envies === "string") {
+      } else if (
+        typeof recette.envies === "string"
+      ) {
 
         recette.envies
           .split(/[,;|]/)
           .forEach(envie => {
 
-            const valeur = normaliserEnvie(envie);
+            const valeur =
+              normaliserEnvie(envie);
 
             if (valeur) {
               resultat.push(valeur);
@@ -920,13 +1403,14 @@
       }
 
 
-      const texte = nettoyerTexte(
-        [
-          recette.nom,
-          recette.categorie,
-          recette.type
-        ].join(" ")
-      );
+      const texte =
+        nettoyerTexte(
+          [
+            recette.nom,
+            recette.categorie,
+            recette.type
+          ].join(" ")
+        );
 
 
       if (
@@ -938,33 +1422,33 @@
 
 
       if (
-        (
-          texte.includes("reconfort") ||
-          texte.includes("tartiflette") ||
-          texte.includes("raclette") ||
-          texte.includes("fajita") ||
-          texte.includes("couscous")
-        ) &&
-        !resultat.includes("reconfort")
+        texte.includes("reconfort") ||
+        texte.includes("tartiflette") ||
+        texte.includes("raclette") ||
+        texte.includes("fajita") ||
+        texte.includes("couscous")
       ) {
-        resultat.push("reconfort");
+
+        if (!resultat.includes("reconfort")) {
+          resultat.push("reconfort");
+        }
+
       }
 
 
       if (
-        (
-          texte.includes("dessert") ||
-          texte.includes("gateau") ||
-          texte.includes("gâteau") ||
-          texte.includes("compote") ||
-          texte.includes("mousse") ||
-          texte.includes("creme") ||
-          texte.includes("crêpe") ||
-          texte.includes("crepe")
-        ) &&
-        !resultat.includes("sucre")
+        texte.includes("dessert") ||
+        texte.includes("gateau") ||
+        texte.includes("compote") ||
+        texte.includes("mousse") ||
+        texte.includes("creme") ||
+        texte.includes("crepe")
       ) {
-        resultat.push("sucre");
+
+        if (!resultat.includes("sucre")) {
+          resultat.push("sucre");
+        }
+
       }
 
 
@@ -976,7 +1460,9 @@
       }
 
 
-      return [...new Set(resultat)];
+      return [
+        ...new Set(resultat)
+      ];
 
     }
 
@@ -985,60 +1471,66 @@
        TYPE DE REPAS D'UNE RECETTE
     ===================================================== */
 
-    function recetteCorrespondRepas(recette) {
+    function recetteCorrespondRepas(
+      recette,
+      repas
+    ) {
 
       if (
-        !repasSelectionne ||
-        repasSelectionne === "peu-importe"
+        !repas ||
+        repas === "peu-importe"
       ) {
         return true;
       }
 
-      const valeurs = [
-        recette.typeRepas,
-        recette.type,
-        recette.categorie,
-        recette.nom
-      ];
 
-      const texte = nettoyerTexte(
-        valeurs.filter(Boolean).join(" ")
-      );
+      const texte =
+        nettoyerTexte(
+          [
+            recette.typeRepas,
+            recette.categorie,
+            recette.type,
+            recette.nom
+          ]
+          .filter(Boolean)
+          .join(" ")
+        );
 
-      switch (repasSelectionne) {
+
+      switch (repas) {
 
         case "petit-dejeuner":
 
           return (
             texte.includes("petit dejeuner") ||
-            texte.includes("petit déjeuner") ||
             texte.includes("breakfast")
           );
+
 
         case "dejeuner":
 
           return (
             texte.includes("dejeuner") ||
-            texte.includes("déjeuner") ||
             texte.includes("midi")
           );
+
 
         case "diner":
 
           return (
             texte.includes("diner") ||
-            texte.includes("dîner") ||
             texte.includes("soir")
           );
+
 
         case "collation":
 
           return (
             texte.includes("collation") ||
             texte.includes("gouter") ||
-            texte.includes("goûter") ||
             texte.includes("encas")
           );
+
 
         case "petite-douceur":
 
@@ -1048,36 +1540,52 @@
             texte.includes("douceur")
           );
 
+
         default:
           return true;
+
       }
 
     }
 
 
     /* =====================================================
-       CORRESPONDANCE ENVIE
+       ENVIE D'UNE RECETTE
     ===================================================== */
 
-    function recetteCorrespondEnvie(recette, envie) {
+    function recetteCorrespondEnvie(
+      recette,
+      envie
+    ) {
 
-      const envieNormalisee = normaliserEnvie(envie);
+      const envieNormalisee =
+        normaliserEnvie(envie);
+
 
       if (!envieNormalisee) {
         return true;
       }
 
 
-      const envies = obtenirEnviesRecette(recette);
+      const envies =
+        obtenirEnviesRecette(recette);
 
-      if (envies.includes(envieNormalisee)) {
+
+      if (
+        envies.includes(
+          envieNormalisee
+        )
+      ) {
         return true;
       }
 
 
-      if (envieNormalisee === "rapide") {
+      if (
+        envieNormalisee === "rapide"
+      ) {
 
-        const temps = Number(recette.temps);
+        const temps =
+          Number(recette.temps);
 
         if (
           Number.isFinite(temps) &&
@@ -1089,12 +1597,16 @@
       }
 
 
-      if (envieNormalisee === "proteine") {
+      if (
+        envieNormalisee === "proteine"
+      ) {
 
-        const proteines = parseFloat(
-          String(recette.proteines || "")
-            .replace(",", ".")
-        );
+        const proteines =
+          parseFloat(
+            String(
+              recette.proteines || ""
+            ).replace(",", ".")
+          );
 
         if (
           Number.isFinite(proteines) &&
@@ -1106,21 +1618,28 @@
       }
 
 
-      if (envieNormalisee === "vegetarien") {
+      if (
+        envieNormalisee === "vegetarien"
+      ) {
 
-        if (recette.vegetarien === true) {
+        if (
+          recette.vegetarien === true
+        ) {
           return true;
         }
 
-        const texte = nettoyerTexte(
-          [
-            recette.type,
-            recette.categorie,
-            recette.nom
-          ].join(" ")
-        );
+        const texte =
+          nettoyerTexte(
+            [
+              recette.nom,
+              recette.categorie,
+              recette.type
+            ].join(" ")
+          );
 
-        if (texte.includes("vegetarien")) {
+        if (
+          texte.includes("vegetarien")
+        ) {
           return true;
         }
 
@@ -1133,25 +1652,40 @@
 
 
     /* =====================================================
-       RECETTES COMPATIBLES
+       TROUVER LES RECETTES
     ===================================================== */
 
-    function trouverRecettesCompatibles() {
+    function trouverRecettes(
+      repas,
+      envies
+    ) {
 
-      let resultat = recettes.filter(
-        recette => recetteCorrespondRepas(recette)
-      );
+      let resultat =
+        recettes.filter(
+          recette =>
+            recetteCorrespondRepas(
+              recette,
+              repas
+            )
+        );
 
 
-      if (enviesSelectionnees.length > 0) {
+      if (
+        envies.length > 0
+      ) {
 
-        resultat = resultat.filter(recette => {
+        resultat =
+          resultat.filter(recette => {
 
-          return enviesSelectionnees.some(
-            envie => recetteCorrespondEnvie(recette, envie)
-          );
+            return envies.some(
+              envie =>
+                recetteCorrespondEnvie(
+                  recette,
+                  envie
+                )
+            );
 
-        });
+          });
 
       }
 
@@ -1162,57 +1696,45 @@
 
 
     /* =====================================================
-       MELANGE ALEATOIRE
+       AFFICHER PROPOSITIONS
     ===================================================== */
 
-    function melanger(tableau) {
+    function afficherPropositions() {
 
-      const copie = [...tableau];
-
-      for (
-        let i = copie.length - 1;
-        i > 0;
-        i--
-      ) {
-
-        const j = Math.floor(
-          Math.random() * (i + 1)
+      const section =
+        document.getElementById(
+          "propositionsSection"
         );
 
-        [
-          copie[i],
-          copie[j]
-        ] = [
-          copie[j],
-          copie[i]
-        ];
+      const container =
+        document.getElementById(
+          "propositionsContainer"
+        );
 
-      }
-
-      return copie;
-
-    }
+      const count =
+        document.getElementById(
+          "propositionCount"
+        );
 
 
-    /* =====================================================
-       GENERER LE MENU
-    ===================================================== */
-
-    function genererMenu() {
-
-      cacherMessage();
-
-      const compatibles =
-        trouverRecettesCompatibles();
+      propositions =
+        trouverRecettes(
+          repasSelectionne,
+          enviesSelectionnees
+        );
 
 
-      if (compatibles.length === 0) {
+      if (
+        propositions.length === 0
+      ) {
 
-        document.getElementById("resultat").style.display = "none";
+        section.style.display =
+          "none";
+
 
         afficherMessage(
-          "😕 Aucune recette ne correspond à vos choix.",
-          "Essayez de retirer une envie ou choisissez « Peu importe » pour le moment du repas."
+          "😕 Aucune recette trouvée.",
+          "Essayez une autre envie ou choisissez « Peu importe » pour le moment du repas."
         );
 
         return;
@@ -1220,50 +1742,39 @@
       }
 
 
-      const melange =
-        melanger(compatibles);
+      cacherMessage();
 
 
-      menuActuel =
-        melange.slice(
-          0,
-          Math.min(
-            nombreRecettes,
-            melange.length
-          )
+      count.textContent =
+        propositions.length +
+        (
+          propositions.length > 1
+            ? " recettes correspondent à vos choix"
+            : " recette correspond à vos choix"
         );
 
-
-      afficherMenu();
-
-    }
-
-
-    /* =====================================================
-       AFFICHER LE MENU
-    ===================================================== */
-
-    function afficherMenu() {
-
-      const container =
-        document.getElementById("recipesContainer");
 
       container.innerHTML = "";
 
 
-      menuActuel.forEach(
-        (recette, index) => {
+      /*
+        On affiche jusqu'à 12 propositions.
+        Le catalogue complet reste disponible :
+        on pourra ajouter ensuite un bouton
+        « Voir plus » si nécessaire.
+      */
+
+      propositions
+        .slice(0, 12)
+        .forEach(recette => {
 
           const carte =
-            document.createElement("article");
+            document.createElement(
+              "article"
+            );
 
-          carte.className = "recipe-card";
-
-
-          const categorie =
-            recette.categorie ||
-            recette.type ||
-            "Recette";
+          carte.className =
+            "recipe-card";
 
 
           const temps =
@@ -1284,10 +1795,17 @@
               : "";
 
 
+          const dejaAjoutee =
+            menuActuel.some(
+              item =>
+                item.id === recette.id
+            );
+
+
           carte.innerHTML = `
 
-            <div class="recipe-type">
-              ${categorie}
+            <div class="recipe-category">
+              ${recette.categorie || recette.type || "Recette"}
             </div>
 
             <div class="recipe-name">
@@ -1296,19 +1814,22 @@
 
             <div class="recipe-info">
 
-              ${temps
-                ? `<span class="info">${temps}</span>`
-                : ""
+              ${
+                temps
+                  ? `<span class="info">${temps}</span>`
+                  : ""
               }
 
-              ${proteines
-                ? `<span class="info">${proteines}</span>`
-                : ""
+              ${
+                proteines
+                  ? `<span class="info">${proteines}</span>`
+                  : ""
               }
 
-              ${petitePortion
-                ? `<span class="info">${petitePortion}</span>`
-                : ""
+              ${
+                petitePortion
+                  ? `<span class="info">${petitePortion}</span>`
+                  : ""
               }
 
             </div>
@@ -1316,269 +1837,224 @@
             <div class="recipe-actions">
 
               <a
-                class="view-recipe"
+                class="view-button"
                 href="Recette.html?id=${encodeURIComponent(recette.id)}"
               >
                 Voir la recette
               </a>
 
               <button
-                class="favorite"
-                data-id="${recette.id}"
-                onclick="toggleFavori('${recette.id}', this)"
+                class="add-button ${dejaAjoutee ? "added" : ""}"
+                onclick="ajouterAuMenu('${recette.id}')"
               >
-                ♡ Favori
+                ${
+                  dejaAjoutee
+                    ? "✓ Ajoutée"
+                    : "➕ Ajouter à mon menu"
+                }
               </button>
 
             </div>
-
-            <button
-              class="change"
-              onclick="changerRecette(${index})"
-            >
-              🔄 Changer cette recette
-            </button>
 
           `;
 
 
           container.appendChild(carte);
 
+        });
+
+
+      section.style.display =
+        "block";
+
+
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    }
+
+
+    /* =====================================================
+       AJOUTER AU MENU
+    ===================================================== */
+
+    function ajouterAuMenu(id) {
+
+      const recette =
+        recettes.find(
+          item =>
+            String(item.id) === String(id)
+        );
+
+
+      if (!recette) {
+        return;
+      }
+
+
+      const existe =
+        menuActuel.some(
+          item =>
+            String(item.id) === String(id)
+        );
+
+
+      if (existe) {
+        return;
+      }
+
+
+      menuActuel.push(recette);
+
+
+      afficherMenuActuel();
+
+      afficherPropositions();
+
+    }
+
+
+    /* =====================================================
+       AFFICHER MENU ACTUEL
+    ===================================================== */
+
+    function afficherMenuActuel() {
+
+      const section =
+        document.getElementById(
+          "menuSection"
+        );
+
+      const container =
+        document.getElementById(
+          "selectedMenu"
+        );
+
+
+      container.innerHTML = "";
+
+
+      if (
+        menuActuel.length === 0
+      ) {
+
+        section.style.display =
+          "none";
+
+        return;
+
+      }
+
+
+      menuActuel.forEach(
+        (recette, index) => {
+
+          const element =
+            document.createElement(
+              "div"
+            );
+
+          element.className =
+            "selected-item";
+
+
+          element.innerHTML = `
+
+            <div class="selected-item-icon">
+              🍽️
+            </div>
+
+            <div class="selected-item-content">
+
+              <div class="selected-item-label">
+                ${index + 1}${index === 0 ? "ère" : "e"} recette
+              </div>
+
+              <div class="selected-item-name">
+                ${recette.nom}
+              </div>
+
+            </div>
+
+            <button
+              class="remove-button"
+              onclick="retirerDuMenu('${recette.id}')"
+              aria-label="Retirer"
+            >
+              ×
+            </button>
+
+          `;
+
+
+          container.appendChild(element);
+
         }
       );
 
 
-      afficherDescription();
-
-
-      document.getElementById("resultat").style.display =
+      section.style.display =
         "block";
 
-
-      document.getElementById("resultat")
-        .scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
     }
 
 
     /* =====================================================
-       DESCRIPTION
+       RETIRER DU MENU
     ===================================================== */
 
-    function afficherDescription() {
+    function retirerDuMenu(id) {
 
-      const description =
-        document.getElementById("menuDescription");
-
-
-      const repas = {
-
-        "petit-dejeuner": "Votre petit-déjeuner",
-
-        "dejeuner": "Votre déjeuner",
-
-        "diner": "Votre dîner",
-
-        "collation": "Votre collation",
-
-        "petite-douceur": "Votre petite douceur",
-
-        "peu-importe": "Une petite assiette selon vos envies"
-
-      };
-
-
-      let texte =
-        repas[repasSelectionne] ||
-        "Une petite assiette selon vos envies";
-
-
-      if (enviesSelectionnees.length > 0) {
-
-        texte +=
-          " • " +
-          enviesSelectionnees
-            .map(envie => {
-
-              const noms = {
-
-                leger: "léger",
-
-                complet: "complet",
-
-                proteine: "riche en protéines",
-
-                rapide: "rapide",
-
-                vegetarien: "végétarien",
-
-                reconfort: "réconfortant",
-
-                sucre: "sucré",
-
-                salade: "salade"
-
-              };
-
-              return noms[envie] || envie;
-
-            })
-            .join(" • ");
-
-      }
-
-
-      description.textContent = texte;
-
-    }
-
-
-    /* =====================================================
-       CHANGER UNE RECETTE
-    ===================================================== */
-
-    function changerRecette(index) {
-
-      const compatibles =
-        trouverRecettesCompatibles()
-          .filter(recette => {
-
-            return !menuActuel.some(
-              (actuelle, actuelIndex) =>
-                actuelle.id === recette.id &&
-                actuelIndex !== index
-            );
-
-          });
-
-
-      if (compatibles.length === 0) {
-        return;
-      }
-
-
-      const actuelle =
-        menuActuel[index];
-
-
-      const alternatives =
-        compatibles.filter(
+      menuActuel =
+        menuActuel.filter(
           recette =>
-            recette.id !== actuelle.id
+            String(recette.id) !== String(id)
         );
 
 
-      if (alternatives.length === 0) {
-        return;
-      }
+      afficherMenuActuel();
 
-
-      const nouvelle =
-        alternatives[
-          Math.floor(
-            Math.random() *
-            alternatives.length
-          )
-        ];
-
-
-      menuActuel[index] = nouvelle;
-
-      afficherMenu();
+      afficherPropositions();
 
     }
 
 
     /* =====================================================
-       FAVORIS
+       ENREGISTRER MENU SIMPLE
     ===================================================== */
 
-    function obtenirFavoris() {
+    function enregistrerMenuSimple() {
 
-      try {
+      if (
+        menuActuel.length === 0
+      ) {
 
-        return JSON.parse(
-          localStorage.getItem("favoris") || "[]"
-        );
-
-      } catch {
-
-        return [];
-
-      }
-
-    }
-
-
-    function enregistrerFavoris(favoris) {
-
-      localStorage.setItem(
-        "favoris",
-        JSON.stringify(favoris)
-      );
-
-    }
-
-
-    function toggleFavori(id, bouton) {
-
-      let favoris =
-        obtenirFavoris();
-
-
-      if (favoris.includes(id)) {
-
-        favoris =
-          favoris.filter(
-            favori => favori !== id
-          );
-
-        bouton.classList.remove("active");
-
-        bouton.textContent =
-          "♡ Favori";
-
-      } else {
-
-        favoris.push(id);
-
-        bouton.classList.add("active");
-
-        bouton.textContent =
-          "♥ Favori";
-
-      }
-
-
-      enregistrerFavoris(favoris);
-
-    }
-
-
-    /* =====================================================
-       ENREGISTRER LE MENU
-    ===================================================== */
-
-    function enregistrerMenu() {
-
-      if (!menuActuel.length) {
         return;
+
       }
 
 
-      const menusSauvegardes =
+      const menus =
         JSON.parse(
-          localStorage.getItem("menusSauvegardes") || "[]"
+          localStorage.getItem(
+            "menusSauvegardes"
+          ) || "[]"
         );
 
 
-      const nouveauMenu = {
+      menus.unshift({
+
+        id:
+          "MENU-" +
+          Date.now(),
 
         date:
           new Date().toISOString(),
+
+        type:
+          "repas",
 
         repas:
           repasSelectionne,
@@ -1591,24 +2067,21 @@
             recette => recette.id
           )
 
-      };
-
-
-      menusSauvegardes.unshift(
-        nouveauMenu
-      );
+      });
 
 
       localStorage.setItem(
         "menusSauvegardes",
         JSON.stringify(
-          menusSauvegardes.slice(0, 20)
+          menus.slice(0, 50)
         )
       );
 
 
       const bouton =
-        document.getElementById("saveMenuButton");
+        document.getElementById(
+          "saveSingleMenu"
+        );
 
 
       bouton.textContent =
@@ -1618,7 +2091,7 @@
       setTimeout(() => {
 
         bouton.textContent =
-          "💚 Enregistrer";
+          "💚 Enregistrer mon menu";
 
       }, 1800);
 
@@ -1626,14 +2099,416 @@
 
 
     /* =====================================================
-       NOUVEAU MENU
+       PLANNING SEMAINE
     ===================================================== */
 
-    function nouveauMenu() {
+    function chargerPlanning() {
 
-      menuActuel = [];
+      try {
 
-      document.getElementById("resultat").style.display =
+        const sauvegarde =
+          JSON.parse(
+            localStorage.getItem(
+              "planningSemaine"
+            ) || "{}"
+          );
+
+
+        return sauvegarde;
+
+      } catch {
+
+        return {};
+
+      }
+
+    }
+
+
+    function sauvegarderPlanning() {
+
+      localStorage.setItem(
+        "planningSemaine",
+        JSON.stringify(
+          planningSemaine
+        )
+      );
+
+    }
+
+
+    /* =====================================================
+       AFFICHER SEMAINE
+    ===================================================== */
+
+    function afficherSemaine() {
+
+      const container =
+        document.getElementById(
+          "weekGrid"
+        );
+
+
+      container.innerHTML = "";
+
+
+      jours.forEach(jour => {
+
+        const carte =
+          document.createElement(
+            "div"
+          );
+
+        carte.className =
+          "day-card";
+
+
+        const midi =
+          planningSemaine[
+            jour.id
+          ]?.dejeuner;
+
+
+        const soir =
+          planningSemaine[
+            jour.id
+          ]?.diner;
+
+
+        carte.innerHTML = `
+
+          <div class="day-header">
+            ${jour.nom}
+          </div>
+
+          <div class="meal-slot">
+
+            <div class="meal-slot-title">
+              🥗 Déjeuner
+            </div>
+
+            ${
+              midi
+                ? `
+                  <div class="week-recipe">
+
+                    ${midi.nom}
+
+                    <button
+                      onclick="retirerRepasSemaine(
+                        '${jour.id}',
+                        'dejeuner'
+                      )"
+                    >
+                      ×
+                    </button>
+
+                    <div style="clear:both;"></div>
+
+                  </div>
+                `
+                : `
+                  <button
+                    class="add-slot"
+                    onclick="ouvrirChoixSemaine(
+                      '${jour.id}',
+                      'dejeuner'
+                    )"
+                  >
+                    + Ajouter un repas
+                  </button>
+                `
+            }
+
+          </div>
+
+
+          <div class="meal-slot">
+
+            <div class="meal-slot-title">
+              🌙 Dîner
+            </div>
+
+            ${
+              soir
+                ? `
+                  <div class="week-recipe">
+
+                    ${soir.nom}
+
+                    <button
+                      onclick="retirerRepasSemaine(
+                        '${jour.id}',
+                        'diner'
+                      )"
+                    >
+                      ×
+                    </button>
+
+                    <div style="clear:both;"></div>
+
+                  </div>
+                `
+                : `
+                  <button
+                    class="add-slot"
+                    onclick="ouvrirChoixSemaine(
+                      '${jour.id}',
+                      'diner'
+                    )"
+                  >
+                    + Ajouter un repas
+                  </button>
+                `
+            }
+
+          </div>
+
+        `;
+
+
+        container.appendChild(
+          carte
+        );
+
+      });
+
+    }
+
+
+    /* =====================================================
+       OUVRIR CHOIX SEMAINE
+    ===================================================== */
+
+    function ouvrirChoixSemaine(
+      jour,
+      repas
+    ) {
+
+      jourSelectionne =
+        jour;
+
+      repasSemaineSelectionne =
+        repas;
+
+
+      document.querySelectorAll(
+        ".chooser-meal"
+      ).forEach(button => {
+
+        button.classList.remove(
+          "selected"
+        );
+
+      });
+
+
+      document.getElementById(
+        "weekChooser"
+      ).style.display =
+        "block";
+
+
+      document.getElementById(
+        "weekChooser"
+      ).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+
+      afficherChoixRecettesSemaine();
+
+    }
+
+
+    /* =====================================================
+       CHOIX DU TYPE DE REPAS SEMAINE
+    ===================================================== */
+
+    document.querySelectorAll(
+      ".chooser-meal"
+    ).forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          document.querySelectorAll(
+            ".chooser-meal"
+          ).forEach(item => {
+
+            item.classList.remove(
+              "selected"
+            );
+
+          });
+
+
+          button.classList.add(
+            "selected"
+          );
+
+
+          repasSemaineSelectionne =
+            normaliserRepas(
+              button.dataset.meal
+            );
+
+
+          afficherChoixRecettesSemaine();
+
+        }
+      );
+
+    });
+
+
+    /* =====================================================
+       PROPOSITIONS POUR LA SEMAINE
+    ===================================================== */
+
+    function afficherChoixRecettesSemaine() {
+
+      const container =
+        document.getElementById(
+          "weekRecipeChoices"
+        );
+
+
+      if (
+        !repasSemaineSelectionne
+      ) {
+
+        container.innerHTML = `
+          <div class="hint">
+            👆 Choisissez d'abord le moment du repas.
+          </div>
+        `;
+
+        return;
+
+      }
+
+
+      const resultats =
+        trouverRecettes(
+          repasSemaineSelectionne,
+          []
+        );
+
+
+      container.innerHTML = "";
+
+
+      if (
+        resultats.length === 0
+      ) {
+
+        container.innerHTML = `
+          <div class="hint">
+            😕 Aucune recette trouvée pour ce moment.
+          </div>
+        `;
+
+        return;
+
+      }
+
+
+      const titres =
+        resultats.slice(0, 10);
+
+
+      titres.forEach(recette => {
+
+        const bouton =
+          document.createElement(
+            "button"
+          );
+
+        bouton.className =
+          "chooser-button";
+
+
+        bouton.textContent =
+          "➕ " +
+          recette.nom;
+
+
+        bouton.addEventListener(
+          "click",
+          () => {
+
+            ajouterRecetteSemaine(
+              recette
+            );
+
+          }
+        );
+
+
+        container.appendChild(
+          bouton
+        );
+
+      });
+
+    }
+
+
+    /* =====================================================
+       AJOUTER RECETTE A LA SEMAINE
+    ===================================================== */
+
+    function ajouterRecetteSemaine(
+      recette
+    ) {
+
+      if (
+        !jourSelectionne ||
+        !repasSemaineSelectionne
+      ) {
+        return;
+      }
+
+
+      if (
+        !planningSemaine[
+          jourSelectionne
+        ]
+      ) {
+
+        planningSemaine[
+          jourSelectionne
+        ] = {};
+
+      }
+
+
+      planningSemaine[
+        jourSelectionne
+      ][
+        repasSemaineSelectionne
+      ] = {
+
+        id:
+          recette.id,
+
+        nom:
+          recette.nom
+
+      };
+
+
+      sauvegarderPlanning();
+
+      afficherSemaine();
+
+
+      document.getElementById(
+        "weekChooser"
+      ).style.display =
         "none";
 
 
@@ -1646,16 +2521,88 @@
 
 
     /* =====================================================
+       RETIRER REPAS SEMAINE
+    ===================================================== */
+
+    function retirerRepasSemaine(
+      jour,
+      repas
+    ) {
+
+      if (
+        planningSemaine[jour]
+      ) {
+
+        delete planningSemaine[
+          jour
+        ][repas];
+
+      }
+
+
+      sauvegarderPlanning();
+
+      afficherSemaine();
+
+    }
+
+
+    /* =====================================================
+       ENREGISTRER SEMAINE
+    ===================================================== */
+
+    function enregistrerSemaine() {
+
+      sauvegarderPlanning();
+
+
+      const bouton =
+        document.getElementById(
+          "saveWeek"
+        );
+
+
+      bouton.textContent =
+        "✓ Semaine enregistrée";
+
+
+      setTimeout(() => {
+
+        bouton.textContent =
+          "💚 Enregistrer ma semaine";
+
+      }, 1800);
+
+    }
+
+
+    /* =====================================================
+       COURSES
+    ===================================================== */
+
+    function preparerCourses() {
+
+      sauvegarderPlanning();
+
+      window.location.href =
+        "courses.html";
+
+    }
+
+
+    /* =====================================================
        MESSAGES
     ===================================================== */
 
-    function afficherMessage(titre, texte) {
-
-      const section =
-        document.getElementById("messageSection");
+    function afficherMessage(
+      titre,
+      texte
+    ) {
 
       const message =
-        document.getElementById("message");
+        document.getElementById(
+          "message"
+        );
 
 
       message.innerHTML = `
@@ -1664,151 +2611,282 @@
       `;
 
 
-      section.style.display = "block";
+      message.style.display =
+        "block";
+
+
+      message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
 
     }
 
 
     function cacherMessage() {
 
-      document.getElementById("messageSection")
-        .style.display = "none";
+      document.getElementById(
+        "message"
+      ).style.display =
+        "none";
 
     }
+
+
+    /* =====================================================
+       MODE PETITE ASSIETTE
+    ===================================================== */
+
+    document.getElementById(
+      "singleMode"
+    ).addEventListener(
+      "click",
+      () => {
+
+        modeActuel =
+          "single";
+
+
+        document.getElementById(
+          "singleMode"
+        ).classList.add(
+          "active"
+        );
+
+
+        document.getElementById(
+          "weekMode"
+        ).classList.remove(
+          "active"
+        );
+
+
+        document.getElementById(
+          "singleModeContent"
+        ).style.display =
+          "block";
+
+
+        document.getElementById(
+          "weekModeContent"
+        ).style.display =
+          "none";
+
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+    );
+
+
+    /* =====================================================
+       MODE SEMAINE
+    ===================================================== */
+
+    document.getElementById(
+      "weekMode"
+    ).addEventListener(
+      "click",
+      () => {
+
+        modeActuel =
+          "week";
+
+
+        document.getElementById(
+          "weekMode"
+        ).classList.add(
+          "active"
+        );
+
+
+        document.getElementById(
+          "singleMode"
+        ).classList.remove(
+          "active"
+        );
+
+
+        document.getElementById(
+          "singleModeContent"
+        ).style.display =
+          "none";
+
+
+        document.getElementById(
+          "weekModeContent"
+        ).style.display =
+          "block";
+
+
+        afficherSemaine();
+
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+    );
 
 
     /* =====================================================
        SELECTION REPAS
     ===================================================== */
 
-    document.querySelectorAll(".meal-choice")
-      .forEach(bouton => {
+    document.querySelectorAll(
+      ".meal-choice"
+    ).forEach(button => {
 
-        bouton.addEventListener(
-          "click",
-          () => {
+      button.addEventListener(
+        "click",
+        () => {
 
-            document.querySelectorAll(".meal-choice")
-              .forEach(item =>
-                item.classList.remove("selected")
-              );
+          document.querySelectorAll(
+            ".meal-choice"
+          ).forEach(item => {
+
+            item.classList.remove(
+              "selected"
+            );
+
+          });
 
 
-            bouton.classList.add("selected");
+          button.classList.add(
+            "selected"
+          );
 
 
-            repasSelectionne =
-              normaliserRepas(
-                bouton.dataset.meal
-              );
+          repasSelectionne =
+            normaliserRepas(
+              button.dataset.meal
+            );
 
-          }
-        );
+        }
+      );
 
-      });
+    });
 
 
     /* =====================================================
        SELECTION ENVIES
     ===================================================== */
 
-    document.querySelectorAll(".envie-choice")
-      .forEach(bouton => {
+    document.querySelectorAll(
+      ".envie-choice"
+    ).forEach(button => {
 
-        bouton.addEventListener(
-          "click",
-          () => {
+      button.addEventListener(
+        "click",
+        () => {
 
-            const envie =
-              normaliserEnvie(
-                bouton.dataset.envie
+          const envie =
+            normaliserEnvie(
+              button.dataset.envie
+            );
+
+
+          if (
+            enviesSelectionnees.includes(
+              envie
+            )
+          ) {
+
+            enviesSelectionnees =
+              enviesSelectionnees.filter(
+                item =>
+                  item !== envie
               );
 
 
-            if (
-              enviesSelectionnees.includes(envie)
-            ) {
+            button.classList.remove(
+              "selected"
+            );
 
-              enviesSelectionnees =
-                enviesSelectionnees.filter(
-                  item => item !== envie
-                );
+          } else {
 
-              bouton.classList.remove("selected");
+            enviesSelectionnees.push(
+              envie
+            );
 
-            } else {
 
-              enviesSelectionnees.push(envie);
-
-              bouton.classList.add("selected");
-
-            }
+            button.classList.add(
+              "selected"
+            );
 
           }
-        );
 
-      });
+        }
+      );
+
+    });
 
 
     /* =====================================================
-       NOMBRE DE RECETTES
+       VOIR PROPOSITIONS
     ===================================================== */
 
-    document.querySelectorAll(".portion-choice")
-      .forEach(bouton => {
+    document.getElementById(
+      "showPropositions"
+    ).addEventListener(
+      "click",
+      () => {
 
-        bouton.addEventListener(
-          "click",
-          () => {
+        cacherMessage();
 
-            document.querySelectorAll(".portion-choice")
-              .forEach(item =>
-                item.classList.remove("selected")
-              );
+        afficherPropositions();
 
-
-            bouton.classList.add("selected");
-
-
-            nombreRecettes =
-              Number(
-                bouton.dataset.count
-              );
-
-          }
-        );
-
-      });
+      }
+    );
 
 
     /* =====================================================
-       BOUTONS
+       ENREGISTRER MENU SIMPLE
     ===================================================== */
 
-    document.getElementById("generateButton")
-      .addEventListener(
-        "click",
-        genererMenu
-      );
+    document.getElementById(
+      "saveSingleMenu"
+    ).addEventListener(
+      "click",
+      enregistrerMenuSimple
+    );
 
 
-    document.getElementById("saveMenuButton")
-      .addEventListener(
-        "click",
-        enregistrerMenu
-      );
+    /* =====================================================
+       SEMAINE
+    ===================================================== */
+
+    document.getElementById(
+      "saveWeek"
+    ).addEventListener(
+      "click",
+      enregistrerSemaine
+    );
 
 
-    document.getElementById("newMenuButton")
-      .addEventListener(
-        "click",
-        nouveauMenu
-      );
+    document.getElementById(
+      "goToCourses"
+    ).addEventListener(
+      "click",
+      preparerCourses
+    );
 
 
     /* =====================================================
        INITIALISATION
     ===================================================== */
+
+    document.getElementById(
+      "singleMode"
+    ).classList.add(
+      "active"
+    );
+
 
     chargerRecettes();
 
