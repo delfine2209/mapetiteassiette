@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -25,326 +26,317 @@
     body {
       font-family: Arial, sans-serif;
       background: #fffaf5;
-      color: #4d4038;
+      color: #3d4038;
       padding-bottom: 90px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #f6d9c8, #dce8d5);
-      padding: 30px 20px;
-      border-radius: 0 0 30px 30px;
+      background: linear-gradient(135deg, #f7d9c4, #dce8d5);
+      padding: 28px 18px 24px;
+      text-align: center;
+      border-radius: 0 0 28px 28px;
     }
 
-    .retour {
-      display: inline-block;
-      text-decoration: none;
-      color: #5b7153;
-      font-weight: bold;
-      margin-bottom: 18px;
+    .hero .emoji {
+      font-size: 42px;
+      margin-bottom: 8px;
     }
 
     .hero h1 {
-      font-size: 28px;
+      font-size: 27px;
+      color: #496044;
       margin-bottom: 8px;
     }
 
     .hero p {
-      line-height: 1.5;
       font-size: 15px;
+      line-height: 1.5;
     }
 
-    .contenu {
-      max-width: 700px;
+    .container {
+      max-width: 760px;
       margin: auto;
-      padding: 20px 16px;
+      padding: 18px 15px;
+    }
+
+    .section {
+      background: white;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      font-size: 19px;
+      color: #496044;
+      margin-bottom: 14px;
     }
 
     .modes {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-bottom: 25px;
     }
 
     .mode {
-      border: 2px solid #e4d7ce;
-      background: white;
-      border-radius: 20px;
-      padding: 18px 12px;
+      border: 2px solid #e4dfd8;
+      border-radius: 18px;
+      padding: 16px 10px;
       text-align: center;
       cursor: pointer;
-      transition: .2s;
+      background: #fff;
+      transition: 0.2s;
     }
 
-    .mode.active {
-      border-color: #7c9b6d;
-      background: #eef5e9;
+    .mode:hover {
+      transform: translateY(-2px);
+    }
+
+    .mode.selected {
+      border-color: #6d9565;
+      background: #edf6ea;
     }
 
     .mode .emoji {
       font-size: 30px;
-      margin-bottom: 8px;
+      display: block;
+      margin-bottom: 6px;
     }
 
     .mode strong {
       display: block;
-      margin-bottom: 5px;
+      color: #496044;
     }
 
-    .mode span {
-      font-size: 13px;
-      line-height: 1.4;
-      color: #76685f;
-    }
-
-    .etape {
-      background: white;
-      border-radius: 22px;
-      padding: 20px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 15px rgba(80, 60, 45, .06);
-    }
-
-    .etape h2 {
-      font-size: 18px;
-      margin-bottom: 14px;
-    }
-
-    .boutons {
+    .repas-buttons,
+    .envies {
       display: flex;
       flex-wrap: wrap;
       gap: 9px;
     }
 
-    .choix {
-      border: 1px solid #ded3cb;
-      background: #fffdfb;
-      color: #5a4d45;
-      padding: 11px 14px;
-      border-radius: 18px;
+    .choice {
+      border: 1px solid #ddd6cd;
+      background: #fffaf7;
+      color: #4c5149;
+      padding: 10px 13px;
+      border-radius: 30px;
       cursor: pointer;
       font-size: 14px;
     }
 
-    .choix.active {
-      background: #dce8d5;
-      border-color: #7c9b6d;
-      color: #405238;
+    .choice.selected {
+      background: #dcebd7;
+      border-color: #6d9565;
+      color: #3d6038;
       font-weight: bold;
     }
 
-    .principal {
+    .btn {
       width: 100%;
       border: none;
-      background: #5f7c55;
-      color: white;
-      padding: 15px;
-      border-radius: 18px;
+      border-radius: 16px;
+      padding: 14px;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      background: #6d9565;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #f1e9df;
+      color: #59604f;
+    }
+
+    .btn-save {
+      background: #52784d;
+      color: white;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .info {
+      background: #f7f2ec;
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .result-count {
+      color: #68715f;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .recipe-card {
+      border: 1px solid #e5dfd7;
+      border-radius: 17px;
+      padding: 14px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+
+    .recipe-card.selected {
+      border: 2px solid #6d9565;
+      background: #f2f8ef;
+    }
+
+    .recipe-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .recipe-name {
+      color: #496044;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.3;
+    }
+
+    .recipe-meta {
+      color: #777;
+      font-size: 12px;
       margin-top: 5px;
     }
 
-    .principal:hover {
-      background: #4f6948;
-    }
-
-    .propositions {
-      display: grid;
-      gap: 12px;
-      margin-top: 15px;
-    }
-
-    .recette {
-      background: #fffdfb;
-      border: 1px solid #e5dcd5;
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .recette h3 {
-      font-size: 17px;
-      margin-bottom: 7px;
-    }
-
-    .meta {
-      color: #776a61;
-      font-size: 13px;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-
-    .actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .secondaire {
-      border: 1px solid #7c9b6d;
-      background: #eef5e9;
-      color: #506448;
-      padding: 10px 13px;
-      border-radius: 15px;
+    .add-btn {
+      min-width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      background: #6d9565;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
       cursor: pointer;
+      flex-shrink: 0;
+      transition: 0.2s;
+    }
+
+    .add-btn.selected {
+      background: #3f8a50;
+      font-size: 25px;
+    }
+
+    .add-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .selected-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .selected-title span {
+      background: #e4f1df;
+      color: #52784d;
+      border-radius: 20px;
+      padding: 5px 9px;
+      font-size: 12px;
       font-weight: bold;
     }
 
-    .mon-menu {
-      margin-top: 20px;
-    }
-
-    .menu-item {
+    .selected-recipe {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 10px;
-      background: #eef5e9;
-      border-radius: 15px;
-      padding: 12px 14px;
-      margin-bottom: 8px;
-    }
-
-    .menu-item strong {
-      font-size: 14px;
-    }
-
-    .supprimer {
-      border: none;
-      background: transparent;
-      color: #b45d50;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    .vide {
-      color: #8b7d74;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-    }
-
-    .message {
-      display: none;
-      background: #e8f2e2;
-      border: 1px solid #b9d0ae;
-      color: #496040;
-      border-radius: 18px;
-      padding: 15px;
-      margin-bottom: 18px;
-      text-align: center;
-      line-height: 1.5;
-    }
-
-    .message button {
-      margin-top: 10px;
-      border: none;
-      background: #5f7c55;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 14px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .semaine {
-      display: none;
-    }
-
-    .jour {
-      border: 1px solid #e3d9d1;
-      border-radius: 18px;
-      margin-bottom: 12px;
-      overflow: hidden;
-      background: white;
-    }
-
-    .jour h3 {
-      background: #eef5e9;
-      padding: 12px 14px;
-      font-size: 16px;
-    }
-
-    .creneau {
-      padding: 13px 14px;
-      border-top: 1px solid #eee5de;
-    }
-
-    .creneau strong {
-      display: block;
+      background: #f7f4ef;
+      border-radius: 12px;
+      padding: 10px 12px;
       margin-bottom: 7px;
       font-size: 14px;
     }
 
-    .creneau button {
-      border: 1px dashed #9db58f;
-      background: #fffdfb;
-      color: #5b7153;
-      padding: 8px 11px;
-      border-radius: 13px;
-      cursor: pointer;
-    }
-
-    .repas-semaine {
-      background: #f8f3ef;
-      border-radius: 13px;
-      padding: 10px;
-      font-size: 14px;
-    }
-
-    .repas-semaine button {
+    .remove-btn {
       border: none;
       background: transparent;
-      padding: 0;
-      margin-top: 6px;
-      color: #a35d51;
+      color: #b75a55;
+      cursor: pointer;
+      font-size: 13px;
     }
 
-    .selecteur-semaine {
-      margin-top: 10px;
-      padding: 12px;
-      background: #eef5e9;
-      border-radius: 14px;
-    }
-
-    .selecteur-semaine select {
-      width: 100%;
-      padding: 11px;
-      border: 1px solid #d6c9c0;
-      border-radius: 12px;
-      background: white;
-      font-size: 14px;
-    }
-
-    .nav {
+    .message {
       position: fixed;
-      bottom: 0;
+      left: 15px;
+      right: 15px;
+      bottom: 82px;
+      z-index: 50;
+      background: #52784d;
+      color: white;
+      padding: 14px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.18);
+      font-weight: bold;
+    }
+
+    .week-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .day {
+      background: #faf7f2;
+      border-radius: 15px;
+      padding: 12px;
+    }
+
+    .day h3 {
+      color: #496044;
+      margin-bottom: 8px;
+    }
+
+    .meal-select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd6cd;
+      border-radius: 10px;
+      background: white;
+      margin-bottom: 7px;
+    }
+
+    .bottom-nav {
+      position: fixed;
       left: 0;
       right: 0;
-      height: 72px;
+      bottom: 0;
       background: white;
-      border-top: 1px solid #e5ddd7;
+      border-top: 1px solid #e6e0d8;
       display: flex;
       justify-content: space-around;
-      align-items: center;
-      z-index: 20;
+      padding: 9px 5px;
+      z-index: 40;
     }
 
-    .nav a {
+    .bottom-nav a {
       text-decoration: none;
-      color: #6c625c;
-      font-size: 12px;
+      color: #68705f;
+      font-size: 11px;
       text-align: center;
     }
 
-    .nav a span {
+    .bottom-nav span {
       display: block;
       font-size: 22px;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 480px) {
       .modes {
         grid-template-columns: 1fr;
       }
@@ -355,219 +347,219 @@
 <body>
 
   <header class="hero">
-
-    <a class="retour" href="../../index.html">
-      ← Accueil
-    </a>
-
-    <h1>🍽️ Composer mon menu</h1>
-
+    <div class="emoji">🍽️</div>
+    <h1>Composer mon menu</h1>
     <p>
       Organisez vos repas et composez votre petite assiette
       selon vos envies.
     </p>
-
   </header>
 
+  <main class="container">
 
-  <main class="contenu">
+    <!-- CHOIX DU MODE -->
+    <section class="section">
+      <h2>Que souhaitez-vous préparer ?</h2>
 
-    <div id="messageEnregistrement" class="message"></div>
+      <div class="modes">
 
+        <div
+          class="mode selected"
+          id="mode-assiette"
+          onclick="choisirMode('assiette')"
+        >
+          <span class="emoji">🍽️</span>
+          <strong>Une petite assiette</strong>
+          <small>Pour maintenant</small>
+        </div>
 
-    <!-- MODES -->
-
-    <div class="modes">
-
-      <div
-        class="mode active"
-        id="modeAssiette"
-        onclick="choisirMode('assiette')"
-      >
-
-        <div class="emoji">🍽️</div>
-
-        <strong>Une petite assiette</strong>
-
-        <span>
-          Composez un repas selon vos envies.
-        </span>
-
-      </div>
-
-
-      <div
-        class="mode"
-        id="modeSemaine"
-        onclick="choisirMode('semaine')"
-      >
-
-        <div class="emoji">📅</div>
-
-        <strong>Ma semaine</strong>
-
-        <span>
-          Organisez vos repas du lundi au dimanche.
-        </span>
+        <div
+          class="mode"
+          id="mode-semaine"
+          onclick="choisirMode('semaine')"
+        >
+          <span class="emoji">📅</span>
+          <strong>Ma semaine</strong>
+          <small>Organiser mes repas</small>
+        </div>
 
       </div>
+    </section>
 
-    </div>
 
+    <!-- MODE ASSIETTE -->
+    <div id="assietteMode">
 
-    <!-- ============================= -->
-    <!-- UNE PETITE ASSIETTE -->
-    <!-- ============================= -->
+      <section class="section">
 
-    <section id="assietteSection">
+        <h2>1. Pour quel repas ?</h2>
 
-      <div class="etape">
+        <div class="repas-buttons">
 
-        <h2>1️⃣ Quand souhaitez-vous manger ?</h2>
-
-        <div class="boutons">
-
-          <button class="choix" data-repas="petit-dejeuner">
-            🌅 Petit-déjeuner
+          <button class="choice" data-repas="petit-dejeuner">
+            ☕ Petit-déjeuner
           </button>
 
-          <button class="choix" data-repas="dejeuner">
+          <button class="choice" data-repas="dejeuner">
             🥗 Déjeuner
           </button>
 
-          <button class="choix" data-repas="diner">
+          <button class="choice" data-repas="diner">
             🍲 Dîner
           </button>
 
-          <button class="choix" data-repas="collation">
+          <button class="choice" data-repas="collation">
             🍎 Collation
           </button>
 
-          <button class="choix" data-repas="petite-douceur">
+          <button class="choice" data-repas="petite-douceur">
             🍰 Petite douceur
           </button>
 
-          <button class="choix" data-repas="peu-importe">
+          <button class="choice" data-repas="peu-importe">
             ✨ Peu importe
           </button>
 
         </div>
 
-      </div>
+      </section>
 
 
-      <div class="etape">
+      <section class="section">
 
-        <h2>2️⃣ Qu'est-ce qui vous ferait envie ?</h2>
+        <h2>2. Quelles sont vos envies ?</h2>
 
-        <div class="boutons">
+        <div class="envies">
 
-          <button class="choix" data-envie="leger">
-            🥗 Léger
+          <button class="choice" data-envie="leger">
+            🌿 Léger
           </button>
 
-          <button class="choix" data-envie="complet">
+          <button class="choice" data-envie="complet">
             🍽️ Complet
           </button>
 
-          <button class="choix" data-envie="proteine">
-            💪 Protéiné
-          </button>
-
-          <button class="choix" data-envie="rapide">
+          <button class="choice" data-envie="rapide">
             ⚡ Rapide
           </button>
 
-          <button class="choix" data-envie="vegetarien">
-            🥕 Végétarien
-          </button>
-
-          <button class="choix" data-envie="reconfort">
-            💚 Réconfort
-          </button>
-
-          <button class="choix" data-envie="sucre">
+          <button class="choice" data-envie="sucre">
             🍰 Sucré
           </button>
 
-          <button class="choix" data-envie="salade">
+          <button class="choice" data-envie="vegetarien">
+            🥕 Végétarien
+          </button>
+
+          <button class="choice" data-envie="salade">
             🥗 Salade
+          </button>
+
+          <button class="choice" data-envie="proteine">
+            💪 Protéiné
+          </button>
+
+          <button class="choice" data-envie="reconfort">
+            ❤️ Réconfortant
           </button>
 
         </div>
 
-      </div>
+        <button
+          class="btn btn-primary"
+          onclick="chercherRecettes()"
+        >
+          🔎 Voir mes propositions
+        </button>
+
+      </section>
 
 
-      <button
-        class="principal"
-        onclick="afficherPropositions()"
+      <!-- PROPOSITIONS -->
+      <section
+        class="section hidden"
+        id="propositionsSection"
       >
-        ✨ Voir mes propositions
-      </button>
+
+        <h2>💡 Mes propositions</h2>
+
+        <div
+          class="result-count"
+          id="resultCount"
+        ></div>
+
+        <div id="propositions"></div>
+
+      </section>
 
 
-      <div class="etape" id="propositionsSection" style="display:none;">
+      <!-- MON MENU -->
+      <section
+        class="section hidden"
+        id="monMenuSection"
+      >
 
-        <h2>3️⃣ Mes propositions</h2>
+        <div class="selected-title">
+          <h2>💚 Mon menu</h2>
+          <span id="nombreSelection">0 recette</span>
+        </div>
 
-        <div id="propositions" class="propositions"></div>
-
-      </div>
-
-
-      <div class="etape mon-menu">
-
-        <h2>4️⃣ Mon menu</h2>
-
-        <div id="monMenu"></div>
+        <div id="monMenuListe"></div>
 
         <button
-          id="enregistrerMenu"
-          class="principal"
+          class="btn btn-save"
           onclick="enregistrerMenu()"
-          style="display:none;"
         >
           💚 Enregistrer mon menu
         </button>
 
-      </div>
+      </section>
 
-    </section>
+    </div>
 
 
-    <!-- ============================= -->
-    <!-- MA SEMAINE -->
-    <!-- ============================= -->
+    <!-- MODE SEMAINE -->
+    <div
+      id="semaineMode"
+      class="hidden"
+    >
 
-    <section id="semaineSection" class="semaine">
+      <section class="section">
 
-      <div class="etape">
+        <h2>📅 Organiser ma semaine</h2>
 
-        <h2>📅 Organisez votre semaine</h2>
+        <div class="info">
+          Choisissez une recette pour chaque déjeuner et dîner.
+          Vous pourrez ensuite retrouver votre planning dans
+          <strong>Mes Menus</strong> et générer votre liste de courses.
+        </div>
 
-        <p style="line-height:1.5; margin-bottom:15px;">
-          Choisissez une recette pour votre déjeuner et votre dîner.
-          Vous pouvez laisser certains repas vides.
-        </p>
-
-        <div id="planning"></div>
+        <div
+          class="week-grid"
+          id="weekGrid"
+        ></div>
 
         <button
-          class="principal"
+          class="btn btn-save"
           onclick="enregistrerSemaine()"
         >
           💚 Enregistrer ma semaine
         </button>
 
-      </div>
+      </section>
 
-    </section>
+    </div>
 
   </main>
 
 
-  <nav class="nav">
+  <div
+    id="message"
+    class="message hidden"
+  ></div>
+
+
+  <nav class="bottom-nav">
 
     <a href="../../index.html">
       <span>🏠</span>
@@ -575,18 +567,18 @@
     </a>
 
     <a href="Recettes.html">
-      <span>🍽️</span>
+      <span>🍴</span>
       Recettes
     </a>
 
     <a href="MesMenus.html">
-      <span>📅</span>
-      Mes menus
+      <span>📋</span>
+      Mes Menus
     </a>
 
-    <a href="Favoris.html">
-      <span>❤️</span>
-      Favoris
+    <a href="courses.html">
+      <span>🛒</span>
+      Mes Courses
     </a>
 
   </nav>
@@ -594,496 +586,1422 @@
 
 <script>
 
-let recettes = [];
+  let recettes = [];
 
-let modeActuel = "assiette";
+  let modeActuel = "assiette";
 
-let repasSelectionne = "";
+  let repasSelectionne = "peu-importe";
 
-let enviesSelectionnees = [];
+  let enviesSelectionnees = [];
 
-let monMenu = [];
+  let monMenu = [];
 
-let planningSemaine = {};
+  let planningSemaine = {
+    lundi: {},
+    mardi: {},
+    mercredi: {},
+    jeudi: {},
+    vendredi: {},
+    samedi: {},
+    dimanche: {}
+  };
 
-const jours = [
-  "lundi",
-  "mardi",
-  "mercredi",
-  "jeudi",
-  "vendredi",
-  "samedi",
-  "dimanche"
-];
 
+  /* =====================================================
+     CHARGEMENT
+  ===================================================== */
 
-function nettoyerTexte(valeur) {
+  fetch("../recettes.json")
+    .then(response => {
 
-  return String(valeur || "")
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[’']/g, "")
-    .replace(/[-_/]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+      if (!response.ok) {
+        throw new Error("Impossible de charger recettes.json");
+      }
 
-}
+      return response.json();
 
+    })
+    .then(data => {
 
-function normaliserEnvie(valeur) {
+      recettes = data;
 
-  const texte = nettoyerTexte(valeur);
+      construireSemaine();
 
-  if (!texte) return "";
+    })
+    .catch(error => {
 
-  if (
-    texte === "reconfort" ||
-    texte === "reconfortant" ||
-    texte === "reconfortante" ||
-    texte === "plat reconfortant" ||
-    texte === "plats reconfortants"
-  ) return "reconfort";
-
-  if (
-    texte === "sucre" ||
-    texte === "sucree" ||
-    texte === "dessert" ||
-    texte === "petite douceur" ||
-    texte === "douceur"
-  ) return "sucre";
-
-  if (
-    texte === "vegetarien" ||
-    texte === "vegetarienne"
-  ) return "vegetarien";
+      console.error(error);
 
-  return texte;
-}
-
-
-function normaliserRepas(valeur) {
-
-  const texte = nettoyerTexte(valeur);
-
-  if (
-    texte.includes("petit dejeuner") ||
-    texte.includes("breakfast")
-  ) return "petit-dejeuner";
-
-  if (
-    texte === "dejeuner" ||
-    texte.includes("midi")
-  ) return "dejeuner";
-
-  if (
-    texte === "diner" ||
-    texte.includes("soir")
-  ) return "diner";
-
-  if (
-    texte.includes("collation") ||
-    texte.includes("gouter") ||
-    texte.includes("encas")
-  ) return "collation";
-
-  if (
-    texte.includes("petite douceur") ||
-    texte.includes("dessert") ||
-    texte.includes("douceur")
-  ) return "petite-douceur";
-
-  return texte;
-}
-
-
-function recetteCorrespondRepas(recette, repas) {
-
-  if (!repas || repas === "peu-importe") {
-    return true;
-  }
-
-  const texte = [
-    recette.categorie,
-    recette.type,
-    recette.nom
-  ]
-    .map(nettoyerTexte)
-    .join(" ");
-
-  const demande = normaliserRepas(repas);
-
-  if (demande === "petit-dejeuner") {
-    return (
-      texte.includes("petit dejeuner") ||
-      texte.includes("petit dejeuner") ||
-      texte.includes("breakfast")
-    );
-  }
-
-  if (demande === "dejeuner") {
-    return (
-      texte.includes("dejeuner") ||
-      texte.includes("midi")
-    );
-  }
-
-  if (demande === "diner") {
-    return (
-      texte.includes("diner") ||
-      texte.includes("soir")
-    );
-  }
-
-  if (demande === "collation") {
-    return (
-      texte.includes("collation") ||
-      texte.includes("gouter") ||
-      texte.includes("encas")
-    );
-  }
-
-  if (demande === "petite-douceur") {
-    return (
-      texte.includes("petite douceur") ||
-      texte.includes("dessert") ||
-      texte.includes("douceur")
-    );
-  }
-
-  return true;
-}
-
-
-function recetteCorrespondEnvie(recette, envie) {
-
-  const demande = normaliserEnvie(envie);
-
-  if (!demande) return true;
-
-
-  const envies = Array.isArray(recette.envies)
-    ? recette.envies.map(normaliserEnvie)
-    : String(recette.envies || "")
-        .split(",")
-        .map(normaliserEnvie);
-
-
-  const texte = [
-    recette.nom,
-    recette.categorie,
-    recette.type
-  ]
-    .map(nettoyerTexte)
-    .join(" ");
-
-
-  if (demande === "rapide") {
-    return Number(recette.temps) <= 20;
-  }
-
-
-  if (demande === "proteine") {
-
-    return (
-      Number(
-        String(recette.proteines || "")
-          .replace(",", ".")
-      ) >= 10
-    );
-
-  }
-
-
-  if (demande === "vegetarien") {
-
-    return (
-      recette.vegetarien === true ||
-      envies.includes("vegetarien") ||
-      texte.includes("vegetarien")
-    );
-
-  }
-
-
-  if (demande === "sucre") {
-
-    return (
-      envies.includes("sucre") ||
-      texte.includes("petite douceur") ||
-      texte.includes("dessert") ||
-      texte.includes("douceur")
-    );
-
-  }
-
-
-  if (demande === "salade") {
-
-    return (
-      envies.includes("salade") ||
-      texte.includes("salade")
-    );
-
-  }
-
-
-  return envies.includes(demande);
-
-}
-
-
-function trouverRecettes(repas, envies) {
-
-  return recettes.filter(function(recette) {
-
-    if (
-      !recetteCorrespondRepas(
-        recette,
-        repas
-      )
-    ) {
-      return false;
-    }
-
-
-    if (
-      envies.length === 0
-    ) {
-      return true;
-    }
-
-
-    return envies.some(function(envie) {
-
-      return recetteCorrespondEnvie(
-        recette,
-        envie
+      afficherMessage(
+        "Impossible de charger les recettes."
       );
+
+    });
+
+
+  /* =====================================================
+     NORMALISATION
+  ===================================================== */
+
+  function nettoyerTexte(valeur) {
+
+    return String(valeur || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[’']/g, "")
+      .replace(/[-_/]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+  }
+
+
+  function normaliserEnvie(valeur) {
+
+    const texte = nettoyerTexte(valeur);
+
+    if (
+      [
+        "reconfort",
+        "reconfortant",
+        "reconfortante",
+        "plat reconfortant",
+        "plats reconfortants"
+      ].includes(texte)
+    ) {
+      return "reconfort";
+    }
+
+    if (
+      [
+        "salade",
+        "salades"
+      ].includes(texte)
+    ) {
+      return "salade";
+    }
+
+    if (
+      [
+        "sucre",
+        "sucree",
+        "dessert",
+        "petite douceur",
+        "douceur",
+        "douceurs"
+      ].includes(texte)
+    ) {
+      return "sucre";
+    }
+
+    if (
+      [
+        "vegetarien",
+        "vegetarienne",
+        "vegetarien",
+        "vegetariennes"
+      ].includes(texte)
+    ) {
+      return "vegetarien";
+    }
+
+    if (
+      [
+        "leger",
+        "legere",
+        "frais",
+        "fraiche"
+      ].includes(texte)
+    ) {
+      return "leger";
+    }
+
+    if (
+      [
+        "rapide",
+        "express"
+      ].includes(texte)
+    ) {
+      return "rapide";
+    }
+
+    if (
+      [
+        "complet",
+        "complete"
+      ].includes(texte)
+    ) {
+      return "complet";
+    }
+
+    if (
+      [
+        "proteine",
+        "proteines",
+        "riche en proteines"
+      ].includes(texte)
+    ) {
+      return "proteine";
+    }
+
+    return texte;
+
+  }
+
+
+  /* =====================================================
+     MODE
+  ===================================================== */
+
+  function choisirMode(mode) {
+
+    modeActuel = mode;
+
+    document
+      .getElementById("mode-assiette")
+      .classList.toggle(
+        "selected",
+        mode === "assiette"
+      );
+
+    document
+      .getElementById("mode-semaine")
+      .classList.toggle(
+        "selected",
+        mode === "semaine"
+      );
+
+    document
+      .getElementById("assietteMode")
+      .classList.toggle(
+        "hidden",
+        mode !== "assiette"
+      );
+
+    document
+      .getElementById("semaineMode")
+      .classList.toggle(
+        "hidden",
+        mode !== "semaine"
+      );
+
+  }
+
+
+  /* =====================================================
+     CHOIX REPAS
+  ===================================================== */
+
+  document.querySelectorAll("[data-repas]").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      document
+        .querySelectorAll("[data-repas]")
+        .forEach(b => b.classList.remove("selected"));
+
+      button.classList.add("selected");
+
+      repasSelectionne =
+        button.dataset.repas;
 
     });
 
   });
 
-}
 
+  /* =====================================================
+     CHOIX ENVIES
+  ===================================================== */
 
-function afficherPropositions() {
+  document.querySelectorAll("[data-envie]").forEach(button => {
 
-  const resultats =
-    trouverRecettes(
-      repasSelectionne,
-      enviesSelectionnees
-    );
+    button.addEventListener("click", () => {
 
-  const zone =
-    document.getElementById(
-      "propositions"
-    );
+      const envie =
+        normaliserEnvie(button.dataset.envie);
 
-  const section =
-    document.getElementById(
-      "propositionsSection"
-    );
+      button.classList.toggle("selected");
 
-  section.style.display = "block";
+      if (
+        enviesSelectionnees.includes(envie)
+      ) {
 
+        enviesSelectionnees =
+          enviesSelectionnees.filter(
+            e => e !== envie
+          );
 
-  if (resultats.length === 0) {
+      } else {
 
-    zone.innerHTML = `
-      <div class="vide">
-        🥄 Aucune recette ne correspond
-        à vos choix pour le moment.
-      </div>
-    `;
+        enviesSelectionnees.push(envie);
 
-    return;
-  }
+      }
 
+    });
 
-  zone.innerHTML =
-    resultats
-      .slice(0, 12)
-      .map(creerCarte)
-      .join("");
-
-}
-
-
-function creerCarte(recette) {
-
-  return `
-
-    <article class="recette">
-
-      <h3>
-        ${recette.nom || "Recette"}
-      </h3>
-
-      <div class="meta">
-
-        ${recette.categorie || ""}
-
-        ${
-          recette.temps
-            ? " · ⏱️ " + recette.temps + " min"
-            : ""
-        }
-
-        ${
-          recette.proteines
-            ? " · 💪 " + recette.proteines + " g"
-            : ""
-        }
-
-      </div>
-
-
-      <div class="actions">
-
-        <button
-          class="secondaire"
-          onclick="voirRecette('${recette.id}')"
-        >
-          Voir la recette
-        </button>
-
-        <button
-          class="secondaire"
-          onclick="ajouterAuMenu('${recette.id}')"
-        >
-          ➕ Ajouter à mon menu
-        </button>
-
-      </div>
-
-    </article>
-
-  `;
-
-}
-
-
-function voirRecette(id) {
-
-  window.location.href =
-    "Recette.html?id=" +
-    encodeURIComponent(id);
-
-}
-
-
-function ajouterAuMenu(id) {
-
-  const recette =
-    recettes.find(
-      r => String(r.id) === String(id)
-    );
-
-  if (!recette) return;
-
-
-  if (
-    monMenu.some(
-      r => String(r.id) === String(id)
-    )
-  ) {
-    return;
-  }
-
-
-  monMenu.push({
-    id: recette.id,
-    nom: recette.nom
   });
 
 
-  afficherMonMenu();
+  /* =====================================================
+     CORRESPONDANCE REPAS
+  ===================================================== */
 
-}
+  function recetteCorrespondRepas(
+    recette,
+    repas
+  ) {
 
+    if (repas === "peu-importe") {
+      return true;
+    }
 
-function afficherMonMenu() {
-
-  const zone =
-    document.getElementById(
-      "monMenu"
+    const texte = nettoyerTexte(
+      [
+        recette.categorie,
+        recette.type,
+        recette.nom
+      ].join(" ")
     );
 
-  const bouton =
-    document.getElementById(
-      "enregistrerMenu"
-    );
+    if (repas === "petit-dejeuner") {
+      return (
+        texte.includes("petit dejeuner") ||
+        texte.includes("breakfast")
+      );
+    }
 
+    if (repas === "dejeuner") {
+      return (
+        texte.includes("dejeuner") ||
+        texte.includes("salade") ||
+        texte.includes("plat")
+      );
+    }
 
-  if (monMenu.length === 0) {
+    if (repas === "diner") {
+      return (
+        texte.includes("diner") ||
+        texte.includes("plat")
+      );
+    }
 
-    zone.innerHTML = `
-      <div class="vide">
-        Ajoutez une ou plusieurs recettes
-        à votre menu.
-      </div>
-    `;
+    if (repas === "collation") {
+      return (
+        texte.includes("collation") ||
+        texte.includes("snack")
+      );
+    }
 
-    bouton.style.display = "none";
+    if (repas === "petite-douceur") {
+      return (
+        texte.includes("petite douceur") ||
+        texte.includes("dessert") ||
+        texte.includes("douceur")
+      );
+    }
 
-    return;
+    return true;
+
   }
 
 
-  zone.innerHTML =
-    monMenu
-      .map(function(recette, index) {
+  /* =====================================================
+     CORRESPONDANCE ENVIE
+  ===================================================== */
+
+  function recetteCorrespondEnvie(
+    recette,
+    envie
+  ) {
+
+    const texte = nettoyerTexte(
+      [
+        recette.nom,
+        recette.categorie,
+        recette.type,
+        ...(Array.isArray(recette.envies)
+          ? recette.envies
+          : [])
+      ].join(" ")
+    );
+
+    if (envie === "rapide") {
+      return Number(recette.temps || 999) <= 20;
+    }
+
+    if (envie === "proteine") {
+
+      const proteines = parseFloat(
+        String(recette.proteines || "")
+          .replace(",", ".")
+      );
+
+      return Number.isFinite(proteines)
+        && proteines >= 10;
+
+    }
+
+    if (envie === "vegetarien") {
+
+      return (
+        recette.vegetarien === true ||
+        texte.includes("vegetarien") ||
+        texte.includes("vegetarienne")
+      );
+
+    }
+
+    if (envie === "sucre") {
+
+      return (
+        texte.includes("sucre") ||
+        texte.includes("dessert") ||
+        texte.includes("douceur") ||
+        texte.includes("gateau") ||
+        texte.includes("crepe")
+      );
+
+    }
+
+    if (envie === "salade") {
+
+      return texte.includes("salade");
+
+    }
+
+    if (Array.isArray(recette.envies)) {
+
+      return recette.envies.some(
+        e => normaliserEnvie(e) === envie
+      );
+
+    }
+
+    return texte.includes(envie);
+
+  }
+
+
+  /* =====================================================
+     RECHERCHE
+  ===================================================== */
+
+  function chercherRecettes() {
+
+    let resultats = recettes.filter(recette => {
+
+      if (
+        !recetteCorrespondRepas(
+          recette,
+          repasSelectionne
+        )
+      ) {
+        return false;
+      }
+
+      if (
+        enviesSelectionnees.length > 0
+      ) {
+
+        const correspond =
+          enviesSelectionnees.some(
+            envie =>
+              recetteCorrespondEnvie(
+                recette,
+                envie
+              )
+          );
+
+        if (!correspond) {
+          return false;
+        }
+
+      }
+
+      return true;
+
+    });
+
+    resultats =
+      resultats.slice(0, 12);
+
+    afficherPropositions(resultats);
+
+  }
+
+
+  /* =====================================================
+     AFFICHAGE PROPOSITIONS
+  ===================================================== */
+
+  function afficherPropositions(resultats) {
+
+    const section =
+      document.getElementById(
+        "propositionsSection"
+      );
+
+    const container =
+      document.getElementById(
+        "propositions"
+      );
+
+    const count =
+      document.getElementById(
+        "resultCount"
+      );
+
+    section.classList.remove("hidden");
+
+    count.textContent =
+      resultats.length +
+      (
+        resultats.length > 1
+          ? " recettes proposées"
+          : " recette proposée"
+      );
+
+    if (resultats.length === 0) {
+
+      container.innerHTML = `
+        <div class="info">
+          😕 Aucune recette ne correspond exactement
+          à vos critères. Essayez une autre envie.
+        </div>
+      `;
+
+      return;
+
+    }
+
+    container.innerHTML =
+      resultats.map(recette => {
+
+        const selectionnee =
+          monMenu.some(
+            r => String(r.id) === String(recette.id)
+          );
 
         return `
+          <div
+            class="recipe-card ${selectionnee ? "selected" : ""}"
+            id="recipe-${recette.id}"
+          >
 
-          <div class="menu-item">
+            <div class="recipe-top">
 
-            <strong>
-              ${recette.nom}
-            </strong>
+              <div>
+                <div class="recipe-name">
+                  ${echapper(recette.nom)}
+                </div>
 
-            <button
-              class="supprimer"
-              onclick="retirerDuMenu(${index})"
-              aria-label="Retirer"
-            >
-              ✕
-            </button>
+                <div class="recipe-meta">
+                  ${echapper(recette.categorie || "")}
+                  ${recette.temps ? " • " + recette.temps + " min" : ""}
+                  ${recette.proteines ? " • " + recette.proteines + " g protéines" : ""}
+                </div>
+              </div>
+
+              <button
+                class="add-btn ${selectionnee ? "selected" : ""}"
+                onclick="ajouterAuMenu('${String(recette.id).replace(/'/g, "\\'")}')"
+                aria-label="${selectionnee ? "Recette sélectionnée" : "Ajouter au menu"}"
+              >
+                ${selectionnee ? "✓" : "+"}
+              </button>
+
+            </div>
 
           </div>
-
         `;
 
-      })
-      .join("");
+      }).join("");
 
+    afficherMonMenu();
 
-  bouton.style.display = "block";
-
-}
-
-
-function retirerDuMenu(index) {
-
-  monMenu.splice(index, 1);
-
-  afficherMonMenu();
-
-}
-
-
-function enregistrerMenu() {
-
-  if (monMenu.length === 0) {
-    return;
   }
 
+
+  /* =====================================================
+     AJOUT / RETRAIT DU MENU
+  ===================================================== */
+
+  function ajouterAuMenu(id) {
+
+    const recette =
+      recettes.find(
+        r => String(r.id) === String(id)
+      );
+
+    if (!recette) return;
+
+    const index =
+      monMenu.findIndex(
+        r => String(r.id) === String(id)
+      );
+
+    if (index >= 0) {
+
+      monMenu.splice(index, 1);
+
+      afficherMessage(
+        "↩️ Recette retirée de votre menu."
+      );
+
+    } else {
+
+      monMenu.push({
+        id: recette.id,
+        nom: recette.nom
+      });
+
+      afficherMessage(
+        "✓ Recette ajoutée à votre menu !"
+      );
+
+    }
+
+    /*
+      IMPORTANT :
+      On réaffiche les propositions afin que
+      le + devienne immédiatement une coche verte.
+    */
+    const propositions =
+      document.getElementById(
+        "propositions"
+      );
+
+    if (
+      propositions &&
+      !document
+        .getElementById("propositionsSection")
+        .classList.contains("hidden")
+    ) {
+
+      const cards =
+        [...propositions.querySelectorAll(".recipe-card")];
+
+      cards.forEach(card => {
+
+        const bouton =
+          card.querySelector(".add-btn");
+
+        if (!bouton) return;
+
+        const cardId =
+          card.id.replace("recipe-", "");
+
+        const estSelectionnee =
+          monMenu.some(
+            r => String(r.id) === String(cardId)
+          );
+
+        card.classList.toggle(
+          "selected",
+          estSelectionnee
+        );
+
+        bouton.classList.toggle(
+          "selected",
+          estSelectionnee
+        );
+
+        bouton.textContent =
+          estSelectionnee ? "✓" : "+";
+
+        bouton.setAttribute(
+          "aria-label",
+          estSelectionnee
+            ? "Recette sélectionnée"
+            : "Ajouter au menu"
+        );
+
+      });
+
+    }
+
+    afficherMonMenu();
+
+  }
+
+
+  /* =====================================================
+     MON MENU
+  ===================================================== */
+
+  function afficherMonMenu() {
+
+    const section =
+      document.getElementById(
+        "monMenuSection"
+      );
+
+    const liste =
+      document.getElementById(
+        "monMenuListe"
+      );
+
+    const compteur =
+      document.getElementById(
+        "nombreSelection"
+      );
+
+    if (monMenu.length === 0) {
+
+      section.classList.add("hidden");
+
+      return;
+
+    }
+
+    section.classList.remove("hidden");
+
+    compteur.textContent =
+      monMenu.length +
+      (
+        monMenu.length > 1
+          ? " recettes"
+          : " recette"
+      );
+
+    liste.innerHTML =
+      monMenu.map((recette, index) => `
+        <div class="selected-recipe">
+
+          <span>
+            ✓ ${echapper(recette.nom)}
+          </span>
+
+          <button
+            class="remove-btn"
+            onclick="retirerDuMenu(${index})"
+          >
+            Retirer
+          </button>
+
+        </div>
+      `).join("");
+
+  }
+
+
+  function retirerDuMenu(index) {
+
+    monMenu.splice(index, 1);
+
+    afficherMonMenu();
+
+    const section =
+      document.getElementById(
+        "propositionsSection"
+      );
+
+    if (
+      !section.classList.contains("hidden")
+    ) {
+
+      chercherRecettes();
+
+    }
+
+  }
+
+
+  /* =====================================================
+     ENREGISTRER MENU
+  ===================================================== */
+
+  function enregistrerMenu() {
+
+    if (monMenu.length === 0) {
+
+      afficherMessage(
+        "Choisissez au moins une recette."
+      );
+
+      return;
+
+    }
+
+    const menus =
+      JSON.parse(
+        localStorage.getItem(
+          "menusSauvegardes"
+        ) || "[]"
+      );
+
+    const nouveauMenu = {
+
+      id:
+        "MENU-" +
+        Date.now(),
+
+      date:
+        new Date().toLocaleDateString("fr-FR"),
+
+      timestamp:
+        Date.now(),
+
+      repas:
+        repasSelectionne ||
+        "peu-importe",
+
+      envies:
+        [...enviesSelectionnees],
+
+      recettes:
+        [...monMenu]
+
+    };
+
+    menus.unshift(nouveauMenu);
+
+    localStorage.setItem(
+      "menusSauvegardes",
+      JSON.stringify(menus)
+    );
+
+    afficherMessage(
+      "💚 Votre menu est enregistré !"
+    );
+
+    setTimeout(() => {
+
+      window.location.href =
+        "MesMenus.html";
+
+    }, 900);
+
+  }
+
+
+  /* =====================================================
+     SEMAINE
+  ===================================================== */
+
+  const jours = [
+    ["lundi", "Lundi"],
+    ["mardi", "Mardi"],
+    ["mercredi", "Mercredi"],
+    ["jeudi", "Jeudi"],
+    ["vendredi", "Vendredi"],
+    ["samedi", "Samedi"],
+    ["dimanche", "Dimanche"]
+  ];
+
+
+  function construireSemaine() {
+
+    const grid =
+      document.getElementById(
+        "weekGrid"
+      );
+
+    grid.innerHTML =
+      jours.map(([cle, nom]) => {
+
+        return `
+          <div class="day">
+
+            <h3>${nom}</h3>
+
+            <select
+              class="meal-select"
+              id="${cle}-dejeuner"
+            >
+              <option value="">
+                🥗 Déjeuner — choisir une recette
+              </option>
+            </select>
+
+            <select
+              class="meal-select"
+              id="${cle}-diner"
+            >
+              <option value="">
+                🍲 Dîner — choisir une recette
+              </option>
+            </select>
+
+          </div>
+        `;
+
+      }).join("");
+
+    jours.forEach(([cle]) => {
+
+      remplirSelect(
+        cle + "-dejeuner"
+      );
+
+      remplirSelect(
+        cle + "-diner"
+      );
+
+    });
+
+  }
+
+
+  function remplirSelect(id) {
+
+    const select =
+      document.getElementById(id);
+
+    if (!select) return;
+
+    const options =
+      recettes
+        .slice(0, 20)
+        .map(recette => `
+          <option value="${echapperAttribut(recette.id)}">
+            ${echapper(recette.nom)}
+          </option>
+        `)
+        .join("");
+
+    select.innerHTML += options;
+
+  }
+
+
+  function enregistrerSemaine() {
+
+    const planning = {};
+
+    jours.forEach(([cle]) => {
+
+      planning[cle] = {};
+
+      ["dejeuner", "diner"].forEach(repas => {
+
+        const select =
+          document.getElementById(
+            cle + "-" + repas
+          );
+
+        if (!select || !select.value) {
+          return;
+        }
+
+        const recette =
+          recettes.find(
+            r =>
+              String(r.id) ===
+              String(select.value)
+          );
+
+        if (!recette) return;
+
+        planning[cle][repas] = {
+
+          id: recette.id,
+
+          nom: recette.nom
+
+        };
+
+      });
+
+    });
+
+    localStorage.setItem(
+      "planningSemaine",
+      JSON.stringify(planning)
+    );
+
+    afficherMessage(
+      "📅 Votre semaine est enregistrée !"
+    );
+
+    setTimeout(() => {
+
+      window.location.href =
+        "MesMenus.html";
+
+    }, 900);
+
+  }
+
+
+  /* =====================================================
+     MESSAGES
+  ===================================================== */
+
+  function afficherMessage(texte) {
+
+    const message =
+      document.getElementById(
+        "message"
+      );
+
+    message.textContent = texte;
+
+    message.classList.remove("hidden");
+
+    setTimeout(() => {
+
+      message.classList.add("hidden");
+
+    }, 1800);
+
+  }
+
+
+  /* =====================================================
+     SECURITE HTML
+  ===================================================== */
+
+  function echapper(texte) {
+
+    return String(texte || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  function echapperAttribut(texte) {
+
+    return echapper(texte);
+
+  }
+
+</script>
+
+</body>
+</html>
+```
+
+---
+
+### 2. `src/screens/MesMenus.html`
+
+Ici, j'ai surtout corrigé le problème important : **chaque recette enregistrée possède maintenant un vrai bouton/lien "👀 Voir la recette"** qui ouvre `Recette.html?id=...`.
+
+Le bouton **Retirer** reste séparé et ne déclenche pas l'ouverture de la recette.
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mes Menus - Ma Petite Assiette</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3d4038;
+      padding-bottom: 90px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f7d9c4, #dce8d5);
+      padding: 28px 18px 25px;
+      text-align: center;
+      border-radius: 0 0 28px 28px;
+    }
+
+    .hero .emoji {
+      font-size: 42px;
+      margin-bottom: 7px;
+    }
+
+    .hero h1 {
+      color: #496044;
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: auto;
+      padding: 18px 15px;
+    }
+
+    .section {
+      background: white;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #496044;
+      font-size: 19px;
+      margin-bottom: 14px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 25px 10px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    .menu-card {
+      border: 1px solid #e5dfd7;
+      border-radius: 18px;
+      padding: 15px;
+      margin-bottom: 13px;
+      background: #fff;
+    }
+
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .menu-title {
+      color: #496044;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .menu-date {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .badge {
+      background: #e4f1df;
+      color: #52784d;
+      border-radius: 20px;
+      padding: 5px 9px;
+      font-size: 11px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .recipe-item {
+      border: 1px solid #e8e1d9;
+      border-radius: 15px;
+      padding: 12px;
+      margin-top: 9px;
+      background: #faf8f4;
+    }
+
+    .recipe-item:hover {
+      border-color: #9db695;
+    }
+
+    .recipe-name {
+      color: #496044;
+      font-weight: bold;
+      line-height: 1.35;
+      margin-bottom: 9px;
+    }
+
+    .recipe-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-recipe {
+      background: #6d9565;
+      color: white;
+    }
+
+    .btn-remove {
+      background: #f5e3df;
+      color: #a34e49;
+    }
+
+    .btn-delete {
+      background: #f5e3df;
+      color: #a34e49;
+      margin-top: 12px;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: #6d9565;
+      color: white;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .btn-secondary {
+      background: #f1e9df;
+      color: #59604f;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .week-day {
+      border: 1px solid #e5dfd7;
+      border-radius: 15px;
+      padding: 13px;
+      margin-bottom: 10px;
+      background: #faf8f4;
+    }
+
+    .week-day h3 {
+      color: #496044;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .week-meal {
+      background: white;
+      border-radius: 11px;
+      padding: 9px 10px;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    .week-meal strong {
+      color: #6d7567;
+      font-size: 12px;
+    }
+
+    .info {
+      background: #f7f2ec;
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      position: fixed;
+      left: 15px;
+      right: 15px;
+      bottom: 82px;
+      z-index: 50;
+      background: #52784d;
+      color: white;
+      padding: 14px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.18);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      border-top: 1px solid #e6e0d8;
+      display: flex;
+      justify-content: space-around;
+      padding: 9px 5px;
+      z-index: 40;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #68705f;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .bottom-nav span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+
+  <div class="emoji">📋</div>
+
+  <h1>Mes Menus</h1>
+
+  <p>
+    Retrouvez vos menus et ouvrez chaque recette
+    pour retrouver les ingrédients et la préparation.
+  </p>
+
+</header>
+
+
+<main class="container">
+
+
+  <!-- ACTIONS -->
+
+  <section class="section">
+
+    <a
+      href="menu.html"
+      class="btn btn-primary"
+    >
+      🍽️ Composer un nouveau menu
+    </a>
+
+    <a
+      href="courses.html"
+      class="btn btn-secondary"
+    >
+      🛒 Voir mes courses
+    </a>
+
+  </section>
+
+
+  <!-- PLANNING SEMAINE -->
+
+  <section class="section">
+
+    <h2>📅 Ma semaine</h2>
+
+    <div id="planning"></div>
+
+  </section>
+
+
+  <!-- MENUS -->
+
+  <section class="section">
+
+    <h2>💚 Mes menus enregistrés</h2>
+
+    <div id="menus"></div>
+
+  </section>
+
+
+  <!-- DETAIL MENU -->
+
+  <section
+    class="section hidden"
+    id="detailMenu"
+  >
+
+    <h2 id="detailTitre">
+      Mon menu
+    </h2>
+
+    <div
+      id="detailRecettes"
+    ></div>
+
+    <button
+      class="btn btn-secondary"
+      onclick="fermerDetail()"
+    >
+      ← Retour à mes menus
+    </button>
+
+  </section>
+
+
+</main>
+
+
+<div
+  id="message"
+  class="message hidden"
+></div>
+
+
+<nav class="bottom-nav">
+
+  <a href="../../index.html">
+    <span>🏠</span>
+    Accueil
+  </a>
+
+  <a href="Recettes.html">
+    <span>🍴</span>
+    Recettes
+  </a>
+
+  <a href="MesMenus.html">
+    <span>📋</span>
+    Mes Menus
+  </a>
+
+  <a href="courses.html">
+    <span>🛒</span>
+    Mes Courses
+  </a>
+
+</nav>
+
+
+<script>
 
   let menus = [];
 
-  try {
+  let planning = {};
+
+
+  /* =====================================================
+     CHARGEMENT
+  ===================================================== */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+      chargerDonnees();
+
+      gererHash();
+
+    }
+  );
+
+
+  window.addEventListener(
+    "hashchange",
+    gererHash
+  );
+
+
+  function chargerDonnees() {
 
     menus =
       JSON.parse(
@@ -1092,559 +2010,2081 @@ function enregistrerMenu() {
         ) || "[]"
       );
 
-  } catch (e) {
-
-    menus = [];
-
-  }
-
-
-  const nouveauMenu = {
-
-    id:
-      "MENU-" +
-      Date.now(),
-
-    date:
-      new Date().toLocaleDateString(
-        "fr-FR"
-      ),
-
-    timestamp:
-      Date.now(),
-
-    repas:
-      repasSelectionne || "peu-importe",
-
-    envies:
-      [...enviesSelectionnees],
-
-    recettes:
-      [...monMenu]
-
-  };
-
-
-  menus.unshift(
-    nouveauMenu
-  );
-
-
-  localStorage.setItem(
-    "menusSauvegardes",
-    JSON.stringify(menus)
-  );
-
-
-  const message =
-    document.getElementById(
-      "messageEnregistrement"
-    );
-
-
-  message.innerHTML = `
-    💚 <strong>Votre menu est enregistré !</strong><br>
-    Vous allez maintenant retrouver
-    votre menu dans « Mes menus ».
-  `;
-
-  message.style.display = "block";
-
-
-  setTimeout(function() {
-
-    window.location.href =
-      "MesMenus.html";
-
-  }, 1200);
-
-}
-
-
-function choisirMode(mode) {
-
-  modeActuel = mode;
-
-
-  document
-    .getElementById("modeAssiette")
-    .classList.toggle(
-      "active",
-      mode === "assiette"
-    );
-
-
-  document
-    .getElementById("modeSemaine")
-    .classList.toggle(
-      "active",
-      mode === "semaine"
-    );
-
-
-  document
-    .getElementById("assietteSection")
-    .style.display =
-      mode === "assiette"
-        ? "block"
-        : "none";
-
-
-  document
-    .getElementById("semaineSection")
-    .style.display =
-      mode === "semaine"
-        ? "block"
-        : "none";
-
-}
-
-
-document
-  .querySelectorAll(
-    "[data-repas]"
-  )
-  .forEach(function(button) {
-
-    button.addEventListener(
-      "click",
-      function() {
-
-        document
-          .querySelectorAll(
-            "[data-repas]"
-          )
-          .forEach(
-            b => b.classList.remove(
-              "active"
-            )
-          );
-
-
-        button.classList.add(
-          "active"
-        );
-
-
-        repasSelectionne =
-          button.dataset.repas;
-
-      }
-    );
-
-  });
-
-
-document
-  .querySelectorAll(
-    "[data-envie]"
-  )
-  .forEach(function(button) {
-
-    button.addEventListener(
-      "click",
-      function() {
-
-        const envie =
-          button.dataset.envie;
-
-
-        if (
-          enviesSelectionnees.includes(
-            envie
-          )
-        ) {
-
-          enviesSelectionnees =
-            enviesSelectionnees.filter(
-              e => e !== envie
-            );
-
-          button.classList.remove(
-            "active"
-          );
-
-        } else {
-
-          enviesSelectionnees.push(
-            envie
-          );
-
-          button.classList.add(
-            "active"
-          );
-
-        }
-
-      }
-    );
-
-  });
-
-
-/* ============================= */
-/* SEMAINE */
-/* ============================= */
-
-function initialiserPlanning() {
-
-  try {
-
-    planningSemaine =
+    planning =
       JSON.parse(
         localStorage.getItem(
           "planningSemaine"
         ) || "{}"
       );
 
-  } catch (e) {
+    afficherPlanning();
 
-    planningSemaine = {};
-
-  }
-
-
-  afficherPlanning();
-
-}
-
-
-function afficherPlanning() {
-
-  const zone =
-    document.getElementById(
-      "planning"
-    );
-
-
-  zone.innerHTML =
-    jours
-      .map(function(jour) {
-
-        const planningJour =
-          planningSemaine[jour] || {};
-
-
-        return `
-
-          <div class="jour">
-
-            <h3>
-              ${
-                jour.charAt(0).toUpperCase() +
-                jour.slice(1)
-              }
-            </h3>
-
-
-            ${creerCreneau(
-              jour,
-              "dejeuner",
-              "🥗 Déjeuner",
-              planningJour.dejeuner
-            )}
-
-
-            ${creerCreneau(
-              jour,
-              "diner",
-              "🍲 Dîner",
-              planningJour.diner
-            )}
-
-          </div>
-
-        `;
-
-      })
-      .join("");
-
-}
-
-
-function creerCreneau(
-  jour,
-  moment,
-  label,
-  recette
-) {
-
-  if (recette) {
-
-    return `
-
-      <div class="creneau">
-
-        <strong>${label}</strong>
-
-        <div class="repas-semaine">
-
-          ${recette.nom}
-
-          <br>
-
-          <button
-            onclick="retirerRepas('${jour}','${moment}')"
-          >
-            Retirer
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
+    afficherMenus();
 
   }
 
 
-  const compatibles =
-    trouverRecettes(
-      moment,
-      []
-    );
-
-
-  return `
-
-    <div class="creneau">
-
-      <strong>${label}</strong>
-
-      <button
-        onclick="afficherChoixSemaine('${jour}','${moment}')"
-      >
-        + Ajouter un repas
-      </button>
-
-      <div
-        id="choix-${jour}-${moment}"
-      ></div>
-
-    </div>
-
-  `;
-
-}
-
-
-function afficherChoixSemaine(
-  jour,
-  moment
-) {
-
-  const zone =
-    document.getElementById(
-      `choix-${jour}-${moment}`
-    );
-
-
-  const resultats =
-    trouverRecettes(
-      moment,
-      []
-    ).slice(0, 20);
-
-
-  if (resultats.length === 0) {
-
-    zone.innerHTML = `
-      <div class="selecteur-semaine">
-        Aucune recette trouvée.
-      </div>
-    `;
-
-    return;
-  }
-
-
-  zone.innerHTML = `
-
-    <div class="selecteur-semaine">
-
-      <select
-        onchange="choisirRepasSemaine(
-          '${jour}',
-          '${moment}',
-          this.value
-        )"
-      >
-
-        <option value="">
-          Choisir une recette...
-        </option>
-
-        ${resultats.map(function(r) {
-
-          return `
-            <option value="${r.id}">
-              ${r.nom}
-            </option>
-          `;
-
-        }).join("")}
-
-      </select>
-
-    </div>
-
-  `;
-
-}
-
-
-function choisirRepasSemaine(
-  jour,
-  moment,
-  id
-) {
-
-  if (!id) return;
-
-
-  const recette =
-    recettes.find(
-      r => String(r.id) === String(id)
-    );
-
-
-  if (!recette) return;
-
-
-  if (!planningSemaine[jour]) {
-    planningSemaine[jour] = {};
-  }
-
-
-  planningSemaine[jour][moment] = {
-
-    id: recette.id,
-
-    nom: recette.nom
-
-  };
-
-
-  localStorage.setItem(
-    "planningSemaine",
-    JSON.stringify(
-      planningSemaine
-    )
-  );
-
-
-  afficherPlanning();
-
-}
-
-
-function retirerRepas(
-  jour,
-  moment
-) {
-
-  if (
-    planningSemaine[jour]
-  ) {
-
-    delete planningSemaine[jour][moment];
-
-  }
-
-
-  localStorage.setItem(
-    "planningSemaine",
-    JSON.stringify(
-      planningSemaine
-    )
-  );
-
-
-  afficherPlanning();
-
-}
-
-
-function enregistrerSemaine() {
-
-  localStorage.setItem(
-    "planningSemaine",
-    JSON.stringify(
-      planningSemaine
-    )
-  );
-
-
-  const message =
-    document.getElementById(
-      "messageEnregistrement"
-    );
-
-
-  message.innerHTML = `
-    💚 <strong>Votre semaine est enregistrée !</strong><br>
-    Vous allez maintenant retrouver
-    votre planning dans « Mes menus ».
-  `;
-
-  message.style.display = "block";
-
-
-  setTimeout(function() {
-
-    window.location.href =
-      "MesMenus.html";
-
-  }, 1200);
-
-}
-
-
-/* CHARGEMENT */
-
-fetch("../recettes.json")
-
-  .then(function(response) {
-
-    if (!response.ok) {
-      throw new Error(
-        "Impossible de charger recettes.json"
+  /* =====================================================
+     PLANNING
+  ===================================================== */
+
+  const jours = [
+    ["lundi", "Lundi"],
+    ["mardi", "Mardi"],
+    ["mercredi", "Mercredi"],
+    ["jeudi", "Jeudi"],
+    ["vendredi", "Vendredi"],
+    ["samedi", "Samedi"],
+    ["dimanche", "Dimanche"]
+  ];
+
+
+  function afficherPlanning() {
+
+    const container =
+      document.getElementById(
+        "planning"
       );
+
+    const aUnPlanning =
+      jours.some(
+        ([cle]) =>
+          planning[cle] &&
+          (
+            planning[cle].dejeuner ||
+            planning[cle].diner
+          )
+      );
+
+    if (!aUnPlanning) {
+
+      container.innerHTML = `
+        <div class="empty">
+          📅 Aucun planning enregistré pour le moment.
+        </div>
+      `;
+
+      return;
+
     }
 
-    return response.json();
+    container.innerHTML =
+      jours.map(
+        ([cle, nom]) => {
 
-  })
+          const jour =
+            planning[cle] || {};
 
-  .then(function(data) {
+          if (
+            !jour.dejeuner &&
+            !jour.diner
+          ) {
+            return "";
+          }
 
-    recettes =
-      Array.isArray(data)
-        ? data
+          return `
+            <div class="week-day">
+
+              <h3>${nom}</h3>
+
+              ${
+                jour.dejeuner
+                  ? `
+                    <div class="week-meal">
+                      <strong>🥗 Déjeuner</strong><br>
+                      <a
+                        href="Recette.html?id=${encodeURIComponent(jour.dejeuner.id)}"
+                        style="color:#496044;font-weight:bold;text-decoration:none;"
+                      >
+                        ${echapper(jour.dejeuner.nom)}
+                      </a>
+                    </div>
+                  `
+                  : ""
+              }
+
+              ${
+                jour.diner
+                  ? `
+                    <div class="week-meal">
+                      <strong>🍲 Dîner</strong><br>
+                      <a
+                        href="Recette.html?id=${encodeURIComponent(jour.diner.id)}"
+                        style="color:#496044;font-weight:bold;text-decoration:none;"
+                      >
+                        ${echapper(jour.diner.nom)}
+                      </a>
+                    </div>
+                  `
+                  : ""
+              }
+
+            </div>
+          `;
+
+        }
+      ).join("");
+
+  }
+
+
+  /* =====================================================
+     MENUS ENREGISTRES
+  ===================================================== */
+
+  function afficherMenus() {
+
+    const container =
+      document.getElementById(
+        "menus"
+      );
+
+    if (!menus.length) {
+
+      container.innerHTML = `
+        <div class="empty">
+
+          🍽️ Vous n'avez encore aucun menu enregistré.
+
+          <br><br>
+
+          Composez votre première petite assiette !
+
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    container.innerHTML =
+      menus.map(
+        (menu, index) => {
+
+          const recettes =
+            Array.isArray(menu.recettes)
+              ? menu.recettes
+              : [];
+
+          return `
+
+            <article
+              class="menu-card"
+            >
+
+              <div class="menu-header">
+
+                <div>
+
+                  <div class="menu-title">
+                    🍽️ ${traduireRepas(menu.repas)}
+                  </div>
+
+                  <div class="menu-date">
+                    ${echapper(menu.date || "")}
+                  </div>
+
+                </div>
+
+                <div class="badge">
+                  ${recettes.length}
+                  ${
+                    recettes.length > 1
+                      ? " recettes"
+                      : " recette"
+                  }
+                </div>
+
+              </div>
+
+
+              ${
+                menu.envies &&
+                menu.envies.length
+                  ? `
+                    <div class="info">
+                      ✨ ${menu.envies
+                        .map(traduireEnvie)
+                        .join(" • ")}
+                    </div>
+                  `
+                  : ""
+              }
+
+
+              ${
+                recettes.length
+                  ? recettes.map(
+                      (recette, recetteIndex) => `
+
+                        <div
+                          class="recipe-item"
+                        >
+
+                          <div class="recipe-name">
+                            🍽️ ${echapper(recette.nom)}
+                          </div>
+
+                          <div class="recipe-actions">
+
+                            <!-- VRAI LIEN VERS LA RECETTE -->
+                            <a
+                              class="btn btn-recipe"
+                              href="Recette.html?id=${encodeURIComponent(recette.id)}"
+                            >
+                              👀 Voir la recette
+                            </a>
+
+                            <button
+                              class="btn btn-remove"
+                              onclick="retirerRecette(
+                                ${index},
+                                ${recetteIndex}
+                              )"
+                            >
+                              Retirer
+                            </button>
+
+                          </div>
+
+                        </div>
+
+                      `
+                    ).join("")
+                  : `
+                    <div class="empty">
+                      Ce menu ne contient plus de recette.
+                    </div>
+                  `
+              }
+
+
+              ${
+                recettes.length > 1
+                  ? `
+                    <button
+                      class="btn btn-secondary"
+                      onclick="voirMenuComplet(${index})"
+                    >
+                      📖 Voir toutes les recettes du menu
+                    </button>
+                  `
+                  : ""
+              }
+
+
+              <button
+                class="btn btn-delete"
+                onclick="supprimerMenu(${index})"
+              >
+                🗑️ Supprimer ce menu
+              </button>
+
+            </article>
+
+          `;
+
+        }
+      ).join("");
+
+  }
+
+
+  /* =====================================================
+     VOIR MENU COMPLET
+  ===================================================== */
+
+  function voirMenuComplet(index) {
+
+    window.location.hash =
+      "menu=" + index;
+
+  }
+
+
+  function gererHash() {
+
+    const hash =
+      window.location.hash;
+
+    if (
+      hash.startsWith("#menu=")
+    ) {
+
+      const index =
+        parseInt(
+          hash.replace("#menu=", ""),
+          10
+        );
+
+      if (
+        Number.isInteger(index) &&
+        menus[index]
+      ) {
+
+        afficherDetail(index);
+
+      }
+
+    } else {
+
+      fermerDetailVisuel();
+
+    }
+
+  }
+
+
+  function afficherDetail(index) {
+
+    const menu =
+      menus[index];
+
+    if (!menu) return;
+
+    document
+      .getElementById("detailMenu")
+      .classList.remove("hidden");
+
+    document
+      .getElementById("detailTitre")
+      .textContent =
+      "🍽️ " +
+      traduireRepas(menu.repas);
+
+
+    const container =
+      document.getElementById(
+        "detailRecettes"
+      );
+
+
+    const recettes =
+      Array.isArray(menu.recettes)
+        ? menu.recettes
         : [];
 
 
-    afficherMonMenu();
+    container.innerHTML =
+      recettes.map(
+        (recette, recetteIndex) => `
 
-    initialiserPlanning();
+          <div
+            class="recipe-item"
+          >
 
-  })
+            <div class="recipe-name">
+              ${recetteIndex + 1}.
+              ${echapper(recette.nom)}
+            </div>
 
-  .catch(function(error) {
+            <div class="recipe-actions">
 
-    console.error(error);
+              <a
+                class="btn btn-recipe"
+                href="Recette.html?id=${encodeURIComponent(recette.id)}"
+              >
+                👀 Voir la recette et les ingrédients
+              </a>
 
-    document.getElementById(
-      "propositions"
-    ).innerHTML = `
-      <div class="vide">
-        ⚠️ Impossible de charger les recettes.
-      </div>
-    `;
+              <button
+                class="btn btn-remove"
+                onclick="retirerRecetteDetail(
+                  ${index},
+                  ${recetteIndex}
+                )"
+              >
+                Retirer
+              </button>
 
-  });
+            </div>
+
+          </div>
+
+        `
+      ).join("");
+
+  }
+
+
+  function fermerDetail() {
+
+    window.location.hash = "";
+
+  }
+
+
+  function fermerDetailVisuel() {
+
+    document
+      .getElementById("detailMenu")
+      .classList.add("hidden");
+
+  }
+
+
+  /* =====================================================
+     RETIRER RECETTE
+  ===================================================== */
+
+  function retirerRecette(
+    menuIndex,
+    recetteIndex
+  ) {
+
+    if (!menus[menuIndex]) return;
+
+    const confirmation =
+      confirm(
+        "Retirer cette recette de ce menu ?"
+      );
+
+    if (!confirmation) return;
+
+    menus[menuIndex].recettes.splice(
+      recetteIndex,
+      1
+    );
+
+    sauvegarderMenus();
+
+    afficherMenus();
+
+    afficherMessage(
+      "Recette retirée du menu."
+    );
+
+  }
+
+
+  function retirerRecetteDetail(
+    menuIndex,
+    recetteIndex
+  ) {
+
+    if (!menus[menuIndex]) return;
+
+    const confirmation =
+      confirm(
+        "Retirer cette recette de ce menu ?"
+      );
+
+    if (!confirmation) return;
+
+    menus[menuIndex].recettes.splice(
+      recetteIndex,
+      1
+    );
+
+    sauvegarderMenus();
+
+    if (
+      menus[menuIndex].recettes.length === 0
+    ) {
+
+      window.location.hash = "";
+
+      afficherMenus();
+
+      return;
+
+    }
+
+    afficherDetail(menuIndex);
+
+    afficherMenus();
+
+    afficherMessage(
+      "Recette retirée du menu."
+    );
+
+  }
+
+
+  /* =====================================================
+     SUPPRIMER MENU
+  ===================================================== */
+
+  function supprimerMenu(index) {
+
+    if (!menus[index]) return;
+
+    const confirmation =
+      confirm(
+        "Supprimer définitivement ce menu ?"
+      );
+
+    if (!confirmation) return;
+
+    menus.splice(index, 1);
+
+    sauvegarderMenus();
+
+    window.location.hash = "";
+
+    afficherMenus();
+
+    afficherMessage(
+      "Menu supprimé."
+    );
+
+  }
+
+
+  function sauvegarderMenus() {
+
+    localStorage.setItem(
+      "menusSauvegardes",
+      JSON.stringify(menus)
+    );
+
+  }
+
+
+  /* =====================================================
+     TRADUCTIONS
+  ===================================================== */
+
+  function traduireRepas(repas) {
+
+    const correspondances = {
+
+      "petit-dejeuner":
+        "☕ Petit-déjeuner",
+
+      "dejeuner":
+        "🥗 Déjeuner",
+
+      "diner":
+        "🍲 Dîner",
+
+      "collation":
+        "🍎 Collation",
+
+      "petite-douceur":
+        "🍰 Petite douceur",
+
+      "peu-importe":
+        "✨ Mon menu"
+
+    };
+
+    return (
+      correspondances[repas] ||
+      "🍽️ Mon menu"
+    );
+
+  }
+
+
+  function traduireEnvie(envie) {
+
+    const correspondances = {
+
+      leger: "🌿 Léger",
+
+      complet: "🍽️ Complet",
+
+      rapide: "⚡ Rapide",
+
+      sucre: "🍰 Sucré",
+
+      vegetarien: "🥕 Végétarien",
+
+      salade: "🥗 Salade",
+
+      proteine: "💪 Protéiné",
+
+      reconfort: "❤️ Réconfortant"
+
+    };
+
+    return (
+      correspondances[envie] ||
+      envie
+    );
+
+  }
+
+
+  /* =====================================================
+     SECURITE
+  ===================================================== */
+
+  function echapper(texte) {
+
+    return String(texte || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =====================================================
+     MESSAGE
+  ===================================================== */
+
+  function afficherMessage(texte) {
+
+    const message =
+      document.getElementById(
+        "message"
+      );
+
+    message.textContent = texte;
+
+    message.classList.remove(
+      "hidden"
+    );
+
+    setTimeout(() => {
+
+      message.classList.add(
+        "hidden"
+      );
+
+    }, 1800);
+
+  }
 
 </script>
 
 </body>
 </html>
+```
+
+---
+
+### 3. `src/screens/courses.html`
+
+J'ajoute ici le bouton **« ✅ Courses terminées »**.
+
+Point important : **il ne supprime absolument pas tes menus, ton planning ou tes recettes**. Il remet simplement les cases de courses à zéro pour pouvoir préparer une nouvelle liste.
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mes Courses - Ma Petite Assiette</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #3d4038;
+      padding-bottom: 90px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f7d9c4, #dce8d5);
+      padding: 28px 18px 25px;
+      text-align: center;
+      border-radius: 0 0 28px 28px;
+    }
+
+    .hero .emoji {
+      font-size: 42px;
+      margin-bottom: 7px;
+    }
+
+    .hero h1 {
+      color: #496044;
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: auto;
+      padding: 18px 15px;
+    }
+
+    .section {
+      background: white;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #496044;
+      font-size: 19px;
+      margin-bottom: 14px;
+    }
+
+    .summary {
+      background: #edf6ea;
+      border-radius: 15px;
+      padding: 13px;
+      color: #52784d;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .search {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd6cd;
+      border-radius: 13px;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 10px 13px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: #6d9565;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #f1e9df;
+      color: #59604f;
+    }
+
+    .btn-danger {
+      background: #f5e3df;
+      color: #a34e49;
+    }
+
+    .btn-finish {
+      background: #52784d;
+      color: white;
+      width: 100%;
+      padding: 14px;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .ingredient {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 11px 5px;
+      border-bottom: 1px solid #eee8e0;
+    }
+
+    .ingredient:last-child {
+      border-bottom: none;
+    }
+
+    .ingredient input {
+      width: 20px;
+      height: 20px;
+      accent-color: #52784d;
+      flex-shrink: 0;
+    }
+
+    .ingredient label {
+      font-size: 14px;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+
+    .ingredient.checked label {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    .recipe-source {
+      background: #faf7f2;
+      border-radius: 13px;
+      padding: 10px 12px;
+      margin-bottom: 7px;
+      color: #59604f;
+      font-size: 13px;
+    }
+
+    .empty {
+      text-align: center;
+      color: #777;
+      padding: 25px 10px;
+      line-height: 1.6;
+    }
+
+    .message {
+      position: fixed;
+      left: 15px;
+      right: 15px;
+      bottom: 82px;
+      z-index: 50;
+      background: #52784d;
+      color: white;
+      padding: 14px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.18);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      border-top: 1px solid #e6e0d8;
+      display: flex;
+      justify-content: space-around;
+      padding: 9px 5px;
+      z-index: 40;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #68705f;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .bottom-nav span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+
+  <div class="emoji">🛒</div>
+
+  <h1>Mes Courses</h1>
+
+  <p>
+    Tous les ingrédients nécessaires à vos menus,
+    regroupés automatiquement.
+  </p>
+
+</header>
+
+
+<main class="container">
+
+
+  <!-- RESUME -->
+
+  <section class="section">
+
+    <div
+      class="summary"
+      id="resume"
+    >
+      Chargement de votre liste...
+    </div>
+
+    <input
+      type="search"
+      id="recherche"
+      class="search"
+      placeholder="🔎 Rechercher un ingrédient..."
+      oninput="afficherIngredients()"
+    >
+
+    <div class="actions">
+
+      <button
+        class="btn btn-primary"
+        onclick="toutCocher()"
+      >
+        ☑️ Tout cocher
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="toutDecocher()"
+      >
+        ⬜ Tout décocher
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- RECETTES -->
+
+  <section class="section">
+
+    <h2>🍽️ Recettes concernées</h2>
+
+    <div id="recettesSources"></div>
+
+  </section>
+
+
+  <!-- INGREDIENTS -->
+
+  <section class="section">
+
+    <h2>🥕 Ma liste de courses</h2>
+
+    <div id="ingredients">
+      Chargement...
+    </div>
+
+    <button
+      class="btn btn-finish"
+      onclick="coursesTerminees()"
+    >
+      ✅ Courses terminées
+    </button>
+
+  </section>
+
+
+</main>
+
+
+<div
+  id="message"
+  class="message hidden"
+></div>
+
+
+<nav class="bottom-nav">
+
+  <a href="../../index.html">
+    <span>🏠</span>
+    Accueil
+  </a>
+
+  <a href="Recettes.html">
+    <span>🍴</span>
+    Recettes
+  </a>
+
+  <a href="MesMenus.html">
+    <span>📋</span>
+    Mes Menus
+  </a>
+
+  <a href="courses.html">
+    <span>🛒</span>
+    Mes Courses
+  </a>
+
+</nav>
+
+
+<script>
+
+  let recettesCatalogue = [];
+
+  let recettesSelectionnees = [];
+
+  let ingredientsCourses = [];
+
+  let casesCochees =
+    JSON.parse(
+      localStorage.getItem(
+        "ingredientsCoursesCoches"
+      ) || "[]"
+    );
+
+
+  /* =====================================================
+     CHARGEMENT
+  ===================================================== */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    charger
+  );
+
+
+  async function charger() {
+
+    try {
+
+      const response =
+        await fetch("../recettes.json");
+
+      if (!response.ok) {
+        throw new Error();
+      }
+
+      recettesCatalogue =
+        await response.json();
+
+      chargerRecettesSelectionnees();
+
+      construireListeCourses();
+
+      afficherRecettesSources();
+
+      afficherIngredients();
+
+    } catch (error) {
+
+      document.getElementById(
+        "ingredients"
+      ).innerHTML = `
+        <div class="empty">
+          ❌ Impossible de charger les recettes.
+        </div>
+      `;
+
+    }
+
+  }
+
+
+  /* =====================================================
+     RECUPERATION DES RECETTES DES MENUS
+  ===================================================== */
+
+  function chargerRecettesSelectionnees() {
+
+    const ids = [];
+
+    /*
+      Planning de la semaine
+    */
+
+    const planning =
+      JSON.parse(
+        localStorage.getItem(
+          "planningSemaine"
+        ) || "{}"
+      );
+
+    Object.values(planning)
+      .forEach(jour => {
+
+        if (!jour) return;
+
+        ["dejeuner", "diner"]
+          .forEach(repas => {
+
+            if (
+              jour[repas] &&
+              jour[repas].id
+            ) {
+
+              ids.push(
+                String(jour[repas].id)
+              );
+
+            }
+
+          });
+
+      });
+
+
+    /*
+      Menus enregistrés
+    */
+
+    const menus =
+      JSON.parse(
+        localStorage.getItem(
+          "menusSauvegardes"
+        ) || "[]"
+      );
+
+
+    menus.forEach(menu => {
+
+      if (
+        !Array.isArray(menu.recettes)
+      ) {
+        return;
+      }
+
+      menu.recettes.forEach(recette => {
+
+        if (recette && recette.id) {
+
+          ids.push(
+            String(recette.id)
+          );
+
+        }
+
+      });
+
+    });
+
+
+    /*
+      Suppression des doublons
+    */
+
+    const idsUniques =
+      [...new Set(ids)];
+
+
+    recettesSelectionnees =
+      idsUniques
+        .map(id =>
+          recettesCatalogue.find(
+            recette =>
+              String(recette.id) ===
+              String(id)
+          )
+        )
+        .filter(Boolean);
+
+  }
+
+
+  /* =====================================================
+     CONSTRUCTION LISTE COURSES
+  ===================================================== */
+
+  function construireListeCourses() {
+
+    const agregats = {};
+
+
+    recettesSelectionnees
+      .forEach(recette => {
+
+        const quantite =
+          recette.quantites &&
+          recette.quantites.petite;
+
+        const ingredients =
+          Array.isArray(quantite)
+            ? quantite
+            : (
+                Array.isArray(recette.ingredients)
+                  ? recette.ingredients
+                  : []
+              );
+
+
+        ingredients.forEach(ingredient => {
+
+          analyserEtAjouter(
+            ingredient,
+            agregats
+          );
+
+        });
+
+      });
+
+
+    ingredientsCourses =
+      Object.values(agregats);
+
+  }
+
+
+  /* =====================================================
+     ANALYSE INGREDIENT
+  ===================================================== */
+
+  function analyserEtAjouter(
+    texte,
+    agregats
+  ) {
+
+    const original =
+      String(texte || "").trim();
+
+    if (!original) return;
+
+
+    let match;
+
+
+    /*
+      g / kg / mg
+    */
+
+    match =
+      original.match(
+        /^(\d+(?:[,.]\d+)?)\s*(kg|g|mg)\s+(?:de\s+)?(.+)$/i
+      );
+
+    if (match) {
+
+      ajouterQuantite(
+        agregats,
+        match[3],
+        match[2].toLowerCase(),
+        parseFloat(
+          match[1].replace(",", ".")
+        )
+      );
+
+      return;
+
+    }
+
+
+    /*
+      ml / cl / dl / l
+    */
+
+    match =
+      original.match(
+        /^(\d+(?:[,.]\d+)?)\s*(ml|cl|dl|l)\s+(?:de\s+)?(.+)$/i
+      );
+
+    if (match) {
+
+      ajouterQuantite(
+        agregats,
+        match[3],
+        match[2].toLowerCase(),
+        parseFloat(
+          match[1].replace(",", ".")
+        )
+      );
+
+      return;
+
+    }
+
+
+    /*
+      cuillères
+    */
+
+    match =
+      original.match(
+        /^(\d+(?:[,.]\d+)?)\s*(cs|cc|c\.\s*à\s*soupe|c\.\s*à\s*café)\s+(?:de\s+)?(.+)$/i
+      );
+
+    if (match) {
+
+      let unite =
+        match[2]
+          .toLowerCase()
+          .replace(/\s+/g, " ");
+
+      if (
+        unite.startsWith("c.") &&
+        unite.includes("soupe")
+      ) {
+        unite = "cs";
+      }
+
+      if (
+        unite.startsWith("c.") &&
+        unite.includes("café")
+      ) {
+        unite = "cc";
+      }
+
+      ajouterQuantite(
+        agregats,
+        match[3],
+        unite,
+        parseFloat(
+          match[1].replace(",", ".")
+        )
+      );
+
+      return;
+
+    }
+
+
+    /*
+      Quantité en pièces :
+      1 œuf
+      1 petit œuf
+      2 mini toast
+    */
+
+    match =
+      original.match(
+        /^(\d+(?:[,.]\d+)?)\s+(.+)$/i
+      );
+
+    if (match) {
+
+      const quantite =
+        parseFloat(
+          match[1].replace(",", ".")
+        );
+
+      const nom =
+        match[2].trim();
+
+
+      /*
+        On ne considère comme pièce
+        que les ingrédients dont le nom
+        n'est pas manifestement une unité
+        de poids/volume.
+      */
+
+      ajouterQuantite(
+        agregats,
+        nom,
+        "piece",
+        quantite
+      );
+
+      return;
+
+    }
+
+
+    /*
+      Sans quantité :
+      Cannelle
+      Sel
+      Poivre...
+    */
+
+    const cle =
+      cleIngredient(
+        original,
+        ""
+      );
+
+    if (!agregats[cle]) {
+
+      agregats[cle] = {
+
+        nom: original,
+
+        unite: "",
+
+        quantite: null
+
+      };
+
+    }
+
+  }
+
+
+  /* =====================================================
+     AJOUT QUANTITE
+  ===================================================== */
+
+  function ajouterQuantite(
+    agregats,
+    nom,
+    unite,
+    quantite
+  ) {
+
+    const uniteNormalisee =
+      normaliserUnite(unite);
+
+    const nomPropre =
+      nettoyerNomIngredient(nom);
+
+    const cle =
+      cleIngredient(
+        nomPropre,
+        uniteNormalisee
+      );
+
+
+    if (!agregats[cle]) {
+
+      agregats[cle] = {
+
+        nom: nomPropre,
+
+        unite: uniteNormalisee,
+
+        quantite: 0
+
+      };
+
+    }
+
+    agregats[cle].quantite += quantite;
+
+  }
+
+
+  /* =====================================================
+     NORMALISATION UNITES
+  ===================================================== */
+
+  function normaliserUnite(unite) {
+
+    const u =
+      String(unite || "")
+        .toLowerCase()
+        .trim();
+
+    if (u === "kilogramme" || u === "kilogrammes") {
+      return "kg";
+    }
+
+    if (u === "gramme" || u === "grammes") {
+      return "g";
+    }
+
+    if (u === "milligramme" || u === "milligrammes") {
+      return "mg";
+    }
+
+    if (u === "millilitre" || u === "millilitres") {
+      return "ml";
+    }
+
+    if (u === "centilitre" || u === "centilitres") {
+      return "cl";
+    }
+
+    if (u === "litre" || u === "litres") {
+      return "l";
+    }
+
+    return u;
+
+  }
+
+
+  /* =====================================================
+     NETTOYAGE NOM
+  ===================================================== */
+
+  function nettoyerNomIngredient(nom) {
+
+    return String(nom || "")
+      .trim()
+      .replace(/^de\s+/i, "")
+      .replace(/^d['’]\s*/i, "");
+
+  }
+
+
+  /* =====================================================
+     CLE INGREDIENT
+  ===================================================== */
+
+  function cleIngredient(
+    nom,
+    unite
+  ) {
+
+    let texte =
+      nettoyerNomIngredient(nom)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    /*
+      Petit nettoyage uniquement pour
+      faciliter les regroupements.
+    */
+
+    texte =
+      texte
+        .replace(/\s+/g, " ");
+
+    return (
+      texte +
+      "|" +
+      unite
+    );
+
+  }
+
+
+  /* =====================================================
+     AFFICHAGE INGREDIENTS
+  ===================================================== */
+
+  function afficherIngredients() {
+
+    const container =
+      document.getElementById(
+        "ingredients"
+      );
+
+    const recherche =
+      String(
+        document.getElementById(
+          "recherche"
+        ).value || ""
+      )
+        .toLowerCase()
+        .trim();
+
+
+    const filtres =
+      ingredientsCourses.filter(
+        ingredient =>
+          ingredient.nom
+            .toLowerCase()
+            .includes(recherche)
+      );
+
+
+    if (!filtres.length) {
+
+      container.innerHTML = `
+        <div class="empty">
+          🛒 Aucun ingrédient à afficher.
+        </div>
+      `;
+
+      mettreAJourResume();
+
+      return;
+
+    }
+
+
+    container.innerHTML =
+      filtres.map(
+        (ingredient, index) => {
+
+          const cle =
+            cleIngredient(
+              ingredient.nom,
+              ingredient.unite
+            );
+
+          const cochee =
+            casesCochees.includes(cle);
+
+          return `
+
+            <div
+              class="ingredient ${cochee ? "checked" : ""}"
+              data-cle="${echapperAttribut(cle)}"
+            >
+
+              <input
+                type="checkbox"
+                id="ingredient-${index}"
+                ${cochee ? "checked" : ""}
+                onchange="changerCase(
+                  '${echapperJS(cle)}'
+                )"
+              >
+
+              <label
+                for="ingredient-${index}"
+              >
+                ${texteIngredient(ingredient)}
+              </label>
+
+            </div>
+
+          `;
+
+        }
+      ).join("");
+
+
+    mettreAJourResume();
+
+  }
+
+
+  /* =====================================================
+     TEXTE INGREDIENT
+  ===================================================== */
+
+  function texteIngredient(
+    ingredient
+  ) {
+
+    if (
+      ingredient.quantite === null
+    ) {
+
+      return echapper(
+        ingredient.nom
+      );
+
+    }
+
+
+    const nombre =
+      formaterNombre(
+        ingredient.quantite
+      );
+
+
+    if (
+      ingredient.unite === "piece"
+    ) {
+
+      return (
+        nombre +
+        " " +
+        adapterPluriel(
+          ingredient.nom,
+          ingredient.quantite
+        )
+      );
+
+    }
+
+
+    return (
+      nombre +
+      " " +
+      ingredient.unite +
+      " de " +
+      echapper(
+        ingredient.nom
+      )
+    );
+
+  }
+
+
+  /* =====================================================
+     PLURIEL
+  ===================================================== */
+
+  function adapterPluriel(
+    nom,
+    quantite
+  ) {
+
+    if (
+      quantite <= 1
+    ) {
+      return echapper(nom);
+    }
+
+    const texte =
+      String(nom);
+
+    if (
+      /s$/i.test(texte)
+    ) {
+      return echapper(texte);
+    }
+
+    return echapper(
+      texte + "s"
+    );
+
+  }
+
+
+  /* =====================================================
+     FORMAT NOMBRE
+  ===================================================== */
+
+  function formaterNombre(
+    nombre
+  ) {
+
+    if (
+      Number.isInteger(nombre)
+    ) {
+
+      return String(nombre);
+
+    }
+
+    return String(
+      Math.round(
+        nombre * 100
+      ) / 100
+    )
+      .replace(".", ",");
+
+  }
+
+
+  /* =====================================================
+     CASES
+  ===================================================== */
+
+  function changerCase(cle) {
+
+    const index =
+      casesCochees.indexOf(cle);
+
+
+    if (index >= 0) {
+
+      casesCochees.splice(
+        index,
+        1
+      );
+
+    } else {
+
+      casesCochees.push(cle);
+
+    }
+
+
+    localStorage.setItem(
+      "ingredientsCoursesCoches",
+      JSON.stringify(
+        casesCochees
+      )
+    );
+
+
+    afficherIngredients();
+
+  }
+
+
+  /* =====================================================
+     TOUT COCHER
+  ===================================================== */
+
+  function toutCocher() {
+
+    ingredientsCourses
+      .forEach(ingredient => {
+
+        const cle =
+          cleIngredient(
+            ingredient.nom,
+            ingredient.unite
+          );
+
+        if (
+          !casesCochees.includes(cle)
+        ) {
+
+          casesCochees.push(cle);
+
+        }
+
+      });
+
+
+    sauvegarderCases();
+
+    afficherIngredients();
+
+  }
+
+
+  /* =====================================================
+     TOUT DECOCHER
+  ===================================================== */
+
+  function toutDecocher() {
+
+    casesCochees = [];
+
+    sauvegarderCases();
+
+    afficherIngredients();
+
+  }
+
+
+  /* =====================================================
+     COURSES TERMINEES
+  ===================================================== */
+
+  function coursesTerminees() {
+
+    const confirmation =
+      confirm(
+        "Vos courses sont terminées ?\n\n" +
+        "Les cases cochées vont être réinitialisées " +
+        "pour votre prochaine liste.\n\n" +
+        "Vos menus, votre planning et vos recettes " +
+        "seront conservés."
+      );
+
+
+    if (!confirmation) {
+      return;
+    }
+
+
+    /*
+      IMPORTANT :
+      On supprime UNIQUEMENT
+      les cases cochées.
+    */
+
+    casesCochees = [];
+
+
+    localStorage.removeItem(
+      "ingredientsCoursesCoches"
+    );
+
+
+    afficherIngredients();
+
+
+    afficherMessage(
+      "🎉 Courses terminées ! Votre liste est prête pour la prochaine fois."
+    );
+
+  }
+
+
+  function sauvegarderCases() {
+
+    localStorage.setItem(
+      "ingredientsCoursesCoches",
+      JSON.stringify(
+        casesCochees
+      )
+    );
+
+  }
+
+
+  /* =====================================================
+     SOURCES RECETTES
+  ===================================================== */
+
+  function afficherRecettesSources() {
+
+    const container =
+      document.getElementById(
+        "recettesSources"
+      );
+
+
+    if (
+      recettesSelectionnees.length === 0
+    ) {
+
+      container.innerHTML = `
+        <div class="empty">
+          🍽️ Aucun menu ou planning enregistré.
+          <br><br>
+          Commencez par composer un menu.
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    container.innerHTML =
+      recettesSelectionnees
+        .map(
+          recette => `
+
+            <div class="recipe-source">
+
+              🍽️
+
+              <a
+                href="Recette.html?id=${encodeURIComponent(recette.id)}"
+                style="color:#496044;font-weight:bold;text-decoration:none;"
+              >
+                ${echapper(recette.nom)}
+              </a>
+
+            </div>
+
+          `
+        )
+        .join("");
+
+  }
+
+
+  /* =====================================================
+     RESUME
+  ===================================================== */
+
+  function mettreAJourResume() {
+
+    const resume =
+      document.getElementById(
+        "resume"
+      );
+
+    const total =
+      ingredientsCourses.length;
+
+
+    const cochees =
+      ingredientsCourses.filter(
+        ingredient =>
+          casesCochees.includes(
+            cleIngredient(
+              ingredient.nom,
+              ingredient.unite
+            )
+          )
+      ).length;
+
+
+    if (!total) {
+
+      resume.innerHTML =
+        "🛒 Votre liste de courses est vide.";
+
+      return;
+
+    }
+
+
+    resume.innerHTML =
+      `
+        🛒 <strong>${total}</strong>
+        ingrédients à prévoir
+        ·
+        <strong>${cochees}</strong>
+        déjà cochés
+      `;
+
+  }
+
+
+  /* =====================================================
+     SECURITE
+  ===================================================== */
+
+  function echapper(texte) {
+
+    return String(texte || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  function echapperAttribut(texte) {
+
+    return echapper(texte);
+
+  }
+
+
+  function echapperJS(texte) {
+
+    return String(texte || "")
+      .replace(/\\/g, "\\\\")
+      .replace(/'/g, "\\'")
+      .replace(/\n/g, "\\n")
+      .replace(/\r/g, "");
+
+  }
+
+
+  /* =====================================================
+     MESSAGE
+  ===================================================== */
+
+  function afficherMessage(texte) {
+
+    const message =
+      document.getElementById(
+        "message"
+      );
+
+    message.textContent =
+      texte;
+
+    message.classList.remove(
+      "hidden"
+    );
+
+    setTimeout(() => {
+
+      message.classList.add(
+        "hidden"
+      );
+
+    }, 2200);
+
+  }
+
+</script>
+
+</body>
+</html>
+```
+
+---
+
+### Ce que tu vas avoir après ces 3 remplacements
+
+**Dans Composer mon menu :**
+
+`+` → sélection de la recette → **✓ verte**
+
+et la recette apparaît dans :
+
+> 💚 Mon menu — 2 recettes
+
+Tu peux donc sélectionner, par exemple :
+
+* 🥗 Salade boulgour quinoa thon œuf → ✓
+* 🥕 Salade boulgour quinoa végétarienne → ✓
+
+**Les deux sont conservées.**
+
+**Dans Mes Menus :**
+
+Chaque recette aura :
+
+> 👀 **Voir la recette**
+
+et ce bouton ouvre directement sa fiche `Recette.html`, donc **les ingrédients, quantités, préparation, protéines, etc.** restent accessibles.
+
+**Dans Mes Courses :**
+
+Tu coches tes achats, puis :
+
+> ✅ **Courses terminées**
+
+→ les coches sont effacées
+→ les menus restent
+→ le planning reste
+→ les recettes restent
+→ la prochaine liste peut être utilisée à nouveau.
+
+**Important :** je n'ai pas prévu de supprimer automatiquement les menus après les courses. C'est volontaire : ton historique de menus reste disponible.
