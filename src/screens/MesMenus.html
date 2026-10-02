@@ -1,14 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mes menus - Ma Petite Assiette</title>
 
@@ -31,1176 +27,2129 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #fffaf5;
-      color: #4d4038;
+      background: #f8f3ea;
+      color: #30483d;
       padding-bottom: 90px;
     }
 
-    .hero {
-      background:
-        linear-gradient(
-          135deg,
-          #f6d9c8,
-          #dce8d5
-        );
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
-      padding: 30px 20px;
-
-      border-radius:
-        0 0 30px 30px;
+    header {
+      background: linear-gradient(135deg, #dcebdc, #f5ddd0);
+      padding: 28px 20px 24px;
+      text-align: center;
+      border-radius: 0 0 28px 28px;
     }
 
-    .retour {
-      display: inline-block;
-      color: #5b7153;
-      text-decoration: none;
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: 28px;
+    header .emoji {
+      font-size: 42px;
       margin-bottom: 8px;
     }
 
-    .hero p {
-      line-height: 1.5;
-      font-size: 15px;
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #29463b;
     }
 
-    .contenu {
+    header p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #52665d;
+    }
+
+    /* =====================================================
+       CONTENEUR
+    ===================================================== */
+
+    .container {
+      width: 100%;
       max-width: 700px;
       margin: auto;
       padding: 20px 16px;
     }
 
-    .actions-haut {
+    /* =====================================================
+       BOUTONS
+    ===================================================== */
+
+    .actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
-    .action {
+    .btn {
       border: none;
-      border-radius: 17px;
-      padding: 14px 10px;
-      background: #eef5e9;
-      color: #506448;
+      border-radius: 16px;
+      padding: 14px 12px;
+      font-size: 14px;
       font-weight: bold;
       cursor: pointer;
-    }
-
-    .action.courses {
-      background: #f8e5d9;
-      color: #8b5d49;
-    }
-
-    .resume {
-      display: grid;
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 9px;
-
-      margin-bottom: 22px;
-    }
-
-    .resume-card {
-      background: white;
-      border-radius: 17px;
-      padding: 14px 8px;
+      text-decoration: none;
       text-align: center;
-      border: 1px solid #eadfd7;
-    }
-
-    .resume-card strong {
       display: block;
-      font-size: 22px;
-      color: #5f7c55;
-      margin-bottom: 4px;
     }
 
-    .resume-card span {
-      font-size: 12px;
-      color: #796e67;
+    .btn-primary {
+      background: #6f927d;
+      color: white;
     }
 
-    .section {
+    .btn-secondary {
+      background: #ead6c9;
+      color: #40584d;
+    }
+
+    .btn-danger {
+      background: #f0caca;
+      color: #7b3d3d;
+    }
+
+    .btn-light {
+      background: white;
+      color: #4a6157;
+      border: 1px solid #d9ded8;
+    }
+
+    /* =====================================================
+       TITRES DE SECTIONS
+    ===================================================== */
+
+    .section-title {
+      font-size: 21px;
+      margin: 28px 0 14px;
+      color: #30483d;
+    }
+
+    /* =====================================================
+       RESUME
+    ===================================================== */
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       margin-bottom: 25px;
     }
 
-    .section h2 {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-
-    .semaine {
-      display: grid;
-      gap: 11px;
-    }
-
-    .jour {
+    .summary-card {
       background: white;
-      border-radius: 19px;
-      overflow: hidden;
-      border: 1px solid #e5dbd3;
+      border-radius: 18px;
+      padding: 14px 8px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
     }
 
-    .jour-titre {
-      background: #eef5e9;
-      padding: 12px 15px;
+    .summary-number {
+      display: block;
+      font-size: 25px;
       font-weight: bold;
+      color: #6f927d;
+      margin-bottom: 4px;
     }
 
-    .repas {
-      padding: 13px 15px;
-      border-top: 1px solid #eee5de;
+    .summary-label {
+      font-size: 11px;
+      color: #68766f;
     }
 
-    .repas-label {
-      font-size: 13px;
-      color: #7b7069;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
+    /* =====================================================
+       SEMAINE
+    ===================================================== */
 
-    .repas-nom {
-      font-size: 15px;
-      margin-bottom: 7px;
-    }
-
-    .repas-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .petit-btn {
-      border: none;
-      background: transparent;
-      color: #5f7c55;
-      font-weight: bold;
-      padding: 3px 0;
-      cursor: pointer;
-    }
-
-    .petit-btn.supprimer {
-      color: #b45d50;
-    }
-
-    .vide {
+    .day-card {
       background: white;
       border-radius: 20px;
-      padding: 28px 18px;
-      text-align: center;
-      border: 1px solid #e5dbd3;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
     }
 
-    .vide .emoji {
-      font-size: 40px;
+    .day-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #3b5549;
+    }
+
+    .meal {
+      background: #f8f5ef;
+      border-radius: 14px;
+      padding: 12px;
+      margin-top: 8px;
+    }
+
+    .meal-label {
+      font-size: 12px;
+      font-weight: bold;
+      color: #8a6b59;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .meal-name {
+      font-size: 14px;
+      color: #3c5047;
+      line-height: 1.4;
+    }
+
+    .empty-meal {
+      color: #9b9f9b;
+      font-style: italic;
+      font-size: 13px;
+    }
+
+    /* =====================================================
+       MENUS SAUVEGARDES
+    ===================================================== */
+
+    .saved-menu {
+      background: white;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .saved-menu-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
       margin-bottom: 10px;
     }
 
-    .vide p {
-      line-height: 1.5;
-      margin-bottom: 16px;
-      color: #71665f;
-    }
-
-    .principal {
-      border: none;
-      background: #5f7c55;
-      color: white;
-      border-radius: 17px;
-      padding: 13px 18px;
+    .saved-menu-title {
+      font-size: 17px;
       font-weight: bold;
-      cursor: pointer;
+      color: #385247;
     }
 
-    .menus {
+    .saved-menu-date {
+      font-size: 11px;
+      color: #8b938e;
+      white-space: nowrap;
+    }
+
+    .saved-menu-info {
+      font-size: 13px;
+      color: #68766f;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .recipe-count {
+      display: inline-block;
+      background: #e3eee5;
+      color: #52705d;
+      border-radius: 20px;
+      padding: 5px 9px;
+      font-size: 11px;
+      font-weight: bold;
+      margin-top: 7px;
+    }
+
+    .saved-menu-actions {
       display: grid;
-      gap: 11px;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
     }
 
-    .menu-sauvegarde {
+    /* =====================================================
+       DETAIL MENU
+    ===================================================== */
+
+    #detailMenu {
+      display: none;
+    }
+
+    .detail-header {
       background: white;
-      border: 1px solid #e5dbd3;
-      border-radius: 18px;
-      padding: 16px;
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
     }
 
-    .menu-sauvegarde h3 {
-      font-size: 16px;
+    .detail-header h2 {
+      font-size: 21px;
+      color: #30483d;
       margin-bottom: 8px;
     }
 
-    .menu-date {
-      color: #81756d;
+    .detail-header p {
+      color: #68766f;
       font-size: 13px;
-      margin-bottom: 10px;
+      line-height: 1.5;
     }
 
-    .menu-recettes {
-      margin-bottom: 12px;
+    .detail-recipe {
+      background: white;
+      border-radius: 20px;
+      padding: 17px;
+      margin-bottom: 13px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
     }
 
-    .menu-recettes div {
-      background: #f8f3ef;
-      border-radius: 11px;
-      padding: 8px 10px;
-      margin-bottom: 5px;
-      font-size: 14px;
+    .detail-recipe h3 {
+      font-size: 17px;
+      color: #385247;
+      margin-bottom: 8px;
+      line-height: 1.35;
     }
 
-    .menu-actions {
+    .recipe-meta {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 13px;
     }
 
-    .nav {
+    .meta {
+      background: #f1eee7;
+      border-radius: 20px;
+      padding: 5px 9px;
+      font-size: 11px;
+      color: #68766f;
+    }
+
+    .detail-recipe-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .empty {
+      background: white;
+      border-radius: 20px;
+      padding: 25px 18px;
+      text-align: center;
+      color: #748078;
+      line-height: 1.6;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    }
+
+    /* =====================================================
+       MESSAGE
+    ===================================================== */
+
+    #message {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 85px;
+      background: #4f6f5b;
+      color: white;
+      padding: 14px 16px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 13px;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    /* =====================================================
+       NAVIGATION BAS
+    ===================================================== */
+
+    .bottom-nav {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 72px;
-      background: white;
-      border-top: 1px solid #e5ddd7;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      z-index: 20;
+      height: 70px;
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid #e2e4df;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      z-index: 900;
     }
 
-    .nav a {
+    .bottom-nav a {
       text-decoration: none;
-      color: #6c625c;
-      font-size: 12px;
-      text-align: center;
+      color: #68766f;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+      font-size: 11px;
     }
 
-    .nav a span {
-      display: block;
+    .bottom-nav a span {
       font-size: 22px;
-      margin-bottom: 3px;
     }
 
-    @media (max-width: 500px) {
+    .bottom-nav a.active {
+      color: #54765f;
+      font-weight: bold;
+    }
 
-      .actions-haut {
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 420px) {
+
+      .actions {
         grid-template-columns: 1fr;
       }
 
-      .resume {
-        grid-template-columns:
-          repeat(3, 1fr);
+      .summary {
+        gap: 7px;
+      }
+
+      .summary-card {
+        padding: 12px 5px;
+      }
+
+      .saved-menu-actions,
+      .detail-recipe-actions {
+        grid-template-columns: 1fr;
       }
 
     }
 
   </style>
-
 </head>
 
 
 <body>
 
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
 
-<header class="hero">
+  <header>
 
-  <a
-    class="retour"
-    href="../../index.html"
-  >
-    ← Accueil
-  </a>
+    <div class="emoji">📅</div>
 
-  <h1>📅 Mes menus</h1>
+    <h1>Mes menus</h1>
 
-  <p>
-    Retrouvez vos menus enregistrés
-    et organisez votre semaine simplement.
-  </p>
+    <p>
+      Retrouvez vos menus sauvegardés et votre organisation de la semaine.
+    </p>
 
-</header>
+  </header>
 
 
-<main class="contenu">
+  <main class="container">
 
 
-  <!-- ACTIONS -->
+    <!-- =====================================================
+         VUE LISTE
+    ===================================================== -->
 
-  <div class="actions-haut">
+    <section id="listeMenus">
 
-    <button
-      class="action"
-      onclick="window.location.href='menu.html'"
+      <div class="actions">
+
+        <a
+          href="menu.html"
+          class="btn btn-primary"
+        >
+          ➕ Composer un menu
+        </a>
+
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="allerAuxCourses()"
+        >
+          🛒 Mes courses
+        </button>
+
+      </div>
+
+
+      <!-- =====================================================
+           RESUME
+      ===================================================== -->
+
+      <div class="summary">
+
+        <div class="summary-card">
+          <span
+            class="summary-number"
+            id="nombreRepas"
+          >
+            0
+          </span>
+
+          <span class="summary-label">
+            repas planifiés
+          </span>
+        </div>
+
+
+        <div class="summary-card">
+          <span
+            class="summary-number"
+            id="nombreJours"
+          >
+            0
+          </span>
+
+          <span class="summary-label">
+            jours organisés
+          </span>
+        </div>
+
+
+        <div class="summary-card">
+          <span
+            class="summary-number"
+            id="nombreRecettes"
+          >
+            0
+          </span>
+
+          <span class="summary-label">
+            recettes
+          </span>
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           SEMAINE
+      ===================================================== -->
+
+      <h2 class="section-title">
+        🗓️ Ma semaine
+      </h2>
+
+      <div id="semaineContainer"></div>
+
+
+      <!-- =====================================================
+           MENUS SAUVEGARDES
+      ===================================================== -->
+
+      <h2 class="section-title">
+        💚 Mes menus sauvegardés
+      </h2>
+
+      <div id="menusContainer"></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DETAIL D'UN MENU
+    ===================================================== -->
+
+    <section id="detailMenu">
+
+      <button
+        type="button"
+        class="btn btn-secondary"
+        onclick="retourListeMenus()"
+        style="width:100%; margin-bottom:15px;"
+      >
+        ← Retour à mes menus
+      </button>
+
+      <div
+        id="detailContenu"
+      ></div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       MESSAGE
+  ===================================================== -->
+
+  <div id="message"></div>
+
+
+  <!-- =====================================================
+       NAVIGATION BAS
+  ===================================================== -->
+
+  <nav class="bottom-nav">
+
+    <a href="../../index.html">
+      <span>🏠</span>
+      Accueil
+    </a>
+
+    <a href="Recettes.html">
+      <span>🍽️</span>
+      Recettes
+    </a>
+
+    <a href="Favoris.html">
+      <span>❤️</span>
+      Favoris
+    </a>
+
+    <a
+      href="MesMenus.html"
+      class="active"
     >
-      ➕ Composer un menu
-    </button>
+      <span>📅</span>
+      Mes menus
+    </a>
 
-    <button
-      class="action courses"
-      onclick="allerAuxCourses()"
-    >
-      🛒 Mes courses
-    </button>
+  </nav>
 
-  </div>
 
+  <script>
 
-  <!-- RESUME -->
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
 
-  <div class="resume">
+    let recettes = [];
 
-    <div class="resume-card">
+    let menusSauvegardes = [];
 
-      <strong id="nbRepas">
-        0
-      </strong>
+    let planningSemaine = null;
 
-      <span>
-        repas prévus
-      </span>
 
-    </div>
+    /* =====================================================
+       JOURS
+    ===================================================== */
 
+    const jours = [
+      "lundi",
+      "mardi",
+      "mercredi",
+      "jeudi",
+      "vendredi",
+      "samedi",
+      "dimanche"
+    ];
 
-    <div class="resume-card">
 
-      <strong id="nbJours">
-        0
-      </strong>
+    const nomsJours = {
+      lundi: "Lundi",
+      mardi: "Mardi",
+      mercredi: "Mercredi",
+      jeudi: "Jeudi",
+      vendredi: "Vendredi",
+      samedi: "Samedi",
+      dimanche: "Dimanche"
+    };
 
-      <span>
-        jours organisés
-      </span>
 
-    </div>
+    /* =====================================================
+       CHARGEMENT
+    ===================================================== */
 
+    async function chargerDonnees() {
 
-    <div class="resume-card">
+      try {
 
-      <strong id="nbRecettes">
-        0
-      </strong>
+        const reponse =
+          await fetch("../recettes.json");
 
-      <span>
-        recettes
-      </span>
+        if (!reponse.ok) {
+          throw new Error("Impossible de charger recettes.json");
+        }
 
-    </div>
+        recettes = await reponse.json();
 
-  </div>
+      } catch (erreur) {
 
+        console.error(erreur);
 
-  <!-- SEMAINE -->
+        recettes = [];
 
-  <section class="section">
+      }
 
-    <h2>
-      📅 Ma semaine
-    </h2>
 
-    <div
-      id="planning"
-      class="semaine"
-    ></div>
+      chargerMenus();
 
-  </section>
+      afficherTout();
 
-
-  <!-- MENUS ENREGISTRES -->
-
-  <section class="section">
-
-    <h2>
-      💚 Mes menus enregistrés
-    </h2>
-
-    <div
-      id="menus"
-      class="menus"
-    ></div>
-
-  </section>
-
-
-</main>
-
-
-<nav class="nav">
-
-  <a href="../../index.html">
-    <span>🏠</span>
-    Accueil
-  </a>
-
-  <a href="Recettes.html">
-    <span>🍽️</span>
-    Recettes
-  </a>
-
-  <a href="MesMenus.html">
-    <span>📅</span>
-    Mes menus
-  </a>
-
-  <a href="Favoris.html">
-    <span>❤️</span>
-    Favoris
-  </a>
-
-</nav>
-
-
-<script>
-
-
-let recettes = [];
-
-let planningSemaine = {};
-
-let menusSauvegardes = [];
-
-const jours = [
-  "lundi",
-  "mardi",
-  "mercredi",
-  "jeudi",
-  "vendredi",
-  "samedi",
-  "dimanche"
-];
-
-
-const nomsJours = {
-
-  lundi: "Lundi",
-
-  mardi: "Mardi",
-
-  mercredi: "Mercredi",
-
-  jeudi: "Jeudi",
-
-  vendredi: "Vendredi",
-
-  samedi: "Samedi",
-
-  dimanche: "Dimanche"
-
-};
-
-
-function chargerDonneesLocales() {
-
-  try {
-
-    planningSemaine =
-      JSON.parse(
-        localStorage.getItem(
-          "planningSemaine"
-        ) || "{}"
-      );
-
-  } catch (e) {
-
-    planningSemaine = {};
-
-  }
-
-
-  try {
-
-    menusSauvegardes =
-      JSON.parse(
-        localStorage.getItem(
-          "menusSauvegardes"
-        ) || "[]"
-      );
-
-  } catch (e) {
-
-    menusSauvegardes = [];
-
-  }
-
-}
-
-
-function recetteParId(id) {
-
-  return recettes.find(
-    recette =>
-      String(recette.id) === String(id)
-  );
-
-}
-
-
-function obtenirNomRecette(item) {
-
-  if (!item) {
-    return "";
-  }
-
-
-  if (item.nom) {
-    return item.nom;
-  }
-
-
-  const recette =
-    recetteParId(item.id);
-
-
-  return recette
-    ? recette.nom
-    : "Recette";
-}
-
-
-function compterSemaine() {
-
-  let nbRepas = 0;
-
-  let joursOrganises = 0;
-
-  const ids = new Set();
-
-
-  jours.forEach(function(jour) {
-
-    const donnees =
-      planningSemaine[jour];
-
-
-    if (!donnees) {
-      return;
     }
 
 
-    let jourCompte = false;
+    /* =====================================================
+       CHARGER LES MENUS
+    ===================================================== */
 
+    function chargerMenus() {
 
-    ["dejeuner", "diner"]
-      .forEach(function(moment) {
+      try {
 
-        const repas =
-          donnees[moment];
+        const sauvegarde =
+          localStorage.getItem("menusSauvegardes");
 
-
-        if (repas) {
-
-          nbRepas++;
-
-          jourCompte = true;
-
-          if (repas.id) {
-            ids.add(
-              String(repas.id)
-            );
-          }
-
-        }
-
-      });
-
-
-    if (jourCompte) {
-      joursOrganises++;
-    }
-
-  });
-
-
-  document.getElementById(
-    "nbRepas"
-  ).textContent = nbRepas;
-
-
-  document.getElementById(
-    "nbJours"
-  ).textContent = joursOrganises;
-
-
-  document.getElementById(
-    "nbRecettes"
-  ).textContent = ids.size;
-
-}
-
-
-function afficherPlanning() {
-
-  const zone =
-    document.getElementById(
-      "planning"
-    );
-
-
-  const aUnRepas =
-    jours.some(function(jour) {
-
-      const d =
-        planningSemaine[jour];
-
-
-      return (
-        d &&
-        (
-          d.dejeuner ||
-          d.diner
-        )
-      );
-
-    });
-
-
-  if (!aUnRepas) {
-
-    zone.innerHTML = `
-
-      <div class="vide">
-
-        <div class="emoji">
-          🍽️
-        </div>
-
-        <p>
-          Votre semaine est encore vide.
-          Commencez à organiser vos repas.
-        </p>
-
-        <button
-          class="principal"
-          onclick="window.location.href='menu.html'"
-        >
-          ✨ Organiser ma semaine
-        </button>
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  zone.innerHTML =
-    jours
-      .map(function(jour) {
-
-        const donnees =
-          planningSemaine[jour] || {};
-
-
-        return `
-
-          <div class="jour">
-
-            <div class="jour-titre">
-              ${nomsJours[jour]}
-            </div>
-
-
-            ${afficherRepas(
-              jour,
-              "dejeuner",
-              "🥗 Déjeuner",
-              donnees.dejeuner
-            )}
-
-
-            ${afficherRepas(
-              jour,
-              "diner",
-              "🍲 Dîner",
-              donnees.diner
-            )}
-
-          </div>
-
-        `;
-
-      })
-      .join("");
-
-}
-
-
-function afficherRepas(
-  jour,
-  moment,
-  label,
-  repas
-) {
-
-  if (!repas) {
-
-    return `
-
-      <div class="repas">
-
-        <div class="repas-label">
-          ${label}
-        </div>
-
-        <div
-          style="
-            color:#9a8e86;
-            font-size:13px;
-          "
-        >
-          Aucun repas prévu
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-  return `
-
-    <div class="repas">
-
-      <div class="repas-label">
-        ${label}
-      </div>
-
-      <div class="repas-nom">
-        ${obtenirNomRecette(repas)}
-      </div>
-
-      <div class="repas-actions">
-
-        ${
-          repas.id
-            ? `
-              <button
-                class="petit-btn"
-                onclick="voirRecette('${repas.id}')"
-              >
-                Voir la recette
-              </button>
-            `
-            : ""
-        }
-
-
-        <button
-          class="petit-btn supprimer"
-          onclick="
-            retirerRepas(
-              '${jour}',
-              '${moment}'
-            )
-          "
-        >
-          Retirer
-        </button>
-
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-function voirRecette(id) {
-
-  window.location.href =
-    "Recette.html?id=" +
-    encodeURIComponent(id);
-
-}
-
-
-function retirerRepas(
-  jour,
-  moment
-) {
-
-  if (
-    planningSemaine[jour]
-  ) {
-
-    delete planningSemaine[jour][moment];
-
-  }
-
-
-  localStorage.setItem(
-    "planningSemaine",
-    JSON.stringify(
-      planningSemaine
-    )
-  );
-
-
-  compterSemaine();
-
-  afficherPlanning();
-
-}
-
-
-function afficherMenusSauvegardes() {
-
-  const zone =
-    document.getElementById(
-      "menus"
-    );
-
-
-  if (
-    !Array.isArray(
-      menusSauvegardes
-    ) ||
-    menusSauvegardes.length === 0
-  ) {
-
-    zone.innerHTML = `
-
-      <div class="vide">
-
-        <div class="emoji">
-          💚
-        </div>
-
-        <p>
-          Vous n'avez pas encore enregistré
-          de menu personnalisé.
-        </p>
-
-        <button
-          class="principal"
-          onclick="window.location.href='menu.html'"
-        >
-          ➕ Composer mon premier menu
-        </button>
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  zone.innerHTML =
-    menusSauvegardes
-      .map(function(menu, index) {
-
-        const liste =
-          Array.isArray(menu.recettes)
-            ? menu.recettes
+        menusSauvegardes =
+          sauvegarde
+            ? JSON.parse(sauvegarde)
             : [];
 
+        if (!Array.isArray(menusSauvegardes)) {
+          menusSauvegardes = [];
+        }
 
-        const noms =
-          liste.map(function(item) {
+      } catch (erreur) {
 
-            return obtenirNomRecette(
-              item
+        console.error(erreur);
+
+        menusSauvegardes = [];
+
+      }
+
+
+      try {
+
+        const planning =
+          localStorage.getItem("planningSemaine");
+
+        planningSemaine =
+          planning
+            ? JSON.parse(planning)
+            : null;
+
+      } catch (erreur) {
+
+        console.error(erreur);
+
+        planningSemaine = null;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       TROUVER UNE RECETTE
+    ===================================================== */
+
+    function trouverRecette(id) {
+
+      return recettes.find(
+        recette =>
+          String(recette.id) === String(id)
+      );
+
+    }
+
+
+    /* =====================================================
+       NOM RECETTE
+    ===================================================== */
+
+    function nomRecette(id, nomParDefaut = "Recette") {
+
+      const recette =
+        trouverRecette(id);
+
+      if (recette) {
+        return recette.nom || nomParDefaut;
+      }
+
+      return nomParDefaut;
+
+    }
+
+
+    /* =====================================================
+       AFFICHER TOUT
+    ===================================================== */
+
+    function afficherTout() {
+
+      afficherSemaine();
+
+      afficherMenusSauvegardes();
+
+      actualiserResume();
+
+    }
+
+
+    /* =====================================================
+       RESUME
+    ===================================================== */
+
+    function actualiserResume() {
+
+      let nombreRepas = 0;
+
+      let joursOrganises = 0;
+
+      const idsRecettes = new Set();
+
+
+      /* -----------------------------------------------------
+         PLANNING SEMAINE
+      ----------------------------------------------------- */
+
+      if (planningSemaine) {
+
+        jours.forEach(
+          jour => {
+
+            const jourPlanning =
+              planningSemaine[jour];
+
+            if (!jourPlanning) {
+              return;
+            }
+
+            let jourAUnRepas = false;
+
+
+            ["dejeuner", "diner"].forEach(
+              moment => {
+
+                const repas =
+                  jourPlanning[moment];
+
+                if (
+                  repas &&
+                  repas.id
+                ) {
+
+                  nombreRepas++;
+
+                  jourAUnRepas = true;
+
+                  idsRecettes.add(
+                    String(repas.id)
+                  );
+
+                }
+
+              }
             );
 
-          });
+
+            if (jourAUnRepas) {
+              joursOrganises++;
+            }
+
+          }
+        );
+
+      }
 
 
-        const repas =
-          menu.repas
-            ? nomRepas(menu.repas)
-            : "Menu personnalisé";
+      /* -----------------------------------------------------
+         MENUS SAUVEGARDES
+      ----------------------------------------------------- */
 
+      menusSauvegardes.forEach(
+        menu => {
 
-        return `
+          if (
+            !menu ||
+            !Array.isArray(menu.recettes)
+          ) {
+            return;
+          }
 
-          <article
-            class="menu-sauvegarde"
-          >
+          menu.recettes.forEach(
+            recette => {
 
-            <h3>
-              🍽️ ${repas}
-            </h3>
+              if (
+                recette &&
+                recette.id
+              ) {
 
+                idsRecettes.add(
+                  String(recette.id)
+                );
 
-            <div class="menu-date">
-
-              Enregistré le
-              ${menu.date || "date inconnue"}
-
-            </div>
-
-
-            <div class="menu-recettes">
-
-              ${
-                noms.length > 0
-
-                  ? noms.map(function(nom) {
-
-                      return `
-                        <div>
-                          🍴 ${nom}
-                        </div>
-                      `;
-
-                    }).join("")
-
-                  : `
-                    <div>
-                      Aucune recette enregistrée
-                    </div>
-                  `
               }
 
+            }
+          );
+
+        }
+      );
+
+
+      document.getElementById(
+        "nombreRepas"
+      ).textContent = nombreRepas;
+
+
+      document.getElementById(
+        "nombreJours"
+      ).textContent = joursOrganises;
+
+
+      document.getElementById(
+        "nombreRecettes"
+      ).textContent =
+        idsRecettes.size;
+
+    }
+
+
+    /* =====================================================
+       AFFICHER LA SEMAINE
+    ===================================================== */
+
+    function afficherSemaine() {
+
+      const container =
+        document.getElementById(
+          "semaineContainer"
+        );
+
+      container.innerHTML = "";
+
+
+      if (
+        !planningSemaine ||
+        typeof planningSemaine !== "object"
+      ) {
+
+        container.innerHTML = `
+          <div class="empty">
+            <div style="font-size:32px; margin-bottom:8px;">
+              🗓️
+            </div>
+
+            <strong>
+              Votre semaine n'est pas encore organisée.
+            </strong>
+
+            <br><br>
+
+            Composez votre première semaine
+            pour retrouver ici vos repas.
+          </div>
+        `;
+
+        return;
+
+      }
+
+
+      let auMoinsUnRepas = false;
+
+
+      jours.forEach(
+        jour => {
+
+          const jourPlanning =
+            planningSemaine[jour] || {};
+
+
+          const dejeuner =
+            jourPlanning.dejeuner;
+
+          const diner =
+            jourPlanning.diner;
+
+
+          if (
+            !dejeuner &&
+            !diner
+          ) {
+            return;
+          }
+
+
+          auMoinsUnRepas = true;
+
+
+          const carte =
+            document.createElement("div");
+
+          carte.className = "day-card";
+
+
+          let html = `
+            <div class="day-title">
+              ${nomsJours[jour]}
+            </div>
+          `;
+
+
+          /* -------------------------------------------------
+             DEJEUNER
+          ------------------------------------------------- */
+
+          html += `
+            <div class="meal">
+
+              <div class="meal-label">
+                ☀️ Déjeuner
+              </div>
+          `;
+
+
+          if (
+            dejeuner &&
+            dejeuner.id
+          ) {
+
+            html += `
+              <div class="meal-name">
+                ${echapperHTML(
+                  nomRecette(
+                    dejeuner.id,
+                    dejeuner.nom || "Recette"
+                  )
+                )}
+              </div>
+            `;
+
+          } else {
+
+            html += `
+              <div class="empty-meal">
+                Pas de repas prévu
+              </div>
+            `;
+
+          }
+
+
+          html += `
+            </div>
+          `;
+
+
+          /* -------------------------------------------------
+             DINER
+          ------------------------------------------------- */
+
+          html += `
+            <div class="meal">
+
+              <div class="meal-label">
+                🌙 Dîner
+              </div>
+          `;
+
+
+          if (
+            diner &&
+            diner.id
+          ) {
+
+            html += `
+              <div class="meal-name">
+                ${echapperHTML(
+                  nomRecette(
+                    diner.id,
+                    diner.nom || "Recette"
+                  )
+                )}
+              </div>
+            `;
+
+          } else {
+
+            html += `
+              <div class="empty-meal">
+                Pas de repas prévu
+              </div>
+            `;
+
+          }
+
+
+          html += `
+            </div>
+          `;
+
+
+          carte.innerHTML = html;
+
+          container.appendChild(carte);
+
+        }
+      );
+
+
+      if (!auMoinsUnRepas) {
+
+        container.innerHTML = `
+          <div class="empty">
+            Votre semaine est encore vide.
+            <br><br>
+            <a
+              href="menu.html"
+              class="btn btn-primary"
+            >
+              ➕ Organiser ma semaine
+            </a>
+          </div>
+        `;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       AFFICHER MENUS SAUVEGARDES
+    ===================================================== */
+
+    function afficherMenusSauvegardes() {
+
+      const container =
+        document.getElementById(
+          "menusContainer"
+        );
+
+      container.innerHTML = "";
+
+
+      if (
+        !Array.isArray(menusSauvegardes) ||
+        menusSauvegardes.length === 0
+      ) {
+
+        container.innerHTML = `
+          <div class="empty">
+
+            <div style="font-size:34px; margin-bottom:10px;">
+              💚
+            </div>
+
+            <strong>
+              Aucun menu sauvegardé pour le moment.
+            </strong>
+
+            <br><br>
+
+            Composez votre première petite assiette
+            et enregistrez-la ici.
+
+            <br><br>
+
+            <a
+              href="menu.html"
+              class="btn btn-primary"
+            >
+              ➕ Composer mon menu
+            </a>
+
+          </div>
+        `;
+
+        return;
+
+      }
+
+
+      menusSauvegardes.forEach(
+        (menu, index) => {
+
+          if (!menu) {
+            return;
+          }
+
+
+          const recettesMenu =
+            Array.isArray(menu.recettes)
+              ? menu.recettes
+              : [];
+
+
+          const nombre =
+            recettesMenu.length;
+
+
+          const repas =
+            traduireRepas(
+              menu.repas
+            );
+
+
+          const carte =
+            document.createElement("div");
+
+          carte.className =
+            "saved-menu";
+
+
+          const date =
+            menu.date ||
+            (
+              menu.timestamp
+                ? new Date(
+                    menu.timestamp
+                  ).toLocaleDateString(
+                    "fr-FR"
+                  )
+                : ""
+            );
+
+
+          carte.innerHTML = `
+
+            <div class="saved-menu-header">
+
+              <div class="saved-menu-title">
+                🍽️
+                ${echapperHTML(
+                  repas
+                )}
+              </div>
+
+              <div class="saved-menu-date">
+                ${echapperHTML(
+                  date
+                )}
+              </div>
+
             </div>
 
 
-            <div class="menu-actions">
+            <div class="saved-menu-info">
+
+              ${nombre === 0
+                ? "Aucune recette dans ce menu."
+                : `${nombre}
+                   ${nombre > 1 ? "recettes sélectionnées" : "recette sélectionnée"}.`
+              }
+
+              <br>
 
               ${
-                liste.length > 0
+                Array.isArray(menu.envies) &&
+                menu.envies.length > 0
                   ? `
-                    <button
-                      class="principal"
-                      onclick="
-                        voirPremiereRecette(
-                          ${index}
+                    <span class="recipe-count">
+                      ${menu.envies
+                        .map(
+                          envie =>
+                            echapperHTML(
+                              traduireEnvie(envie)
+                            )
                         )
-                      "
-                    >
-                      Voir le menu
-                    </button>
+                        .join(" · ")
+                      }
+                    </span>
                   `
                   : ""
               }
 
+            </div>
+
+
+            <div class="saved-menu-actions">
 
               <button
-                class="petit-btn supprimer"
-                onclick="
-                  supprimerMenu(${index})
-                "
+                type="button"
+                class="btn btn-primary"
+                onclick="afficherDetailMenu(${index})"
               >
-                Supprimer
+                👀 Voir
+                ${
+                  nombre > 1
+                    ? "les " + nombre + " recettes"
+                    : "le menu"
+                }
+              </button>
+
+
+              <button
+                type="button"
+                class="btn btn-danger"
+                onclick="supprimerMenu(${index})"
+              >
+                🗑️ Supprimer
               </button>
 
             </div>
 
-          </article>
-
-        `;
-
-      })
-      .join("");
-
-}
+          `;
 
 
-function nomRepas(valeur) {
+          container.appendChild(carte);
 
-  const correspondances = {
-
-    "petit-dejeuner":
-      "🌅 Petit-déjeuner",
-
-    "dejeuner":
-      "🥗 Déjeuner",
-
-    "diner":
-      "🍲 Dîner",
-
-    "collation":
-      "🍎 Collation",
-
-    "petite-douceur":
-      "🍰 Petite douceur",
-
-    "peu-importe":
-      "✨ Menu personnalisé"
-
-  };
-
-
-  return (
-    correspondances[valeur] ||
-    "🍽️ Menu personnalisé"
-  );
-
-}
-
-
-function voirPremiereRecette(index) {
-
-  const menu =
-    menusSauvegardes[index];
-
-
-  if (
-    !menu ||
-    !Array.isArray(menu.recettes) ||
-    menu.recettes.length === 0
-  ) {
-    return;
-  }
-
-
-  const premiere =
-    menu.recettes[0];
-
-
-  if (!premiere.id) {
-    return;
-  }
-
-
-  voirRecette(
-    premiere.id
-  );
-
-}
-
-
-function supprimerMenu(index) {
-
-  const confirmation =
-    confirm(
-      "Supprimer ce menu enregistré ?"
-    );
-
-
-  if (!confirmation) {
-    return;
-  }
-
-
-  menusSauvegardes.splice(
-    index,
-    1
-  );
-
-
-  localStorage.setItem(
-    "menusSauvegardes",
-    JSON.stringify(
-      menusSauvegardes
-    )
-  );
-
-
-  afficherMenusSauvegardes();
-
-}
-
-
-function allerAuxCourses() {
-
-  const planning =
-    JSON.parse(
-      localStorage.getItem(
-        "planningSemaine"
-      ) || "{}"
-    );
-
-
-  const aUnRepas =
-    Object.values(
-      planning
-    ).some(function(jour) {
-
-      return (
-        jour &&
-        (
-          jour.dejeuner ||
-          jour.diner
-        )
-      );
-
-    });
-
-
-  if (!aUnRepas) {
-
-    alert(
-      "Organisez d'abord votre semaine pour préparer votre liste de courses."
-    );
-
-    return;
-
-  }
-
-
-  window.location.href =
-    "courses.html";
-
-}
-
-
-/* ============================= */
-/* CHARGEMENT */
-/* ============================= */
-
-fetch("../recettes.json")
-
-  .then(function(response) {
-
-    if (!response.ok) {
-
-      throw new Error(
-        "Impossible de charger recettes.json"
+        }
       );
 
     }
 
-    return response.json();
 
-  })
+    /* =====================================================
+       AFFICHER DETAIL MENU
+    ===================================================== */
 
-  .then(function(data) {
+    function afficherDetailMenu(index) {
 
-    recettes =
-      Array.isArray(data)
-        ? data
-        : [];
-
-
-    chargerDonneesLocales();
-
-    compterSemaine();
-
-    afficherPlanning();
-
-    afficherMenusSauvegardes();
-
-  })
-
-  .catch(function(error) {
-
-    console.error(error);
-
-    chargerDonneesLocales();
-
-    compterSemaine();
-
-    afficherPlanning();
-
-    afficherMenusSauvegardes();
-
-  });
+      const menu =
+        menusSauvegardes[index];
 
 
-</script>
+      if (!menu) {
+        return;
+      }
+
+
+      /*
+       * On utilise le hash.
+       *
+       * Cela permet au bouton "Retour" du navigateur
+       * de revenir naturellement à la liste des menus,
+       * sans retourner à menu.html.
+       */
+
+      location.hash =
+        "menu=" + index;
+
+
+      afficherDetailDepuisIndex(index);
+
+    }
+
+
+    /* =====================================================
+       AFFICHER DETAIL DEPUIS INDEX
+    ===================================================== */
+
+    function afficherDetailDepuisIndex(index) {
+
+      const menu =
+        menusSauvegardes[index];
+
+
+      if (!menu) {
+
+        afficherListe();
+
+        return;
+
+      }
+
+
+      document.getElementById(
+        "listeMenus"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "detailMenu"
+      ).style.display = "block";
+
+
+      const container =
+        document.getElementById(
+          "detailContenu"
+        );
+
+
+      const recettesMenu =
+        Array.isArray(menu.recettes)
+          ? menu.recettes
+          : [];
+
+
+      const repas =
+        traduireRepas(
+          menu.repas
+        );
+
+
+      const date =
+        menu.date ||
+        (
+          menu.timestamp
+            ? new Date(
+                menu.timestamp
+              ).toLocaleDateString(
+                "fr-FR"
+              )
+            : ""
+        );
+
+
+      let html = `
+
+        <div class="detail-header">
+
+          <h2>
+            🍽️ ${echapperHTML(repas)}
+          </h2>
+
+          <p>
+            Menu enregistré le
+            ${echapperHTML(date)}
+          </p>
+
+          <p style="margin-top:7px;">
+            ${
+              recettesMenu.length
+            }
+            ${
+              recettesMenu.length > 1
+                ? "recettes sélectionnées"
+                : "recette sélectionnée"
+            }
+          </p>
+
+        </div>
+
+      `;
+
+
+      /* -----------------------------------------------------
+         AUCUNE RECETTE
+      ----------------------------------------------------- */
+
+      if (
+        recettesMenu.length === 0
+      ) {
+
+        html += `
+          <div class="empty">
+            Ce menu ne contient aucune recette.
+          </div>
+        `;
+
+        container.innerHTML = html;
+
+        return;
+
+      }
+
+
+      /* -----------------------------------------------------
+         TOUTES LES RECETTES
+      ----------------------------------------------------- */
+
+      recettesMenu.forEach(
+        (recetteMenu, recetteIndex) => {
+
+          if (
+            !recetteMenu ||
+            !recetteMenu.id
+          ) {
+            return;
+          }
+
+
+          const recette =
+            trouverRecette(
+              recetteMenu.id
+            );
+
+
+          const nom =
+            recette
+              ? recette.nom
+              : (
+                  recetteMenu.nom ||
+                  "Recette introuvable"
+                );
+
+
+          const categorie =
+            recette &&
+            recette.categorie
+              ? recette.categorie
+              : "";
+
+
+          const temps =
+            recette &&
+            recette.temps !== undefined &&
+            recette.temps !== null
+              ? recette.temps + " min"
+              : "";
+
+
+          const proteines =
+            recette &&
+            recette.proteines !== undefined &&
+            recette.proteines !== null
+              ? recette.proteines + " g de protéines"
+              : "";
+
+
+          html += `
+
+            <div class="detail-recipe">
+
+              <h3>
+                ${echapperHTML(
+                  nom
+                )}
+              </h3>
+
+
+              <div class="recipe-meta">
+
+                ${
+                  categorie
+                    ? `
+                      <span class="meta">
+                        ${echapperHTML(
+                          categorie
+                        )}
+                      </span>
+                    `
+                    : ""
+                }
+
+
+                ${
+                  temps
+                    ? `
+                      <span class="meta">
+                        ⏱️
+                        ${echapperHTML(
+                          temps
+                        )}
+                      </span>
+                    `
+                    : ""
+                }
+
+
+                ${
+                  proteines
+                    ? `
+                      <span class="meta">
+                        💪
+                        ${echapperHTML(
+                          proteines
+                        )}
+                      </span>
+                    `
+                    : ""
+                }
+
+              </div>
+
+
+              <div class="detail-recipe-actions">
+
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="voirRecette('${echapperAttribut(
+                    recetteMenu.id
+                  )}')"
+                >
+                  🍽️ Voir la recette
+                </button>
+
+
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  onclick="retirerRecetteDuMenu(
+                    ${index},
+                    ${recetteIndex}
+                  )"
+                >
+                  ✕ Retirer
+                </button>
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      );
+
+
+      container.innerHTML = html;
+
+    }
+
+
+    /* =====================================================
+       RETIRER UNE RECETTE DU MENU
+    ===================================================== */
+
+    function retirerRecetteDuMenu(
+      menuIndex,
+      recetteIndex
+    ) {
+
+      const menu =
+        menusSauvegardes[menuIndex];
+
+
+      if (!menu) {
+        return;
+      }
+
+
+      if (
+        !Array.isArray(menu.recettes)
+      ) {
+        return;
+      }
+
+
+      if (
+        recetteIndex < 0 ||
+        recetteIndex >= menu.recettes.length
+      ) {
+        return;
+      }
+
+
+      const recette =
+        menu.recettes[
+          recetteIndex
+        ];
+
+
+      const nom =
+        recette
+          ? nomRecette(
+              recette.id,
+              recette.nom || "cette recette"
+            )
+          : "cette recette";
+
+
+      const confirmer =
+        confirm(
+          "Retirer « " +
+          nom +
+          " » de ce menu ?"
+        );
+
+
+      if (!confirmer) {
+        return;
+      }
+
+
+      menu.recettes.splice(
+        recetteIndex,
+        1
+      );
+
+
+      sauvegarderMenus();
+
+
+      actualiserResume();
+
+
+      afficherDetailDepuisIndex(
+        menuIndex
+      );
+
+
+      afficherMessage(
+        "Recette retirée du menu."
+      );
+
+    }
+
+
+    /* =====================================================
+       SUPPRIMER UN MENU COMPLET
+    ===================================================== */
+
+    function supprimerMenu(index) {
+
+      const menu =
+        menusSauvegardes[index];
+
+
+      if (!menu) {
+        return;
+      }
+
+
+      const confirmer =
+        confirm(
+          "Supprimer définitivement ce menu sauvegardé ?"
+        );
+
+
+      if (!confirmer) {
+        return;
+      }
+
+
+      menusSauvegardes.splice(
+        index,
+        1
+      );
+
+
+      sauvegarderMenus();
+
+
+      /*
+       * Si on était dans le détail,
+       * on revient à la liste.
+       */
+
+      retourListeMenus();
+
+
+      afficherMessage(
+        "Menu supprimé."
+      );
+
+    }
+
+
+    /* =====================================================
+       SAUVEGARDER LES MENUS
+    ===================================================== */
+
+    function sauvegarderMenus() {
+
+      localStorage.setItem(
+        "menusSauvegardes",
+        JSON.stringify(
+          menusSauvegardes
+        )
+      );
+
+    }
+
+
+    /* =====================================================
+       VOIR UNE RECETTE
+    ===================================================== */
+
+    function voirRecette(id) {
+
+      if (!id) {
+        return;
+      }
+
+
+      /*
+       * La recette s'ouvre depuis MesMenus.html.
+       *
+       * Si l'utilisateur utilise ensuite "Retour"
+       * dans le navigateur, il revient ici.
+       *
+       * Le menu reste sauvegardé dans localStorage.
+       */
+
+      window.location.href =
+        "Recette.html?id=" +
+        encodeURIComponent(id);
+
+    }
+
+
+    /* =====================================================
+       RETOUR LISTE
+    ===================================================== */
+
+    function retourListeMenus() {
+
+      /*
+       * On retire le hash.
+       *
+       * Le menu sauvegardé n'est absolument pas supprimé.
+       */
+
+      if (
+        location.hash
+      ) {
+
+        history.pushState(
+          "",
+          document.title,
+          window.location.pathname +
+          window.location.search
+        );
+
+      }
+
+
+      afficherListe();
+
+    }
+
+
+    /* =====================================================
+       AFFICHER LISTE
+    ===================================================== */
+
+    function afficherListe() {
+
+      document.getElementById(
+        "detailMenu"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "listeMenus"
+      ).style.display = "block";
+
+
+      /*
+       * On recharge les données locales
+       * pour être certain d'afficher la
+       * dernière version du menu.
+       */
+
+      chargerMenus();
+
+      afficherSemaine();
+
+      afficherMenusSauvegardes();
+
+      actualiserResume();
+
+    }
+
+
+    /* =====================================================
+       HASH / BOUTON RETOUR NAVIGATEUR
+    ===================================================== */
+
+    function gererHash() {
+
+      const hash =
+        window.location.hash;
+
+
+      if (
+        hash.startsWith(
+          "#menu="
+        )
+      ) {
+
+        const index =
+          parseInt(
+            hash.replace(
+              "#menu=",
+              ""
+            ),
+            10
+          );
+
+
+        if (
+          Number.isInteger(index)
+        ) {
+
+          afficherDetailDepuisIndex(
+            index
+          );
+
+          return;
+
+        }
+
+      }
+
+
+      afficherListe();
+
+    }
+
+
+    window.addEventListener(
+      "hashchange",
+      gererHash
+    );
+
+
+    /* =====================================================
+       ALLER AUX COURSES
+    ===================================================== */
+
+    function allerAuxCourses() {
+
+      let aUnRepas = false;
+
+
+      if (planningSemaine) {
+
+        jours.forEach(
+          jour => {
+
+            const planning =
+              planningSemaine[jour];
+
+
+            if (!planning) {
+              return;
+            }
+
+
+            if (
+              planning.dejeuner &&
+              planning.dejeuner.id
+            ) {
+              aUnRepas = true;
+            }
+
+
+            if (
+              planning.diner &&
+              planning.diner.id
+            ) {
+              aUnRepas = true;
+            }
+
+          }
+        );
+
+      }
+
+
+      if (!aUnRepas) {
+
+        afficherMessage(
+          "Organisez d'abord au moins un repas pour préparer vos courses."
+        );
+
+        return;
+
+      }
+
+
+      window.location.href =
+        "courses.html";
+
+    }
+
+
+    /* =====================================================
+       TRADUCTION REPAS
+    ===================================================== */
+
+    function traduireRepas(valeur) {
+
+      const texte =
+        String(
+          valeur || ""
+        ).toLowerCase();
+
+
+      const correspondances = {
+
+        "petit-dejeuner":
+          "Petit-déjeuner",
+
+        "petit_dejeuner":
+          "Petit-déjeuner",
+
+        "petit déjeuner":
+          "Petit-déjeuner",
+
+        "dejeuner":
+          "Déjeuner",
+
+        "déjeuner":
+          "Déjeuner",
+
+        "diner":
+          "Dîner",
+
+        "dîner":
+          "Dîner",
+
+        "collation":
+          "Collation",
+
+        "petite-douceur":
+          "Petite douceur",
+
+        "petite douceur":
+          "Petite douceur",
+
+        "peu-importe":
+          "Repas",
+
+        "peu importe":
+          "Repas"
+
+      };
+
+
+      return correspondances[texte]
+        || valeur
+        || "Repas";
+
+    }
+
+
+    /* =====================================================
+       TRADUCTION ENVIE
+    ===================================================== */
+
+    function traduireEnvie(valeur) {
+
+      const texte =
+        String(
+          valeur || ""
+        ).toLowerCase();
+
+
+      const correspondances = {
+
+        leger: "Léger",
+
+        léger: "Léger",
+
+        rapide: "Rapide",
+
+        sucre: "Sucré",
+
+        sucré: "Sucré",
+
+        vegetarien: "Végétarien",
+
+        végétarien: "Végétarien",
+
+        salade: "Salade",
+
+        reconfort: "Réconfortant",
+
+        reconfortant: "Réconfortant",
+
+        complet: "Complet",
+
+        proteine: "Riche en protéines",
+
+        "petit-appetit":
+          "Petit appétit"
+
+      };
+
+
+      return correspondances[texte]
+        || valeur
+        || "";
+
+    }
+
+
+    /* =====================================================
+       SECURITE HTML
+    ===================================================== */
+
+    function echapperHTML(valeur) {
+
+      return String(
+        valeur ?? ""
+      )
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+    /* =====================================================
+       SECURITE ATTRIBUT
+    ===================================================== */
+
+    function echapperAttribut(valeur) {
+
+      return String(
+        valeur ?? ""
+      )
+        .replace(
+          /\\/g,
+          "\\\\"
+        )
+        .replace(
+          /'/g,
+          "\\'"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        );
+
+    }
+
+
+    /* =====================================================
+       MESSAGE TEMPORAIRE
+    ===================================================== */
+
+    function afficherMessage(texte) {
+
+      const element =
+        document.getElementById(
+          "message"
+        );
+
+
+      element.textContent =
+        texte;
+
+
+      element.style.display =
+        "block";
+
+
+      clearTimeout(
+        window.timerMessage
+      );
+
+
+      window.timerMessage =
+        setTimeout(
+          () => {
+
+            element.style.display =
+              "none";
+
+          },
+          2500
+        );
+
+    }
+
+
+    /* =====================================================
+       INITIALISATION
+    ===================================================== */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      async () => {
+
+        await chargerDonnees();
+
+        gererHash();
+
+      }
+    );
+
+  </script>
 
 </body>
 
 </html>
+```
