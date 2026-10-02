@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Mes menus - Ma Petite Assiette</title>
 
@@ -16,6 +22,7 @@
   </script>
   
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -24,1280 +31,1176 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f8f4ec;
-      color: #34463a;
+      background: #fffaf5;
+      color: #4d4038;
       padding-bottom: 90px;
     }
 
-    button {
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
     .hero {
-      background: linear-gradient(135deg, #dce9d7, #f6dfcf);
-      padding: 28px 18px 30px;
-      text-align: center;
-      border-radius: 0 0 30px 30px;
+      background:
+        linear-gradient(
+          135deg,
+          #f6d9c8,
+          #dce8d5
+        );
+
+      padding: 30px 20px;
+
+      border-radius:
+        0 0 30px 30px;
     }
 
-    .hero-icon {
-      font-size: 42px;
-      margin-bottom: 8px;
+    .retour {
+      display: inline-block;
+      color: #5b7153;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: 27px;
-      color: #35513d;
+      font-size: 28px;
       margin-bottom: 8px;
     }
 
     .hero p {
-      max-width: 450px;
-      margin: auto;
-      font-size: 15px;
       line-height: 1.5;
-      color: #58675e;
+      font-size: 15px;
     }
 
-    /* =====================================================
-       CONTENEUR
-    ===================================================== */
-
-    .container {
-      width: 100%;
+    .contenu {
       max-width: 700px;
       margin: auto;
-      padding: 20px 16px 30px;
+      padding: 20px 16px;
     }
 
-    /* =====================================================
-       SECTION
-    ===================================================== */
+    .actions-haut {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .action {
+      border: none;
+      border-radius: 17px;
+      padding: 14px 10px;
+      background: #eef5e9;
+      color: #506448;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .action.courses {
+      background: #f8e5d9;
+      color: #8b5d49;
+    }
+
+    .resume {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 9px;
+
+      margin-bottom: 22px;
+    }
+
+    .resume-card {
+      background: white;
+      border-radius: 17px;
+      padding: 14px 8px;
+      text-align: center;
+      border: 1px solid #eadfd7;
+    }
+
+    .resume-card strong {
+      display: block;
+      font-size: 22px;
+      color: #5f7c55;
+      margin-bottom: 4px;
+    }
+
+    .resume-card span {
+      font-size: 12px;
+      color: #796e67;
+    }
 
     .section {
-      background: #fffdf8;
-      border-radius: 21px;
-      padding: 18px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 15px rgba(70, 80, 65, 0.07);
+      margin-bottom: 25px;
     }
 
     .section h2 {
-      font-size: 19px;
-      color: #35513d;
-      margin-bottom: 7px;
+      font-size: 20px;
+      margin-bottom: 12px;
     }
 
-    .section-intro {
-      font-size: 13px;
-      line-height: 1.45;
-      color: #748078;
-      margin-bottom: 17px;
-    }
-
-    /* =====================================================
-       ACTIONS
-    ===================================================== */
-
-    .top-actions {
+    .semaine {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 9px;
-      margin-bottom: 18px;
+      gap: 11px;
     }
 
-    .action-button {
-      border-radius: 14px;
-      padding: 13px 8px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .new-menu {
-      border: none;
-      background: #e7f0e3;
-      color: #31533a;
-    }
-
-    .courses {
-      border: 1px solid #ddd8cd;
+    .jour {
       background: white;
-      color: #59655d;
-    }
-
-    /* =====================================================
-       RESUME
-    ===================================================== */
-
-    .summary {
-      background: #f5f1e9;
-      border-radius: 15px;
-      padding: 13px;
-      margin-bottom: 17px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .summary-item {
-      flex: 1;
-      text-align: center;
-    }
-
-    .summary-number {
-      display: block;
-      font-size: 21px;
-      font-weight: bold;
-      color: #52765a;
-      margin-bottom: 3px;
-    }
-
-    .summary-label {
-      font-size: 10px;
-      color: #748078;
-    }
-
-    /* =====================================================
-       JOUR
-    ===================================================== */
-
-    .day-card {
-      background: white;
-      border: 1px solid #e5e1d8;
-      border-radius: 18px;
+      border-radius: 19px;
       overflow: hidden;
-      margin-bottom: 11px;
+      border: 1px solid #e5dbd3;
     }
 
-    .day-header {
-      background: #edf3e9;
-      padding: 12px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .jour-titre {
+      background: #eef5e9;
+      padding: 12px 15px;
+      font-weight: bold;
     }
 
-    .day-name {
+    .repas {
+      padding: 13px 15px;
+      border-top: 1px solid #eee5de;
+    }
+
+    .repas-label {
+      font-size: 13px;
+      color: #7b7069;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .repas-nom {
       font-size: 15px;
-      font-weight: bold;
-      color: #3d5943;
-    }
-
-    .day-count {
-      font-size: 10px;
-      background: #dce9d7;
-      color: #52765a;
-      padding: 5px 8px;
-      border-radius: 20px;
-    }
-
-    /* =====================================================
-       REPAS
-    ===================================================== */
-
-    .meal-row {
-      padding: 12px;
-      border-top: 1px solid #eeeae1;
-    }
-
-    .meal-title {
-      font-size: 10px;
-      text-transform: uppercase;
-      color: #7a847c;
-      font-weight: bold;
       margin-bottom: 7px;
     }
 
-    .recipe-box {
-      background: #f8f5ee;
-      border-radius: 13px;
-      padding: 10px;
-    }
-
-    .recipe-name {
-      font-size: 13px;
-      line-height: 1.35;
-      font-weight: bold;
-      color: #405046;
-      margin-bottom: 9px;
-    }
-
-    .recipe-actions {
+    .repas-actions {
       display: flex;
-      gap: 6px;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .recipe-actions a,
-    .recipe-actions button {
-      flex: 1;
-      border-radius: 9px;
-      padding: 8px 5px;
-      font-size: 10px;
-      text-decoration: none;
-      text-align: center;
+    .petit-btn {
+      border: none;
+      background: transparent;
+      color: #5f7c55;
+      font-weight: bold;
+      padding: 3px 0;
+      cursor: pointer;
     }
 
-    .view-recipe {
-      border: 1px solid #ddd8cd;
+    .petit-btn.supprimer {
+      color: #b45d50;
+    }
+
+    .vide {
       background: white;
-      color: #59655d;
-    }
-
-    .delete-meal {
-      border: 1px solid #e4d4ce;
-      background: #fff8f5;
-      color: #986f65;
-    }
-
-    .empty-slot {
-      border: 1px dashed #c8cfc4;
-      border-radius: 10px;
-      padding: 9px;
+      border-radius: 20px;
+      padding: 28px 18px;
       text-align: center;
-      color: #89938b;
-      font-size: 11px;
+      border: 1px solid #e5dbd3;
     }
 
-    /* =====================================================
-       EMPTY
-    ===================================================== */
-
-    .empty-state {
-      text-align: center;
-      padding: 25px 12px;
-    }
-
-    .empty-icon {
-      font-size: 45px;
+    .vide .emoji {
+      font-size: 40px;
       margin-bottom: 10px;
     }
 
-    .empty-state h2 {
-      margin-bottom: 7px;
-    }
-
-    .empty-state p {
-      color: #748078;
-      font-size: 13px;
+    .vide p {
       line-height: 1.5;
-      margin-bottom: 17px;
+      margin-bottom: 16px;
+      color: #71665f;
     }
 
-    .empty-button {
-      display: inline-block;
-      text-decoration: none;
-      background: #73966e;
+    .principal {
+      border: none;
+      background: #5f7c55;
       color: white;
-      border-radius: 13px;
-      padding: 12px 18px;
-      font-size: 13px;
+      border-radius: 17px;
+      padding: 13px 18px;
       font-weight: bold;
+      cursor: pointer;
     }
 
-    /* =====================================================
-       MENU SAUVEGARDE
-    ===================================================== */
-
-    .saved-menu {
-      background: #f8f5ee;
-      border-radius: 14px;
-      padding: 12px;
-      margin-bottom: 9px;
+    .menus {
+      display: grid;
+      gap: 11px;
     }
 
-    .saved-menu-date {
-      font-size: 10px;
-      color: #7b857d;
-      margin-bottom: 5px;
+    .menu-sauvegarde {
+      background: white;
+      border: 1px solid #e5dbd3;
+      border-radius: 18px;
+      padding: 16px;
     }
 
-    .saved-menu-title {
-      font-size: 13px;
-      font-weight: bold;
-      color: #405046;
+    .menu-sauvegarde h3 {
+      font-size: 16px;
       margin-bottom: 8px;
     }
 
-    .saved-menu-recipes {
-      font-size: 11px;
-      color: #68746c;
-      line-height: 1.5;
+    .menu-date {
+      color: #81756d;
+      font-size: 13px;
+      margin-bottom: 10px;
     }
 
-    .delete-saved {
-      margin-top: 8px;
-      border: none;
-      background: transparent;
-      color: #986f65;
-      font-size: 10px;
-      padding: 3px 0;
+    .menu-recettes {
+      margin-bottom: 12px;
     }
 
-    /* =====================================================
-       NAVIGATION
-    ===================================================== */
+    .menu-recettes div {
+      background: #f8f3ef;
+      border-radius: 11px;
+      padding: 8px 10px;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
 
-    .bottom-nav {
+    .menu-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav {
       position: fixed;
+      bottom: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      height: 70px;
-      background: rgba(255, 253, 248, 0.97);
-      border-top: 1px solid #e4dfd5;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      z-index: 1000;
+      height: 72px;
+      background: white;
+      border-top: 1px solid #e5ddd7;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 20;
     }
 
-    .bottom-nav a {
+    .nav a {
       text-decoration: none;
-      color: #69756c;
+      color: #6c625c;
+      font-size: 12px;
       text-align: center;
-      padding-top: 9px;
-      font-size: 11px;
     }
 
-    .bottom-nav span {
+    .nav a span {
       display: block;
       font-size: 22px;
       margin-bottom: 3px;
     }
 
-    .bottom-nav a.active {
-      color: #52765a;
-      font-weight: bold;
-    }
+    @media (max-width: 500px) {
 
-    @media (min-width: 600px) {
+      .actions-haut {
+        grid-template-columns: 1fr;
+      }
 
-      .day-card {
-        margin-bottom: 14px;
+      .resume {
+        grid-template-columns:
+          repeat(3, 1fr);
       }
 
     }
 
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- =====================================================
-       HERO
-  ===================================================== -->
 
-  <header class="hero">
+<header class="hero">
 
-    <div class="hero-icon">📅</div>
+  <a
+    class="retour"
+    href="../../index.html"
+  >
+    ← Accueil
+  </a>
 
-    <h1>Mes menus</h1>
+  <h1>📅 Mes menus</h1>
 
-    <p>
-      Retrouvez vos repas et organisez votre semaine
-      simplement.
-    </p>
+  <p>
+    Retrouvez vos menus enregistrés
+    et organisez votre semaine simplement.
+  </p>
 
-  </header>
+</header>
 
 
-  <main class="container">
+<main class="contenu">
 
-    <!-- ===================================================
-         ACTIONS
-    ==================================================== -->
 
-    <div class="top-actions">
+  <!-- ACTIONS -->
 
-      <a
-        href="menu.html"
-        class="action-button new-menu"
-        style="text-decoration:none;text-align:center;"
-      >
-        ➕ Composer un menu
-      </a>
+  <div class="actions-haut">
 
-      <button
-        class="action-button courses"
-        id="coursesButton"
-      >
-        🛒 Mes courses
-      </button>
+    <button
+      class="action"
+      onclick="window.location.href='menu.html'"
+    >
+      ➕ Composer un menu
+    </button>
+
+    <button
+      class="action courses"
+      onclick="allerAuxCourses()"
+    >
+      🛒 Mes courses
+    </button>
+
+  </div>
+
+
+  <!-- RESUME -->
+
+  <div class="resume">
+
+    <div class="resume-card">
+
+      <strong id="nbRepas">
+        0
+      </strong>
+
+      <span>
+        repas prévus
+      </span>
 
     </div>
 
 
-    <!-- ===================================================
-         PLANNING
-    ==================================================== -->
+    <div class="resume-card">
 
-    <section class="section">
+      <strong id="nbJours">
+        0
+      </strong>
 
-      <h2>📅 Ma semaine</h2>
+      <span>
+        jours organisés
+      </span>
 
-      <p class="section-intro">
-        Voici les repas que vous avez programmés.
-        Vous pouvez modifier votre semaine à tout moment.
-      </p>
+    </div>
 
 
-      <div
-        class="summary"
-        id="summary"
-      >
+    <div class="resume-card">
 
-        <div class="summary-item">
+      <strong id="nbRecettes">
+        0
+      </strong>
 
-          <span
-            class="summary-number"
-            id="mealCount"
-          >
-            0
-          </span>
+      <span>
+        recettes
+      </span>
 
-          <span class="summary-label">
-            repas prévus
-          </span>
+    </div>
 
+  </div>
+
+
+  <!-- SEMAINE -->
+
+  <section class="section">
+
+    <h2>
+      📅 Ma semaine
+    </h2>
+
+    <div
+      id="planning"
+      class="semaine"
+    ></div>
+
+  </section>
+
+
+  <!-- MENUS ENREGISTRES -->
+
+  <section class="section">
+
+    <h2>
+      💚 Mes menus enregistrés
+    </h2>
+
+    <div
+      id="menus"
+      class="menus"
+    ></div>
+
+  </section>
+
+
+</main>
+
+
+<nav class="nav">
+
+  <a href="../../index.html">
+    <span>🏠</span>
+    Accueil
+  </a>
+
+  <a href="Recettes.html">
+    <span>🍽️</span>
+    Recettes
+  </a>
+
+  <a href="MesMenus.html">
+    <span>📅</span>
+    Mes menus
+  </a>
+
+  <a href="Favoris.html">
+    <span>❤️</span>
+    Favoris
+  </a>
+
+</nav>
+
+
+<script>
+
+
+let recettes = [];
+
+let planningSemaine = {};
+
+let menusSauvegardes = [];
+
+const jours = [
+  "lundi",
+  "mardi",
+  "mercredi",
+  "jeudi",
+  "vendredi",
+  "samedi",
+  "dimanche"
+];
+
+
+const nomsJours = {
+
+  lundi: "Lundi",
+
+  mardi: "Mardi",
+
+  mercredi: "Mercredi",
+
+  jeudi: "Jeudi",
+
+  vendredi: "Vendredi",
+
+  samedi: "Samedi",
+
+  dimanche: "Dimanche"
+
+};
+
+
+function chargerDonneesLocales() {
+
+  try {
+
+    planningSemaine =
+      JSON.parse(
+        localStorage.getItem(
+          "planningSemaine"
+        ) || "{}"
+      );
+
+  } catch (e) {
+
+    planningSemaine = {};
+
+  }
+
+
+  try {
+
+    menusSauvegardes =
+      JSON.parse(
+        localStorage.getItem(
+          "menusSauvegardes"
+        ) || "[]"
+      );
+
+  } catch (e) {
+
+    menusSauvegardes = [];
+
+  }
+
+}
+
+
+function recetteParId(id) {
+
+  return recettes.find(
+    recette =>
+      String(recette.id) === String(id)
+  );
+
+}
+
+
+function obtenirNomRecette(item) {
+
+  if (!item) {
+    return "";
+  }
+
+
+  if (item.nom) {
+    return item.nom;
+  }
+
+
+  const recette =
+    recetteParId(item.id);
+
+
+  return recette
+    ? recette.nom
+    : "Recette";
+}
+
+
+function compterSemaine() {
+
+  let nbRepas = 0;
+
+  let joursOrganises = 0;
+
+  const ids = new Set();
+
+
+  jours.forEach(function(jour) {
+
+    const donnees =
+      planningSemaine[jour];
+
+
+    if (!donnees) {
+      return;
+    }
+
+
+    let jourCompte = false;
+
+
+    ["dejeuner", "diner"]
+      .forEach(function(moment) {
+
+        const repas =
+          donnees[moment];
+
+
+        if (repas) {
+
+          nbRepas++;
+
+          jourCompte = true;
+
+          if (repas.id) {
+            ids.add(
+              String(repas.id)
+            );
+          }
+
+        }
+
+      });
+
+
+    if (jourCompte) {
+      joursOrganises++;
+    }
+
+  });
+
+
+  document.getElementById(
+    "nbRepas"
+  ).textContent = nbRepas;
+
+
+  document.getElementById(
+    "nbJours"
+  ).textContent = joursOrganises;
+
+
+  document.getElementById(
+    "nbRecettes"
+  ).textContent = ids.size;
+
+}
+
+
+function afficherPlanning() {
+
+  const zone =
+    document.getElementById(
+      "planning"
+    );
+
+
+  const aUnRepas =
+    jours.some(function(jour) {
+
+      const d =
+        planningSemaine[jour];
+
+
+      return (
+        d &&
+        (
+          d.dejeuner ||
+          d.diner
+        )
+      );
+
+    });
+
+
+  if (!aUnRepas) {
+
+    zone.innerHTML = `
+
+      <div class="vide">
+
+        <div class="emoji">
+          🍽️
         </div>
 
+        <p>
+          Votre semaine est encore vide.
+          Commencez à organiser vos repas.
+        </p>
 
-        <div class="summary-item">
+        <button
+          class="principal"
+          onclick="window.location.href='menu.html'"
+        >
+          ✨ Organiser ma semaine
+        </button>
 
-          <span
-            class="summary-number"
-            id="dayCount"
-          >
-            0
-          </span>
+      </div>
 
-          <span class="summary-label">
-            jours organisés
-          </span>
+    `;
 
+    return;
+
+  }
+
+
+  zone.innerHTML =
+    jours
+      .map(function(jour) {
+
+        const donnees =
+          planningSemaine[jour] || {};
+
+
+        return `
+
+          <div class="jour">
+
+            <div class="jour-titre">
+              ${nomsJours[jour]}
+            </div>
+
+
+            ${afficherRepas(
+              jour,
+              "dejeuner",
+              "🥗 Déjeuner",
+              donnees.dejeuner
+            )}
+
+
+            ${afficherRepas(
+              jour,
+              "diner",
+              "🍲 Dîner",
+              donnees.diner
+            )}
+
+          </div>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+
+function afficherRepas(
+  jour,
+  moment,
+  label,
+  repas
+) {
+
+  if (!repas) {
+
+    return `
+
+      <div class="repas">
+
+        <div class="repas-label">
+          ${label}
         </div>
 
-
-        <div class="summary-item">
-
-          <span
-            class="summary-number"
-            id="recipeCount"
-          >
-            0
-          </span>
-
-          <span class="summary-label">
-            recettes
-          </span>
-
+        <div
+          style="
+            color:#9a8e86;
+            font-size:13px;
+          "
+        >
+          Aucun repas prévu
         </div>
 
       </div>
 
+    `;
 
-      <div id="planningContainer"></div>
-
-    </section>
-
-
-    <!-- ===================================================
-         MENUS SAUVEGARDES
-    ==================================================== -->
-
-    <section
-      class="section"
-      id="savedSection"
-      style="display:none;"
-    >
-
-      <h2>💚 Mes menus enregistrés</h2>
-
-      <p class="section-intro">
-        Retrouvez ici les menus que vous avez enregistrés
-        depuis « Une petite assiette ».
-      </p>
-
-      <div
-        id="savedMenusContainer"
-      ></div>
-
-    </section>
+  }
 
 
-  </main>
+  return `
 
+    <div class="repas">
 
-  <!-- =====================================================
-       NAVIGATION
-  ===================================================== -->
+      <div class="repas-label">
+        ${label}
+      </div>
 
-  <nav class="bottom-nav">
+      <div class="repas-nom">
+        ${obtenirNomRecette(repas)}
+      </div>
 
-    <a href="../../index.html">
-      <span>🏠</span>
-      Accueil
-    </a>
+      <div class="repas-actions">
 
-    <a href="Recettes.html">
-      <span>🍽️</span>
-      Recettes
-    </a>
-
-    <a href="Favoris.html">
-      <span>❤️</span>
-      Favoris
-    </a>
-
-    <a
-      href="MonProfil.html"
-    >
-      <span>👤</span>
-      Profil
-    </a>
-
-  </nav>
-
-
-  <script>
-
-    /* =====================================================
-       DONNEES
-    ===================================================== */
-
-    const jours = [
-
-      {
-        id: "lundi",
-        nom: "Lundi"
-      },
-
-      {
-        id: "mardi",
-        nom: "Mardi"
-      },
-
-      {
-        id: "mercredi",
-        nom: "Mercredi"
-      },
-
-      {
-        id: "jeudi",
-        nom: "Jeudi"
-      },
-
-      {
-        id: "vendredi",
-        nom: "Vendredi"
-      },
-
-      {
-        id: "samedi",
-        nom: "Samedi"
-      },
-
-      {
-        id: "dimanche",
-        nom: "Dimanche"
-      }
-
-    ];
-
-
-    let planning = {};
-
-
-    let catalogueRecettes = [];
-
-
-    /* =====================================================
-       CHARGER PLANNING
-    ===================================================== */
-
-    function chargerPlanning() {
-
-      try {
-
-        planning =
-          JSON.parse(
-            localStorage.getItem(
-              "planningSemaine"
-            ) || "{}"
-          );
-
-
-      } catch (erreur) {
-
-        console.error(erreur);
-
-        planning = {};
-
-      }
-
-    }
-
-
-    /* =====================================================
-       CHARGER RECETTES
-    ===================================================== */
-
-    async function chargerRecettes() {
-
-      try {
-
-        const response =
-          await fetch(
-            "../recettes.json"
-          );
-
-
-        if (!response.ok) {
-
-          throw new Error(
-            "Impossible de charger recettes.json"
-          );
-
+        ${
+          repas.id
+            ? `
+              <button
+                class="petit-btn"
+                onclick="voirRecette('${repas.id}')"
+              >
+                Voir la recette
+              </button>
+            `
+            : ""
         }
 
 
-        catalogueRecettes =
-          await response.json();
+        <button
+          class="petit-btn supprimer"
+          onclick="
+            retirerRepas(
+              '${jour}',
+              '${moment}'
+            )
+          "
+        >
+          Retirer
+        </button>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
 
 
-      } catch (erreur) {
+function voirRecette(id) {
 
-        console.error(erreur);
+  window.location.href =
+    "Recette.html?id=" +
+    encodeURIComponent(id);
 
-      }
-
-    }
-
-
-    /* =====================================================
-       COMPTER LES REPAS
-    ===================================================== */
-
-    function compterRepas() {
-
-      let total = 0;
-
-      let joursOrganises = 0;
-
-      const recettes =
-        new Set();
+}
 
 
-      jours.forEach(jour => {
+function retirerRepas(
+  jour,
+  moment
+) {
 
-        const jourPlanning =
-          planning[jour.id];
+  if (
+    planningSemaine[jour]
+  ) {
 
+    delete planningSemaine[jour][moment];
 
-        if (
-          !jourPlanning
-        ) {
-
-          return;
-
-        }
-
-
-        let nombreJour = 0;
+  }
 
 
-        Object.keys(
-          jourPlanning
-        ).forEach(moment => {
+  localStorage.setItem(
+    "planningSemaine",
+    JSON.stringify(
+      planningSemaine
+    )
+  );
 
-          const repas =
-            jourPlanning[moment];
+
+  compterSemaine();
+
+  afficherPlanning();
+
+}
 
 
-          if (
-            repas &&
-            repas.id
-          ) {
+function afficherMenusSauvegardes() {
 
-            total++;
+  const zone =
+    document.getElementById(
+      "menus"
+    );
 
-            nombreJour++;
 
-            recettes.add(
-              String(repas.id)
+  if (
+    !Array.isArray(
+      menusSauvegardes
+    ) ||
+    menusSauvegardes.length === 0
+  ) {
+
+    zone.innerHTML = `
+
+      <div class="vide">
+
+        <div class="emoji">
+          💚
+        </div>
+
+        <p>
+          Vous n'avez pas encore enregistré
+          de menu personnalisé.
+        </p>
+
+        <button
+          class="principal"
+          onclick="window.location.href='menu.html'"
+        >
+          ➕ Composer mon premier menu
+        </button>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  zone.innerHTML =
+    menusSauvegardes
+      .map(function(menu, index) {
+
+        const liste =
+          Array.isArray(menu.recettes)
+            ? menu.recettes
+            : [];
+
+
+        const noms =
+          liste.map(function(item) {
+
+            return obtenirNomRecette(
+              item
             );
 
-          }
-
-        });
+          });
 
 
-        if (
-          nombreJour > 0
-        ) {
+        const repas =
+          menu.repas
+            ? nomRepas(menu.repas)
+            : "Menu personnalisé";
 
-          joursOrganises++;
-
-        }
-
-      });
-
-
-      document.getElementById(
-        "mealCount"
-      ).textContent =
-        total;
-
-
-      document.getElementById(
-        "dayCount"
-      ).textContent =
-        joursOrganises;
-
-
-      document.getElementById(
-        "recipeCount"
-      ).textContent =
-        recettes.size;
-
-    }
-
-
-    /* =====================================================
-       AFFICHER PLANNING
-    ===================================================== */
-
-    function afficherPlanning() {
-
-      const container =
-        document.getElementById(
-          "planningContainer"
-        );
-
-
-      container.innerHTML = "";
-
-
-      const nombreRepas =
-        compterNombreRepas();
-
-
-      if (
-        nombreRepas === 0
-      ) {
-
-        container.innerHTML = `
-
-          <div class="empty-state">
-
-            <div class="empty-icon">
-              🍽️
-            </div>
-
-            <h2>
-              Votre semaine est encore vide
-            </h2>
-
-            <p>
-              Commencez par composer un menu,
-              puis ajoutez vos recettes aux différents
-              jours de la semaine.
-            </p>
-
-            <a
-              href="menu.html"
-              class="empty-button"
-            >
-              ✨ Organiser ma semaine
-            </a>
-
-          </div>
-
-        `;
-
-        return;
-
-      }
-
-
-      jours.forEach(jour => {
-
-        const jourPlanning =
-          planning[jour.id] || {};
-
-
-        const nombreJour =
-          Object.values(
-            jourPlanning
-          ).filter(
-            repas =>
-              repas &&
-              repas.id
-          ).length;
-
-
-        const carte =
-          document.createElement(
-            "div"
-          );
-
-
-        carte.className =
-          "day-card";
-
-
-        carte.innerHTML = `
-
-          <div class="day-header">
-
-            <span class="day-name">
-              ${jour.nom}
-            </span>
-
-            <span class="day-count">
-              ${nombreJour}
-              ${nombreJour > 1 ? "repas" : "repas"}
-            </span>
-
-          </div>
-
-
-          ${creerLigneRepas(
-            jour.id,
-            "dejeuner",
-            "🥗 Déjeuner",
-            jourPlanning.dejeuner
-          )}
-
-
-          ${creerLigneRepas(
-            jour.id,
-            "diner",
-            "🌙 Dîner",
-            jourPlanning.diner
-          )}
-
-        `;
-
-
-        container.appendChild(
-          carte
-        );
-
-      });
-
-    }
-
-
-    /* =====================================================
-       CREER LIGNE REPAS
-    ===================================================== */
-
-    function creerLigneRepas(
-      jour,
-      moment,
-      titre,
-      repas
-    ) {
-
-      if (
-        !repas ||
-        !repas.id
-      ) {
 
         return `
 
-          <div class="meal-row">
+          <article
+            class="menu-sauvegarde"
+          >
 
-            <div class="meal-title">
-              ${titre}
+            <h3>
+              🍽️ ${repas}
+            </h3>
+
+
+            <div class="menu-date">
+
+              Enregistré le
+              ${menu.date || "date inconnue"}
+
             </div>
 
-            <div class="empty-slot">
-              Aucun repas prévu
+
+            <div class="menu-recettes">
+
+              ${
+                noms.length > 0
+
+                  ? noms.map(function(nom) {
+
+                      return `
+                        <div>
+                          🍴 ${nom}
+                        </div>
+                      `;
+
+                    }).join("")
+
+                  : `
+                    <div>
+                      Aucune recette enregistrée
+                    </div>
+                  `
+              }
+
             </div>
 
-          </div>
 
-        `;
+            <div class="menu-actions">
 
-      }
+              ${
+                liste.length > 0
+                  ? `
+                    <button
+                      class="principal"
+                      onclick="
+                        voirPremiereRecette(
+                          ${index}
+                        )
+                      "
+                    >
+                      Voir le menu
+                    </button>
+                  `
+                  : ""
+              }
 
-
-      return `
-
-        <div class="meal-row">
-
-          <div class="meal-title">
-            ${titre}
-          </div>
-
-          <div class="recipe-box">
-
-            <div class="recipe-name">
-              ${repas.nom || "Recette"}
-            </div>
-
-            <div class="recipe-actions">
-
-              <a
-                href="Recette.html?id=${encodeURIComponent(
-                  repas.id
-                )}"
-                class="view-recipe"
-              >
-                Voir la recette
-              </a>
 
               <button
-                class="delete-meal"
-                onclick="supprimerRepas(
-                  '${jour}',
-                  '${moment}'
-                )"
+                class="petit-btn supprimer"
+                onclick="
+                  supprimerMenu(${index})
+                "
               >
-                Retirer
+                Supprimer
               </button>
 
             </div>
 
-          </div>
+          </article>
 
-        </div>
+        `;
 
-      `;
+      })
+      .join("");
 
-    }
+}
 
 
-    /* =====================================================
-       COMPTER NOMBRE TOTAL
-    ===================================================== */
+function nomRepas(valeur) {
 
-    function compterNombreRepas() {
+  const correspondances = {
 
-      let total = 0;
+    "petit-dejeuner":
+      "🌅 Petit-déjeuner",
 
+    "dejeuner":
+      "🥗 Déjeuner",
 
-      jours.forEach(jour => {
+    "diner":
+      "🍲 Dîner",
 
-        const jourPlanning =
-          planning[jour.id];
+    "collation":
+      "🍎 Collation",
 
+    "petite-douceur":
+      "🍰 Petite douceur",
 
-        if (
-          !jourPlanning
-        ) {
+    "peu-importe":
+      "✨ Menu personnalisé"
 
-          return;
+  };
 
-        }
 
+  return (
+    correspondances[valeur] ||
+    "🍽️ Menu personnalisé"
+  );
 
-        Object.values(
-          jourPlanning
-        ).forEach(repas => {
+}
 
-          if (
-            repas &&
-            repas.id
-          ) {
 
-            total++;
+function voirPremiereRecette(index) {
 
-          }
+  const menu =
+    menusSauvegardes[index];
 
-        });
 
-      });
+  if (
+    !menu ||
+    !Array.isArray(menu.recettes) ||
+    menu.recettes.length === 0
+  ) {
+    return;
+  }
 
 
-      return total;
+  const premiere =
+    menu.recettes[0];
 
-    }
 
+  if (!premiere.id) {
+    return;
+  }
 
-    /* =====================================================
-       SUPPRIMER REPAS
-    ===================================================== */
 
-    function supprimerRepas(
-      jour,
-      moment
-    ) {
+  voirRecette(
+    premiere.id
+  );
 
-      if (
-        !planning[jour]
-      ) {
+}
 
-        return;
 
-      }
+function supprimerMenu(index) {
 
-
-      delete planning[jour][moment];
-
-
-      if (
-        Object.keys(
-          planning[jour]
-        ).length === 0
-      ) {
-
-        delete planning[jour];
-
-      }
-
-
-      localStorage.setItem(
-        "planningSemaine",
-        JSON.stringify(
-          planning
-        )
-      );
-
-
-      afficherPlanning();
-
-      compterRepas();
-
-    }
-
-
-    /* =====================================================
-       MENUS ENREGISTRES
-    ===================================================== */
-
-    function chargerMenusSauvegardes() {
-
-      let menus = [];
-
-
-      try {
-
-        menus =
-          JSON.parse(
-            localStorage.getItem(
-              "menusSauvegardes"
-            ) || "[]"
-          );
-
-
-      } catch {
-
-        menus = [];
-
-      }
-
-
-      const section =
-        document.getElementById(
-          "savedSection"
-        );
-
-
-      const container =
-        document.getElementById(
-          "savedMenusContainer"
-        );
-
-
-      if (
-        !Array.isArray(menus) ||
-        menus.length === 0
-      ) {
-
-        section.style.display =
-          "none";
-
-        return;
-
-      }
-
-
-      section.style.display =
-        "block";
-
-
-      container.innerHTML = "";
-
-
-      menus.forEach(
-        (menu, index) => {
-
-          const element =
-            document.createElement(
-              "div"
-            );
-
-
-          element.className =
-            "saved-menu";
-
-
-          let dateTexte =
-            "Menu enregistré";
-
-
-          if (
-            menu.date
-          ) {
-
-            try {
-
-              dateTexte =
-                new Date(
-                  menu.date
-                ).toLocaleDateString(
-                  "fr-FR",
-                  {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric"
-                  }
-                );
-
-            } catch {
-
-              dateTexte =
-                "Menu enregistré";
-
-            }
-
-          }
-
-
-          const noms =
-            Array.isArray(
-              menu.recettes
-            )
-              ? menu.recettes.join(", ")
-              : "";
-
-
-          element.innerHTML = `
-
-            <div class="saved-menu-date">
-              ${dateTexte}
-            </div>
-
-            <div class="saved-menu-title">
-              🍽️ Mon menu
-            </div>
-
-            <div class="saved-menu-recipes">
-              ${noms || "Recettes enregistrées"}
-            </div>
-
-            <button
-              class="delete-saved"
-              onclick="supprimerMenuSauvegarde(${index})"
-            >
-              Supprimer ce menu
-            </button>
-
-          `;
-
-
-          container.appendChild(
-            element
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =====================================================
-       SUPPRIMER MENU SAUVEGARDE
-    ===================================================== */
-
-    function supprimerMenuSauvegarde(
-      index
-    ) {
-
-      let menus = [];
-
-
-      try {
-
-        menus =
-          JSON.parse(
-            localStorage.getItem(
-              "menusSauvegardes"
-            ) || "[]"
-          );
-
-      } catch {
-
-        menus = [];
-
-      }
-
-
-      menus.splice(
-        index,
-        1
-      );
-
-
-      localStorage.setItem(
-        "menusSauvegardes",
-        JSON.stringify(
-          menus
-        )
-      );
-
-
-      chargerMenusSauvegardes();
-
-    }
-
-
-    /* =====================================================
-       COURSES
-    ===================================================== */
-
-    document.getElementById(
-      "coursesButton"
-    ).addEventListener(
-      "click",
-      () => {
-
-        window.location.href =
-          "courses.html";
-
-      }
+  const confirmation =
+    confirm(
+      "Supprimer ce menu enregistré ?"
     );
 
 
-    /* =====================================================
-       INITIALISATION
-    ===================================================== */
+  if (!confirmation) {
+    return;
+  }
 
-    async function initialiser() {
 
-      chargerPlanning();
+  menusSauvegardes.splice(
+    index,
+    1
+  );
 
-      compterRepas();
 
-      afficherPlanning();
+  localStorage.setItem(
+    "menusSauvegardes",
+    JSON.stringify(
+      menusSauvegardes
+    )
+  );
 
-      chargerMenusSauvegardes();
 
-      await chargerRecettes();
+  afficherMenusSauvegardes();
+
+}
+
+
+function allerAuxCourses() {
+
+  const planning =
+    JSON.parse(
+      localStorage.getItem(
+        "planningSemaine"
+      ) || "{}"
+    );
+
+
+  const aUnRepas =
+    Object.values(
+      planning
+    ).some(function(jour) {
+
+      return (
+        jour &&
+        (
+          jour.dejeuner ||
+          jour.diner
+        )
+      );
+
+    });
+
+
+  if (!aUnRepas) {
+
+    alert(
+      "Organisez d'abord votre semaine pour préparer votre liste de courses."
+    );
+
+    return;
+
+  }
+
+
+  window.location.href =
+    "courses.html";
+
+}
+
+
+/* ============================= */
+/* CHARGEMENT */
+/* ============================= */
+
+fetch("../recettes.json")
+
+  .then(function(response) {
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Impossible de charger recettes.json"
+      );
 
     }
 
+    return response.json();
 
-    initialiser();
+  })
 
-  </script>
+  .then(function(data) {
+
+    recettes =
+      Array.isArray(data)
+        ? data
+        : [];
+
+
+    chargerDonneesLocales();
+
+    compterSemaine();
+
+    afficherPlanning();
+
+    afficherMenusSauvegardes();
+
+  })
+
+  .catch(function(error) {
+
+    console.error(error);
+
+    chargerDonneesLocales();
+
+    compterSemaine();
+
+    afficherPlanning();
+
+    afficherMenusSauvegardes();
+
+  });
+
+
+</script>
 
 </body>
+
 </html>
