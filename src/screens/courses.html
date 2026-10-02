@@ -1,19 +1,13 @@
 ```html
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mes courses - Ma Petite Assiette</title>
 
-<!-- Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E73FD8V9V"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,2264 +17,1385 @@
   </script>
   
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-
     body {
-
-      font-family:
-        Arial,
-        sans-serif;
-
-      background: #f8f3ea;
-
-      color: #30483d;
-
+      font-family: Arial, sans-serif;
+      background: #fffaf3;
+      color: #3f4a42;
       padding-bottom: 90px;
-
     }
 
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
-
-    header {
-
-      background:
-        linear-gradient(
-          135deg,
-          #dcebdc,
-          #f5ddd0
-        );
-
-      padding:
-        28px
-        20px
-        24px;
-
-      text-align: center;
-
-      border-radius:
-        0
-        0
-        28px
-        28px;
-
-    }
-
-
-    header .emoji {
-
-      font-size: 42px;
-
-      margin-bottom: 8px;
-
-    }
-
-
-    header h1 {
-
-      font-size: 28px;
-
-      margin-bottom: 8px;
-
-      color: #29463b;
-
-    }
-
-
-    header p {
-
-      font-size: 15px;
-
-      line-height: 1.5;
-
-      color: #52665d;
-
-    }
-
-
-    /* =====================================================
-       CONTENEUR
-    ===================================================== */
-
-    .container {
-
-      width: 100%;
-
+    .page {
       max-width: 700px;
-
       margin: auto;
-
-      padding:
-        20px
-        16px;
-
+      padding: 20px 16px 30px;
     }
 
+    .hero {
+      background: linear-gradient(135deg, #6f8f72, #8fae91);
+      color: white;
+      border-radius: 24px;
+      padding: 24px 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
 
-    /* =====================================================
-       BOUTONS
-    ===================================================== */
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
 
     .actions {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
+      display: flex;
       gap: 10px;
-
-      margin-bottom: 20px;
-
+      margin-bottom: 18px;
+      flex-wrap: wrap;
     }
-
 
     .btn {
-
       border: none;
-
-      border-radius: 16px;
-
-      padding:
-        13px
-        12px;
-
-      font-size: 13px;
-
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 14px;
       font-weight: bold;
-
       cursor: pointer;
-
       text-decoration: none;
-
-      text-align: center;
-
-      display: block;
-
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-
 
     .btn-primary {
-
-      background: #6f927d;
-
+      background: #6f8f72;
       color: white;
-
     }
-
 
     .btn-secondary {
-
-      background: #ead6c9;
-
-      color: #40584d;
-
+      background: #f0e8dc;
+      color: #4b5a50;
     }
-
 
     .btn-light {
-
       background: white;
-
-      color: #4a6157;
-
-      border:
-        1px solid
-        #d9ded8;
-
+      color: #6f8f72;
+      border: 1px solid #dce5dc;
     }
-
-
-    .btn-danger {
-
-      background: #f0caca;
-
-      color: #7b3d3d;
-
-    }
-
-
-    /* =====================================================
-       INTRO
-    ===================================================== */
 
     .intro {
-
       background: white;
-
-      border-radius: 20px;
-
+      border-radius: 18px;
       padding: 18px;
-
-      margin-bottom: 18px;
-
-      box-shadow:
-        0
-        3px
-        12px
-        rgba(
-          0,
-          0,
-          0,
-          0.05
-        );
-
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      line-height: 1.5;
     }
 
-
-    .intro h2 {
-
-      font-size: 19px;
-
-      margin-bottom: 7px;
-
-      color: #385247;
-
-    }
-
-
-    .intro p {
-
-      font-size: 13px;
-
-      line-height: 1.6;
-
-      color: #68766f;
-
-    }
-
-
-    /* =====================================================
-       RESUME
-    ===================================================== */
-
-    .resume {
-
+    .stats {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
-
-      gap: 8px;
-
-      margin-bottom: 20px;
-
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
-
-    .resume-card {
-
+    .stat {
       background: white;
-
       border-radius: 16px;
-
-      padding: 12px 7px;
-
+      padding: 15px 8px;
       text-align: center;
-
-      box-shadow:
-        0
-        3px
-        12px
-        rgba(
-          0,
-          0,
-          0,
-          0.04
-        );
-
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     }
 
-
-    .resume-number {
-
+    .stat strong {
       display: block;
-
-      font-size: 23px;
-
-      font-weight: bold;
-
-      color: #6f927d;
-
-      margin-bottom: 3px;
-
+      font-size: 22px;
+      color: #6f8f72;
+      margin-bottom: 4px;
     }
 
-
-    .resume-label {
-
-      font-size: 10px;
-
-      color: #78837d;
-
+    .stat span {
+      font-size: 12px;
+      color: #777;
     }
 
-
-    /* =====================================================
-       TITRES
-    ===================================================== */
-
-    .section-title {
-
-      font-size: 21px;
-
-      margin:
-        26px
-        0
-        13px;
-
-      color: #30483d;
-
-    }
-
-
-    /* =====================================================
-       RECETTES UTILISEES
-    ===================================================== */
-
-    .recipes-used {
-
+    .section {
       background: white;
-
       border-radius: 20px;
-
-      padding: 16px;
-
-      margin-bottom: 18px;
-
-      box-shadow:
-        0
-        3px
-        12px
-        rgba(
-          0,
-          0,
-          0,
-          0.05
-        );
-
+      padding: 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     }
 
-
-    .recipe-used {
-
-      padding:
-        9px
-        0;
-
-      border-bottom:
-        1px solid
-        #edf0ec;
-
-      font-size: 13px;
-
-      color: #53645c;
-
+    .section h2 {
+      font-size: 19px;
+      margin-bottom: 14px;
+      color: #45564a;
     }
 
-
-    .recipe-used:last-child {
-
-      border-bottom: none;
-
-    }
-
-
-    .recipe-used span {
-
-      color: #8a6b59;
-
-      font-size: 11px;
-
-      display: block;
-
-      margin-top: 3px;
-
-    }
-
-
-    /* =====================================================
-       CONTROLES
-    ===================================================== */
-
-    .controls {
-
-      background: white;
-
-      border-radius: 20px;
-
-      padding: 15px;
-
-      margin-bottom: 18px;
-
-      box-shadow:
-        0
-        3px
-        12px
-        rgba(
-          0,
-          0,
-          0,
-          0.05
-        );
-
-    }
-
-
-    .search {
-
-      width: 100%;
-
-      border:
-        1px solid
-        #dfe4df;
-
-      border-radius: 14px;
-
-      padding:
-        13px
-        14px;
-
-      font-size: 14px;
-
-      outline: none;
-
-      margin-bottom: 11px;
-
-      background: #fbfaf7;
-
-    }
-
-
-    .search:focus {
-
-      border-color: #9bb7a3;
-
-    }
-
-
-    .control-buttons {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
+    .recipe-list {
+      display: flex;
+      flex-direction: column;
       gap: 8px;
-
     }
 
-
-    /* =====================================================
-       LISTE COURSES
-    ===================================================== */
-
-    .shopping-list {
-
-      background: white;
-
-      border-radius: 22px;
-
-      padding: 7px 17px;
-
-      box-shadow:
-        0
-        3px
-        12px
-        rgba(
-          0,
-          0,
-          0,
-          0.05
-        );
-
+    .recipe-item {
+      background: #f8f5ef;
+      border-radius: 12px;
+      padding: 11px 13px;
+      font-size: 14px;
     }
 
+    .search-box {
+      margin-bottom: 14px;
+    }
+
+    .search-box input {
+      width: 100%;
+      border: 1px solid #ddd6ca;
+      border-radius: 14px;
+      padding: 13px 15px;
+      font-size: 14px;
+      outline: none;
+      background: #fffdf9;
+    }
+
+    .course-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .ingredient-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
     .ingredient {
-
       display: flex;
-
       align-items: flex-start;
-
-      gap: 11px;
-
-      padding:
-        13px
-        0;
-
-      border-bottom:
-        1px solid
-        #edf0ec;
-
-      cursor: pointer;
-
+      gap: 10px;
+      padding: 12px;
+      background: #faf8f4;
+      border-radius: 13px;
+      transition: 0.2s;
     }
 
-
-    .ingredient:last-child {
-
-      border-bottom: none;
-
+    .ingredient.checked {
+      opacity: 0.55;
     }
 
+    .ingredient.checked .ingredient-name {
+      text-decoration: line-through;
+    }
 
     .ingredient input {
-
-      appearance: none;
-
-      -webkit-appearance: none;
-
-      width: 22px;
-
-      height: 22px;
-
-      min-width: 22px;
-
-      border:
-        2px solid
-        #a9b8ad;
-
-      border-radius: 7px;
-
-      margin-top: 1px;
-
-      cursor: pointer;
-
-      position: relative;
-
-      background: white;
-
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: #6f8f72;
+      flex-shrink: 0;
     }
 
-
-    .ingredient input:checked {
-
-      background: #6f927d;
-
-      border-color: #6f927d;
-
-    }
-
-
-    .ingredient input:checked::after {
-
-      content: "✓";
-
-      position: absolute;
-
-      color: white;
-
-      font-size: 14px;
-
-      font-weight: bold;
-
-      left: 3px;
-
-      top: -1px;
-
-    }
-
-
-    .ingredient-text {
-
+    .ingredient-content {
       flex: 1;
+      min-width: 0;
+    }
 
+    .ingredient-name {
       font-size: 14px;
-
-      line-height: 1.45;
-
-      color: #40554b;
-
+      line-height: 1.4;
     }
 
-
-    .ingredient.checked
-    .ingredient-text {
-
-      text-decoration:
-        line-through;
-
-      color: #9aa29d;
-
+    .ingredient-sources {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #8a8a8a;
     }
-
-
-    /* =====================================================
-       VIDE
-    ===================================================== */
 
     .empty {
-
-      background: white;
-
-      border-radius: 22px;
-
-      padding:
-        30px
-        18px;
-
       text-align: center;
-
-      color: #748078;
-
+      padding: 28px 15px;
+      color: #777;
       line-height: 1.6;
-
-      box-shadow:
-        0
-        3px
-        12px
-        rgba(
-          0,
-          0,
-          0,
-          0.04
-        );
-
     }
-
 
     .empty .emoji {
-
-      font-size: 40px;
-
+      font-size: 42px;
       margin-bottom: 10px;
-
     }
 
-
-    /* =====================================================
-       MESSAGE
-    ===================================================== */
-
-    #message {
-
-      position: fixed;
-
-      left: 16px;
-
-      right: 16px;
-
-      bottom: 85px;
-
-      background: #4f6f5b;
-
-      color: white;
-
-      padding: 14px 16px;
-
-      border-radius: 15px;
-
-      text-align: center;
-
-      font-size: 13px;
-
+    .message {
       display: none;
-
-      z-index: 1000;
-
-      box-shadow:
-        0
-        5px
-        20px
-        rgba(
-          0,
-          0,
-          0,
-          0.15
-        );
-
+      background: #e8f2e9;
+      color: #46634b;
+      padding: 12px 15px;
+      border-radius: 14px;
+      margin-bottom: 15px;
+      font-size: 14px;
     }
-
-
-    /* =====================================================
-       NAVIGATION
-    ===================================================== */
 
     .bottom-nav {
-
       position: fixed;
-
       bottom: 0;
-
       left: 0;
-
       right: 0;
-
-      height: 70px;
-
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.97
-        );
-
-      border-top:
-        1px solid
-        #e2e4df;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          4,
-          1fr
-        );
-
-      z-index: 900;
-
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid #e5dfd5;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 6px;
+      z-index: 100;
+      backdrop-filter: blur(8px);
     }
-
 
     .bottom-nav a {
-
       text-decoration: none;
-
-      color: #68766f;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      align-items: center;
-
-      gap: 3px;
-
+      color: #6d766f;
       font-size: 11px;
-
+      text-align: center;
+      line-height: 1.3;
     }
 
-
-    .bottom-nav a span {
-
-      font-size: 22px;
-
+    .bottom-nav .icon {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 3px;
     }
-
-
-    .bottom-nav a.active {
-
-      color: #54765f;
-
-      font-weight: bold;
-
-    }
-
-
-    /* =====================================================
-       IMPRESSION
-    ===================================================== */
 
     @media print {
-
       body {
-
         background: white;
-
-        padding: 20px;
-
+        padding: 0;
       }
-
-
-      header {
-
-        background: white;
-
-        border-radius: 0;
-
-        padding: 10px;
-
-      }
-
 
       .actions,
-      .controls,
       .bottom-nav,
-      #message {
-
+      .search-box,
+      .course-actions,
+      .message {
         display: none !important;
-
       }
 
+      .page {
+        max-width: none;
+        padding: 0;
+      }
 
-      .intro,
-      .resume,
-      .recipes-used,
-      .shopping-list {
-
+      .hero {
         box-shadow: none;
-
       }
 
-
-      .shopping-list {
-
-        border:
-          1px solid
-          #ddd;
-
+      .section,
+      .stat,
+      .intro {
+        box-shadow: none;
+        border: 1px solid #ddd;
       }
-
     }
-
-
-    /* =====================================================
-       MOBILE
-    ===================================================== */
-
-    @media (
-      max-width: 420px
-    ) {
-
-      .actions {
-
-        grid-template-columns:
-          1fr;
-
-      }
-
-
-      .resume {
-
-        gap: 6px;
-
-      }
-
-
-      .resume-card {
-
-        padding:
-          11px
-          4px;
-
-      }
-
-    }
-
   </style>
-
 </head>
-
 
 <body>
 
+<div class="page">
 
-  <!-- =====================================================
-       HEADER
-  ===================================================== -->
-
-  <header>
-
-    <div class="emoji">
-      🛒
-    </div>
-
-    <h1>
-      Mes courses
-    </h1>
-
+  <div class="hero">
+    <h1>🛒 Mes courses</h1>
     <p>
-      Votre liste de courses à partir de vos repas planifiés.
+      Retrouvez les ingrédients nécessaires pour préparer
+      vos petites assiettes.
     </p>
+  </div>
 
-  </header>
+  <div class="actions">
+    <a href="MesMenus.html" class="btn btn-secondary">
+      ← Mes menus
+    </a>
 
+    <button class="btn btn-primary" onclick="window.print()">
+      🖨️ Imprimer
+    </button>
+  </div>
 
-  <main class="container">
+  <div id="message" class="message"></div>
 
+  <div class="intro" id="intro">
+    Calcul de votre liste de courses...
+  </div>
 
-    <!-- =====================================================
-         ACTIONS
-    ===================================================== -->
-
-    <div class="actions">
-
-      <a
-        href="MesMenus.html"
-        class="btn btn-secondary"
-      >
-        ← Mes menus
-      </a>
-
-
-      <button
-        type="button"
-        class="btn btn-primary"
-        onclick="window.print()"
-      >
-        🖨️ Imprimer
-      </button>
-
+  <div class="stats">
+    <div class="stat">
+      <strong id="nombreRepas">0</strong>
+      <span>repas</span>
     </div>
 
-
-    <!-- =====================================================
-         INTRO
-    ===================================================== -->
-
-    <div class="intro">
-
-      <h2>
-        🥕 Ma liste de courses
-      </h2>
-
-      <p>
-        Les ingrédients sont générés automatiquement
-        à partir des recettes prévues dans votre semaine.
-        Cochez ce que vous avez déjà acheté.
-      </p>
-
+    <div class="stat">
+      <strong id="nombreRecettes">0</strong>
+      <span>recettes</span>
     </div>
 
-
-    <!-- =====================================================
-         RESUME
-    ===================================================== -->
-
-    <div class="resume">
-
-      <div class="resume-card">
-
-        <span
-          class="resume-number"
-          id="nombreRepas"
-        >
-          0
-        </span>
-
-        <span class="resume-label">
-          repas
-        </span>
-
-      </div>
-
-
-      <div class="resume-card">
-
-        <span
-          class="resume-number"
-          id="nombreRecettes"
-        >
-          0
-        </span>
-
-        <span class="resume-label">
-          recettes
-        </span>
-
-      </div>
-
-
-      <div class="resume-card">
-
-        <span
-          class="resume-number"
-          id="nombreIngredients"
-        >
-          0
-        </span>
-
-        <span class="resume-label">
-          ingrédients
-        </span>
-
-      </div>
-
+    <div class="stat">
+      <strong id="nombreIngredients">0</strong>
+      <span>ingrédients</span>
     </div>
+  </div>
 
+  <div class="section">
+    <h2>🍽️ Recettes prévues</h2>
 
-    <!-- =====================================================
-         RECETTES UTILISEES
-    ===================================================== -->
+    <div id="recettesPrevues" class="recipe-list"></div>
+  </div>
 
-    <h2 class="section-title">
-      🍽️ Recettes prévues
-    </h2>
+  <div class="section">
 
+    <h2>🛒 Ma liste de courses</h2>
 
-    <div
-      class="recipes-used"
-      id="recettesUtilisees"
-    ></div>
-
-
-    <!-- =====================================================
-         CONTROLES
-    ===================================================== -->
-
-    <div class="controls">
-
+    <div class="search-box">
       <input
         type="search"
         id="recherche"
-        class="search"
         placeholder="🔎 Rechercher un ingrédient..."
       >
-
-
-      <div class="control-buttons">
-
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="toutCocher()"
-        >
-          ✓ Tout cocher
-        </button>
-
-
-        <button
-          type="button"
-          class="btn btn-light"
-          onclick="toutDecocher()"
-        >
-          □ Tout décocher
-        </button>
-
-      </div>
-
     </div>
 
-
-    <!-- =====================================================
-         LISTE
-    ===================================================== -->
-
-    <h2 class="section-title">
-      🛍️ À acheter
-    </h2>
-
-
-    <div
-      class="shopping-list"
-      id="listeCourses"
-    ></div>
-
-
-    <div
-      style="
-        margin-top:15px;
-        text-align:center;
-      "
-    >
+    <div class="course-actions">
 
       <button
-        type="button"
-        class="btn btn-danger"
-        onclick="reinitialiserListe()"
-        style="width:100%;"
-      >
-        ♻️ Réinitialiser les cases cochées
+        class="btn btn-light"
+        onclick="toutCocher()">
+        ☑️ Tout cocher
+      </button>
+
+      <button
+        class="btn btn-light"
+        onclick="toutDecocher()">
+        ⬜ Tout décocher
+      </button>
+
+      <button
+        class="btn btn-light"
+        onclick="reinitialiserCases()">
+        🔄 Réinitialiser
       </button>
 
     </div>
 
+    <div id="listeIngredients" class="ingredient-list"></div>
 
-  </main>
+  </div>
 
-
-  <!-- =====================================================
-       MESSAGE
-  ===================================================== -->
-
-  <div id="message"></div>
+</div>
 
 
-  <!-- =====================================================
-       NAVIGATION BAS
-  ===================================================== -->
+<nav class="bottom-nav">
 
-  <nav class="bottom-nav">
+  <a href="../../index.html">
+    <span class="icon">🏠</span>
+    Accueil
+  </a>
 
-    <a href="../../index.html">
+  <a href="Recettes.html">
+    <span class="icon">🍽️</span>
+    Recettes
+  </a>
 
-      <span>
-        🏠
-      </span>
+  <a href="Favoris.html">
+    <span class="icon">❤️</span>
+    Favoris
+  </a>
 
-      Accueil
+  <a href="MesMenus.html">
+    <span class="icon">📋</span>
+    Mes menus
+  </a>
 
-    </a>
-
-
-    <a href="Recettes.html">
-
-      <span>
-        🍽️
-      </span>
-
-      Recettes
-
-    </a>
+</nav>
 
 
-    <a href="Favoris.html">
+<script>
 
-      <span>
-        ❤️
-      </span>
+let recettesCatalogue = [];
 
-      Favoris
+let recettesUtilisees = [];
 
-    </a>
+let ingredients = [];
 
+let ingredientsAffiches = [];
 
-    <a
-      href="MesMenus.html"
-      class="active"
-    >
-
-      <span>
-        📅
-      </span>
-
-      Mes menus
-
-    </a>
-
-  </nav>
+let casesCochees =
+  JSON.parse(
+    localStorage.getItem("ingredientsCoursesCoches") || "[]"
+  );
 
 
-  <script>
+/* =====================================================
+   OUTILS
+===================================================== */
+
+function nettoyerTexte(valeur) {
+
+  return String(valeur || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[’']/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+}
 
 
-    /* =====================================================
-       VARIABLES
-    ===================================================== */
+function afficherMessage(texte) {
 
-    let recettes = [];
+  const message =
+    document.getElementById("message");
 
-    let planningSemaine = null;
+  message.textContent = texte;
 
-    let ingredientsCourses = [];
+  message.style.display = "block";
 
-    let recherche = "";
+  setTimeout(() => {
+
+    message.style.display = "none";
+
+  }, 2500);
+
+}
 
 
-    const CLE_COCHES =
-      "ingredientsCoursesCoches";
+/* =====================================================
+   CHARGEMENT
+===================================================== */
+
+async function chargerCourses() {
+
+  try {
+
+    const reponse =
+      await fetch("../recettes.json");
+
+    if (!reponse.ok) {
+
+      throw new Error(
+        "Impossible de charger recettes.json"
+      );
+
+    }
+
+    recettesCatalogue =
+      await reponse.json();
 
 
-    const jours = [
+    /*
+      IMPORTANT :
 
-      "lundi",
-      "mardi",
-      "mercredi",
-      "jeudi",
-      "vendredi",
-      "samedi",
-      "dimanche"
+      Nous récupérons maintenant
+      les deux types de sauvegardes :
 
+      1. planningSemaine
+      2. menusSauvegardes
+
+      Avant, courses.html ne regardait
+      que planningSemaine.
+    */
+
+    const planning =
+      JSON.parse(
+        localStorage.getItem("planningSemaine") || "null"
+      );
+
+
+    const menusSauvegardes =
+      JSON.parse(
+        localStorage.getItem("menusSauvegardes") || "[]"
+      );
+
+
+    const recettesIds = [];
+
+    const repasSources = [];
+
+
+    /* =================================================
+       1. PLANNING DE LA SEMAINE
+    ================================================= */
+
+    if (
+      planning &&
+      typeof planning === "object"
+    ) {
+
+      const jours = [
+        "lundi",
+        "mardi",
+        "mercredi",
+        "jeudi",
+        "vendredi",
+        "samedi",
+        "dimanche"
+      ];
+
+
+      jours.forEach(jour => {
+
+        const jourPlanning =
+          planning[jour];
+
+        if (!jourPlanning) {
+          return;
+        }
+
+
+        ["dejeuner", "diner"].forEach(repas => {
+
+          const selection =
+            jourPlanning[repas];
+
+          if (
+            selection &&
+            selection.id
+          ) {
+
+            recettesIds.push(
+              selection.id
+            );
+
+            repasSources.push({
+
+              id: selection.id,
+
+              source:
+                jour.charAt(0).toUpperCase()
+                + jour.slice(1)
+                + " - "
+                + (
+                  repas === "dejeuner"
+                    ? "Déjeuner"
+                    : "Dîner"
+                )
+
+            });
+
+          }
+
+        });
+
+      });
+
+    }
+
+
+    /* =================================================
+       2. MENUS SAUVEGARDÉS
+    ================================================= */
+
+    if (
+      Array.isArray(menusSauvegardes)
+      &&
+      menusSauvegardes.length > 0
+    ) {
+
+      /*
+        On prend les menus sauvegardés.
+
+        Ils peuvent contenir plusieurs recettes
+        pour un même repas.
+      */
+
+      menusSauvegardes.forEach(menu => {
+
+        if (
+          !menu ||
+          !Array.isArray(menu.recettes)
+        ) {
+          return;
+        }
+
+
+        menu.recettes.forEach(recette => {
+
+          if (
+            recette &&
+            recette.id
+          ) {
+
+            recettesIds.push(
+              recette.id
+            );
+
+            repasSources.push({
+
+              id: recette.id,
+
+              source:
+                menu.repas
+                  ? traduireRepas(menu.repas)
+                  : "Menu sauvegardé"
+
+            });
+
+          }
+
+        });
+
+      });
+
+    }
+
+
+    /* =================================================
+       AUCUNE RECETTE
+    ================================================= */
+
+    if (
+      recettesIds.length === 0
+    ) {
+
+      afficherEtatVide();
+
+      return;
+
+    }
+
+
+    /*
+      Suppression des doublons
+      de recettes.
+
+      Une même recette peut apparaître
+      dans le planning et dans un menu.
+    */
+
+    const idsUniques =
+      [...new Set(recettesIds)];
+
+
+    recettesUtilisees =
+      idsUniques
+        .map(id =>
+          recettesCatalogue.find(
+            recette =>
+              String(recette.id) === String(id)
+          )
+        )
+        .filter(Boolean);
+
+
+    if (
+      recettesUtilisees.length === 0
+    ) {
+
+      afficherEtatVide();
+
+      return;
+
+    }
+
+
+    afficherResume(
+      recettesUtilisees,
+      repasSources
+    );
+
+
+    construireIngredients();
+
+  }
+
+  catch (erreur) {
+
+    console.error(erreur);
+
+    document.getElementById("intro").innerHTML =
+      `
+        <strong>Impossible de charger les courses.</strong><br><br>
+        Vérifiez que le fichier
+        <strong>src/recettes.json</strong>
+        est bien présent.
+      `;
+
+  }
+
+}
+
+
+/* =====================================================
+   TRADUCTION REPAS
+===================================================== */
+
+function traduireRepas(repas) {
+
+  const valeur =
+    nettoyerTexte(repas);
+
+  const correspondances = {
+
+    "petit-dejeuner":
+      "Petit-déjeuner",
+
+    "petit dejeuner":
+      "Petit-déjeuner",
+
+    "dejeuner":
+      "Déjeuner",
+
+    "diner":
+      "Dîner",
+
+    "diner soir":
+      "Dîner",
+
+    "collation":
+      "Collation",
+
+    "petite-douceur":
+      "Petite douceur",
+
+    "petite douceur":
+      "Petite douceur",
+
+    "peu-importe":
+      "Repas"
+
+  };
+
+  return (
+    correspondances[valeur]
+    || repas
+    || "Menu"
+  );
+
+}
+
+
+/* =====================================================
+   ETAT VIDE
+===================================================== */
+
+function afficherEtatVide() {
+
+  document.getElementById("intro").innerHTML =
+    `
+      <div class="empty">
+        <div class="emoji">🛒</div>
+
+        <strong>Votre liste de courses est vide.</strong>
+
+        <br><br>
+
+        Commencez par composer une petite assiette
+        ou organiser votre semaine.
+      </div>
+    `;
+
+
+  document.getElementById("recettesPrevues").innerHTML =
+    `
+      <div class="empty">
+        Aucune recette prévue pour le moment.
+        <br><br>
+
+        <a
+          href="menu.html"
+          class="btn btn-primary">
+          🍽️ Composer mon menu
+        </a>
+      </div>
+    `;
+
+
+  document.getElementById("listeIngredients").innerHTML = "";
+
+
+  document.getElementById("nombreRepas")
+    .textContent = "0";
+
+  document.getElementById("nombreRecettes")
+    .textContent = "0";
+
+  document.getElementById("nombreIngredients")
+    .textContent = "0";
+
+}
+
+
+/* =====================================================
+   RESUME
+===================================================== */
+
+function afficherResume(
+  recettes,
+  repasSources
+) {
+
+  const repasUniques =
+    [
+      ...new Set(
+        repasSources.map(
+          item => item.source
+        )
+      )
     ];
 
 
-    const nomsJours = {
+  document.getElementById("nombreRepas")
+    .textContent =
+      repasUniques.length;
 
-      lundi: "Lundi",
 
-      mardi: "Mardi",
+  document.getElementById("nombreRecettes")
+    .textContent =
+      recettes.length;
 
-      mercredi: "Mercredi",
 
-      jeudi: "Jeudi",
+  document.getElementById("intro").innerHTML =
+    `
+      <strong>Votre liste est prête 💚</strong><br><br>
 
-      vendredi: "Vendredi",
+      Elle contient les ingrédients nécessaires
+      pour vos recettes sauvegardées.
 
-      samedi: "Samedi",
+      <br><br>
 
-      dimanche: "Dimanche"
+      Vous pouvez cocher les ingrédients
+      au fur et à mesure de vos achats.
+    `;
 
-    };
 
+  const conteneur =
+    document.getElementById("recettesPrevues");
 
-    /* =====================================================
-       CHARGEMENT
-    ===================================================== */
+  conteneur.innerHTML = "";
 
-    async function chargerDonnees() {
 
+  recettes.forEach(recette => {
 
-      try {
+    const div =
+      document.createElement("div");
 
-        const response =
-          await fetch(
-            "../recettes.json"
-          );
+    div.className =
+      "recipe-item";
 
+    div.textContent =
+      "🍽️ " + recette.nom;
 
-        if (!response.ok) {
+    conteneur.appendChild(div);
 
-          throw new Error(
-            "Impossible de charger recettes.json"
-          );
+  });
 
-        }
+}
 
 
-        recettes =
-          await response.json();
+/* =====================================================
+   INGREDIENTS
+===================================================== */
 
+function construireIngredients() {
 
-        if (
-          !Array.isArray(recettes)
-        ) {
+  const dictionnaire = new Map();
 
-          recettes = [];
 
-        }
+  recettesUtilisees.forEach(recette => {
 
+    /*
+      Pour les courses, on privilégie
+      la petite portion.
 
-      } catch (erreur) {
+      Si elle n'existe pas,
+      on utilise ingredients[].
+    */
 
-        console.error(
-          erreur
-        );
+    let listeIngredients = [];
 
 
-        recettes = [];
-
-      }
-
-
-      chargerPlanning();
-
-      construireListeCourses();
-
-      afficherTout();
-
-    }
-
-
-    /* =====================================================
-       CHARGER PLANNING
-    ===================================================== */
-
-    function chargerPlanning() {
-
-
-      try {
-
-        const sauvegarde =
-          localStorage.getItem(
-            "planningSemaine"
-          );
-
-
-        planningSemaine =
-          sauvegarde
-            ? JSON.parse(
-                sauvegarde
-              )
-            : null;
-
-
-      } catch (erreur) {
-
-        console.error(
-          erreur
-        );
-
-
-        planningSemaine = null;
-
-      }
-
-    }
-
-
-    /* =====================================================
-       TROUVER RECETTE
-    ===================================================== */
-
-    function trouverRecette(id) {
-
-      return recettes.find(
-        recette =>
-          String(
-            recette.id
-          ) === String(id)
-      );
-
-    }
-
-
-    /* =====================================================
-       RECUPERER LES RECETTES PLANIFIEES
-    ===================================================== */
-
-    function recupererRepasPlanifies() {
-
-
-      const repas = [];
-
-
-      if (
-        !planningSemaine ||
-        typeof planningSemaine !== "object"
-      ) {
-
-        return repas;
-
-      }
-
-
-      jours.forEach(
-        jour => {
-
-          const planning =
-            planningSemaine[jour];
-
-
-          if (!planning) {
-            return;
-          }
-
-
-          [
-            "dejeuner",
-            "diner"
-          ].forEach(
-            moment => {
-
-              const repasPlanifie =
-                planning[moment];
-
-
-              if (
-                repasPlanifie &&
-                repasPlanifie.id
-              ) {
-
-                repas.push({
-
-                  jour: jour,
-
-                  moment: moment,
-
-                  id:
-                    repasPlanifie.id,
-
-                  nom:
-                    repasPlanifie.nom ||
-                    ""
-
-                });
-
-              }
-
-            }
-          );
-
-        }
-      );
-
-
-      return repas;
-
-    }
-
-
-    /* =====================================================
-       CONSTRUIRE LISTE
-    ===================================================== */
-
-    function construireListeCourses() {
-
-
-      ingredientsCourses = [];
-
-
-      const repas =
-        recupererRepasPlanifies();
-
-
-      /*
-       * On garde les ingrédients déjà rencontrés
-       * afin d'éviter les doublons strictement identiques.
-       */
-
-      const dejaVus =
-        new Map();
-
-
-      repas.forEach(
-        repasPlanifie => {
-
-
-          const recette =
-            trouverRecette(
-              repasPlanifie.id
-            );
-
-
-          if (!recette) {
-            return;
-          }
-
-
-          /*
-           * Petite portion par défaut.
-           *
-           * Le planning actuel ne mémorise pas encore
-           * le format de portion.
-           */
-
-          let ingredients =
-            null;
-
-
-          if (
-            recette.quantites &&
-            Array.isArray(
-              recette.quantites.petite
-            )
-          ) {
-
-            ingredients =
-              recette.quantites.petite;
-
-          }
-
-
-          if (
-            !ingredients &&
-            Array.isArray(
-              recette.ingredients
-            )
-          ) {
-
-            ingredients =
-              recette.ingredients;
-
-          }
-
-
-          if (
-            !Array.isArray(
-              ingredients
-            )
-          ) {
-
-            return;
-
-          }
-
-
-          ingredients.forEach(
-            ingredient => {
-
-              if (
-                !ingredient
-              ) {
-                return;
-              }
-
-
-              const texte =
-                String(
-                  ingredient
-                ).trim();
-
-
-              if (!texte) {
-                return;
-              }
-
-
-              const cle =
-                normaliserIngredient(
-                  texte
-                );
-
-
-              if (
-                dejaVus.has(
-                  cle
-                )
-              ) {
-
-                /*
-                 * On ne duplique pas l'ingrédient.
-                 */
-
-                const element =
-                  dejaVus.get(
-                    cle
-                  );
-
-
-                element.recettes.add(
-                  recette.nom
-                );
-
-
-                return;
-
-              }
-
-
-              const nouvelIngredient = {
-
-                id:
-                  "ING-" +
-                  ingredientsCourses.length +
-                  "-" +
-                  Date.now(),
-
-                texte:
-                  texte,
-
-                cle:
-                  cle,
-
-                recettes:
-                  new Set([
-                    recette.nom
-                  ])
-
-              };
-
-
-              ingredientsCourses.push(
-                nouvelIngredient
-              );
-
-
-              dejaVus.set(
-                cle,
-                nouvelIngredient
-              );
-
-            }
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =====================================================
-       NORMALISER INGREDIENT
-    ===================================================== */
-
-    function normaliserIngredient(
-      texte
+    if (
+      recette.quantites
+      &&
+      Array.isArray(recette.quantites.petite)
     ) {
 
-      return String(
-        texte || ""
-      )
-        .toLowerCase()
-        .normalize(
-          "NFD"
-        )
-        .replace(
-          /[\u0300-\u036f]/g,
-          ""
-        )
-        .replace(
-          /[’']/g,
-          "'"
-        )
-        .replace(
-          /\s+/g,
-          " "
-        )
-        .trim();
+      listeIngredients =
+        recette.quantites.petite;
 
     }
-
-
-    /* =====================================================
-       AFFICHER TOUT
-    ===================================================== */
-
-    function afficherTout() {
-
-      afficherRecettesUtilisees();
-
-      afficherListeCourses();
-
-      actualiserResume();
-
-    }
-
-
-    /* =====================================================
-       RECETTES UTILISEES
-    ===================================================== */
-
-    function afficherRecettesUtilisees() {
-
-
-      const container =
-        document.getElementById(
-          "recettesUtilisees"
-        );
-
-
-      container.innerHTML = "";
-
-
-      const repas =
-        recupererRepasPlanifies();
-
-
-      if (
-        repas.length === 0
-      ) {
-
-        container.innerHTML = `
-
-          <div
-            style="
-              color:#748078;
-              font-size:13px;
-              line-height:1.6;
-            "
-          >
-
-            Aucun repas n'est encore planifié.
-
-            <br><br>
-
-            Retournez dans
-            <strong>Mes menus</strong>
-            pour organiser votre semaine.
-
-          </div>
-
-        `;
-
-        return;
-
-      }
-
-
-      repas.forEach(
-        repasPlanifie => {
-
-
-          const recette =
-            trouverRecette(
-              repasPlanifie.id
-            );
-
-
-          const nom =
-            recette
-              ? recette.nom
-              : (
-                  repasPlanifie.nom ||
-                  "Recette"
-                );
-
-
-          const jour =
-            nomsJours[
-              repasPlanifie.jour
-            ] ||
-            repasPlanifie.jour;
-
-
-          const moment =
-            repasPlanifie.moment ===
-            "dejeuner"
-              ? "Déjeuner"
-              : "Dîner";
-
-
-          const element =
-            document.createElement(
-              "div"
-            );
-
-
-          element.className =
-            "recipe-used";
-
-
-          element.innerHTML = `
-
-            🍽️
-            ${echapperHTML(
-              nom
-            )}
-
-            <span>
-              ${jour}
-              ·
-              ${moment}
-            </span>
-
-          `;
-
-
-          container.appendChild(
-            element
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =====================================================
-       AFFICHER LISTE
-    ===================================================== */
-
-    function afficherListeCourses() {
-
-
-      const container =
-        document.getElementById(
-          "listeCourses"
-        );
-
-
-      container.innerHTML = "";
-
-
-      const listeFiltree =
-        ingredientsCourses.filter(
-          ingredient => {
-
-            if (!recherche) {
-              return true;
-            }
-
-
-            return normaliserIngredient(
-              ingredient.texte
-            ).includes(
-              normaliserIngredient(
-                recherche
-              )
-            );
-
-          }
-        );
-
-
-      if (
-        ingredientsCourses.length === 0
-      ) {
-
-        container.innerHTML = `
-
-          <div class="empty">
-
-            <div class="emoji">
-              🛒
-            </div>
-
-            <strong>
-              Votre liste de courses est vide.
-            </strong>
-
-            <br><br>
-
-            Planifiez d'abord des repas
-            dans votre semaine.
-
-            <br><br>
-
-            <a
-              href="menu.html"
-              class="btn btn-primary"
-            >
-              ➕ Organiser mes repas
-            </a>
-
-          </div>
-
-        `;
-
-        return;
-
-      }
-
-
-      if (
-        listeFiltree.length === 0
-      ) {
-
-        container.innerHTML = `
-
-          <div class="empty">
-
-            🔎
-
-            <br><br>
-
-            Aucun ingrédient ne correspond
-            à votre recherche.
-
-          </div>
-
-        `;
-
-        return;
-
-      }
-
-
-      listeFiltree.forEach(
-        ingredient => {
-
-
-          const estCoche =
-            estIngredientCoche(
-              ingredient.cle
-            );
-
-
-          const element =
-            document.createElement(
-              "label"
-            );
-
-
-          element.className =
-            "ingredient";
-
-
-          if (estCoche) {
-
-            element.classList.add(
-              "checked"
-            );
-
-          }
-
-
-          element.innerHTML = `
-
-            <input
-              type="checkbox"
-              ${
-                estCoche
-                  ? "checked"
-                  : ""
-              }
-            >
-
-            <div class="ingredient-text">
-
-              ${echapperHTML(
-                ingredient.texte
-              )}
-
-            </div>
-
-          `;
-
-
-          const checkbox =
-            element.querySelector(
-              "input"
-            );
-
-
-          checkbox.addEventListener(
-            "change",
-            function() {
-
-              modifierCase(
-                ingredient.cle,
-                checkbox.checked
-              );
-
-
-              element.classList.toggle(
-                "checked",
-                checkbox.checked
-              );
-
-            }
-          );
-
-
-          container.appendChild(
-            element
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =====================================================
-       RESUME
-    ===================================================== */
-
-    function actualiserResume() {
-
-
-      const repas =
-        recupererRepasPlanifies();
-
-
-      const recettesUniques =
-        new Set(
-          repas.map(
-            repasPlanifie =>
-              String(
-                repasPlanifie.id
-              )
-          )
-        );
-
-
-      document.getElementById(
-        "nombreRepas"
-      ).textContent =
-        repas.length;
-
-
-      document.getElementById(
-        "nombreRecettes"
-      ).textContent =
-        recettesUniques.size;
-
-
-      document.getElementById(
-        "nombreIngredients"
-      ).textContent =
-        ingredientsCourses.length;
-
-    }
-
-
-    /* =====================================================
-       CASES COCHEES
-    ===================================================== */
-
-    function recupererCasesCochees() {
-
-
-      try {
-
-        const sauvegarde =
-          localStorage.getItem(
-            CLE_COCHES
-          );
-
-
-        if (!sauvegarde) {
-
-          return [];
-
-        }
-
-
-        const tableau =
-          JSON.parse(
-            sauvegarde
-          );
-
-
-        return Array.isArray(
-          tableau
-        )
-          ? tableau
-          : [];
-
-
-      } catch (erreur) {
-
-        console.error(
-          erreur
-        );
-
-
-        return [];
-
-      }
-
-    }
-
-
-    /* =====================================================
-       INGREDIENT COCHE
-    ===================================================== */
-
-    function estIngredientCoche(
-      cle
+    else if (
+      Array.isArray(recette.ingredients)
     ) {
 
-      return recupererCasesCochees()
-        .includes(
-          cle
-        );
+      listeIngredients =
+        recette.ingredients;
 
     }
 
 
-    /* =====================================================
-       MODIFIER CASE
-    ===================================================== */
+    listeIngredients.forEach(ingredient => {
 
-    function modifierCase(
-      cle,
-      coche
-    ) {
+      let texte = "";
 
 
-      let coches =
-        recupererCasesCochees();
+      if (
+        typeof ingredient === "string"
+      ) {
 
+        texte =
+          ingredient.trim();
 
-      if (coche) {
+      }
+      else if (
+        ingredient
+        &&
+        typeof ingredient === "object"
+      ) {
 
-        if (
-          !coches.includes(
-            cle
-          )
-        ) {
-
-          coches.push(
-            cle
-          );
-
-        }
-
-      } else {
-
-        coches =
-          coches.filter(
-            element =>
-              element !== cle
-          );
+        texte =
+          ingredient.nom
+          ||
+          ingredient.ingredient
+          ||
+          ingredient.libelle
+          ||
+          "";
 
       }
 
 
-      localStorage.setItem(
-        CLE_COCHES,
-        JSON.stringify(
-          coches
-        )
-      );
-
-    }
-
-
-    /* =====================================================
-       TOUT COCHER
-    ===================================================== */
-
-    function toutCocher() {
-
-
-      const coches =
-        ingredientsCourses.map(
-          ingredient =>
-            ingredient.cle
-        );
-
-
-      localStorage.setItem(
-        CLE_COCHES,
-        JSON.stringify(
-          coches
-        )
-      );
-
-
-      afficherListeCourses();
-
-
-      afficherMessage(
-        "Tous les ingrédients sont cochés."
-      );
-
-    }
-
-
-    /* =====================================================
-       TOUT DECOCHER
-    ===================================================== */
-
-    function toutDecocher() {
-
-
-      localStorage.setItem(
-        CLE_COCHES,
-        JSON.stringify([])
-      );
-
-
-      afficherListeCourses();
-
-
-      afficherMessage(
-        "Toutes les cases ont été décochées."
-      );
-
-    }
-
-
-    /* =====================================================
-       REINITIALISER
-    ===================================================== */
-
-    function reinitialiserListe() {
-
-
-      const confirmer =
-        confirm(
-          "Réinitialiser toutes les cases cochées ?"
-        );
-
-
-      if (!confirmer) {
+      if (!texte) {
         return;
       }
 
 
-      toutDecocher();
-
-    }
-
-
-    /* =====================================================
-       RECHERCHE
-    ===================================================== */
-
-    document
-      .getElementById(
-        "recherche"
-      )
-      .addEventListener(
-        "input",
-        function(event) {
-
-          recherche =
-            event.target.value
-              .trim();
+      const cle =
+        nettoyerTexte(texte);
 
 
-          afficherListeCourses();
+      if (!dictionnaire.has(cle)) {
 
-        }
-      );
-
-
-    /* =====================================================
-       ECHAPPER HTML
-    ===================================================== */
-
-    function echapperHTML(
-      valeur
-    ) {
-
-      return String(
-        valeur ?? ""
-      )
-        .replace(
-          /&/g,
-          "&amp;"
-        )
-        .replace(
-          /</g,
-          "&lt;"
-        )
-        .replace(
-          />/g,
-          "&gt;"
-        )
-        .replace(
-          /"/g,
-          "&quot;"
-        )
-        .replace(
-          /'/g,
-          "&#039;"
+        dictionnaire.set(
+          cle,
+          {
+            texte: texte,
+            recettes: []
+          }
         );
 
-    }
-
-
-    /* =====================================================
-       MESSAGE
-    ===================================================== */
-
-    function afficherMessage(
-      texte
-    ) {
+      }
 
 
       const element =
-        document.getElementById(
-          "message"
+        dictionnaire.get(cle);
+
+
+      if (
+        !element.recettes.includes(
+          recette.nom
+        )
+      ) {
+
+        element.recettes.push(
+          recette.nom
         );
 
+      }
 
-      element.textContent =
-        texte;
+    });
 
-
-      element.style.display =
-        "block";
+  });
 
 
-      clearTimeout(
-        window.timerMessage
-      );
+  ingredients =
+    [...dictionnaire.values()];
 
 
-      window.timerMessage =
-        setTimeout(
-          function() {
-
-            element.style.display =
-              "none";
-
-          },
-          2500
-        );
-
-    }
+  ingredients.sort(
+    (a, b) =>
+      nettoyerTexte(a.texte)
+        .localeCompare(
+          nettoyerTexte(b.texte),
+          "fr"
+        )
+  );
 
 
-    /* =====================================================
-       INITIALISATION
-    ===================================================== */
+  document.getElementById("nombreIngredients")
+    .textContent =
+      ingredients.length;
 
-    document.addEventListener(
-      "DOMContentLoaded",
-      function() {
 
-        chargerDonnees();
+  afficherIngredients();
+
+}
+
+
+/* =====================================================
+   AFFICHAGE INGREDIENTS
+===================================================== */
+
+function afficherIngredients(
+  recherche = ""
+) {
+
+  const conteneur =
+    document.getElementById(
+      "listeIngredients"
+    );
+
+
+  const terme =
+    nettoyerTexte(recherche);
+
+
+  ingredientsAffiches =
+    ingredients.filter(
+      ingredient => {
+
+        if (!terme) {
+          return true;
+        }
+
+
+        return nettoyerTexte(
+          ingredient.texte
+        ).includes(terme);
 
       }
     );
 
-  </script>
 
+  if (
+    ingredientsAffiches.length === 0
+  ) {
+
+    conteneur.innerHTML =
+      `
+        <div class="empty">
+          Aucun ingrédient trouvé.
+        </div>
+      `;
+
+    return;
+
+  }
+
+
+  conteneur.innerHTML = "";
+
+
+  ingredientsAffiches.forEach(
+    (ingredient, index) => {
+
+      const cle =
+        nettoyerTexte(
+          ingredient.texte
+        );
+
+
+      const coche =
+        casesCochees.includes(cle);
+
+
+      const ligne =
+        document.createElement("label");
+
+      ligne.className =
+        "ingredient"
+        + (
+          coche
+            ? " checked"
+            : ""
+        );
+
+
+      const checkbox =
+        document.createElement("input");
+
+      checkbox.type =
+        "checkbox";
+
+      checkbox.checked =
+        coche;
+
+
+      checkbox.addEventListener(
+        "change",
+        () => {
+
+          modifierCase(
+            cle,
+            checkbox.checked
+          );
+
+          ligne.classList.toggle(
+            "checked",
+            checkbox.checked
+          );
+
+        }
+      );
+
+
+      const contenu =
+        document.createElement("div");
+
+      contenu.className =
+        "ingredient-content";
+
+
+      const nom =
+        document.createElement("div");
+
+      nom.className =
+        "ingredient-name";
+
+      nom.textContent =
+        ingredient.texte;
+
+
+      contenu.appendChild(nom);
+
+
+      if (
+        ingredient.recettes
+        &&
+        ingredient.recettes.length > 0
+      ) {
+
+        const sources =
+          document.createElement("div");
+
+        sources.className =
+          "ingredient-sources";
+
+        sources.textContent =
+          "Pour : "
+          +
+          ingredient.recettes.join(
+            ", "
+          );
+
+        contenu.appendChild(
+          sources
+        );
+
+      }
+
+
+      ligne.appendChild(
+        checkbox
+      );
+
+      ligne.appendChild(
+        contenu
+      );
+
+
+      conteneur.appendChild(
+        ligne
+      );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   CASES
+===================================================== */
+
+function modifierCase(
+  cle,
+  coche
+) {
+
+  if (coche) {
+
+    if (
+      !casesCochees.includes(cle)
+    ) {
+
+      casesCochees.push(cle);
+
+    }
+
+  }
+  else {
+
+    casesCochees =
+      casesCochees.filter(
+        element =>
+          element !== cle
+      );
+
+  }
+
+
+  localStorage.setItem(
+    "ingredientsCoursesCoches",
+    JSON.stringify(
+      casesCochees
+    )
+  );
+
+}
+
+
+/* =====================================================
+   TOUT COCHER
+===================================================== */
+
+function toutCocher() {
+
+  ingredients.forEach(
+    ingredient => {
+
+      const cle =
+        nettoyerTexte(
+          ingredient.texte
+        );
+
+
+      if (
+        !casesCochees.includes(cle)
+      ) {
+
+        casesCochees.push(cle);
+
+      }
+
+    }
+  );
+
+
+  localStorage.setItem(
+    "ingredientsCoursesCoches",
+    JSON.stringify(
+      casesCochees
+    )
+  );
+
+
+  afficherIngredients(
+    document.getElementById(
+      "recherche"
+    ).value
+  );
+
+
+  afficherMessage(
+    "Tous les ingrédients sont cochés."
+  );
+
+}
+
+
+/* =====================================================
+   TOUT DECOCHER
+===================================================== */
+
+function toutDecocher() {
+
+  casesCochees = [];
+
+
+  localStorage.setItem(
+    "ingredientsCoursesCoches",
+    JSON.stringify(
+      casesCochees
+    )
+  );
+
+
+  afficherIngredients(
+    document.getElementById(
+      "recherche"
+    ).value
+  );
+
+
+  afficherMessage(
+    "Tous les ingrédients sont décochés."
+  );
+
+}
+
+
+/* =====================================================
+   REINITIALISER
+===================================================== */
+
+function reinitialiserCases() {
+
+  if (
+    !confirm(
+      "Réinitialiser toutes les cases cochées ?"
+    )
+  ) {
+
+    return;
+
+  }
+
+
+  casesCochees = [];
+
+
+  localStorage.removeItem(
+    "ingredientsCoursesCoches"
+  );
+
+
+  afficherIngredients(
+    document.getElementById(
+      "recherche"
+    ).value
+  );
+
+
+  afficherMessage(
+    "Les cases ont été réinitialisées."
+  );
+
+}
+
+
+/* =====================================================
+   RECHERCHE
+===================================================== */
+
+document
+  .getElementById("recherche")
+  .addEventListener(
+    "input",
+    function() {
+
+      afficherIngredients(
+        this.value
+      );
+
+    }
+  );
+
+
+/* =====================================================
+   DEMARRAGE
+===================================================== */
+
+chargerCourses();
+
+</script>
 
 </body>
-
 </html>
 ```
