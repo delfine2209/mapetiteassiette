@@ -259,6 +259,108 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     }
 
     /* ==================================================
+       REPRENDRE MON RYTHME
+    ================================================== */
+
+    .rythme-section {
+      margin-bottom: 32px;
+    }
+
+    .rythme-card {
+      position: relative;
+      min-height: 285px;
+
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+      border-radius: 26px;
+
+      background:
+        url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=85")
+        center / cover;
+
+      box-shadow: 0 12px 30px rgba(80,60,60,0.14);
+
+      transition: transform 0.2s ease;
+    }
+
+    .rythme-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .rythme-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(35,28,28,0.82),
+          rgba(35,28,28,0.25) 55%,
+          rgba(35,28,28,0.02)
+        );
+    }
+
+    .rythme-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+
+      padding: 8px 12px;
+
+      background: rgba(255,255,255,0.94);
+      color: var(--rose-fonce);
+
+      border-radius: 20px;
+
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .rythme-content {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+      padding: 24px 20px;
+      color: white;
+    }
+
+    .rythme-content h2 {
+      margin-bottom: 8px;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+    }
+
+    .rythme-content p {
+      max-width: 560px;
+      margin-bottom: 16px;
+
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .rythme-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 12px 17px;
+
+      background: white;
+      color: var(--rose-fonce);
+
+      border-radius: 14px;
+
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* ==================================================
        UNIVERS
     ================================================== */
 
@@ -793,6 +895,10 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
         min-height: 230px;
       }
 
+      .rythme-card {
+        min-height: 340px;
+      }
+
       .values {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -820,6 +926,14 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
 
       .stat-label {
         font-size: 9px;
+      }
+
+      .rythme-card {
+        min-height: 270px;
+      }
+
+      .rythme-content h2 {
+        font-size: 24px;
       }
     }
   </style>
@@ -851,7 +965,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
 
 </div>
 
-
 <div class="hero">
 
   <div class="hero-small">
@@ -868,12 +981,10 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     quand on mange en petites quantités.
   </p>
 
-
   <a
     href="src/screens/MesEnvies.html"
     class="main-button"
   >
-
     <span>
       ✨ Trouver une recette
     </span>
@@ -881,7 +992,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     <span class="main-button-arrow">
       →
     </span>
-
   </a>
 
 </div>
@@ -912,17 +1022,12 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
 
 </div>
 
-
 <section class="tools">
-
-
-  <!-- ADAPTER -->
 
   <a
     href="src/screens/adapter.html"
     class="tool adapter"
   >
-
     <div class="tool-icon">
       🥗
     </div>
@@ -935,17 +1040,13 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       Adaptez votre assiette avec
       les 3 choix de garnitures.
     </p>
-
   </a>
 
-
-  <!-- FRIGO -->
 
   <a
     href="src/screens/frigo.html"
     class="tool frigo"
   >
-
     <div class="tool-icon">
       🧊
     </div>
@@ -958,17 +1059,13 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       Trouvez des idées à partir
       de ce que vous avez déjà.
     </p>
-
   </a>
 
-
-  <!-- ANTI-GASPI -->
 
   <a
     href="src/screens/restes.html"
     class="tool restes"
   >
-
     <div class="tool-icon">
       ♻️
     </div>
@@ -981,17 +1078,13 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       Transformez vos restes
       en petites assiettes.
     </p>
-
   </a>
 
-
-  <!-- COURSES -->
 
   <a
     href="src/screens/courses.html"
     class="tool courses"
   >
-
     <div class="tool-icon">
       🛒
     </div>
@@ -1004,17 +1097,13 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       Préparez vos achats simplement
       à partir de vos recettes.
     </p>
-
   </a>
 
-
-  <!-- MENU -->
 
   <a
     href="src/screens/menu.html"
     class="tool menu"
   >
-
     <div class="tool-icon">
       🍽️
     </div>
@@ -1027,9 +1116,60 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       Organisez vos repas et composez
       votre petite assiette selon vos envies.
     </p>
-
   </a>
 
+</section>
+
+
+<!-- ==================================================
+     REPRENDRE MON RYTHME
+================================================== -->
+
+<section class="rythme-section">
+
+  <div class="section-title">
+
+    <h2>
+      Reprendre mon rythme
+    </h2>
+
+    <span>
+      Ma semaine
+    </span>
+
+  </div>
+
+
+  <a
+    href="src/screens/ReprendreMonRythme.html"
+    class="rythme-card"
+  >
+
+    <div class="rythme-badge">
+      ✨ Nouveau
+    </div>
+
+
+    <div class="rythme-content">
+
+      <h2>
+        Construisez votre semaine
+      </h2>
+
+      <p>
+        Choisissez votre rythme, le nombre de repas,
+        vos préférences alimentaires et, si vous le souhaitez,
+        un objectif de calories ou de protéines.
+      </p>
+
+      <span class="rythme-button">
+        🍽️ Créer ma semaine
+        <strong>→</strong>
+      </span>
+
+    </div>
+
+  </a>
 
 </section>
 
@@ -1053,12 +1193,10 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
 
 <section class="univers">
 
-
   <a
     href="src/screens/petit-appetit.html"
     class="univers-card petit-appetit"
   >
-
     <div class="univers-icon">
       🥣
     </div>
@@ -1075,7 +1213,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       </p>
 
     </div>
-
   </a>
 
 
@@ -1083,7 +1220,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     href="src/screens/chirurgie.html"
     class="univers-card chirurgie"
   >
-
     <div class="univers-icon">
       💗
     </div>
@@ -1100,7 +1236,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       </p>
 
     </div>
-
   </a>
 
 
@@ -1108,7 +1243,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     href="src/screens/batch-cooking.html"
     class="univers-card batch"
   >
-
     <div class="univers-icon">
       🍱
     </div>
@@ -1125,7 +1259,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       </p>
 
     </div>
-
   </a>
 
 
@@ -1133,7 +1266,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     href="src/screens/Festif.html"
     class="univers-card festif"
   >
-
     <div class="univers-icon">
       🎉
     </div>
@@ -1150,9 +1282,7 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       </p>
 
     </div>
-
   </a>
-
 
 </section>
 
@@ -1175,13 +1305,11 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
 
   </div>
 
-
   <p>
     Noël, Pâques, crêpes, galette des rois,
     apéritifs dînatoires et autres moments gourmands :
     des recettes festives pensées aussi en petites portions.
   </p>
-
 
   <a
     href="src/screens/Festif.html"
@@ -1207,7 +1335,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
 
 
 <section class="values">
-
 
   <div class="value">
 
@@ -1273,7 +1400,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     </div>
 
   </div>
-
 
 </section>
 
@@ -1388,7 +1514,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
 
   <div class="stats">
 
-
     <div class="stat">
 
       <div class="stat-number">
@@ -1427,7 +1552,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
       </div>
 
     </div>
-
 
   </div>
 
@@ -1478,12 +1602,10 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
 ```
 <div class="bottom-nav-inner">
 
-
   <a
     href="index.html"
     class="nav-item active"
   >
-
     <span class="nav-icon">
       ⌂
     </span>
@@ -1491,7 +1613,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     <span>
       Accueil
     </span>
-
   </a>
 
 
@@ -1499,7 +1620,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     href="src/screens/Recettes.html"
     class="nav-item"
   >
-
     <span class="nav-icon">
       🍽️
     </span>
@@ -1507,7 +1627,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     <span>
       Recettes
     </span>
-
   </a>
 
 
@@ -1515,7 +1634,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     href="src/screens/Favoris.html"
     class="nav-item"
   >
-
     <span class="nav-icon">
       ♡
     </span>
@@ -1523,7 +1641,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     <span>
       Favoris
     </span>
-
   </a>
 
 
@@ -1531,7 +1648,6 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     href="src/screens/MonProfil.html"
     class="nav-item"
   >
-
     <span class="nav-icon">
       👤
     </span>
@@ -1539,9 +1655,7 @@ content="Ma Petite Assiette : des petites portions, des recettes gourmandes et d
     <span>
       Profil
     </span>
-
   </a>
-
 
 </div>
 ```
