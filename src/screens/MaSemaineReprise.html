@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -16,370 +17,534 @@
   </script>
   
   <style>
-
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #fffaf5;
-      color: #333;
+      background: #faf7f2;
+      color: #3d3935;
+      padding-bottom: 90px;
     }
 
-    .page {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px 15px 110px;
-    }
-
-    .header {
+    header {
+      background: linear-gradient(135deg, #d98c9b, #c87587);
+      color: white;
+      padding: 25px 20px 30px;
       text-align: center;
-      padding: 15px 10px 25px;
     }
 
-    .logo {
-      color: #7a9e55;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    header .emoji {
+      font-size: 38px;
+      margin-bottom: 8px;
     }
 
-    h1 {
-      color: #3f5530;
-      font-size: 30px;
-      margin: 8px 0;
+    header h1 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      margin-bottom: 8px;
     }
 
-    .subtitle {
-      color: #777;
+    header p {
+      font-size: 14px;
+      opacity: 0.95;
       line-height: 1.5;
     }
 
-    .config-summary {
-      background: #f1f7e9;
-      border-radius: 18px;
-      padding: 15px;
-      margin-bottom: 20px;
-      line-height: 1.7;
-      font-size: 14px;
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px 15px;
     }
 
-    .config-summary strong {
-      color: #3f5530;
-    }
+    /* =====================================================
+       BOUTONS
+    ===================================================== */
 
-    .day {
-      background: white;
-      border-radius: 22px;
-      margin-bottom: 22px;
-      padding: 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    }
-
-    .day-title {
-      font-size: 23px;
-      color: #3f5530;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .meal {
-      border: 1px solid #eee;
-      border-radius: 17px;
-      padding: 14px;
-      margin-bottom: 12px;
-      background: #fff;
-    }
-
-    .meal-header {
+    .actions {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #667955;
-      font-weight: bold;
-      font-size: 14px;
-      margin-bottom: 7px;
-    }
-
-    .recipe-name {
-      font-size: 17px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 7px;
-    }
-
-    .stats {
-      color: #777;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    .meal-actions {
-      display: flex;
-      gap: 8px;
       flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
-    .small-button {
+    button,
+    .button {
       border: none;
-      padding: 9px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 12px;
-      background: #f0f5e9;
-      color: #50623f;
-      text-decoration: none;
-    }
-
-    .small-button:hover {
-      background: #e3edd6;
-    }
-
-    .day-total {
-      margin-top: 15px;
-      background: #f5f8ef;
       border-radius: 14px;
-      padding: 14px;
+      padding: 13px 17px;
       font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .day-total strong {
-      color: #3f5530;
-    }
-
-    .good {
-      color: #4d7c35;
       font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .attention {
-      color: #a16b32;
-      font-weight: bold;
+    button:active,
+    .button:active {
+      transform: scale(0.97);
     }
 
-    .week-summary {
+    .btn-primary {
+      background: #c87587;
+      color: white;
+      box-shadow: 0 4px 12px rgba(200, 117, 135, 0.25);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #76525b;
+      border: 1px solid #ead8dc;
+    }
+
+    .btn-green {
+      background: #7da58c;
+      color: white;
+    }
+
+    /* =====================================================
+       CONFIGURATION
+    ===================================================== */
+
+    .config-card {
       background: white;
       border-radius: 20px;
-      padding: 20px;
-      margin-top: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      padding: 18px;
+      margin-bottom: 22px;
+      box-shadow: 0 5px 18px rgba(80, 60, 50, 0.07);
+      border: 1px solid #eee4dc;
     }
 
-    .week-summary h2 {
-      margin-top: 0;
-      color: #3f5530;
+    .config-card h2 {
+      font-family: Georgia, serif;
+      font-size: 19px;
+      margin-bottom: 12px;
+      color: #574b47;
     }
 
-    .summary-grid {
+    .config-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
 
-    .summary-box {
-      background: #f7f9f3;
+    .config-item {
+      background: #faf7f2;
       border-radius: 13px;
-      padding: 13px;
-      text-align: center;
+      padding: 11px;
+      font-size: 13px;
+      line-height: 1.4;
     }
 
-    .summary-number {
-      font-size: 20px;
-      font-weight: bold;
-      color: #526942;
+    .config-item strong {
+      display: block;
+      color: #795966;
+      margin-bottom: 3px;
     }
 
-    .summary-label {
-      font-size: 12px;
-      color: #777;
+    /* =====================================================
+       JOURNEE
+    ===================================================== */
+
+    .day-card {
+      background: white;
+      border-radius: 22px;
+      margin-bottom: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(80, 60, 50, 0.08);
+      border: 1px solid #eee4dc;
     }
 
-    .empty {
-      background: #fff3e8;
-      color: #805b39;
-      border-radius: 16px;
-      padding: 18px;
-      text-align: center;
-      line-height: 1.5;
+    .day-header {
+      padding: 17px 18px;
+      background: linear-gradient(135deg, #f4e4e7, #f8efea);
+      border-bottom: 1px solid #eaded8;
     }
 
-    .buttons {
-      display: grid;
+    .day-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
+    }
+
+    .day-title h2 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      color: #594b47;
+    }
+
+    .day-status {
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 7px 10px;
+      white-space: nowrap;
+    }
+
+    .status-ok {
+      background: #e2f1e6;
+      color: #3d7550;
+    }
+
+    .status-warning {
+      background: #fff0d7;
+      color: #9a691d;
+    }
+
+    .status-danger {
+      background: #f8dfdf;
+      color: #a34949;
+    }
+
+    .day-total {
+      margin-top: 9px;
+      font-size: 13px;
+      color: #665c57;
+    }
+
+    .day-total strong {
+      color: #514743;
+    }
+
+    .day-content {
+      padding: 15px;
+    }
+
+    /* =====================================================
+       REPAS
+    ===================================================== */
+
+    .meal {
+      background: #faf9f7;
+      border: 1px solid #eee8e2;
+      border-radius: 17px;
+      padding: 13px;
+      margin-bottom: 12px;
+    }
+
+    .meal:last-child {
+      margin-bottom: 0;
+    }
+
+    .meal-header {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 8px;
+    }
+
+    .meal-icon {
+      font-size: 22px;
+    }
+
+    .meal-name {
+      font-size: 13px;
+      font-weight: bold;
+      color: #80606a;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .recipe-name {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      line-height: 1.3;
+      color: #403936;
+      margin-bottom: 7px;
+    }
+
+    .recipe-name a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .recipe-name a:hover {
+      text-decoration: underline;
+    }
+
+    .recipe-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      background: white;
+      border: 1px solid #e9e2dc;
+      border-radius: 20px;
+      padding: 5px 8px;
+      font-size: 11px;
+      color: #625a56;
+    }
+
+    .meal-actions {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .meal-actions button,
+    .meal-actions a {
+      padding: 9px 11px;
+      border-radius: 11px;
+      font-size: 12px;
+    }
+
+    .btn-recipe {
+      background: #f1e5e7;
+      color: #805763;
+    }
+
+    .btn-change {
+      background: white;
+      color: #6c625d;
+      border: 1px solid #ddd4ce;
+    }
+
+    /* =====================================================
+       AJUSTEMENT JOURNEE
+    ===================================================== */
+
+    .adjust-box {
+      margin-top: 14px;
+      padding: 13px;
+      border-radius: 15px;
+      background: #fffaf1;
+      border: 1px solid #f1dfbd;
+    }
+
+    .adjust-box p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #695b4e;
+      margin-bottom: 9px;
+    }
+
+    .adjust-box .button {
+      width: 100%;
+    }
+
+    /* =====================================================
+       MESSAGE VIDE / ERREUR
+    ===================================================== */
+
+    .message {
+      background: white;
+      border-radius: 20px;
+      padding: 25px 18px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(80, 60, 50, 0.07);
       margin-top: 20px;
     }
 
-    .main-button {
-      border: none;
-      border-radius: 17px;
-      padding: 16px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      background: #7a9e55;
-      color: white;
+    .message .big {
+      font-size: 40px;
+      margin-bottom: 10px;
     }
 
-    .secondary-button {
-      border: 2px solid #7a9e55;
-      border-radius: 17px;
-      padding: 14px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      background: white;
-      color: #5c773f;
+    .message h2 {
+      font-family: Georgia, serif;
+      margin-bottom: 8px;
     }
 
-    .back {
-      display: block;
-      text-align: center;
-      color: #68765d;
-      text-decoration: none;
-      margin-top: 15px;
+    .message p {
       font-size: 14px;
+      line-height: 1.5;
+      color: #6c625d;
+      margin-bottom: 15px;
     }
 
-    .loading {
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid #e8dfd9;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #776c67;
+      font-size: 11px;
       text-align: center;
-      padding: 50px 20px;
-      color: #777;
+      padding: 5px;
     }
 
-    .replace-area {
-      display: none;
-      margin-top: 10px;
-      padding: 10px;
-      background: #fafbf7;
-      border-radius: 12px;
+    .bottom-nav a.active {
+      color: #c87587;
+      font-weight: bold;
     }
 
-    .replace-area select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
+    .nav-icon {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 2px;
     }
 
-    @media (max-width: 550px) {
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
 
-      h1 {
-        font-size: 26px;
+    @media (min-width: 700px) {
+
+      header {
+        padding: 35px 20px;
       }
 
-      .summary-grid {
-        grid-template-columns: 1fr;
+      header h1 {
+        font-size: 34px;
       }
 
-    }
+      .container {
+        padding: 30px 20px 100px;
+      }
 
+      .day-content {
+        padding: 20px;
+      }
+
+      .config-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .bottom-nav {
+        max-width: 900px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px 20px 0 0;
+      }
+    }
   </style>
+
 </head>
 
 <body>
 
-<div class="page">
+<header>
+  <div class="emoji">🍽️</div>
+  <h1>Ma semaine</h1>
+  <p>
+    Une semaine pensée selon vos envies,<br>
+    votre rythme et vos objectifs.
+  </p>
+</header>
 
-  <header class="header">
-    <div class="logo">Ma Petite Assiette</div>
-    <h1>Ma semaine</h1>
-    <p class="subtitle">
-      Votre semaine personnalisée,
-      construite selon vos choix.
-    </p>
-  </header>
+<main class="container">
 
-  <div id="configSummary" class="config-summary"></div>
+  <div class="actions">
+    <a href="ReprendreMonRythme.html" class="button btn-secondary">
+      ⚙️ Modifier mes choix
+    </a>
 
-  <div id="conteneurSemaine">
+```
+<button class="btn-primary" onclick="genererNouvelleSemaine()">
+  🔄 Nouvelle semaine
+</button>
+```
 
-    <div class="loading">
-      🥕 Préparation de votre petite semaine...
+  </div>
+
+  <div id="configContainer"></div>
+
+  <div id="semaineContainer">
+    <div class="message">
+      <div class="big">🍽️</div>
+      <h2>Préparation de votre semaine…</h2>
+      <p>Nous cherchons les petites assiettes qui vous correspondent.</p>
     </div>
-
   </div>
 
-  <div id="resumeSemaine"></div>
+</main>
 
-  <div class="buttons">
+<nav class="bottom-nav">
 
-    <button
-      class="main-button"
-      id="regenerer"
-    >
-      🔄 Générer une nouvelle semaine
-    </button>
-
-    <button
-      class="secondary-button"
-      id="modifier"
-    >
-      ✏️ Modifier mes choix
-    </button>
-
-  </div>
-
-  <a
-    href="../../index.html"
-    class="back"
-  >
-    ← Retour à l'accueil
+  <a href="../../index.html">
+    <span class="nav-icon">🏠</span>
+    Accueil
   </a>
 
-</div>
+  <a href="Recettes.html">
+    <span class="nav-icon">🍽️</span>
+    Recettes
+  </a>
 
+  <a href="Favoris.html">
+    <span class="nav-icon">❤️</span>
+    Favoris
+  </a>
+
+  <a href="Profil.html">
+    <span class="nav-icon">👤</span>
+    Profil
+  </a>
+
+</nav>
 
 <script>
 
-  const STORAGE_KEY =
-    "maPetiteAssiette_reprise";
+  /* =====================================================
+     CONFIGURATION
+  ===================================================== */
+
+  const STORAGE_KEY = "maPetiteAssiette_reprise";
 
   let configuration = null;
   let recettes = [];
   let semaine = [];
 
-
   /* =====================================================
-     UTILITAIRES
+     OUTILS
   ===================================================== */
 
-  function normaliser(texte) {
+  function normaliser(value) {
 
-    return String(texte || "")
-      .toLowerCase()
+    return String(value ?? "")
       .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
 
   }
 
-
-  function nombre(valeur) {
+  function nombre(value) {
 
     if (
-      valeur === null ||
-      valeur === undefined ||
-      valeur === ""
+      value === null ||
+      value === undefined ||
+      value === ""
     ) {
-      return 0;
+      return null;
     }
 
-    const resultat =
-      Number(
-        String(valeur)
-          .replace(",", ".")
-          .replace(/[^\d.-]/g, "")
-      );
+    const n = parseFloat(
+      String(value)
+        .replace(",", ".")
+        .replace(/[^\d.-]/g, "")
+    );
 
-    return isNaN(resultat)
-      ? 0
-      : resultat;
+    return Number.isFinite(n) ? n : null;
 
   }
-
 
   function texteRecette(recette) {
 
@@ -388,7 +553,10 @@
       recette.nom,
       recette.categorie,
       recette.type,
+      recette.typeRepas,
       recette.description,
+      recette.portion,
+      recette.envies,
 
       ...(Array.isArray(recette.ingredients)
         ? recette.ingredients
@@ -402,157 +570,221 @@
 
   }
 
+  /* =====================================================
+     CALORIES
+  ===================================================== */
 
   function getCalories(recette) {
 
-    return nombre(
+    const valeur =
+
       recette.calories ??
       recette.kcal ??
       recette.caloriesParPortion ??
-      recette.valeursNutritionnelles?.calories
-    );
+      recette.valeursNutritionnelles?.calories ??
+      recette.valeursNutritionnelles?.kcal;
+
+    return nombre(valeur);
 
   }
 
+  /* =====================================================
+     PROTEINES
+  ===================================================== */
 
   function getProteines(recette) {
 
-    return nombre(
+    const valeur =
+
       recette.proteines ??
       recette.protein ??
       recette.proteinesParPortion ??
-      recette.valeursNutritionnelles?.proteines
-    );
+      recette.valeursNutritionnelles?.proteines ??
+      recette.valeursNutritionnelles?.protein;
+
+    return nombre(valeur);
 
   }
 
+  /* =====================================================
+     VEGETARIEN
+  ===================================================== */
 
   function estVegetarienne(recette) {
 
     if (
       recette.vegetarien === true ||
-      recette.vegetarien === "true"
+      normaliser(recette.vegetarien) === "true"
     ) {
       return true;
     }
 
-    const texte =
-      texteRecette(recette);
+    const texte = texteRecette(recette);
 
-    const viande =
-      [
-        "boeuf",
-        "bœuf",
-        "veau",
-        "porc",
-        "jambon",
-        "poulet",
-        "dinde",
-        "canard",
-        "agneau",
-        "saucisse",
-        "lard",
-        "bacon",
-        "thon",
-        "saumon",
-        "poisson",
-        "crevette",
-        "crevettes",
-        "cabillaud",
-        "colin",
-        "sardine",
-        "maquereau",
-        "anchois"
-      ];
+    const alimentsNonVegetariens = [
+      "poulet",
+      "boeuf",
+      "bœuf",
+      "veau",
+      "porc",
+      "jambon",
+      "dinde",
+      "canard",
+      "agneau",
+      "steak",
+      "viande",
+      "saumon",
+      "thon",
+      "sardine",
+      "anchois",
+      "cabillaud",
+      "poisson",
+      "crevette",
+      "fruits de mer"
+    ];
 
-    return !viande.some(
-      aliment =>
-        texte.includes(normaliser(aliment))
+    return !alimentsNonVegetariens.some(
+      aliment => texte.includes(normaliser(aliment))
     );
 
   }
 
+  /* =====================================================
+     ALIMENTS A EVITER
+  ===================================================== */
 
   function contientAliment(recette, aliment) {
 
-    return texteRecette(recette)
-      .includes(
-        normaliser(aliment)
-      );
+    const texte = texteRecette(recette);
+
+    return texte.includes(
+      normaliser(aliment)
+    );
 
   }
 
+  /* =====================================================
+     TYPE DE REPAS
+  ===================================================== */
 
-  function correspondTypeRepas(
-    recette,
-    typeRepas
-  ) {
+  function correspondTypeRepas(recette, typeRepas) {
 
-    const texte =
-      normaliser(
-        [
-          recette.categorie,
-          recette.type,
-          recette.nom,
-          recette.typeRepas
-        ].join(" ")
-      );
+    const categorie = normaliser(
+      recette.categorie
+    );
 
+    const type = normaliser(
+      recette.type
+    );
+
+    const typePrecise = normaliser(
+      recette.typeRepas
+    );
+
+    const texte = texteRecette(recette);
+
+    const donnees =
+      categorie + " " +
+      type + " " +
+      typePrecise + " " +
+      texte;
 
     if (typeRepas === "petitDejeuner") {
 
       return (
-        texte.includes("petit") ||
-        texte.includes("dejeuner") ||
-        texte.includes("petit-dejeuner") ||
-        texte.includes("petit déjeuner") ||
-        texte.includes("breakfast") ||
-        texte.includes("matin")
+        typePrecise.includes("petit") ||
+        typePrecise.includes("breakfast") ||
+        categorie.includes("petit") ||
+        donnees.includes("petit dejeuner") ||
+        donnees.includes("petit-dejeuner") ||
+        donnees.includes("matin") ||
+        donnees.includes("breakfast")
       );
 
     }
-
 
     if (typeRepas === "dejeuner") {
 
       return (
-        texte.includes("dejeuner") ||
-        texte.includes("déjeuner") ||
-        texte.includes("diner") ||
-        texte.includes("dîner") ||
-        texte.includes("plat") ||
-        texte.includes("repas")
+        typePrecise.includes("dejeuner") ||
+        typePrecise.includes("lunch") ||
+        categorie === "dejeuner" ||
+        categorie.includes("dejeuner") ||
+        donnees.includes("lunch")
       );
 
     }
-
 
     if (typeRepas === "diner") {
 
       return (
-        texte.includes("diner") ||
-        texte.includes("dîner") ||
-        texte.includes("dejeuner") ||
-        texte.includes("déjeuner") ||
-        texte.includes("plat") ||
-        texte.includes("repas")
+        typePrecise.includes("diner") ||
+        typePrecise.includes("dinner") ||
+        categorie === "diner" ||
+        categorie.includes("diner") ||
+        donnees.includes("dinner")
       );
 
     }
 
-
-    if (
-      typeRepas === "collation"
-    ) {
+    if (typeRepas === "collation") {
 
       return (
-        texte.includes("collation") ||
-        texte.includes("douceur") ||
-        texte.includes("dessert") ||
-        texte.includes("gouter") ||
-        texte.includes("goûter") ||
-        texte.includes("snack")
+        typePrecise.includes("collation") ||
+        typePrecise.includes("gouter") ||
+        typePrecise.includes("snack") ||
+        categorie.includes("petite douceur") ||
+        categorie.includes("douceur") ||
+        categorie.includes("collation") ||
+        donnees.includes("gouter") ||
+        donnees.includes("snack") ||
+        donnees.includes("dessert")
       );
+
+    }
+
+    return false;
+
+  }
+
+  /* =====================================================
+     COMPATIBILITE
+  ===================================================== */
+
+  function recetteCompatible(recette, typeRepas) {
+
+    if (
+      !correspondTypeRepas(
+        recette,
+        typeRepas
+      )
+    ) {
+      return false;
+    }
+
+    if (
+      configuration.regime === "vegetarien" &&
+      !estVegetarienne(recette)
+    ) {
+      return false;
+    }
+
+    const alimentsAeviter =
+      configuration.alimentsEviter || [];
+
+    for (
+      const aliment of alimentsAeviter
+    ) {
+
+      if (
+        aliment &&
+        contientAliment(
+          recette,
+          aliment
+        )
+      ) {
+        return false;
+      }
 
     }
 
@@ -560,66 +792,8 @@
 
   }
 
-
   /* =====================================================
-     FILTRAGE
-  ===================================================== */
-
-  function recettesCompatibles(
-    typeRepas
-  ) {
-
-    let liste =
-      recettes.filter(
-        recette =>
-          correspondTypeRepas(
-            recette,
-            typeRepas
-          )
-      );
-
-
-    if (
-      configuration.regime ===
-      "vegetarien"
-    ) {
-
-      liste =
-        liste.filter(
-          estVegetarienne
-        );
-
-    }
-
-
-    const eviter =
-      configuration.alimentsEviter || [];
-
-
-    if (eviter.length) {
-
-      liste =
-        liste.filter(
-          recette =>
-            !eviter.some(
-              aliment =>
-                contientAliment(
-                  recette,
-                  aliment
-                )
-            )
-        );
-
-    }
-
-
-    return liste;
-
-  }
-
-
-  /* =====================================================
-     PREFERENCES
+     SCORE
   ===================================================== */
 
   function scoreRecette(
@@ -629,33 +803,11 @@
 
     let score = 0;
 
-    const texte =
-      texteRecette(recette);
-
-
-    const aimes =
-      configuration.alimentsAimes || [];
-
-
-    aimes.forEach(
-      aliment => {
-
-        if (
-          texte.includes(
-            normaliser(aliment)
-          )
-        ) {
-          score += 10;
-        }
-
-      }
+    const texte = texteRecette(
+      recette
     );
 
-
-    /*
-       Favoriser la catégorie correspondant
-       au repas.
-    */
+    /* Type de repas */
 
     if (
       correspondTypeRepas(
@@ -663,134 +815,187 @@
         typeRepas
       )
     ) {
-      score += 5;
+      score += 30;
     }
 
+    /* Aliments aimés */
 
-    /*
-       Si objectif protéines :
-       favoriser les recettes riches
-       en protéines.
-    */
+    const alimentsAimes =
+      configuration.alimentsAimes || [];
+
+    alimentsAimes.forEach(
+      aliment => {
+
+        if (
+          aliment &&
+          texte.includes(
+            normaliser(aliment)
+          )
+        ) {
+          score += 15;
+        }
+
+      }
+    );
+
+    /* Protéines */
+
+    const proteines =
+      getProteines(recette);
 
     if (
-      configuration.proteines?.active
+      configuration.proteines?.active &&
+      proteines !== null
     ) {
 
-      score +=
-        Math.min(
-          getProteines(recette) / 5,
-          10
-        );
+      if (proteines >= 15) {
+        score += 10;
+      }
+
+      if (proteines >= 20) {
+        score += 8;
+      }
 
     }
 
+    /* Calories */
+
+    const calories =
+      getCalories(recette);
+
+    if (
+      configuration.calories?.active &&
+      calories !== null
+    ) {
+
+      const objectif =
+        configuration.calories.objectif;
+
+      const intervalle =
+        obtenirIntervalleCalories(
+          objectif
+        );
+
+      if (intervalle) {
+
+        const milieu =
+          (
+            intervalle.min +
+            intervalle.max
+          ) / 2;
+
+        const distance =
+          Math.abs(
+            calories - milieu
+          );
+
+        score += Math.max(
+          0,
+          15 - distance / 50
+        );
+
+      }
+
+    }
+
+    /* Petit bonus aléatoire */
+
+    score += Math.random() * 5;
 
     return score;
 
   }
 
+  /* =====================================================
+     INTERVALLE CALORIES
+  ===================================================== */
 
-  function choisirRecette(
-    typeRepas,
-    dejaChoisies
+  function obtenirIntervalleCalories(
+    objectif
   ) {
 
-    let candidats =
-      recettesCompatibles(
-        typeRepas
-      );
-
-
-    /*
-       Si le filtrage par catégorie
-       est trop strict, on élargit.
-    */
-
-    if (
-      candidats.length === 0
-    ) {
-
-      candidats =
-        recettes.filter(
-          recette => {
-
-            if (
-              configuration.regime ===
-              "vegetarien" &&
-              !estVegetarienne(recette)
-            ) {
-              return false;
-            }
-
-            const eviter =
-              configuration.alimentsEviter || [];
-
-            return !eviter.some(
-              aliment =>
-                contientAliment(
-                  recette,
-                  aliment
-                )
-            );
-
-          }
-        );
-
-    }
-
-
-    if (
-      candidats.length === 0
-    ) {
+    if (!objectif) {
       return null;
     }
 
+    const match =
+      String(objectif).match(
+        /(\d+)\s*-\s*(\d+)/
+      );
 
-    /*
-       Éviter autant que possible
-       les doublons.
-    */
+    if (!match) {
+      return null;
+    }
 
-    const disponibles =
-      candidats.filter(
+    return {
+      min: parseInt(match[1]),
+      max: parseInt(match[2])
+    };
+
+  }
+
+  /* =====================================================
+     CHOISIR UNE RECETTE
+  ===================================================== */
+
+  function choisirRecette(
+    typeRepas,
+    recettesDejaUtilisees = []
+  ) {
+
+    let candidates =
+      recettes.filter(
         recette =>
-          !dejaChoisies.includes(
-            String(recette.id)
+          recetteCompatible(
+            recette,
+            typeRepas
           )
       );
 
+    if (!candidates.length) {
 
-    if (
-      disponibles.length
-    ) {
-      candidats =
-        disponibles;
+      return null;
+
     }
 
+    /* Eviter les doublons */
 
-    /*
-       Trier selon les préférences.
-    */
-
-    candidats.sort(
-      (a, b) =>
-        scoreRecette(b, typeRepas) -
-        scoreRecette(a, typeRepas)
-    );
-
-
-    /*
-       Parmi les meilleurs résultats,
-       introduire un peu de variété.
-    */
-
-    const top =
-      candidats.slice(
-        0,
-        Math.min(8, candidats.length)
+    const sansDoublons =
+      candidates.filter(
+        recette =>
+          !recettesDejaUtilisees.includes(
+            recette.id
+          )
       );
 
+    if (sansDoublons.length) {
+      candidates = sansDoublons;
+    }
+
+    /* Score */
+
+    candidates.sort(
+      (a, b) =>
+        scoreRecette(
+          b,
+          typeRepas
+        ) -
+        scoreRecette(
+          a,
+          typeRepas
+        )
+    );
+
+    /* Petite part d'aléatoire */
+
+    const top =
+      candidates.slice(
+        0,
+        Math.min(
+          8,
+          candidates.length
+        )
+      );
 
     return top[
       Math.floor(
@@ -800,32 +1005,29 @@
 
   }
 
-
   /* =====================================================
-     TYPES DE REPAS
+     TYPES DE REPAS DE LA JOURNEE
   ===================================================== */
 
-  function construireTypesRepas() {
+  function obtenirTypesRepas() {
 
     const types = [];
 
     if (
-      configuration.repas.petitDejeuner
+      configuration.repas?.petitDejeuner
     ) {
       types.push(
         "petitDejeuner"
       );
     }
 
-
     if (
-      configuration.repas.dejeuner
+      configuration.repas?.dejeuner
     ) {
       types.push(
         "dejeuner"
       );
     }
-
 
     if (
       configuration.repasParJour >= 4
@@ -835,7 +1037,6 @@
       );
     }
 
-
     if (
       configuration.repasParJour >= 5
     ) {
@@ -844,563 +1045,373 @@
       );
     }
 
-
     if (
-      configuration.repas.diner
+      configuration.repas?.diner
     ) {
       types.push(
         "diner"
       );
     }
 
-
     return types;
 
   }
 
+  /* =====================================================
+     LIBELLES
+  ===================================================== */
 
-  function nomRepas(type, index) {
+  function libelleRepas(type, index) {
 
     if (
       type === "petitDejeuner"
     ) {
       return {
-        nom: "Petit déjeuner",
-        emoji: "🍳"
+        nom: "Petit-déjeuner",
+        icon: "☕"
       };
     }
-
 
     if (
       type === "dejeuner"
     ) {
       return {
         nom: "Déjeuner",
-        emoji: "🥗"
+        icon: "🥗"
       };
     }
-
 
     if (
       type === "diner"
     ) {
       return {
         nom: "Dîner",
-        emoji: "🌙"
+        icon: "🍽️"
       };
     }
 
+    if (index === 2) {
 
-    if (
-      index === 0
-    ) {
       return {
-        nom: "Collation matin",
-        emoji: "🥛"
+        nom: "Collation",
+        icon: "🍎"
       };
-    }
 
+    }
 
     return {
-      nom: "Collation",
-      emoji: "🍎"
+      nom: "Petite collation",
+      icon: "🍪"
     };
 
   }
 
-
   /* =====================================================
-     CONSTRUCTION DE LA SEMAINE
+     GENERATION D'UNE JOURNEE
   ===================================================== */
 
-  function construireSemaine() {
+  function genererJournee(numero) {
+
+    const types =
+      obtenirTypesRepas();
+
+    const repas = [];
+
+    const ids = [];
+
+    types.forEach(
+      type => {
+
+        const recette =
+          choisirRecette(
+            type,
+            ids
+          );
+
+        if (recette) {
+
+          ids.push(
+            recette.id
+          );
+
+          repas.push({
+            type,
+            recette
+          });
+
+        }
+
+      }
+    );
+
+    return {
+      numero,
+      repas
+    };
+
+  }
+
+  /* =====================================================
+     GENERATION SEMAINE
+  ===================================================== */
+
+  function genererSemaine() {
 
     semaine = [];
 
-    const types =
-      construireTypesRepas();
-
-
-    for (
-      let jour = 1;
-      jour <= configuration.duree;
-      jour++
-    ) {
-
-      const repas = [];
-      const idsJour = [];
-
-      types.forEach(
-        (type, index) => {
-
-          const recette =
-            choisirRecette(
-              type,
-              idsJour
-            );
-
-
-          if (recette) {
-
-            idsJour.push(
-              String(recette.id)
-            );
-
-            repas.push({
-
-              type: type,
-
-              index: index,
-
-              recette: recette
-
-            });
-
-          }
-
-        }
+    const duree =
+      Number(
+        configuration.duree || 1
       );
 
+    for (
+      let i = 1;
+      i <= duree;
+      i++
+    ) {
 
-      semaine.push({
-        jour: jour,
-        repas: repas
-      });
+      semaine.push(
+        genererJournee(i)
+      );
 
     }
 
   }
 
-
   /* =====================================================
-     CALCULS
+     TOTAL JOURNEE
   ===================================================== */
 
-  function totalJour(jour) {
+  function calculerTotauxJournee(
+    jour
+  ) {
 
     let calories = 0;
     let proteines = 0;
 
+    let caloriesConnues = false;
+    let proteinesConnues = false;
 
     jour.repas.forEach(
       repas => {
 
-        calories +=
+        const kcal =
           getCalories(
             repas.recette
           );
 
-        proteines +=
+        const prot =
           getProteines(
             repas.recette
           );
 
+        if (kcal !== null) {
+
+          calories += kcal;
+          caloriesConnues = true;
+
+        }
+
+        if (prot !== null) {
+
+          proteines += prot;
+          proteinesConnues = true;
+
+        }
+
       }
     );
 
-
     return {
-      calories,
-      proteines
+      calories:
+        caloriesConnues
+          ? Math.round(calories)
+          : null,
+
+      proteines:
+        proteinesConnues
+          ? Math.round(
+              proteines * 10
+            ) / 10
+          : null
     };
 
   }
 
+  /* =====================================================
+     STATUT JOURNEE
+  ===================================================== */
 
-  function objectifCaloriesRespecte(
+  function obtenirStatutJournee(
     calories
   ) {
 
     if (
-      !configuration.calories?.active ||
-      !configuration.calories?.objectif
+      !configuration.calories?.active
     ) {
-      return null;
+
+      return {
+        classe: "status-ok",
+        texte: "✓ Journée composée"
+      };
+
     }
 
+    const intervalle =
+      obtenirIntervalleCalories(
+        configuration.calories.objectif
+      );
 
-    const parties =
-      configuration.calories.objectif
-        .split("-")
-        .map(Number);
+    if (
+      !intervalle ||
+      calories === null
+    ) {
 
+      return {
+        classe: "status-warning",
+        texte: "🟠 Calories à vérifier"
+      };
 
-    const min =
-      parties[0];
+    }
 
-    const max =
-      parties[1];
+    if (
+      calories >= intervalle.min &&
+      calories <= intervalle.max
+    ) {
 
+      return {
+        classe: "status-ok",
+        texte: "✓ Objectif respecté"
+      };
 
-    return (
-      calories >= min &&
-      calories <= max
-    );
+    }
+
+    const ecart =
+      calories < intervalle.min
+        ? intervalle.min - calories
+        : calories - intervalle.max;
+
+    /* Proche de la cible */
+
+    if (ecart <= 150) {
+
+      return {
+        classe: "status-warning",
+        texte: "🟠 À ajuster légèrement"
+      };
+
+    }
+
+    return {
+      classe: "status-danger",
+      texte: "🔴 Objectif difficile à atteindre"
+    };
 
   }
 
-
   /* =====================================================
-     AFFICHAGE
+     AFFICHAGE CONFIGURATION
   ===================================================== */
 
   function afficherConfiguration() {
 
-    const bloc =
+    const container =
       document.getElementById(
-        "configSummary"
+        "configContainer"
       );
 
-
-    let calories =
-      "Aucun objectif";
+    const repas = [];
 
     if (
-      configuration.calories?.active &&
-      configuration.calories?.objectif
+      configuration.repas?.petitDejeuner
     ) {
-
-      calories =
-        configuration.calories.objectif
-          .replace("-", " à ") +
-        " kcal / jour";
-
+      repas.push(
+        "Petit-déjeuner"
+      );
     }
 
+    if (
+      configuration.repas?.dejeuner
+    ) {
+      repas.push(
+        "Déjeuner"
+      );
+    }
+
+    if (
+      configuration.repas?.diner
+    ) {
+      repas.push(
+        "Dîner"
+      );
+    }
+
+    let calories =
+      "Pas d'objectif";
+
+    if (
+      configuration.calories?.active
+    ) {
+      calories =
+        configuration.calories.objectif
+        + " kcal / jour";
+    }
 
     let proteines =
-      "Aucun objectif";
+      "Pas d'objectif";
 
     if (
       configuration.proteines?.active &&
-      configuration.proteines?.objectif
+      configuration.proteines.objectif
     ) {
 
       proteines =
-        configuration.proteines.objectif +
-        " g / jour";
+        configuration.proteines.objectif
+        + " g / jour";
 
     }
 
+    const regime =
+      configuration.regime === "vegetarien"
+        ? "🌱 Végétarien"
+        : "🥩 Viande / poisson";
 
-    bloc.innerHTML = `
+    container.innerHTML = `
 
-      <strong>Votre configuration</strong><br>
+      <section class="config-card">
 
-      📅 ${configuration.duree} jour(s)<br>
+        <h2>✨ Vos critères</h2>
 
-      🍽️ ${configuration.repasParJour}
-      repas par jour<br>
+        <div class="config-grid">
 
-      🎯 Calories :
-      ${calories}<br>
-
-      💪 Protéines :
-      ${proteines}<br>
-
-      ${configuration.regime === "vegetarien"
-        ? "🥕 Régime végétarien"
-        : "🥩 Viande / poisson"}
-
-    `;
-
-  }
-
-
-  function afficherSemaine() {
-
-    const conteneur =
-      document.getElementById(
-        "conteneurSemaine"
-      );
-
-
-    conteneur.innerHTML = "";
-
-
-    semaine.forEach(
-      jour => {
-
-        const bloc =
-          document.createElement(
-            "section"
-          );
-
-        bloc.className = "day";
-
-
-        const total =
-          totalJour(jour);
-
-
-        let html = `
-
-          <div class="day-title">
-            ${nomJour(jour.jour)}
+          <div class="config-item">
+            <strong>📅 Durée</strong>
+            ${configuration.duree} jour${configuration.duree > 1 ? "s" : ""}
           </div>
 
-        `;
-
-
-        jour.repas.forEach(
-          (repas, index) => {
-
-            const recette =
-              repas.recette;
-
-            const info =
-              nomRepas(
-                repas.type,
-                repas.index
-              );
-
-
-            const calories =
-              getCalories(recette);
-
-            const proteines =
-              getProteines(recette);
-
-
-            html += `
-
-              <div class="meal">
-
-                <div class="meal-header">
-                  ${info.emoji}
-                  ${info.nom}
-                </div>
-
-                <div class="recipe-name">
-                  ${escapeHtml(
-                    recette.nom ||
-                    "Recette"
-                  )}
-                </div>
-
-                <div class="stats">
-
-                  ${calories > 0
-                    ? calories + " kcal"
-                    : "Calories non renseignées"}
-
-                  ${proteines > 0
-                    ? " · " + proteines + " g protéines"
-                    : ""}
-
-                </div>
-
-                <div class="meal-actions">
-
-                  <a
-                    class="small-button"
-                    href="Recette.html?id=${encodeURIComponent(
-                      recette.id
-                    )}"
-                  >
-                    👁️ Voir la recette
-                  </a>
-
-                  <button
-                    class="small-button"
-                    onclick="remplacerRecette(
-                      ${jour.jour},
-                      ${index}
-                    )"
-                  >
-                    🔄 Changer
-                  </button>
-
-                </div>
-
-              </div>
-
-            `;
-
-          }
-        );
-
-
-        const etatCalories =
-          objectifCaloriesRespecte(
-            total.calories
-          );
-
-
-        let messageCalories = "";
-
-        if (
-          etatCalories === true
-        ) {
-
-          messageCalories =
-            `<span class="good">
-              ✓ Objectif calories respecté
-            </span>`;
-
-        }
-        else if (
-          etatCalories === false
-        ) {
-
-          messageCalories =
-            `<span class="attention">
-              ⚠ Journée à ajuster
-            </span>`;
-
-        }
-
-
-        html += `
-
-          <div class="day-total">
-
-            <strong>
-              Total de la journée
-            </strong><br>
-
-            🔥
-            ${total.calories > 0
-              ? Math.round(total.calories) + " kcal"
-              : "Calories non renseignées"}
-
-            &nbsp; · &nbsp;
-
-            💪
-            ${total.proteines > 0
-              ? Math.round(total.proteines) + " g protéines"
-              : "Protéines non renseignées"}
-
-            <br>
-
-            ${messageCalories}
-
+          <div class="config-item">
+            <strong>🍽️ Repas</strong>
+            ${configuration.repasParJour} / jour
           </div>
 
-        `;
-
-
-        bloc.innerHTML = html;
-
-        conteneur.appendChild(
-          bloc
-        );
-
-      }
-    );
-
-  }
-
-
-  function nomJour(numero) {
-
-    const jours = [
-      "Lundi",
-      "Mardi",
-      "Mercredi",
-      "Jeudi",
-      "Vendredi",
-      "Samedi",
-      "Dimanche"
-    ];
-
-    return jours[
-      (numero - 1) % 7
-    ];
-
-  }
-
-
-  function escapeHtml(texte) {
-
-    return String(texte || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-
-  }
-
-
-  /* =====================================================
-     RESUME
-  ===================================================== */
-
-  function afficherResume() {
-
-    let totalCalories = 0;
-    let totalProteines = 0;
-
-
-    semaine.forEach(
-      jour => {
-
-        const total =
-          totalJour(jour);
-
-        totalCalories +=
-          total.calories;
-
-        totalProteines +=
-          total.proteines;
-
-      }
-    );
-
-
-    const jours =
-      semaine.length || 1;
-
-
-    const moyenneCalories =
-      Math.round(
-        totalCalories / jours
-      );
-
-
-    const moyenneProteines =
-      Math.round(
-        totalProteines / jours
-      );
-
-
-    document.getElementById(
-      "resumeSemaine"
-    ).innerHTML = `
-
-      <section class="week-summary">
-
-        <h2>📊 Bilan</h2>
-
-        <div class="summary-grid">
-
-          <div class="summary-box">
-
-            <div class="summary-number">
-              ${moyenneCalories > 0
-                ? moyenneCalories + " kcal"
-                : "—"}
-            </div>
-
-            <div class="summary-label">
-              Moyenne calories / jour
-            </div>
-
+          <div class="config-item">
+            <strong>🥗 Organisation</strong>
+            ${repas.join(", ")}
           </div>
 
-          <div class="summary-box">
+          <div class="config-item">
+            <strong>🥩 Alimentation</strong>
+            ${regime}
+          </div>
 
-            <div class="summary-number">
-              ${moyenneProteines > 0
-                ? moyenneProteines + " g"
-                : "—"}
-            </div>
+          <div class="config-item">
+            <strong>🔥 Repère calorique</strong>
+            ${calories}
+          </div>
 
-            <div class="summary-label">
-              Moyenne protéines / jour
-            </div>
-
+          <div class="config-item">
+            <strong>💪 Protéines</strong>
+            ${proteines}
           </div>
 
         </div>
@@ -1411,325 +1422,797 @@
 
   }
 
-
   /* =====================================================
-     REMPLACER UNE RECETTE
+     AFFICHAGE SEMAINE
   ===================================================== */
 
-  window.remplacerRecette =
-    function (
-      numeroJour,
-      indexRepas
-    ) {
+  function afficherSemaine() {
 
-      const jour =
-        semaine.find(
-          element =>
-            element.jour === numeroJour
-        );
+    const container =
+      document.getElementById(
+        "semaineContainer"
+      );
 
+    if (!semaine.length) {
 
-      if (!jour) {
-        return;
-      }
+      container.innerHTML = `
 
+        <div class="message">
 
-      const repas =
-        jour.repas[indexRepas];
+          <div class="big">🍽️</div>
 
+          <h2>Votre semaine n'a pas pu être créée</h2>
 
-      if (!repas) {
-        return;
-      }
+          <p>
+            Nous n'avons pas trouvé suffisamment
+            de recettes correspondant à vos critères.
+            Essayez de modifier certains choix.
+          </p>
 
+          <a
+            href="ReprendreMonRythme.html"
+            class="button btn-primary"
+          >
+            ⚙️ Modifier mes choix
+          </a>
 
-      let candidats =
-        recettesCompatibles(
-          repas.type
-        );
+        </div>
 
+      `;
 
-      const ids =
-        jour.repas
-          .map(
-            element =>
-              String(
-                element.recette.id
-              )
+      return;
+
+    }
+
+    container.innerHTML = "";
+
+    semaine.forEach(
+      jour => {
+
+        const totaux =
+          calculerTotauxJournee(
+            jour
           );
 
+        const statut =
+          obtenirStatutJournee(
+            totaux.calories
+          );
 
-      candidats =
-        candidats.filter(
+        const intervalle =
+          configuration.calories?.active
+            ? obtenirIntervalleCalories(
+                configuration.calories.objectif
+              )
+            : null;
+
+        const jourElement =
+          document.createElement(
+            "section"
+          );
+
+        jourElement.className =
+          "day-card";
+
+        let totalTexte =
+          "";
+
+        if (
+          totaux.calories !== null
+        ) {
+
+          totalTexte += `
+            <strong>
+              ${totaux.calories} kcal
+            </strong>
+          `;
+
+          if (intervalle) {
+
+            totalTexte += `
+              / ${intervalle.min}–${intervalle.max} kcal
+            `;
+
+          }
+
+        } else {
+
+          totalTexte +=
+            "Calories non renseignées";
+
+        }
+
+        if (
+          totaux.proteines !== null
+        ) {
+
+          totalTexte += `
+            · <strong>
+              ${totaux.proteines} g de protéines
+            </strong>
+          `;
+
+        }
+
+        jourElement.innerHTML = `
+
+          <div class="day-header">
+
+            <div class="day-title">
+
+              <h2>
+                Jour ${jour.numero}
+              </h2>
+
+              <span
+                class="day-status ${statut.classe}"
+              >
+                ${statut.texte}
+              </span>
+
+            </div>
+
+            <div class="day-total">
+              ${totalTexte}
+            </div>
+
+          </div>
+
+          <div class="day-content"></div>
+
+        `;
+
+        const content =
+          jourElement.querySelector(
+            ".day-content"
+          );
+
+        jour.repas.forEach(
+          (repas, index) => {
+
+            const libelle =
+              libelleRepas(
+                repas.type,
+                index
+              );
+
+            const recette =
+              repas.recette;
+
+            const calories =
+              getCalories(recette);
+
+            const proteines =
+              getProteines(recette);
+
+            const meal =
+              document.createElement(
+                "article"
+              );
+
+            meal.className =
+              "meal";
+
+            meal.innerHTML = `
+
+              <div class="meal-header">
+
+                <span class="meal-icon">
+                  ${libelle.icon}
+                </span>
+
+                <span class="meal-name">
+                  ${libelle.nom}
+                </span>
+
+              </div>
+
+              <div class="recipe-name">
+
+                <a
+                  href="Recette.html?id=${encodeURIComponent(recette.id)}"
+                >
+                  ${recette.nom || "Petite assiette"}
+                </a>
+
+              </div>
+
+              <div class="recipe-meta">
+
+                ${
+                  calories !== null
+                    ? `
+                      <span class="meta">
+                        🔥 ${Math.round(calories)} kcal
+                      </span>
+                    `
+                    : `
+                      <span class="meta">
+                        🔥 kcal non renseignées
+                      </span>
+                    `
+                }
+
+                ${
+                  proteines !== null
+                    ? `
+                      <span class="meta">
+                        💪 ${proteines} g protéines
+                      </span>
+                    `
+                    : ""
+                }
+
+                ${
+                  recette.temps
+                    ? `
+                      <span class="meta">
+                        ⏱️ ${recette.temps}
+                      </span>
+                    `
+                    : ""
+                }
+
+              </div>
+
+              <div class="meal-actions">
+
+                <a
+                  class="button btn-recipe"
+                  href="Recette.html?id=${encodeURIComponent(recette.id)}"
+                >
+                  👀 Voir la recette
+                </a>
+
+                <button
+                  class="btn-change"
+                  onclick="changerRecette(
+                    ${jour.numero},
+                    ${index}
+                  )"
+                >
+                  🔄 Changer
+                </button>
+
+              </div>
+
+            `;
+
+            content.appendChild(
+              meal
+            );
+
+          }
+        );
+
+        /* =================================================
+           BOUTON AJUSTEMENT
+        ================================================= */
+
+        if (
+          configuration.calories?.active
+        ) {
+
+          const ecartImportant =
+            statut.classe !== "status-ok";
+
+          if (ecartImportant) {
+
+            const box =
+              document.createElement(
+                "div"
+              );
+
+            box.className =
+              "adjust-box";
+
+            box.innerHTML = `
+
+              <p>
+                Cette journée est proche ou éloignée
+                de votre repère calorique.
+                Nous pouvons essayer de remplacer
+                une recette pour mieux équilibrer
+                la journée.
+              </p>
+
+              <button
+                class="button btn-green"
+                onclick="ajusterJournee(${jour.numero})"
+              >
+                🔄 Ajuster ma journée
+              </button>
+
+            `;
+
+            content.appendChild(
+              box
+            );
+
+          }
+
+        }
+
+        container.appendChild(
+          jourElement
+        );
+
+      }
+    );
+
+  }
+
+  /* =====================================================
+     CHANGER UNE RECETTE
+  ===================================================== */
+
+  function changerRecette(
+    numeroJour,
+    indexRepas
+  ) {
+
+    const jour =
+      semaine.find(
+        j =>
+          j.numero === numeroJour
+      );
+
+    if (!jour) {
+      return;
+    }
+
+    const repas =
+      jour.repas[indexRepas];
+
+    if (!repas) {
+      return;
+    }
+
+    const ids =
+      jour.repas
+        .filter(
+          (_, index) =>
+            index !== indexRepas
+        )
+        .map(
+          r =>
+            r.recette.id
+        );
+
+    const candidates =
+      recettes
+        .filter(
+          recette =>
+            recetteCompatible(
+              recette,
+              repas.type
+            )
+        )
+        .filter(
           recette =>
             !ids.includes(
-              String(recette.id)
+              recette.id
             )
         );
 
+    if (!candidates.length) {
 
-      if (
-        candidats.length === 0
+      alert(
+        "Nous n'avons pas trouvé d'autre recette correspondant à vos critères pour ce repas."
+      );
+
+      return;
+
+    }
+
+    candidates.sort(
+      (a, b) =>
+        scoreRecette(
+          b,
+          repas.type
+        ) -
+        scoreRecette(
+          a,
+          repas.type
+        )
+    );
+
+    const nouvelle =
+      candidates[0];
+
+    repas.recette =
+      nouvelle;
+
+    afficherSemaine();
+
+  }
+
+  /* =====================================================
+     AJUSTER UNE JOURNEE
+  ===================================================== */
+
+  function ajusterJournee(
+    numeroJour
+  ) {
+
+    const jour =
+      semaine.find(
+        j =>
+          j.numero === numeroJour
+      );
+
+    if (!jour) {
+      return;
+    }
+
+    const intervalle =
+      obtenirIntervalleCalories(
+        configuration.calories?.objectif
+      );
+
+    if (!intervalle) {
+      return;
+    }
+
+    const actuel =
+      calculerTotauxJournee(
+        jour
+      );
+
+    if (
+      actuel.calories === null
+    ) {
+
+      alert(
+        "Les calories ne sont pas renseignées pour suffisamment de recettes pour ajuster cette journée."
+      );
+
+      return;
+
+    }
+
+    let meilleurJour =
+      null;
+
+    let meilleureDistance =
+      Infinity;
+
+    const repasOriginaux =
+      jour.repas.map(
+        repas => ({
+          type: repas.type,
+          recette: repas.recette
+        })
+      );
+
+    /* Tester chaque remplacement */
+
+    for (
+      let index = 0;
+      index < jour.repas.length;
+      index++
+    ) {
+
+      const repas =
+        jour.repas[index];
+
+      const ids =
+        jour.repas
+          .filter(
+            (_, i) =>
+              i !== index
+          )
+          .map(
+            r =>
+              r.recette.id
+          );
+
+      const candidates =
+        recettes
+          .filter(
+            recette =>
+              recetteCompatible(
+                recette,
+                repas.type
+              )
+          )
+          .filter(
+            recette =>
+              !ids.includes(
+                recette.id
+              )
+          )
+          .filter(
+            recette =>
+              recette.id !==
+              repas.recette.id
+          );
+
+      for (
+        const candidate of candidates
       ) {
 
-        alert(
-          "Aucune autre recette compatible n'a été trouvée."
-        );
+        jour.repas[index].recette =
+          candidate;
 
-        return;
+        const nouveau =
+          calculerTotauxJournee(
+            jour
+          );
+
+        if (
+          nouveau.calories === null
+        ) {
+          continue;
+        }
+
+        let distance = 0;
+
+        if (
+          nouveau.calories <
+          intervalle.min
+        ) {
+
+          distance =
+            intervalle.min -
+            nouveau.calories;
+
+        } else if (
+          nouveau.calories >
+          intervalle.max
+        ) {
+
+          distance =
+            nouveau.calories -
+            intervalle.max;
+
+        } else {
+
+          distance = 0;
+
+        }
+
+        if (
+          distance <
+          meilleureDistance
+        ) {
+
+          meilleureDistance =
+            distance;
+
+          meilleurJour =
+            jour.repas.map(
+              r => ({
+                type: r.type,
+                recette: r.recette
+              })
+            );
+
+        }
 
       }
 
+    }
 
-      candidats.sort(
-        (a, b) =>
-          scoreRecette(
-            b,
-            repas.type
-          ) -
-          scoreRecette(
-            a,
-            repas.type
-          )
+    /* Restaurer */
+
+    jour.repas =
+      repasOriginaux.map(
+        repas => ({
+          type: repas.type,
+          recette: repas.recette
+        })
       );
 
+    /* Appliquer meilleur résultat */
 
-      const choix =
-        candidats[0];
+    if (meilleurJour) {
 
-
-      repas.recette =
-        choix;
-
+      jour.repas =
+        meilleurJour;
 
       afficherSemaine();
 
-      afficherResume();
+      return;
 
-    };
+    }
 
+    alert(
+      "Aucune autre combinaison de recettes n'a permis de rapprocher cette journée de votre objectif."
+    );
+
+  }
 
   /* =====================================================
-     CHARGEMENT JSON
+     NOUVELLE SEMAINE
+  ===================================================== */
+
+  function genererNouvelleSemaine() {
+
+    genererSemaine();
+
+    afficherSemaine();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+  /* =====================================================
+     CHARGER JSON
   ===================================================== */
 
   async function chargerRecettes() {
 
     try {
 
-      const reponse =
+      const response =
         await fetch(
           "../recettes.json"
         );
 
+      if (!response.ok) {
 
-      if (!reponse.ok) {
         throw new Error(
           "Impossible de charger recettes.json"
         );
+
       }
 
-
-      const donnees =
-        await reponse.json();
-
+      const data =
+        await response.json();
 
       if (
-        Array.isArray(donnees)
+        Array.isArray(data)
+      ) {
+
+        recettes = data;
+
+      } else if (
+        Array.isArray(data.recettes)
       ) {
 
         recettes =
-          donnees;
+          data.recettes;
 
-      }
-      else if (
-        Array.isArray(
-          donnees.recettes
-        )
-      ) {
-
-        recettes =
-          donnees.recettes;
-
-      }
-      else {
+      } else {
 
         throw new Error(
-          "Format du fichier recettes.json non reconnu."
+          "Format du fichier recettes.json non reconnu"
         );
 
       }
 
+    } catch (error) {
 
-      if (
-        recettes.length === 0
-      ) {
-
-        throw new Error(
-          "Le catalogue de recettes est vide."
-        );
-
-      }
-
-
-      construireSemaine();
-
-      afficherSemaine();
-
-      afficherResume();
-
-    }
-    catch (erreur) {
+      console.error(error);
 
       document.getElementById(
-        "conteneurSemaine"
+        "semaineContainer"
       ).innerHTML = `
 
-        <div class="empty">
+        <div class="message">
 
-          ❌ Impossible de charger
-          les recettes.
+          <div class="big">⚠️</div>
 
-          <br><br>
+          <h2>Impossible de charger les recettes</h2>
 
-          Vérifiez que le fichier
-          <strong>recettes.json</strong>
-          se trouve bien dans le dossier
-          <strong>src</strong>.
+          <p>
+            Vérifiez que le fichier
+            <strong>recettes.json</strong>
+            est bien présent dans le dossier
+            <strong>src</strong>.
+          </p>
 
-          <br><br>
-
-          ${escapeHtml(
-            erreur.message
-          )}
+          <a
+            href="ReprendreMonRythme.html"
+            class="button btn-primary"
+          >
+            ← Retour
+          </a>
 
         </div>
 
       `;
+
+      throw error;
 
     }
 
   }
 
-
   /* =====================================================
-     BOUTONS
+     CHARGER CONFIGURATION
   ===================================================== */
 
-  document
-    .getElementById("regenerer")
-    .addEventListener(
-      "click",
-      function () {
-
-        if (
-          !recettes.length
-        ) {
-          return;
-        }
-
-        construireSemaine();
-
-        afficherSemaine();
-
-        afficherResume();
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-
-      }
-    );
-
-
-  document
-    .getElementById("modifier")
-    .addEventListener(
-      "click",
-      function () {
-
-        window.location.href =
-          "ReprendreMonRythme.html";
-
-      }
-    );
-
-
-  /* =====================================================
-     DEMARRAGE
-  ===================================================== */
-
-  function demarrer() {
-
-    const donnees =
-      localStorage.getItem(
-        STORAGE_KEY
-      );
-
-
-    if (!donnees) {
-
-      document.getElementById(
-        "conteneurSemaine"
-      ).innerHTML = `
-
-        <div class="empty">
-
-          Vous n'avez pas encore configuré
-          votre semaine.
-
-          <br><br>
-
-          Retournez à la page précédente
-          pour choisir vos préférences.
-
-        </div>
-
-      `;
-
-      return;
-
-    }
-
+  function chargerConfiguration() {
 
     try {
 
-      configuration =
-        JSON.parse(
-          donnees
+      const sauvegarde =
+        localStorage.getItem(
+          STORAGE_KEY
         );
 
-    }
-    catch (erreur) {
+      if (!sauvegarde) {
+
+        throw new Error(
+          "Aucune configuration trouvée"
+        );
+
+      }
+
+      configuration =
+        JSON.parse(
+          sauvegarde
+        );
+
+    } catch (error) {
+
+      console.error(error);
 
       document.getElementById(
-        "conteneurSemaine"
+        "semaineContainer"
       ).innerHTML = `
 
-        <div class="empty">
-          Votre configuration est invalide.
-          Veuillez recommencer.
+        <div class="message">
+
+          <div class="big">⚙️</div>
+
+          <h2>Votre rythme n'est pas encore configuré</h2>
+
+          <p>
+            Commencez par choisir vos repas,
+            la durée de votre semaine et vos préférences.
+          </p>
+
+          <a
+            href="ReprendreMonRythme.html"
+            class="button btn-primary"
+          >
+            ✨ Créer ma semaine
+          </a>
+
         </div>
 
       `;
 
-      return;
+      return false;
 
     }
 
-
-    afficherConfiguration();
-
-    chargerRecettes();
+    return true;
 
   }
 
+  /* =====================================================
+     INITIALISATION
+  ===================================================== */
 
-  demarrer();
+  async function init() {
+
+    const ok =
+      chargerConfiguration();
+
+    if (!ok) {
+      return;
+    }
+
+    afficherConfiguration();
+
+    await chargerRecettes();
+
+    genererSemaine();
+
+    afficherSemaine();
+
+  }
+
+  init();
 
 </script>
 
 </body>
 </html>
-
