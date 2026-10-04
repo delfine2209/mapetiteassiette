@@ -1,1 +1,760 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reprendre mon rythme - Ma Petite Assiette</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #333;
+    }
+
+    .page {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px 16px 110px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px 10px 25px;
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #7a9e55;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 8px 0;
+      font-size: 30px;
+      color: #3f5530;
+    }
+
+    .intro {
+      color: #777;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 550px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      color: #4d633d;
+    }
+
+    .description {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .meal-grid,
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .choice-grid.five {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .choice {
+      position: relative;
+    }
+
+    .choice input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .choice label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 75px;
+      padding: 10px 5px;
+      border: 2px solid #eee;
+      border-radius: 15px;
+      text-align: center;
+      cursor: pointer;
+      background: #fff;
+      transition: 0.2s;
+      font-size: 13px;
+    }
+
+    .choice label .emoji {
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .choice input:checked + label {
+      border-color: #87a85f;
+      background: #f2f8eb;
+      color: #3f5530;
+      font-weight: bold;
+    }
+
+    .choice input:focus + label {
+      outline: 2px solid #87a85f;
+    }
+
+    .inline-options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .inline-option {
+      flex: 1;
+      min-width: 120px;
+      position: relative;
+    }
+
+    .inline-option input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .inline-option label {
+      display: block;
+      padding: 13px 10px;
+      border: 2px solid #eee;
+      border-radius: 14px;
+      text-align: center;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .inline-option input:checked + label {
+      border-color: #87a85f;
+      background: #f2f8eb;
+      color: #3f5530;
+      font-weight: bold;
+    }
+
+    .optional-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .optional-line input {
+      width: 20px;
+      height: 20px;
+      accent-color: #7a9e55;
+    }
+
+    .conditional {
+      display: none;
+      padding-top: 5px;
+    }
+
+    .conditional.visible {
+      display: block;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+      color: #4d633d;
+    }
+
+    select,
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 13px 14px;
+      border: 2px solid #eee;
+      border-radius: 12px;
+      background: #fff;
+      font-size: 15px;
+      color: #333;
+    }
+
+    select:focus,
+    input:focus {
+      outline: none;
+      border-color: #87a85f;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #888;
+      margin-top: 5px;
+    }
+
+    .summary {
+      background: #f4f8ee;
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .summary strong {
+      color: #3f5530;
+    }
+
+    .button {
+      width: 100%;
+      border: none;
+      border-radius: 18px;
+      padding: 17px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #7a9e55;
+      color: white;
+      box-shadow: 0 5px 15px rgba(122,158,85,0.25);
+    }
+
+    .button:hover {
+      background: #688b45;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      color: #68765d;
+      text-decoration: none;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .warning {
+      display: none;
+      background: #fff3e8;
+      color: #8b5d37;
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 550px) {
+      .meal-grid,
+      .choice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .choice-grid.five {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <header class="header">
+    <div class="logo">Ma Petite Assiette</div>
+    <h1>Reprendre mon rythme</h1>
+    <p class="intro">
+      Configurez votre semaine selon votre rythme, vos envies
+      et vos objectifs. Votre menu sera ensuite créé automatiquement.
+    </p>
+  </header>
+
+  <div id="warning" class="warning"></div>
+
+  <!-- REPAS -->
+  <section class="card">
+    <h2>🍽️ Mes repas</h2>
+    <p class="description">
+      Choisissez les repas que vous souhaitez retrouver dans votre semaine.
+    </p>
+
+    <div class="meal-grid">
+
+      <div class="choice">
+        <input type="checkbox" id="petitDejeuner" checked>
+        <label for="petitDejeuner">
+          <span class="emoji">🍳</span>
+          Petit déjeuner
+        </label>
+      </div>
+
+      <div class="choice">
+        <input type="checkbox" id="dejeuner" checked>
+        <label for="dejeuner">
+          <span class="emoji">🥗</span>
+          Déjeuner
+        </label>
+      </div>
+
+      <div class="choice">
+        <input type="checkbox" id="diner" checked>
+        <label for="diner">
+          <span class="emoji">🌙</span>
+          Dîner
+        </label>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DUREE -->
+  <section class="card">
+    <h2>📅 Configurer ma semaine</h2>
+    <p class="description">Combien de jours souhaitez-vous préparer ?</p>
+
+    <div class="inline-options">
+
+      <div class="inline-option">
+        <input type="radio" name="duree" id="duree1" value="1">
+        <label for="duree1">1 jour</label>
+      </div>
+
+      <div class="inline-option">
+        <input type="radio" name="duree" id="duree3" value="3" checked>
+        <label for="duree3">3 jours</label>
+      </div>
+
+      <div class="inline-option">
+        <input type="radio" name="duree" id="duree7" value="7">
+        <label for="duree7">7 jours</label>
+      </div>
+
+    </div>
+
+    <p class="description" style="margin-top:20px;">
+      Nombre de repas par jour
+    </p>
+
+    <div class="inline-options">
+
+      <div class="inline-option">
+        <input type="radio" name="repasJour" id="repas3" value="3" checked>
+        <label for="repas3">3 repas</label>
+      </div>
+
+      <div class="inline-option">
+        <input type="radio" name="repasJour" id="repas4" value="4">
+        <label for="repas4">4 repas</label>
+      </div>
+
+      <div class="inline-option">
+        <input type="radio" name="repasJour" id="repas5" value="5">
+        <label for="repas5">5 repas</label>
+      </div>
+
+    </div>
+
+    <div class="summary">
+      <strong>ℹ️ Comment fonctionnent les 4 et 5 repas ?</strong><br>
+      4 repas = petit déjeuner + déjeuner + collation + dîner.<br>
+      5 repas = petit déjeuner + déjeuner + 2 collations + dîner.
+    </div>
+  </section>
+
+  <!-- CALORIES -->
+  <section class="card">
+    <h2>🎯 Objectif calories</h2>
+
+    <label class="optional-line">
+      <input type="checkbox" id="activerCalories">
+      Je souhaite définir un objectif calories
+    </label>
+
+    <div id="blocCalories" class="conditional">
+
+      <div class="input-group">
+        <label for="objectifCalories">Mon objectif quotidien</label>
+
+        <select id="objectifCalories">
+          <option value="">Choisir...</option>
+          <option value="800-1000">800 à 1 000 kcal</option>
+          <option value="1000-1200">1 000 à 1 200 kcal</option>
+          <option value="1200-1500">1 200 à 1 500 kcal</option>
+          <option value="1500-1800">1 500 à 1 800 kcal</option>
+          <option value="1800-2000">1 800 à 2 000 kcal</option>
+        </select>
+
+        <div class="hint">
+          Cet objectif est facultatif. Il sert à orienter la composition de la journée.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROTEINES -->
+  <section class="card">
+    <h2>💪 Objectif protéines</h2>
+
+    <label class="optional-line">
+      <input type="checkbox" id="activerProteines">
+      Je souhaite définir un objectif protéines
+    </label>
+
+    <div id="blocProteines" class="conditional">
+
+      <div class="input-group">
+        <label for="objectifProteines">
+          Objectif quotidien en grammes
+        </label>
+
+        <input
+          type="number"
+          id="objectifProteines"
+          min="20"
+          max="250"
+          step="5"
+          placeholder="Exemple : 70"
+        >
+
+        <div class="hint">
+          Indiquez simplement le nombre de grammes souhaité par jour.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REGIME -->
+  <section class="card">
+    <h2>🥩 Régime alimentaire</h2>
+    <p class="description">
+      Quel type d'alimentation souhaitez-vous privilégier ?
+    </p>
+
+    <div class="inline-options">
+
+      <div class="inline-option">
+        <input
+          type="radio"
+          name="regime"
+          id="regimeTout"
+          value="omnivore"
+          checked
+        >
+        <label for="regimeTout">
+          🥩 Avec viande / poisson
+        </label>
+      </div>
+
+      <div class="inline-option">
+        <input
+          type="radio"
+          name="regime"
+          id="regimeVegetarien"
+          value="vegetarien"
+        >
+        <label for="regimeVegetarien">
+          🥕 Végétarien
+        </label>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PREFERENCES -->
+  <section class="card">
+    <h2>❤️ Vos préférences</h2>
+    <p class="description">
+      Dites-nous ce que vous aimez et ce que vous souhaitez éviter.
+    </p>
+
+    <div class="input-group">
+      <label for="alimentsAimes">
+        ❤️ Aliments aimés
+      </label>
+
+      <input
+        type="text"
+        id="alimentsAimes"
+        placeholder="Ex. poulet, tomate, courgette, saumon"
+      >
+
+      <div class="hint">
+        Séparez les aliments par des virgules.
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="alimentsEviter">
+        🚫 Aliments à éviter
+      </label>
+
+      <input
+        type="text"
+        id="alimentsEviter"
+        placeholder="Ex. champignons, thon, épinards"
+      >
+
+      <div class="hint">
+        Les recettes contenant ces aliments seront écartées lorsque cela est possible.
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTON -->
+  <section class="card">
+
+    <button class="button" id="creerSemaine">
+      ✨ Créer ma semaine
+    </button>
+
+    <a href="../../index.html" class="back">
+      ← Retour à l'accueil
+    </a>
+
+  </section>
+
+</div>
+
+<script>
+
+  const activerCalories =
+    document.getElementById("activerCalories");
+
+  const blocCalories =
+    document.getElementById("blocCalories");
+
+  const activerProteines =
+    document.getElementById("activerProteines");
+
+  const blocProteines =
+    document.getElementById("blocProteines");
+
+  activerCalories.addEventListener("change", function () {
+    blocCalories.classList.toggle(
+      "visible",
+      this.checked
+    );
+  });
+
+  activerProteines.addEventListener("change", function () {
+    blocProteines.classList.toggle(
+      "visible",
+      this.checked
+    );
+  });
+
+
+  function getRadio(name) {
+    const element =
+      document.querySelector(
+        'input[name="' + name + '"]:checked'
+      );
+
+    return element ? element.value : null;
+  }
+
+
+  function nettoyerListe(texte) {
+
+    return String(texte || "")
+      .split(",")
+      .map(function (item) {
+        return item.trim().toLowerCase();
+      })
+      .filter(Boolean);
+
+  }
+
+
+  document
+    .getElementById("creerSemaine")
+    .addEventListener("click", function () {
+
+      const petitDejeuner =
+        document.getElementById("petitDejeuner").checked;
+
+      const dejeuner =
+        document.getElementById("dejeuner").checked;
+
+      const diner =
+        document.getElementById("diner").checked;
+
+
+      if (
+        !petitDejeuner &&
+        !dejeuner &&
+        !diner
+      ) {
+
+        const warning =
+          document.getElementById("warning");
+
+        warning.style.display = "block";
+
+        warning.textContent =
+          "Veuillez sélectionner au moins un repas.";
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+        return;
+      }
+
+
+      const duree =
+        Number(getRadio("duree") || 3);
+
+      const repasParJour =
+        Number(getRadio("repasJour") || 3);
+
+      const regime =
+        getRadio("regime") || "omnivore";
+
+
+      let objectifCalories = null;
+
+      if (activerCalories.checked) {
+
+        objectifCalories =
+          document.getElementById(
+            "objectifCalories"
+          ).value;
+
+      }
+
+
+      let objectifProteines = null;
+
+      if (activerProteines.checked) {
+
+        const valeur =
+          Number(
+            document.getElementById(
+              "objectifProteines"
+            ).value
+          );
+
+        if (
+          !valeur ||
+          valeur < 20
+        ) {
+
+          alert(
+            "Veuillez indiquer un objectif protéines valide."
+          );
+
+          return;
+        }
+
+        objectifProteines = valeur;
+
+      }
+
+
+      const configuration = {
+
+        version: 1,
+
+        repas: {
+          petitDejeuner:
+            petitDejeuner,
+
+          dejeuner:
+            dejeuner,
+
+          diner:
+            diner
+        },
+
+        duree:
+          duree,
+
+        repasParJour:
+          repasParJour,
+
+        calories: {
+          active:
+            activerCalories.checked,
+
+          objectif:
+            objectifCalories
+        },
+
+        proteines: {
+          active:
+            activerProteines.checked,
+
+          objectif:
+            objectifProteines
+        },
+
+        regime:
+          regime,
+
+        alimentsAimes:
+          nettoyerListe(
+            document.getElementById(
+              "alimentsAimes"
+            ).value
+          ),
+
+        alimentsEviter:
+          nettoyerListe(
+            document.getElementById(
+              "alimentsEviter"
+            ).value
+          ),
+
+        dateCreation:
+          new Date().toISOString()
+
+      };
+
+
+      localStorage.setItem(
+        "maPetiteAssiette_reprise",
+        JSON.stringify(configuration)
+      );
+
+
+      window.location.href =
+        "MaSemaineReprise.html";
+
+    });
+
+</script>
+
+</body>
+</html>
+```
 
