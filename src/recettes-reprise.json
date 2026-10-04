@@ -1,0 +1,1425 @@
+[
+  {
+    "id": "REP001",
+    "nom": "Mini pancakes banane & fromage blanc",
+    "categorie": "Petit-déjeuner",
+    "type": "Pancake",
+    "temps": 15,
+    "tempsPreparation": 10,
+    "tempsCuisson": 5,
+    "proteines": 12,
+    "calories": 280,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "sansGluten": false,
+    "envies": [
+      "Sucré",
+      "Gourmand"
+    ],
+    "ingredients": [
+      "1/2 banane",
+      "1 œuf",
+      "40 g de farine d'avoine",
+      "60 g de fromage blanc",
+      "1/2 c. à café de levure",
+      "1 pincée de cannelle"
+    ],
+    "preparation": [
+      "Écraser la banane.",
+      "Ajouter l’œuf, la farine, le fromage blanc et la levure.",
+      "Cuire de petites portions dans une poêle antiadhésive.",
+      "Servir tiède avec la cannelle."
+    ],
+    "quantites": {
+      "petite": "1 petite portion",
+      "famille2": "2 portions",
+      "famille4": "4 portions"
+    }
+  },
+  {
+    "id": "REP002",
+    "nom": "Œuf cocotte aux épinards & fromage frais",
+    "categorie": "Petit-déjeuner",
+    "type": "Œuf cocotte",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 14,
+    "calories": 220,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "sansGluten": true,
+    "envies": [
+      "Salé",
+      "Réconfort"
+    ],
+    "ingredients": [
+      "1 œuf",
+      "50 g d’épinards",
+      "30 g de fromage frais",
+      "1 c. à soupe de lait",
+      "1 petite tranche de pain",
+      "Poivre"
+    ],
+    "preparation": [
+      "Faire tomber les épinards à la poêle.",
+      "Déposer les épinards et le fromage frais dans un petit ramequin.",
+      "Ajouter l’œuf et le lait.",
+      "Cuire au bain-marie environ 10 minutes.",
+      "Servir avec le pain grillé."
+    ],
+    "quantites": {
+      "petite": "1 ramequin",
+      "famille2": "2 ramequins",
+      "famille4": "4 ramequins"
+    }
+  },
+  {
+    "id": "REP003",
+    "nom": "Porridge pomme-poire à la cannelle",
+    "categorie": "Petit-déjeuner",
+    "type": "Porridge",
+    "temps": 10,
+    "tempsPreparation": 5,
+    "tempsCuisson": 5,
+    "proteines": 8,
+    "calories": 250,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Doux"
+    ],
+    "ingredients": [
+      "30 g de flocons d’avoine",
+      "120 ml de lait",
+      "1/2 petite pomme",
+      "1/2 petite poire",
+      "1 c. à café de miel",
+      "Cannelle"
+    ],
+    "preparation": [
+      "Couper les fruits en petits dés.",
+      "Cuire les flocons avec le lait.",
+      "Ajouter les fruits et la cannelle.",
+      "Sucrer légèrement avec le miel."
+    ],
+    "quantites": {
+      "petite": "1 bol",
+      "famille2": "2 bols",
+      "famille4": "4 bols"
+    }
+  },
+  {
+    "id": "REP004",
+    "nom": "Tartine ricotta, tomate & œuf",
+    "categorie": "Petit-déjeuner",
+    "type": "Tartine",
+    "temps": 10,
+    "tempsPreparation": 5,
+    "tempsCuisson": 5,
+    "proteines": 15,
+    "calories": 270,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Salé",
+      "Frais"
+    ],
+    "ingredients": [
+      "1 tranche de pain complet",
+      "40 g de ricotta",
+      "1/2 tomate",
+      "1 œuf",
+      "Basilic",
+      "Poivre"
+    ],
+    "preparation": [
+      "Cuire l’œuf mollet ou dur selon la préférence.",
+      "Tartiner le pain de ricotta.",
+      "Ajouter la tomate en dés puis l’œuf.",
+      "Parsemer de basilic."
+    ],
+    "quantites": {
+      "petite": "1 tartine",
+      "famille2": "2 tartines",
+      "famille4": "4 tartines"
+    }
+  },
+  {
+    "id": "REP005",
+    "nom": "Semoule au lait vanillée & fruits rouges",
+    "categorie": "Petit-déjeuner",
+    "type": "Semoule au lait",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 9,
+    "calories": 260,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Doux"
+    ],
+    "ingredients": [
+      "25 g de semoule fine",
+      "150 ml de lait",
+      "1/2 c. à café de vanille",
+      "50 g de fruits rouges",
+      "1 c. à café de sucre"
+    ],
+    "preparation": [
+      "Faire chauffer le lait avec la vanille.",
+      "Verser la semoule en pluie et cuire quelques minutes.",
+      "Ajouter légèrement le sucre.",
+      "Servir avec les fruits rouges."
+    ],
+    "quantites": {
+      "petite": "1 petit bol",
+      "famille2": "2 petits bols",
+      "famille4": "4 petits bols"
+    }
+  },
+  {
+    "id": "REP006",
+    "nom": "Saumon, patate douce & brocoli",
+    "categorie": "Déjeuner",
+    "type": "Poisson",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 27,
+    "calories": 390,
+    "petitAppetit": true,
+    "envies": [
+      "Complet",
+      "Gourmand"
+    ],
+    "ingredients": [
+      "90 g de saumon",
+      "120 g de patate douce",
+      "100 g de brocoli",
+      "1 c. à café d’huile d’olive",
+      "Citron",
+      "Aneth"
+    ],
+    "preparation": [
+      "Cuire la patate douce en petits dés.",
+      "Cuire le brocoli vapeur.",
+      "Cuire le saumon au four ou à la poêle.",
+      "Assembler et arroser d’un peu de citron et d’huile."
+    ],
+    "quantites": {
+      "petite": "1 petite assiette",
+      "famille2": "2 assiettes",
+      "famille4": "4 assiettes"
+    }
+  },
+  {
+    "id": "REP007",
+    "nom": "Poulet citron, carottes & semoule",
+    "categorie": "Déjeuner",
+    "type": "Volaille",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 28,
+    "calories": 400,
+    "petitAppetit": true,
+    "envies": [
+      "Complet",
+      "Méditerranéen"
+    ],
+    "ingredients": [
+      "90 g de poulet",
+      "100 g de carottes",
+      "50 g de semoule cuite",
+      "1 c. à café d’huile d’olive",
+      "Jus de citron",
+      "Persil"
+    ],
+    "preparation": [
+      "Émincer le poulet et les carottes.",
+      "Cuire le poulet avec les carottes.",
+      "Préparer la semoule.",
+      "Ajouter citron et persil avant de servir."
+    ],
+    "quantites": {
+      "petite": "1 assiette",
+      "famille2": "2 assiettes",
+      "famille4": "4 assiettes"
+    }
+  },
+  {
+    "id": "REP008",
+    "nom": "Bowl quinoa, pois chiches, feta & crudités",
+    "categorie": "Déjeuner",
+    "type": "Bowl végétarien",
+    "temps": 20,
+    "tempsPreparation": 15,
+    "tempsCuisson": 5,
+    "proteines": 15,
+    "calories": 370,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Frais",
+      "Végétarien"
+    ],
+    "ingredients": [
+      "60 g de quinoa cuit",
+      "60 g de pois chiches cuits",
+      "30 g de feta",
+      "1/2 tomate",
+      "1/4 concombre",
+      "1 c. à café d’huile d’olive",
+      "Citron"
+    ],
+    "preparation": [
+      "Mélanger le quinoa et les pois chiches.",
+      "Ajouter tomate et concombre en petits dés.",
+      "Émietter la feta.",
+      "Assaisonner avec citron et huile."
+    ],
+    "quantites": {
+      "petite": "1 petit bowl",
+      "famille2": "2 bowls",
+      "famille4": "4 bowls"
+    }
+  },
+  {
+    "id": "REP009",
+    "nom": "Cabillaud, fondue de poireaux & pommes de terre",
+    "categorie": "Déjeuner",
+    "type": "Poisson",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 28,
+    "calories": 350,
+    "petitAppetit": true,
+    "envies": [
+      "Doux",
+      "Complet"
+    ],
+    "ingredients": [
+      "100 g de cabillaud",
+      "100 g de pommes de terre",
+      "100 g de poireaux",
+      "1 c. à café d’huile d’olive",
+      "1 c. à soupe de crème légère",
+      "Citron"
+    ],
+    "preparation": [
+      "Cuire les pommes de terre.",
+      "Faire fondre doucement les poireaux.",
+      "Cuire le cabillaud à la vapeur ou au four.",
+      "Ajouter la crème aux poireaux et servir avec le poisson."
+    ],
+    "quantites": {
+      "petite": "1 assiette",
+      "famille2": "2 assiettes",
+      "famille4": "4 assiettes"
+    }
+  },
+  {
+    "id": "REP010",
+    "nom": "Crevettes, riz & légumes croquants",
+    "categorie": "Déjeuner",
+    "type": "Poisson",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 24,
+    "calories": 370,
+    "petitAppetit": true,
+    "envies": [
+      "Frais",
+      "Complet"
+    ],
+    "ingredients": [
+      "90 g de crevettes",
+      "60 g de riz cuit",
+      "50 g de carottes",
+      "50 g de courgette",
+      "1 c. à café d’huile",
+      "Sauce soja légère"
+    ],
+    "preparation": [
+      "Cuire le riz.",
+      "Faire revenir les légumes en petits dés.",
+      "Ajouter les crevettes.",
+      "Servir avec le riz et un peu de sauce soja."
+    ],
+    "quantites": {
+      "petite": "1 bol",
+      "famille2": "2 bols",
+      "famille4": "4 bols"
+    }
+  },
+  {
+    "id": "REP011",
+    "nom": "Quiche sans pâte épinards & chèvre",
+    "categorie": "Déjeuner",
+    "type": "Quiche sans pâte",
+    "temps": 35,
+    "tempsPreparation": 10,
+    "tempsCuisson": 25,
+    "proteines": 18,
+    "calories": 330,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Réconfort",
+      "Végétarien"
+    ],
+    "ingredients": [
+      "1 œuf",
+      "80 ml de lait",
+      "40 g d’épinards",
+      "30 g de chèvre",
+      "20 g de farine",
+      "Poivre",
+      "Muscade"
+    ],
+    "preparation": [
+      "Préchauffer le four à 180 °C.",
+      "Mélanger œuf, lait et farine.",
+      "Ajouter les épinards et le chèvre.",
+      "Verser dans un petit moule et cuire environ 25 minutes."
+    ],
+    "quantites": {
+      "petite": "1 petite quiche",
+      "famille2": "2 petites quiches",
+      "famille4": "4 petites quiches"
+    }
+  },
+  {
+    "id": "REP012",
+    "nom": "Dahl doux de lentilles corail & carottes",
+    "categorie": "Déjeuner",
+    "type": "Plat végétarien",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 15,
+    "calories": 360,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "vegetalien": true,
+    "envies": [
+      "Réconfort",
+      "Végétarien"
+    ],
+    "ingredients": [
+      "60 g de lentilles corail",
+      "100 g de carottes",
+      "80 ml de lait de coco léger",
+      "50 g de riz cuit",
+      "1/2 c. à café de curry doux",
+      "1/2 oignon"
+    ],
+    "preparation": [
+      "Faire revenir l’oignon.",
+      "Ajouter carottes, lentilles, curry et lait de coco.",
+      "Couvrir d’eau et cuire jusqu’à tendreté.",
+      "Servir avec une petite portion de riz."
+    ],
+    "quantites": {
+      "petite": "1 bol",
+      "famille2": "2 bols",
+      "famille4": "4 bols"
+    }
+  },
+  {
+    "id": "REP013",
+    "nom": "Omelette champignons & épinards",
+    "categorie": "Dîner",
+    "type": "Omelette",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 18,
+    "calories": 280,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Rapide",
+      "Salé"
+    ],
+    "ingredients": [
+      "2 œufs",
+      "60 g de champignons",
+      "40 g d’épinards",
+      "20 g de fromage râpé",
+      "1 c. à café d’huile",
+      "Poivre"
+    ],
+    "preparation": [
+      "Émincer et cuire les champignons.",
+      "Ajouter les épinards.",
+      "Battre les œufs et verser dans la poêle.",
+      "Ajouter le fromage et plier l’omelette."
+    ],
+    "quantites": {
+      "petite": "1 omelette",
+      "famille2": "2 omelettes",
+      "famille4": "4 omelettes"
+    }
+  },
+  {
+    "id": "REP014",
+    "nom": "Gratin léger de chou-fleur au jambon",
+    "categorie": "Dîner",
+    "type": "Gratin",
+    "temps": 35,
+    "tempsPreparation": 10,
+    "tempsCuisson": 25,
+    "proteines": 24,
+    "calories": 350,
+    "petitAppetit": true,
+    "envies": [
+      "Réconfort",
+      "Complet"
+    ],
+    "ingredients": [
+      "150 g de chou-fleur",
+      "50 g de jambon",
+      "40 ml de lait",
+      "20 g de fromage râpé",
+      "10 g de farine",
+      "Poivre",
+      "Muscade"
+    ],
+    "preparation": [
+      "Cuire le chou-fleur vapeur.",
+      "Préparer une petite béchamel avec lait et farine.",
+      "Ajouter jambon et chou-fleur.",
+      "Parsemer de fromage et gratiner."
+    ],
+    "quantites": {
+      "petite": "1 ramequin",
+      "famille2": "2 ramequins",
+      "famille4": "4 ramequins"
+    }
+  },
+  {
+    "id": "REP015",
+    "nom": "Soupe de potimarron & œuf mollet",
+    "categorie": "Dîner",
+    "type": "Soupe complète",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 13,
+    "calories": 300,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Doux",
+      "Réconfort"
+    ],
+    "ingredients": [
+      "180 g de potimarron",
+      "1 œuf",
+      "40 g de pomme de terre",
+      "1 c. à soupe de fromage blanc",
+      "1/2 oignon",
+      "Bouillon",
+      "Poivre"
+    ],
+    "preparation": [
+      "Cuire potimarron, pomme de terre et oignon dans le bouillon.",
+      "Mixer avec le fromage blanc.",
+      "Cuire l’œuf mollet séparément.",
+      "Servir l’œuf sur la soupe."
+    ],
+    "quantites": {
+      "petite": "1 bol",
+      "famille2": "2 bols",
+      "famille4": "4 bols"
+    }
+  },
+  {
+    "id": "REP016",
+    "nom": "Poêlée de haricots verts, pommes de terre & œuf",
+    "categorie": "Dîner",
+    "type": "Poêlée",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 14,
+    "calories": 320,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Simple",
+      "Salé"
+    ],
+    "ingredients": [
+      "100 g de haricots verts",
+      "100 g de pommes de terre",
+      "1 œuf",
+      "1 c. à café d’huile d’olive",
+      "Persil"
+    ],
+    "preparation": [
+      "Cuire les pommes de terre et les haricots.",
+      "Les faire revenir rapidement avec l’huile.",
+      "Ajouter l’œuf cuit mollet ou poché.",
+      "Parsemer de persil."
+    ],
+    "quantites": {
+      "petite": "1 assiette",
+      "famille2": "2 assiettes",
+      "famille4": "4 assiettes"
+    }
+  },
+  {
+    "id": "REP017",
+    "nom": "Tomates farcies au thon & fromage frais",
+    "categorie": "Dîner",
+    "type": "Tomate farcie",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 25,
+    "calories": 300,
+    "petitAppetit": true,
+    "envies": [
+      "Frais",
+      "Salé"
+    ],
+    "ingredients": [
+      "2 petites tomates",
+      "70 g de thon au naturel égoutté",
+      "30 g de fromage frais",
+      "1 c. à soupe de chapelure",
+      "Persil",
+      "Poivre"
+    ],
+    "preparation": [
+      "Évider les tomates.",
+      "Mélanger thon, fromage frais, persil et poivre.",
+      "Farcir les tomates.",
+      "Saupoudrer légèrement de chapelure et cuire au four."
+    ],
+    "quantites": {
+      "petite": "2 petites tomates",
+      "famille2": "4 petites tomates",
+      "famille4": "8 petites tomates"
+    }
+  },
+  {
+    "id": "REP018",
+    "nom": "Tortilla pommes de terre, oignon & salade",
+    "categorie": "Dîner",
+    "type": "Tortilla",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 16,
+    "calories": 360,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Réconfort",
+      "Simple"
+    ],
+    "ingredients": [
+      "2 œufs",
+      "100 g de pommes de terre",
+      "30 g d’oignon",
+      "1 c. à café d’huile d’olive",
+      "Quelques feuilles de salade"
+    ],
+    "preparation": [
+      "Cuire les pommes de terre en petits dés avec l’oignon.",
+      "Battre les œufs.",
+      "Ajouter les œufs et cuire doucement des deux côtés.",
+      "Servir avec la salade."
+    ],
+    "quantites": {
+      "petite": "1 petite tortilla",
+      "famille2": "2 petites tortillas",
+      "famille4": "4 petites tortillas"
+    }
+  },
+  {
+    "id": "REP019",
+    "nom": "Pâtes au saumon & épinards",
+    "categorie": "Dîner",
+    "type": "Pâtes",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 25,
+    "calories": 420,
+    "petitAppetit": true,
+    "envies": [
+      "Gourmand",
+      "Complet"
+    ],
+    "ingredients": [
+      "60 g de pâtes cuites",
+      "70 g de saumon",
+      "60 g d’épinards",
+      "30 ml de crème légère",
+      "1 c. à café de parmesan",
+      "Citron"
+    ],
+    "preparation": [
+      "Cuire les pâtes.",
+      "Cuire le saumon puis l’émietter.",
+      "Faire tomber les épinards avec la crème.",
+      "Mélanger avec les pâtes et le saumon.",
+      "Ajouter citron et parmesan."
+    ],
+    "quantites": {
+      "petite": "1 petite assiette",
+      "famille2": "2 assiettes",
+      "famille4": "4 assiettes"
+    }
+  },
+  {
+    "id": "REP020",
+    "nom": "Croque-monsieur léger & salade",
+    "categorie": "Dîner",
+    "type": "Croque-monsieur",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 22,
+    "calories": 380,
+    "petitAppetit": true,
+    "envies": [
+      "Réconfort",
+      "Rapide"
+    ],
+    "ingredients": [
+      "2 petites tranches de pain de mie complet",
+      "40 g de jambon",
+      "25 g de fromage râpé",
+      "1 c. à soupe de fromage blanc",
+      "Quelques feuilles de salade"
+    ],
+    "preparation": [
+      "Tartiner légèrement le pain de fromage blanc.",
+      "Ajouter jambon et fromage.",
+      "Refermer et cuire au four ou à l’appareil à croque.",
+      "Servir avec la salade."
+    ],
+    "quantites": {
+      "petite": "1 croque",
+      "famille2": "2 croques",
+      "famille4": "4 croques"
+    }
+  },
+  {
+    "id": "REP021",
+    "nom": "Salade de lentilles, carottes & feta",
+    "categorie": "Déjeuner",
+    "type": "Salade complète",
+    "temps": 15,
+    "tempsPreparation": 15,
+    "tempsCuisson": 0,
+    "proteines": 15,
+    "calories": 330,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Frais",
+      "Végétarien"
+    ],
+    "ingredients": [
+      "100 g de lentilles cuites",
+      "50 g de carottes râpées",
+      "30 g de feta",
+      "1/4 d’échalote",
+      "1 c. à café d’huile d’olive",
+      "Vinaigre doux",
+      "Persil"
+    ],
+    "preparation": [
+      "Mélanger les lentilles et les carottes.",
+      "Ajouter la feta émiettée et l’échalote.",
+      "Assaisonner avec huile et vinaigre.",
+      "Ajouter le persil."
+    ],
+    "quantites": {
+      "petite": "1 petite salade",
+      "famille2": "2 salades",
+      "famille4": "4 salades"
+    }
+  },
+  {
+    "id": "REP022",
+    "nom": "Salade tomate, mozzarella & œuf",
+    "categorie": "Déjeuner",
+    "type": "Salade complète",
+    "temps": 15,
+    "tempsPreparation": 10,
+    "tempsCuisson": 5,
+    "proteines": 19,
+    "calories": 340,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Frais",
+      "Simple"
+    ],
+    "ingredients": [
+      "1 tomate",
+      "50 g de mozzarella",
+      "1 œuf",
+      "Quelques feuilles de salade",
+      "1 c. à café d’huile d’olive",
+      "Basilic"
+    ],
+    "preparation": [
+      "Cuire l’œuf.",
+      "Couper tomate et mozzarella.",
+      "Ajouter la salade et l’œuf.",
+      "Assaisonner avec huile et basilic."
+    ],
+    "quantites": {
+      "petite": "1 assiette",
+      "famille2": "2 assiettes",
+      "famille4": "4 assiettes"
+    }
+  },
+  {
+    "id": "REP023",
+    "nom": "Boulettes de dinde, purée de carotte & patate douce",
+    "categorie": "Déjeuner",
+    "type": "Volaille",
+    "temps": 35,
+    "tempsPreparation": 15,
+    "tempsCuisson": 20,
+    "proteines": 27,
+    "calories": 390,
+    "petitAppetit": true,
+    "envies": [
+      "Réconfort",
+      "Complet"
+    ],
+    "ingredients": [
+      "90 g de dinde hachée",
+      "70 g de carotte",
+      "70 g de patate douce",
+      "10 g de chapelure",
+      "1/2 œuf",
+      "Persil"
+    ],
+    "preparation": [
+      "Mélanger la dinde avec chapelure, œuf et persil.",
+      "Former de petites boulettes et cuire au four.",
+      "Cuire carotte et patate douce puis mixer.",
+      "Servir ensemble."
+    ],
+    "quantites": {
+      "petite": "1 portion",
+      "famille2": "2 portions",
+      "famille4": "4 portions"
+    }
+  },
+  {
+    "id": "REP024",
+    "nom": "Gratin de courgette, tomate & mozzarella",
+    "categorie": "Dîner",
+    "type": "Gratin",
+    "temps": 35,
+    "tempsPreparation": 10,
+    "tempsCuisson": 25,
+    "proteines": 15,
+    "calories": 300,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Végétarien",
+      "Réconfort"
+    ],
+    "ingredients": [
+      "120 g de courgette",
+      "80 g de tomate",
+      "50 g de mozzarella",
+      "1 c. à café d’huile d’olive",
+      "Herbes de Provence"
+    ],
+    "preparation": [
+      "Couper les légumes finement.",
+      "Les disposer dans un petit plat.",
+      "Ajouter la mozzarella et l’huile.",
+      "Cuire au four jusqu’à ce que les légumes soient fondants."
+    ],
+    "quantites": {
+      "petite": "1 ramequin",
+      "famille2": "2 ramequins",
+      "famille4": "4 ramequins"
+    }
+  },
+  {
+    "id": "REP025",
+    "nom": "Œufs mimosa au yaourt & ciboulette",
+    "categorie": "Entrée",
+    "type": "Œuf",
+    "temps": 15,
+    "tempsPreparation": 10,
+    "tempsCuisson": 5,
+    "proteines": 14,
+    "calories": 220,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Frais",
+      "Apéritif"
+    ],
+    "ingredients": [
+      "2 œufs",
+      "30 g de yaourt grec",
+      "1 c. à café de moutarde douce",
+      "Ciboulette",
+      "Poivre"
+    ],
+    "preparation": [
+      "Cuire les œufs durs.",
+      "Les couper en deux et retirer les jaunes.",
+      "Écraser les jaunes avec le yaourt et la moutarde.",
+      "Garnir les blancs et parsemer de ciboulette."
+    ],
+    "quantites": {
+      "petite": "2 demi-œufs",
+      "famille2": "4 demi-œufs",
+      "famille4": "8 demi-œufs"
+    }
+  },
+  {
+    "id": "REP026",
+    "nom": "Verrine betterave & fromage frais",
+    "categorie": "Entrée",
+    "type": "Verrine",
+    "temps": 10,
+    "tempsPreparation": 10,
+    "tempsCuisson": 0,
+    "proteines": 7,
+    "calories": 170,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Frais",
+      "Apéritif"
+    ],
+    "ingredients": [
+      "80 g de betterave cuite",
+      "40 g de fromage frais",
+      "1 c. à café de jus de citron",
+      "Ciboulette",
+      "Poivre"
+    ],
+    "preparation": [
+      "Mixer grossièrement la betterave avec le citron.",
+      "Déposer dans une petite verrine.",
+      "Ajouter le fromage frais.",
+      "Décorer de ciboulette."
+    ],
+    "quantites": {
+      "petite": "1 verrine",
+      "famille2": "2 verrines",
+      "famille4": "4 verrines"
+    }
+  },
+  {
+    "id": "REP027",
+    "nom": "Mini cake salé courgette & feta",
+    "categorie": "Dîner",
+    "type": "Cake salé",
+    "temps": 35,
+    "tempsPreparation": 10,
+    "tempsCuisson": 25,
+    "proteines": 12,
+    "calories": 290,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Salé",
+      "À préparer d’avance"
+    ],
+    "ingredients": [
+      "40 g de courgette râpée",
+      "1 œuf",
+      "30 g de farine",
+      "25 g de feta",
+      "30 ml de lait",
+      "1/2 c. à café de levure"
+    ],
+    "preparation": [
+      "Mélanger œuf et lait.",
+      "Ajouter farine et levure.",
+      "Incorporer courgette et feta.",
+      "Verser dans un petit moule et cuire 25 minutes à 180 °C."
+    ],
+    "quantites": {
+      "petite": "1 mini cake",
+      "famille2": "2 mini cakes",
+      "famille4": "4 mini cakes"
+    }
+  },
+  {
+    "id": "REP028",
+    "nom": "Parmentier de poisson aux petits pois",
+    "categorie": "Dîner",
+    "type": "Parmentier",
+    "temps": 40,
+    "tempsPreparation": 15,
+    "tempsCuisson": 25,
+    "proteines": 25,
+    "calories": 390,
+    "petitAppetit": true,
+    "envies": [
+      "Réconfort",
+      "Complet"
+    ],
+    "ingredients": [
+      "90 g de poisson blanc",
+      "100 g de pommes de terre",
+      "50 g de petits pois",
+      "30 ml de lait",
+      "1 c. à café de fromage râpé",
+      "Persil"
+    ],
+    "preparation": [
+      "Cuire les pommes de terre et les écraser avec le lait.",
+      "Cuire le poisson et l’émietter.",
+      "Ajouter les petits pois.",
+      "Déposer la préparation dans un ramequin, couvrir de purée et gratiner légèrement."
+    ],
+    "quantites": {
+      "petite": "1 ramequin",
+      "famille2": "2 ramequins",
+      "famille4": "4 ramequins"
+    }
+  },
+  {
+    "id": "REP029",
+    "nom": "Poulet curry doux & riz aux petits légumes",
+    "categorie": "Dîner",
+    "type": "Volaille",
+    "temps": 30,
+    "tempsPreparation": 10,
+    "tempsCuisson": 20,
+    "proteines": 28,
+    "calories": 420,
+    "petitAppetit": true,
+    "envies": [
+      "Épicé doux",
+      "Complet"
+    ],
+    "ingredients": [
+      "90 g de poulet",
+      "60 g de riz cuit",
+      "50 g de carotte",
+      "50 g de champignons",
+      "40 ml de lait de coco léger",
+      "1/2 c. à café de curry doux"
+    ],
+    "preparation": [
+      "Cuire le riz.",
+      "Faire revenir le poulet avec les légumes.",
+      "Ajouter curry et lait de coco.",
+      "Laisser mijoter quelques minutes et servir avec le riz."
+    ],
+    "quantites": {
+      "petite": "1 assiette",
+      "famille2": "2 assiettes",
+      "famille4": "4 assiettes"
+    }
+  },
+  {
+    "id": "REP030",
+    "nom": "Lasagnes individuelles épinards & ricotta",
+    "categorie": "Dîner",
+    "type": "Lasagnes",
+    "temps": 40,
+    "tempsPreparation": 15,
+    "tempsCuisson": 25,
+    "proteines": 18,
+    "calories": 410,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Réconfort",
+      "Gourmand"
+    ],
+    "ingredients": [
+      "2 feuilles de lasagne",
+      "80 g d’épinards",
+      "50 g de ricotta",
+      "60 g de coulis de tomate",
+      "20 g de mozzarella",
+      "Poivre"
+    ],
+    "preparation": [
+      "Faire tomber les épinards et les mélanger avec la ricotta.",
+      "Alterner pâte, épinards et coulis dans un petit plat.",
+      "Terminer par la mozzarella.",
+      "Cuire environ 25 minutes à 180 °C."
+    ],
+    "quantites": {
+      "petite": "1 portion individuelle",
+      "famille2": "2 portions",
+      "famille4": "4 portions"
+    }
+  },
+  {
+    "id": "REP031",
+    "nom": "Compote pomme-poire maison",
+    "categorie": "Petite douceur",
+    "type": "Compote",
+    "temps": 20,
+    "tempsPreparation": 5,
+    "tempsCuisson": 15,
+    "proteines": 1,
+    "calories": 120,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "vegetalien": true,
+    "envies": [
+      "Sucré",
+      "Léger"
+    ],
+    "ingredients": [
+      "1 petite pomme",
+      "1/2 poire",
+      "1 c. à café de miel",
+      "Cannelle",
+      "Un peu d’eau"
+    ],
+    "preparation": [
+      "Éplucher et couper les fruits.",
+      "Cuire doucement avec un peu d’eau.",
+      "Mixer ou écraser selon la texture souhaitée.",
+      "Ajouter cannelle et miel."
+    ],
+    "quantites": {
+      "petite": "1 petite coupelle",
+      "famille2": "2 coupelles",
+      "famille4": "4 coupelles"
+    }
+  },
+  {
+    "id": "REP032",
+    "nom": "Flan vanille léger",
+    "categorie": "Petite douceur",
+    "type": "Flan",
+    "temps": 35,
+    "tempsPreparation": 10,
+    "tempsCuisson": 25,
+    "proteines": 8,
+    "calories": 190,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Doux"
+    ],
+    "ingredients": [
+      "1 œuf",
+      "120 ml de lait",
+      "10 g de maïzena",
+      "1 c. à café de sucre",
+      "Vanille"
+    ],
+    "preparation": [
+      "Mélanger l’œuf, le lait, la maïzena, le sucre et la vanille.",
+      "Verser dans un petit ramequin.",
+      "Cuire environ 25 minutes à 170 °C.",
+      "Laisser refroidir."
+    ],
+    "quantites": {
+      "petite": "1 flan",
+      "famille2": "2 flans",
+      "famille4": "4 flans"
+    }
+  },
+  {
+    "id": "REP033",
+    "nom": "Cheesecake individuel citron & fromage blanc",
+    "categorie": "Petite douceur",
+    "type": "Cheesecake",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 10,
+    "calories": 230,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Gourmand"
+    ],
+    "ingredients": [
+      "80 g de fromage blanc",
+      "30 g de fromage frais",
+      "1 œuf",
+      "10 g de biscuit émietté",
+      "1 c. à café de sucre",
+      "Zeste de citron"
+    ],
+    "preparation": [
+      "Mélanger fromage blanc, fromage frais, œuf, sucre et citron.",
+      "Déposer le biscuit au fond du ramequin.",
+      "Ajouter la préparation.",
+      "Cuire 15 minutes à 170 °C puis refroidir."
+    ],
+    "quantites": {
+      "petite": "1 cheesecake",
+      "famille2": "2 cheesecakes",
+      "famille4": "4 cheesecakes"
+    }
+  },
+  {
+    "id": "REP034",
+    "nom": "Mini gâteau banane & avoine",
+    "categorie": "Petite douceur",
+    "type": "Gâteau",
+    "temps": 25,
+    "tempsPreparation": 10,
+    "tempsCuisson": 15,
+    "proteines": 7,
+    "calories": 210,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Gourmand"
+    ],
+    "ingredients": [
+      "1/2 banane",
+      "1 œuf",
+      "30 g de flocons d’avoine mixés",
+      "1/2 c. à café de levure",
+      "1 pincée de cannelle"
+    ],
+    "preparation": [
+      "Écraser la banane.",
+      "Ajouter l’œuf, l’avoine, la levure et la cannelle.",
+      "Verser dans un petit moule.",
+      "Cuire 15 minutes à 180 °C."
+    ],
+    "quantites": {
+      "petite": "1 mini gâteau",
+      "famille2": "2 mini gâteaux",
+      "famille4": "4 mini gâteaux"
+    }
+  },
+  {
+    "id": "REP035",
+    "nom": "Pommes rôties à la cannelle",
+    "categorie": "Petite douceur",
+    "type": "Fruit cuit",
+    "temps": 25,
+    "tempsPreparation": 5,
+    "tempsCuisson": 20,
+    "proteines": 1,
+    "calories": 130,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "vegetalien": true,
+    "envies": [
+      "Sucré",
+      "Léger"
+    ],
+    "ingredients": [
+      "1 petite pomme",
+      "1 c. à café de miel",
+      "Cannelle",
+      "1 c. à soupe d’eau"
+    ],
+    "preparation": [
+      "Évider la pomme.",
+      "La placer dans un petit plat avec l’eau.",
+      "Ajouter miel et cannelle.",
+      "Cuire environ 20 minutes à 180 °C."
+    ],
+    "quantites": {
+      "petite": "1 pomme",
+      "famille2": "2 pommes",
+      "famille4": "4 pommes"
+    }
+  },
+  {
+    "id": "REP036",
+    "nom": "Yaourt grec, poire & noix",
+    "categorie": "Collation",
+    "type": "Yaourt",
+    "temps": 5,
+    "tempsPreparation": 5,
+    "tempsCuisson": 0,
+    "proteines": 10,
+    "calories": 220,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Rapide"
+    ],
+    "ingredients": [
+      "100 g de yaourt grec",
+      "1/2 petite poire",
+      "10 g de noix",
+      "1 c. à café de miel",
+      "Cannelle"
+    ],
+    "preparation": [
+      "Déposer le yaourt dans un bol.",
+      "Ajouter la poire en dés et les noix concassées.",
+      "Ajouter un peu de miel et de cannelle."
+    ],
+    "quantites": {
+      "petite": "1 bol",
+      "famille2": "2 bols",
+      "famille4": "4 bols"
+    }
+  },
+  {
+    "id": "REP037",
+    "nom": "Tartine pomme, fromage frais & cannelle",
+    "categorie": "Collation",
+    "type": "Tartine sucrée",
+    "temps": 5,
+    "tempsPreparation": 5,
+    "tempsCuisson": 0,
+    "proteines": 6,
+    "calories": 190,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Rapide"
+    ],
+    "ingredients": [
+      "1 petite tranche de pain complet",
+      "30 g de fromage frais",
+      "1/2 petite pomme",
+      "Cannelle",
+      "1/2 c. à café de miel"
+    ],
+    "preparation": [
+      "Tartiner le pain de fromage frais.",
+      "Ajouter les fines lamelles de pomme.",
+      "Ajouter cannelle et un filet de miel."
+    ],
+    "quantites": {
+      "petite": "1 tartine",
+      "famille2": "2 tartines",
+      "famille4": "4 tartines"
+    }
+  },
+  {
+    "id": "REP038",
+    "nom": "Mini crêpes au fromage blanc & fruits",
+    "categorie": "Petit-déjeuner",
+    "type": "Crêpes",
+    "temps": 20,
+    "tempsPreparation": 10,
+    "tempsCuisson": 10,
+    "proteines": 12,
+    "calories": 300,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Gourmand"
+    ],
+    "ingredients": [
+      "1 œuf",
+      "40 g de farine",
+      "70 ml de lait",
+      "50 g de fromage blanc",
+      "50 g de fruits rouges",
+      "1 c. à café de sucre"
+    ],
+    "preparation": [
+      "Mélanger œuf, farine et lait.",
+      "Cuire de petites crêpes.",
+      "Servir avec le fromage blanc et les fruits rouges."
+    ],
+    "quantites": {
+      "petite": "3 mini crêpes",
+      "famille2": "6 mini crêpes",
+      "famille4": "12 mini crêpes"
+    }
+  },
+  {
+    "id": "REP039",
+    "nom": "Brioche perdue légère aux pommes",
+    "categorie": "Petit-déjeuner",
+    "type": "Brioche perdue",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 9,
+    "calories": 290,
+    "petitAppetit": true,
+    "vegetarien": true,
+    "envies": [
+      "Sucré",
+      "Gourmand"
+    ],
+    "ingredients": [
+      "1 petite tranche de brioche",
+      "1 œuf",
+      "50 ml de lait",
+      "1/2 petite pomme",
+      "Cannelle",
+      "1 c. à café de sucre"
+    ],
+    "preparation": [
+      "Battre œuf et lait.",
+      "Tremper la brioche.",
+      "Cuire à la poêle antiadhésive.",
+      "Ajouter la pomme poêlée et la cannelle."
+    ],
+    "quantites": {
+      "petite": "1 tranche",
+      "famille2": "2 tranches",
+      "famille4": "4 tranches"
+    }
+  },
+  {
+    "id": "REP040",
+    "nom": "Omelette roulée jambon, fromage & salade",
+    "categorie": "Dîner",
+    "type": "Omelette roulée",
+    "temps": 15,
+    "tempsPreparation": 5,
+    "tempsCuisson": 10,
+    "proteines": 24,
+    "calories": 330,
+    "petitAppetit": true,
+    "envies": [
+      "Rapide",
+      "Salé",
+      "Complet"
+    ],
+    "ingredients": [
+      "2 œufs",
+      "40 g de jambon",
+      "25 g de fromage râpé",
+      "Quelques feuilles de salade",
+      "1 c. à café d’huile"
+    ],
+    "preparation": [
+      "Battre les œufs et cuire une omelette fine.",
+      "Ajouter jambon et fromage.",
+      "Rouler délicatement et couper en morceaux.",
+      "Servir avec la salade."
+    ],
+    "quantites": {
+      "petite": "1 omelette roulée",
+      "famille2": "2 omelettes",
+      "famille4": "4 omelettes"
+    }
+  }
+]
