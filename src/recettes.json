@@ -3784,14 +3784,15 @@
   {
   "id": "REC081",
   "nom": "Poulet fondant à la patate douce",
-  "categorie": "Déjeuner",
-  "type": "Plat",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
   "temps": 30,
   "tempsPreparation": 10,
   "tempsCuisson": 20,
   "proteines": 17,
+  "calories": 230,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions familiales",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -3819,7 +3820,7 @@
     "Cuire le poulet à feu doux jusqu'à ce qu'il soit tendre.",
     "Écraser grossièrement la patate douce avec le fromage blanc.",
     "Ajouter la courgette et le poulet coupé en petits morceaux.",
-    "Ajouter une petite quantité d'huile d'olive et assaisonner avec des épices douces.",
+    "Ajouter l'huile d'olive et assaisonner avec des épices douces.",
     "Servir dans une petite assiette en adaptant la quantité à son appétit."
   ],
   "quantites": {
@@ -3830,28 +3831,20 @@
       "Huile d'olive": "1/2 cuillère à café",
       "Fromage blanc": "1 cuillère à soupe"
     }
-  },
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 160,
-      "proteines": 17,
-      "glucides": 14,
-      "lipides": 4,
-      "fibres": 2
-    }
   }
 },
 {
   "id": "REC082",
   "nom": "Porridge doux à la banane",
   "categorie": "Petit-déjeuner",
-  "type": "Petit-déjeuner",
+  "type": "sucre",
   "temps": 10,
   "tempsPreparation": 5,
   "tempsCuisson": 5,
   "proteines": 6,
+  "calories": 160,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -3880,13 +3873,13 @@
     "Ajouter le fromage blanc et la cannelle.",
     "Répartir dans deux petites portions."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 160,
-      "proteines": 6,
-      "glucides": 25,
-      "lipides": 4,
-      "fibres": 3
+  "quantites": {
+    "petite": {
+      "Flocons d'avoine": "20 g",
+      "Lait": "75 ml",
+      "Banane": "1/4",
+      "Fromage blanc": "1 cuillère à soupe",
+      "Cannelle": "1 pincée"
     }
   }
 },
@@ -3894,13 +3887,14 @@
   "id": "REC083",
   "nom": "Fromage blanc pomme cannelle",
   "categorie": "Petit-déjeuner",
-  "type": "Petit-déjeuner",
+  "type": "laitier",
   "temps": 5,
   "tempsPreparation": 5,
   "tempsCuisson": 0,
   "proteines": 6,
+  "calories": 110,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -3924,13 +3918,12 @@
     "Ajouter le miel et la cannelle.",
     "Répartir dans deux petites portions."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 110,
-      "proteines": 6,
-      "glucides": 12,
-      "lipides": 3,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "100 g",
+      "Pomme": "1/2 petite",
+      "Miel": "1/2 cuillère à café",
+      "Cannelle": "1 pincée"
     }
   }
 },
@@ -3938,13 +3931,14 @@
   "id": "REC084",
   "nom": "Œufs brouillés crémeux",
   "categorie": "Petit-déjeuner",
-  "type": "Petit-déjeuner",
+  "type": "oeuf",
   "temps": 8,
   "tempsPreparation": 3,
   "tempsCuisson": 5,
   "proteines": 7,
+  "calories": 120,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -3970,13 +3964,12 @@
     "Ajouter le fromage frais en fin de cuisson.",
     "Cuire jusqu'à obtenir une texture crémeuse."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 120,
-      "proteines": 7,
-      "glucides": 2,
-      "lipides": 9,
-      "fibres": 0
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Lait": "1 cuillère à soupe",
+      "Fromage frais": "1/2 cuillère à café",
+      "Huile d'olive": "1/2 cuillère à café"
     }
   }
 },
@@ -3984,13 +3977,14 @@
   "id": "REC085",
   "nom": "Pancakes moelleux à la banane",
   "categorie": "Petit-déjeuner",
-  "type": "Petit-déjeuner",
+  "type": "sucre",
   "temps": 15,
   "tempsPreparation": 7,
   "tempsCuisson": 8,
   "proteines": 6,
+  "calories": 190,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -4021,13 +4015,14 @@
     "Former de petits pancakes.",
     "Cuire quelques minutes de chaque côté à feu doux."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 190,
-      "proteines": 6,
-      "glucides": 30,
-      "lipides": 5,
-      "fibres": 3
+  "quantites": {
+    "petite": {
+      "Banane": "1/2",
+      "Œuf": "1/2",
+      "Farine": "20 g",
+      "Lait": "25 ml",
+      "Levure": "1/4 cuillère à café",
+      "Huile": "1/2 cuillère à café"
     }
   }
 },
@@ -4035,13 +4030,14 @@
   "id": "REC086",
   "nom": "Crème de semoule vanillée",
   "categorie": "Petit-déjeuner",
-  "type": "Petit-déjeuner",
+  "type": "sucre",
   "temps": 10,
   "tempsPreparation": 3,
   "tempsCuisson": 7,
   "proteines": 5,
+  "calories": 140,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -4069,13 +4065,12 @@
     "Ajouter le sucre.",
     "Répartir dans deux petites portions et laisser tiédir."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 140,
-      "proteines": 5,
-      "glucides": 22,
-      "lipides": 4,
-      "fibres": 1
+  "quantites": {
+    "petite": {
+      "Lait": "125 ml",
+      "Semoule fine": "15 g",
+      "Sucre": "1/2 cuillère à café",
+      "Vanille": "1/4 cuillère à café"
     }
   }
 },
@@ -4088,11 +4083,12 @@
   "tempsPreparation": 5,
   "tempsCuisson": 15,
   "proteines": 1,
+  "calories": 80,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
-  "postOperatoire": false,
+  "postOperatoire": true,
   "vegetarien": true,
   "vegetalien": true,
   "sansGluten": true,
@@ -4117,13 +4113,12 @@
     "Mixer selon la texture souhaitée.",
     "Ajouter une pincée de cannelle."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 80,
-      "proteines": 1,
-      "glucides": 20,
-      "lipides": 0,
-      "fibres": 3
+  "quantites": {
+    "petite": {
+      "Pomme": "1/2",
+      "Poire": "1/2",
+      "Eau": "1 cuillère à soupe",
+      "Cannelle": "1 pincée"
     }
   }
 },
@@ -4136,8 +4131,9 @@
   "tempsPreparation": 5,
   "tempsCuisson": 0,
   "proteines": 6,
+  "calories": 120,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -4157,16 +4153,16 @@
   "preparation": [
     "Mélanger le fromage blanc avec la vanille.",
     "Ajouter le miel.",
-    "Déposer les fruits rouges sur le dessus.",
-    "Répartir en deux petites portions."
+    "Mixer ou écraser finement les fruits rouges selon la texture souhaitée.",
+    "Mélanger aux fruits rouges.",
+    "Répartir dans deux petites portions."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 120,
-      "proteines": 6,
-      "glucides": 14,
-      "lipides": 3,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "100 g",
+      "Fruits rouges": "30 g",
+      "Miel": "1/2 cuillère à café",
+      "Vanille": "1/4 cuillère à café"
     }
   }
 },
@@ -4179,11 +4175,12 @@
   "tempsPreparation": 10,
   "tempsCuisson": 0,
   "proteines": 7,
+  "calories": 110,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
-  "postOperatoire": false,
+  "postOperatoire": true,
   "vegetarien": true,
   "vegetalien": false,
   "sansGluten": true,
@@ -4193,7 +4190,7 @@
   "conservation": "24 heures au réfrigérateur",
   "congelation": "Non",
   "envies": ["sucre", "leger", "reconfort"],
-  "texture": "mou",
+  "texture": "mousseuse",
   "ingredients": [
     "200 g de fromage blanc",
     "1 blanc d'œuf",
@@ -4207,13 +4204,12 @@
     "Répartir dans deux petits ramequins.",
     "Réserver au réfrigérateur avant de servir."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 110,
-      "proteines": 7,
-      "glucides": 10,
-      "lipides": 3,
-      "fibres": 0
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "100 g",
+      "Blanc d'œuf": "1/2",
+      "Miel": "1/2 cuillère à café",
+      "Vanille": "1/4 cuillère à café"
     }
   }
 },
@@ -4226,8 +4222,9 @@
   "tempsPreparation": 5,
   "tempsCuisson": 0,
   "proteines": 5,
+  "calories": 130,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -4236,11 +4233,7 @@
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": false,
-  "envies": [
-    "sucre",
-    "leger",
-    "rapide"
-  ],
+  "envies": ["sucre", "leger", "rapide"],
   "texture": "mou",
   "ingredients": [
     "1 banane mûre",
@@ -4253,27 +4246,26 @@
     "Mélanger jusqu'à obtenir une préparation homogène.",
     "Ajouter une pincée de cannelle."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 130,
-      "proteines": 5,
-      "glucides": 22,
-      "lipides": 3,
-      "fibres": 3
+  "quantites": {
+    "petite": {
+      "Banane": "1/2",
+      "Fromage blanc": "75 g",
+      "Cannelle": "1 pincée"
     }
   }
 },
-  {
+{
   "id": "REC091",
   "nom": "Petite crème chocolatée au fromage blanc",
   "categorie": "Collation",
-  "type": "Collation",
+  "type": "sucre",
   "temps": 5,
   "tempsPreparation": 5,
   "tempsCuisson": 0,
   "proteines": 6,
+  "calories": 140,
   "portions": 2,
-  "portion": "Petite portion ou 2 portions",
+  "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": false,
@@ -4282,11 +4274,7 @@
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": false,
-  "envies": [
-    "sucre",
-    "reconfort",
-    "rapide"
-  ],
+  "envies": ["sucre", "reconfort", "rapide"],
   "texture": "mou",
   "ingredients": [
     "200 g de fromage blanc",
@@ -4302,13 +4290,12 @@
     "Mélanger jusqu'à obtenir une crème homogène.",
     "Répartir dans deux petites portions."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 140,
-      "proteines": 6,
-      "glucides": 18,
-      "lipides": 4,
-      "fibres": 3
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "100 g",
+      "Cacao non sucré": "1/2 cuillère à soupe",
+      "Miel": "1/2 cuillère à café",
+      "Banane": "1/4"
     }
   }
 },
@@ -4321,6 +4308,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 15,
   "proteines": 18,
+  "calories": 150,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -4331,13 +4319,13 @@
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": true,
-  "batchCookingDetail": "Se mixe très bien et se conserve en petits bocaux en verre.",
-  "conservation": "2 jours au réfrigérateur.",
-  "congelation": "Oui, après mixage complet.",
+  "batchCookingDetail": "Se mixe très bien et se conserve en petits contenants.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui, après mixage complet",
   "envies": ["leger", "reconfortant", "digeste"],
-  "texture": "Mixée",
+  "texture": "mixée",
   "ingredients": [
-    "70 g de cabillaud",
+    "70 g de cabillaud sans arêtes",
     "50 g de blanc de poireau",
     "20 g de riz très cuit",
     "1 cuillère à soupe de fromage blanc 0%",
@@ -4348,16 +4336,16 @@
     "Faire cuire le poireau et le riz dans le bouillon de légumes.",
     "Ajouter le cabillaud 5 minutes avant la fin de la cuisson.",
     "Ajouter le fromage blanc hors du feu.",
-    "Mixer le tout jusqu'à obtention d'une texture ultra-lisse sans aucun morceau.",
-    "Servir tiède."
+    "Mixer le tout jusqu'à obtenir une texture parfaitement lisse.",
+    "Passer au tamis si nécessaire et servir tiède."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 150,
-      "proteines": 18,
-      "glucides": 12,
-      "lipides": 3,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Cabillaud": "70 g",
+      "Poireau": "50 g",
+      "Riz cuit": "20 g",
+      "Fromage blanc": "1 cuillère à soupe",
+      "Bouillon": "Selon besoin"
     }
   }
 },
@@ -4370,6 +4358,7 @@
   "tempsPreparation": 5,
   "tempsCuisson": 5,
   "proteines": 11,
+  "calories": 130,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -4380,31 +4369,31 @@
   "sansGluten": true,
   "sansLactose": true,
   "batchCooking": false,
-  "batchCookingDetail": "À consommer immédiatement après cuisson pour garder le moelleux.",
-  "conservation": "Non recommandé.",
+  "conservation": "À consommer immédiatement",
   "congelation": "Non",
   "envies": ["rapide", "proteine", "salé"],
-  "texture": "Tendre",
+  "texture": "tendre",
   "ingredients": [
-    "1 œuf entier et 1 blanc d'œuf",
-    "40 g d'épinards hachés cuits et égouttés",
+    "1 œuf entier",
+    "1 blanc d'œuf",
+    "40 g d'épinards cuits et finement hachés",
     "1 cuillère à café de crème de soja légère",
     "1 pincée de sel"
   ],
   "preparation": [
-    "Battre l'œuf et le blanc ensemble dans un bol avec la crème de soja.",
+    "Battre l'œuf et le blanc avec la crème de soja.",
     "Faire chauffer une poêle antiadhésive à feu très doux.",
-    "Verser les œufs et remuer constamment pour obtenir une texture très humide et nacrée.",
-    "Ajouter les épinards hachés finement en fin de cuisson.",
-    "Mélanger délicatement et servir immédiatement."
+    "Verser les œufs et remuer constamment.",
+    "Ajouter les épinards très finement hachés en fin de cuisson.",
+    "Cuire jusqu'à obtenir une texture très souple et humide.",
+    "Servir immédiatement."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 130,
-      "proteines": 11,
-      "glucides": 3,
-      "lipides": 8,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Blanc d'œuf": "1",
+      "Épinards": "40 g",
+      "Crème de soja": "1 cuillère à café"
     }
   }
 },
@@ -4417,6 +4406,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 25,
   "proteines": 9,
+  "calories": 170,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -4428,32 +4418,32 @@
   "sansLactose": true,
   "batchCooking": true,
   "batchCookingDetail": "Idéal à préparer en grande quantité, la texture s'adoucit le lendemain.",
-  "conservation": "3 jours au réfrigérateur.",
-  "congelation": "Oui, dans des contenants hermétiques.",
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": "Oui, dans des contenants hermétiques",
   "envies": ["complet", "epice", "vegetal"],
-  "texture": "Fondante",
+  "texture": "fondante",
   "ingredients": [
     "30 g de lentilles corail crues",
     "50 g de purée de carotte",
-    "40 g de tofu soyeux haché",
+    "40 g de tofu soyeux",
     "1 cuillère à café de lait de coco léger",
     "1 pincée de curcuma"
   ],
   "preparation": [
-    "Rincer abondamment les lentilles corail.",
-    "Les faire cuire dans deux fois leur volume d'eau avec le curcuma jusqu'à ce qu'elles s'écrasent.",
-    "Incorporer la purée de carotte et le tofu soyeux préalablement écrasé à la fourchette.",
-    "Ajouter le lait de coco pour lier la préparation.",
-    "Laisser mijoter 2 minutes à feu doux pour homogénéiser la texture.",
-    "Laisser tiédir avant de consommer."
+    "Rincer les lentilles corail.",
+    "Les cuire avec le curcuma dans de l'eau jusqu'à ce qu'elles soient très tendres.",
+    "Incorporer la purée de carotte et le tofu soyeux écrasé.",
+    "Ajouter le lait de coco.",
+    "Laisser mijoter 2 minutes à feu doux.",
+    "Mixer si une texture parfaitement lisse est souhaitée."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 170,
-      "proteines": 9,
-      "glucides": 20,
-      "lipides": 5,
-      "fibres": 5
+  "quantites": {
+    "petite": {
+      "Lentilles corail crues": "30 g",
+      "Purée de carotte": "50 g",
+      "Tofu soyeux": "40 g",
+      "Lait de coco léger": "1 cuillère à café",
+      "Curcuma": "1 pincée"
     }
   }
 },
@@ -4466,48 +4456,49 @@
   "tempsPreparation": 10,
   "tempsCuisson": 15,
   "proteines": 5,
+  "calories": 120,
   "portions": 4,
   "portion": "1 mini muffin",
   "petitAppetit": true,
-  "preOperatoire": false,
-  "postOperatoire": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
   "vegetarien": true,
   "vegetalien": false,
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": true,
   "batchCookingDetail": "Cuire une plaque de mini-muffins pour les collations de la semaine.",
-  "conservation": "3 jours dans une boîte hermétique.",
-  "congelation": "Oui, emballés individuellement.",
+  "conservation": "3 jours dans une boîte hermétique",
+  "congelation": "Oui, emballés individuellement",
   "envies": ["sucre", "douceur", "nomade"],
-  "texture": "Moelleuse",
+  "texture": "moelleuse",
   "ingredients": [
-    "2 œufs (blancs montés en neige)",
+    "2 œufs",
     "60 g de poudre d'amande fine",
-    "100 g de fromage frais type carré frais 0%",
-    "1 cuillère à soupe d'édulcorant de cuisson (optionnel)",
+    "100 g de fromage frais léger",
+    "1 cuillère à soupe d'édulcorant de cuisson facultatif",
     "Quelques gouttes d'extrait de vanille"
   ],
   "preparation": [
-    "Préchauffer le four à 170°C.",
+    "Préchauffer le four à 170 °C.",
     "Mélanger les jaunes d'œufs, le fromage frais, la poudre d'amande et la vanille.",
-    "Monter les blancs d'œufs en neige très ferme.",
-    "Incorporer délicatement les blancs à la pâte pour garder un maximum d'air.",
-    "Répartir dans des petits moules en silicone.",
-    "Enfourner pendant 15 minutes en surveillant la coloration.",
-    "Laisser refroidir complètement pour que la mie soit bien souple."
+    "Monter les blancs d'œufs en neige.",
+    "Incorporer délicatement les blancs.",
+    "Répartir dans de petits moules.",
+    "Enfourner 15 minutes.",
+    "Laisser refroidir complètement."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 120,
-      "proteines": 5,
-      "glucides": 4,
-      "lipides": 9,
-      "fibres": 1
+  "quantites": {
+    "petite": {
+      "Œuf": "1/2",
+      "Poudre d'amande": "15 g",
+      "Fromage frais": "25 g",
+      "Édulcorant": "Selon goût",
+      "Vanille": "Quelques gouttes"
     }
   }
 },
-  {
+{
   "id": "REC096",
   "nom": "Mousse de saumon frais au brocoli",
   "categorie": "Déjeuner / dîner",
@@ -4516,6 +4507,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 10,
   "proteines": 16,
+  "calories": 155,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -4526,32 +4518,31 @@
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": true,
-  "batchCookingDetail": "Se consomme aussi bien tiède que frais.",
-  "conservation": "24 heures au réfrigérateur max.",
+  "batchCookingDetail": "Se consomme de préférence fraîchement préparée.",
+  "conservation": "24 heures au réfrigérateur",
   "congelation": "Non",
   "envies": ["leger", "frais", "omega3"],
-  "texture": "Mixée",
+  "texture": "mixée",
   "ingredients": [
-    "70 g de pavé de saumon sans peau ni arêtes",
-    "50 g de fleurettes de brocoli",
-    "1 cuillère à soupe de St Môret Ligne ou similaire",
+    "70 g de saumon sans peau ni arêtes",
+    "50 g de brocoli",
+    "1 cuillère à soupe de fromage frais léger",
     "1 filet de jus de citron"
   ],
   "preparation": [
-    "Cuire le saumon et le brocoli à la vapeur pour qu'ils soient très tendres.",
-    "Émietter grossièrement le saumon et vérifier l'absence d'arêtes.",
-    "Placer le saumon, le brocoli cuit, le fromage frais et le jus de citron dans un mixeur.",
-    "Mixer longuement jusqu'à obtenir une texture mousseuse, lisse et aérée.",
-    "Passer au tamis si nécessaire pour enlever les fibres résiduelles du brocoli.",
-    "Servir immédiatement."
+    "Cuire le saumon et le brocoli à la vapeur jusqu'à ce qu'ils soient très tendres.",
+    "Vérifier soigneusement l'absence d'arêtes.",
+    "Mixer le saumon, le brocoli, le fromage frais et le citron.",
+    "Mixer longuement jusqu'à obtenir une texture parfaitement lisse.",
+    "Passer au tamis si nécessaire.",
+    "Servir tiède."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 155,
-      "proteines": 16,
-      "glucides": 4,
-      "lipides": 9,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Saumon": "70 g",
+      "Brocoli": "50 g",
+      "Fromage frais": "1 cuillère à soupe",
+      "Jus de citron": "Quelques gouttes"
     }
   }
 },
@@ -4564,8 +4555,9 @@
   "tempsPreparation": 5,
   "tempsCuisson": 10,
   "proteines": 14,
+  "calories": 125,
   "portions": 1,
-  "portion": "1 verrine",
+  "portion": "1 petite verrine",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": true,
@@ -4574,32 +4566,31 @@
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": true,
-  "batchCookingDetail": "Préparer la compotée à l'avance et assembler le matin.",
-  "conservation": "2 jours au réfrigérateur.",
+  "batchCookingDetail": "Préparer la compotée à l'avance et assembler au moment du repas.",
+  "conservation": "2 jours au réfrigérateur",
   "congelation": "Non",
   "envies": ["frais", "sucre", "onctueux"],
-  "texture": "Tendre",
+  "texture": "tendre",
   "ingredients": [
     "140 g de Skyr nature",
     "40 g de pomme épluchée",
     "1 pincée de cannelle",
-    "1 pointe de couteau de vanille en poudre"
+    "1 pointe de vanille en poudre"
   ],
   "preparation": [
-    "Couper la pomme en minuscules cubes.",
-    "Faire compoter les morceaux de pomme avec un fond d'eau et la cannelle à feu doux jusqu'à ce qu'ils s'écrasent tout seuls.",
-    "Pendant ce temps, lisser le Skyr énergiquement à la fourchette avec la vanille.",
-    "Déposer la compotée de pomme tiède au fond d'une verrine.",
-    "Napper avec le Skyr lissé.",
+    "Couper la pomme en petits morceaux.",
+    "La faire compoter avec un fond d'eau et la cannelle jusqu'à ce qu'elle soit très tendre.",
+    "Lisser le Skyr avec la vanille.",
+    "Mixer la pomme si nécessaire pour obtenir une texture parfaitement lisse.",
+    "Déposer la pomme puis le Skyr dans une verrine.",
     "Manger lentement à la petite cuillère."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 125,
-      "proteines": 14,
-      "glucides": 10,
-      "lipides": 0,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Skyr": "140 g",
+      "Pomme": "40 g",
+      "Cannelle": "1 pincée",
+      "Vanille": "1 pointe"
     }
   }
 },
@@ -4612,6 +4603,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 20,
   "proteines": 20,
+  "calories": 210,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -4619,36 +4611,37 @@
   "postOperatoire": true,
   "vegetarien": false,
   "vegetalien": false,
-  "sansGluten": true,
+  "sansGluten": false,
   "sansLactose": true,
   "batchCooking": true,
-  "batchCookingDetail": "La cuisson longue préserve l'humidité de la viande.",
-  "conservation": "2 jours au réfrigérateur.",
+  "batchCookingDetail": "La cuisson douce préserve l'humidité et la tendreté de la viande.",
+  "conservation": "2 jours au réfrigérateur",
   "congelation": "Oui",
   "envies": ["complet", "tendre", "proteine"],
-  "texture": "Fondante",
+  "texture": "fondante",
   "ingredients": [
-    "75 g de quasi de veau haché très fin",
-    "50 g de chair de courgette (sans la peau ni les pépins)",
+    "75 g de veau haché très fin",
+    "50 g de chair de courgette sans peau ni pépins",
     "20 g de semoule fine de blé",
     "1 cuillère à café d'huile de colza",
-    "1 petit verre de bouillon de légumes"
+    "Bouillon de légumes"
   ],
   "preparation": [
-    "Faire cuire la semoule fine à part et réserver.",
-    "Couper la chair de courgette en dés microscopiques.",
-    "Dans une petite casserole, faire suer la courgette dans l'huile.",
-    "Ajouter le veau haché et mélanger continuellement pour détacher les grains de viande.",
-    "Mouiller avec le bouillon de légumes, couvrir et laisser mijoter 15 minutes.",
-    "Ajouter la semoule cuite, mélanger pour lier et s'assurer que l'ensemble reste bien humide."
+    "Cuire la semoule fine et réserver.",
+    "Couper la chair de courgette très finement.",
+    "Faire revenir doucement la courgette dans l'huile.",
+    "Ajouter le veau haché et cuire doucement.",
+    "Ajouter le bouillon, couvrir et laisser mijoter 15 minutes.",
+    "Ajouter la semoule cuite.",
+    "Mixer ou hacher très finement si nécessaire pour obtenir une texture adaptée."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 210,
-      "proteines": 20,
-      "glucides": 14,
-      "lipides": 10,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Veau": "75 g",
+      "Courgette": "50 g",
+      "Semoule fine": "20 g",
+      "Huile de colza": "1 cuillère à café",
+      "Bouillon": "Selon besoin"
     }
   }
 },
@@ -4661,43 +4654,44 @@
   "tempsPreparation": 10,
   "tempsCuisson": 25,
   "proteines": 10,
+  "calories": 140,
   "portions": 2,
   "portion": "1 petit ramequin",
   "petitAppetit": true,
-  "preOperatoire": false,
+  "preOperatoire": true,
   "postOperatoire": true,
   "vegetarien": true,
   "vegetalien": false,
-  "sansGluten": false,
+  "sansGluten": true,
   "sansLactose": false,
   "batchCooking": true,
-  "batchCookingDetail": "Idéal pour stabiliser les portions sucrées de l'après-midi.",
-  "conservation": "3 jours au réfrigérateur sous film.",
+  "batchCookingDetail": "Idéal pour préparer plusieurs petites portions à l'avance.",
+  "conservation": "3 jours au réfrigérateur",
   "congelation": "Non",
   "envies": ["frais", "leger", "acidule"],
-  "texture": "Fondante",
+  "texture": "fondante",
   "ingredients": [
     "200 g de fromage blanc 20%",
-    "1 œuf entier",
+    "1 œuf",
     "15 g de maïzena",
-    "Zestes de citron",
+    "Zestes fins de citron",
     "1 cuillère à café de miel ou édulcorant"
   ],
   "preparation": [
-    "Préchauffer le four à 180°C.",
+    "Préchauffer le four à 180 °C.",
     "Fouetter l'œuf avec le miel et les zestes.",
     "Ajouter la maïzena puis le fromage blanc.",
     "Verser dans deux ramequins.",
-    "Cuire au bain-marie 25 minutes.",
-    "Laisser refroidir 2 heures."
+    "Cuire au bain-marie pendant 25 minutes.",
+    "Laisser refroidir avant de servir."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 140,
-      "proteines": 10,
-      "glucides": 10,
-      "lipides": 6,
-      "fibres": 0
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "100 g",
+      "Œuf": "1/2",
+      "Maïzena": "7 g",
+      "Miel": "1/2 cuillère à café",
+      "Citron": "Quelques zestes"
     }
   }
 },
@@ -4710,6 +4704,7 @@
   "tempsPreparation": 5,
   "tempsCuisson": 7,
   "proteines": 11,
+  "calories": 155,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -4720,45 +4715,46 @@
   "sansGluten": false,
   "sansLactose": false,
   "batchCooking": false,
-  "batchCookingDetail": "À consommer immédiatement après cuisson.",
-  "conservation": "Non recommandé.",
+  "conservation": "À consommer immédiatement",
   "congelation": "Non",
   "envies": ["complet", "salé", "proteine"],
-  "texture": "Tendre",
+  "texture": "tendre",
   "ingredients": [
-    "1 œuf et demi brouillé",
-    "30 g d'épinards cuits mixés",
+    "1 œuf entier",
+    "1/2 blanc d'œuf",
+    "30 g d'épinards cuits et mixés",
     "1 tranche de pain de mie protéiné",
     "1 cuillère à soupe de fromage blanc 0%"
   ],
   "preparation": [
-    "Battre les œufs avec le fromage blanc.",
-    "Cuire à feu doux en remuant.",
-    "Mixer les épinards en mousse.",
-    "Griller le pain de mie et l'écraser.",
-    "Assembler."
+    "Battre l'œuf et le blanc avec le fromage blanc.",
+    "Cuire à feu très doux en remuant constamment.",
+    "Mixer les épinards pour obtenir une mousse fine.",
+    "Retirer les parties trop sèches du pain et l'émietter très finement.",
+    "Assembler les éléments en conservant une texture souple."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 155,
-      "proteines": 11,
-      "glucides": 10,
-      "lipides": 7,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Blanc d'œuf": "1/2",
+      "Épinards": "30 g",
+      "Pain de mie protéiné": "1 petite tranche",
+      "Fromage blanc": "1 cuillère à soupe"
     }
   }
 },
 {
   "id": "REC101",
-  "nom": "Onctueux de Yaourt grec aux éclats de framboises sans pépins",
+  "nom": "Onctueux de yaourt grec aux framboises sans pépins",
   "categorie": "Petit-déjeuner",
   "type": "laitier",
   "temps": 15,
   "tempsPreparation": 5,
   "tempsCuisson": 10,
   "proteines": 11,
+  "calories": 120,
   "portions": 1,
-  "portion": "1 verrine",
+  "portion": "1 petite verrine",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": true,
@@ -4768,29 +4764,29 @@
   "sansLactose": false,
   "batchCooking": true,
   "batchCookingDetail": "Peut être assemblé la veille.",
-  "conservation": "24 heures au réfrigérateur.",
+  "conservation": "24 heures au réfrigérateur",
   "congelation": "Non",
   "envies": ["frais", "sucre", "onctueux"],
-  "texture": "Tendre",
+  "texture": "tendre",
   "ingredients": [
     "80 g de yaourt grec 0%",
     "30 g de framboises",
-    "15 g de flocons d'avoine",
+    "15 g de flocons d'avoine fins",
     "2 cuillères à soupe de lait d'amande"
   ],
   "preparation": [
-    "Cuire les flocons dans le lait d'amande.",
-    "Mixer les framboises et filtrer.",
+    "Faire cuire doucement les flocons dans le lait d'amande.",
+    "Mixer les framboises puis les passer au tamis pour retirer les pépins.",
     "Lisser le yaourt.",
-    "Assembler en verrine."
+    "Assembler en verrine.",
+    "Laisser refroidir les flocons avant de servir."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 120,
-      "proteines": 11,
-      "glucides": 12,
-      "lipides": 3,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Yaourt grec": "80 g",
+      "Framboises": "30 g",
+      "Flocons d'avoine": "15 g",
+      "Lait d'amande": "2 cuillères à soupe"
     }
   }
 },
@@ -4803,21 +4799,22 @@
   "tempsPreparation": 15,
   "tempsCuisson": 20,
   "proteines": 10,
+  "calories": 145,
   "portions": 1,
   "portion": "1 petite part",
   "petitAppetit": true,
-  "preOperatoire": false,
-  "postOperatoire": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
   "vegetarien": true,
   "vegetalien": false,
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": true,
   "batchCookingDetail": "Se découpe en petites portions.",
-  "conservation": "2 jours au réfrigérateur.",
+  "conservation": "2 jours au réfrigérateur",
   "congelation": "Oui",
   "envies": ["sucre", "reconfortant", "douceur"],
-  "texture": "Moelleuse",
+  "texture": "moelleuse",
   "ingredients": [
     "60 g de fromage frais léger",
     "40 g de compote de pommes",
@@ -4825,18 +4822,19 @@
     "1 blanc d'œuf monté en neige"
   ],
   "preparation": [
-    "Préchauffer le four à 160°C.",
-    "Mélanger fromage frais, compote et poudre d'amande.",
-    "Incorporer le blanc en neige.",
-    "Cuire 20 minutes."
+    "Préchauffer le four à 160 °C.",
+    "Mélanger le fromage frais, la compote et la poudre d'amande.",
+    "Incorporer délicatement le blanc en neige.",
+    "Verser dans un petit moule.",
+    "Cuire 20 minutes.",
+    "Laisser refroidir avant de couper."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 145,
-      "proteines": 10,
-      "glucides": 10,
-      "lipides": 7,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Fromage frais": "60 g",
+      "Compote de pommes": "40 g",
+      "Poudre d'amande": "15 g",
+      "Blanc d'œuf": "1"
     }
   }
 },
@@ -4849,6 +4847,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 10,
   "proteines": 10,
+  "calories": 135,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -4859,31 +4858,30 @@
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": false,
-  "batchCookingDetail": "La polenta peut être préparée à l'avance, mais l'omelette doit être cuite minute.",
-  "conservation": "Non recommandé.",
+  "conservation": "À consommer immédiatement",
   "congelation": "Non",
   "envies": ["salé", "rapide", "digeste"],
-  "texture": "Fondante",
+  "texture": "fondante",
   "ingredients": [
-    "1 œuf entier battu",
+    "1 œuf entier",
     "40 g de courgette cuite sans peau ni pépins",
     "20 g de polenta cuite souple",
-    "1 cuillère à café de carré frais 0%"
+    "1 cuillère à café de fromage frais léger"
   ],
   "preparation": [
-    "Mixer la courgette cuite à la vapeur avec le carré frais 0% pour obtenir une purée fine.",
-    "Préparer la polenta à l'eau pour qu'elle reste très crémeuse et fluide.",
-    "Réaliser une omelette très fine dans une poêle antiadhésive sans coloration.",
-    "Hacher menu l'omelette fine.",
-    "Mélanger délicatement l'omelette hachée, la polenta souple et la purée de courgettes avant de servir tiède."
+    "Mixer la courgette cuite avec le fromage frais.",
+    "Préparer la polenta à l'eau pour qu'elle reste crémeuse.",
+    "Réaliser une omelette très fine sans coloration.",
+    "Hacher finement l'omelette.",
+    "Mélanger délicatement l'omelette, la polenta et la purée de courgettes.",
+    "Servir tiède."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 135,
-      "proteines": 10,
-      "glucides": 10,
-      "lipides": 7,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Courgette": "40 g",
+      "Polenta cuite": "20 g",
+      "Fromage frais": "1 cuillère à café"
     }
   }
 },
@@ -4896,21 +4894,22 @@
   "tempsPreparation": 5,
   "tempsCuisson": 10,
   "proteines": 14,
+  "calories": 165,
   "portions": 1,
   "portion": "1 petit bol",
   "petitAppetit": true,
   "preOperatoire": true,
-  "postOperatoire": true,
+  "postOperatoire": false,
   "vegetarien": true,
   "vegetalien": false,
   "sansGluten": false,
-  "sansLactose": true,
+  "sansLactose": false,
   "batchCooking": true,
   "batchCookingDetail": "Peut être préparé en double portion et réchauffé avec un filet de lait.",
-  "conservation": "24 heures au réfrigérateur.",
+  "conservation": "24 heures au réfrigérateur",
   "congelation": "Non",
   "envies": ["sucre", "complet", "energetique"],
-  "texture": "Mixée",
+  "texture": "mixée",
   "ingredients": [
     "15 g de poudre de protéine neutre ou vanille",
     "30 g de banane bien mûre",
@@ -4920,16 +4919,16 @@
   "preparation": [
     "Mélanger le son d'avoine et le lait.",
     "Cuire 5 minutes à feu doux.",
-    "Incorporer la poudre de protéine.",
-    "Ajouter la banane écrasée."
+    "Incorporer la poudre de protéine hors du feu.",
+    "Ajouter la banane écrasée.",
+    "Mixer si nécessaire pour obtenir une texture parfaitement lisse."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 165,
-      "proteines": 14,
-      "glucides": 22,
-      "lipides": 3,
-      "fibres": 4
+  "quantites": {
+    "petite": {
+      "Protéine en poudre": "15 g",
+      "Banane": "30 g",
+      "Son d'avoine": "20 g",
+      "Lait": "60 ml"
     }
   }
 },
@@ -4942,6 +4941,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 5,
   "proteines": 7,
+  "calories": 150,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -4952,31 +4952,33 @@
   "sansGluten": false,
   "sansLactose": false,
   "batchCooking": true,
-  "batchCookingDetail": "La mousse de brocoli se conserve bien séparément.",
-  "conservation": "24 heures au réfrigérateur.",
+  "batchCookingDetail": "La mousse de brocoli peut être préparée à l'avance.",
+  "conservation": "24 heures au réfrigérateur",
   "congelation": "Non",
   "envies": ["salé", "leger", "frais"],
-  "texture": "Fondante",
+  "texture": "fondante",
   "ingredients": [
     "60 g de ricotta",
-    "40 g de fleurettes de brocoli cuites",
+    "40 g de brocoli cuit",
     "1 mini-biscotte",
     "1/2 cuillère à café d'huile d'olive",
     "1 cuillère à soupe d'eau chaude"
   ],
   "preparation": [
-    "Mixer le brocoli avec l'huile.",
+    "Cuire le brocoli jusqu'à ce qu'il soit très tendre.",
+    "Mixer le brocoli avec l'huile et l'eau chaude.",
     "Fouetter la ricotta.",
-    "Humidifier la biscotte et l'écraser.",
-    "Mélanger ricotta + biscotte + mousse de brocoli."
+    "Humidifier la biscotte et l'écraser très finement.",
+    "Mélanger la ricotta, la biscotte et la mousse de brocoli.",
+    "Mixer si nécessaire pour obtenir une texture parfaitement lisse."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 150,
-      "proteines": 7,
-      "glucides": 10,
-      "lipides": 9,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Ricotta": "60 g",
+      "Brocoli": "40 g",
+      "Mini-biscotte": "1",
+      "Huile d'olive": "1/2 cuillère à café",
+      "Eau chaude": "1 cuillère à soupe"
     }
   }
 },
@@ -4989,43 +4991,43 @@
   "tempsPreparation": 10,
   "tempsCuisson": 0,
   "proteines": 13,
+  "calories": 110,
   "portions": 1,
   "portion": "1 petit verre",
   "petitAppetit": true,
   "preOperatoire": true,
-  "postOperatoire": true,
+  "postOperatoire": false,
   "vegetarien": true,
-  "vegetalien": true,
+  "vegetalien": false,
   "sansGluten": true,
   "sansLactose": true,
   "batchCooking": false,
-  "batchCookingDetail": "À mixer minute pour conserver toutes les qualités du plat.",
-  "conservation": "Non recommandé.",
+  "conservation": "À consommer immédiatement",
   "congelation": "Non",
   "envies": ["frais", "vegetal", "rapide"],
-  "texture": "Mixée",
+  "texture": "mixée",
   "ingredients": [
-    "15 g de protéine de lactosérum ou végétale",
+    "15 g de protéine végétale",
     "30 g de jeunes pousses d'épinards",
     "60 g de yaourt de soja",
     "2 cuillères à soupe d'eau"
   ],
   "preparation": [
-    "Mixer tous les ingrédients.",
-    "Passer au chinois si nécessaire."
+    "Mixer tous les ingrédients jusqu'à obtenir une texture parfaitement lisse.",
+    "Ajouter un peu d'eau si nécessaire.",
+    "Passer au chinois si des fibres subsistent.",
+    "Consommer immédiatement."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 110,
-      "proteines": 13,
-      "glucides": 6,
-      "lipides": 4,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Protéine végétale": "15 g",
+      "Épinards": "30 g",
+      "Yaourt de soja": "60 g",
+      "Eau": "2 cuillères à soupe"
     }
   }
 },
-
-  {
+{
   "id": "REC107",
   "nom": "Écrasé d'œuf poché au millet et à l'avocat",
   "categorie": "Petit-déjeuner",
@@ -5034,6 +5036,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 10,
   "proteines": 10,
+  "calories": 165,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -5044,31 +5047,31 @@
   "sansGluten": true,
   "sansLactose": true,
   "batchCooking": false,
-  "batchCookingDetail": "L'avocat noircit vite, assembler juste avant dégustation.",
-  "conservation": "Non recommandé.",
+  "conservation": "À consommer immédiatement",
   "congelation": "Non",
   "envies": ["salé", "complet", "reconfortant"],
-  "texture": "Tendre",
+  "texture": "tendre",
   "ingredients": [
     "1 œuf entier",
-    "25 g d'avocat",
+    "25 g d'avocat mûr",
     "15 g de millet cru",
     "3 gouttes de jus de citron",
     "2 cuillères à soupe de bouillon"
   ],
   "preparation": [
-    "Cuire le millet.",
+    "Cuire le millet jusqu'à ce qu'il soit très tendre.",
     "Pocher l'œuf.",
-    "Écraser l'avocat.",
-    "Assembler."
+    "Écraser l'avocat avec le citron.",
+    "Écraser l'œuf et le millet ensemble.",
+    "Mélanger avec l'avocat jusqu'à obtenir une texture souple."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 165,
-      "proteines": 10,
-      "glucides": 12,
-      "lipides": 9,
-      "fibres": 3
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Avocat": "25 g",
+      "Millet cru": "15 g",
+      "Jus de citron": "Quelques gouttes",
+      "Bouillon": "2 cuillères à soupe"
     }
   }
 },
@@ -5081,6 +5084,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 20,
   "proteines": 10,
+  "calories": 120,
   "portions": 1,
   "portion": "1 ramequin",
   "petitAppetit": true,
@@ -5092,10 +5096,10 @@
   "sansLactose": true,
   "batchCooking": true,
   "batchCookingDetail": "Se prépare d'avance au bain-marie.",
-  "conservation": "2 jours au réfrigérateur.",
+  "conservation": "2 jours au réfrigérateur",
   "congelation": "Non",
   "envies": ["sucre", "douceur", "leger"],
-  "texture": "Fondante",
+  "texture": "fondante",
   "ingredients": [
     "2 blancs d'œufs",
     "40 g de compote de poire",
@@ -5104,16 +5108,18 @@
     "1 pincée de vanille"
   ],
   "preparation": [
-    "Mélanger tous les ingrédients.",
-    "Cuire 20 minutes au bain-marie."
+    "Mélanger tous les ingrédients sans incorporer trop d'air.",
+    "Verser dans un petit ramequin.",
+    "Cuire 20 minutes au bain-marie à 160 °C.",
+    "Laisser refroidir avant de servir."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 120,
-      "proteines": 10,
-      "glucides": 10,
-      "lipides": 4,
-      "fibres": 1
+  "quantites": {
+    "petite": {
+      "Blancs d'œufs": "2",
+      "Compote de poire": "40 g",
+      "Farine de patate douce": "10 g",
+      "Lait de coco": "2 cuillères à soupe",
+      "Vanille": "1 pincée"
     }
   }
 },
@@ -5126,41 +5132,39 @@
   "tempsPreparation": 10,
   "tempsCuisson": 0,
   "proteines": 9,
+  "calories": 115,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": true,
-  "postOperatoire": true,
+  "postOperatoire": false,
   "vegetarien": true,
   "vegetalien": false,
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": false,
-  "batchCookingDetail": "Ajouter le quinoa soufflé au dernier moment.",
-  "conservation": "Consommer rapidement.",
-  "congelation": "Non",
   "envies": ["frais", "sucre", "rapide"],
-  "texture": "Tendre",
+  "texture": "tendre",
   "ingredients": [
     "75 g de cottage cheese",
     "30 g de fraises",
     "10 g de quinoa soufflé",
     "1 cuillère à soupe d'eau tiède",
-    "1 micro-pincée de miel"
+    "1 petite pointe de miel"
   ],
   "preparation": [
-    "Réhydrater le quinoa.",
+    "Humidifier légèrement le quinoa soufflé si nécessaire.",
     "Mixer les fraises.",
-    "Mélanger cottage + miel.",
-    "Assembler."
+    "Mélanger le cottage cheese avec le miel.",
+    "Assembler et consommer rapidement."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 115,
-      "proteines": 9,
-      "glucides": 10,
-      "lipides": 4,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Cottage cheese": "75 g",
+      "Fraises": "30 g",
+      "Quinoa soufflé": "10 g",
+      "Eau": "1 cuillère à soupe",
+      "Miel": "1 petite pointe"
     }
   }
 },
@@ -5173,40 +5177,41 @@
   "tempsPreparation": 5,
   "tempsCuisson": 10,
   "proteines": 10,
+  "calories": 140,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": false,
-  "postOperatoire": true,
+  "postOperatoire": false,
   "vegetarien": true,
   "vegetalien": false,
   "sansGluten": false,
-  "sansLactose": true,
+  "sansLactose": false,
   "batchCooking": false,
-  "batchCookingDetail": "L'œuf à la coque doit être consommé immédiatement.",
-  "conservation": "Non recommandé.",
+  "conservation": "À consommer immédiatement",
   "congelation": "Non",
   "envies": ["salé", "reconfortant", "traditionnel"],
-  "texture": "Tendre",
+  "texture": "tendre",
   "ingredients": [
     "1 œuf entier",
-    "40 g de haricots verts cuits",
-    "1 mouillette de pain de mie",
+    "40 g de haricots verts très cuits",
+    "1 petite mouillette de pain de mie",
     "1/2 cuillère à café de beurre allégé"
   ],
   "preparation": [
-    "Cuire l'œuf 3 minutes.",
+    "Cuire l'œuf à la coque.",
+    "Cuire les haricots verts jusqu'à ce qu'ils soient très tendres.",
     "Mixer les haricots verts avec le beurre.",
-    "Émietter le pain.",
-    "Assembler."
+    "Émietter très finement le pain.",
+    "Écraser l'œuf et l'incorporer à la préparation.",
+    "Servir immédiatement."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 140,
-      "proteines": 10,
-      "glucides": 10,
-      "lipides": 7,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Haricots verts": "40 g",
+      "Pain de mie": "1 petite mouillette",
+      "Beurre allégé": "1/2 cuillère à café"
     }
   }
 },
@@ -5219,6 +5224,7 @@
   "tempsPreparation": 10,
   "tempsCuisson": 15,
   "proteines": 11,
+  "calories": 155,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
@@ -5229,11 +5235,11 @@
   "sansGluten": false,
   "sansLactose": true,
   "batchCooking": true,
-  "batchCookingDetail": "Se répartit idéalement dans des petits pots.",
-  "conservation": "24 heures au réfrigérateur.",
+  "batchCookingDetail": "Se répartit idéalement dans de petits pots.",
+  "conservation": "24 heures au réfrigérateur",
   "congelation": "Oui",
   "envies": ["salé", "digeste", "rapide"],
-  "texture": "Mixée",
+  "texture": "mixée",
   "ingredients": [
     "60 g de jambon blanc dégraissé",
     "40 g de blanc de poireau",
@@ -5241,17 +5247,18 @@
     "1 cuillère à café de crème de soja"
   ],
   "preparation": [
-    "Cuire la semoule.",
-    "Cuire le poireau.",
-    "Mixer tous les ingrédients."
+    "Cuire la semoule jusqu'à ce qu'elle soit très tendre.",
+    "Cuire le poireau jusqu'à ce qu'il soit fondant.",
+    "Mixer le jambon, le poireau, la semoule et la crème de soja.",
+    "Ajouter un peu de bouillon si nécessaire.",
+    "Vérifier que la texture est parfaitement lisse."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 155,
-      "proteines": 11,
-      "glucides": 12,
-      "lipides": 6,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Jambon": "60 g",
+      "Poireau": "40 g",
+      "Semoule fine": "15 g",
+      "Crème de soja": "1 cuillère à café"
     }
   }
 },
@@ -5264,8 +5271,9 @@
   "tempsPreparation": 10,
   "tempsCuisson": 0,
   "proteines": 13,
+  "calories": 125,
   "portions": 1,
-  "portion": "1 verrine",
+  "portion": "1 petite verrine",
   "petitAppetit": true,
   "preOperatoire": true,
   "postOperatoire": true,
@@ -5274,31 +5282,80 @@
   "sansGluten": true,
   "sansLactose": false,
   "batchCooking": true,
-  "batchCookingDetail": "La compotée de myrtilles peut être préparée en grande quantité.",
-  "conservation": "2 jours au réfrigérateur.",
+  "batchCookingDetail": "La compotée de myrtilles peut être préparée à l'avance.",
+  "conservation": "2 jours au réfrigérateur",
   "congelation": "Non",
   "envies": ["frais", "sucre", "leger"],
-  "texture": "Mixée",
+  "texture": "mixée",
   "ingredients": [
     "80 g de Skyr nature",
-    "30 g de myrtilles fraîches ou surgelées",
-    "10 g d'avoine instantanée (poudre fine)",
+    "30 g de myrtilles",
+    "10 g d'avoine instantanée très fine",
     "3 gouttes d'eau de fleur d'oranger"
   ],
   "preparation": [
-    "Faire chauffer brièvement les myrtilles dans une casserole avec un fond d'eau, puis les mixer longuement.",
-    "Passer la purée de myrtilles au tamis pour éliminer toutes les petites peaux résiduelles.",
-    "Dans un bol, mélanger vigoureusement le Skyr, la poudre d'avoine instantanée et l'eau de fleur d'oranger.",
-    "Fouetter jusqu'à l'obtention d'une consistance de crème lisse.",
-    "Disposer la crème de Skyr au fond d'un verre et ajouter la mousse de myrtilles sur le dessus."
+    "Faire chauffer brièvement les myrtilles avec un fond d'eau.",
+    "Mixer puis passer au tamis pour retirer les peaux.",
+    "Mélanger le Skyr avec l'avoine très fine et la fleur d'oranger.",
+    "Fouetter jusqu'à obtenir une crème lisse.",
+    "Assembler dans une petite verrine."
   ],
-  "valeursNutritionnelles": {
-    "parPortion": {
-      "calories": 125,
-      "proteines": 13,
-      "glucides": 12,
-      "lipides": 1,
-      "fibres": 2
+  "quantites": {
+    "petite": {
+      "Skyr": "80 g",
+      "Myrtilles": "30 g",
+      "Avoine instantanée": "10 g",
+      "Fleur d'oranger": "3 gouttes"
+    }
+  }
+},
+{
+  "id": "REC113",
+  "nom": "Mini pancake fin à la rhubarbe douce",
+  "categorie": "Petit-déjeuner",
+  "type": "sucre",
+  "temps": 25,
+  "tempsPreparation": 15,
+  "tempsCuisson": 10,
+  "proteines": 12,
+  "calories": 145,
+  "portions": 1,
+  "portion": "1 mini pancake",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Les pancakes peuvent être cuits puis congelés à plat.",
+  "conservation": "24 heures au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "gourmand", "nomade"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "1/2 œuf",
+    "1 blanc d'œuf",
+    "30 g de compote de rhubarbe lisse",
+    "15 g de farine de pois chiche",
+    "1 cuillère à soupe d'eau"
+  ],
+  "preparation": [
+    "Mélanger la farine de pois chiche avec le demi-œuf et l'eau.",
+    "Monter le blanc d'œuf en neige.",
+    "Incorporer délicatement le blanc à la pâte.",
+    "Faire cuire un petit pancake dans une poêle antiadhésive à feu doux.",
+    "Cuire environ 2 minutes de chaque côté sans le rendre croustillant.",
+    "Napper avec la compote de rhubarbe lisse."
+  ],
+  "quantites": {
+    "petite": {
+      "Œuf": "1/2",
+      "Blanc d'œuf": "1",
+      "Compote de rhubarbe": "30 g",
+      "Farine de pois chiche": "15 g",
+      "Eau": "1 cuillère à soupe"
     }
   }
 },
