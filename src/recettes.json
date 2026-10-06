@@ -7978,5 +7978,67 @@
       "8 cuillères à soupe de bouillon de poisson sans gluten"
     ]
   }
+},
+ ,
+{
+  "id": "REC160",
+  "nom": "Poulet tendre au riz fondant et haricots verts mixés",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 16,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Le poulet est finement effiloché puis mélangé au riz très cuit et aux légumes pour rester humide et facile à manger.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "tendre", "proteine"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de blanc de poulet cuit très tendre",
+    "40 g de purée fine de haricots verts",
+    "15 g de riz basmati très cuit",
+    "2 cuillères à soupe de bouillon de volaille"
+  ],
+  "preparation": [
+    "Cuire le poulet jusqu'à ce qu'il soit très tendre.",
+    "L'effilocher puis le hacher très finement.",
+    "Écraser le riz basmati très cuit.",
+    "Mélanger le poulet, le riz et la purée de haricots verts.",
+    "Ajouter le bouillon de volaille pour obtenir une préparation humide et fondante.",
+    "Chauffer doucement quelques minutes puis servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de poulet cuit très tendre",
+      "40 g de purée fine de haricots verts",
+      "15 g de riz basmati très cuit",
+      "2 cuillères à soupe de bouillon de volaille"
+    ],
+    "famille2": [
+      "120 g de blanc de poulet cuit très tendre",
+      "80 g de purée fine de haricots verts",
+      "30 g de riz basmati très cuit",
+      "4 cuillères à soupe de bouillon de volaille"
+    ],
+    "famille4": [
+      "240 g de blanc de poulet cuit très tendre",
+      "160 g de purée fine de haricots verts",
+      "60 g de riz basmati très cuit",
+      "8 cuillères à soupe de bouillon de volaille"
+    ]
+  }
 }
 ]
