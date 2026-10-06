@@ -4689,5 +4689,826 @@
       "Citron": "Quelques zestes"
     }
   }
+},
+ {
+  "id": "REC091",
+  "nom": "Petite crème chocolatée au fromage blanc",
+  "categorie": "Collation",
+  "type": "sucre",
+  "temps": 5,
+  "tempsPreparation": 5,
+  "tempsCuisson": 0,
+  "proteines": 6,
+  "calories": 140,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["sucre", "reconfort", "rapide"],
+  "texture": "mou",
+  "ingredients": [
+    "200 g de fromage blanc",
+    "1 cuillère à soupe de cacao non sucré",
+    "1 cuillère à café de miel",
+    "1/2 banane mûre"
+  ],
+  "preparation": [
+    "Écraser la banane.",
+    "Mélanger le fromage blanc avec le cacao.",
+    "Ajouter la banane écrasée.",
+    "Ajouter le miel.",
+    "Mélanger jusqu'à obtenir une crème homogène.",
+    "Répartir dans deux petites portions."
+  ],
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "100 g",
+      "Cacao non sucré": "1/2 cuillère à soupe",
+      "Miel": "1/2 cuillère à café",
+      "Banane": "1/4"
+    }
+  }
+},
+{
+  "id": "REC092",
+  "nom": "Velouté de cabillaud aux poireaux et riz",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 18,
+  "calories": 150,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Se mixe très bien et se conserve en petits contenants.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui, après mixage complet",
+  "envies": ["leger", "reconfortant", "digeste"],
+  "texture": "mixée",
+  "ingredients": [
+    "70 g de cabillaud sans arêtes",
+    "50 g de blanc de poireau",
+    "20 g de riz très cuit",
+    "1 cuillère à soupe de fromage blanc 0%",
+    "Bouillon de légumes léger"
+  ],
+  "preparation": [
+    "Laver et émincer finement le blanc de poireau.",
+    "Faire cuire le poireau et le riz dans le bouillon de légumes.",
+    "Ajouter le cabillaud 5 minutes avant la fin de la cuisson.",
+    "Ajouter le fromage blanc hors du feu.",
+    "Mixer le tout jusqu'à obtenir une texture parfaitement lisse.",
+    "Passer au tamis si nécessaire et servir tiède."
+  ],
+  "quantites": {
+    "petite": {
+      "Cabillaud": "70 g",
+      "Poireau": "50 g",
+      "Riz cuit": "20 g",
+      "Fromage blanc": "1 cuillère à soupe",
+      "Bouillon": "Selon besoin"
+    }
+  }
+},
+{
+  "id": "REC093",
+  "nom": "Duo d'œufs brouillés souples aux épinards",
+  "categorie": "Petit-déjeuner",
+  "type": "oeuf",
+  "temps": 10,
+  "tempsPreparation": 5,
+  "tempsCuisson": 5,
+  "proteines": 11,
+  "calories": 130,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "conservation": "À consommer immédiatement",
+  "congelation": "Non",
+  "envies": ["rapide", "proteine", "salé"],
+  "texture": "tendre",
+  "ingredients": [
+    "1 œuf entier",
+    "1 blanc d'œuf",
+    "40 g d'épinards cuits et finement hachés",
+    "1 cuillère à café de crème de soja légère",
+    "1 pincée de sel"
+  ],
+  "preparation": [
+    "Battre l'œuf et le blanc avec la crème de soja.",
+    "Faire chauffer une poêle antiadhésive à feu très doux.",
+    "Verser les œufs et remuer constamment.",
+    "Ajouter les épinards très finement hachés en fin de cuisson.",
+    "Cuire jusqu'à obtenir une texture très souple et humide.",
+    "Servir immédiatement."
+  ],
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Blanc d'œuf": "1",
+      "Épinards": "40 g",
+      "Crème de soja": "1 cuillère à café"
+    }
+  }
+},
+{
+  "id": "REC094",
+  "nom": "Dhal de lentilles corail au tofu soyeux",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 35,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 9,
+  "calories": 170,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": true,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Idéal à préparer en grande quantité, la texture s'adoucit le lendemain.",
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": "Oui, dans des contenants hermétiques",
+  "envies": ["complet", "epice", "vegetal"],
+  "texture": "fondante",
+  "ingredients": [
+    "30 g de lentilles corail crues",
+    "50 g de purée de carotte",
+    "40 g de tofu soyeux",
+    "1 cuillère à café de lait de coco léger",
+    "1 pincée de curcuma"
+  ],
+  "preparation": [
+    "Rincer les lentilles corail.",
+    "Les cuire avec le curcuma dans de l'eau jusqu'à ce qu'elles soient très tendres.",
+    "Incorporer la purée de carotte et le tofu soyeux écrasé.",
+    "Ajouter le lait de coco.",
+    "Laisser mijoter 2 minutes à feu doux.",
+    "Mixer si une texture parfaitement lisse est souhaitée."
+  ],
+  "quantites": {
+    "petite": {
+      "Lentilles corail crues": "30 g",
+      "Purée de carotte": "50 g",
+      "Tofu soyeux": "40 g",
+      "Lait de coco léger": "1 cuillère à café",
+      "Curcuma": "1 pincée"
+    }
+  }
+},
+{
+  "id": "REC095",
+  "nom": "Muffin moelleux aux amandes et fromage frais",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 5,
+  "calories": 120,
+  "portions": 4,
+  "portion": "1 mini muffin",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Cuire une plaque de mini-muffins pour les collations de la semaine.",
+  "conservation": "3 jours dans une boîte hermétique",
+  "congelation": "Oui, emballés individuellement",
+  "envies": ["sucre", "douceur", "nomade"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "2 œufs",
+    "60 g de poudre d'amande fine",
+    "100 g de fromage frais léger",
+    "1 cuillère à soupe d'édulcorant de cuisson facultatif",
+    "Quelques gouttes d'extrait de vanille"
+  ],
+  "preparation": [
+    "Préchauffer le four à 170 °C.",
+    "Mélanger les jaunes d'œufs, le fromage frais, la poudre d'amande et la vanille.",
+    "Monter les blancs d'œufs en neige.",
+    "Incorporer délicatement les blancs.",
+    "Répartir dans de petits moules.",
+    "Enfourner 15 minutes.",
+    "Laisser refroidir complètement."
+  ],
+  "quantites": {
+    "petite": {
+      "Œuf": "1/2",
+      "Poudre d'amande": "15 g",
+      "Fromage frais": "25 g",
+      "Édulcorant": "Selon goût",
+      "Vanille": "Quelques gouttes"
+    }
+  }
+},
+{
+  "id": "REC096",
+  "nom": "Mousse de saumon frais au brocoli",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 16,
+  "calories": 155,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Se consomme de préférence fraîchement préparée.",
+  "conservation": "24 heures au réfrigérateur",
+  "congelation": "Non",
+  "envies": ["leger", "frais", "omega3"],
+  "texture": "mixée",
+  "ingredients": [
+    "70 g de saumon sans peau ni arêtes",
+    "50 g de brocoli",
+    "1 cuillère à soupe de fromage frais léger",
+    "1 filet de jus de citron"
+  ],
+  "preparation": [
+    "Cuire le saumon et le brocoli à la vapeur jusqu'à ce qu'ils soient très tendres.",
+    "Vérifier soigneusement l'absence d'arêtes.",
+    "Mixer le saumon, le brocoli, le fromage frais et le citron.",
+    "Mixer longuement jusqu'à obtenir une texture parfaitement lisse.",
+    "Passer au tamis si nécessaire.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": {
+      "Saumon": "70 g",
+      "Brocoli": "50 g",
+      "Fromage frais": "1 cuillère à soupe",
+      "Jus de citron": "Quelques gouttes"
+    }
+  }
+},
+{
+  "id": "REC097",
+  "nom": "Crème de Skyr vanillée aux pommes fondantes",
+  "categorie": "Petit-déjeuner",
+  "type": "laitier",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 14,
+  "calories": 125,
+  "portions": 1,
+  "portion": "1 petite verrine",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer la compotée à l'avance et assembler au moment du repas.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Non",
+  "envies": ["frais", "sucre", "onctueux"],
+  "texture": "tendre",
+  "ingredients": [
+    "140 g de Skyr nature",
+    "40 g de pomme épluchée",
+    "1 pincée de cannelle",
+    "1 pointe de vanille en poudre"
+  ],
+  "preparation": [
+    "Couper la pomme en petits morceaux.",
+    "La faire compoter avec un fond d'eau et la cannelle jusqu'à ce qu'elle soit très tendre.",
+    "Lisser le Skyr avec la vanille.",
+    "Mixer la pomme si nécessaire pour obtenir une texture parfaitement lisse.",
+    "Déposer la pomme puis le Skyr dans une verrine.",
+    "Manger lentement à la petite cuillère."
+  ],
+  "quantites": {
+    "petite": {
+      "Skyr": "140 g",
+      "Pomme": "40 g",
+      "Cannelle": "1 pincée",
+      "Vanille": "1 pointe"
+    }
+  }
+},
+{
+  "id": "REC098",
+  "nom": "Émincé de veau ultra-tendre aux courgettes",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 20,
+  "calories": 210,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "La cuisson douce préserve l'humidité et la tendreté de la viande.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["complet", "tendre", "proteine"],
+  "texture": "fondante",
+  "ingredients": [
+    "75 g de veau haché très fin",
+    "50 g de chair de courgette sans peau ni pépins",
+    "20 g de semoule fine de blé",
+    "1 cuillère à café d'huile de colza",
+    "Bouillon de légumes"
+  ],
+  "preparation": [
+    "Cuire la semoule fine et réserver.",
+    "Couper la chair de courgette très finement.",
+    "Faire revenir doucement la courgette dans l'huile.",
+    "Ajouter le veau haché et cuire doucement.",
+    "Ajouter le bouillon, couvrir et laisser mijoter 15 minutes.",
+    "Ajouter la semoule cuite.",
+    "Mixer ou hacher très finement si nécessaire pour obtenir une texture adaptée."
+  ],
+  "quantites": {
+    "petite": {
+      "Veau": "75 g",
+      "Courgette": "50 g",
+      "Semoule fine": "20 g",
+      "Huile de colza": "1 cuillère à café",
+      "Bouillon": "Selon besoin"
+    }
+  }
+},
+{
+  "id": "REC099",
+  "nom": "Flan léger au fromage blanc et zestes de citron",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 35,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 10,
+  "calories": 140,
+  "portions": 2,
+  "portion": "1 petit ramequin",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Idéal pour préparer plusieurs petites portions à l'avance.",
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": "Non",
+  "envies": ["frais", "leger", "acidule"],
+  "texture": "fondante",
+  "ingredients": [
+    "200 g de fromage blanc 20%",
+    "1 œuf",
+    "15 g de maïzena",
+    "Zestes fins de citron",
+    "1 cuillère à café de miel ou édulcorant"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Fouetter l'œuf avec le miel et les zestes.",
+    "Ajouter la maïzena puis le fromage blanc.",
+    "Verser dans deux ramequins.",
+    "Cuire au bain-marie pendant 25 minutes.",
+    "Laisser refroidir avant de servir."
+  ],
+  "quantites": {
+    "petite": {
+      "Fromage blanc": "100 g",
+      "Œuf": "1/2",
+      "Maïzena": "7 g",
+      "Miel": "1/2 cuillère à café",
+      "Citron": "Quelques zestes"
+    }
+  }
+},
+{
+  "id": "REC100",
+  "nom": "Duo d'œufs brouillés souples à la mousse d'épinards",
+  "categorie": "Petit-déjeuner",
+  "type": "oeuf",
+  "temps": 12,
+  "tempsPreparation": 5,
+  "tempsCuisson": 7,
+  "proteines": 11,
+  "calories": 155,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "conservation": "À consommer immédiatement",
+  "congelation": "Non",
+  "envies": ["complet", "salé", "proteine"],
+  "texture": "tendre",
+  "ingredients": [
+    "1 œuf entier",
+    "1/2 blanc d'œuf",
+    "30 g d'épinards cuits et mixés",
+    "1 tranche de pain de mie protéiné",
+    "1 cuillère à soupe de fromage blanc 0%"
+  ],
+  "preparation": [
+    "Battre l'œuf et le blanc avec le fromage blanc.",
+    "Cuire à feu très doux en remuant constamment.",
+    "Mixer les épinards pour obtenir une mousse fine.",
+    "Retirer les parties trop sèches du pain et l'émietter très finement.",
+    "Assembler les éléments en conservant une texture souple."
+  ],
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Blanc d'œuf": "1/2",
+      "Épinards": "30 g",
+      "Pain de mie protéiné": "1 petite tranche",
+      "Fromage blanc": "1 cuillère à soupe"
+    }
+  }
+},
+{
+  "id": "REC101",
+  "nom": "Onctueux de yaourt grec aux framboises sans pépins",
+  "categorie": "Petit-déjeuner",
+  "type": "laitier",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 11,
+  "calories": 120,
+  "portions": 1,
+  "portion": "1 petite verrine",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Peut être assemblé la veille.",
+  "conservation": "24 heures au réfrigérateur",
+  "congelation": "Non",
+  "envies": ["frais", "sucre", "onctueux"],
+  "texture": "tendre",
+  "ingredients": [
+    "80 g de yaourt grec 0%",
+    "30 g de framboises",
+    "15 g de flocons d'avoine fins",
+    "2 cuillères à soupe de lait d'amande"
+  ],
+  "preparation": [
+    "Faire cuire doucement les flocons dans le lait d'amande.",
+    "Mixer les framboises puis les passer au tamis pour retirer les pépins.",
+    "Lisser le yaourt.",
+    "Assembler en verrine.",
+    "Laisser refroidir les flocons avant de servir."
+  ],
+  "quantites": {
+    "petite": {
+      "Yaourt grec": "80 g",
+      "Framboises": "30 g",
+      "Flocons d'avoine": "15 g",
+      "Lait d'amande": "2 cuillères à soupe"
+    }
+  }
+},
+{
+  "id": "REC102",
+  "nom": "Moelleux façon gâteau au fromage et pommes douces",
+  "categorie": "Petit-déjeuner",
+  "type": "sucre",
+  "temps": 35,
+  "tempsPreparation": 15,
+  "tempsCuisson": 20,
+  "proteines": 10,
+  "calories": 145,
+  "portions": 1,
+  "portion": "1 petite part",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Se découpe en petites portions.",
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": "Oui",
+  "envies": ["sucre", "reconfortant", "douceur"],
+  "texture": "moelleuse",
+  "ingredients": [
+    "60 g de fromage frais léger",
+    "40 g de compote de pommes",
+    "15 g de poudre d'amande",
+    "1 blanc d'œuf monté en neige"
+  ],
+  "preparation": [
+    "Préchauffer le four à 160 °C.",
+    "Mélanger le fromage frais, la compote et la poudre d'amande.",
+    "Incorporer délicatement le blanc en neige.",
+    "Verser dans un petit moule.",
+    "Cuire 20 minutes.",
+    "Laisser refroidir avant de couper."
+  ],
+  "quantites": {
+    "petite": {
+      "Fromage frais": "60 g",
+      "Compote de pommes": "40 g",
+      "Poudre d'amande": "15 g",
+      "Blanc d'œuf": "1"
+    }
+  }
+},
+{
+  "id": "REC103",
+  "nom": "Omelette fine à la polenta et purée de courgettes",
+  "categorie": "Petit-déjeuner",
+  "type": "oeuf",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 10,
+  "calories": 135,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "conservation": "À consommer immédiatement",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "digeste"],
+  "texture": "fondante",
+  "ingredients": [
+    "1 œuf entier",
+    "40 g de courgette cuite sans peau ni pépins",
+    "20 g de polenta cuite souple",
+    "1 cuillère à café de fromage frais léger"
+  ],
+  "preparation": [
+    "Mixer la courgette cuite avec le fromage frais.",
+    "Préparer la polenta à l'eau pour qu'elle reste crémeuse.",
+    "Réaliser une omelette très fine sans coloration.",
+    "Hacher finement l'omelette.",
+    "Mélanger délicatement l'omelette, la polenta et la purée de courgettes.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Courgette": "40 g",
+      "Polenta cuite": "20 g",
+      "Fromage frais": "1 cuillère à café"
+    }
+  }
+},
+{
+  "id": "REC104",
+  "nom": "Porridge protéiné à la banane écrasée",
+  "categorie": "Petit-déjeuner",
+  "type": "sucre",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 14,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petit bol",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Peut être préparé en double portion et réchauffé avec un filet de lait.",
+  "conservation": "24 heures au réfrigérateur",
+  "congelation": "Non",
+  "envies": ["sucre", "complet", "energetique"],
+  "texture": "mixée",
+  "ingredients": [
+    "15 g de poudre de protéine neutre ou vanille",
+    "30 g de banane bien mûre",
+    "20 g de son d'avoine",
+    "60 ml de lait écrémé ou sans lactose"
+  ],
+  "preparation": [
+    "Mélanger le son d'avoine et le lait.",
+    "Cuire 5 minutes à feu doux.",
+    "Incorporer la poudre de protéine hors du feu.",
+    "Ajouter la banane écrasée.",
+    "Mixer si nécessaire pour obtenir une texture parfaitement lisse."
+  ],
+  "quantites": {
+    "petite": {
+      "Protéine en poudre": "15 g",
+      "Banane": "30 g",
+      "Son d'avoine": "20 g",
+      "Lait": "60 ml"
+    }
+  }
+},
+{
+  "id": "REC105",
+  "nom": "Crème de ricotta fouettée à la douceur de brocoli",
+  "categorie": "Petit-déjeuner",
+  "type": "laitier",
+  "temps": 15,
+  "tempsPreparation": 10,
+  "tempsCuisson": 5,
+  "proteines": 7,
+  "calories": 150,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "La mousse de brocoli peut être préparée à l'avance.",
+  "conservation": "24 heures au réfrigérateur",
+  "congelation": "Non",
+  "envies": ["salé", "leger", "frais"],
+  "texture": "fondante",
+  "ingredients": [
+    "60 g de ricotta",
+    "40 g de brocoli cuit",
+    "1 mini-biscotte",
+    "1/2 cuillère à café d'huile d'olive",
+    "1 cuillère à soupe d'eau chaude"
+  ],
+  "preparation": [
+    "Cuire le brocoli jusqu'à ce qu'il soit très tendre.",
+    "Mixer le brocoli avec l'huile et l'eau chaude.",
+    "Fouetter la ricotta.",
+    "Humidifier la biscotte et l'écraser très finement.",
+    "Mélanger la ricotta, la biscotte et la mousse de brocoli.",
+    "Mixer si nécessaire pour obtenir une texture parfaitement lisse."
+  ],
+  "quantites": {
+    "petite": {
+      "Ricotta": "60 g",
+      "Brocoli": "40 g",
+      "Mini-biscotte": "1",
+      "Huile d'olive": "1/2 cuillère à café",
+      "Eau chaude": "1 cuillère à soupe"
+    }
+  }
+},
+{
+  "id": "REC106",
+  "nom": "Velouté épais de smoothie vert protéiné",
+  "categorie": "Petit-déjeuner",
+  "type": "vegetarien",
+  "temps": 10,
+  "tempsPreparation": 10,
+  "tempsCuisson": 0,
+  "proteines": 13,
+  "calories": 110,
+  "portions": 1,
+  "portion": "1 petit verre",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "conservation": "À consommer immédiatement",
+  "congelation": "Non",
+  "envies": ["frais", "vegetal", "rapide"],
+  "texture": "mixée",
+  "ingredients": [
+    "15 g de protéine végétale",
+    "30 g de jeunes pousses d'épinards",
+    "60 g de yaourt de soja",
+    "2 cuillères à soupe d'eau"
+  ],
+  "preparation": [
+    "Mixer tous les ingrédients jusqu'à obtenir une texture parfaitement lisse.",
+    "Ajouter un peu d'eau si nécessaire.",
+    "Passer au chinois si des fibres subsistent.",
+    "Consommer immédiatement."
+  ],
+  "quantites": {
+    "petite": {
+      "Protéine végétale": "15 g",
+      "Épinards": "30 g",
+      "Yaourt de soja": "60 g",
+      "Eau": "2 cuillères à soupe"
+    }
+  }
+},
+{
+  "id": "REC107",
+  "nom": "Écrasé d'œuf poché au millet et à l'avocat",
+  "categorie": "Petit-déjeuner",
+  "type": "oeuf",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 10,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "conservation": "À consommer immédiatement",
+  "congelation": "Non",
+  "envies": ["salé", "complet", "reconfortant"],
+  "texture": "tendre",
+  "ingredients": [
+    "1 œuf entier",
+    "25 g d'avocat mûr",
+    "15 g de millet cru",
+    "3 gouttes de jus de citron",
+    "2 cuillères à soupe de bouillon"
+  ],
+  "preparation": [
+    "Cuire le millet jusqu'à ce qu'il soit très tendre.",
+    "Pocher l'œuf.",
+    "Écraser l'avocat avec le citron.",
+    "Écraser l'œuf et le millet ensemble.",
+    "Mélanger avec l'avocat jusqu'à obtenir une texture souple."
+  ],
+  "quantites": {
+    "petite": {
+      "Œuf": "1",
+      "Avocat": "25 g",
+      "Millet cru": "15 g",
+      "Jus de citron": "Quelques gouttes",
+      "Bouillon": "2 cuillères à soupe"
+    }
+  }
 }
 ]
