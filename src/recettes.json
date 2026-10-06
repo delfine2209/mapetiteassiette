@@ -8100,8 +8100,7 @@
     ]
   }
 },
- {
-  "id": "REC162",
+ "id": "REC162",
   "nom": "Haché de veau souple à la polenta crémeuse",
   "categorie": "Déjeuner / dîner",
   "type": "viande",
@@ -8109,51 +8108,54 @@
   "tempsPreparation": 10,
   "tempsCuisson": 20,
   "proteines": 17,
-  "calories": 185,
+  "calories": 200,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": false,
   "postOperatoire": true,
-  "viande": true,
   "vegetarien": false,
   "vegetalien": false,
   "sansGluten": true,
   "sansLactose": true,
   "batchCooking": true,
-  "batchCookingDetail": "Le veau haché finement et la polenta crémeuse donnent une préparation tendre et facile à manger.",
+  "batchCookingDetail": "Le veau haché très finement, les épinards mixés et la polenta crémeuse donnent une préparation tendre et facile à manger.",
   "conservation": "2 jours au réfrigérateur.",
   "congelation": "Oui",
-  "envies": ["complet", "douceur", "reconfortant"],
+  "envies": [
+    "complet",
+    "douceur",
+    "reconfortant"
+  ],
   "texture": "Tendre",
   "ingredients": [
-    "60 g de steak de veau haché finement",
+    "60 g de veau haché très finement",
     "40 g de purée fine d'épinards",
     "15 g de polenta crémeuse cuite",
     "2 cuillères à soupe de jus de veau dégraissé"
   ],
   "preparation": [
-    "Cuire le veau haché à feu doux avec le jus de veau afin de conserver une texture moelleuse.",
-    "Ajouter la purée d'épinards.",
-    "Préparer la polenta jusqu'à obtenir une texture souple et crémeuse.",
-    "Mélanger délicatement le veau et les épinards.",
+    "Cuire le veau haché très finement à feu doux avec le jus de veau dégraissé.",
+    "Ajouter la purée d'épinards et mélanger jusqu'à obtenir une préparation homogène et bien moelleuse.",
+    "Préparer la polenta jusqu'à obtenir une texture très souple et crémeuse.",
+    "Si nécessaire, mixer brièvement le veau et les épinards pour obtenir une texture parfaitement tendre.",
     "Servir avec la polenta crémeuse et déguster tiède."
   ],
   "quantites": {
     "petite": [
-      "60 g de steak de veau haché finement",
+      "60 g de veau haché très finement",
       "40 g de purée fine d'épinards",
       "15 g de polenta crémeuse cuite",
       "2 cuillères à soupe de jus de veau dégraissé"
     ],
     "famille2": [
-      "120 g de steak de veau haché finement",
+      "120 g de veau haché très finement",
       "80 g de purée fine d'épinards",
       "30 g de polenta crémeuse cuite",
       "4 cuillères à soupe de jus de veau dégraissé"
     ],
     "famille4": [
-      "240 g de steak de veau haché finement",
+      "240 g de veau haché très finement",
       "160 g de purée fine d'épinards",
       "60 g de polenta crémeuse cuite",
       "8 cuillères à soupe de jus de veau dégraissé"
