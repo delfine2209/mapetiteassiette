@@ -8039,5 +8039,1375 @@
       "8 cuillères à soupe de bouillon de volaille"
     ]
   }
+},
+{
+  "id": "ADP001",
+  "nom": "Petite pizza poulet & courgette",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 20,
+  "calories": 330,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet", "leger"],
+  "texture": "Tendre",
+  "platAdapte": "Pizza",
+  "garniture": "Poulet & courgette",
+  "ingredients": [
+    "1 petite tortilla ou base à pizza individuelle",
+    "40 g de blanc de poulet",
+    "50 g de courgette",
+    "30 g de mozzarella",
+    "1 cuillère à soupe de sauce tomate",
+    "1 cuillère à café d'huile d'olive",
+    "Herbes de Provence"
+  ],
+  "preparation": [
+    "Couper la courgette en petits dés.",
+    "Faire cuire le poulet et la courgette avec l'huile d'olive.",
+    "Déposer la sauce tomate sur la base.",
+    "Ajouter le poulet et la courgette cuits.",
+    "Ajouter la mozzarella.",
+    "Cuire au four environ 10 à 15 minutes.",
+    "Laisser légèrement refroidir avant de servir."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petite tortilla ou base à pizza individuelle",
+      "40 g de blanc de poulet",
+      "50 g de courgette",
+      "30 g de mozzarella",
+      "1 cuillère à soupe de sauce tomate",
+      "1 cuillère à café d'huile d'olive",
+      "Herbes de Provence"
+    ],
+    "famille2": [
+      "2 petites tortillas ou bases à pizza individuelles",
+      "80 g de blanc de poulet",
+      "100 g de courgette",
+      "60 g de mozzarella",
+      "2 cuillères à soupe de sauce tomate",
+      "2 cuillères à café d'huile d'olive",
+      "Herbes de Provence"
+    ],
+    "famille4": [
+      "4 petites tortillas ou bases à pizza individuelles",
+      "160 g de blanc de poulet",
+      "200 g de courgette",
+      "120 g de mozzarella",
+      "4 cuillères à soupe de sauce tomate",
+      "4 cuillères à café d'huile d'olive",
+      "Herbes de Provence"
+    ]
+  }
+},
+{
+  "id": "ADP002",
+  "nom": "Petite pizza jambon & champignons",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 20,
+  "tempsPreparation": 8,
+  "tempsCuisson": 12,
+  "proteines": 17,
+  "calories": 300,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet", "rapide"],
+  "texture": "Tendre",
+  "platAdapte": "Pizza",
+  "garniture": "Jambon & champignons",
+  "ingredients": [
+    "1 petite tortilla ou base à pizza individuelle",
+    "40 g de jambon blanc",
+    "50 g de champignons",
+    "30 g de mozzarella",
+    "1 cuillère à soupe de sauce tomate",
+    "Herbes de Provence"
+  ],
+  "preparation": [
+    "Émincer finement les champignons.",
+    "Faire cuire les champignons quelques minutes pour les attendrir.",
+    "Déposer la sauce tomate sur la base.",
+    "Ajouter le jambon coupé en petits morceaux.",
+    "Ajouter les champignons cuits et la mozzarella.",
+    "Cuire au four environ 10 à 12 minutes.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petite tortilla ou base à pizza individuelle",
+      "40 g de jambon blanc",
+      "50 g de champignons",
+      "30 g de mozzarella",
+      "1 cuillère à soupe de sauce tomate",
+      "Herbes de Provence"
+    ],
+    "famille2": [
+      "2 petites tortillas ou bases à pizza individuelles",
+      "80 g de jambon blanc",
+      "100 g de champignons",
+      "60 g de mozzarella",
+      "2 cuillères à soupe de sauce tomate",
+      "Herbes de Provence"
+    ],
+    "famille4": [
+      "4 petites tortillas ou bases à pizza individuelles",
+      "160 g de jambon blanc",
+      "200 g de champignons",
+      "120 g de mozzarella",
+      "4 cuillères à soupe de sauce tomate",
+      "Herbes de Provence"
+    ]
+  }
+}
+},
+ {
+  "id": "ADP003",
+  "nom": "Petite pizza thon & tomate",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 20,
+  "tempsPreparation": 8,
+  "tempsCuisson": 12,
+  "proteines": 18,
+  "calories": 285,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "rapide"],
+  "texture": "Tendre",
+  "platAdapte": "Pizza",
+  "garniture": "Thon & tomate",
+  "ingredients": [
+    "1 petite tortilla ou base à pizza individuelle",
+    "50 g de thon au naturel égoutté",
+    "50 g de tomate",
+    "25 g de mozzarella",
+    "1 cuillère à soupe de sauce tomate",
+    "Herbes de Provence"
+  ],
+  "preparation": [
+    "Déposer la sauce tomate sur la base.",
+    "Ajouter le thon émietté.",
+    "Ajouter la tomate coupée en petits dés.",
+    "Parsemer de mozzarella.",
+    "Cuire au four environ 10 à 12 minutes.",
+    "Laisser légèrement tiédir avant de servir."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petite tortilla ou base à pizza individuelle",
+      "50 g de thon au naturel égoutté",
+      "50 g de tomate",
+      "25 g de mozzarella",
+      "1 cuillère à soupe de sauce tomate",
+      "Herbes de Provence"
+    ],
+    "famille2": [
+      "2 petites tortillas ou bases à pizza individuelles",
+      "100 g de thon au naturel égoutté",
+      "100 g de tomate",
+      "50 g de mozzarella",
+      "2 cuillères à soupe de sauce tomate",
+      "Herbes de Provence"
+    ],
+    "famille4": [
+      "4 petites tortillas ou bases à pizza individuelles",
+      "200 g de thon au naturel égoutté",
+      "200 g de tomate",
+      "100 g de mozzarella",
+      "4 cuillères à soupe de sauce tomate",
+      "Herbes de Provence"
+    ]
+  }
+},
+{
+  "id": "ADP004",
+  "nom": "Mini-burger poulet & fromage frais",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 20,
+  "calories": 320,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet", "rapide"],
+  "texture": "Tendre",
+  "platAdapte": "Burger",
+  "garniture": "Poulet & fromage frais",
+  "ingredients": [
+    "1 petit pain à burger",
+    "60 g de blanc de poulet",
+    "20 g de fromage frais",
+    "30 g de tomate",
+    "Quelques feuilles de salade",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Cuire le poulet dans une petite quantité d'huile jusqu'à ce qu'il soit bien cuit et tendre.",
+    "Couper le pain en deux et le réchauffer légèrement.",
+    "Tartiner le fromage frais.",
+    "Ajouter le poulet, la tomate et quelques feuilles de salade.",
+    "Refermer et servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petit pain à burger",
+      "60 g de blanc de poulet",
+      "20 g de fromage frais",
+      "30 g de tomate",
+      "Quelques feuilles de salade",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "2 petits pains à burger",
+      "120 g de blanc de poulet",
+      "40 g de fromage frais",
+      "60 g de tomate",
+      "Quelques feuilles de salade",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "4 petits pains à burger",
+      "240 g de blanc de poulet",
+      "80 g de fromage frais",
+      "120 g de tomate",
+      "Quelques feuilles de salade",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+{
+  "id": "ADP005",
+  "nom": "Mini-burger steak & fromage",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 20,
+  "tempsPreparation": 8,
+  "tempsCuisson": 12,
+  "proteines": 19,
+  "calories": 335,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet"],
+  "texture": "Tendre",
+  "platAdapte": "Burger",
+  "garniture": "Steak & fromage",
+  "ingredients": [
+    "1 petit pain à burger",
+    "60 g de steak haché",
+    "20 g de fromage",
+    "30 g de tomate",
+    "Quelques feuilles de salade"
+  ],
+  "preparation": [
+    "Former un petit steak avec la viande hachée.",
+    "Cuire le steak jusqu'à la cuisson souhaitée.",
+    "Ajouter le fromage en fin de cuisson pour le faire fondre.",
+    "Réchauffer légèrement le pain.",
+    "Ajouter la tomate et quelques feuilles de salade.",
+    "Déposer le steak et refermer."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petit pain à burger",
+      "60 g de steak haché",
+      "20 g de fromage",
+      "30 g de tomate",
+      "Quelques feuilles de salade"
+    ],
+    "famille2": [
+      "2 petits pains à burger",
+      "120 g de steak haché",
+      "40 g de fromage",
+      "60 g de tomate",
+      "Quelques feuilles de salade"
+    ],
+    "famille4": [
+      "4 petits pains à burger",
+      "240 g de steak haché",
+      "80 g de fromage",
+      "120 g de tomate",
+      "Quelques feuilles de salade"
+    ]
+  }
+},
+{
+  "id": "ADP006",
+  "nom": "Mini-burger végétarien aux légumes",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 10,
+  "calories": 275,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["vegetarien", "leger"],
+  "texture": "Tendre",
+  "platAdapte": "Burger",
+  "garniture": "Légumes & fromage frais",
+  "ingredients": [
+    "1 petit pain à burger",
+    "60 g de courgette",
+    "40 g de carotte",
+    "25 g de fromage frais",
+    "Quelques feuilles de salade",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Râper finement la carotte et couper la courgette en petits morceaux.",
+    "Faire cuire doucement les légumes avec l'huile jusqu'à ce qu'ils soient bien tendres.",
+    "Réchauffer légèrement le pain.",
+    "Tartiner le fromage frais.",
+    "Ajouter les légumes et quelques feuilles de salade.",
+    "Servir immédiatement."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petit pain à burger",
+      "60 g de courgette",
+      "40 g de carotte",
+      "25 g de fromage frais",
+      "Quelques feuilles de salade",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "2 petits pains à burger",
+      "120 g de courgette",
+      "80 g de carotte",
+      "50 g de fromage frais",
+      "Quelques feuilles de salade",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "4 petits pains à burger",
+      "240 g de courgette",
+      "160 g de carotte",
+      "100 g de fromage frais",
+      "Quelques feuilles de salade",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+{
+  "id": "ADP007",
+  "nom": "Petites pâtes poulet & courgette",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 22,
+  "calories": 345,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "envies": ["complet", "leger"],
+  "texture": "Tendre",
+  "platAdapte": "Pâtes",
+  "garniture": "Poulet & courgette",
+  "ingredients": [
+    "50 g de petites pâtes crues",
+    "60 g de blanc de poulet",
+    "80 g de courgette",
+    "1 cuillère à soupe de fromage blanc",
+    "1 cuillère à café d'huile d'olive",
+    "Herbes douces"
+  ],
+  "preparation": [
+    "Cuire les pâtes jusqu'à ce qu'elles soient bien tendres.",
+    "Couper le poulet et la courgette en petits morceaux.",
+    "Faire cuire doucement le poulet et la courgette avec l'huile.",
+    "Ajouter les pâtes égouttées.",
+    "Ajouter le fromage blanc et mélanger doucement.",
+    "Servir chaud."
+  ],
+  "quantites": {
+    "petite": [
+      "50 g de petites pâtes crues",
+      "60 g de blanc de poulet",
+      "80 g de courgette",
+      "1 cuillère à soupe de fromage blanc",
+      "1 cuillère à café d'huile d'olive",
+      "Herbes douces"
+    ],
+    "famille2": [
+      "100 g de petites pâtes crues",
+      "120 g de blanc de poulet",
+      "160 g de courgette",
+      "2 cuillères à soupe de fromage blanc",
+      "2 cuillères à café d'huile d'olive",
+      "Herbes douces"
+    ],
+    "famille4": [
+      "200 g de petites pâtes crues",
+      "240 g de blanc de poulet",
+      "320 g de courgette",
+      "4 cuillères à soupe de fromage blanc",
+      "4 cuillères à café d'huile d'olive",
+      "Herbes douces"
+    ]
+  }
+},
+{
+  "id": "ADP008",
+  "nom": "Petites pâtes jambon & petits pois",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 17,
+  "calories": 340,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "envies": ["rapide", "complet"],
+  "texture": "Tendre",
+  "platAdapte": "Pâtes",
+  "garniture": "Jambon & petits pois",
+  "ingredients": [
+    "50 g de petites pâtes crues",
+    "50 g de jambon blanc",
+    "50 g de petits pois",
+    "1 cuillère à soupe de fromage blanc",
+    "Poivre doux"
+  ],
+  "preparation": [
+    "Cuire les pâtes jusqu'à ce qu'elles soient bien tendres.",
+    "Cuire les petits pois jusqu'à ce qu'ils soient fondants.",
+    "Couper le jambon en petits morceaux.",
+    "Mélanger les pâtes, les petits pois et le jambon.",
+    "Ajouter le fromage blanc.",
+    "Réchauffer doucement avant de servir."
+  ],
+  "quantites": {
+    "petite": [
+      "50 g de petites pâtes crues",
+      "50 g de jambon blanc",
+      "50 g de petits pois",
+      "1 cuillère à soupe de fromage blanc",
+      "Poivre doux"
+    ],
+    "famille2": [
+      "100 g de petites pâtes crues",
+      "100 g de jambon blanc",
+      "100 g de petits pois",
+      "2 cuillères à soupe de fromage blanc",
+      "Poivre doux"
+    ],
+    "famille4": [
+      "200 g de petites pâtes crues",
+      "200 g de jambon blanc",
+      "200 g de petits pois",
+      "4 cuillères à soupe de fromage blanc",
+      "Poivre doux"
+    ]
+  }
+},
+{
+  "id": "ADP009",
+  "nom": "Petites pâtes thon & tomate",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 20,
+  "calories": 335,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": true,
+  "batchCooking": true,
+  "envies": ["leger", "rapide"],
+  "texture": "Tendre",
+  "platAdapte": "Pâtes",
+  "garniture": "Thon & tomate",
+  "ingredients": [
+    "50 g de petites pâtes crues",
+    "50 g de thon au naturel égoutté",
+    "80 g de tomate concassée",
+    "1 cuillère à café d'huile d'olive",
+    "Herbes de Provence"
+  ],
+  "preparation": [
+    "Cuire les pâtes jusqu'à ce qu'elles soient bien tendres.",
+    "Faire chauffer doucement la tomate concassée.",
+    "Ajouter le thon émietté.",
+    "Ajouter les pâtes égouttées.",
+    "Ajouter l'huile et les herbes.",
+    "Mélanger et servir chaud."
+  ],
+  "quantites": {
+    "petite": [
+      "50 g de petites pâtes crues",
+      "50 g de thon au naturel égoutté",
+      "80 g de tomate concassée",
+      "1 cuillère à café d'huile d'olive",
+      "Herbes de Provence"
+    ],
+    "famille2": [
+      "100 g de petites pâtes crues",
+      "100 g de thon au naturel égoutté",
+      "160 g de tomate concassée",
+      "2 cuillères à café d'huile d'olive",
+      "Herbes de Provence"
+    ],
+    "famille4": [
+      "200 g de petites pâtes crues",
+      "200 g de thon au naturel égoutté",
+      "320 g de tomate concassée",
+      "4 cuillères à café d'huile d'olive",
+      "Herbes de Provence"
+    ]
+  }
+},
+{
+  "id": "ADP010",
+  "nom": "Petite raclette jambon & pommes de terre",
+  "categorie": "Dîner",
+  "type": "Plat",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 19,
+  "calories": 345,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet", "reconfort"],
+  "texture": "Tendre",
+  "platAdapte": "Raclette",
+  "garniture": "Jambon & pommes de terre",
+  "ingredients": [
+    "100 g de pommes de terre",
+    "40 g de jambon blanc",
+    "40 g de fromage à raclette",
+    "Quelques cornichons"
+  ],
+  "preparation": [
+    "Cuire les pommes de terre jusqu'à ce qu'elles soient tendres.",
+    "Les couper en morceaux.",
+    "Disposer les pommes de terre et le jambon dans une petite assiette.",
+    "Faire fondre le fromage à raclette.",
+    "Verser le fromage fondu sur les pommes de terre.",
+    "Ajouter quelques cornichons selon les goûts."
+  ],
+  "quantites": {
+    "petite": [
+      "100 g de pommes de terre",
+      "40 g de jambon blanc",
+      "40 g de fromage à raclette",
+      "Quelques cornichons"
+    ],
+    "famille2": [
+      "200 g de pommes de terre",
+      "80 g de jambon blanc",
+      "80 g de fromage à raclette",
+      "Quelques cornichons"
+    ],
+    "famille4": [
+      "400 g de pommes de terre",
+      "160 g de jambon blanc",
+      "160 g de fromage à raclette",
+      "Quelques cornichons"
+    ]
+  }
+},
+{
+  "id": "ADP011",
+  "nom": "Petite raclette poulet & courgette",
+  "categorie": "Dîner",
+  "type": "Plat",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 21,
+  "calories": 350,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "complet"],
+  "texture": "Tendre",
+  "platAdapte": "Raclette",
+  "garniture": "Poulet & courgette",
+  "ingredients": [
+    "80 g de pommes de terre",
+    "50 g de blanc de poulet",
+    "60 g de courgette",
+    "40 g de fromage à raclette",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Cuire les pommes de terre jusqu'à ce qu'elles soient tendres.",
+    "Couper le poulet et la courgette en petits morceaux.",
+    "Faire cuire doucement le poulet et la courgette avec l'huile.",
+    "Déposer les pommes de terre dans une petite assiette.",
+    "Ajouter le poulet et la courgette.",
+    "Faire fondre le fromage à raclette et le déposer sur le dessus."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de pommes de terre",
+      "50 g de blanc de poulet",
+      "60 g de courgette",
+      "40 g de fromage à raclette",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "160 g de pommes de terre",
+      "100 g de blanc de poulet",
+      "120 g de courgette",
+      "80 g de fromage à raclette",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "320 g de pommes de terre",
+      "200 g de blanc de poulet",
+      "240 g de courgette",
+      "160 g de fromage à raclette",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+{
+  "id": "ADP012",
+  "nom": "Petite raclette aux légumes",
+  "categorie": "Dîner",
+  "type": "Plat",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 11,
+  "calories": 325,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["vegetarien", "leger", "reconfort"],
+  "texture": "Tendre",
+  "platAdapte": "Raclette",
+  "garniture": "Pommes de terre & légumes",
+  "ingredients": [
+    "80 g de pommes de terre",
+    "50 g de courgette",
+    "40 g de champignons",
+    "40 g de fromage à raclette",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Cuire les pommes de terre jusqu'à ce qu'elles soient tendres.",
+    "Émincer finement la courgette et les champignons.",
+    "Faire cuire doucement les légumes avec l'huile.",
+    "Ajouter les pommes de terre.",
+    "Faire fondre le fromage à raclette.",
+    "Déposer le fromage fondu sur les légumes et servir."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de pommes de terre",
+      "50 g de courgette",
+      "40 g de champignons",
+      "40 g de fromage à raclette",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "160 g de pommes de terre",
+      "100 g de courgette",
+      "80 g de champignons",
+      "80 g de fromage à raclette",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "320 g de pommes de terre",
+      "200 g de courgette",
+      "160 g de champignons",
+      "160 g de fromage à raclette",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+{
+  "id": "ADP013",
+  "nom": "Petite tartiflette traditionnelle",
+  "categorie": "Dîner",
+  "type": "Plat",
+  "temps": 35,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 17,
+  "calories": 390,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "envies": ["reconfort", "complet"],
+  "texture": "Tendre",
+  "platAdapte": "Tartiflette",
+  "garniture": "Pommes de terre & jambon",
+  "ingredients": [
+    "120 g de pommes de terre",
+    "40 g de jambon blanc",
+    "40 g de reblochon",
+    "20 g d'oignon",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Cuire les pommes de terre jusqu'à ce qu'elles soient tendres puis les couper en morceaux.",
+    "Émincer finement l'oignon.",
+    "Faire revenir doucement l'oignon avec l'huile.",
+    "Ajouter les pommes de terre et le jambon coupé en morceaux.",
+    "Déposer le reblochon sur le dessus.",
+    "Faire gratiner au four environ 15 minutes et servir chaud."
+  ],
+  "quantites": {
+    "petite": [
+      "120 g de pommes de terre",
+      "40 g de jambon blanc",
+      "40 g de reblochon",
+      "20 g d'oignon",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "240 g de pommes de terre",
+      "80 g de jambon blanc",
+      "80 g de reblochon",
+      "40 g d'oignon",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "480 g de pommes de terre",
+      "160 g de jambon blanc",
+      "160 g de reblochon",
+      "80 g d'oignon",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+{
+  "id": "ADP014",
+  "nom": "Petite tartiflette poulet & courgette",
+  "categorie": "Dîner",
+  "type": "Plat",
+  "temps": 35,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 21,
+  "calories": 390,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "envies": ["complet", "leger"],
+  "texture": "Tendre",
+  "platAdapte": "Tartiflette",
+  "garniture": "Poulet & courgette",
+  "ingredients": [
+    "100 g de pommes de terre",
+    "60 g de blanc de poulet",
+    "60 g de courgette",
+    "40 g de reblochon",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Cuire les pommes de terre jusqu'à ce qu'elles soient tendres.",
+    "Couper le poulet et la courgette en petits morceaux.",
+    "Faire cuire doucement le poulet et la courgette avec l'huile.",
+    "Ajouter les pommes de terre.",
+    "Déposer le reblochon sur le dessus.",
+    "Faire gratiner au four environ 15 minutes."
+  ],
+  "quantites": {
+    "petite": [
+      "100 g de pommes de terre",
+      "60 g de blanc de poulet",
+      "60 g de courgette",
+      "40 g de reblochon",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "200 g de pommes de terre",
+      "120 g de blanc de poulet",
+      "120 g de courgette",
+      "80 g de reblochon",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "400 g de pommes de terre",
+      "240 g de blanc de poulet",
+      "240 g de courgette",
+      "160 g de reblochon",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+ {
+  "id": "ADP015",
+  "nom": "Petite tartiflette végétarienne",
+  "categorie": "Dîner",
+  "type": "Plat",
+  "temps": 35,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 12,
+  "calories": 350,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "envies": ["vegetarien", "reconfort"],
+  "texture": "Tendre",
+  "platAdapte": "Tartiflette",
+  "garniture": "Champignons & courgette",
+  "ingredients": [
+    "100 g de pommes de terre",
+    "60 g de courgette",
+    "50 g de champignons",
+    "40 g de reblochon",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Cuire les pommes de terre jusqu'à ce qu'elles soient tendres.",
+    "Couper finement la courgette et les champignons.",
+    "Faire cuire doucement les légumes avec l'huile jusqu'à ce qu'ils soient bien tendres.",
+    "Ajouter les pommes de terre coupées en morceaux.",
+    "Déposer le reblochon sur le dessus.",
+    "Faire gratiner au four environ 15 minutes."
+  ],
+  "quantites": {
+    "petite": [
+      "100 g de pommes de terre",
+      "60 g de courgette",
+      "50 g de champignons",
+      "40 g de reblochon",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "200 g de pommes de terre",
+      "120 g de courgette",
+      "100 g de champignons",
+      "80 g de reblochon",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "400 g de pommes de terre",
+      "240 g de courgette",
+      "200 g de champignons",
+      "160 g de reblochon",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+{
+  "id": "ADP016",
+  "nom": "Petites fajitas poulet & poivron",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 22,
+  "calories": 320,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet", "rapide"],
+  "texture": "Tendre",
+  "platAdapte": "Fajitas",
+  "garniture": "Poulet & poivron",
+  "ingredients": [
+    "1 petite tortilla",
+    "60 g de blanc de poulet",
+    "50 g de poivron",
+    "30 g de tomate",
+    "20 g de fromage blanc",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Couper le poulet et le poivron en fines lamelles.",
+    "Faire cuire doucement le poulet et le poivron avec l'huile jusqu'à ce qu'ils soient tendres.",
+    "Ajouter la tomate coupée en petits dés.",
+    "Réchauffer légèrement la tortilla.",
+    "Ajouter le poulet et les légumes.",
+    "Ajouter le fromage blanc puis rouler la tortilla."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petite tortilla",
+      "60 g de blanc de poulet",
+      "50 g de poivron",
+      "30 g de tomate",
+      "20 g de fromage blanc",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "2 petites tortillas",
+      "120 g de blanc de poulet",
+      "100 g de poivron",
+      "60 g de tomate",
+      "40 g de fromage blanc",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "4 petites tortillas",
+      "240 g de blanc de poulet",
+      "200 g de poivron",
+      "120 g de tomate",
+      "80 g de fromage blanc",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+{
+  "id": "ADP017",
+  "nom": "Petites fajitas jambon & courgette",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 17,
+  "calories": 285,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["leger", "rapide"],
+  "texture": "Tendre",
+  "platAdapte": "Fajitas",
+  "garniture": "Jambon & courgette",
+  "ingredients": [
+    "1 petite tortilla",
+    "50 g de jambon blanc",
+    "60 g de courgette",
+    "30 g de tomate",
+    "20 g de fromage frais"
+  ],
+  "preparation": [
+    "Couper la courgette en petits morceaux.",
+    "La faire cuire doucement jusqu'à ce qu'elle soit tendre.",
+    "Couper le jambon en fines lanières.",
+    "Réchauffer légèrement la tortilla.",
+    "Tartiner le fromage frais.",
+    "Ajouter le jambon, la courgette et la tomate.",
+    "Rouler et servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petite tortilla",
+      "50 g de jambon blanc",
+      "60 g de courgette",
+      "30 g de tomate",
+      "20 g de fromage frais"
+    ],
+    "famille2": [
+      "2 petites tortillas",
+      "100 g de jambon blanc",
+      "120 g de courgette",
+      "60 g de tomate",
+      "40 g de fromage frais"
+    ],
+    "famille4": [
+      "4 petites tortillas",
+      "200 g de jambon blanc",
+      "240 g de courgette",
+      "120 g de tomate",
+      "80 g de fromage frais"
+    ]
+  }
+},
+{
+  "id": "ADP018",
+  "nom": "Petites fajitas végétariennes",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 10,
+  "calories": 280,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["vegetarien", "leger"],
+  "texture": "Tendre",
+  "platAdapte": "Fajitas",
+  "garniture": "Courgette, carotte & fromage frais",
+  "ingredients": [
+    "1 petite tortilla",
+    "60 g de courgette",
+    "40 g de carotte",
+    "30 g de poivron",
+    "25 g de fromage frais",
+    "1 cuillère à café d'huile d'olive"
+  ],
+  "preparation": [
+    "Couper les légumes en fines lamelles.",
+    "Les faire cuire doucement avec l'huile jusqu'à ce qu'ils soient bien tendres.",
+    "Réchauffer légèrement la tortilla.",
+    "Tartiner le fromage frais.",
+    "Ajouter les légumes cuits.",
+    "Rouler la tortilla et servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petite tortilla",
+      "60 g de courgette",
+      "40 g de carotte",
+      "30 g de poivron",
+      "25 g de fromage frais",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "2 petites tortillas",
+      "120 g de courgette",
+      "80 g de carotte",
+      "60 g de poivron",
+      "50 g de fromage frais",
+      "2 cuillères à café d'huile d'olive"
+    ],
+    "famille4": [
+      "4 petites tortillas",
+      "240 g de courgette",
+      "160 g de carotte",
+      "120 g de poivron",
+      "100 g de fromage frais",
+      "4 cuillères à café d'huile d'olive"
+    ]
+  }
+},
+{
+  "id": "ADP019",
+  "nom": "Petit couscous poulet & légumes",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 40,
+  "tempsPreparation": 15,
+  "tempsCuisson": 25,
+  "proteines": 24,
+  "calories": 400,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": true,
+  "batchCooking": true,
+  "envies": ["complet", "leger"],
+  "texture": "Tendre",
+  "platAdapte": "Couscous",
+  "garniture": "Poulet & légumes",
+  "ingredients": [
+    "50 g de semoule crue",
+    "70 g de blanc de poulet",
+    "50 g de carotte",
+    "50 g de courgette",
+    "30 g de pois chiches cuits",
+    "Bouillon et épices douces"
+  ],
+  "preparation": [
+    "Couper le poulet et les légumes en petits morceaux.",
+    "Faire cuire le poulet et les légumes dans un peu de bouillon jusqu'à ce qu'ils soient tendres.",
+    "Ajouter les pois chiches et poursuivre la cuisson quelques minutes.",
+    "Préparer la semoule avec le bouillon chaud.",
+    "Égrener la semoule.",
+    "Servir avec le poulet et les légumes."
+  ],
+  "quantites": {
+    "petite": [
+      "50 g de semoule crue",
+      "70 g de blanc de poulet",
+      "50 g de carotte",
+      "50 g de courgette",
+      "30 g de pois chiches cuits",
+      "Bouillon et épices douces"
+    ],
+    "famille2": [
+      "100 g de semoule crue",
+      "140 g de blanc de poulet",
+      "100 g de carotte",
+      "100 g de courgette",
+      "60 g de pois chiches cuits",
+      "Bouillon et épices douces"
+    ],
+    "famille4": [
+      "200 g de semoule crue",
+      "280 g de blanc de poulet",
+      "200 g de carotte",
+      "200 g de courgette",
+      "120 g de pois chiches cuits",
+      "Bouillon et épices douces"
+    ]
+  }
+},
+{
+  "id": "ADP020",
+  "nom": "Petit couscous boulettes & légumes",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 40,
+  "tempsPreparation": 15,
+  "tempsCuisson": 25,
+  "proteines": 22,
+  "calories": 410,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": true,
+  "batchCooking": true,
+  "envies": ["complet", "reconfort"],
+  "texture": "Tendre",
+  "platAdapte": "Couscous",
+  "garniture": "Boulettes & légumes",
+  "ingredients": [
+    "50 g de semoule crue",
+    "70 g de viande hachée",
+    "50 g de courgette",
+    "50 g de carotte",
+    "30 g de pois chiches cuits",
+    "Épices douces"
+  ],
+  "preparation": [
+    "Former de petites boulettes avec la viande hachée.",
+    "Les cuire doucement jusqu'à ce qu'elles soient bien cuites.",
+    "Ajouter les légumes coupés en petits morceaux.",
+    "Ajouter les pois chiches et un peu d'eau.",
+    "Laisser mijoter jusqu'à ce que les légumes soient tendres.",
+    "Préparer la semoule puis la servir avec les boulettes et les légumes."
+  ],
+  "quantites": {
+    "petite": [
+      "50 g de semoule crue",
+      "70 g de viande hachée",
+      "50 g de courgette",
+      "50 g de carotte",
+      "30 g de pois chiches cuits",
+      "Épices douces"
+    ],
+    "famille2": [
+      "100 g de semoule crue",
+      "140 g de viande hachée",
+      "100 g de courgette",
+      "100 g de carotte",
+      "60 g de pois chiches cuits",
+      "Épices douces"
+    ],
+    "famille4": [
+      "200 g de semoule crue",
+      "280 g de viande hachée",
+      "200 g de courgette",
+      "200 g de carotte",
+      "120 g de pois chiches cuits",
+      "Épices douces"
+    ]
+  }
+},
+{
+  "id": "ADP021",
+  "nom": "Petit couscous végétarien",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 35,
+  "tempsPreparation": 15,
+  "tempsCuisson": 20,
+  "proteines": 11,
+  "calories": 370,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": true,
+  "sansGluten": false,
+  "sansLactose": true,
+  "batchCooking": true,
+  "envies": ["vegetarien", "leger"],
+  "texture": "Tendre",
+  "platAdapte": "Couscous",
+  "garniture": "Légumes & pois chiches",
+  "ingredients": [
+    "50 g de semoule crue",
+    "60 g de courgette",
+    "50 g de carotte",
+    "40 g de poivron",
+    "40 g de pois chiches cuits",
+    "Bouillon de légumes et épices douces"
+  ],
+  "preparation": [
+    "Couper les légumes en petits morceaux.",
+    "Les faire cuire doucement avec un peu de bouillon jusqu'à ce qu'ils soient tendres.",
+    "Ajouter les pois chiches et poursuivre la cuisson quelques minutes.",
+    "Préparer la semoule avec le bouillon de légumes.",
+    "Égrener la semoule.",
+    "Servir avec les légumes et les pois chiches."
+  ],
+  "quantites": {
+    "petite": [
+      "50 g de semoule crue",
+      "60 g de courgette",
+      "50 g de carotte",
+      "40 g de poivron",
+      "40 g de pois chiches cuits",
+      "Bouillon de légumes et épices douces"
+    ],
+    "famille2": [
+      "100 g de semoule crue",
+      "120 g de courgette",
+      "100 g de carotte",
+      "80 g de poivron",
+      "80 g de pois chiches cuits",
+      "Bouillon de légumes et épices douces"
+    ],
+    "famille4": [
+      "200 g de semoule crue",
+      "240 g de courgette",
+      "200 g de carotte",
+      "160 g de poivron",
+      "160 g de pois chiches cuits",
+      "Bouillon de légumes et épices douces"
+    ]
+  }
 }
 ]
