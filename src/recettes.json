@@ -6208,5 +6208,994 @@
 "Lier l'ensemble avec la sauce yaourt nature pour que la préparation ne soit pas sèche.",
 "Vérifier la consistance et consommer tiède."
 ]
+},
+ {
+  "id": "REC131",
+  "nom": "Purée fine de lentilles blondes à la mousse de courgette",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 35,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 14,
+  "calories": 180,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": true,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer une plus grande quantité de lentilles puis les mixer et les passer au tamis avant de les portionner.",
+  "conservation": "3 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "tendre", "vegetal"],
+  "texture": "Mixée",
+  "ingredients": [
+    "80 g de lentilles blondes cuites très tendres",
+    "40 g de mousse de courgette sans peau ni pépins",
+    "20 g de purée de carottes lisse",
+    "40 g de tofu soyeux",
+    "1/2 cuillère à café d'huile de colza"
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de lentilles blondes cuites très tendres",
+      "40 g de mousse de courgette sans peau ni pépins",
+      "20 g de purée de carottes lisse",
+      "40 g de tofu soyeux",
+      "1/2 cuillère à café d'huile de colza"
+    ],
+    "famille2": [
+      "160 g de lentilles blondes cuites très tendres",
+      "80 g de mousse de courgette sans peau ni pépins",
+      "40 g de purée de carottes lisse",
+      "80 g de tofu soyeux",
+      "1 cuillère à café d'huile de colza"
+    ],
+    "famille4": [
+      "320 g de lentilles blondes cuites très tendres",
+      "160 g de mousse de courgette sans peau ni pépins",
+      "80 g de purée de carottes lisse",
+      "160 g de tofu soyeux",
+      "2 cuillères à café d'huile de colza"
+    ]
+  },
+  "preparation": [
+    "Mixer les lentilles blondes cuites avec le tofu soyeux et l'huile de colza.",
+    "Passer la préparation au tamis fin ou au chinois pour éliminer les peaux restantes.",
+    "Ajouter la mousse de courgette et la purée de carottes.",
+    "Mixer à nouveau jusqu'à obtenir une texture parfaitement lisse.",
+    "Réchauffer doucement sans faire bouillir et servir tiède."
+  ]
+},
+{
+  "id": "REC132",
+  "nom": "Flan fondant de courge à la ricotta et aux épinards",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 35,
+  "tempsPreparation": 15,
+  "tempsCuisson": 20,
+  "proteines": 12,
+  "calories": 170,
+  "portions": 1,
+  "portion": "1 petit ramequin",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer plusieurs petits flans et les réchauffer doucement au bain-marie.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["reconfortant", "douceur", "onctueux"],
+  "texture": "Fondante",
+  "ingredients": [
+    "60 g de ricotta",
+    "40 g d'épinards cuits et hachés très finement",
+    "20 g de polenta souple cuite",
+    "30 g d'œuf battu",
+    "20 g de purée de courge"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de ricotta",
+      "40 g d'épinards cuits et hachés très finement",
+      "20 g de polenta souple cuite",
+      "30 g d'œuf battu",
+      "20 g de purée de courge"
+    ],
+    "famille2": [
+      "120 g de ricotta",
+      "80 g d'épinards cuits et hachés très finement",
+      "40 g de polenta souple cuite",
+      "60 g d'œuf battu",
+      "40 g de purée de courge"
+    ],
+    "famille4": [
+      "240 g de ricotta",
+      "160 g d'épinards cuits et hachés très finement",
+      "80 g de polenta souple cuite",
+      "120 g d'œuf battu",
+      "80 g de purée de courge"
+    ]
+  },
+  "preparation": [
+    "Préchauffer le four à 160 °C.",
+    "Mélanger la ricotta, la purée de courge, la polenta et l'œuf battu.",
+    "Ajouter les épinards hachés très finement.",
+    "Verser dans un petit ramequin adapté à la cuisson.",
+    "Cuire environ 20 minutes jusqu'à ce que le flan soit pris tout en restant moelleux au centre.",
+    "Laisser tiédir avant de servir."
+  ]
+},
+{
+  "id": "REC133",
+  "nom": "Velouté de galette de sarrasin à l'œuf et haricots verts",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 10,
+  "calories": 155,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "batchCookingDetail": "À préparer au dernier moment pour conserver une texture parfaitement lisse.",
+  "conservation": "À consommer immédiatement de préférence.",
+  "congelation": "Non",
+  "envies": ["traditionnel", "rapide", "salé"],
+  "texture": "Mixée",
+  "ingredients": [
+    "1 œuf entier cuit",
+    "40 g de haricots verts très fondants",
+    "20 g de galette de sarrasin nature sans gluten",
+    "70 ml de bouillon de légumes léger",
+    "1/2 cuillère à café de fécule de pomme de terre"
+  ],
+  "quantites": {
+    "petite": [
+      "1 œuf entier cuit",
+      "40 g de haricots verts très fondants",
+      "20 g de galette de sarrasin nature sans gluten",
+      "70 ml de bouillon de légumes léger",
+      "1/2 cuillère à café de fécule de pomme de terre"
+    ],
+    "famille2": [
+      "2 œufs entiers cuits",
+      "80 g de haricots verts très fondants",
+      "40 g de galette de sarrasin nature sans gluten",
+      "140 ml de bouillon de légumes léger",
+      "1 cuillère à café de fécule de pomme de terre"
+    ],
+    "famille4": [
+      "4 œufs entiers cuits",
+      "160 g de haricots verts très fondants",
+      "80 g de galette de sarrasin nature sans gluten",
+      "280 ml de bouillon de légumes léger",
+      "2 cuillères à café de fécule de pomme de terre"
+    ]
+  },
+  "preparation": [
+    "Couper l'œuf et la galette de sarrasin en petits morceaux.",
+    "Faire chauffer le bouillon et y diluer la fécule de pomme de terre.",
+    "Ajouter l'œuf, les haricots verts et la galette de sarrasin.",
+    "Mixer longuement jusqu'à obtenir une texture parfaitement lisse.",
+    "Passer au tamis si nécessaire.",
+    "Servir tiède."
+  ]
+},
+{
+  "id": "REC134",
+  "nom": "Quenelle souple de brocciu à la purée de poireaux",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 11,
+  "calories": 185,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer la purée de poireaux à l'avance et former les petites quenelles au dernier moment.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["frais", "leger", "onctueux"],
+  "texture": "Fondante",
+  "ingredients": [
+    "65 g de brocciu ou brousse fraîche",
+    "40 g de purée de poireaux parfaitement lisse",
+    "15 g de semoule fine cuite",
+    "1/2 cuillère à café d'huile d'olive"
+  ],
+  "quantites": {
+    "petite": [
+      "65 g de brocciu ou brousse fraîche",
+      "40 g de purée de poireaux parfaitement lisse",
+      "15 g de semoule fine cuite",
+      "1/2 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "130 g de brocciu ou brousse fraîche",
+      "80 g de purée de poireaux parfaitement lisse",
+      "30 g de semoule fine cuite",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille4": [
+      "260 g de brocciu ou brousse fraîche",
+      "160 g de purée de poireaux parfaitement lisse",
+      "60 g de semoule fine cuite",
+      "2 cuillères à café d'huile d'olive"
+    ]
+  },
+  "preparation": [
+    "Écraser délicatement le brocciu avec la semoule fine cuite.",
+    "Former deux petites quenelles souples à l'aide de deux cuillères.",
+    "Réchauffer doucement la purée de poireaux avec l'huile d'olive.",
+    "Déposer la purée dans l'assiette.",
+    "Ajouter les petites quenelles et servir tiède."
+  ]
+},
+{
+  "id": "REC135",
+  "nom": "Mousse de brocoli au tofu soyeux au curry doux",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 10,
+  "calories": 145,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": true,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer la mousse à l'avance et la conserver dans de petites portions hermétiques.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["epice", "vegetal", "rapide"],
+  "texture": "Mixée",
+  "ingredients": [
+    "100 g de tofu soyeux",
+    "50 g de brocoli très bien cuit",
+    "15 g de riz basmati très cuit",
+    "1 cuillère à café de crème de coco légère",
+    "1 petite pincée de curry doux"
+  ],
+  "quantites": {
+    "petite": [
+      "100 g de tofu soyeux",
+      "50 g de brocoli très bien cuit",
+      "15 g de riz basmati très cuit",
+      "1 cuillère à café de crème de coco légère",
+      "1 petite pincée de curry doux"
+    ],
+    "famille2": [
+      "200 g de tofu soyeux",
+      "100 g de brocoli très bien cuit",
+      "30 g de riz basmati très cuit",
+      "2 cuillères à café de crème de coco légère",
+      "2 petites pincées de curry doux"
+    ],
+    "famille4": [
+      "400 g de tofu soyeux",
+      "200 g de brocoli très bien cuit",
+      "60 g de riz basmati très cuit",
+      "4 cuillères à café de crème de coco légère",
+      "4 petites pincées de curry doux"
+    ]
+  },
+  "preparation": [
+    "Cuire le riz jusqu'à ce qu'il soit très tendre.",
+    "Cuire le brocoli jusqu'à ce qu'il soit parfaitement fondant.",
+    "Mixer le tofu soyeux, le brocoli, le riz et la crème de coco.",
+    "Ajouter le curry doux.",
+    "Mixer longuement jusqu'à obtenir une crème parfaitement lisse.",
+    "Servir tiède."
+  ]
+},
+{
+  "id": "REC136",
+  "nom": "Crème fine de pois cassés aux épinards",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 40,
+  "tempsPreparation": 10,
+  "tempsCuisson": 30,
+  "proteines": 11,
+  "calories": 185,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer une quantité plus importante de pois cassés et les mixer très finement avant de les portionner.",
+  "conservation": "3 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "reconfortant", "dense"],
+  "texture": "Mixée",
+  "ingredients": [
+    "80 g de pois cassés cuits très tendres",
+    "35 g d'épinards cuits",
+    "25 g de purée de pommes de terre",
+    "15 g de fromage frais léger",
+    "30 ml d'eau de cuisson ou de bouillon léger"
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de pois cassés cuits très tendres",
+      "35 g d'épinards cuits",
+      "25 g de purée de pommes de terre",
+      "15 g de fromage frais léger",
+      "30 ml d'eau de cuisson ou de bouillon léger"
+    ],
+    "famille2": [
+      "160 g de pois cassés cuits très tendres",
+      "70 g d'épinards cuits",
+      "50 g de purée de pommes de terre",
+      "30 g de fromage frais léger",
+      "60 ml d'eau de cuisson ou de bouillon léger"
+    ],
+    "famille4": [
+      "320 g de pois cassés cuits très tendres",
+      "140 g d'épinards cuits",
+      "100 g de purée de pommes de terre",
+      "60 g de fromage frais léger",
+      "120 ml d'eau de cuisson ou de bouillon léger"
+    ]
+  },
+  "preparation": [
+    "Cuire les pois cassés jusqu'à ce qu'ils soient très tendres.",
+    "Les mixer avec l'eau de cuisson ou le bouillon.",
+    "Passer la préparation au tamis fin pour obtenir une texture lisse.",
+    "Ajouter les épinards, la purée de pommes de terre et le fromage frais.",
+    "Mixer une seconde fois jusqu'à obtenir une crème homogène.",
+    "Réchauffer doucement et servir tiède."
+  ]
+},
+{
+  "id": "REC137",
+  "nom": "Purée fine de haricots rouges au coulis de tomates",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 9,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": true,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Les haricots doivent être très bien cuits puis passés au tamis afin d'éliminer les peaux.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["savoureux", "complet", "vegetal"],
+  "texture": "Fondante",
+  "ingredients": [
+    "80 g de haricots rouges cuits",
+    "40 g de tomates épépinées cuites en purée",
+    "25 g de polenta crémeuse",
+    "1/2 cuillère à café d'huile d'olive"
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de haricots rouges cuits",
+      "40 g de tomates épépinées cuites en purée",
+      "25 g de polenta crémeuse",
+      "1/2 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "160 g de haricots rouges cuits",
+      "80 g de tomates épépinées cuites en purée",
+      "50 g de polenta crémeuse",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille4": [
+      "320 g de haricots rouges cuits",
+      "160 g de tomates épépinées cuites en purée",
+      "100 g de polenta crémeuse",
+      "2 cuillères à café d'huile d'olive"
+    ]
+  },
+  "preparation": [
+    "Mixer très finement les haricots rouges avec l'huile d'olive.",
+    "Passer la préparation au tamis pour éliminer les peaux.",
+    "Ajouter la purée de tomates et chauffer doucement pendant quelques minutes.",
+    "Préparer une polenta très souple et crémeuse.",
+    "Servir la purée de haricots rouges avec la polenta.",
+    "Pour une texture post-opératoire très lisse, mixer l'ensemble avant de servir."
+  ]
+},
+{
+  "id": "REC138",
+  "nom": "Velouté de ricotta au basilic et petites coquillettes",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 10,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer les coquillettes à l'avance et les conserver séparément pour éviter qu'elles n'épaississent excessivement le velouté.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de ricotta",
+    "40 g de purée de courgettes lisse",
+    "20 g de petites coquillettes très cuites",
+    "30 g de sauce tomate au basilic filtrée",
+    "30 ml d'eau ou de bouillon léger"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de ricotta",
+      "40 g de purée de courgettes lisse",
+      "20 g de petites coquillettes très cuites",
+      "30 g de sauce tomate au basilic filtrée",
+      "30 ml d'eau ou de bouillon léger"
+    ],
+    "famille2": [
+      "120 g de ricotta",
+      "80 g de purée de courgettes lisse",
+      "40 g de petites coquillettes très cuites",
+      "60 g de sauce tomate au basilic filtrée",
+      "60 ml d'eau ou de bouillon léger"
+    ],
+    "famille4": [
+      "240 g de ricotta",
+      "160 g de purée de courgettes lisse",
+      "80 g de petites coquillettes très cuites",
+      "120 g de sauce tomate au basilic filtrée",
+      "120 ml d'eau ou de bouillon léger"
+    ]
+  },
+  "preparation": [
+    "Cuire les coquillettes jusqu'à ce qu'elles soient très tendres.",
+    "Mixer la ricotta, la purée de courgettes et la sauce tomate filtrée.",
+    "Ajouter les coquillettes et le bouillon.",
+    "Mixer longuement jusqu'à obtenir un velouté parfaitement homogène.",
+    "Ajouter un peu de bouillon si nécessaire pour ajuster la texture.",
+    "Servir tiède."
+  ]
+},
+{
+  "id": "REC139",
+  "nom": "Écrasé d'omelette au tofu et patate douce",
+  "categorie": "Déjeuner / dîner",
+  "type": "vegetarien",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 12,
+  "calories": 190,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "batchCookingDetail": "L'omelette doit être préparée au dernier moment afin de rester moelleuse.",
+  "conservation": "À consommer immédiatement de préférence.",
+  "congelation": "Non",
+  "envies": ["salé", "complet", "proteine"],
+  "texture": "Tendre",
+  "ingredients": [
+    "1 œuf entier",
+    "30 g de tofu ferme nature écrasé finement",
+    "30 g de haricots verts extra-fins très cuits",
+    "30 g de purée de patate douce lisse",
+    "15 g de fromage frais type Kiri"
+  ],
+  "quantites": {
+    "petite": [
+      "1 œuf entier",
+      "30 g de tofu ferme nature écrasé finement",
+      "30 g de haricots verts extra-fins très cuits",
+      "30 g de purée de patate douce lisse",
+      "15 g de fromage frais type Kiri"
+    ],
+    "famille2": [
+      "2 œufs entiers",
+      "60 g de tofu ferme nature écrasé finement",
+      "60 g de haricots verts extra-fins très cuits",
+      "60 g de purée de patate douce lisse",
+      "30 g de fromage frais type Kiri"
+    ],
+    "famille4": [
+      "4 œufs entiers",
+      "120 g de tofu ferme nature écrasé finement",
+      "120 g de haricots verts extra-fins très cuits",
+      "120 g de purée de patate douce lisse",
+      "60 g de fromage frais type Kiri"
+    ]
+  },
+  "preparation": [
+    "Écraser finement le tofu.",
+    "Battre l'œuf puis incorporer le tofu.",
+    "Cuire doucement en omelette très souple sans la dessécher.",
+    "Hacher finement l'omelette.",
+    "Réchauffer la purée de patate douce et y incorporer le fromage frais.",
+    "Ajouter les haricots verts très finement hachés.",
+    "Mélanger délicatement avec l'omelette et servir immédiatement."
+  ]
+},
+{
+  "id": "REC140",
+  "nom": "Velouté de poulet mixé à la crème de brocoli",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 17,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer plusieurs petites portions et les congeler immédiatement après refroidissement si elles ne sont pas consommées dans les 24 heures.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["leger", "reconfortant", "digeste"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de blanc de poulet cuit vapeur",
+    "40 g de purée fine de brocoli",
+    "15 g de crème de riz nature",
+    "50 ml de bouillon de volaille léger"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de poulet cuit vapeur",
+      "40 g de purée fine de brocoli",
+      "15 g de crème de riz nature",
+      "50 ml de bouillon de volaille léger"
+    ],
+    "famille2": [
+      "120 g de blanc de poulet cuit vapeur",
+      "80 g de purée fine de brocoli",
+      "30 g de crème de riz nature",
+      "100 ml de bouillon de volaille léger"
+    ],
+    "famille4": [
+      "240 g de blanc de poulet cuit vapeur",
+      "160 g de purée fine de brocoli",
+      "60 g de crème de riz nature",
+      "200 ml de bouillon de volaille léger"
+    ]
+  },
+  "preparation": [
+    "Cuire le blanc de poulet à la vapeur jusqu'à ce qu'il soit parfaitement cuit et tendre.",
+    "Le couper en très petits morceaux.",
+    "Mixer le poulet avec la purée de brocoli et la crème de riz.",
+    "Ajouter progressivement le bouillon chaud jusqu'à obtenir une texture veloutée.",
+    "Mixer longuement pour obtenir une préparation parfaitement lisse.",
+    "Servir chaud mais à une température agréable."
+  ]
+},
+ {
+  "id": "REC141",
+  "nom": "Mousse homogène de colin aux épinards lisses",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 14,
+  "calories": 155,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer le poisson et les légumes à l'avance puis mixer la portion au moment du repas.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["frais", "leger", "digeste"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de filet de colin cuit",
+    "40 g de purée fine d'épinards",
+    "20 g de purée de pommes de terre très lisse",
+    "40 ml de boisson végétale nature sans sucre ou de bouillon léger"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de colin cuit",
+      "40 g de purée fine d'épinards",
+      "20 g de purée de pommes de terre très lisse",
+      "40 ml de boisson végétale nature sans sucre ou de bouillon léger"
+    ],
+    "famille2": [
+      "120 g de filet de colin cuit",
+      "80 g de purée fine d'épinards",
+      "40 g de purée de pommes de terre très lisse",
+      "80 ml de boisson végétale nature sans sucre ou de bouillon léger"
+    ],
+    "famille4": [
+      "240 g de filet de colin cuit",
+      "160 g de purée fine d'épinards",
+      "80 g de purée de pommes de terre très lisse",
+      "160 ml de boisson végétale nature sans sucre ou de bouillon léger"
+    ]
+  },
+  "preparation": [
+    "Vérifier soigneusement l'absence d'arêtes dans le filet de colin.",
+    "Mixer le poisson avec la purée d'épinards et la purée de pommes de terre.",
+    "Ajouter progressivement le liquide chaud jusqu'à obtenir une texture souple.",
+    "Mixer longuement afin d'obtenir une préparation parfaitement homogène.",
+    "Passer au tamis fin si nécessaire.",
+    "Servir tiède."
+  ]
+},
+{
+  "id": "REC142",
+  "nom": "Velouté de veau lisse au panais et haricots verts",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 15,
+  "calories": 180,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer le veau et les légumes en quantité puis mixer chaque petite portion avec le bouillon au moment du repas.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "douceur", "proteine"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de veau maigre cuit et très tendre",
+    "30 g de purée de haricots verts parfaitement filtrée",
+    "25 g de purée de panais",
+    "50 ml de bouillon de veau ou de légumes dégraissé"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de veau maigre cuit et très tendre",
+      "30 g de purée de haricots verts parfaitement filtrée",
+      "25 g de purée de panais",
+      "50 ml de bouillon de veau ou de légumes dégraissé"
+    ],
+    "famille2": [
+      "120 g de veau maigre cuit et très tendre",
+      "60 g de purée de haricots verts parfaitement filtrée",
+      "50 g de purée de panais",
+      "100 ml de bouillon de veau ou de légumes dégraissé"
+    ],
+    "famille4": [
+      "240 g de veau maigre cuit et très tendre",
+      "120 g de purée de haricots verts parfaitement filtrée",
+      "100 g de purée de panais",
+      "200 ml de bouillon de veau ou de légumes dégraissé"
+    ]
+  },
+  "preparation": [
+    "Cuire le veau jusqu'à ce qu'il soit parfaitement tendre.",
+    "Le couper en petits morceaux.",
+    "Mixer le veau avec les purées de haricots verts et de panais.",
+    "Ajouter progressivement le bouillon chaud.",
+    "Mixer longuement jusqu'à obtenir une crème parfaitement lisse.",
+    "Passer au tamis fin si nécessaire et servir tiède."
+  ]
+},
+{
+  "id": "REC143",
+  "nom": "Crème d'œuf mixée au fromage blanc et poireaux",
+  "categorie": "Déjeuner / dîner",
+  "type": "oeuf",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 12,
+  "calories": 155,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "batchCookingDetail": "À préparer au dernier moment pour conserver une texture parfaitement onctueuse.",
+  "conservation": "À consommer immédiatement de préférence.",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "1 œuf entier cuit",
+    "40 g de purée fine de poireaux",
+    "20 g de polenta fluide cuite",
+    "30 g de fromage blanc nature"
+  ],
+  "quantites": {
+    "petite": [
+      "1 œuf entier cuit",
+      "40 g de purée fine de poireaux",
+      "20 g de polenta fluide cuite",
+      "30 g de fromage blanc nature"
+    ],
+    "famille2": [
+      "2 œufs entiers cuits",
+      "80 g de purée fine de poireaux",
+      "40 g de polenta fluide cuite",
+      "60 g de fromage blanc nature"
+    ],
+    "famille4": [
+      "4 œufs entiers cuits",
+      "160 g de purée fine de poireaux",
+      "80 g de polenta fluide cuite",
+      "120 g de fromage blanc nature"
+    ]
+  },
+  "preparation": [
+    "Écaler l'œuf et le couper en morceaux.",
+    "Mixer l'œuf avec la purée de poireaux et la polenta fluide.",
+    "Ajouter le fromage blanc.",
+    "Mixer longuement jusqu'à obtenir une crème parfaitement lisse.",
+    "Servir tiède."
+  ]
+},
+{
+  "id": "REC144",
+  "nom": "Mousse de saumon lisse à la courgette",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 13,
+  "calories": 205,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer le saumon et la courgette à l'avance puis mixer la portion au moment du repas.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["omega3", "leger", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "55 g de pavé de saumon cuit vapeur",
+    "45 g de purée de courgette sans peau ni pépins",
+    "20 g de crème d'avoine nature",
+    "1/2 cuillère à café d'huile d'olive"
+  ],
+  "quantites": {
+    "petite": [
+      "55 g de pavé de saumon cuit vapeur",
+      "45 g de purée de courgette sans peau ni pépins",
+      "20 g de crème d'avoine nature",
+      "1/2 cuillère à café d'huile d'olive"
+    ],
+    "famille2": [
+      "110 g de pavé de saumon cuit vapeur",
+      "90 g de purée de courgette sans peau ni pépins",
+      "40 g de crème d'avoine nature",
+      "1 cuillère à café d'huile d'olive"
+    ],
+    "famille4": [
+      "220 g de pavé de saumon cuit vapeur",
+      "180 g de purée de courgette sans peau ni pépins",
+      "80 g de crème d'avoine nature",
+      "2 cuillères à café d'huile d'olive"
+    ]
+  },
+  "preparation": [
+    "Vérifier soigneusement l'absence d'arêtes dans le saumon.",
+    "Mixer le saumon avec la purée de courgette.",
+    "Ajouter la crème d'avoine et l'huile d'olive.",
+    "Mixer jusqu'à obtenir une mousse parfaitement homogène.",
+    "Passer au tamis si nécessaire.",
+    "Laisser tiédir avant de servir."
+  ]
+},
+{
+  "id": "REC145",
+  "nom": "Velouté de dinde lisse au brocoli doux",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 16,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Cuire la dinde et le brocoli à l'avance puis mixer avec le bouillon au moment du repas.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "reconfortant", "proteine"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de filet de dinde cuit",
+    "40 g de purée fine de brocoli très bien cuit",
+    "25 g de purée de patate douce lisse",
+    "50 ml de bouillon de légumes léger"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de dinde cuit",
+      "40 g de purée fine de brocoli très bien cuit",
+      "25 g de purée de patate douce lisse",
+      "50 ml de bouillon de légumes léger"
+    ],
+    "famille2": [
+      "120 g de filet de dinde cuit",
+      "80 g de purée fine de brocoli très bien cuit",
+      "50 g de purée de patate douce lisse",
+      "100 ml de bouillon de légumes léger"
+    ],
+    "famille4": [
+      "240 g de filet de dinde cuit",
+      "160 g de purée fine de brocoli très bien cuit",
+      "100 g de purée de patate douce lisse",
+      "200 ml de bouillon de légumes léger"
+    ]
+  },
+  "preparation": [
+    "Cuire le filet de dinde jusqu'à ce qu'il soit tendre.",
+    "Le couper en petits morceaux.",
+    "Mixer la dinde avec le brocoli et la patate douce.",
+    "Ajouter progressivement le bouillon chaud.",
+    "Mixer longuement jusqu'à obtenir une texture parfaitement lisse.",
+    "Passer au tamis si nécessaire et servir tiède."
+  ]
+},
+{
+  "id": "REC146",
+  "nom": "Mousse fine de cabillaud à la crème de soja",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 14,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer le poisson et les épinards à l'avance puis mixer la préparation en petite portion.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["frais", "leger", "digeste"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de cabillaud cuit vapeur",
+    "40 g de purée d'épinards fine",
+    "20 g de semoule très fine cuite et fluide",
+    "15 g de crème de soja légère"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de cabillaud cuit vapeur",
+      "40 g de purée d'épinards fine",
+      "20 g de semoule très fine cuite et fluide",
+      "15 g de crème de soja légère"
+    ],
+    "famille2": [
+      "120 g de cabillaud cuit vapeur",
+      "80 g de purée d'épinards fine",
+      "40 g de semoule très fine cuite et fluide",
+      "30 g de crème de soja légère"
+    ],
+    "famille4": [
+      "240 g de cabillaud cuit vapeur",
+      "160 g de purée d'épinards fine",
+      "80 g de semoule très fine cuite et fluide",
+      "60 g de crème de soja légère"
+    ]
+  },
+  "preparation": [
+    "Vérifier soigneusement l'absence d'arêtes dans le cabillaud.",
+    "Mixer le poisson avec la purée d'épinards et la semoule fluide.",
+    "Ajouter la crème de soja.",
+    "Mixer longuement jusqu'à obtenir une crème parfaitement homogène.",
+    "Réchauffer doucement sans faire bouillir.",
+    "Servir tiède."
+  ]
 }
 ]
