@@ -7197,5 +7197,907 @@
     "Réchauffer doucement sans faire bouillir.",
     "Servir tiède."
   ]
+},
+ {
+  "id": "REC147",
+  "nom": "Velouté de bœuf lisse au coulis de tomates filtré",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 15,
+  "calories": 190,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Utiliser une viande hachée maigre et mixer longuement avec les légumes et le coulis filtré.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "reconfortant", "savoureux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de steak haché de bœuf à 5 % de matières grasses cuit à cœur",
+    "35 g de purée de carottes fine",
+    "25 g de purée de pommes de terre",
+    "30 g de coulis de tomates filtré"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de steak haché de bœuf à 5 % de matières grasses cuit à cœur",
+      "35 g de purée de carottes fine",
+      "25 g de purée de pommes de terre",
+      "30 g de coulis de tomates filtré"
+    ],
+    "famille2": [
+      "120 g de steak haché de bœuf à 5 % de matières grasses cuit à cœur",
+      "70 g de purée de carottes fine",
+      "50 g de purée de pommes de terre",
+      "60 g de coulis de tomates filtré"
+    ],
+    "famille4": [
+      "240 g de steak haché de bœuf à 5 % de matières grasses cuit à cœur",
+      "140 g de purée de carottes fine",
+      "100 g de purée de pommes de terre",
+      "120 g de coulis de tomates filtré"
+    ]
+  },
+  "preparation": [
+    "Cuire le steak haché à cœur puis l'émietter.",
+    "Mixer la viande avec la purée de carottes et la purée de pommes de terre.",
+    "Ajouter le coulis de tomates préalablement filtré.",
+    "Mixer longuement jusqu'à obtenir une texture parfaitement lisse.",
+    "Ajouter un peu d'eau ou de bouillon si nécessaire.",
+    "Servir tiède."
+  ]
+},
+{
+  "id": "REC148",
+  "nom": "Mousse homogène de merlu au jus de citron",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 14,
+  "calories": 160,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Préparer le poisson et la purée de poireaux à l'avance puis mixer la portion au dernier moment.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["frais", "acidule", "leger"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de filet de merlu cuit",
+    "40 g de purée fine de poireaux",
+    "20 g de crème de riz nature",
+    "1/2 cuillère à café de jus de citron",
+    "1/2 cuillère à café d'huile de colza"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de merlu cuit",
+      "40 g de purée fine de poireaux",
+      "20 g de crème de riz nature",
+      "1/2 cuillère à café de jus de citron",
+      "1/2 cuillère à café d'huile de colza"
+    ],
+    "famille2": [
+      "120 g de filet de merlu cuit",
+      "80 g de purée fine de poireaux",
+      "40 g de crème de riz nature",
+      "1 cuillère à café de jus de citron",
+      "1 cuillère à café d'huile de colza"
+    ],
+    "famille4": [
+      "240 g de filet de merlu cuit",
+      "160 g de purée fine de poireaux",
+      "80 g de crème de riz nature",
+      "2 cuillères à café de jus de citron",
+      "2 cuillères à café d'huile de colza"
+    ]
+  },
+  "preparation": [
+    "Vérifier soigneusement l'absence d'arêtes dans le merlu.",
+    "Mixer le poisson avec la purée de poireaux et la crème de riz.",
+    "Ajouter le jus de citron et l'huile de colza.",
+    "Mixer jusqu'à obtenir une texture parfaitement homogène.",
+    "Passer au tamis fin si nécessaire.",
+    "Servir tiède."
+  ]
+},
+{
+  "id": "REC149",
+  "nom": "Velouté de jambon blanc au carré frais",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 15,
+  "tempsPreparation": 10,
+  "tempsCuisson": 5,
+  "proteines": 15,
+  "calories": 170,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "batchCookingDetail": "À préparer au dernier moment pour conserver une texture souple et homogène.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de jambon blanc dégraissé et découenné",
+    "40 g de purée fine de courgette",
+    "20 g de polenta crémeuse fluide",
+    "15 g de fromage frais nature"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de jambon blanc dégraissé et découenné",
+      "40 g de purée fine de courgette",
+      "20 g de polenta crémeuse fluide",
+      "15 g de fromage frais nature"
+    ],
+    "famille2": [
+      "120 g de jambon blanc dégraissé et découenné",
+      "80 g de purée fine de courgette",
+      "40 g de polenta crémeuse fluide",
+      "30 g de fromage frais nature"
+    ],
+    "famille4": [
+      "240 g de jambon blanc dégraissé et découenné",
+      "160 g de purée fine de courgette",
+      "80 g de polenta crémeuse fluide",
+      "60 g de fromage frais nature"
+    ]
+  },
+  "preparation": [
+    "Couper le jambon en petites lamelles.",
+    "Mixer le jambon avec la purée de courgette et la polenta fluide.",
+    "Ajouter le fromage frais.",
+    "Mixer longuement jusqu'à obtenir une crème parfaitement homogène.",
+    "Réchauffer doucement si nécessaire sans faire bouillir.",
+    "Servir tiède."
+  ]
+},
+ {
+  "id": "REC150",
+  "nom": "Mousse fine de truite au panais liquide",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 15,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "La truite devient très onctueuse une fois mixée avec les purées.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["omega3", "douceur", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "55 g de filet de truite cuit",
+    "45 g de purée fine de brocoli",
+    "15 g de purée de panais liquide",
+    "1 cuillère à café de crème fraîche légère"
+  ],
+  "preparation": [
+    "Cuire la truite puis vérifier soigneusement l'absence d'arêtes.",
+    "Déposer la truite, la purée de brocoli et la purée de panais dans le bol du mixeur.",
+    "Ajouter la crème fraîche.",
+    "Mixer jusqu'à obtenir une texture parfaitement lisse et homogène.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "55 g de filet de truite cuit",
+      "45 g de purée fine de brocoli",
+      "15 g de purée de panais liquide",
+      "1 cuillère à café de crème fraîche légère"
+    ],
+    "famille2": [
+      "110 g de filet de truite cuit",
+      "90 g de purée fine de brocoli",
+      "30 g de purée de panais liquide",
+      "2 cuillères à café de crème fraîche légère"
+    ],
+    "famille4": [
+      "220 g de filet de truite cuit",
+      "180 g de purée fine de brocoli",
+      "60 g de purée de panais liquide",
+      "4 cuillères à café de crème fraîche légère"
+    ]
+  }
+},
+{
+  "id": "REC151",
+  "nom": "Velouté de dinde lisse au bouillon de volaille",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 15,
+  "calories": 155,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Une petite quantité de semoule très fine permet d'obtenir une texture douce et liée.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "leger", "digeste"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de blanc de dinde cuit",
+    "40 g de purée fine de haricots verts",
+    "15 g de semoule fine cuite",
+    "40 ml de bouillon de volaille sans gluten"
+  ],
+  "preparation": [
+    "Cuire la dinde jusqu'à ce qu'elle soit bien tendre.",
+    "Mixer la dinde avec la purée de haricots verts et la semoule fine.",
+    "Ajouter progressivement le bouillon chaud.",
+    "Mixer jusqu'à obtenir une texture parfaitement lisse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de dinde cuit",
+      "40 g de purée fine de haricots verts",
+      "15 g de semoule fine cuite",
+      "40 ml de bouillon de volaille sans gluten"
+    ],
+    "famille2": [
+      "120 g de blanc de dinde cuit",
+      "80 g de purée fine de haricots verts",
+      "30 g de semoule fine cuite",
+      "80 ml de bouillon de volaille sans gluten"
+    ],
+    "famille4": [
+      "240 g de blanc de dinde cuit",
+      "160 g de purée fine de haricots verts",
+      "60 g de semoule fine cuite",
+      "160 ml de bouillon de volaille sans gluten"
+    ]
+  }
+},
+{
+  "id": "REC152",
+  "nom": "Mousse homogène de dorade à la patate douce",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 15,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "La dorade et la patate douce donnent une préparation douce et naturellement onctueuse.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["frais", "leger", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de filet de dorade cuit",
+    "40 g de purée fine d'épinards",
+    "15 g de purée de patate douce",
+    "1/2 cuillère à café d'huile de colza"
+  ],
+  "preparation": [
+    "Cuire la dorade puis vérifier soigneusement l'absence d'arêtes.",
+    "Mixer la dorade avec la purée d'épinards et la purée de patate douce.",
+    "Ajouter l'huile de colza.",
+    "Mixer jusqu'à obtenir une texture parfaitement lisse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de dorade cuit",
+      "40 g de purée fine d'épinards",
+      "15 g de purée de patate douce",
+      "1/2 cuillère à café d'huile de colza"
+    ],
+    "famille2": [
+      "120 g de filet de dorade cuit",
+      "80 g de purée fine d'épinards",
+      "30 g de purée de patate douce",
+      "1 cuillère à café d'huile de colza"
+    ],
+    "famille4": [
+      "240 g de filet de dorade cuit",
+      "160 g de purée fine d'épinards",
+      "60 g de purée de patate douce",
+      "2 cuillères à café d'huile de colza"
+    ]
+  }
+},
+{
+  "id": "REC153",
+  "nom": "Velouté de veau lisse au potimarron crémeux",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 15,
+  "calories": 185,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Le potimarron apporte naturellement une texture douce et liée.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "douceur", "reconfortant"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de filet de veau cuit tendre",
+    "35 g de purée de potimarron lisse",
+    "20 g de polenta souple cuite",
+    "2 cuillères à soupe de crème légère"
+  ],
+  "preparation": [
+    "Cuire le veau jusqu'à ce qu'il soit bien tendre.",
+    "Mixer le veau avec la purée de potimarron et la polenta cuite.",
+    "Ajouter la crème légère.",
+    "Mixer jusqu'à obtenir un velouté parfaitement lisse et crémeux.",
+    "Servir chaud mais non brûlant."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de veau cuit tendre",
+      "35 g de purée de potimarron lisse",
+      "20 g de polenta souple cuite",
+      "2 cuillères à soupe de crème légère"
+    ],
+    "famille2": [
+      "120 g de filet de veau cuit tendre",
+      "70 g de purée de potimarron lisse",
+      "40 g de polenta souple cuite",
+      "4 cuillères à soupe de crème légère"
+    ],
+    "famille4": [
+      "240 g de filet de veau cuit tendre",
+      "140 g de purée de potimarron lisse",
+      "80 g de polenta souple cuite",
+      "8 cuillères à soupe de crème légère"
+    ]
+  }
+},
+{
+  "id": "REC154",
+  "nom": "Crème d'œuf mixée à la courgette au basilic",
+  "categorie": "Déjeuner / dîner",
+  "type": "oeuf",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 13,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "batchCookingDetail": "La crème d'avoine et le fromage végétal permettent d'obtenir une texture douce et homogène.",
+  "conservation": "À consommer immédiatement.",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "frais"],
+  "texture": "Mixée",
+  "ingredients": [
+    "1 œuf entier cuit dur",
+    "40 g de purée fine de courgette sans peau au basilic",
+    "15 g de crème d'avoine",
+    "15 g de fromage végétal à tartiner"
+  ],
+  "preparation": [
+    "Cuire l'œuf dur puis l'écaler.",
+    "Mixer l'œuf avec la purée de courgette et la crème d'avoine.",
+    "Ajouter le fromage végétal à tartiner.",
+    "Mixer jusqu'à obtenir une crème parfaitement homogène.",
+    "Déguster tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "1 œuf entier cuit dur",
+      "40 g de purée fine de courgette sans peau au basilic",
+      "15 g de crème d'avoine",
+      "15 g de fromage végétal à tartiner"
+    ],
+    "famille2": [
+      "2 œufs entiers cuits durs",
+      "80 g de purée fine de courgette sans peau au basilic",
+      "30 g de crème d'avoine",
+      "30 g de fromage végétal à tartiner"
+    ],
+    "famille4": [
+      "4 œufs entiers cuits durs",
+      "160 g de purée fine de courgette sans peau au basilic",
+      "60 g de crème d'avoine",
+      "60 g de fromage végétal à tartiner"
+    ]
+  }
+},
+{
+  "id": "REC155",
+  "nom": "Mousse fine de sole à la purée de pommes de terre",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 15,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "La sole est un poisson délicat qui donne une texture très fine une fois mixée.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["frais", "leger", "traditionnel"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de filet de sole cuit vapeur",
+    "40 g de purée de poireaux filtrée",
+    "15 g de purée de pommes de terre",
+    "1/2 cuillère à café de beurre allégé fondu"
+  ],
+  "preparation": [
+    "Cuire la sole à la vapeur puis vérifier soigneusement l'absence d'arêtes.",
+    "Mixer la sole avec la purée de poireaux et la purée de pommes de terre.",
+    "Ajouter le beurre fondu.",
+    "Mixer jusqu'à obtenir une texture parfaitement lisse.",
+    "Consommer tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de sole cuit vapeur",
+      "40 g de purée de poireaux filtrée",
+      "15 g de purée de pommes de terre",
+      "1/2 cuillère à café de beurre allégé fondu"
+    ],
+    "famille2": [
+      "120 g de filet de sole cuit vapeur",
+      "80 g de purée de poireaux filtrée",
+      "30 g de purée de pommes de terre",
+      "1 cuillère à café de beurre allégé fondu"
+    ],
+    "famille4": [
+      "240 g de filet de sole cuit vapeur",
+      "160 g de purée de poireaux filtrée",
+      "60 g de purée de pommes de terre",
+      "2 cuillères à café de beurre allégé fondu"
+    ]
+  }
+},
+{
+  "id": "REC156",
+  "nom": "Velouté de poulet haché à la sauce yaourt",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 16,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Le yaourt apporte une texture crémeuse et une légère fraîcheur à la préparation.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["leger", "frais", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de blanc de poulet cuit",
+    "40 g de purée fine de brocoli au cumin",
+    "15 g de semoule fine cuite",
+    "1 cuillère à soupe de yaourt nature"
+  ],
+  "preparation": [
+    "Cuire le poulet jusqu'à ce qu'il soit bien tendre.",
+    "Mixer le poulet avec la purée de brocoli et la semoule fine cuite.",
+    "Ajouter le yaourt nature.",
+    "Mixer jusqu'à obtenir une texture veloutée parfaitement lisse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de poulet cuit",
+      "40 g de purée fine de brocoli au cumin",
+      "15 g de semoule fine cuite",
+      "1 cuillère à soupe de yaourt nature"
+    ],
+    "famille2": [
+      "120 g de blanc de poulet cuit",
+      "80 g de purée fine de brocoli au cumin",
+      "30 g de semoule fine cuite",
+      "2 cuillères à soupe de yaourt nature"
+    ],
+    "famille4": [
+      "240 g de blanc de poulet cuit",
+      "160 g de purée fine de brocoli au cumin",
+      "60 g de semoule fine cuite",
+      "4 cuillères à soupe de yaourt nature"
+    ]
+  }
+},
+{
+  "id": "REC157",
+  "nom": "Mousse homogène de saumon à la crème de riz",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 15,
+  "calories": 195,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "La crème de riz et l'huile d'avocat apportent une texture souple et onctueuse.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["omega3", "complet", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "55 g de saumon cuit",
+    "45 g de purée fine d'épinards",
+    "15 g de crème de riz cuite",
+    "1/2 cuillère à café d'huile d'avocat"
+  ],
+  "preparation": [
+    "Cuire le saumon puis retirer la peau et vérifier soigneusement l'absence d'arêtes.",
+    "Mixer le saumon avec la purée d'épinards et la crème de riz.",
+    "Ajouter l'huile d'avocat.",
+    "Mixer jusqu'à obtenir une crème parfaitement lisse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "55 g de saumon cuit",
+      "45 g de purée fine d'épinards",
+      "15 g de crème de riz cuite",
+      "1/2 cuillère à café d'huile d'avocat"
+    ],
+    "famille2": [
+      "110 g de saumon cuit",
+      "90 g de purée fine d'épinards",
+      "30 g de crème de riz cuite",
+      "1 cuillère à café d'huile d'avocat"
+    ],
+    "famille4": [
+      "220 g de saumon cuit",
+      "180 g de purée fine d'épinards",
+      "60 g de crème de riz cuite",
+      "2 cuillères à café d'huile d'avocat"
+    ]
+  }
+},
+{
+  "id": "REC158",
+  "nom": "Velouté de veau haché au fromage fondant",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 15,
+  "calories": 190,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Le fromage fondant apporte une texture crémeuse et facilite l'obtention d'un velouté homogène.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["complet", "douceur", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de haché de veau cuit",
+    "40 g de purée fine de haricots verts",
+    "15 g de purée de patate douce",
+    "15 g de fromage à tartiner nature"
+  ],
+  "preparation": [
+    "Cuire le veau haché jusqu'à ce qu'il soit bien tendre.",
+    "Mixer le veau avec la purée de haricots verts et la purée de patate douce.",
+    "Ajouter le fromage à tartiner.",
+    "Mixer jusqu'à obtenir une texture parfaitement lisse.",
+    "Passer éventuellement la préparation au tamis si des fibres subsistent.",
+    "Servir chaud mais non brûlant."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de haché de veau cuit",
+      "40 g de purée fine de haricots verts",
+      "15 g de purée de patate douce",
+      "15 g de fromage à tartiner nature"
+    ],
+    "famille2": [
+      "120 g de haché de veau cuit",
+      "80 g de purée fine de haricots verts",
+      "30 g de purée de patate douce",
+      "30 g de fromage à tartiner nature"
+    ],
+    "famille4": [
+      "240 g de haché de veau cuit",
+      "160 g de purée fine de haricots verts",
+      "60 g de purée de patate douce",
+      "60 g de fromage à tartiner nature"
+    ]
+  }
+},
+{
+  "id": "REC159",
+  "nom": "Mousse fine de colin au bouillon de poisson",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 15,
+  "calories": 150,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Le bouillon permet de détendre la chair du poisson et d'obtenir une texture très souple.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["frais", "leger", "digeste"],
+  "texture": "Mixée",
+  "ingredients": [
+    "60 g de colin cuit vapeur",
+    "40 g de purée fine de courgette sans peau",
+    "15 g de polenta fluide cuite",
+    "2 cuillères à soupe de bouillon de poisson sans gluten"
+  ],
+  "preparation": [
+    "Cuire le colin puis vérifier soigneusement l'absence d'arêtes.",
+    "Mixer le poisson avec la purée de courgette et la polenta cuite.",
+    "Ajouter progressivement le bouillon chaud.",
+    "Mixer jusqu'à obtenir une crème parfaitement lisse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de colin cuit vapeur",
+      "40 g de purée fine de courgette sans peau",
+      "15 g de polenta fluide cuite",
+      "2 cuillères à soupe de bouillon de poisson sans gluten"
+    ],
+    "famille2": [
+      "120 g de colin cuit vapeur",
+      "80 g de purée fine de courgette sans peau",
+      "30 g de polenta fluide cuite",
+      "4 cuillères à soupe de bouillon de poisson sans gluten"
+    ],
+    "famille4": [
+      "240 g de colin cuit vapeur",
+      "160 g de purée fine de courgette sans peau",
+      "60 g de polenta fluide cuite",
+      "8 cuillères à soupe de bouillon de poisson sans gluten"
+    ]
+  }
+},
+{
+  "id": "REC160",
+  "nom": "Poulet tendre au riz fondant et haricots verts mixés",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 16,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Le poulet est finement effiloché puis mélangé au riz très cuit et aux légumes pour rester humide et facile à manger.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "tendre", "proteine"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de blanc de poulet cuit très tendre",
+    "40 g de purée fine de haricots verts",
+    "15 g de riz basmati très cuit",
+    "2 cuillères à soupe de bouillon de volaille"
+  ],
+  "preparation": [
+    "Cuire le poulet jusqu'à ce qu'il soit très tendre.",
+    "L'effilocher puis le hacher très finement.",
+    "Écraser le riz basmati très cuit.",
+    "Mélanger le poulet, le riz et la purée de haricots verts.",
+    "Ajouter le bouillon de volaille pour obtenir une préparation humide et fondante.",
+    "Chauffer doucement quelques minutes puis servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de poulet cuit très tendre",
+      "40 g de purée fine de haricots verts",
+      "15 g de riz basmati très cuit",
+      "2 cuillères à soupe de bouillon de volaille"
+    ],
+    "famille2": [
+      "120 g de blanc de poulet cuit très tendre",
+      "80 g de purée fine de haricots verts",
+      "30 g de riz basmati très cuit",
+      "4 cuillères à soupe de bouillon de volaille"
+    ],
+    "famille4": [
+      "240 g de blanc de poulet cuit très tendre",
+      "160 g de purée fine de haricots verts",
+      "60 g de riz basmati très cuit",
+      "8 cuillères à soupe de bouillon de volaille"
+    ]
+  }
+},
+ {
+  "id": "REC161",
+  "nom": "Cabillaud effiloché au pesto d'épinards",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 17,
+  "calories": 155,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Le cabillaud s'effiloche facilement après cuisson et reste moelleux lorsqu'il est accompagné d'une préparation humide.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["frais", "leger", "omega3"],
+  "texture": "Tendre",
+  "ingredients": [
+    "65 g de filet de cabillaud frais",
+    "40 g de purée fine de brocoli",
+    "15 g de purée de patate douce",
+    "1 cuillère à café de pesto d'épinards maison"
+  ],
+  "preparation": [
+    "Cuire le cabillaud à la vapeur puis vérifier soigneusement l'absence d'arêtes.",
+    "L'effilocher très finement à la fourchette.",
+    "Mélanger le cabillaud avec le pesto d'épinards.",
+    "Ajouter la purée de brocoli et la purée de patate douce.",
+    "Mélanger jusqu'à obtenir une préparation humide et tendre.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "65 g de filet de cabillaud frais",
+      "40 g de purée fine de brocoli",
+      "15 g de purée de patate douce",
+      "1 cuillère à café de pesto d'épinards maison"
+    ],
+    "famille2": [
+      "130 g de filet de cabillaud frais",
+      "80 g de purée fine de brocoli",
+      "30 g de purée de patate douce",
+      "2 cuillères à café de pesto d'épinards maison"
+    ],
+    "famille4": [
+      "260 g de filet de cabillaud frais",
+      "160 g de purée fine de brocoli",
+      "60 g de purée de patate douce",
+      "4 cuillères à café de pesto d'épinards maison"
+    ]
+  }
 }
 ]
