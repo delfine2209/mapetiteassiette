@@ -10560,66 +10560,6 @@
   }
  },
  {
-  "id": "REC175",
-  "nom": "Dorade fondante au riz basmati écrasé",
-  "categorie": "Déjeuner / dîner",
-  "type": "poisson",
-  "temps": 25,
-  "tempsPreparation": 10,
-  "tempsCuisson": 15,
-  "proteines": 16,
-  "calories": 175,
-  "portions": 1,
-  "portion": "1 petite portion",
-  "petitAppetit": true,
-  "preOperatoire": false,
-  "postOperatoire": true,
-  "vegetarien": false,
-  "vegetalien": false,
-  "sansGluten": true,
-  "sansLactose": false,
-  "batchCooking": true,
-  "batchCookingDetail": "Une sauce légère permet de garder le poisson humide et le riz très tendre.",
-  "conservation": "24 heures au réfrigérateur.",
-  "congelation": "Non",
-  "envies": ["frais", "leger", "digeste"],
-  "texture": "Tendre",
-  "ingredients": [
-    "65 g de filet de dorade cuit en papillote",
-    "40 g de purée fine d'épinards",
-    "15 g de riz basmati très cuit écrasé",
-    "1 cuillère à soupe de sauce blanche légère"
-  ],
-  "preparation": [
-    "Cuire la dorade en papillote puis vérifier soigneusement l'absence d'arêtes.",
-    "Émietter très finement le poisson.",
-    "Écraser le riz basmati très cuit.",
-    "Mélanger le poisson avec le riz et la purée d'épinards.",
-    "Ajouter la sauce blanche pour maintenir une texture humide.",
-    "Servir tiède."
-  ],
-  "quantites": {
-    "petite": [
-      "65 g de filet de dorade cuit en papillote",
-      "40 g de purée fine d'épinards",
-      "15 g de riz basmati très cuit écrasé",
-      "1 cuillère à soupe de sauce blanche légère"
-    ],
-    "famille2": [
-      "130 g de filet de dorade cuit en papillote",
-      "80 g de purée fine d'épinards",
-      "30 g de riz basmati très cuit écrasé",
-      "2 cuillères à soupe de sauce blanche légère"
-    ],
-    "famille4": [
-      "260 g de filet de dorade cuit en papillote",
-      "160 g de purée fine d'épinards",
-      "60 g de riz basmati très cuit écrasé",
-      "4 cuillères à soupe de sauce blanche légère"
-    ]
-  }
-},
- {
   "id": "REC180",
   "nom": "Mousse protéinée au chocolat noir et poire",
   "categorie": "Dessert / collation",
