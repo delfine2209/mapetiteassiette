@@ -10499,6 +10499,67 @@
   }
  },
  {
+  "id": "REC174",
+  "nom": "Veau effiloché fondant à la polenta crémeuse",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 40,
+  "tempsPreparation": 10,
+  "tempsCuisson": 30,
+  "proteines": 17,
+  "calories": 180,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Une cuisson douce et prolongée permet au veau de devenir très tendre et facile à effilocher.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "reconfortant", "savoureux"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de veau cuit très tendre",
+    "40 g de purée fine de brocoli",
+    "15 g de polenta crémeuse cuite",
+    "2 cuillères à soupe de jus de cuisson dégraissé"
+  ],
+  "preparation": [
+    "Cuire le veau doucement jusqu'à ce qu'il soit suffisamment tendre pour être effiloché.",
+    "Effilocher très finement la viande.",
+    "L'humidifier avec le jus de cuisson dégraissé.",
+    "Préparer la polenta jusqu'à obtenir une texture crémeuse et souple.",
+    "Servir le veau avec la polenta et la purée de brocoli.",
+    "Déguster tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de veau cuit très tendre",
+      "40 g de purée fine de brocoli",
+      "15 g de polenta crémeuse cuite",
+      "2 cuillères à soupe de jus de cuisson dégraissé"
+    ],
+    "famille2": [
+      "120 g de veau cuit très tendre",
+      "80 g de purée fine de brocoli",
+      "30 g de polenta crémeuse cuite",
+      "4 cuillères à soupe de jus de cuisson dégraissé"
+    ],
+    "famille4": [
+      "240 g de veau cuit très tendre",
+      "160 g de purée fine de brocoli",
+      "60 g de polenta crémeuse cuite",
+      "8 cuillères à soupe de jus de cuisson dégraissé"
+    ]
+  }
+},
+{
   "id": "REC180",
   "nom": "Mousse protéinée au chocolat noir et poire",
   "categorie": "Dessert / collation",
