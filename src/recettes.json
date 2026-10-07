@@ -10365,5 +10365,424 @@
       "1 œuf battu"
     ]
   }
-}
+},
+ {
+  "id": "REC173",
+  "nom": "Jambon blanc haché à la purée de pommes de terre",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 15,
+  "tempsPreparation": 10,
+  "tempsCuisson": 5,
+  "proteines": 17,
+  "calories": 185,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "La purée et le fromage frais rendent le jambon finement haché plus moelleux.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "douceur"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de jambon blanc haché finement",
+    "40 g de purée fine de haricots verts",
+    "15 g de purée de pommes de terre lisse",
+    "1 portion de fromage frais nature"
+  ],
+  "preparation": [
+    "Hacher très finement le jambon blanc.",
+    "Mélanger la purée de pommes de terre chaude avec le fromage frais.",
+    "Ajouter le jambon haché et la purée de haricots verts.",
+    "Mélanger jusqu'à obtenir une préparation homogène et moelleuse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de jambon blanc haché finement",
+      "40 g de purée fine de haricots verts",
+      "15 g de purée de pommes de terre lisse",
+      "1 portion de fromage frais nature"
+    ],
+    "famille2": [
+      "120 g de jambon blanc haché finement",
+      "80 g de purée fine de haricots verts",
+      "30 g de purée de pommes de terre lisse",
+      "2 portions de fromage frais nature"
+    ],
+    "famille4": [
+      "240 g de jambon blanc haché finement",
+      "160 g de purée fine de haricots verts",
+      "60 g de purée de pommes de terre lisse",
+      "4 portions de fromage frais nature"
+    ]
+  }
+},
+{
+  "id": "REC174",
+  "nom": "Veau effiloché fondant à la polenta crémeuse",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 40,
+  "tempsPreparation": 10,
+  "tempsCuisson": 30,
+  "proteines": 17,
+  "calories": 180,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Une cuisson douce et prolongée permet au veau de devenir très tendre et facile à effilocher.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "reconfortant", "savoureux"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de veau cuit très tendre",
+    "40 g de purée fine de brocoli",
+    "15 g de polenta crémeuse cuite",
+    "2 cuillères à soupe de jus de cuisson dégraissé"
+  ],
+  "preparation": [
+    "Cuire le veau doucement jusqu'à ce qu'il soit suffisamment tendre pour être effiloché.",
+    "Effilocher très finement la viande.",
+    "L'humidifier avec le jus de cuisson dégraissé.",
+    "Préparer la polenta jusqu'à obtenir une texture crémeuse et souple.",
+    "Servir le veau avec la polenta et la purée de brocoli.",
+    "Déguster tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de veau cuit très tendre",
+      "40 g de purée fine de brocoli",
+      "15 g de polenta crémeuse cuite",
+      "2 cuillères à soupe de jus de cuisson dégraissé"
+    ],
+    "famille2": [
+      "120 g de veau cuit très tendre",
+      "80 g de purée fine de brocoli",
+      "30 g de polenta crémeuse cuite",
+      "4 cuillères à soupe de jus de cuisson dégraissé"
+    ],
+    "famille4": [
+      "240 g de veau cuit très tendre",
+      "160 g de purée fine de brocoli",
+      "60 g de polenta crémeuse cuite",
+      "8 cuillères à soupe de jus de cuisson dégraissé"
+    ]
+  }
+},
+{
+  "id": "REC175",
+  "nom": "Dorade fondante au riz basmati écrasé",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 16,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Une sauce légère permet de garder le poisson humide et le riz très tendre.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["frais", "leger", "digeste"],
+  "texture": "Tendre",
+  "ingredients": [
+    "65 g de filet de dorade cuit en papillote",
+    "40 g de purée fine d'épinards",
+    "15 g de riz basmati très cuit écrasé",
+    "1 cuillère à soupe de sauce blanche légère"
+  ],
+  "preparation": [
+    "Cuire la dorade en papillote puis vérifier soigneusement l'absence d'arêtes.",
+    "Émietter très finement le poisson.",
+    "Écraser le riz basmati très cuit.",
+    "Mélanger le poisson avec le riz et la purée d'épinards.",
+    "Ajouter la sauce blanche pour maintenir une texture humide.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "65 g de filet de dorade cuit en papillote",
+      "40 g de purée fine d'épinards",
+      "15 g de riz basmati très cuit écrasé",
+      "1 cuillère à soupe de sauce blanche légère"
+    ],
+    "famille2": [
+      "130 g de filet de dorade cuit en papillote",
+      "80 g de purée fine d'épinards",
+      "30 g de riz basmati très cuit écrasé",
+      "2 cuillères à soupe de sauce blanche légère"
+    ],
+    "famille4": [
+      "260 g de filet de dorade cuit en papillote",
+      "160 g de purée fine d'épinards",
+      "60 g de riz basmati très cuit écrasé",
+      "4 cuillères à soupe de sauce blanche légère"
+    ]
+  }
+},
+{
+  "id": "REC176",
+  "nom": "Dinde hachée aux courgettes et purée de panais",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 17,
+  "calories": 170,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "La cuisson douce des courgettes et de la dinde avec un peu d'huile donne une préparation souple.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "tendre", "proteine"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de blanc de dinde haché finement",
+    "40 g de purée fine de courgette sans peau",
+    "15 g de purée de panais lisse",
+    "1/2 cuillère à café d'huile d'avocat"
+  ],
+  "preparation": [
+    "Cuire doucement la dinde hachée avec l'huile d'avocat.",
+    "Ajouter la purée de courgette et mélanger.",
+    "Poursuivre la cuisson quelques minutes sans faire colorer la préparation.",
+    "Servir avec la purée de panais bien lisse.",
+    "Mélanger les éléments au moment de déguster pour conserver une texture humide."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de dinde haché finement",
+      "40 g de purée fine de courgette sans peau",
+      "15 g de purée de panais lisse",
+      "1/2 cuillère à café d'huile d'avocat"
+    ],
+    "famille2": [
+      "120 g de blanc de dinde haché finement",
+      "80 g de purée fine de courgette sans peau",
+      "30 g de purée de panais lisse",
+      "1 cuillère à café d'huile d'avocat"
+    ],
+    "famille4": [
+      "240 g de blanc de dinde haché finement",
+      "160 g de purée fine de courgette sans peau",
+      "60 g de purée de panais lisse",
+      "2 cuillères à café d'huile d'avocat"
+    ]
+  }
+},
+{
+  "id": "REC177",
+  "nom": "Œuf poché écrasé tendre à la semoule fine",
+  "categorie": "Déjeuner / dîner",
+  "type": "oeuf",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 12,
+  "calories": 145,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": true,
+  "batchCooking": false,
+  "batchCookingDetail": "La semoule fine et le jaune d'œuf apportent une texture souple et humide.",
+  "conservation": "À consommer immédiatement.",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "traditionnel"],
+  "texture": "Tendre",
+  "ingredients": [
+    "1 œuf entier",
+    "40 g de purée fine de haricots verts",
+    "15 g de semoule fine de blé cuite",
+    "2 cuillères à soupe de bouillon de légumes"
+  ],
+  "preparation": [
+    "Cuire l'œuf poché jusqu'à ce que le blanc soit pris et le jaune encore crémeux.",
+    "Mélanger la semoule fine cuite avec le bouillon de légumes chaud.",
+    "Ajouter la purée de haricots verts.",
+    "Déposer l'œuf sur la préparation.",
+    "Écraser délicatement l'œuf à la fourchette et mélanger pour obtenir une texture tendre et humide.",
+    "Servir immédiatement."
+  ],
+  "quantites": {
+    "petite": [
+      "1 œuf entier",
+      "40 g de purée fine de haricots verts",
+      "15 g de semoule fine de blé cuite",
+      "2 cuillères à soupe de bouillon de légumes"
+    ],
+    "famille2": [
+      "2 œufs entiers",
+      "80 g de purée fine de haricots verts",
+      "30 g de semoule fine de blé cuite",
+      "4 cuillères à soupe de bouillon de légumes"
+    ],
+    "famille4": [
+      "4 œufs entiers",
+      "160 g de purée fine de haricots verts",
+      "60 g de semoule fine de blé cuite",
+      "8 cuillères à soupe de bouillon de légumes"
+    ]
+  }
+},
+{
+  "id": "REC178",
+  "nom": "Saumon émietté fondant à la polenta au parmesan",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 16,
+  "calories": 205,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Le saumon et la polenta crémeuse donnent une préparation riche en goût et très moelleuse.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["omega3", "onctueux", "savoureux"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de filet de saumon cuit vapeur",
+    "40 g de purée fine de poireaux",
+    "15 g de polenta souple au parmesan",
+    "1 cuillère à café de crème fraîche légère"
+  ],
+  "preparation": [
+    "Cuire le saumon à la vapeur puis retirer la peau et vérifier soigneusement l'absence d'arêtes.",
+    "Émietter finement le poisson.",
+    "Mélanger le saumon avec la purée de poireaux et la crème fraîche.",
+    "Préparer la polenta souple avec le parmesan.",
+    "Servir le saumon avec la polenta et déguster tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de saumon cuit vapeur",
+      "40 g de purée fine de poireaux",
+      "15 g de polenta souple au parmesan",
+      "1 cuillère à café de crème fraîche légère"
+    ],
+    "famille2": [
+      "120 g de filet de saumon cuit vapeur",
+      "80 g de purée fine de poireaux",
+      "30 g de polenta souple au parmesan",
+      "2 cuillères à café de crème fraîche légère"
+    ],
+    "famille4": [
+      "240 g de filet de saumon cuit vapeur",
+      "160 g de purée fine de poireaux",
+      "60 g de polenta souple au parmesan",
+      "4 cuillères à café de crème fraîche légère"
+    ]
+  }
+},
+{
+  "id": "REC179",
+  "nom": "Colin haché tendre aux coquillettes",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 17,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "La sauce au yaourt apporte du moelleux et évite que le poisson et les pâtes ne soient secs.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["frais", "complet", "rapide"],
+  "texture": "Tendre",
+  "ingredients": [
+    "65 g de filet de colin cuit vapeur",
+    "40 g de purée fine de brocoli au cumin",
+    "15 g de petites coquillettes très cuites",
+    "1 cuillère à soupe de yaourt nature"
+  ],
+  "preparation": [
+    "Cuire le colin à la vapeur puis vérifier soigneusement l'absence d'arêtes.",
+    "Émietter le poisson très finement.",
+    "Cuire les coquillettes jusqu'à ce qu'elles soient très fondantes.",
+    "Mélanger le colin avec les coquillettes et la purée de brocoli.",
+    "Ajouter le yaourt nature pour obtenir une préparation humide et moelleuse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "65 g de filet de colin cuit vapeur",
+      "40 g de purée fine de brocoli au cumin",
+      "15 g de petites coquillettes très cuites",
+      "1 cuillère à soupe de yaourt nature"
+    ],
+    "famille2": [
+      "130 g de filet de colin cuit vapeur",
+      "80 g de purée fine de brocoli au cumin",
+      "30 g de petites coquillettes très cuites",
+      "2 cuillères à soupe de yaourt nature"
+    ],
+    "famille4": [
+      "260 g de filet de colin cuit vapeur",
+      "160 g de purée fine de brocoli au cumin",
+      "60 g de petites coquillettes très cuites",
+      "4 cuillères à soupe de yaourt nature"
+    ]
+  }
 ]
