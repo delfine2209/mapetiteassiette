@@ -10620,62 +10620,62 @@
   }
 },
 {
-  "id": "REC176",
-  "nom": "Dinde hachée aux courgettes et purée de panais",
+  "id": "REC177",
+  "nom": "Œuf poché écrasé tendre à la semoule fine",
   "categorie": "Déjeuner / dîner",
-  "type": "viande",
-  "temps": 25,
-  "tempsPreparation": 10,
-  "tempsCuisson": 15,
-  "proteines": 17,
-  "calories": 170,
+  "type": "oeuf",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 12,
+  "calories": 145,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": false,
   "postOperatoire": true,
-  "viande": true,
-  "vegetarien": false,
+  "vegetarien": true,
   "vegetalien": false,
-  "sansGluten": true,
+  "sansGluten": false,
   "sansLactose": true,
-  "batchCooking": true,
-  "batchCookingDetail": "La cuisson douce des courgettes et de la dinde avec un peu d'huile donne une préparation souple.",
-  "conservation": "2 jours au réfrigérateur.",
-  "congelation": "Oui",
-  "envies": ["complet", "tendre", "proteine"],
+  "batchCooking": false,
+  "batchCookingDetail": "La semoule fine et le jaune d'œuf apportent une texture souple et humide.",
+  "conservation": "À consommer immédiatement.",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "traditionnel"],
   "texture": "Tendre",
   "ingredients": [
-    "60 g de blanc de dinde haché finement",
-    "40 g de purée fine de courgette sans peau",
-    "15 g de purée de panais lisse",
-    "1/2 cuillère à café d'huile d'avocat"
+    "1 œuf entier",
+    "40 g de purée fine de haricots verts",
+    "15 g de semoule fine de blé cuite",
+    "2 cuillères à soupe de bouillon de légumes"
   ],
   "preparation": [
-    "Cuire doucement la dinde hachée avec l'huile d'avocat.",
-    "Ajouter la purée de courgette et mélanger.",
-    "Poursuivre la cuisson quelques minutes sans faire colorer la préparation.",
-    "Servir avec la purée de panais bien lisse.",
-    "Mélanger les éléments au moment de déguster pour conserver une texture humide."
+    "Cuire l'œuf poché jusqu'à ce que le blanc soit pris et le jaune encore crémeux.",
+    "Mélanger la semoule fine cuite avec le bouillon de légumes chaud.",
+    "Ajouter la purée de haricots verts.",
+    "Déposer l'œuf sur la préparation.",
+    "Écraser délicatement l'œuf à la fourchette et mélanger pour obtenir une texture tendre et humide.",
+    "Servir immédiatement."
   ],
   "quantites": {
     "petite": [
-      "60 g de blanc de dinde haché finement",
-      "40 g de purée fine de courgette sans peau",
-      "15 g de purée de panais lisse",
-      "1/2 cuillère à café d'huile d'avocat"
+      "1 œuf entier",
+      "40 g de purée fine de haricots verts",
+      "15 g de semoule fine de blé cuite",
+      "2 cuillères à soupe de bouillon de légumes"
     ],
     "famille2": [
-      "120 g de blanc de dinde haché finement",
-      "80 g de purée fine de courgette sans peau",
-      "30 g de purée de panais lisse",
-      "1 cuillère à café d'huile d'avocat"
+      "2 œufs entiers",
+      "80 g de purée fine de haricots verts",
+      "30 g de semoule fine de blé cuite",
+      "4 cuillères à soupe de bouillon de légumes"
     ],
     "famille4": [
-      "240 g de blanc de dinde haché finement",
-      "160 g de purée fine de courgette sans peau",
-      "60 g de purée de panais lisse",
-      "2 cuillères à café d'huile d'avocat"
+      "4 œufs entiers",
+      "160 g de purée fine de haricots verts",
+      "60 g de semoule fine de blé cuite",
+      "8 cuillères à soupe de bouillon de légumes"
     ]
   }
 }, 
