@@ -7980,6 +7980,78 @@
   }
 },
 {
+  "id": "ADP001",
+  "nom": "Petite pizza poulet & courgette",
+  "categorie": "Déjeuner",
+  "type": "Plat",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 20,
+  "calories": 330,
+  "portions": 1,
+  "portion": "Petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "envies": ["complet", "leger"],
+  "texture": "Tendre",
+  "platAdapte": "Pizza",
+  "garniture": "Poulet & courgette",
+  "ingredients": [
+    "1 petite tortilla ou base à pizza individuelle",
+    "40 g de blanc de poulet",
+    "50 g de courgette",
+    "30 g de mozzarella",
+    "1 cuillère à soupe de sauce tomate",
+    "1 cuillère à café d'huile d'olive",
+    "Herbes de Provence"
+  ],
+  "preparation": [
+    "Couper la courgette en petits dés.",
+    "Faire cuire le poulet et la courgette avec l'huile d'olive.",
+    "Déposer la sauce tomate sur la base.",
+    "Ajouter le poulet et la courgette cuits.",
+    "Ajouter la mozzarella.",
+    "Cuire au four environ 10 à 15 minutes.",
+    "Laisser légèrement refroidir avant de servir."
+  ],
+  "quantites": {
+    "petite": [
+      "1 petite tortilla ou base à pizza individuelle",
+      "40 g de blanc de poulet",
+      "50 g de courgette",
+      "30 g de mozzarella",
+      "1 cuillère à soupe de sauce tomate",
+      "1 cuillère à café d'huile d'olive",
+      "Herbes de Provence"
+    ],
+    "famille2": [
+      "2 petites tortillas ou bases à pizza individuelles",
+      "80 g de blanc de poulet",
+      "100 g de courgette",
+      "60 g de mozzarella",
+      "2 cuillères à soupe de sauce tomate",
+      "2 cuillères à café d'huile d'olive",
+      "Herbes de Provence"
+    ],
+    "famille4": [
+      "4 petites tortillas ou bases à pizza individuelles",
+      "160 g de blanc de poulet",
+      "200 g de courgette",
+      "120 g de mozzarella",
+      "4 cuillères à soupe de sauce tomate",
+      "4 cuillères à café d'huile d'olive",
+      "Herbes de Provence"
+    ]
+  }
+},
+{
   "id": "ADP002",
   "nom": "Petite pizza jambon & champignons",
   "categorie": "Déjeuner",
