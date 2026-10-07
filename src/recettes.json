@@ -10252,5 +10252,124 @@
       "4 portions de carré frais"
     ]
   }
+},
+{
+  "id": "REC186",
+  "nom": "Cheesecake sans pâte à la mousse de fraises",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 15,
+  "tempsPreparation": 15,
+  "tempsCuisson": 0,
+  "proteines": 8,
+  "calories": 130,
+  "portions": 1,
+  "portion": "1 petite verrine",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Un dessert sans cuisson très frais, à laisser reposer au réfrigérateur avant dégustation.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["frais", "sucre", "onctueux"],
+  "texture": "Mixée",
+  "ingredients": [
+    "35 g de ricotta allégée",
+    "20 g de purée de fraises fraîche passée au tamis",
+    "5 g de protéines en poudre neutre",
+    "3 gouttes d'extrait naturel de vanille"
+  ],
+  "preparation": [
+    "Mixer les fraises puis filtrer la purée au chinois pour éliminer les petits grains.",
+    "Mélanger la ricotta, la protéine en poudre et l'extrait de vanille.",
+    "Fouetter jusqu'à obtenir une crème parfaitement lisse.",
+    "Ajouter délicatement la purée de fraises filtrée.",
+    "Verser dans une petite verrine et placer au frais pendant au moins 1 heure."
+  ],
+  "quantites": {
+    "petite": [
+      "35 g de ricotta allégée",
+      "20 g de purée de fraises fraîche passée au tamis",
+      "5 g de protéines en poudre neutre",
+      "3 gouttes d'extrait naturel de vanille"
+    ],
+    "famille2": [
+      "70 g de ricotta allégée",
+      "40 g de purée de fraises fraîche passée au tamis",
+      "10 g de protéines en poudre neutre",
+      "6 gouttes d'extrait naturel de vanille"
+    ],
+    "famille4": [
+      "140 g de ricotta allégée",
+      "80 g de purée de fraises fraîche passée au tamis",
+      "20 g de protéines en poudre neutre",
+      "12 gouttes d'extrait naturel de vanille"
+    ]
+  }
+},
+{
+  "id": "REC187",
+  "nom": "Clafoutis protéiné aux poires fondantes",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 10,
+  "calories": 135,
+  "portions": 1,
+  "portion": "1 ramequin",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "La préparation donne une texture fondante et riche en protéines.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["sucre", "complet", "douceur"],
+  "texture": "Fondante",
+  "ingredients": [
+    "30 g de poire fondante cuite et écrasée",
+    "10 g de poudre de protéine de lactosérum (whey) vanille",
+    "1/2 œuf entier battu",
+    "30 ml de lait écrémé"
+  ],
+  "preparation": [
+    "Préchauffer le four à 160 °C.",
+    "Battre le demi-œuf avec le lait et la poudre de protéine vanille.",
+    "Ajouter la poire cuite et écrasée.",
+    "Mélanger jusqu'à obtenir un appareil lisse.",
+    "Verser dans un petit ramequin individuel en silicone et enfourner environ 20 minutes.",
+    "Laisser tiédir avant de consommer."
+  ],
+  "quantites": {
+    "petite": [
+      "30 g de poire fondante cuite et écrasée",
+      "10 g de poudre de protéine de lactosérum (whey) vanille",
+      "1/2 œuf entier battu",
+      "30 ml de lait écrémé"
+    ],
+    "famille2": [
+      "60 g de poire fondante cuite et écrasée",
+      "20 g de poudre de protéine de lactosérum (whey) vanille",
+      "1 œuf entier battu",
+      "60 ml de lait écrémé"
+    ],
+    "famille4": [
+      "120 g de poire fondante cuite et écrasée",
+      "40 g de poudre de protéine de lactosérum (whey) vanille",
+      "2 œufs entiers battus",
+      "120 ml de lait écrémé"
+    ]
+  }
 }
 ]
