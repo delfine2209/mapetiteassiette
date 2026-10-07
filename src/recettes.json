@@ -10056,5 +10056,314 @@
       "8 cuillères à soupe de sauce tomate maison lisse"
     ]
   }
+},
+{
+  "id": "REC168",
+  "nom": "Filet de sole tendre à la polenta au parmesan",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 17,
+  "calories": 185,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "La sole et la polenta souple forment une préparation tendre et facile à manger.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["frais", "onctueux", "leger"],
+  "texture": "Tendre",
+  "ingredients": [
+    "65 g de filet de sole frais",
+    "40 g de purée fine de poireaux",
+    "15 g de polenta souple cuite",
+    "1/2 cuillère à café de beurre allégé fondu",
+    "1 pincée de parmesan râpé"
+  ],
+  "preparation": [
+    "Cuire la sole à la vapeur puis vérifier soigneusement l'absence d'arêtes.",
+    "Émietter délicatement le poisson.",
+    "Préparer la polenta jusqu'à obtenir une texture bien souple puis ajouter le parmesan.",
+    "Mélanger la purée de poireaux avec le beurre fondu.",
+    "Servir la sole avec la purée de poireaux et la polenta.",
+    "Déguster tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "65 g de filet de sole frais",
+      "40 g de purée fine de poireaux",
+      "15 g de polenta souple cuite",
+      "1/2 cuillère à café de beurre allégé fondu",
+      "1 pincée de parmesan râpé"
+    ],
+    "famille2": [
+      "130 g de filet de sole frais",
+      "80 g de purée fine de poireaux",
+      "30 g de polenta souple cuite",
+      "1 cuillère à café de beurre allégé fondu",
+      "2 pincées de parmesan râpé"
+    ],
+    "famille4": [
+      "260 g de filet de sole frais",
+      "160 g de purée fine de poireaux",
+      "60 g de polenta souple cuite",
+      "2 cuillères à café de beurre allégé fondu",
+      "4 pincées de parmesan râpé"
+    ]
+  }
+},
+{
+  "id": "REC169",
+  "nom": "Œuf brouillé souple au carré frais",
+  "categorie": "Déjeuner / dîner",
+  "type": "oeuf",
+  "temps": 15,
+  "tempsPreparation": 5,
+  "tempsCuisson": 10,
+  "proteines": 16,
+  "calories": 180,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "batchCookingDetail": "La cuisson douce et le fromage frais donnent aux œufs une texture particulièrement moelleuse.",
+  "conservation": "À consommer immédiatement.",
+  "congelation": "Non",
+  "envies": ["salé", "rapide", "douceur"],
+  "texture": "Tendre",
+  "ingredients": [
+    "1 œuf entier et 1 blanc d'œuf",
+    "40 g de purée fine de haricots verts",
+    "15 g de purée de carottes",
+    "1 portion de carré frais"
+  ],
+  "preparation": [
+    "Battre l'œuf et le blanc d'œuf dans un bol.",
+    "Cuire à feu très doux en remuant régulièrement pour obtenir des œufs brouillés souples.",
+    "Hors du feu, incorporer le carré frais.",
+    "Ajouter la purée de haricots verts et la purée de carottes.",
+    "Mélanger délicatement jusqu'à obtenir une préparation tendre et homogène.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "1 œuf entier et 1 blanc d'œuf",
+      "40 g de purée fine de haricots verts",
+      "15 g de purée de carottes",
+      "1 portion de carré frais"
+    ],
+    "famille2": [
+      "2 œufs entiers et 2 blancs d'œufs",
+      "80 g de purée fine de haricots verts",
+      "30 g de purée de carottes",
+      "2 portions de carré frais"
+    ],
+    "famille4": [
+      "4 œufs entiers et 4 blancs d'œufs",
+      "160 g de purée fine de haricots verts",
+      "60 g de purée de carottes",
+      "4 portions de carré frais"
+    ]
+  }
+},
+ {
+  "id": "REC170",
+  "nom": "Truite cuite fondante aux petites pâtes très cuites",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 17,
+  "calories": 205,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Le fromage fondu apporte de l'onctuosité aux petites pâtes très cuites.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["omega3", "complet", "reconfortant"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de filet de truite cuit",
+    "40 g de purée fine de brocoli",
+    "15 g de petites pâtes très cuites",
+    "1 cuillère à café de fromage fondu léger"
+  ],
+  "preparation": [
+    "Cuire la truite puis vérifier soigneusement l'absence d'arêtes.",
+    "Émietter finement le poisson.",
+    "Cuire les petites pâtes jusqu'à obtenir une texture très fondante.",
+    "Mélanger les pâtes chaudes avec le fromage fondu.",
+    "Ajouter la purée de brocoli et la truite émiettée.",
+    "Mélanger délicatement et servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de truite cuit",
+      "40 g de purée fine de brocoli",
+      "15 g de petites pâtes très cuites",
+      "1 cuillère à café de fromage fondu léger"
+    ],
+    "famille2": [
+      "120 g de filet de truite cuit",
+      "80 g de purée fine de brocoli",
+      "30 g de petites pâtes très cuites",
+      "2 cuillères à café de fromage fondu léger"
+    ],
+    "famille4": [
+      "240 g de filet de truite cuit",
+      "160 g de purée fine de brocoli",
+      "60 g de petites pâtes très cuites",
+      "4 cuillères à café de fromage fondu léger"
+    ]
+  }
+},
+{
+  "id": "REC171",
+  "nom": "Poulet haché aux épinards à la crème",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 17,
+  "calories": 180,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Le bouillon et les épinards à la crème permettent de conserver une préparation humide et moelleuse.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "douceur", "proteine"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de blanc de poulet haché",
+    "40 g d'épinards à la crème bien fondants",
+    "15 g de semoule fine cuite",
+    "2 cuillères à soupe de bouillon de légumes"
+  ],
+  "preparation": [
+    "Cuire le poulet haché à feu doux avec le bouillon de légumes.",
+    "Émietter régulièrement la viande afin d'éviter les morceaux trop compacts.",
+    "Ajouter les épinards à la crème très finement hachés.",
+    "Incorporer la semoule fine cuite.",
+    "Mélanger jusqu'à obtenir une préparation humide et moelleuse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de poulet haché",
+      "40 g d'épinards à la crème bien fondants",
+      "15 g de semoule fine cuite",
+      "2 cuillères à soupe de bouillon de légumes"
+    ],
+    "famille2": [
+      "120 g de blanc de poulet haché",
+      "80 g d'épinards à la crème bien fondants",
+      "30 g de semoule fine cuite",
+      "4 cuillères à soupe de bouillon de légumes"
+    ],
+    "famille4": [
+      "240 g de blanc de poulet haché",
+      "160 g d'épinards à la crème bien fondants",
+      "60 g de semoule fine cuite",
+      "8 cuillères à soupe de bouillon de légumes"
+    ]
+  }
+},
+{
+  "id": "REC172",
+  "nom": "Flan de cabillaud fondant à la purée de poireaux",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 30,
+  "tempsPreparation": 15,
+  "tempsCuisson": 15,
+  "proteines": 16,
+  "calories": 150,
+  "portions": 1,
+  "portion": "1 ramequin",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "La cuisson douce au four permet d'obtenir un flan tendre et humide.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["frais", "leger", "onctueux"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de filet de cabillaud haché",
+    "40 g de purée fine de poireaux",
+    "15 g de purée de patate douce",
+    "1/2 cuillère à café d'huile de colza",
+    "1/4 d'œuf battu"
+  ],
+  "preparation": [
+    "Préchauffer le four à 160 °C.",
+    "Mixer ou hacher très finement le cabillaud.",
+    "Mélanger le cabillaud avec la purée de poireaux et l'œuf battu.",
+    "Ajouter l'huile de colza.",
+    "Verser dans un petit ramequin et cuire environ 15 minutes, jusqu'à ce que le flan soit pris tout en restant moelleux.",
+    "Servir avec la purée de patate douce bien lisse."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de filet de cabillaud haché",
+      "40 g de purée fine de poireaux",
+      "15 g de purée de patate douce",
+      "1/2 cuillère à café d'huile de colza",
+      "1/4 d'œuf battu"
+    ],
+    "famille2": [
+      "120 g de filet de cabillaud haché",
+      "80 g de purée fine de poireaux",
+      "30 g de purée de patate douce",
+      "1 cuillère à café d'huile de colza",
+      "1/2 œuf battu"
+    ],
+    "famille4": [
+      "240 g de filet de cabillaud haché",
+      "160 g de purée fine de poireaux",
+      "60 g de purée de patate douce",
+      "2 cuillères à café d'huile de colza",
+      "1 œuf battu"
+    ]
+  }
 }
 ]
