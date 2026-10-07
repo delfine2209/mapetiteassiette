@@ -10620,6 +10620,66 @@
   }
 },
 {
+  "id": "REC176",
+  "nom": "Dinde hachée aux courgettes et purée de panais",
+  "categorie": "Déjeuner / dîner",
+  "type": "viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 17,
+  "calories": 170,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "viande": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "La cuisson douce des courgettes et de la dinde avec un peu d'huile donne une préparation souple.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Oui",
+  "envies": ["complet", "tendre", "proteine"],
+  "texture": "Tendre",
+  "ingredients": [
+    "60 g de blanc de dinde haché finement",
+    "40 g de purée fine de courgette sans peau",
+    "15 g de purée de panais lisse",
+    "1/2 cuillère à café d'huile d'avocat"
+  ],
+  "preparation": [
+    "Cuire doucement la dinde hachée avec l'huile d'avocat.",
+    "Ajouter la purée de courgette et mélanger.",
+    "Poursuivre la cuisson quelques minutes sans faire colorer la préparation.",
+    "Servir avec la purée de panais bien lisse.",
+    "Mélanger les éléments au moment de déguster pour conserver une texture humide."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de dinde haché finement",
+      "40 g de purée fine de courgette sans peau",
+      "15 g de purée de panais lisse",
+      "1/2 cuillère à café d'huile d'avocat"
+    ],
+    "famille2": [
+      "120 g de blanc de dinde haché finement",
+      "80 g de purée fine de courgette sans peau",
+      "30 g de purée de panais lisse",
+      "1 cuillère à café d'huile d'avocat"
+    ],
+    "famille4": [
+      "240 g de blanc de dinde haché finement",
+      "160 g de purée fine de courgette sans peau",
+      "60 g de purée de panais lisse",
+      "2 cuillères à café d'huile d'avocat"
+    ]
+  }
+}, 
+{
   "id": "REC180",
   "nom": "Mousse protéinée au chocolat noir et poire",
   "categorie": "Dessert / collation",
