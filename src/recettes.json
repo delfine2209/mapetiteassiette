@@ -10371,5 +10371,365 @@
       "120 ml de lait écrémé"
     ]
   }
+},
+{
+  "id": "REC180",
+  "nom": "Mousse protéinée au chocolat noir et poire",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 20,
+  "tempsPreparation": 15,
+  "tempsCuisson": 5,
+  "proteines": 8,
+  "calories": 180,
+  "portions": 1,
+  "portion": "1 ramequin",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Doit reposer au moins 2 heures au réfrigérateur avant de consommer.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["sucre", "gourmand", "frais"],
+  "texture": "Mixée",
+  "ingredients": [
+    "25 g de chocolat noir 70 % fondu",
+    "20 g de compote de poire sans sucre ajouté",
+    "5 g de poudre de cacao dégraissé",
+    "1 grand blanc d'œuf frais"
+  ],
+  "preparation": [
+    "Faire fondre le chocolat noir à feu très doux avec une cuillère à soupe d'eau.",
+    "Hors du feu, incorporer la compote de poire lisse et la poudre de cacao.",
+    "Monter le blanc d'œuf en neige très ferme avec une pincée de sel.",
+    "Incorporer délicatement le blanc en neige au chocolat à l'aide d'une spatule.",
+    "Verser dans un petit ramequin et placer au réfrigérateur au moins 2 heures."
+  ],
+  "quantites": {
+    "petite": [
+      "25 g de chocolat noir 70 % fondu",
+      "20 g de compote de poire sans sucre ajouté",
+      "5 g de poudre de cacao dégraissé",
+      "1 grand blanc d'œuf frais"
+    ],
+    "famille2": [
+      "50 g de chocolat noir 70 % fondu",
+      "40 g de compote de poire sans sucre ajouté",
+      "10 g de poudre de cacao dégraissé",
+      "2 grands blancs d'œuf frais"
+    ],
+    "famille4": [
+      "100 g de chocolat noir 70 % fondu",
+      "80 g de compote de poire sans sucre ajouté",
+      "20 g de poudre de cacao dégraissé",
+      "4 grands blancs d'œuf frais"
+    ]
+  }
+},
+{
+  "id": "REC181",
+  "nom": "Flan fondant à la vanille et aux pommes",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 8,
+  "calories": 120,
+  "portions": 1,
+  "portion": "1 ramequin",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "Une recette douce à base d'œuf et de lait en poudre, idéale pour une petite envie sucrée.",
+  "conservation": "2 jours au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["sucre", "douceur", "traditionnel"],
+  "texture": "Fondante",
+  "ingredients": [
+    "1/2 œuf entier battu",
+    "25 g de compote de pommes nature sans sucre",
+    "20 g de poudre de lait écrémé",
+    "40 ml d'eau",
+    "3 gouttes d'extrait naturel de vanille"
+  ],
+  "preparation": [
+    "Préchauffer le four à 150 °C.",
+    "Diluer la poudre de lait écrémé dans l'eau avec l'extrait de vanille.",
+    "Ajouter le demi-œuf battu et la compote de pommes.",
+    "Fouetter doucement pour homogénéiser sans créer trop de mousse.",
+    "Verser dans un ramequin et cuire au bain-marie pendant environ 15 minutes, jusqu'à ce que le centre soit pris."
+  ],
+  "quantites": {
+    "petite": [
+      "1/2 œuf entier battu",
+      "25 g de compote de pommes nature sans sucre",
+      "20 g de poudre de lait écrémé",
+      "40 ml d'eau",
+      "3 gouttes d'extrait naturel de vanille"
+    ],
+    "famille2": [
+      "1 œuf entier battu",
+      "50 g de compote de pommes nature sans sucre",
+      "40 g de poudre de lait écrémé",
+      "80 ml d'eau",
+      "6 gouttes d'extrait naturel de vanille"
+    ],
+    "famille4": [
+      "2 œufs entiers battus",
+      "100 g de compote de pommes nature sans sucre",
+      "80 g de poudre de lait écrémé",
+      "160 ml d'eau",
+      "12 gouttes d'extrait naturel de vanille"
+    ]
+  }
+},
+{
+  "id": "REC182",
+  "nom": "Gâteau de Savoie aérien aux framboises",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 25,
+  "tempsPreparation": 15,
+  "tempsCuisson": 10,
+  "proteines": 5,
+  "calories": 115,
+  "portions": 1,
+  "portion": "1 petite part",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "Ce petit gâteau sans matière grasse est particulièrement léger en bouche.",
+  "conservation": "2 jours dans une boîte hermétique.",
+  "congelation": "Oui",
+  "envies": ["sucre", "leger", "nomade"],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "1 blanc d'œuf frais",
+    "20 g de purée de framboises filtrée sans pépins",
+    "15 g de fécule de maïs",
+    "1/2 jaune d'œuf"
+  ],
+  "preparation": [
+    "Préchauffer le four à 170 °C.",
+    "Mélanger le demi-jaune d'œuf avec la fécule de maïs et la purée de framboises filtrée.",
+    "Monter le blanc d'œuf en neige ferme.",
+    "Incorporer délicatement le blanc en neige à la préparation.",
+    "Verser dans un petit moule individuel en silicone et cuire environ 10 minutes.",
+    "Laisser refroidir puis vérifier que la texture reste bien moelleuse."
+  ],
+  "quantites": {
+    "petite": [
+      "1 blanc d'œuf frais",
+      "20 g de purée de framboises filtrée sans pépins",
+      "15 g de fécule de maïs",
+      "1/2 jaune d'œuf"
+    ],
+    "famille2": [
+      "2 blancs d'œuf frais",
+      "40 g de purée de framboises filtrée sans pépins",
+      "30 g de fécule de maïs",
+      "1 jaune d'œuf"
+    ],
+    "famille4": [
+      "4 blancs d'œuf frais",
+      "80 g de purée de framboises filtrée sans pépins",
+      "60 g de fécule de maïs",
+      "2 jaunes d'œuf"
+    ]
+  }
+},
+{
+  "id": "REC183",
+  "nom": "Mug-cake minute à la banane et au fromage blanc",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 10,
+  "tempsPreparation": 8,
+  "tempsCuisson": 2,
+  "proteines": 7,
+  "calories": 125,
+  "portions": 1,
+  "portion": "1 petit mug",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "batchCookingDetail": "Une recette express à préparer au micro-ondes et à consommer tiède.",
+  "conservation": "À consommer immédiatement.",
+  "congelation": "Non",
+  "envies": ["sucre", "rapide", "chaud"],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "25 g de banane mûre écrasée en purée fine",
+    "20 g de fromage blanc 0 %",
+    "15 g de farine d'avoine",
+    "1/2 blanc d'œuf liquide"
+  ],
+  "preparation": [
+    "Dans un petit mug, écraser parfaitement la banane en purée.",
+    "Ajouter le fromage blanc et le demi-blanc d'œuf, puis mélanger.",
+    "Incorporer la farine d'avoine jusqu'à obtenir une pâte lisse.",
+    "Cuire au micro-ondes à 750 W pendant environ 1 minute 30 à 2 minutes.",
+    "Laisser tiédir avant de consommer."
+  ],
+  "quantites": {
+    "petite": [
+      "25 g de banane mûre écrasée en purée fine",
+      "20 g de fromage blanc 0 %",
+      "15 g de farine d'avoine",
+      "1/2 blanc d'œuf liquide"
+    ],
+    "famille2": [
+      "50 g de banane mûre écrasée en purée fine",
+      "40 g de fromage blanc 0 %",
+      "30 g de farine d'avoine",
+      "1 blanc d'œuf liquide"
+    ],
+    "famille4": [
+      "100 g de banane mûre écrasée en purée fine",
+      "80 g de fromage blanc 0 %",
+      "60 g de farine d'avoine",
+      "2 blancs d'œuf liquides"
+    ]
+  }
+},
+{
+  "id": "REC184",
+  "nom": "Moelleux aux amandes et compote pomme-rhubarbe",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 6,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 mini gâteau",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "batchCookingDetail": "La poudre d'amande apporte du moelleux sans dessécher la texture.",
+  "conservation": "2 jours dans une boîte hermétique.",
+  "congelation": "Oui",
+  "envies": ["sucre", "gourmand", "acidule"],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "20 g de poudre d'amande fine",
+    "20 g de compote pomme-rhubarbe lisse",
+    "15 ml de crème de soja légère",
+    "1/2 blanc d'œuf monté"
+  ],
+  "preparation": [
+    "Préchauffer le four à 160 °C.",
+    "Mélanger la poudre d'amande, la compote pomme-rhubarbe et la crème de soja.",
+    "Monter le demi-blanc d'œuf en neige et l'incorporer délicatement à la pâte.",
+    "Verser dans un petit moule individuel en silicone.",
+    "Enfourner environ 15 minutes et laisser refroidir avant de consommer."
+  ],
+  "quantites": {
+    "petite": [
+      "20 g de poudre d'amande fine",
+      "20 g de compote pomme-rhubarbe lisse",
+      "15 ml de crème de soja légère",
+      "1/2 blanc d'œuf monté"
+    ],
+    "famille2": [
+      "40 g de poudre d'amande fine",
+      "40 g de compote pomme-rhubarbe lisse",
+      "30 ml de crème de soja légère",
+      "1 blanc d'œuf monté"
+    ],
+    "famille4": [
+      "80 g de poudre d'amande fine",
+      "80 g de compote pomme-rhubarbe lisse",
+      "60 ml de crème de soja légère",
+      "2 blancs d'œuf montés"
+    ]
+  }
+},
+{
+  "id": "REC185",
+  "nom": "Soufflé léger à la purée d'abricot",
+  "categorie": "Dessert / collation",
+  "type": "sucre",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 5,
+  "calories": 100,
+  "portions": 1,
+  "portion": "1 petit ramequin",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "batchCookingDetail": "Le soufflé doit être consommé dès sa sortie du four avant qu'il ne retombe.",
+  "conservation": "À consommer immédiatement.",
+  "congelation": "Non",
+  "envies": ["sucre", "leger", "frais"],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "1 grand blanc d'œuf frais",
+    "25 g de purée d'abricot sans sucre ajouté",
+    "10 g de farine de riz fine",
+    "1 cuillère à soupe d'eau"
+  ],
+  "preparation": [
+    "Préchauffer le four à 180 °C.",
+    "Délayer la farine de riz dans l'eau puis ajouter la purée d'abricot.",
+    "Chauffer doucement pendant environ 2 minutes pour épaissir.",
+    "Laisser tiédir cette base.",
+    "Monter le blanc d'œuf en neige ferme et l'incorporer délicatement.",
+    "Verser dans un petit ramequin et cuire environ 10 minutes."
+  ],
+  "quantites": {
+    "petite": [
+      "1 grand blanc d'œuf frais",
+      "25 g de purée d'abricot sans sucre ajouté",
+      "10 g de farine de riz fine",
+      "1 cuillère à soupe d'eau"
+    ],
+    "famille2": [
+      "2 grands blancs d'œuf frais",
+      "50 g de purée d'abricot sans sucre ajouté",
+      "20 g de farine de riz fine",
+      "2 cuillères à soupe d'eau"
+    ],
+    "famille4": [
+      "4 grands blancs d'œuf frais",
+      "100 g de purée d'abricot sans sucre ajouté",
+      "40 g de farine de riz fine",
+      "4 cuillères à soupe d'eau"
+    ]
+  }
 }
 ]
