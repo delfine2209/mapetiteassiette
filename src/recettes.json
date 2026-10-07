@@ -10499,63 +10499,62 @@
   }
  },
  {
-  "id": "REC174",
-  "nom": "Veau effiloché fondant à la polenta crémeuse",
+  "id": "REC175",
+  "nom": "Dorade fondante au riz basmati écrasé",
   "categorie": "Déjeuner / dîner",
-  "type": "viande",
-  "temps": 40,
+  "type": "poisson",
+  "temps": 25,
   "tempsPreparation": 10,
-  "tempsCuisson": 30,
-  "proteines": 17,
-  "calories": 180,
+  "tempsCuisson": 15,
+  "proteines": 16,
+  "calories": 175,
   "portions": 1,
   "portion": "1 petite portion",
   "petitAppetit": true,
   "preOperatoire": false,
   "postOperatoire": true,
-  "viande": true,
   "vegetarien": false,
   "vegetalien": false,
   "sansGluten": true,
-  "sansLactose": true,
+  "sansLactose": false,
   "batchCooking": true,
-  "batchCookingDetail": "Une cuisson douce et prolongée permet au veau de devenir très tendre et facile à effilocher.",
-  "conservation": "2 jours au réfrigérateur.",
-  "congelation": "Oui",
-  "envies": ["complet", "reconfortant", "savoureux"],
+  "batchCookingDetail": "Une sauce légère permet de garder le poisson humide et le riz très tendre.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": ["frais", "leger", "digeste"],
   "texture": "Tendre",
   "ingredients": [
-    "60 g de veau cuit très tendre",
-    "40 g de purée fine de brocoli",
-    "15 g de polenta crémeuse cuite",
-    "2 cuillères à soupe de jus de cuisson dégraissé"
+    "65 g de filet de dorade cuit en papillote",
+    "40 g de purée fine d'épinards",
+    "15 g de riz basmati très cuit écrasé",
+    "1 cuillère à soupe de sauce blanche légère"
   ],
   "preparation": [
-    "Cuire le veau doucement jusqu'à ce qu'il soit suffisamment tendre pour être effiloché.",
-    "Effilocher très finement la viande.",
-    "L'humidifier avec le jus de cuisson dégraissé.",
-    "Préparer la polenta jusqu'à obtenir une texture crémeuse et souple.",
-    "Servir le veau avec la polenta et la purée de brocoli.",
-    "Déguster tiède."
+    "Cuire la dorade en papillote puis vérifier soigneusement l'absence d'arêtes.",
+    "Émietter très finement le poisson.",
+    "Écraser le riz basmati très cuit.",
+    "Mélanger le poisson avec le riz et la purée d'épinards.",
+    "Ajouter la sauce blanche pour maintenir une texture humide.",
+    "Servir tiède."
   ],
   "quantites": {
     "petite": [
-      "60 g de veau cuit très tendre",
-      "40 g de purée fine de brocoli",
-      "15 g de polenta crémeuse cuite",
-      "2 cuillères à soupe de jus de cuisson dégraissé"
+      "65 g de filet de dorade cuit en papillote",
+      "40 g de purée fine d'épinards",
+      "15 g de riz basmati très cuit écrasé",
+      "1 cuillère à soupe de sauce blanche légère"
     ],
     "famille2": [
-      "120 g de veau cuit très tendre",
-      "80 g de purée fine de brocoli",
-      "30 g de polenta crémeuse cuite",
-      "4 cuillères à soupe de jus de cuisson dégraissé"
+      "130 g de filet de dorade cuit en papillote",
+      "80 g de purée fine d'épinards",
+      "30 g de riz basmati très cuit écrasé",
+      "2 cuillères à soupe de sauce blanche légère"
     ],
     "famille4": [
-      "240 g de veau cuit très tendre",
-      "160 g de purée fine de brocoli",
-      "60 g de polenta crémeuse cuite",
-      "8 cuillères à soupe de jus de cuisson dégraissé"
+      "260 g de filet de dorade cuit en papillote",
+      "160 g de purée fine d'épinards",
+      "60 g de riz basmati très cuit écrasé",
+      "4 cuillères à soupe de sauce blanche légère"
     ]
   }
 },
