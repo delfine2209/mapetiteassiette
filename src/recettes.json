@@ -11348,6 +11348,7 @@
       "60 g de petites coquillettes très cuites",
       "4 cuillères à soupe de yaourt nature"
     ]
+   }
   },
   {
   "id": "FES001",
@@ -11402,13 +11403,14 @@
       "120 g de fromage blanc",
       "20 g de cacao non sucré"
     ]
-  },
+ },
   "preparation": [
     "Préparer un petit biscuit avec la farine, l'œuf et le sucre.",
     "Cuire quelques minutes jusqu'à ce que le biscuit soit souple.",
     "Mélanger le fromage blanc avec le cacao.",
     "Garnir le biscuit avec la crème et les dés de poire puis rouler délicatement."
   ]
+ }
 },
 {
   "id": "FES002",
@@ -11466,5 +11468,6 @@
     "Verser dans un petit moule individuel.",
     "Cuire environ 12 à 15 minutes à 180 °C."
   ]
+ }
 }
 ]
