@@ -11285,7 +11285,7 @@
       "4 cuillères à café de crème fraîche légère"
     ]
   }
-},
+ },
  {
   "id": "REC179",
   "nom": "Colin haché tendre aux coquillettes",
@@ -11348,5 +11348,123 @@
       "60 g de petites coquillettes très cuites",
       "4 cuillères à soupe de yaourt nature"
     ]
-  }
+  },
+  {
+  "id": "FES001",
+  "nom": "Mini bûche légère chocolat & poire",
+  "categorie": "Noël",
+  "type": "Dessert festif",
+  "temps": 35,
+  "tempsPreparation": 20,
+  "tempsCuisson": 15,
+  "proteines": 7,
+  "calories": 225,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "20 g de farine",
+    "1/2 œuf",
+    "10 g de sucre",
+    "30 g de poire",
+    "30 g de fromage blanc",
+    "5 g de cacao non sucré"
+  ],
+  "quantites": {
+    "petite": [
+      "20 g de farine",
+      "1/2 œuf",
+      "10 g de sucre",
+      "30 g de poire",
+      "30 g de fromage blanc",
+      "5 g de cacao non sucré"
+    ],
+    "famille2": [
+      "40 g de farine",
+      "1 œuf",
+      "20 g de sucre",
+      "60 g de poire",
+      "60 g de fromage blanc",
+      "10 g de cacao non sucré"
+    ],
+    "famille4": [
+      "80 g de farine",
+      "2 œufs",
+      "40 g de sucre",
+      "120 g de poire",
+      "120 g de fromage blanc",
+      "20 g de cacao non sucré"
+    ]
+  },
+  "preparation": [
+    "Préparer un petit biscuit avec la farine, l'œuf et le sucre.",
+    "Cuire quelques minutes jusqu'à ce que le biscuit soit souple.",
+    "Mélanger le fromage blanc avec le cacao.",
+    "Garnir le biscuit avec la crème et les dés de poire puis rouler délicatement."
+  ]
+},
+{
+  "id": "FES002",
+  "nom": "Mini fondant chocolat",
+  "categorie": "Desserts festifs",
+  "type": "Gâteau individuel",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 6,
+  "calories": 220,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "15 g de chocolat noir",
+    "10 g de farine",
+    "1 petit œuf",
+    "10 g de fromage blanc",
+    "5 g de sucre"
+  ],
+  "quantites": {
+    "petite": [
+      "15 g de chocolat noir",
+      "10 g de farine",
+      "1 petit œuf",
+      "10 g de fromage blanc",
+      "5 g de sucre"
+    ],
+    "famille2": [
+      "30 g de chocolat noir",
+      "20 g de farine",
+      "2 petits œufs",
+      "20 g de fromage blanc",
+      "10 g de sucre"
+    ],
+    "famille4": [
+      "60 g de chocolat noir",
+      "40 g de farine",
+      "4 petits œufs",
+      "40 g de fromage blanc",
+      "20 g de sucre"
+    ]
+  },
+  "preparation": [
+    "Faire fondre le chocolat.",
+    "Mélanger avec l'œuf, le fromage blanc, le sucre et la farine.",
+    "Verser dans un petit moule individuel.",
+    "Cuire environ 12 à 15 minutes à 180 °C."
+  ]
+}
 ]
