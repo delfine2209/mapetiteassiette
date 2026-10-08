@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -20,7 +21,7 @@
       font-family: Arial, sans-serif;
       background: #fffaf5;
       color: #333;
-      padding-bottom: 80px;
+      padding-bottom: 85px;
     }
 
     header {
@@ -31,24 +32,26 @@
     }
 
     header h1 {
-      font-size: 24px;
+      font-size: 25px;
       margin-bottom: 8px;
+      color: #d96b7d;
     }
 
     header p {
       font-size: 14px;
       color: #777;
+      line-height: 1.4;
     }
 
     .conteneur {
       max-width: 600px;
       margin: 0 auto;
-      padding: 20px 15px;
+      padding: 18px 15px 25px;
     }
 
     .retour {
       display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: #555;
       text-decoration: none;
       font-size: 14px;
@@ -56,42 +59,159 @@
 
     .intro {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .intro h2 {
-      font-size: 21px;
-      margin-bottom: 8px;
+      font-size: 22px;
+      margin-bottom: 9px;
+      color: #333;
     }
 
     .intro p {
       font-size: 14px;
       color: #666;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
-    .filtres {
+
+    /* =====================================================
+       CARTES PHOTOS DES 6 UNIVERS
+       ===================================================== */
+
+    .univers-festifs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .univers-festif {
+      position: relative;
+      height: 145px;
+      border: none;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 0;
+      background: #ddd;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+
+    .univers-festif img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .univers-festif:hover img {
+      transform: scale(1.04);
+    }
+
+    .univers-festif::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.05) 65%
+      );
+    }
+
+    .univers-contenu {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 11px;
+      z-index: 2;
+      color: white;
+    }
+
+    .univers-emoji {
+      font-size: 20px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    .univers-titre {
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+    }
+
+    .univers-sous-titre {
+      display: block;
+      font-size: 11px;
+      margin-top: 3px;
+      opacity: 0.95;
+    }
+
+
+    /* =====================================================
+       BOUTONS FILTRES
+       ===================================================== */
+
+    .filtres-festifs {
       display: flex;
       gap: 8px;
       overflow-x: auto;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      padding: 3px 2px 12px;
+      margin-bottom: 18px;
+      scrollbar-width: thin;
     }
 
-    .filtre {
+    .filtre-festif {
       flex-shrink: 0;
       border: none;
-      background: #eee;
-      padding: 9px 14px;
-      border-radius: 20px;
+      background: #eee9e4;
+      color: #444;
+      padding: 9px 13px;
+      border-radius: 22px;
       cursor: pointer;
       font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
     }
 
-    .filtre.actif {
-      background: #333;
-      color: white;
+    .filtre-festif:hover {
+      transform: translateY(-1px);
     }
+
+    .filtre-festif.actif {
+      background: #d96b7d;
+      color: white;
+      box-shadow: 0 3px 8px rgba(217,107,125,0.25);
+    }
+
+    .filtre-emoji {
+      font-size: 15px;
+    }
+
+
+    /* =====================================================
+       TITRE DU FILTRE ACTUEL
+       ===================================================== */
+
+    .titre-selection {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .titre-selection h3 {
+      font-size: 17px;
+      color: #555;
+    }
+
+
+    /* =====================================================
+       LISTE DES RECETTES
+       ===================================================== */
 
     #liste-recettes {
       display: flex;
@@ -102,7 +222,7 @@
     .recette {
       display: block;
       background: white;
-      border-radius: 14px;
+      border-radius: 15px;
       padding: 16px;
       text-decoration: none;
       color: #333;
@@ -117,36 +237,47 @@
 
     .recette h3 {
       font-size: 17px;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
+      line-height: 1.3;
     }
 
     .infos {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 7px;
       font-size: 12px;
       color: #777;
     }
 
     .badge {
-      background: #f3f3f3;
+      background: #f5f2ee;
       padding: 5px 8px;
       border-radius: 10px;
     }
 
-    .aucune {
-      text-align: center;
-      padding: 30px 15px;
-      color: #777;
-      background: white;
-      border-radius: 14px;
-    }
 
+    /* =====================================================
+       MESSAGES
+       ===================================================== */
+
+    .aucune,
     .chargement {
       text-align: center;
-      padding: 30px;
+      padding: 30px 18px;
       color: #777;
+      background: white;
+      border-radius: 15px;
+      line-height: 1.5;
     }
+
+    .aucune strong {
+      color: #555;
+    }
+
+
+    /* =====================================================
+       NAVIGATION BAS
+       ===================================================== */
 
     nav {
       position: fixed;
@@ -157,84 +288,393 @@
       border-top: 1px solid #ddd;
       display: flex;
       justify-content: space-around;
-      padding: 10px 5px;
+      padding: 9px 5px;
       z-index: 100;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
     }
 
     nav a {
       text-decoration: none;
       color: #555;
-      font-size: 12px;
+      font-size: 11px;
       text-align: center;
+      line-height: 1.5;
+      min-width: 55px;
+    }
+
+    nav a:first-child {
+      color: #d96b7d;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 390px) {
+
+      .univers-festifs {
+        gap: 9px;
+      }
+
+      .univers-festif {
+        height: 130px;
+      }
+
+      .univers-titre {
+        font-size: 14px;
+      }
+
+      .univers-sous-titre {
+        font-size: 10px;
+      }
+
+      .filtre-festif {
+        padding: 8px 11px;
+        font-size: 12px;
+      }
+
     }
 
   </style>
 
 </head>
 
+
 <body>
 
+
 <header>
+
   <h1>🎉 Festif</h1>
-  <p>Des petites recettes pour les fêtes et les moments conviviaux</p>
+
+  <p>
+    Des petites recettes pour les fêtes
+    et les moments conviviaux
+  </p>
+
 </header>
 
+
 <main class="conteneur">
+
+
+  <!-- RETOUR -->
 
   <a href="../../index.html" class="retour">
     ← Retour à l'accueil
   </a>
+
+
+  <!-- INTRO -->
 
   <section class="intro">
 
     <h2>Mes recettes festives</h2>
 
     <p>
-      Apéro-dînatoire, crêpes, Noël, Pâques, Épiphanie
-      et petites douceurs pour les occasions spéciales.
+      De petites assiettes gourmandes pour
+      profiter des fêtes sans faire trop copieux.
     </p>
 
   </section>
 
- <div class="filtres-festifs">
 
-  <button class="filtre-festif actif" data-filtre="toutes">
-    <span class="filtre-emoji">✨</span>
-    <span>Toutes</span>
-  </button>
 
-  <button class="filtre-festif" data-filtre="APE">
-    <span class="filtre-emoji">🥂</span>
-    <span>Apéro</span>
-  </button>
+  <!-- ===================================================
+       6 PHOTOS DES UNIVERS FESTIFS
+       =================================================== -->
 
-  <button class="filtre-festif" data-filtre="CRE">
-    <span class="filtre-emoji">🥞</span>
-    <span>Crêpes</span>
-  </button>
+  <section class="univers-festifs">
 
-  <button class="filtre-festif" data-filtre="NOE">
-    <span class="filtre-emoji">🎄</span>
-    <span>Noël</span>
-  </button>
 
-  <button class="filtre-festif" data-filtre="PAQ">
-    <span class="filtre-emoji">🐣</span>
-    <span>Pâques</span>
-  </button>
+    <!-- APÉRO -->
 
-  <button class="filtre-festif" data-filtre="GAL">
-    <span class="filtre-emoji">👑</span>
-    <span>Galette</span>
-  </button>
+    <button
+      class="univers-festif"
+      type="button"
+      data-filtre="APE"
+      aria-label="Voir les recettes apéritives"
+    >
 
-  <button class="filtre-festif" data-filtre="FES">
-    <span class="filtre-emoji">✨</span>
-    <span>Festif</span>
-  </button>
+      <img
+        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+        alt="Petite assiette apéritive"
+      >
 
-</div>
+      <span class="univers-contenu">
 
+        <span class="univers-titre">
+          <span class="univers-emoji">🥂</span>
+          Apéro
+        </span>
+
+        <span class="univers-sous-titre">
+          Petites bouchées conviviales
+        </span>
+
+      </span>
+
+    </button>
+
+
+
+    <!-- CRÊPES -->
+
+    <button
+      class="univers-festif"
+      type="button"
+      data-filtre="CRE"
+      aria-label="Voir les recettes de crêpes"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80"
+        alt="Petites crêpes"
+      >
+
+      <span class="univers-contenu">
+
+        <span class="univers-titre">
+          <span class="univers-emoji">🥞</span>
+          Crêpes
+        </span>
+
+        <span class="univers-sous-titre">
+          Sucrées ou salées
+        </span>
+
+      </span>
+
+    </button>
+
+
+
+    <!-- NOËL -->
+
+    <button
+      class="univers-festif"
+      type="button"
+      data-filtre="NOE"
+      aria-label="Voir les recettes de Noël"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=800&q=80"
+        alt="Repas de Noël"
+      >
+
+      <span class="univers-contenu">
+
+        <span class="univers-titre">
+          <span class="univers-emoji">🎄</span>
+          Noël
+        </span>
+
+        <span class="univers-sous-titre">
+          Petites assiettes de fête
+        </span>
+
+      </span>
+
+    </button>
+
+
+
+    <!-- PÂQUES -->
+
+    <button
+      class="univers-festif"
+      type="button"
+      data-filtre="PAQ"
+      aria-label="Voir les recettes de Pâques"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80"
+        alt="Petite recette de Pâques"
+      >
+
+      <span class="univers-contenu">
+
+        <span class="univers-titre">
+          <span class="univers-emoji">🐣</span>
+          Pâques
+        </span>
+
+        <span class="univers-sous-titre">
+          Entrées et douceurs
+        </span>
+
+      </span>
+
+    </button>
+
+
+
+    <!-- GALETTE -->
+
+    <button
+      class="univers-festif"
+      type="button"
+      data-filtre="GAL"
+      aria-label="Voir les recettes de galette des rois"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=800&q=80"
+        alt="Galette des rois"
+      >
+
+      <span class="univers-contenu">
+
+        <span class="univers-titre">
+          <span class="univers-emoji">👑</span>
+          Galette
+        </span>
+
+        <span class="univers-sous-titre">
+          Galette des rois
+        </span>
+
+      </span>
+
+    </button>
+
+
+
+    <!-- FESTIF -->
+
+    <button
+      class="univers-festif"
+      type="button"
+      data-filtre="FES"
+      aria-label="Voir toutes les recettes festives"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80"
+        alt="Petite assiette festive"
+      >
+
+      <span class="univers-contenu">
+
+        <span class="univers-titre">
+          <span class="univers-emoji">✨</span>
+          Festif
+        </span>
+
+        <span class="univers-sous-titre">
+          Les recettes des grandes occasions
+        </span>
+
+      </span>
+
+    </button>
+
+
+  </section>
+
+
+
+  <!-- ===================================================
+       BOUTONS FILTRES
+       =================================================== -->
+
+  <div class="filtres-festifs">
+
+
+    <button
+      class="filtre-festif actif"
+      type="button"
+      data-filtre="toutes"
+    >
+      <span class="filtre-emoji">✨</span>
+      <span>Toutes</span>
+    </button>
+
+
+    <button
+      class="filtre-festif"
+      type="button"
+      data-filtre="APE"
+    >
+      <span class="filtre-emoji">🥂</span>
+      <span>Apéro</span>
+    </button>
+
+
+    <button
+      class="filtre-festif"
+      type="button"
+      data-filtre="CRE"
+    >
+      <span class="filtre-emoji">🥞</span>
+      <span>Crêpes</span>
+    </button>
+
+
+    <button
+      class="filtre-festif"
+      type="button"
+      data-filtre="NOE"
+    >
+      <span class="filtre-emoji">🎄</span>
+      <span>Noël</span>
+    </button>
+
+
+    <button
+      class="filtre-festif"
+      type="button"
+      data-filtre="PAQ"
+    >
+      <span class="filtre-emoji">🐣</span>
+      <span>Pâques</span>
+    </button>
+
+
+    <button
+      class="filtre-festif"
+      type="button"
+      data-filtre="GAL"
+    >
+      <span class="filtre-emoji">👑</span>
+      <span>Galette</span>
+    </button>
+
+
+    <button
+      class="filtre-festif"
+      type="button"
+      data-filtre="FES"
+    >
+      <span class="filtre-emoji">✨</span>
+      <span>Festif</span>
+    </button>
+
+
+  </div>
+
+
+
+  <!-- ===================================================
+       TITRE DE LA SÉLECTION
+       =================================================== -->
+
+  <div class="titre-selection">
+
+    <h3 id="titre-selection">
+      ✨ Toutes les recettes festives
+    </h3>
+
+  </div>
+
+
+
+  <!-- ===================================================
+       LISTE DES RECETTES
+       =================================================== -->
 
   <div id="liste-recettes">
 
@@ -244,7 +684,14 @@
 
   </div>
 
+
 </main>
+
+
+
+<!-- =====================================================
+     NAVIGATION BAS
+     ===================================================== -->
 
 <nav>
 
@@ -275,10 +722,13 @@
 
 </nav>
 
+
+
 <script>
 
+
 /* =========================================================
-   CATÉGORIES FESTIVES
+   CONFIGURATION DES CATÉGORIES FESTIVES
    =========================================================
 
    APE = Apéro-dînatoire
@@ -287,11 +737,8 @@
    PAQ = Pâques
    GAL = Galette des rois
    FES = Festif
-
-   Une recette peut être reconnue :
-   - par son ID
-   - OU par sa catégorie
    ========================================================= */
+
 
 const prefixesFestifs = [
   "APE",
@@ -302,24 +749,77 @@ const prefixesFestifs = [
   "FES"
 ];
 
-const categoriesFestives = [
-  "apéro-dînatoire",
-  "apero-dinatoire",
-  "crêpes",
-  "crepes",
-  "noël",
-  "noel",
-  "pâques",
-  "paques",
-  "galette des rois",
-  "festif"
-];
+
+const titresFiltres = {
+
+  toutes:
+    "✨ Toutes les recettes festives",
+
+  APE:
+    "🥂 Apéro-dînatoire",
+
+  CRE:
+    "🥞 Crêpes",
+
+  NOE:
+    "🎄 Recettes de Noël",
+
+  PAQ:
+    "🐣 Recettes de Pâques",
+
+  GAL:
+    "👑 Galettes des rois",
+
+  FES:
+    "✨ Petites assiettes festives"
+
+};
+
+
+const correspondances = {
+
+  APE: [
+    "apero-dinatoire",
+    "aperitif",
+    "aperitif dinatoire",
+    "apero"
+  ],
+
+  CRE: [
+    "crepes",
+    "crepe"
+  ],
+
+  NOE: [
+    "noel",
+    "recettes de noel"
+  ],
+
+  PAQ: [
+    "paques",
+    "recettes de paques"
+  ],
+
+  GAL: [
+    "galette des rois",
+    "galette"
+  ],
+
+  FES: [
+    "festif",
+    "recettes festives",
+    "petites assiettes festives"
+  ]
+
+};
+
 
 let toutesLesRecettes = [];
 
 
+
 /* =========================================================
-   NORMALISATION DU TEXTE
+   NORMALISATION
    ========================================================= */
 
 function normaliserTexte(valeur) {
@@ -333,8 +833,9 @@ function normaliserTexte(valeur) {
 }
 
 
+
 /* =========================================================
-   VÉRIFICATION D'UNE RECETTE FESTIVE
+   RECONNAÎTRE UNE RECETTE FESTIVE
    ========================================================= */
 
 function estRecetteFestive(recette) {
@@ -343,217 +844,58 @@ function estRecetteFestive(recette) {
     return false;
   }
 
-  /* -----------------------------------------
-     1. Vérification par ID
-     ----------------------------------------- */
 
-  const id = String(recette.id || "")
-    .trim()
-    .toUpperCase();
+  const id =
+    String(recette.id || "")
+      .trim()
+      .toUpperCase();
+
+
+  /*
+   * PRIORITÉ AUX IDs
+   *
+   * Exemple :
+   * PAQ001
+   * PAQ002
+   * PAQ003
+   *
+   * seront automatiquement reconnus.
+   */
 
   if (
-    prefixesFestifs.some(prefixe =>
-      id.startsWith(prefixe)
+    prefixesFestifs.some(
+      prefixe => id.startsWith(prefixe)
     )
   ) {
+
     return true;
+
   }
 
 
-  /* -----------------------------------------
-     2. Vérification par catégorie
-     ----------------------------------------- */
+  /*
+   * Reconnaissance par catégorie
+   */
 
-  const categorie = normaliserTexte(
-    recette.categorie
-  );
+  const categorie =
+    normaliserTexte(
+      recette.categorie
+    );
 
-  return categoriesFestives
+
+  return Object.values(
+    correspondances
+  )
+    .flat()
     .map(normaliserTexte)
     .includes(categorie);
 
 }
 
 
-/* =========================================================
-   CHARGEMENT DE recettes.json
-   ========================================================= */
-
-async function chargerRecettes() {
-
-  const liste =
-    document.getElementById("liste-recettes");
-
-  try {
-
-    /*
-     * Festif.html se trouve dans :
-     * src/screens/
-     *
-     * recettes.json se trouve dans :
-     * src/
-     *
-     * Donc :
-     * ../recettes.json
-     */
-
-    const reponse =
-      await fetch("../recettes.json");
-
-    if (!reponse.ok) {
-
-      throw new Error(
-        "Impossible de charger recettes.json"
-      );
-
-    }
-
-
-    toutesLesRecettes =
-      await reponse.json();
-
-
-    /* -----------------------------------------
-       Vérification du tableau
-       ----------------------------------------- */
-
-    if (!Array.isArray(toutesLesRecettes)) {
-
-      throw new Error(
-        "Le fichier recettes.json ne contient pas une liste de recettes."
-      );
-
-    }
-
-
-    /* -----------------------------------------
-       Lecture du filtre dans l'URL
-       Exemple :
-       Festif.html?filtre=PAQ
-       ----------------------------------------- */
-
-    const parametres =
-      new URLSearchParams(
-        window.location.search
-      );
-
-
-    let filtreInitial =
-      parametres.get("filtre");
-
-
-    if (filtreInitial) {
-
-      filtreInitial =
-        filtreInitial
-          .trim()
-          .toUpperCase();
-
-    } else {
-
-      filtreInitial = "toutes";
-
-    }
-
-
-    /* -----------------------------------------
-       Sécurité
-       ----------------------------------------- */
-
-    if (
-      filtreInitial !== "toutes" &&
-      !prefixesFestifs.includes(
-        filtreInitial
-      )
-    ) {
-
-      filtreInitial = "toutes";
-
-    }
-
-
-    /* -----------------------------------------
-       Activation du bouton
-       ----------------------------------------- */
-
-    activerBouton(
-      filtreInitial
-    );
-
-
-    /* -----------------------------------------
-       Affichage
-       ----------------------------------------- */
-
-    afficherRecettes(
-      filtreInitial
-    );
-
-  }
-
-  catch (erreur) {
-
-    console.error(
-      "Erreur chargement recettes :",
-      erreur
-    );
-
-    liste.innerHTML = `
-
-      <div class="aucune">
-
-        <strong>
-          Impossible de charger les recettes.
-        </strong>
-
-        <br><br>
-
-        Vérifiez que le fichier
-        <strong>recettes.json</strong>
-        est bien présent dans le dossier
-        <strong>src</strong>.
-
-      </div>
-
-    `;
-
-  }
-
-}
-
 
 /* =========================================================
-   ACTIVE LE BON BOUTON
-   ========================================================= */
-
-function activerBouton(filtre) {
-
-  document
-    .querySelectorAll(".filtre")
-    .forEach(bouton => {
-
-      bouton.classList.remove(
-        "actif"
-      );
-
-
-      if (
-        bouton.dataset.filtre === filtre
-      ) {
-
-        bouton.classList.add(
-          "actif"
-        );
-
-      }
-
-    });
-
-}
-
-
-/* =========================================================
-   FILTRE SELON LA CATÉGORIE
+   TEST D'UNE RECETTE POUR UN FILTRE
    ========================================================= */
 
 function recetteCorrespondAuFiltre(
@@ -566,9 +908,9 @@ function recetteCorrespondAuFiltre(
   }
 
 
-  /* -----------------------------------------
-     Toutes les recettes festives
-     ----------------------------------------- */
+  /*
+   * TOUTES
+   */
 
   if (filtre === "toutes") {
 
@@ -579,9 +921,13 @@ function recetteCorrespondAuFiltre(
   }
 
 
-  /* -----------------------------------------
-     Correspondance par ID
-     ----------------------------------------- */
+  /*
+   * 1. PRIORITÉ À L'ID
+   *
+   * PAQ001 -> PAQ
+   * CRE001 -> CRE
+   * etc.
+   */
 
   const id =
     String(recette.id || "")
@@ -598,9 +944,9 @@ function recetteCorrespondAuFiltre(
   }
 
 
-  /* -----------------------------------------
-     Correspondance par catégorie
-     ----------------------------------------- */
+  /*
+   * 2. Vérification de la catégorie
+   */
 
   const categorie =
     normaliserTexte(
@@ -608,50 +954,23 @@ function recetteCorrespondAuFiltre(
     );
 
 
-  const correspondances = {
-
-    APE: [
-      "apero-dinatoire"
-    ],
-
-    CRE: [
-      "crepes"
-    ],
-
-    NOE: [
-      "noel"
-    ],
-
-    PAQ: [
-      "paques"
-    ],
-
-    GAL: [
-      "galette des rois"
-    ],
-
-    FES: [
-      "festif"
-    ]
-
-  };
+  const valeurs =
+    correspondances[filtre] || [];
 
 
-  return (
-    correspondances[filtre] &&
-    correspondances[filtre].includes(
-      categorie
-    )
-  );
+  return valeurs
+    .map(normaliserTexte)
+    .includes(categorie);
 
 }
 
 
+
 /* =========================================================
-   AFFICHAGE DES RECETTES
+   CHARGEMENT DE recettes.json
    ========================================================= */
 
-function afficherRecettes(filtre) {
+async function chargerRecettes() {
 
   const liste =
     document.getElementById(
@@ -659,10 +978,265 @@ function afficherRecettes(filtre) {
     );
 
 
+  try {
+
+
+    /*
+     * Festif.html :
+     *
+     * src/screens/Festif.html
+     *
+     * recettes.json :
+     *
+     * src/recettes.json
+     *
+     * Donc :
+     *
+     * ../recettes.json
+     */
+
+    const reponse =
+      await fetch("../recettes.json");
+
+
+    if (!reponse.ok) {
+
+      throw new Error(
+        "HTTP " + reponse.status
+      );
+
+    }
+
+
+    toutesLesRecettes =
+      await reponse.json();
+
+
+    if (
+      !Array.isArray(
+        toutesLesRecettes
+      )
+    ) {
+
+      throw new Error(
+        "recettes.json n'est pas un tableau."
+      );
+
+    }
+
+
+    console.log(
+      "Nombre total de recettes chargées :",
+      toutesLesRecettes.length
+    );
+
+
+    /*
+     * Vérification spéciale
+     * des recettes festives
+     */
+
+    const festives =
+      toutesLesRecettes.filter(
+        estRecetteFestive
+      );
+
+
+    console.log(
+      "Nombre de recettes festives :",
+      festives.length
+    );
+
+
+    console.log(
+      "Recettes festives :",
+      festives.map(
+        recette => recette.id
+      )
+    );
+
+
+    /*
+     * Lecture éventuelle du filtre
+     * dans l'URL.
+     *
+     * Exemple :
+     *
+     * Festif.html?filtre=PAQ
+     */
+
+    const parametres =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    let filtreInitial =
+      parametres.get(
+        "filtre"
+      );
+
+
+    if (filtreInitial) {
+
+      filtreInitial =
+        filtreInitial
+          .trim()
+          .toUpperCase();
+
+    } else {
+
+      filtreInitial = "toutes";
+
+    }
+
+
+    /*
+     * Sécurité
+     */
+
+    if (
+      filtreInitial !== "toutes" &&
+      !prefixesFestifs.includes(
+        filtreInitial
+      )
+    ) {
+
+      filtreInitial = "toutes";
+
+    }
+
+
+    activerBouton(
+      filtreInitial
+    );
+
+
+    afficherRecettes(
+      filtreInitial
+    );
+
+
+  }
+  catch (erreur) {
+
+
+    console.error(
+      "Erreur chargement recettes :",
+      erreur
+    );
+
+
+    liste.innerHTML = `
+
+      <div class="aucune">
+
+        <strong>
+          Impossible de charger les recettes.
+        </strong>
+
+        <br><br>
+
+        Vérifie que :
+
+        <br>
+
+        • <strong>recettes.json</strong>
+        est bien dans le dossier
+        <strong>src</strong>
+
+        <br>
+
+        • le fichier JSON est valide.
+
+        <br><br>
+
+        <small>
+          ${erreur.message}
+        </small>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   ACTIVER LES BOUTONS
+   ========================================================= */
+
+function activerBouton(
+  filtre
+) {
+
+
+  document
+    .querySelectorAll(
+      ".filtre-festif"
+    )
+    .forEach(
+      bouton => {
+
+        bouton.classList.remove(
+          "actif"
+        );
+
+
+        if (
+          bouton.dataset.filtre ===
+          filtre
+        ) {
+
+          bouton.classList.add(
+            "actif"
+          );
+
+        }
+
+      }
+    );
+
+}
+
+
+
+/* =========================================================
+   AFFICHER LES RECETTES
+   ========================================================= */
+
+function afficherRecettes(
+  filtre
+) {
+
+
+  const liste =
+    document.getElementById(
+      "liste-recettes"
+    );
+
+
+  const titre =
+    document.getElementById(
+      "titre-selection"
+    );
+
+
   /*
-   * Première étape :
-   * on garde uniquement les recettes
-   * appartenant à l'univers festif.
+   * Mise à jour du titre
+   */
+
+  titre.textContent =
+    titresFiltres[filtre] ||
+    titresFiltres.toutes;
+
+
+  /*
+   * On garde uniquement
+   * les recettes festives
    */
 
   let recettes =
@@ -672,11 +1246,12 @@ function afficherRecettes(filtre) {
 
 
   /*
-   * Deuxième étape :
-   * filtre précis.
+   * Puis filtre précis
    */
 
-  if (filtre !== "toutes") {
+  if (
+    filtre !== "toutes"
+  ) {
 
     recettes =
       recettes.filter(
@@ -691,20 +1266,22 @@ function afficherRecettes(filtre) {
 
 
   /*
-   * Tri par nom
-   * pour avoir une présentation propre.
+   * Tri alphabétique
    */
 
   recettes.sort(
     (a, b) =>
-      String(a.nom || "")
-        .localeCompare(
-          String(b.nom || ""),
-          "fr",
-          {
-            sensitivity: "base"
-          }
-        )
+      String(
+        a.nom || ""
+      ).localeCompare(
+        String(
+          b.nom || ""
+        ),
+        "fr",
+        {
+          sensitivity: "base"
+        }
+      )
   );
 
 
@@ -716,22 +1293,30 @@ function afficherRecettes(filtre) {
     recettes.length === 0
   ) {
 
+
     liste.innerHTML = `
 
       <div class="aucune">
 
         <strong>
-          Aucune recette trouvée.
+          Aucune recette trouvée dans cette catégorie.
         </strong>
 
         <br><br>
 
-        Cette catégorie ne contient
-        actuellement aucune recette.
+        Vérifie que les recettes concernées
+        utilisent bien un ID commençant par :
+
+        <br><br>
+
+        <strong>
+          APE · CRE · NOE · PAQ · GAL · FES
+        </strong>
 
       </div>
 
     `;
+
 
     return;
 
@@ -744,131 +1329,214 @@ function afficherRecettes(filtre) {
 
   liste.innerHTML =
     recettes
-      .map(recette => {
-
-        return `
-
-          <a
-            href="Recette.html?id=${encodeURIComponent(
-              recette.id
-            )}"
-            class="recette"
-          >
-
-            <h3>
-              ${recette.nom || "Recette sans nom"}
-            </h3>
-
-            <div class="infos">
-
-              ${
-                recette.temps
-                  ? `
-                    <span class="badge">
-                      ⏱️ ${recette.temps} min
-                    </span>
-                  `
-                  : ""
-              }
+      .map(
+        recette => {
 
 
-              ${
-                recette.proteines !== undefined &&
-                recette.proteines !== null &&
-                recette.proteines !== ""
-                  ? `
-                    <span class="badge">
-                      🥩 ${recette.proteines} g protéines
-                    </span>
-                  `
-                  : ""
-              }
+          const nom =
+            recette.nom ||
+            "Recette sans nom";
 
 
-              ${
-                recette.calories !== undefined &&
-                recette.calories !== null &&
-                recette.calories !== ""
-                  ? `
-                    <span class="badge">
-                      🔥 ${recette.calories} kcal
-                    </span>
-                  `
-                  : ""
-              }
+          const id =
+            recette.id || "";
 
 
-              ${
-                recette.sansGluten
-                  ? `
-                    <span class="badge">
-                      🌾 Sans gluten
-                    </span>
-                  `
-                  : ""
-              }
+          return `
 
-            </div>
+            <a
+              href="Recette.html?id=${encodeURIComponent(id)}"
+              class="recette"
+            >
 
-          </a>
+              <h3>
+                ${nom}
+              </h3>
 
-        `;
 
-      })
+              <div class="infos">
+
+
+                ${
+                  recette.temps !== undefined &&
+                  recette.temps !== null &&
+                  recette.temps !== ""
+                    ? `
+                      <span class="badge">
+                        ⏱️ ${recette.temps} min
+                      </span>
+                    `
+                    : ""
+                }
+
+
+                ${
+                  recette.proteines !== undefined &&
+                  recette.proteines !== null &&
+                  recette.proteines !== ""
+                    ? `
+                      <span class="badge">
+                        🥩 ${recette.proteines} g protéines
+                      </span>
+                    `
+                    : ""
+                }
+
+
+                ${
+                  recette.calories !== undefined &&
+                  recette.calories !== null &&
+                  recette.calories !== ""
+                    ? `
+                      <span class="badge">
+                        🔥 ${recette.calories} kcal
+                      </span>
+                    `
+                    : ""
+                }
+
+
+                ${
+                  recette.sansGluten
+                    ? `
+                      <span class="badge">
+                        🌾 Sans gluten
+                      </span>
+                    `
+                    : ""
+                }
+
+
+              </div>
+
+            </a>
+
+          `;
+
+        }
+      )
       .join("");
 
 }
 
 
+
 /* =========================================================
-   GESTION DES 6 BOUTONS
+   CLIC SUR LES BOUTONS FILTRES
    ========================================================= */
 
 document
-  .querySelectorAll(".filtre")
-  .forEach(bouton => {
-
-    bouton.addEventListener(
-      "click",
-      function() {
-
-        const filtre =
-          this.dataset.filtre;
+  .querySelectorAll(
+    ".filtre-festif"
+  )
+  .forEach(
+    bouton => {
 
 
-        /*
-         * Active le bouton
-         */
-
-        activerBouton(
-          filtre
-        );
+      bouton.addEventListener(
+        "click",
+        function() {
 
 
-        /*
-         * Affiche les recettes
-         */
-
-        afficherRecettes(
-          filtre
-        );
+          const filtre =
+            this.dataset.filtre;
 
 
-        /*
-         * Met à jour l'URL
-         */
-
-        if (
-          filtre === "toutes"
-        ) {
-
-          history.replaceState(
-            null,
-            "",
-            "Festif.html"
+          activerBouton(
+            filtre
           );
 
-        } else {
+
+          afficherRecettes(
+            filtre
+          );
+
+
+          /*
+           * Mise à jour de l'URL
+           */
+
+          if (
+            filtre === "toutes"
+          ) {
+
+            history.replaceState(
+              null,
+              "",
+              "Festif.html"
+            );
+
+          } else {
+
+            history.replaceState(
+              null,
+              "",
+              "Festif.html?filtre=" +
+              encodeURIComponent(
+                filtre
+              )
+            );
+
+          }
+
+
+          /*
+           * Remonter doucement
+           * vers la liste
+           */
+
+          document
+            .getElementById(
+              "liste-recettes"
+            )
+            .scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+        }
+
+      );
+
+    }
+  );
+
+
+
+/* =========================================================
+   CLIC SUR LES 6 PHOTOS
+   ========================================================= */
+
+document
+  .querySelectorAll(
+    ".univers-festif"
+  )
+  .forEach(
+    carte => {
+
+
+      carte.addEventListener(
+        "click",
+        function() {
+
+
+          const filtre =
+            this.dataset.filtre;
+
+
+          activerBouton(
+            filtre
+          );
+
+
+          afficherRecettes(
+            filtre
+          );
+
+
+          /*
+           * Mise à jour de l'URL
+           */
 
           history.replaceState(
             null,
@@ -879,13 +1547,49 @@ document
             )
           );
 
+
+          /*
+           * Faire apparaître
+           * les boutons correspondants
+           */
+
+          document
+            .querySelector(
+              `.filtre-festif[data-filtre="${filtre}"]`
+            )
+            ?.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest"
+            });
+
+
+          /*
+           * Puis afficher les recettes
+           */
+
+          setTimeout(
+            () => {
+
+              document
+                .getElementById(
+                  "liste-recettes"
+                )
+                .scrollIntoView({
+                  behavior: "smooth",
+                  block: "start"
+                });
+
+            },
+            150
+          );
+
         }
 
-      }
+      );
 
-    );
+    }
+  );
 
-  });
 
 
 /* =========================================================
@@ -897,4 +1601,6 @@ chargerRecettes();
 </script>
 
 </body>
+
 </html>
+```
