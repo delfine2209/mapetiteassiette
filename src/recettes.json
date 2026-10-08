@@ -11285,5 +11285,120 @@
       "4 cuillères à café de crème fraîche légère"
     ]
   }
- }
+ },
+ {
+  "id": "PAQ001",
+  "nom": "Mini nid de Pâques au poulet",
+  "categorie": "Pâques",
+  "type": "Plat festif",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 17,
+  "calories": 210,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "60 g de blanc de poulet",
+    "70 g de pommes de terre",
+    "1 petit œuf de caille",
+    "20 g de fromage blanc",
+    "Ciboulette"
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de blanc de poulet",
+      "70 g de pomme de terre",
+      "1 petit œuf de caille",
+      "20 g de fromage blanc",
+      "Ciboulette"
+    ],
+    "famille2": [
+      "120 g de blanc de poulet",
+      "140 g de pommes de terre",
+      "2 petits œufs de caille",
+      "40 g de fromage blanc",
+      "Ciboulette"
+    ],
+    "famille4": [
+      "240 g de blanc de poulet",
+      "280 g de pommes de terre",
+      "4 petits œufs de caille",
+      "80 g de fromage blanc",
+      "Ciboulette"
+    ]
+  },
+  "preparation": [
+    "Cuire les pommes de terre et les écraser avec le fromage blanc.",
+    "Cuire le poulet puis le mixer ou le hacher très finement.",
+    "Disposer la purée en forme de nid et ajouter le poulet au centre.",
+    "Déposer l'œuf de caille cuit au centre.",
+    "Pour une meilleure tolérance, l'ensemble peut être écrasé finement."
+  ]
+},
+{
+  "id": "PAQ002",
+  "nom": "Mini œuf cocotte au saumon",
+  "categorie": "Pâques",
+  "type": "Plat festif",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 12,
+  "calories": 175,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "1 œuf",
+    "25 g de saumon fumé",
+    "20 ml de crème légère",
+    "Ciboulette",
+    "Poivre"
+  ],
+  "quantites": {
+    "petite": [
+      "1 œuf",
+      "25 g de saumon fumé",
+      "20 ml de crème légère",
+      "Ciboulette",
+      "Poivre"
+    ],
+    "famille2": [
+      "2 œufs",
+      "50 g de saumon fumé",
+      "40 ml de crème légère",
+      "Ciboulette",
+      "Poivre"
+    ],
+    "famille4": [
+      "4 œufs",
+      "100 g de saumon fumé",
+      "80 ml de crème légère",
+      "Ciboulette",
+      "Poivre"
+    ]
+  },
+  "preparation": [
+    "Déposer le saumon coupé très finement dans une petite cocotte.",
+    "Ajouter la crème puis casser l'œuf par-dessus.",
+    "Cuire au bain-marie au four à 180 °C jusqu'à ce que le blanc soit bien pris.",
+    "Servir tiède et vérifier la texture avant de déguster."
+  ]
+}
 ]
