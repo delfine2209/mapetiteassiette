@@ -11285,5 +11285,68 @@
       "4 cuillères à café de crème fraîche légère"
     ]
   }
-}
+},
+ {
+  "id": "REC179",
+  "nom": "Colin haché tendre aux coquillettes",
+  "categorie": "Déjeuner / dîner",
+  "type": "poisson",
+  "temps": 20,
+  "tempsPreparation": 10,
+  "tempsCuisson": 10,
+  "proteines": 17,
+  "calories": 165,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "batchCookingDetail": "La sauce au yaourt apporte du moelleux et évite que le poisson et les pâtes ne soient secs.",
+  "conservation": "24 heures au réfrigérateur.",
+  "congelation": "Non",
+  "envies": [
+   "frais", 
+   "complet", 
+   "rapide"
+  ],
+  "texture": "Tendre",
+  "ingredients": [
+    "65 g de filet de colin cuit vapeur",
+    "40 g de purée fine de brocoli au cumin",
+    "15 g de petites coquillettes très cuites",
+    "1 cuillère à soupe de yaourt nature"
+  ],
+  "preparation": [
+    "Cuire le colin à la vapeur puis vérifier soigneusement l'absence d'arêtes.",
+    "Émietter le poisson très finement.",
+    "Cuire les coquillettes jusqu'à ce qu'elles soient très fondantes.",
+    "Mélanger le colin avec les coquillettes et la purée de brocoli.",
+    "Ajouter le yaourt nature pour obtenir une préparation humide et moelleuse.",
+    "Servir tiède."
+  ],
+  "quantites": {
+    "petite": [
+      "65 g de filet de colin cuit vapeur",
+      "40 g de purée fine de brocoli au cumin",
+      "15 g de petites coquillettes très cuites",
+      "1 cuillère à soupe de yaourt nature"
+    ],
+    "famille2": [
+      "130 g de filet de colin cuit vapeur",
+      "80 g de purée fine de brocoli au cumin",
+      "30 g de petites coquillettes très cuites",
+      "2 cuillères à soupe de yaourt nature"
+    ],
+    "famille4": [
+      "260 g de filet de colin cuit vapeur",
+      "160 g de purée fine de brocoli au cumin",
+      "60 g de petites coquillettes très cuites",
+      "4 cuillères à soupe de yaourt nature"
+    ]
+  }
 ]
