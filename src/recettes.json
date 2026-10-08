@@ -11157,5 +11157,70 @@
       "120 ml de lait écrémé"
     ]
   }
- }
+ },
+ {
+  "id": "REC226",
+  "nom": "Lasagnes bœuf, poivrons grillés et mozzarella",
+  "categorie": "Plat",
+  "type": "Lasagnes",
+  "temps": 45,
+  "tempsPreparation": 15,
+  "tempsCuisson": 30,
+  "proteines": 28,
+  "calories": 390,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "réconfortant",
+    "protéiné"
+  ],
+  "texture": "Fondante",
+  "ingredients": [
+    "80 g de bœuf haché",
+    "60 g de poivron",
+    "30 g de mozzarella",
+    "100 g de sauce tomate",
+    "40 g de pâtes à lasagnes"
+  ],
+  "preparation": [
+    "Faire revenir le bœuf haché.",
+    "Ajouter le poivron coupé en petits morceaux et la sauce tomate.",
+    "Laisser mijoter jusqu'à ce que le poivron soit fondant.",
+    "Monter les lasagnes avec les pâtes, la préparation et la mozzarella.",
+    "Cuire environ 30 minutes au four à 180 °C."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de bœuf haché",
+      "60 g de poivron",
+      "30 g de mozzarella",
+      "100 g de sauce tomate",
+      "40 g de pâtes à lasagnes"
+    ],
+    "famille2": [
+      "160 g de bœuf haché",
+      "120 g de poivron",
+      "60 g de mozzarella",
+      "200 g de sauce tomate",
+      "80 g de pâtes à lasagnes"
+    ],
+    "famille4": [
+      "320 g de bœuf haché",
+      "240 g de poivron",
+      "120 g de mozzarella",
+      "400 g de sauce tomate",
+      "160 g de pâtes à lasagnes"
+    ]
+  }
+}
 ]
