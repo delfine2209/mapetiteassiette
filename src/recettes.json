@@ -11246,7 +11246,11 @@
   "batchCookingDetail": "Le saumon et la polenta crémeuse donnent une préparation riche en goût et très moelleuse.",
   "conservation": "24 heures au réfrigérateur.",
   "congelation": "Non",
-  "envies": ["omega3", "onctueux", "savoureux"],
+  "envies": [
+   "omega3", 
+   "onctueux", 
+   "savoureux"
+  ],
   "texture": "Tendre",
   "ingredients": [
     "60 g de filet de saumon cuit vapeur",
