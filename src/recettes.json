@@ -11523,5 +11523,293 @@
     "Déposer la préparation sur un petit disque de pâte, ajouter la pomme puis refermer avec un second disque.",
     "Dorer et cuire 20 minutes à 180 °C."
   ]
+},
+{
+  "id": "FES001",
+  "nom": "Mini bûche légère chocolat & poire",
+  "categorie": "Noël",
+  "type": "Dessert festif",
+  "temps": 35,
+  "tempsPreparation": 20,
+  "tempsCuisson": 15,
+  "proteines": 7,
+  "calories": 225,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "20 g de farine",
+    "1/2 œuf",
+    "10 g de sucre",
+    "30 g de poire",
+    "30 g de fromage blanc",
+    "5 g de cacao non sucré"
+  ],
+  "quantites": {
+    "petite": [
+      "20 g de farine",
+      "1/2 œuf",
+      "10 g de sucre",
+      "30 g de poire",
+      "30 g de fromage blanc",
+      "5 g de cacao non sucré"
+    ],
+    "famille2": [
+      "40 g de farine",
+      "1 œuf",
+      "20 g de sucre",
+      "60 g de poire",
+      "60 g de fromage blanc",
+      "10 g de cacao non sucré"
+    ],
+    "famille4": [
+      "80 g de farine",
+      "2 œufs",
+      "40 g de sucre",
+      "120 g de poire",
+      "120 g de fromage blanc",
+      "20 g de cacao non sucré"
+    ]
+  },
+  "preparation": [
+    "Préparer un petit biscuit avec la farine, l'œuf et le sucre.",
+    "Cuire quelques minutes jusqu'à ce que le biscuit soit souple.",
+    "Mélanger le fromage blanc avec le cacao.",
+    "Garnir le biscuit avec la crème et les dés de poire puis rouler délicatement."
+  ]
+},
+{
+  "id": "FES002",
+  "nom": "Mini fondant chocolat",
+  "categorie": "Desserts festifs",
+  "type": "Gâteau individuel",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 6,
+  "calories": 220,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "15 g de chocolat noir",
+    "10 g de farine",
+    "1 petit œuf",
+    "10 g de fromage blanc",
+    "5 g de sucre"
+  ],
+  "quantites": {
+    "petite": [
+      "15 g de chocolat noir",
+      "10 g de farine",
+      "1 petit œuf",
+      "10 g de fromage blanc",
+      "5 g de sucre"
+    ],
+    "famille2": [
+      "30 g de chocolat noir",
+      "20 g de farine",
+      "2 petits œufs",
+      "20 g de fromage blanc",
+      "10 g de sucre"
+    ],
+    "famille4": [
+      "60 g de chocolat noir",
+      "40 g de farine",
+      "4 petits œufs",
+      "40 g de fromage blanc",
+      "20 g de sucre"
+    ]
+  },
+  "preparation": [
+    "Faire fondre le chocolat.",
+    "Mélanger avec l'œuf, le fromage blanc, le sucre et la farine.",
+    "Verser dans un petit moule individuel.",
+    "Cuire environ 12 à 15 minutes à 180 °C."
+  ]
+},
+{
+  "id": "NOE001",
+  "nom": "Mini bouchée de Noël au saumon",
+  "categorie": "Noël",
+  "type": "Bouchée festive",
+  "temps": 15,
+  "tempsPreparation": 10,
+  "tempsCuisson": 5,
+  "proteines": 10,
+  "calories": 140,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "1 mini toast",
+    "25 g de saumon fumé",
+    "20 g de fromage frais",
+    "Citron",
+    "Aneth"
+  ],
+  "quantites": {
+    "petite": [
+      "1 mini toast",
+      "25 g de saumon fumé",
+      "20 g de fromage frais",
+      "Citron",
+      "Aneth"
+    ],
+    "famille2": [
+      "2 mini toasts",
+      "50 g de saumon fumé",
+      "40 g de fromage frais",
+      "Citron",
+      "Aneth"
+    ],
+    "famille4": [
+      "4 mini toasts",
+      "100 g de saumon fumé",
+      "80 g de fromage frais",
+      "Citron",
+      "Aneth"
+    ]
+  },
+  "preparation": [
+    "Toaster légèrement le pain.",
+    "Étaler le fromage frais puis déposer le saumon fumé.",
+    "Ajouter quelques gouttes de citron et l'aneth."
+  ]
+},
+{
+  "id": "NOE002",
+  "nom": "Mini gratin de Saint-Jacques",
+  "categorie": "Noël",
+  "type": "Plat festif",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 13,
+  "calories": 180,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "2 noix de Saint-Jacques",
+    "30 g de poireau",
+    "30 ml de crème légère",
+    "10 g de fromage râpé",
+    "Poivre"
+  ],
+  "quantites": {
+    "petite": [
+      "2 noix de Saint-Jacques",
+      "30 g de poireau",
+      "30 ml de crème légère",
+      "10 g de fromage râpé",
+      "Poivre"
+    ],
+    "famille2": [
+      "4 noix de Saint-Jacques",
+      "60 g de poireau",
+      "60 ml de crème légère",
+      "20 g de fromage râpé",
+      "Poivre"
+    ],
+    "famille4": [
+      "8 noix de Saint-Jacques",
+      "120 g de poireau",
+      "120 ml de crème légère",
+      "40 g de fromage râpé",
+      "Poivre"
+    ]
+  },
+  "preparation": [
+    "Émincer finement le poireau et le faire fondre doucement jusqu'à ce qu'il soit très tendre.",
+    "Déposer le poireau dans une petite cassolette avec les noix de Saint-Jacques.",
+    "Ajouter la crème et le fromage puis gratiner au four à 180 °C pendant environ 15 minutes.",
+    "Vérifier la cuisson complète des Saint-Jacques avant de servir."
+  ]
+},
+{
+  "id": "NOE003",
+  "nom": "Mini parmentier de canard festif",
+  "categorie": "Noël",
+  "type": "Plat festif",
+  "temps": 30,
+  "tempsPreparation": 15,
+  "tempsCuisson": 15,
+  "proteines": 15,
+  "calories": 250,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "50 g de confit de canard effiloché",
+    "70 g de pomme de terre",
+    "20 g de carotte",
+    "10 ml de lait",
+    "Poivre"
+  ],
+  "quantites": {
+    "petite": [
+      "50 g de confit de canard effiloché",
+      "70 g de pomme de terre",
+      "20 g de carotte",
+      "10 ml de lait",
+      "Poivre"
+    ],
+    "famille2": [
+      "100 g de confit de canard effiloché",
+      "140 g de pommes de terre",
+      "40 g de carotte",
+      "20 ml de lait",
+      "Poivre"
+    ],
+    "famille4": [
+      "200 g de confit de canard effiloché",
+      "280 g de pommes de terre",
+      "80 g de carotte",
+      "40 ml de lait",
+      "Poivre"
+    ]
+  },
+  "preparation": [
+    "Cuire la pomme de terre et la carotte jusqu'à ce qu'elles soient très tendres.",
+    "Les écraser avec le lait pour obtenir une purée lisse.",
+    "Déposer le canard dans une petite cocotte et couvrir avec la purée.",
+    "Faire gratiner quelques minutes."
+  ]
 }
 ]
