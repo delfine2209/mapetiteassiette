@@ -363,6 +363,29 @@
       "festif"
     ];
 
+    const imagesParRecette = {
+      REC001: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+      REC002: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80",
+      REC003: "https://images.unsplash.com/photo-1512389142861-9c449e58a0f6?auto=format&fit=crop&w=900&q=80",
+      REC004: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80",
+      REC005: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+      REC006: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=900&q=80",
+      REC007: "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=900&q=80",
+      REC008: "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80",
+      REC009: "https://images.unsplash.com/photo-1525351481791-3fb4f5b80f7c?auto=format&fit=crop&w=900&q=80",
+      REC010: "https://images.unsplash.com/photo-1527489377706-5bf97e608852?auto=format&fit=crop&w=900&q=80",
+      REC011: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80",
+      REC012: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80",
+      REC013: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=80",
+      REC014: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=80",
+      REC015: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+      REC016: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=80",
+      REC017: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1?auto=format&fit=crop&w=900&q=80",
+      REC018: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=900&q=80",
+      REC019: "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=900&q=80",
+      REC020: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=900&q=80"
+    };
+
     let toutesLesRecettes = [];
 
     function normaliserTexte(valeur) {
@@ -398,24 +421,12 @@
     }
 
     function obtenirImage(recette) {
-      const categorie = normaliserTexte(recette?.categorie || "");
+      if (!recette) {
+        return "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80";
+      }
 
-      if (categorie.includes("noel")) {
-        return "https://images.unsplash.com/photo-1512389142861-9c449e58a0f6?auto=format&fit=crop&w=900&q=80";
-      }
-      if (categorie.includes("crepe") || categorie.includes("crêpe")) {
-        return "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80";
-      }
-      if (categorie.includes("paque") || categorie.includes("paques")) {
-        return "https://images.unsplash.com/photo-1525351481791-3fb4f5b80f7c?auto=format&fit=crop&w=900&q=80";
-      }
-      if (categorie.includes("galette")) {
-        return "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80";
-      }
-      if (categorie.includes("apero") || categorie.includes("apéro")) {
-        return "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80";
-      }
-      return "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80";
+      const id = String(recette.id || "").trim().toUpperCase();
+      return imagesParRecette[id] || "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80";
     }
 
     async function chargerRecettes() {
