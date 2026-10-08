@@ -11400,5 +11400,128 @@
     "Cuire au bain-marie au four à 180 °C jusqu'à ce que le blanc soit bien pris.",
     "Servir tiède et vérifier la texture avant de déguster."
   ]
+},
+ {
+  "id": "GAL001",
+  "nom": "Mini galette des rois à la frangipane",
+  "categorie": "Épiphanie",
+  "type": "Dessert festif",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 6,
+  "calories": 360,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "40 g de pâte feuilletée",
+    "15 g de poudre d'amandes",
+    "10 g de sucre",
+    "10 g de beurre",
+    "10 g d'œuf battu",
+    "Quelques gouttes d'extrait d'amande"
+  ],
+  "quantites": {
+    "petite": [
+      "40 g de pâte feuilletée",
+      "15 g de poudre d'amandes",
+      "10 g de sucre",
+      "10 g de beurre",
+      "10 g d'œuf battu",
+      "Quelques gouttes d'extrait d'amande"
+    ],
+    "famille2": [
+      "80 g de pâte feuilletée",
+      "30 g de poudre d'amandes",
+      "20 g de sucre",
+      "20 g de beurre",
+      "20 g d'œuf battu",
+      "Quelques gouttes d'extrait d'amande"
+    ],
+    "famille4": [
+      "160 g de pâte feuilletée",
+      "60 g de poudre d'amandes",
+      "40 g de sucre",
+      "40 g de beurre",
+      "40 g d'œuf battu",
+      "Quelques gouttes d'extrait d'amande"
+    ]
+  },
+  "preparation": [
+    "Mélanger la poudre d'amandes, le sucre, le beurre et l'œuf battu.",
+    "Déposer la crème d'amande sur un petit disque de pâte.",
+    "Recouvrir d'un second disque, souder les bords et dorer légèrement.",
+    "Cuire environ 20 minutes à 180 °C.",
+    "Laisser tiédir avant de servir."
+  ]
+},
+ {
+  "id": "GAL002",
+  "nom": "Mini galette des rois pomme amande",
+  "categorie": "Épiphanie",
+  "type": "Dessert festif",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 20,
+  "proteines": 5,
+  "calories": 300,
+  "portions": 1,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": false,
+  "ingredients": [
+    "40 g de pâte feuilletée",
+    "30 g de pomme",
+    "10 g de poudre d'amandes",
+    "5 g de sucre",
+    "5 g de beurre",
+    "Cannelle"
+  ],
+  "quantites": {
+    "petite": [
+      "40 g de pâte feuilletée",
+      "30 g de pomme",
+      "10 g de poudre d'amandes",
+      "5 g de sucre",
+      "5 g de beurre",
+      "Cannelle"
+    ],
+    "famille2": [
+      "80 g de pâte feuilletée",
+      "60 g de pomme",
+      "20 g de poudre d'amandes",
+      "10 g de sucre",
+      "10 g de beurre",
+      "Cannelle"
+    ],
+    "famille4": [
+      "160 g de pâte feuilletée",
+      "120 g de pomme",
+      "40 g de poudre d'amandes",
+      "20 g de sucre",
+      "20 g de beurre",
+      "Cannelle"
+    ]
+  },
+  "preparation": [
+    "Faire revenir les dés de pomme avec la cannelle jusqu'à ce qu'ils soient bien fondants.",
+    "Mélanger la poudre d'amandes, le sucre et le beurre.",
+    "Déposer la préparation sur un petit disque de pâte, ajouter la pomme puis refermer avec un second disque.",
+    "Dorer et cuire 20 minutes à 180 °C."
+  ]
 }
 ]
