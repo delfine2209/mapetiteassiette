@@ -16,136 +16,245 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #fffaf5;
-      color: #333;
-      padding-bottom: 80px;
+      background: #f5f1ee;
+      color: #2d2d2d;
+      padding-bottom: 92px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
     }
 
     header {
-      background: #ffffff;
-      padding: 20px 15px;
+      background: rgba(255,255,255,0.5);
+      padding: 28px 18px 18px;
       text-align: center;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
     }
 
-    header h1 {
-      font-size: 24px;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       margin-bottom: 8px;
+      font-weight: 700;
+      color: #2c2b2e;
+    }
+
+    .brand-icon {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .brand h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      color: #2e2f33;
     }
 
     header p {
       font-size: 14px;
-      color: #777;
+      color: #6d6d6d;
+      font-style: italic;
+      font-weight: 500;
     }
 
     .conteneur {
-      max-width: 600px;
+      max-width: 1024px;
       margin: 0 auto;
-      padding: 20px 15px;
+      padding: 18px 18px 0;
     }
 
     .retour {
       display: inline-block;
-      margin-bottom: 20px;
-      color: #555;
+      margin: 4px 0 22px;
+      color: #2d2d2d;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 17px;
+      font-weight: 500;
     }
 
     .intro {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .intro h2 {
-      font-size: 21px;
-      margin-bottom: 8px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 10px;
+      color: #2d2d2d;
+      font-weight: 800;
+      letter-spacing: -0.04em;
     }
 
     .intro p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.5;
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: #5d5d5d;
+      line-height: 1.55;
+      font-style: italic;
     }
 
     .filtres {
       display: flex;
-      gap: 8px;
+      gap: 12px;
       overflow-x: auto;
       padding-bottom: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      scrollbar-width: none;
+    }
+
+    .filtres::-webkit-scrollbar {
+      display: none;
     }
 
     .filtre {
       flex-shrink: 0;
-      border: none;
-      background: #eee;
-      padding: 9px 14px;
-      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.04);
+      background: #eae7e2;
+      color: #2f2f2f;
+      padding: 11px 18px;
+      border-radius: 999px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .filtre.actif {
-      background: #333;
+      background: #2a313c;
       color: white;
+      box-shadow: 0 8px 18px rgba(42,49,60,0.18);
     }
 
-    #liste-recettes {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .liste-recettes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
     }
 
     .recette {
-      display: block;
-      background: white;
-      border-radius: 14px;
-      padding: 16px;
-      text-decoration: none;
-      color: #333;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: stretch;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(0,0,0,0.04);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(30, 30, 30, 0.04);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
+      min-height: 180px;
     }
 
     .recette:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(30,30,30,0.08);
+    }
+
+    .recette-image {
+      width: 46%;
+      min-width: 46%;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+
+    .recette-body {
+      flex: 1;
+      padding: 18px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
     }
 
     .recette h3 {
-      font-size: 17px;
-      margin-bottom: 8px;
+      font-size: clamp(1.1rem, 2vw, 1.9rem);
+      line-height: 1.2;
+      color: #2d2d2d;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .categorie-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-start;
+      background: #f1f0ee;
+      color: #4c4c4c;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      min-height: 28px;
     }
 
     .infos {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      font-size: 12px;
-      color: #777;
+      margin-top: 2px;
     }
 
     .badge {
-      background: #f3f3f3;
-      padding: 5px 8px;
-      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,0,0,0.035);
+      color: #5f5f5f;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-icon {
+      font-size: 13px;
+      line-height: 1;
     }
 
     .aucune {
+      grid-column: 1 / -1;
       text-align: center;
-      padding: 30px 15px;
-      color: #777;
-      background: white;
-      border-radius: 14px;
+      padding: 38px 18px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 18px;
+      color: #5f5f5f;
+      border: 1px solid rgba(0,0,0,0.04);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .chargement {
       text-align: center;
-      padding: 30px;
-      color: #777;
+      padding: 36px 18px;
+      color: #6f6f6f;
+      font-size: 15px;
     }
 
     nav {
@@ -153,19 +262,104 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: white;
-      border-top: 1px solid #ddd;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid #ecdfd7;
       display: flex;
       justify-content: space-around;
-      padding: 10px 5px;
+      align-items: center;
+      padding: 10px 8px 14px;
       z-index: 100;
+      backdrop-filter: blur(6px);
     }
 
     nav a {
+      flex: 1;
       text-decoration: none;
-      color: #555;
-      font-size: 12px;
+      color: #707070;
+      font-size: 11px;
       text-align: center;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    nav a.active {
+      color: #2d2d2d;
+    }
+
+    nav .nav-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    @media (max-width: 760px) {
+      .conteneur {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .intro h2 {
+        font-size: 2.2rem;
+      }
+
+      .intro p {
+        font-size: 15px;
+      }
+
+      .filtre {
+        font-size: 14px;
+        padding: 10px 14px;
+      }
+
+      .liste-recettes {
+        grid-template-columns: 1fr;
+      }
+
+      .recette {
+        min-height: 150px;
+      }
+
+      .recette-image {
+        width: 42%;
+        min-width: 42%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .retour {
+        font-size: 16px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      .brand h1 {
+        font-size: 2.1rem;
+      }
+
+      .intro h2 {
+        font-size: 1.9rem;
+      }
+
+      .recette-body {
+        padding: 14px 12px 12px;
+      }
+
+      .recette h3 {
+        font-size: 1.05rem;
+      }
+
+      .categorie-badge {
+        font-size: 12px;
+      }
+
+      .badge {
+        font-size: 11px;
+      }
     }
 
   </style>
@@ -175,7 +369,10 @@
 <body>
 
 <header>
-  <h1>🎉 Festif</h1>
+  <div class="brand">
+    <span class="brand-icon">🎉</span>
+    <h1>Festif</h1>
+  </div>
   <p>Des petites recettes pour les fêtes et les moments conviviaux</p>
 </header>
 
@@ -186,14 +383,11 @@
   </a>
 
   <section class="intro">
-
     <h2>Mes recettes festives</h2>
-
     <p>
       Apéro-dînatoire, crêpes, Noël, Pâques, Épiphanie
       et petites douceurs pour les occasions spéciales.
     </p>
-
   </section>
 
   <div class="filtres">
@@ -228,62 +422,40 @@
 
   </div>
 
-  <div id="liste-recettes">
-
-    <div class="chargement">
-      Chargement des recettes...
-    </div>
-
+  <div id="liste-recettes" class="liste-recettes">
+    <div class="chargement">Chargement des recettes...</div>
   </div>
 
 </main>
 
 <nav>
-
   <a href="../../index.html">
-    🏠<br>
+    <span class="nav-icon">🏠</span>
     Accueil
   </a>
 
   <a href="MesEnvies.html">
-    🔍<br>
+    <span class="nav-icon">🔍</span>
     Envies
   </a>
 
-  <a href="Recettes.html">
-    🍽️<br>
+  <a href="Recettes.html" class="active">
+    <span class="nav-icon">🍽️</span>
     Recettes
   </a>
 
   <a href="Favoris.html">
-    ❤️<br>
+    <span class="nav-icon">❤️</span>
     Favoris
   </a>
 
   <a href="MonProfil.html">
-    👤<br>
+    <span class="nav-icon">👤</span>
     Profil
   </a>
-
 </nav>
 
 <script>
-
-/* =========================================================
-   CATÉGORIES FESTIVES
-   =========================================================
-
-   APE = Apéro-dînatoire
-   CRE = Crêpes
-   NOE = Noël
-   PAQ = Pâques
-   GAL = Galette des rois
-   FES = Festif
-
-   Une recette peut être reconnue :
-   - par son ID
-   - OU par sa catégorie
-   ========================================================= */
 
 const prefixesFestifs = [
   "APE",
@@ -309,580 +481,255 @@ const categoriesFestives = [
 
 let toutesLesRecettes = [];
 
-
-/* =========================================================
-   NORMALISATION DU TEXTE
-   ========================================================= */
-
 function normaliserTexte(valeur) {
-
   return String(valeur || "")
     .trim()
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
-
 }
 
-
-/* =========================================================
-   VÉRIFICATION D'UNE RECETTE FESTIVE
-   ========================================================= */
-
 function estRecetteFestive(recette) {
-
   if (!recette) {
     return false;
   }
 
-  /* -----------------------------------------
-     1. Vérification par ID
-     ----------------------------------------- */
+  const id = String(recette.id || "").trim().toUpperCase();
 
-  const id = String(recette.id || "")
-    .trim()
-    .toUpperCase();
-
-  if (
-    prefixesFestifs.some(prefixe =>
-      id.startsWith(prefixe)
-    )
-  ) {
+  if (prefixesFestifs.some(prefixe => id.startsWith(prefixe))) {
     return true;
   }
 
-
-  /* -----------------------------------------
-     2. Vérification par catégorie
-     ----------------------------------------- */
-
-  const categorie = normaliserTexte(
-    recette.categorie
-  );
-
+  const categorie = normaliserTexte(recette.categorie);
   return categoriesFestives
     .map(normaliserTexte)
     .includes(categorie);
-
 }
 
+function obtenirCategorieLabel(recette) {
+  const categorie = String(recette?.categorie || "").trim();
 
-/* =========================================================
-   CHARGEMENT DE recettes.json
-   ========================================================= */
+  if (!categorie) return "Festif";
+
+  if (/apero|apéro/i.test(categorie)) return "Apéro";
+  if (/crepe|crêpe/i.test(categorie)) return "Crêpes";
+  if (/noel|noël/i.test(categorie)) return "Noël";
+  if (/paque|pâques/i.test(categorie)) return "Pâques";
+  if (/galette/i.test(categorie)) return "Galette";
+  if (/festif/i.test(categorie)) return "Festif";
+
+  return categorie;
+}
+
+function obtenirImage(recette) {
+  const categorie = normaliserTexte(recette?.categorie || "");
+
+  if (categorie.includes("noel")) {
+    return "https://images.unsplash.com/photo-1512389142861-9c449e58a0f6?auto=format&fit=crop&w=900&q=80";
+  }
+
+  if (categorie.includes("crepe") || categorie.includes("crêpe")) {
+    return "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80";
+  }
+
+  if (categorie.includes("paque") || categorie.includes("pâques")) {
+    return "https://images.unsplash.com/photo-1525351481791-3fb4f5b80f7c?auto=format&fit=crop&w=900&q=80";
+  }
+
+  if (categorie.includes("galette")) {
+    return "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80";
+  }
+
+  if (categorie.includes("apero") || categorie.includes("apéro")) {
+    return "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80";
+  }
+
+  return "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80";
+}
 
 async function chargerRecettes() {
-
-  const liste =
-    document.getElementById("liste-recettes");
+  const liste = document.getElementById("liste-recettes");
 
   try {
-
-    /*
-     * Festif.html se trouve dans :
-     * src/screens/
-     *
-     * recettes.json se trouve dans :
-     * src/
-     *
-     * Donc :
-     * ../recettes.json
-     */
-
-    const reponse =
-      await fetch("../recettes.json");
+    const reponse = await fetch("../recettes.json");
 
     if (!reponse.ok) {
-
-      throw new Error(
-        "Impossible de charger recettes.json"
-      );
-
+      throw new Error("Impossible de charger recettes.json");
     }
 
-
-    toutesLesRecettes =
-      await reponse.json();
-
-
-    /* -----------------------------------------
-       Vérification du tableau
-       ----------------------------------------- */
+    toutesLesRecettes = await reponse.json();
 
     if (!Array.isArray(toutesLesRecettes)) {
-
-      throw new Error(
-        "Le fichier recettes.json ne contient pas une liste de recettes."
-      );
-
+      throw new Error("Le fichier recettes.json ne contient pas une liste de recettes.");
     }
 
-
-    /* -----------------------------------------
-       Lecture du filtre dans l'URL
-       Exemple :
-       Festif.html?filtre=PAQ
-       ----------------------------------------- */
-
-    const parametres =
-      new URLSearchParams(
-        window.location.search
-      );
-
-
-    let filtreInitial =
-      parametres.get("filtre");
-
+    const parametres = new URLSearchParams(window.location.search);
+    let filtreInitial = parametres.get("filtre");
 
     if (filtreInitial) {
-
-      filtreInitial =
-        filtreInitial
-          .trim()
-          .toUpperCase();
-
+      filtreInitial = filtreInitial.trim().toUpperCase();
     } else {
-
       filtreInitial = "toutes";
-
     }
 
-
-    /* -----------------------------------------
-       Sécurité
-       ----------------------------------------- */
-
-    if (
-      filtreInitial !== "toutes" &&
-      !prefixesFestifs.includes(
-        filtreInitial
-      )
-    ) {
-
+    if (filtreInitial !== "toutes" && !prefixesFestifs.includes(filtreInitial)) {
       filtreInitial = "toutes";
-
     }
 
-
-    /* -----------------------------------------
-       Activation du bouton
-       ----------------------------------------- */
-
-    activerBouton(
-      filtreInitial
-    );
-
-
-    /* -----------------------------------------
-       Affichage
-       ----------------------------------------- */
-
-    afficherRecettes(
-      filtreInitial
-    );
-
+    activerBouton(filtreInitial);
+    afficherRecettes(filtreInitial);
   }
-
   catch (erreur) {
-
-    console.error(
-      "Erreur chargement recettes :",
-      erreur
-    );
-
+    console.error("Erreur chargement recettes :", erreur);
     liste.innerHTML = `
-
       <div class="aucune">
-
-        <strong>
-          Impossible de charger les recettes.
-        </strong>
-
+        <strong>Impossible de charger les recettes.</strong>
         <br><br>
-
-        Vérifiez que le fichier
-        <strong>recettes.json</strong>
-        est bien présent dans le dossier
-        <strong>src</strong>.
-
+        Vérifiez que le fichier <strong>recettes.json</strong>
+        est bien présent dans le dossier <strong>src</strong>.
       </div>
-
     `;
-
   }
-
 }
-
-
-/* =========================================================
-   ACTIVE LE BON BOUTON
-   ========================================================= */
 
 function activerBouton(filtre) {
-
-  document
-    .querySelectorAll(".filtre")
-    .forEach(bouton => {
-
-      bouton.classList.remove(
-        "actif"
-      );
-
-
-      if (
-        bouton.dataset.filtre === filtre
-      ) {
-
-        bouton.classList.add(
-          "actif"
-        );
-
-      }
-
-    });
-
+  document.querySelectorAll(".filtre").forEach(bouton => {
+    bouton.classList.remove("actif");
+    if (bouton.dataset.filtre === filtre) {
+      bouton.classList.add("actif");
+    }
+  });
 }
 
-
-/* =========================================================
-   FILTRE SELON LA CATÉGORIE
-   ========================================================= */
-
-function recetteCorrespondAuFiltre(
-  recette,
-  filtre
-) {
-
+function recetteCorrespondAuFiltre(recette, filtre) {
   if (!recette) {
     return false;
   }
 
-
-  /* -----------------------------------------
-     Toutes les recettes festives
-     ----------------------------------------- */
-
   if (filtre === "toutes") {
-
-    return estRecetteFestive(
-      recette
-    );
-
+    return estRecetteFestive(recette);
   }
 
-
-  /* -----------------------------------------
-     Correspondance par ID
-     ----------------------------------------- */
-
-  const id =
-    String(recette.id || "")
-      .trim()
-      .toUpperCase();
-
-
-  if (
-    id.startsWith(filtre)
-  ) {
-
+  const id = String(recette.id || "").trim().toUpperCase();
+  if (id.startsWith(filtre)) {
     return true;
-
   }
 
-
-  /* -----------------------------------------
-     Correspondance par catégorie
-     ----------------------------------------- */
-
-  const categorie =
-    normaliserTexte(
-      recette.categorie
-    );
-
+  const categorie = normaliserTexte(recette.categorie);
 
   const correspondances = {
-
-    APE: [
-      "apero-dinatoire"
-    ],
-
-    CRE: [
-      "crepes"
-    ],
-
-    NOE: [
-      "noel"
-    ],
-
-    PAQ: [
-      "paques"
-    ],
-
-    GAL: [
-      "galette des rois"
-    ],
-
-    FES: [
-      "festif"
-    ]
-
+    APE: ["apero-dinatoire"],
+    CRE: ["crepes"],
+    NOE: ["noel"],
+    PAQ: ["paques"],
+    GAL: ["galette des rois"],
+    FES: ["festif"]
   };
 
-
-  return (
+  return Boolean(
     correspondances[filtre] &&
-    correspondances[filtre].includes(
-      categorie
-    )
+    correspondances[filtre].includes(categorie)
   );
-
 }
-
-
-/* =========================================================
-   AFFICHAGE DES RECETTES
-   ========================================================= */
 
 function afficherRecettes(filtre) {
+  const liste = document.getElementById("liste-recettes");
 
-  const liste =
-    document.getElementById(
-      "liste-recettes"
-    );
-
-
-  /*
-   * Première étape :
-   * on garde uniquement les recettes
-   * appartenant à l'univers festif.
-   */
-
-  let recettes =
-    toutesLesRecettes.filter(
-      estRecetteFestive
-    );
-
-
-  /*
-   * Deuxième étape :
-   * filtre précis.
-   */
+  let recettes = toutesLesRecettes.filter(estRecetteFestive);
 
   if (filtre !== "toutes") {
-
-    recettes =
-      recettes.filter(
-        recette =>
-          recetteCorrespondAuFiltre(
-            recette,
-            filtre
-          )
-      );
-
+    recettes = recettes.filter(recette => recetteCorrespondAuFiltre(recette, filtre));
   }
 
-
-  /*
-   * Tri par nom
-   * pour avoir une présentation propre.
-   */
-
-  recettes.sort(
-    (a, b) =>
-      String(a.nom || "")
-        .localeCompare(
-          String(b.nom || ""),
-          "fr",
-          {
-            sensitivity: "base"
-          }
-        )
+  recettes.sort((a, b) =>
+    String(a.nom || "").localeCompare(String(b.nom || ""), "fr", {
+      sensitivity: "base"
+    })
   );
 
-
-  /*
-   * Aucune recette
-   */
-
-  if (
-    recettes.length === 0
-  ) {
-
+  if (recettes.length === 0) {
     liste.innerHTML = `
-
       <div class="aucune">
-
-        <strong>
-          Aucune recette trouvée.
-        </strong>
-
+        <strong>Aucune recette trouvée.</strong>
         <br><br>
-
-        Cette catégorie ne contient
-        actuellement aucune recette.
-
+        Cette catégorie ne contient actuellement aucune recette.
       </div>
-
     `;
-
     return;
-
   }
 
+  liste.innerHTML = recettes.map(recette => {
+    const image = obtenirImage(recette);
+    const categorie = obtenirCategorieLabel(recette);
+    const temps = recette.temps ? `
+      <span class="badge">
+        <span class="badge-icon">⏱️</span>
+        ${recette.temps} min
+      </span>
+    ` : "";
 
-  /*
-   * Création des cartes
-   */
+    const proteines = recette.proteines !== undefined && recette.proteines !== null && recette.proteines !== ""
+      ? `
+        <span class="badge">
+          <span class="badge-icon">🥩</span>
+          ${recette.proteines} g
+        </span>
+      `
+      : "";
 
-  liste.innerHTML =
-    recettes
-      .map(recette => {
+    const calories = recette.calories !== undefined && recette.calories !== null && recette.calories !== ""
+      ? `
+        <span class="badge">
+          <span class="badge-icon">🔥</span>
+          ${recette.calories} kcal
+        </span>
+      `
+      : "";
 
-        return `
+    const sansGluten = recette.sansGluten
+      ? `
+        <span class="badge">
+          <span class="badge-icon">🌾</span>
+          Sans gluten
+        </span>
+      `
+      : "";
 
-          <a
-            href="Recette.html?id=${encodeURIComponent(
-              recette.id
-            )}"
-            class="recette"
-          >
+    return `
+      <a href="Recette.html?id=${encodeURIComponent(recette.id)}" class="recette">
+        <img class="recette-image" src="${image}" alt="${recette.nom || "Recette festive"}">
 
-            <h3>
-              ${recette.nom || "Recette sans nom"}
-            </h3>
+        <div class="recette-body">
+          <h3>${recette.nom || "Recette sans nom"}</h3>
 
-            <div class="infos">
+          <span class="categorie-badge">${categorie}</span>
 
-              ${
-                recette.temps
-                  ? `
-                    <span class="badge">
-                      ⏱️ ${recette.temps} min
-                    </span>
-                  `
-                  : ""
-              }
-
-
-              ${
-                recette.proteines !== undefined &&
-                recette.proteines !== null &&
-                recette.proteines !== ""
-                  ? `
-                    <span class="badge">
-                      🥩 ${recette.proteines} g protéines
-                    </span>
-                  `
-                  : ""
-              }
-
-
-              ${
-                recette.calories !== undefined &&
-                recette.calories !== null &&
-                recette.calories !== ""
-                  ? `
-                    <span class="badge">
-                      🔥 ${recette.calories} kcal
-                    </span>
-                  `
-                  : ""
-              }
-
-
-              ${
-                recette.sansGluten
-                  ? `
-                    <span class="badge">
-                      🌾 Sans gluten
-                    </span>
-                  `
-                  : ""
-              }
-
-            </div>
-
-          </a>
-
-        `;
-
-      })
-      .join("");
-
+          <div class="infos">
+            ${temps}
+            ${proteines}
+            ${calories}
+            ${sansGluten}
+          </div>
+        </div>
+      </a>
+    `;
+  }).join("");
 }
 
+document.querySelectorAll(".filtre").forEach(bouton => {
+  bouton.addEventListener("click", function() {
+    const filtre = this.dataset.filtre;
 
-/* =========================================================
-   GESTION DES 6 BOUTONS
-   ========================================================= */
+    activerBouton(filtre);
+    afficherRecettes(filtre);
 
-document
-  .querySelectorAll(".filtre")
-  .forEach(bouton => {
-
-    bouton.addEventListener(
-      "click",
-      function() {
-
-        const filtre =
-          this.dataset.filtre;
-
-
-        /*
-         * Active le bouton
-         */
-
-        activerBouton(
-          filtre
-        );
-
-
-        /*
-         * Affiche les recettes
-         */
-
-        afficherRecettes(
-          filtre
-        );
-
-
-        /*
-         * Met à jour l'URL
-         */
-
-        if (
-          filtre === "toutes"
-        ) {
-
-          history.replaceState(
-            null,
-            "",
-            "Festif.html"
-          );
-
-        } else {
-
-          history.replaceState(
-            null,
-            "",
-            "Festif.html?filtre=" +
-            encodeURIComponent(
-              filtre
-            )
-          );
-
-        }
-
-      }
-
-    );
-
+    if (filtre === "toutes") {
+      history.replaceState(null, "", "Festif.html");
+    } else {
+      history.replaceState(null, "", "Festif.html?filtre=" + encodeURIComponent(filtre));
+    }
   });
-
-
-/* =========================================================
-   LANCEMENT
-   ========================================================= */
+});
 
 chargerRecettes();
 
