@@ -12852,5 +12852,361 @@
       "Miel": "2 cuillères à café"
     }
   }
+},
+{
+  "id": "NEW201",
+  "nom": "Quiche sans pâte chou-fleur et comté",
+  "categorie": "Plat",
+  "type": "Quiche sans pâte",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 16,
+  "calories": 220,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "réconfortant",
+    "léger"
+  ],
+  "texture": "Fondante",
+  "ingredients": [
+    "120 g de chou-fleur",
+    "1 œuf",
+    "50 ml de lait",
+    "20 g de comté râpé"
+  ],
+  "preparation": [
+    "Cuire le chou-fleur à la vapeur jusqu'à ce qu'il soit bien tendre.",
+    "Battre l'œuf avec le lait.",
+    "Ajouter le comté râpé.",
+    "Incorporer le chou-fleur.",
+    "Cuire 25 minutes à 180 °C."
+  ],
+  "quantites": {
+    "petite": [
+      "120 g de chou-fleur",
+      "1 œuf",
+      "50 ml de lait",
+      "20 g de comté râpé"
+    ],
+    "famille2": [
+      "250 g de chou-fleur",
+      "2 œufs",
+      "100 ml de lait",
+      "40 g de comté râpé"
+    ],
+    "famille4": [
+      "500 g de chou-fleur",
+      "4 œufs",
+      "200 ml de lait",
+      "80 g de comté râpé"
+    ]
+  }
+},
+{
+  "id": "NEW202",
+  "nom": "Quiche sans pâte betterave et chèvre",
+  "categorie": "Plat",
+  "type": "Quiche sans pâte",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 14,
+  "calories": 190,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "original",
+    "coloré"
+  ],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "80 g de betterave cuite",
+    "1 œuf",
+    "50 ml de lait",
+    "20 g de chèvre"
+  ],
+  "preparation": [
+    "Couper la betterave en petits dés.",
+    "Mélanger l'œuf et le lait.",
+    "Ajouter le chèvre émietté.",
+    "Incorporer la betterave.",
+    "Cuire au four 25 minutes à 180 °C."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de betterave cuite",
+      "1 œuf",
+      "50 ml de lait",
+      "20 g de chèvre"
+    ],
+    "famille2": [
+      "180 g de betterave cuite",
+      "2 œufs",
+      "100 ml de lait",
+      "40 g de chèvre"
+    ],
+    "famille4": [
+      "360 g de betterave cuite",
+      "4 œufs",
+      "200 ml de lait",
+      "80 g de chèvre"
+    ]
+  }
+},
+{
+  "id": "NEW203",
+  "nom": "Quiche sans pâte petits pois et jambon",
+  "categorie": "Plat",
+  "type": "Quiche sans pâte",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 18,
+  "calories": 210,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "familial"
+  ],
+  "texture": "Fondante",
+  "ingredients": [
+    "70 g de petits pois",
+    "30 g de jambon",
+    "1 œuf",
+    "50 ml de lait"
+  ],
+  "preparation": [
+    "Cuire les petits pois jusqu'à ce qu'ils soient bien tendres.",
+    "Couper le jambon en petits morceaux.",
+    "Battre l'œuf avec le lait.",
+    "Assembler les ingrédients puis enfourner 25 minutes à 180 °C."
+  ],
+  "quantites": {
+    "petite": [
+      "70 g de petits pois",
+      "30 g de jambon",
+      "1 œuf",
+      "50 ml de lait"
+    ],
+    "famille2": [
+      "150 g de petits pois",
+      "60 g de jambon",
+      "2 œufs",
+      "100 ml de lait"
+    ],
+    "famille4": [
+      "300 g de petits pois",
+      "120 g de jambon",
+      "4 œufs",
+      "200 ml de lait"
+    ]
+  }
+},
+{
+  "id": "NEW204",
+  "nom": "Quiche sans pâte brocoli et ricotta",
+  "categorie": "Plat",
+  "type": "Quiche sans pâte",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 15,
+  "calories": 200,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "équilibré"
+  ],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "100 g de brocoli",
+    "25 g de ricotta",
+    "1 œuf",
+    "50 ml de lait"
+  ],
+  "preparation": [
+    "Cuire le brocoli jusqu'à ce qu'il soit bien tendre.",
+    "Battre l'œuf avec le lait.",
+    "Ajouter la ricotta.",
+    "Mélanger avec le brocoli.",
+    "Cuire 25 minutes à 180 °C."
+  ],
+  "quantites": {
+    "petite": [
+      "100 g de brocoli",
+      "25 g de ricotta",
+      "1 œuf",
+      "50 ml de lait"
+    ],
+    "famille2": [
+      "200 g de brocoli",
+      "50 g de ricotta",
+      "2 œufs",
+      "100 ml de lait"
+    ],
+    "famille4": [
+      "400 g de brocoli",
+      "100 g de ricotta",
+      "4 œufs",
+      "200 ml de lait"
+    ]
+  }
+},
+{
+  "id": "NEW205",
+  "nom": "Quiche sans pâte fenouil et saumon",
+  "categorie": "Plat",
+  "type": "Quiche sans pâte",
+  "temps": 30,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 22,
+  "calories": 280,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "raffiné"
+  ],
+  "texture": "Fondante",
+  "ingredients": [
+    "80 g de fenouil",
+    "50 g de saumon",
+    "1 œuf",
+    "50 ml de lait"
+  ],
+  "preparation": [
+    "Émincer finement le fenouil et le cuire jusqu'à ce qu'il soit fondant.",
+    "Couper le saumon en petits morceaux.",
+    "Battre l'œuf avec le lait.",
+    "Assembler tous les ingrédients.",
+    "Cuire au four 25 minutes à 180 °C."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de fenouil",
+      "50 g de saumon",
+      "1 œuf",
+      "50 ml de lait"
+    ],
+    "famille2": [
+      "180 g de fenouil",
+      "100 g de saumon",
+      "2 œufs",
+      "100 ml de lait"
+    ],
+    "famille4": [
+      "360 g de fenouil",
+      "200 g de saumon",
+      "4 œufs",
+      "200 ml de lait"
+    ]
+  }
+},
+{
+  "id": "NEW206",
+  "nom": "Poulet au fenouil fondant",
+  "categorie": "Plat",
+  "type": "Viande",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 24,
+  "calories": 190,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "léger"
+  ],
+  "texture": "Fondante",
+  "ingredients": [
+    "80 g de poulet",
+    "60 g de fenouil",
+    "20 g d'oignon"
+  ],
+  "preparation": [
+    "Émincer finement le fenouil et l'oignon.",
+    "Faire revenir le poulet.",
+    "Ajouter le fenouil et l'oignon.",
+    "Couvrir et cuire 15 minutes jusqu'à ce que les légumes soient bien fondants et le poulet tendre."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de poulet",
+      "60 g de fenouil",
+      "20 g d'oignon"
+    ],
+    "famille2": [
+      "160 g de poulet",
+      "120 g de fenouil",
+      "40 g d'oignon"
+    ],
+    "famille4": [
+      "320 g de poulet",
+      "240 g de fenouil",
+      "80 g d'oignon"
+    ]
+  }
 }
 ]
