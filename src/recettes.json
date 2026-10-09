@@ -13208,5 +13208,464 @@
       "80 g d'oignon"
     ]
   }
+},
+{
+  "id": "NEW207",
+  "nom": "Poulet aux petits pois",
+  "categorie": "Plat",
+  "type": "Viande",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 24,
+  "calories": 205,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "équilibré"
+  ],
+  "texture": "Tendre",
+  "ingredients": [
+    "80 g de poulet",
+    "60 g de petits pois"
+  ],
+  "preparation": [
+    "Cuire le poulet jusqu'à ce qu'il soit bien tendre.",
+    "Ajouter les petits pois.",
+    "Laisser mijoter environ 10 minutes."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de poulet",
+      "60 g de petits pois"
+    ],
+    "famille2": [
+      "160 g de poulet",
+      "120 g de petits pois"
+    ],
+    "famille4": [
+      "320 g de poulet",
+      "240 g de petits pois"
+    ]
+  }
+},
+{
+  "id": "NEW208",
+  "nom": "Poulet rôti au potiron",
+  "categorie": "Plat",
+  "type": "Viande",
+  "temps": 30,
+  "tempsPreparation": 5,
+  "tempsCuisson": 25,
+  "proteines": 25,
+  "calories": 220,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": [
+    "automne"
+  ],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "80 g de poulet",
+    "100 g de potiron"
+  ],
+  "preparation": [
+    "Couper le potiron en petits morceaux.",
+    "Cuire le poulet et le potiron au four pendant environ 25 minutes.",
+    "Vérifier que le poulet est bien cuit et que le potiron est fondant."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de poulet",
+      "100 g de potiron"
+    ],
+    "famille2": [
+      "160 g de poulet",
+      "200 g de potiron"
+    ],
+    "famille4": [
+      "320 g de poulet",
+      "400 g de potiron"
+    ]
+  }
+},
+ {
+  "id": "NEW209",
+  "nom": "Poulet aux poivrons doux",
+  "categorie": "Plat",
+  "type": "Viande",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 24,
+  "calories": 180,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": ["coloré"],
+  "texture": "Fondante",
+  "ingredients": [
+    "80 g de poulet",
+    "60 g de poivron doux"
+  ],
+  "preparation": [
+    "Émincer finement le poulet et le poivron.",
+    "Faire revenir le poulet.",
+    "Ajouter le poivron.",
+    "Cuire environ 10 minutes jusqu'à ce que le poivron soit bien fondant."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de poulet",
+      "60 g de poivron doux"
+    ],
+    "famille2": [
+      "160 g de poulet",
+      "120 g de poivron doux"
+    ],
+    "famille4": [
+      "320 g de poulet",
+      "240 g de poivron doux"
+    ]
+  }
+},
+{
+  "id": "NEW210",
+  "nom": "Gratin de poulet et céleri-rave",
+  "categorie": "Plat",
+  "type": "Gratin",
+  "temps": 35,
+  "tempsPreparation": 10,
+  "tempsCuisson": 25,
+  "proteines": 24,
+  "calories": 245,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": ["réconfortant"],
+  "texture": "Fondante",
+  "ingredients": [
+    "70 g de poulet",
+    "100 g de céleri-rave",
+    "15 g de fromage râpé"
+  ],
+  "preparation": [
+    "Cuire le céleri-rave jusqu'à ce qu'il soit bien tendre.",
+    "Cuire le poulet puis le couper en petits morceaux.",
+    "Mélanger avec le céleri-rave.",
+    "Parsemer de fromage.",
+    "Gratiner au four jusqu'à ce que le fromage soit fondu."
+  ],
+  "quantites": {
+    "petite": [
+      "70 g de poulet",
+      "100 g de céleri-rave",
+      "15 g de fromage râpé"
+    ],
+    "famille2": [
+      "140 g de poulet",
+      "200 g de céleri-rave",
+      "30 g de fromage râpé"
+    ],
+    "famille4": [
+      "280 g de poulet",
+      "400 g de céleri-rave",
+      "60 g de fromage râpé"
+    ]
+  }
+},
+{
+  "id": "NEW211",
+  "nom": "Truite aux légumes croquants",
+  "categorie": "Plat",
+  "type": "Poisson",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 22,
+  "calories": 170,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["léger"],
+  "texture": "Tendre",
+  "ingredients": [
+    "80 g de truite",
+    "50 g de carotte",
+    "40 g de poivron"
+  ],
+  "preparation": [
+    "Cuire la truite au four ou à la vapeur.",
+    "Émincer les légumes.",
+    "Cuire les légumes jusqu'à ce qu'ils soient tendres.",
+    "Servir la truite avec les légumes."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de truite",
+      "50 g de carotte",
+      "40 g de poivron"
+    ],
+    "famille2": [
+      "160 g de truite",
+      "100 g de carotte",
+      "80 g de poivron"
+    ],
+    "famille4": [
+      "320 g de truite",
+      "200 g de carotte",
+      "160 g de poivron"
+    ]
+  }
+},
+{
+  "id": "NEW212",
+  "nom": "Merlu aux petits pois",
+  "categorie": "Plat",
+  "type": "Poisson",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 21,
+  "calories": 160,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": true,
+  "envies": ["léger"],
+  "texture": "Fondante",
+  "ingredients": [
+    "80 g de merlu",
+    "60 g de petits pois"
+  ],
+  "preparation": [
+    "Cuire le merlu à la vapeur jusqu'à ce qu'il soit bien tendre.",
+    "Cuire les petits pois jusqu'à ce qu'ils soient fondants.",
+    "Servir ensemble en vérifiant soigneusement l'absence d'arêtes."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de merlu",
+      "60 g de petits pois"
+    ],
+    "famille2": [
+      "160 g de merlu",
+      "120 g de petits pois"
+    ],
+    "famille4": [
+      "320 g de merlu",
+      "240 g de petits pois"
+    ]
+  }
+},
+{
+  "id": "NEW213",
+  "nom": "Dorade au fenouil",
+  "categorie": "Plat",
+  "type": "Poisson",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 22,
+  "calories": 175,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["raffiné"],
+  "texture": "Fondante",
+  "ingredients": [
+    "80 g de dorade",
+    "70 g de fenouil"
+  ],
+  "preparation": [
+    "Émincer finement le fenouil.",
+    "Le faire braiser jusqu'à ce qu'il soit bien fondant.",
+    "Cuire la dorade au four.",
+    "Servir avec le fenouil en vérifiant soigneusement l'absence d'arêtes."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de dorade",
+      "70 g de fenouil"
+    ],
+    "famille2": [
+      "160 g de dorade",
+      "140 g de fenouil"
+    ],
+    "famille4": [
+      "320 g de dorade",
+      "280 g de fenouil"
+    ]
+  }
+},
+{
+  "id": "NEW214",
+  "nom": "Thon gratiné au chou-fleur",
+  "categorie": "Plat",
+  "type": "Poisson",
+  "temps": 25,
+  "tempsPreparation": 10,
+  "tempsCuisson": 15,
+  "proteines": 24,
+  "calories": 210,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": false,
+  "postOperatoire": false,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": ["gratiné"],
+  "texture": "Fondante",
+  "ingredients": [
+    "60 g de thon au naturel",
+    "100 g de chou-fleur",
+    "15 g de fromage râpé"
+  ],
+  "preparation": [
+    "Cuire le chou-fleur jusqu'à ce qu'il soit bien tendre.",
+    "Égoutter le thon.",
+    "Mélanger le chou-fleur avec le thon.",
+    "Parsemer de fromage.",
+    "Gratiner au four jusqu'à ce que le fromage soit fondu."
+  ],
+  "quantites": {
+    "petite": [
+      "60 g de thon au naturel",
+      "100 g de chou-fleur",
+      "15 g de fromage râpé"
+    ],
+    "famille2": [
+      "120 g de thon au naturel",
+      "200 g de chou-fleur",
+      "30 g de fromage râpé"
+    ],
+    "famille4": [
+      "240 g de thon au naturel",
+      "400 g de chou-fleur",
+      "60 g de fromage râpé"
+    ]
+  }
+},
+{
+  "id": "NEW215",
+  "nom": "Sole aux légumes d'automne",
+  "categorie": "Plat",
+  "type": "Poisson",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 20,
+  "calories": 150,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": false,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["saison"],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "80 g de sole",
+    "70 g de potiron",
+    "50 g de carotte"
+  ],
+  "preparation": [
+    "Cuire la sole à la vapeur ou au four.",
+    "Cuire le potiron et la carotte à la vapeur jusqu'à ce qu'ils soient bien fondants.",
+    "Servir la sole avec les légumes en vérifiant soigneusement l'absence d'arêtes."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de sole",
+      "70 g de potiron",
+      "50 g de carotte"
+    ],
+    "famille2": [
+      "160 g de sole",
+      "140 g de potiron",
+      "100 g de carotte"
+    ],
+    "famille4": [
+      "320 g de sole",
+      "280 g de potiron",
+      "200 g de carotte"
+    ]
+  }
 }
 ]
