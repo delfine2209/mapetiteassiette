@@ -387,80 +387,16 @@
         throw new Error();
       }
 
-      recettesCatalogue =
-        await response.json();
+      
+recettesCatalogue = await response.json();
 
-      ```javascript
-function chargerRecettesSelectionnees() {
-  const ids = [];
+chargerRecettesSelectionnees();
 
-  function ajouterRecettes(liste) {
-    if (!Array.isArray(liste)) return;
+construireListeCourses();
 
-    liste.forEach(recette => {
-      if (recette && recette.id) {
-        ids.push(String(recette.id));
-      }
-    });
-  }
+afficherRecettesSources();
 
-  // 1. Recettes du planning de la semaine
-  const planning = JSON.parse(
-    localStorage.getItem("planningSemaine") || "{}"
-  );
-
-  Object.values(planning).forEach(jour => {
-    if (!jour) return;
-
-    ["petitDejeuner", "petit-dejeuner", "dejeuner", "diner"].forEach(repas => {
-      const recette = jour[repas];
-
-      if (recette && recette.id) {
-        ids.push(String(recette.id));
-      }
-    });
-  });
-
-  // 2. Recettes du menu actuellement sélectionné
-  const menuEnCours = JSON.parse(
-    localStorage.getItem("menuEnCours") || "null"
-  );
-
-  if (menuEnCours && Array.isArray(menuEnCours.recettes)) {
-    ajouterRecettes(menuEnCours.recettes);
-  }
-
-  // 3. Recettes des menus enregistrés
-  const menus = JSON.parse(
-    localStorage.getItem("menusSauvegardes") || "[]"
-  );
-
-  menus.forEach(menu => {
-    if (menu && Array.isArray(menu.recettes)) {
-      ajouterRecettes(menu.recettes);
-    }
-  });
-
-  // 4. Retrouver les recettes complètes dans le catalogue
-  const idsUniques = [...new Set(ids)];
-
-  recettesSelectionnees = idsUniques
-    .map(id =>
-      recettesCatalogue.find(
-        recette => String(recette.id) === id
-      )
-    )
-    .filter(Boolean);
-}
-```
-
-
-      construireListeCourses();
-
-      afficherRecettesSources();
-
-      afficherIngredients();
-
+afficherIngredients();
     } catch (error) {
 
       document.getElementById(
