@@ -354,306 +354,356 @@
 </nav>
 
 <script>
-  let recettes = [];
-  let monMenu = [];
-  let modeActuel = "assiette";
+  
+let recettes = [];
+let monMenu = [];
+let modeActuel = "assiette";
 
-  const jours = [
-    ["lundi", "Lundi"],
-    ["mardi", "Mardi"],
-    ["mercredi", "Mercredi"],
-    ["jeudi", "Jeudi"],
-    ["vendredi", "Vendredi"],
-    ["samedi", "Samedi"],
-    ["dimanche", "Dimanche"]
-  ];
+const jours = [
+  ["lundi", "Lundi"],
+  ["mardi", "Mardi"],
+  ["mercredi", "Mercredi"],
+  ["jeudi", "Jeudi"],
+  ["vendredi", "Vendredi"],
+  ["samedi", "Samedi"],
+  ["dimanche", "Dimanche"]
+];
 
-  document.addEventListener("DOMContentLoaded", async () => {
-    try {
-      const reponse = await fetch("../recettes.json");
-      if (!reponse.ok) throw new Error("Impossible de charger recettes.json");
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const reponse = await fetch("../recettes.json");
+    if (!reponse.ok) throw new Error("Chargement impossible");
 
-      const donnees = await reponse.json();
-      recettes = Array.isArray(donnees) ? donnees : [];
-
-      if (!recettes.length) {
-        afficherErreur("Le catalogue de recettes est vide.");
-        return;
-      }
-
-     construireSemaine();
-restaurerBrouillonMenu();
-actualiserNutrition();
-    } catch (erreur) {
-      console.error("Erreur de chargement des recettes :", erreur);
-      afficherErreur("Impossible de charger les recettes. Vérifiez le chemin vers recettes.json et le format du fichier.");
+    const donnees = await reponse.json();
+    if (!Array.isArray(donnees)) {
+      throw new Error("Le catalogue n'est pas une liste de recettes");
     }
-  });
 
-  function afficherErreur(texte) {
-    document.getElementById("resultatsRecettes").innerHTML =
-      `<div class="empty">${echapper(texte)}</div>`;
-  }
-
-  function changerMode(mode) {
-    modeActuel = mode;
-    const assiette = mode === "assiette";
-
-    document.getElementById("sectionAssiette").classList.toggle("hidden", !assiette);
-    document.getElementById("sectionMonMenu").classList.toggle("hidden", !assiette);
-    document.getElementById("sectionSemaine").classList.toggle("hidden", assiette);
-
-    document.getElementById("modeAssiette").classList.toggle("active", assiette);
-    document.getElementById("modeAssiette").classList.toggle("btn-primary", assiette);
-    document.getElementById("modeAssiette").classList.toggle("btn-secondary", !assiette);
-
-    document.getElementById("modeSemaine").classList.toggle("active", !assiette);
-    document.getElementById("modeSemaine").classList.toggle("btn-primary", !assiette);
-    document.getElementById("modeSemaine").classList.toggle("btn-secondary", assiette);
-
+    recettes = donnees;
+    construireSemaine();
+    restaurerBrouillonMenu();
     actualiserNutrition();
+  } catch (erreur) {
+    console.error(erreur);
+    afficherErreur(
+      "Impossible de charger les recettes. Vérifiez le chemin de recettes.json."
+    );
+  }
+});
+
+function echapper(texte) {
+  return String(texte ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function normaliser(texte) {
+  return String(texte || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+function nombre(valeur) {
+  const n = Number(valeur);
+  return Number.isFinite(n) && n >= 0 ? n : 0;
+}
+
+function afficherErreur(texte) {
+  document.getElementById("resultatsRecettes").innerHTML =
+    `<div class="empty">${echapper(texte)}</div>`;
+}
+
+function afficherMessage(texte) {
+  const element = document.getElementById("message");
+  element.textContent = texte;
+  element.classList.remove("hidden");
+  setTimeout(() => element.classList.add("hidden"), 3000);
+}
+
+function changerMode(mode) {
+  modeActuel = mode;
+  const assiette = mode === "assiette";
+
+  document.getElementById("sectionAssiette").classList.toggle("hidden", !assiette);
+  document.getElementById("sectionMonMenu").classList.toggle("hidden", !assiette);
+  document.getElementById("sectionSemaine").classList.toggle("hidden", assiette);
+
+  document.getElementById("modeAssiette").classList.toggle("active", assiette);
+  document.getElementById("modeAssiette").classList.toggle("btn-primary", assiette);
+  document.getElementById("modeAssiette").classList.toggle("btn-secondary", !assiette);
+
+  document.getElementById("modeSemaine").classList.toggle("active", !assiette);
+  document.getElementById("modeSemaine").classList.toggle("btn-primary", !assiette);
+  document.getElementById("modeSemaine").classList.toggle("btn-secondary", assiette);
+
+  actualiserNutrition();
+}
+
+function objectifs() {
+  return {
+    caloriesActives: document.getElementById("activerCalories").checked,
+    calories: nombre(document.getElementById("objectifCalories").value),
+    proteinesActives: document.getElementById("activerProteines").checked,
+    proteines: nombre(document.getElementById("objectifProteines").value)
+  };
+}
+
+function caloriesRecette(recette) {
+  return nombre(recette?.calories);
+}
+
+function proteinesRecette(recette) {
+  return nombre(recette?.proteines);
+}
+
+function totalNutrition(liste) {
+  return (liste || []).reduce((total, recette) => ({
+    calories: total.calories + caloriesRecette(recette),
+    proteines: total.proteines + proteinesRecette(recette),
+    caloriesConnues: total.caloriesConnues +
+      (recette.calories != null && recette.calories !== "" ? 1 : 0),
+    proteinesConnues: total.proteinesConnues +
+      (recette.proteines != null && recette.proteines !== "" ? 1 : 0)
+  }), {
+    calories: 0,
+    proteines: 0,
+    caloriesConnues: 0,
+    proteinesConnues: 0
+  });
+}
+
+function afficherNutrition(liste, titre = "Total nutritionnel") {
+  const t = totalNutrition(liste);
+  const o = objectifs();
+  const caloriesCompletes = t.caloriesConnues === liste.length;
+  const proteinesCompletes = t.proteinesConnues === liste.length;
+
+  let objectifsHTML = "";
+
+  if (o.caloriesActives) {
+    objectifsHTML += `<div class="goal-message">
+      Objectif : ${o.calories} kcal —
+      ${!caloriesCompletes ? "valeurs incomplètes" :
+        t.calories < o.calories ? "en dessous de l'objectif" :
+        t.calories > o.calories ? "au-dessus de l'objectif" :
+        "objectif atteint"}
+    </div>`;
   }
 
-  function objectifs() {
-    return {
-      caloriesActives: document.getElementById("activerCalories").checked,
-      calories: Number(document.getElementById("objectifCalories").value),
-      proteinesActives: document.getElementById("activerProteines").checked,
-      proteines: Number(document.getElementById("objectifProteines").value)
-    };
+  if (o.proteinesActives) {
+    objectifsHTML += `<div class="goal-message">
+      Objectif : ${o.proteines} g de protéines —
+      ${!proteinesCompletes ? "valeurs incomplètes" :
+        t.proteines < o.proteines ? "en dessous de l'objectif" :
+        t.proteines > o.proteines ? "au-dessus de l'objectif" :
+        "objectif atteint"}
+    </div>`;
   }
 
-  function actualiserNutrition() {
-    const o = objectifs();
-    document.getElementById("blocCalories").classList.toggle("hidden", !o.caloriesActives);
-    document.getElementById("blocProteines").classList.toggle("hidden", !o.proteinesActives);
+  return `<div class="nutrition-card">
+    <strong>📊 ${echapper(titre)}</strong>
+    <div class="nutrition-values">
+      <span class="nutrition-pill">🔥 ${t.calories} kcal${!caloriesCompletes ? " *" : ""}</span>
+      <span class="nutrition-pill">💪 ${t.proteines} g de protéines${!proteinesCompletes ? " *" : ""}</span>
+    </div>
+    ${objectifsHTML}
+    ${(!caloriesCompletes || !proteinesCompletes)
+      ? '<div class="nutrition-note">* Certaines valeurs nutritionnelles sont absentes.</div>'
+      : ""}
+  </div>`;
+}
 
-    document.getElementById("nutritionMonMenu").innerHTML =
-      monMenu.length ? afficherNutrition(monMenu) : "";
+function actualiserNutrition() {
+  const o = objectifs();
 
-    document.querySelectorAll(".week-day").forEach(element => actualiserNutritionJour(element));
+  document.getElementById("blocCalories")
+    .classList.toggle("hidden", !o.caloriesActives);
+  document.getElementById("blocProteines")
+    .classList.toggle("hidden", !o.proteinesActives);
+
+  document.getElementById("nutritionMonMenu").innerHTML =
+    monMenu.length ? afficherNutrition(monMenu) : "";
+
+  document.querySelectorAll(".week-day").forEach(actualiserNutritionJour);
+}
+
+function texteNutrition(recette) {
+  const kcal = recette.calories != null && recette.calories !== ""
+    ? `${nombre(recette.calories)} kcal` : "Calories non renseignées";
+  const prot = recette.proteines != null && recette.proteines !== ""
+    ? `${nombre(recette.proteines)} g de protéines` : "Protéines non renseignées";
+
+  return `🔥 ${kcal} · 💪 ${prot}`;
+}
+
+function listeEnvies() {
+  return [...document.querySelectorAll('input[name="envie"]:checked')]
+    .map(element => element.value);
+}
+
+function correspondAuRepas(recette, repas) {
+  if (repas === "peu-importe") return true;
+
+  const texte = normaliser([
+    recette.categorie,
+    recette.type,
+    recette.nom,
+    recette.repas,
+    recette.typeRepas
+  ].join(" "));
+
+  if (repas === "petit-dejeuner") {
+    return /petit.?dejeuner|breakfast/.test(texte);
   }
 
-  function nombre(valeur) {
-    const n = Number(valeur);
-    return Number.isFinite(n) && n >= 0 ? n : 0;
+  if (repas === "collation") {
+    return /collation|gouter|snack/.test(texte);
   }
 
-  function caloriesRecette(recette) {
-    return nombre(recette.calories);
+  if (repas === "petite-douceur") {
+    return /petite douceur|dessert|sucre|collation/.test(texte);
   }
 
-  function proteinesRecette(recette) {
-    return nombre(recette.proteines);
+  if (repas === "dejeuner" || repas === "diner") {
+    return /dejeuner|diner|plat/.test(texte);
   }
 
-  function totalNutrition(liste) {
-    return (liste || []).reduce((total, recette) => ({
-      calories: total.calories + caloriesRecette(recette),
-      proteines: total.proteines + proteinesRecette(recette),
-      caloriesConnues: total.caloriesConnues + (recette.calories !== undefined && recette.calories !== null && recette.calories !== "" ? 1 : 0),
-      proteinesConnues: total.proteinesConnues + (recette.proteines !== undefined && recette.proteines !== null && recette.proteines !== "" ? 1 : 0)
-    }), { calories: 0, proteines: 0, caloriesConnues: 0, proteinesConnues: 0 });
-  }
+  return true;
+}
 
-  function afficherNutrition(liste, titre = "Total nutritionnel") {
-    const t = totalNutrition(liste);
-    const o = objectifs();
-    const completCalories = t.caloriesConnues === liste.length;
-    const completProteines = t.proteinesConnues === liste.length;
+function correspondAuxEnvies(recette, envies) {
+  if (!envies.length) return true;
 
-    let texteObjectifs = "";
+  const tags = Array.isArray(recette.envies)
+    ? recette.envies.map(normaliser) : [];
+  const nom = normaliser(recette.nom);
+  const type = normaliser(recette.type);
+  const categorie = normaliser(recette.categorie);
+  const temps = nombre(recette.temps || recette.tempsPreparation);
 
-    if (o.caloriesActives) {
-      texteObjectifs += `<div class="goal-message">Objectif : ${o.calories} kcal${completCalories ? (t.calories < o.calories ? " — en dessous de l'objectif" : t.calories > o.calories ? " — au-dessus de l'objectif" : " — objectif atteint") : " — valeurs incomplètes"}</div>`;
+  return envies.every(envie => {
+    if (envie === "vegetarien") {
+      return recette.vegetarien === true ||
+        type.includes("vegetarien") ||
+        type.includes("vegetal") ||
+        tags.includes("vegetarien");
     }
-
-    if (o.proteinesActives) {
-      texteObjectifs += `<div class="goal-message">Objectif : ${o.proteines} g de protéines${completProteines ? (t.proteines < o.proteines ? " — en dessous de l'objectif" : t.proteines > o.proteines ? " — au-dessus de l'objectif" : " — objectif atteint") : " — valeurs incomplètes"}</div>`;
+    if (envie === "sucre") {
+      return type.includes("sucre") ||
+        categorie.includes("dessert") ||
+        categorie.includes("douceur") ||
+        tags.includes("sucre") ||
+        tags.includes("petite-douceur");
     }
-
-    return `
-      <div class="nutrition-card">
-        <strong>📊 ${echapper(titre)}</strong>
-        <div class="nutrition-values">
-          <span class="nutrition-pill">🔥 ${t.calories} kcal${!completCalories ? " *" : ""}</span>
-          <span class="nutrition-pill">💪 ${t.proteines} g protéines${!completProteines ? " *" : ""}</span>
-        </div>
-        ${texteObjectifs}
-        ${(!completCalories || !completProteines) ? '<div class="nutrition-note">* Au moins une recette n’a pas de valeur nutritionnelle renseignée : les totaux peuvent être incomplets.</div>' : ""}
-      </div>`;
-  }
-
-  function texteNutrition(recette) {
-    const kcal = recette.calories !== undefined && recette.calories !== null && recette.calories !== ""
-      ? `${nombre(recette.calories)} kcal` : "Calories non renseignées";
-    const prot = recette.proteines !== undefined && recette.proteines !== null && recette.proteines !== ""
-      ? `${nombre(recette.proteines)} g de protéines` : "Protéines non renseignées";
-    return `🔥 ${kcal} · 💪 ${prot}`;
-  }
-
-  function traduireEnvie(envie) {
-    const correspondances = {
-      leger: "Léger",
-      complet: "Complet",
-      rapide: "Rapide",
-      sucre: "Sucré",
-      vegetarien: "Végétarien",
-      salade: "Salade",
-      proteine: "Protéiné",
-      reconfort: "Réconfortant"
-    };
-    return correspondances[envie] || envie;
-  }
-
-  function normaliser(texte) {
-    return String(texte || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-  }
-
-  function listeEnvies() {
-    return [...document.querySelectorAll('input[name="envie"]:checked')]
-      .map(element => element.value);
-  }
-
-  function correspondAuRepas(recette, repas) {
-    if (repas === "peu-importe") return true;
-
-    const texte = normaliser([
-      recette.categorie, recette.type, recette.nom, recette.repas
-    ].join(" "));
-
-    if (repas === "petit-dejeuner") {
-      return texte.includes("petit-dejeuner") || texte.includes("petit dejeuner") ||
-        texte.includes("petit déjeuner") || texte.includes("breakfast");
+    if (envie === "proteine") {
+      return proteinesRecette(recette) >= 10 ||
+        tags.includes("proteine") || tags.includes("proteine");
     }
-    if (repas === "collation") {
-      return texte.includes("collation") || texte.includes("gouter") ||
-        texte.includes("goûter") || texte.includes("snack");
+    if (envie === "rapide") {
+      return (temps > 0 && temps <= 25) || tags.includes("rapide");
     }
-    if (repas === "petite-douceur") {
-      return texte.includes("petite douceur") || texte.includes("dessert") ||
-        texte.includes("sucre") || texte.includes("collation");
+    if (envie === "salade") {
+      return nom.includes("salade") || tags.includes("salade");
     }
-    if (repas === "dejeuner" || repas === "diner") {
-      return texte.includes("dejeuner") || texte.includes("déjeuner") ||
-        texte.includes("diner") || texte.includes("dîner") ||
-        texte.includes("déjeuner / dîner") || texte.includes("dejeuner / diner") ||
-        texte.includes("plat");
+    if (envie === "leger") {
+      return tags.includes("leger") || nom.includes("leger");
+    }
+    if (envie === "reconfort") {
+      return tags.includes("reconfort") || tags.includes("reconfortant");
+    }
+    if (envie === "complet") return tags.includes("complet");
+
+    return tags.includes(normaliser(envie));
+  });
+}
+
+function chercherRecettes() {
+  const repas = document.getElementById("repasSelectionne").value;
+  const recherche = normaliser(
+    document.getElementById("rechercheRecette").value.trim()
+  );
+  const envies = listeEnvies();
+
+  const resultats = recettes.filter(recette => {
+    if (!correspondAuRepas(recette, repas)) return false;
+    if (!correspondAuxEnvies(recette, envies)) return false;
+
+    if (recherche) {
+      const ingredients = Array.isArray(recette.ingredients)
+        ? recette.ingredients.map(i =>
+            typeof i === "string" ? i : (i.nom || i.ingredient || "")
+          ) : [];
+
+      const texte = normaliser([
+        recette.nom, recette.categorie, recette.type, ...ingredients
+      ].join(" "));
+
+      if (!texte.includes(recherche)) return false;
     }
     return true;
+  });
+
+  const container = document.getElementById("resultatsRecettes");
+
+  if (!resultats.length) {
+    container.innerHTML = `<div class="empty">
+      Aucune recette ne correspond à ces critères.
+      Vérifiez la catégorie des recettes du catalogue ou retirez une envie.
+    </div>`;
+    return;
   }
 
-  function correspondAuxEnvies(recette, envies) {
-    if (!envies.length) return true;
+  container.innerHTML = resultats.slice(0, 60).map(recette => `
+    <article class="recipe-card">
+      <h3>${echapper(recette.nom || "Recette sans nom")}</h3>
+      <div class="recipe-meta">
+        ${nombre(recette.temps || recette.tempsPreparation)
+          ? `⏱️ ${nombre(recette.temps || recette.tempsPreparation)} min · ` : ""}
+        ${echapper(recette.categorie || "")}<br>
+        ${texteNutrition(recette)}
+      </div>
+      <button type="button" class="btn btn-primary"
+        onclick="ajouterAuMenu('${echapper(recette.id)}')">
+        ➕ Ajouter à mon menu
+      </button>
+    </article>
+  `).join("");
+}
 
-    const tags = Array.isArray(recette.envies) ? recette.envies.map(normaliser) : [];
-    const nom = normaliser(recette.nom);
-    const type = normaliser(recette.type);
-    const categorie = normaliser(recette.categorie);
-    const temps = nombre(recette.temps || recette.tempsPreparation);
-
-    return envies.every(envie => {
-      if (envie === "vegetarien") {
-        return recette.vegetarien === true || type.includes("vegetarien") ||
-          type.includes("vegetal") || tags.includes("vegetarien");
-      }
-      if (envie === "sucre") {
-        return type.includes("sucre") || categorie.includes("dessert") ||
-          categorie.includes("douceur") || tags.includes("sucre") ||
-          tags.includes("petite-douceur");
-      }
-      if (envie === "proteine") {
-        return proteinesRecette(recette) >= 10 || tags.includes("proteine") ||
-          tags.includes("proteine");
-      }
-      if (envie === "rapide") return (temps > 0 && temps <= 25) || tags.includes("rapide");
-      if (envie === "salade") return nom.includes("salade") || tags.includes("salade");
-      if (envie === "leger") return tags.includes("leger") || nom.includes("leger");
-      if (envie === "reconfort") return tags.includes("reconfort") || tags.includes("reconfortant");
-      if (envie === "complet") return tags.includes("complet");
-      return tags.includes(normaliser(envie));
-    });
+function lirePlanning() {
+  try {
+    const planning = JSON.parse(localStorage.getItem("planningSemaine") || "{}");
+    return planning && typeof planning === "object" ? planning : {};
+  } catch {
+    return {};
   }
-
-  function chercherRecettes() {
-    const repas = document.getElementById("repasSelectionne").value;
-    const recherche = normaliser(document.getElementById("rechercheRecette").value.trim());
-    const envies = listeEnvies();
-
-    let resultats = recettes.filter(recette => {
-      if (!correspondAuRepas(recette, repas)) return false;
-      if (!correspondAuxEnvies(recette, envies)) return false;
-
-      if (recherche) {
-        const texte = normaliser([
-          recette.nom,
-          recette.categorie,
-          recette.type,
-          ...(Array.isArray(recette.ingredients) ? recette.ingredients.map(i =>
-            typeof i === "string" ? i : (i.nom || i.ingredient || "")
-          ) : [])
-        ].join(" "));
-        if (!texte.includes(recherche)) return false;
-      }
-      return true;
-    });
-
-    // Si les critères sont trop restrictifs, on explique comment les assouplir.
-    const container = document.getElementById("resultatsRecettes");
-
-    if (!resultats.length) {
-      container.innerHTML = `
-        <div class="empty">
-          Aucune recette ne correspond à tous ces critères.<br>
-          Essayez de retirer une envie ou de modifier votre recherche.
-        </div>`;
-      return;
-    }
-
-    container.innerHTML = resultats.slice(0, 60).map(recette => {
-      const id = echapper(recette.id);
-      const nom = echapper(recette.nom || "Recette sans nom");
-      const temps = nombre(recette.temps || recette.tempsPreparation);
-      return `
-        <article class="recipe-card">
-          <h3>${nom}</h3>
-          <div class="recipe-meta">
-            ${temps ? `⏱️ ${temps} min · ` : ""}${echapper(recette.categorie || "")}<br>
-            ${texteNutrition(recette)}
-          </div>
-          <button type="button" class="btn btn-primary" onclick="ajouterAuMenu('${id}')">
-            ➕ Ajouter à mon menu
-          </button>
-        </article>`;
-    }).join("");
-  }
+}
 
 function sauvegarderBrouillonMenu() {
   try {
-    localStorage.setItem(
-      "menuEnCours",
-      JSON.stringify({
-        recettes: monMenu,
-        repas: document.getElementById("repasSelectionne").value,
-        envies: listeEnvies(),
-        dateModification: Date.now()
-      })
-    );
+    localStorage.setItem("menuEnCours", JSON.stringify({
+      recettes: monMenu,
+      repas: document.getElementById("repasSelectionne").value,
+      envies: listeEnvies(),
+      dateModification: Date.now()
+    }));
   } catch (erreur) {
-    console.error("Impossible de sauvegarder le menu en cours :", erreur);
+    console.error("Sauvegarde du menu impossible :", erreur);
+    afficherMessage("Le navigateur n'a pas pu sauvegarder le menu.");
   }
 }
 
 function restaurerBrouillonMenu() {
   try {
-    const brouillon = JSON.parse(
-      localStorage.getItem("menuEnCours") || "null"
-    );
-
-    if (!brouillon) return;
+    const brouillon = JSON.parse(localStorage.getItem("menuEnCours") || "null");
+    if (!brouillon) {
+      afficherMonMenu();
+      return;
+    }
 
     if (Array.isArray(brouillon.recettes)) {
       monMenu = brouillon.recettes;
@@ -670,131 +720,267 @@ function restaurerBrouillonMenu() {
     }
 
     afficherMonMenu();
-    actualiserNutrition();
   } catch (erreur) {
-    console.error("Impossible de restaurer le menu :", erreur);
+    console.error("Restauration du menu impossible :", erreur);
   }
 }
- 
-```javascript
+
 function ajouterAuMenu(id) {
-  const recette = recettes.find(
-    item => String(item.id) === String(id)
-  );
+  const recette = recettes.find(item => String(item.id) === String(id));
 
   if (!recette) {
-    afficherMessage("Recette introuvable.");
+    afficherMessage("Recette introuvable dans le catalogue.");
     return;
   }
 
-  const repasSelectionne =
-    document.getElementById("repasSelectionne").value;
+  const repas = document.getElementById("repasSelectionne").value;
 
-  // Éviter les doublons dans le menu en cours
-  if (monMenu.some(item => String(item.id) === String(id))) {
-    afficherMessage("Cette recette est déjà dans votre menu.");
-    return;
+  // Un petit-déjeuner est affecté à un jour de la semaine.
+  if (repas === "petit-dejeuner") {
+    const ajoute = ajouterPetitDejeunerSemaine(recette);
+    if (!ajoute) return;
   }
 
-  const recetteMenu = {
-    id: recette.id,
-    nom: recette.nom,
-    calories: Number(recette.calories) || 0,
-    proteines: Number(recette.proteines) || 0,
-    repas: repasSelectionne
-  };
+  // Garder une seule occurrence dans la liste de recettes choisies.
+  if (!monMenu.some(item => String(item.id) === String(id))) {
+    monMenu.push({
+      id: recette.id,
+      nom: recette.nom,
+      calories: recette.calories,
+      proteines: recette.proteines,
+      repas
+    });
+  }
 
-  monMenu.push(recetteMenu);
-
-  // Conserver le menu en cours
   sauvegarderBrouillonMenu();
-
-  // Si la recette est un petit-déjeuner, l'ajouter aussi
-  // au planning de la semaine
-  if (repasSelectionne === "petit-dejeuner") {
-    ajouterPetitDejeunerSemaine(recette);
-  }
-
   afficherMonMenu();
   actualiserNutrition();
 
   afficherMessage(
-    repasSelectionne === "petit-dejeuner"
-      ? "Petit-déjeuner ajouté à votre menu et à la semaine !"
-      : "Recette ajoutée à votre menu !"
+    repas === "petit-dejeuner"
+      ? "Petit-déjeuner ajouté à la semaine et sauvegardé !"
+      : "Recette ajoutée à votre menu et sauvegardée !"
   );
 }
 
 function ajouterPetitDejeunerSemaine(recette) {
-  let planning = {};
+  const planning = lirePlanning();
 
-  try {
-    planning = JSON.parse(
-      localStorage.getItem("planningSemaine") || "{}"
-    );
-  } catch (erreur) {
-    planning = {};
-  }
-
-  const jours = [
-    "lundi",
-    "mardi",
-    "mercredi",
-    "jeudi",
-    "vendredi",
-    "samedi",
-    "dimanche"
-  ];
-
-  // Ajouter le petit-déjeuner au premier jour disponible.
-  // Si tous les jours sont remplis, ne rien écraser.
-  const jourDisponible = jours.find(jour =>
-    !planning[jour]?.petitDejeuner &&
-    !planning[jour]?.petit_dejeuner
-  );
+  // Utiliser d'abord un jour sans petit-déjeuner.
+  const jourDisponible = jours.find(([cle]) => {
+    const jour = planning[cle] || {};
+    return !jour.petitDejeuner && !jour.petit_dejeuner;
+  });
 
   if (!jourDisponible) {
     afficherMessage(
-      "Votre semaine est complète pour les petits-déjeuners. " +
-      "La recette reste dans votre menu."
+      "Les 7 petits-déjeuners sont déjà renseignés. " +
+      "Passez dans Ma semaine pour modifier un jour."
     );
+    return false;
+  }
+
+  const cle = jourDisponible[0];
+  if (!planning[cle]) planning[cle] = {};
+
+  planning[cle].petitDejeuner = {
+    id: recette.id,
+    nom: recette.nom,
+    calories: recette.calories,
+    proteines: recette.proteines
+  };
+
+  try {
+    localStorage.setItem("planningSemaine", JSON.stringify(planning));
+    construireSemaine();
+    actualiserNutrition();
+    return true;
+  } catch (erreur) {
+    console.error("Sauvegarde du planning impossible :", erreur);
+    afficherMessage("Impossible de sauvegarder le planning de la semaine.");
+    return false;
+  }
+}
+
+function afficherMonMenu() {
+  const conteneur = document.getElementById("listeMonMenu");
+
+  if (!monMenu.length) {
+    conteneur.innerHTML =
+      '<div class="empty">Ajoutez des recettes pour composer votre menu.</div>';
+    document.getElementById("nutritionMonMenu").innerHTML = "";
     return;
   }
 
-  if (!planning[jourDisponible]) {
-    planning[jourDisponible] = {};
-  }
+  conteneur.innerHTML = monMenu.map((recette, index) => `
+    <div class="selected-recipe">
+      <div>
+        <strong>${echapper(recette.nom)}</strong>
+        <small>${texteNutrition(recette)}<br>
+          ${echapper(recette.repas || "")}</small>
+      </div>
+      <button type="button" class="btn btn-danger"
+        onclick="retirerDuMenu(${index})">Retirer</button>
+    </div>
+  `).join("");
 
-  planning[jourDisponible].petitDejeuner = {
-    id: recette.id,
-    nom: recette.nom,
-    calories: Number(recette.calories) || 0,
-    proteines: Number(recette.proteines) || 0
-  };
-
-  localStorage.setItem(
-    "planningSemaine",
-    JSON.stringify(planning)
-  );
+  document.getElementById("nutritionMonMenu").innerHTML =
+    afficherNutrition(monMenu);
 }
-```
 
+function retirerDuMenu(index) {
+  monMenu.splice(index, 1);
+  sauvegarderBrouillonMenu();
+  afficherMonMenu();
+  actualiserNutrition();
+}
 
-  function echapper(texte) {
-    return String(texte == null ? "" : texte)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+function enregistrerMenu() {
+  if (!monMenu.length) {
+    afficherMessage("Ajoutez au moins une recette avant d'enregistrer.");
+    return;
   }
 
-  function afficherMessage(texte) {
-    const message = document.getElementById("message");
-    message.textContent = texte;
-    message.classList.remove("hidden");
-    setTimeout(() => message.classList.add("hidden"), 2200);
+  try {
+    const sauvegardes = JSON.parse(
+      localStorage.getItem("menusSauvegardes") || "[]"
+    );
+
+    sauvegardes.unshift({
+      id: Date.now(),
+      date: new Date().toLocaleDateString("fr-FR"),
+      timestamp: Date.now(),
+      repas: document.getElementById("repasSelectionne").value,
+      envies: listeEnvies(),
+      recettes: monMenu,
+      objectifsNutritionnels: objectifs()
+    });
+
+    localStorage.setItem("menusSauvegardes", JSON.stringify(sauvegardes));
+    afficherMessage("Menu enregistré !");
+  } catch (erreur) {
+    console.error(erreur);
+    afficherMessage("Impossible d'enregistrer ce menu.");
   }
+}
+
+function recetteParId(id) {
+  return recettes.find(r => String(r.id) === String(id));
+}
+
+function optionsRecettes(selectionne) {
+  return '<option value="">— Choisir une recette —</option>' +
+    recettes.map(recette => `
+      <option value="${echapper(recette.id)}"
+        ${String(recette.id) === String(selectionne || "") ? "selected" : ""}>
+        ${echapper(recette.nom)}
+      </option>
+    `).join("");
+}
+
+function construireSemaine() {
+  const planning = lirePlanning();
+  const grille = document.getElementById("grilleSemaine");
+
+  grille.innerHTML = jours.map(([cle, nom]) => {
+    const jour = planning[cle] || {};
+    const petitDejeuner = jour.petitDejeuner || jour.petit_dejeuner || {};
+    const dejeuner = jour.dejeuner || {};
+    const diner = jour.diner || {};
+
+    return `
+      <div class="week-day" data-jour="${cle}">
+        <h3>${nom}</h3>
+
+        <div class="field">
+          <label for="${cle}-petitDejeuner">🌅 Petit-déjeuner</label>
+          <select id="${cle}-petitDejeuner"
+            onchange="actualiserNutritionJour(this.closest('.week-day'))">
+            ${optionsRecettes(petitDejeuner.id)}
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="${cle}-dejeuner">☀️ Déjeuner</label>
+          <select id="${cle}-dejeuner"
+            onchange="actualiserNutritionJour(this.closest('.week-day'))">
+            ${optionsRecettes(dejeuner.id)}
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="${cle}-diner">🌙 Dîner</label>
+          <select id="${cle}-diner"
+            onchange="actualiserNutritionJour(this.closest('.week-day'))">
+            ${optionsRecettes(diner.id)}
+          </select>
+        </div>
+
+        <div id="${cle}-nutrition"></div>
+      </div>
+    `;
+  }).join("");
+
+  document.querySelectorAll(".week-day").forEach(actualiserNutritionJour);
+}
+
+function actualiserNutritionJour(element) {
+  if (!element) return;
+
+  const cle = element.dataset.jour;
+  if (!cle) return;
+
+  const repasDuJour = [
+    recetteParId(document.getElementById(`${cle}-petitDejeuner`)?.value),
+    recetteParId(document.getElementById(`${cle}-dejeuner`)?.value),
+    recetteParId(document.getElementById(`${cle}-diner`)?.value)
+  ].filter(Boolean);
+
+  const cible = document.getElementById(`${cle}-nutrition`);
+  if (cible) {
+    cible.innerHTML = repasDuJour.length
+      ? afficherNutrition(repasDuJour, "Total de la journée")
+      : "";
+  }
+}
+
+function enregistrerSemaine() {
+  const planning = lirePlanning();
+
+  jours.forEach(([cle]) => {
+    const ancien = planning[cle] || {};
+
+    const lireRecette = suffixe => {
+      const select = document.getElementById(`${cle}-${suffixe}`);
+      if (!select || !select.value) return null;
+
+      const recette = recetteParId(select.value);
+      if (!recette) return null;
+
+      return {
+        id: recette.id,
+        nom: recette.nom,
+        calories: recette.calories,
+        proteines: recette.proteines
+      };
+    };
+
+    planning[cle] = {
+      ...ancien,
+      petitDejeuner: lireRecette("petitDejeuner"),
+      dejeuner: lireRecette("dejeuner"),
+      diner: lireRecette("diner")
+    };
+  });
+
+  try {
+    localStorage.setItem("planningSemaine", JSON.stringify(planning));
+    afficherMessage("Votre semaine a été enregistrée !");
+  } catch (erreur) {
+    console.error(erreur);
+    afficherMessage("Impossible d'enregistrer la semaine.");
+  }
+}
 </script>
 </body>
 </html>
