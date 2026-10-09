@@ -676,212 +676,109 @@ function restaurerBrouillonMenu() {
   }
 }
  
+```javascript
 function ajouterAuMenu(id) {
-  const recette = recettes.find(item => String(item.id) === String(id));
+  const recette = recettes.find(
+    item => String(item.id) === String(id)
+  );
 
   if (!recette) {
-    afficherMessage("Cette recette est introuvable dans le catalogue.");
+    afficherMessage("Recette introuvable.");
     return;
   }
 
-  // Évite d'ajouter deux fois la même recette au menu
-  if (monMenu.some(item => String(item.id) === String(recette.id))) {
+  const repasSelectionne =
+    document.getElementById("repasSelectionne").value;
+
+  // Éviter les doublons dans le menu en cours
+  if (monMenu.some(item => String(item.id) === String(id))) {
     afficherMessage("Cette recette est déjà dans votre menu.");
     return;
   }
 
-  monMenu.push({
+  const recetteMenu = {
     id: recette.id,
     nom: recette.nom,
-    calories: recette.calories,
-    proteines: recette.proteines
-  });
+    calories: Number(recette.calories) || 0,
+    proteines: Number(recette.proteines) || 0,
+    repas: repasSelectionne
+  };
 
+  monMenu.push(recetteMenu);
+
+  // Conserver le menu en cours
   sauvegarderBrouillonMenu();
+
+  // Si la recette est un petit-déjeuner, l'ajouter aussi
+  // au planning de la semaine
+  if (repasSelectionne === "petit-dejeuner") {
+    ajouterPetitDejeunerSemaine(recette);
+  }
+
   afficherMonMenu();
   actualiserNutrition();
-  afficherMessage("Recette ajoutée et menu sauvegardé !");
+
+  afficherMessage(
+    repasSelectionne === "petit-dejeuner"
+      ? "Petit-déjeuner ajouté à votre menu et à la semaine !"
+      : "Recette ajoutée à votre menu !"
+  );
 }
 
-  function afficherMonMenu() {
-    const container = document.getElementById("listeMonMenu");
+function ajouterPetitDejeunerSemaine(recette) {
+  let planning = {};
 
-    if (!monMenu.length) {
-      container.innerHTML = '<div class="empty">Ajoutez des recettes pour composer votre menu.</div>';
-      document.getElementById("nutritionMonMenu").innerHTML = "";
-      return;
-    }
-
-    container.innerHTML = monMenu.map((recette, index) => `
-      <div class="selected-recipe">
-        <div>
-          <strong>${echapper(recette.nom)}</strong>
-          <small>${texteNutrition(recette)}</small>
-        </div>
-        <button type="button" class="btn btn-danger" onclick="retirerDuMenu(${index})">Retirer</button>
-      </div>
-    `).join("");
-
-    document.getElementById("nutritionMonMenu").innerHTML = afficherNutrition(monMenu, "Total du menu");
+  try {
+    planning = JSON.parse(
+      localStorage.getItem("planningSemaine") || "{}"
+    );
+  } catch (erreur) {
+    planning = {};
   }
 
-  function retirerDuMenu(index) {
-    monMenu.splice(index, 1);
-    sauvegarderBrouillonMenu();
-    afficherMonMenu();
-    actualiserNutrition();
+  const jours = [
+    "lundi",
+    "mardi",
+    "mercredi",
+    "jeudi",
+    "vendredi",
+    "samedi",
+    "dimanche"
+  ];
+
+  // Ajouter le petit-déjeuner au premier jour disponible.
+  // Si tous les jours sont remplis, ne rien écraser.
+  const jourDisponible = jours.find(jour =>
+    !planning[jour]?.petitDejeuner &&
+    !planning[jour]?.petit_dejeuner
+  );
+
+  if (!jourDisponible) {
+    afficherMessage(
+      "Votre semaine est complète pour les petits-déjeuners. " +
+      "La recette reste dans votre menu."
+    );
+    return;
   }
 
-  function enregistrerMenu() {
-    if (!monMenu.length) {
-      afficherMessage("Ajoutez au moins une recette avant d'enregistrer.");
-      return;
-    }
-
-    const repas = document.getElementById("repasSelectionne").value;
-    const envies = listeEnvies();
-    const date = new Date().toLocaleDateString("fr-FR");
-    const o = objectifs();
-
-    const menu = {
-      id: "MENU-" + Date.now(),
-      date,
-      timestamp: Date.now(),
-      repas,
-      envies,
-      recettes: [...monMenu],
-      objectifsNutritionnels: {
-        caloriesActives: o.caloriesActives,
-        calories: o.caloriesActives ? o.calories : null,
-        proteinesActives: o.proteinesActives,
-        proteines: o.proteinesActives ? o.proteines : null
-      }
-    };
-
-    try {
-      const menus = JSON.parse(localStorage.getItem("menusSauvegardes") || "[]");
-      menus.push(menu);
-      localStorage.setItem("menusSauvegardes", JSON.stringify(menus));
-      afficherMessage("Menu enregistré ! Ouverture de Mes Menus…");
-      setTimeout(() => { window.location.href = "MesMenus.html"; }, 800);
-    } catch (erreur) {
-      console.error(erreur);
-      afficherMessage("Impossible d'enregistrer le menu dans ce navigateur.");
-    }
+  if (!planning[jourDisponible]) {
+    planning[jourDisponible] = {};
   }
 
-  function construireSemaine() {
-    const container = document.getElementById("grilleSemaine");
-    if (!container) return;
+  planning[jourDisponible].petitDejeuner = {
+    id: recette.id,
+    nom: recette.nom,
+    calories: Number(recette.calories) || 0,
+    proteines: Number(recette.proteines) || 0
+  };
 
-    container.innerHTML = jours.map(([cle, nom]) => `
-      <div class="week-day" data-jour="${cle}">
-        <h3>📅 ${nom}</h3>
+  localStorage.setItem(
+    "planningSemaine",
+    JSON.stringify(planning)
+  );
+}
+```
 
-        <div class="field">
-          <label for="${cle}-dejeuner">🥗 Déjeuner</label>
-          <select id="${cle}-dejeuner" onchange="actualiserNutritionJour(this.closest('.week-day'))">
-            <option value="">-- Choisir un déjeuner --</option>
-            ${optionsRecettes()}
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="${cle}-diner">🍲 Dîner</label>
-          <select id="${cle}-diner" onchange="actualiserNutritionJour(this.closest('.week-day'))">
-            <option value="">-- Choisir un dîner --</option>
-            ${optionsRecettes()}
-          </select>
-        </div>
-
-        <div class="nutrition-jour"></div>
-      </div>
-    `).join("");
-  }
-
-  function optionsRecettes() {
-    return recettes.map(recette => `
-      <option value="${echapper(recette.id)}">
-        ${echapper(recette.nom || "Recette sans nom")}
-      </option>
-    `).join("");
-  }
-
-  function recetteChoisie(id) {
-    if (!id) return null;
-    return recettes.find(recette => String(recette.id) === String(id)) || null;
-  }
-
-  function actualiserNutritionJour(element) {
-    if (!element) return;
-
-    const cle = element.dataset.jour;
-    if (!cle) return;
-
-    const dejeuner = recetteChoisie(document.getElementById(cle + "-dejeuner").value);
-    const diner = recetteChoisie(document.getElementById(cle + "-diner").value);
-    const selection = [dejeuner, diner].filter(Boolean);
-    const cible = element.querySelector(".nutrition-jour");
-
-    cible.innerHTML = selection.length ? afficherNutrition(selection, "Total de la journée") : "";
-  }
-
-  function enregistrerSemaine() {
-    const planning = {};
-    let nombreRepas = 0;
-
-    jours.forEach(([cle]) => {
-      const idDejeuner = document.getElementById(cle + "-dejeuner").value;
-      const idDiner = document.getElementById(cle + "-diner").value;
-
-      planning[cle] = {};
-
-      const dejeuner = recetteChoisie(idDejeuner);
-      const diner = recetteChoisie(idDiner);
-
-      if (dejeuner) {
-        planning[cle].dejeuner = {
-          id: dejeuner.id,
-          nom: dejeuner.nom,
-          calories: dejeuner.calories,
-          proteines: dejeuner.proteines
-        };
-        nombreRepas++;
-      }
-
-      if (diner) {
-        planning[cle].diner = {
-          id: diner.id,
-          nom: diner.nom,
-          calories: diner.calories,
-          proteines: diner.proteines
-        };
-        nombreRepas++;
-      }
-    });
-
-    if (!nombreRepas) {
-      afficherMessage("Sélectionnez au moins un repas avant d'enregistrer.");
-      return;
-    }
-
-    const o = objectifs();
-    planning.objectifsNutritionnels = {
-      caloriesActives: o.caloriesActives,
-      calories: o.caloriesActives ? o.calories : null,
-      proteinesActives: o.proteinesActives,
-      proteines: o.proteinesActives ? o.proteines : null
-    };
-
-    try {
-      localStorage.setItem("planningSemaine", JSON.stringify(planning));
-      afficherMessage("Planning de la semaine enregistré !");
-      setTimeout(() => { window.location.href = "MesMenus.html"; }, 800);
-    } catch (erreur) {
-      console.error(erreur);
-      afficherMessage("Impossible d'enregistrer le planning dans ce navigateur.");
-    }
-  }
 
   function echapper(texte) {
     return String(texte == null ? "" : texte)
