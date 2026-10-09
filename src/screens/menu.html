@@ -381,8 +381,9 @@
         return;
       }
 
-      construireSemaine();
-      actualiserNutrition();
+     construireSemaine();
+restaurerBrouillonMenu();
+actualiserNutrition();
     } catch (erreur) {
       console.error("Erreur de chargement des recettes :", erreur);
       afficherErreur("Impossible de charger les recettes. Vérifiez le chemin vers recettes.json et le format du fichier.");
@@ -630,24 +631,77 @@
     }).join("");
   }
 
-  function ajouterAuMenu(id) {
-    const recette = recettes.find(item => String(item.id) === String(id));
-    if (!recette) {
-      afficherMessage("Cette recette est introuvable dans le catalogue.");
-      return;
+function sauvegarderBrouillonMenu() {
+  try {
+    localStorage.setItem(
+      "menuEnCours",
+      JSON.stringify({
+        recettes: monMenu,
+        repas: document.getElementById("repasSelectionne").value,
+        envies: listeEnvies(),
+        dateModification: Date.now()
+      })
+    );
+  } catch (erreur) {
+    console.error("Impossible de sauvegarder le menu en cours :", erreur);
+  }
+}
+
+function restaurerBrouillonMenu() {
+  try {
+    const brouillon = JSON.parse(
+      localStorage.getItem("menuEnCours") || "null"
+    );
+
+    if (!brouillon) return;
+
+    if (Array.isArray(brouillon.recettes)) {
+      monMenu = brouillon.recettes;
     }
 
-    monMenu.push({
-      id: recette.id,
-      nom: recette.nom,
-      calories: recette.calories,
-      proteines: recette.proteines
-    });
+    if (brouillon.repas) {
+      document.getElementById("repasSelectionne").value = brouillon.repas;
+    }
+
+    if (Array.isArray(brouillon.envies)) {
+      document.querySelectorAll('input[name="envie"]').forEach(element => {
+        element.checked = brouillon.envies.includes(element.value);
+      });
+    }
 
     afficherMonMenu();
     actualiserNutrition();
-    afficherMessage("Recette ajoutée à votre menu.");
+  } catch (erreur) {
+    console.error("Impossible de restaurer le menu :", erreur);
   }
+}
+ 
+function ajouterAuMenu(id) {
+  const recette = recettes.find(item => String(item.id) === String(id));
+
+  if (!recette) {
+    afficherMessage("Cette recette est introuvable dans le catalogue.");
+    return;
+  }
+
+  // Évite d'ajouter deux fois la même recette au menu
+  if (monMenu.some(item => String(item.id) === String(recette.id))) {
+    afficherMessage("Cette recette est déjà dans votre menu.");
+    return;
+  }
+
+  monMenu.push({
+    id: recette.id,
+    nom: recette.nom,
+    calories: recette.calories,
+    proteines: recette.proteines
+  });
+
+  sauvegarderBrouillonMenu();
+  afficherMonMenu();
+  actualiserNutrition();
+  afficherMessage("Recette ajoutée et menu sauvegardé !");
+}
 
   function afficherMonMenu() {
     const container = document.getElementById("listeMonMenu");
@@ -673,6 +727,7 @@
 
   function retirerDuMenu(index) {
     monMenu.splice(index, 1);
+    sauvegarderBrouillonMenu();
     afficherMonMenu();
     actualiserNutrition();
   }
