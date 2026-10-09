@@ -430,7 +430,28 @@
     "DOMContentLoaded",
     () => {
 
-      chargerDonnees();
+     
+function chargerDonnees() {
+  try {
+    menus = JSON.parse(
+      localStorage.getItem("menusSauvegardes") || "[]"
+    );
+  } catch (e) {
+    menus = [];
+  }
+
+  try {
+    planning = JSON.parse(
+      localStorage.getItem("planningSemaine") || "{}"
+    );
+  } catch (e) {
+    planning = {};
+  }
+
+  afficherPlanning();
+  afficherMenuEnCours();
+  afficherMenus();
+}
 
       gererHash();
 
@@ -467,6 +488,128 @@
   }
 
 
+/* =====================================================
+   MENU SELECTIONNE : AFFICHAGE ET GESTION
+===================================================== */
+
+function lireMenuEnCours() {
+  try {
+    return JSON.parse(
+      localStorage.getItem("menuEnCours") || "null"
+    );
+  } catch (e) {
+    return null;
+  }
+}
+
+function obtenirRecettesEnCours(menu) {
+  if (Array.isArray(menu)) {
+    return menu;
+  }
+
+  if (menu && Array.isArray(menu.recettes)) {
+    return menu.recettes;
+  }
+
+  if (menu && Array.isArray(menu.menu)) {
+    return menu.menu;
+  }
+
+  return [];
+}
+
+function afficherMenuEnCours() {
+  const container = document.getElementById("menuEnCours");
+  const boutonVider = document.getElementById("btnEffacerMenuEnCours");
+
+  if (!container) return;
+
+  const menu = lireMenuEnCours();
+  const recettes = obtenirRecettesEnCours(menu);
+
+  if (!recettes.length) {
+    container.innerHTML = `
+      <div class="empty">
+        🍽️ Aucune recette sélectionnée pour le moment.
+        <br><br>
+        Choisissez une recette puis revenez ici pour la retrouver.
+        <br><br>
+        <a href="menu.html" class="btn btn-recipe">
+          Composer mon menu
+        </a>
+      </div>
+    `;
+
+    if (boutonVider) boutonVider.style.display = "none";
+    return;
+  }
+
+  if (boutonVider) boutonVider.style.display = "block";
+
+  container.innerHTML = recettes.map((recette, index) => {
+    const id = recette && recette.id != null ? recette.id : "";
+    const nom = recette && recette.nom ? recette.nom : "Recette sans nom";
+
+    return `
+      <div class="recipe-item">
+        <div class="recipe-name">
+          🍽️ ${echapper(nom)}
+        </div>
+
+        <div class="recipe-actions">
+          ${
+            id !== ""
+              ? `<a class="btn btn-recipe"
+                    href="Recette.html?id=${encodeURIComponent(id)}">
+                   👀 Voir la recette
+                 </a>`
+              : ""
+          }
+
+          <button
+            class="btn btn-remove"
+            onclick="retirerRecetteEnCours(${index})">
+            Retirer
+          </button>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function retirerRecetteEnCours(index) {
+  const menu = lireMenuEnCours();
+  const recettes = obtenirRecettesEnCours(menu);
+
+  if (index < 0 || index >= recettes.length) return;
+
+  recettes.splice(index, 1);
+
+  // Conserve le format de données initial lorsqu'il est connu.
+  if (Array.isArray(menu)) {
+    localStorage.setItem("menuEnCours", JSON.stringify(recettes));
+  } else if (menu && Array.isArray(menu.recettes)) {
+    menu.recettes = recettes;
+    localStorage.setItem("menuEnCours", JSON.stringify(menu));
+  } else if (menu && Array.isArray(menu.menu)) {
+    menu.menu = recettes;
+    localStorage.setItem("menuEnCours", JSON.stringify(menu));
+  } else {
+    localStorage.setItem("menuEnCours", JSON.stringify(recettes));
+  }
+
+  afficherMenuEnCours();
+  afficherMessage("Recette retirée de ton menu sélectionné.");
+}
+
+function effacerMenuEnCours() {
+  if (!confirm("Vider ton menu sélectionné ?")) return;
+
+  localStorage.removeItem("menuEnCours");
+
+  afficherMenuEnCours();
+  afficherMessage("Menu sélectionné vidé.");
+}
   /* =====================================================
      PLANNING
   ===================================================== */
