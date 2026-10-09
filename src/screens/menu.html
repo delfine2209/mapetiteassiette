@@ -371,7 +371,7 @@ const jours = [
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const reponse = await fetch("../recettes.json");
+    const reponse = await fetch("../../recettes.json");
     if (!reponse.ok) throw new Error("Chargement impossible");
 
     const donnees = await reponse.json();
