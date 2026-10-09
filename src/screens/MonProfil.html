@@ -326,62 +326,25 @@
 
     <!-- STATISTIQUES -->
 
-    <section class="stats">
+   <a
+href="MesMenus.html"
+class="stat-card"
+aria-label="Consulter mes menus et mes repas planifiés"
+style="display:block;text-decoration:none;color:inherit;cursor:pointer;"
 
-      <div class="stat-card">
+>
 
-        <div class="stat-icon">🍴</div>
+  <div class="stat-icon">📅</div>
 
-        <div
-          class="stat-number"
-          id="nombreRecettes"
-        >
-          ...
-        </div>
+  <div class="stat-number" id="nombrePlanning">0</div>
 
-        <div class="stat-label">
-          recettes disponibles
-        </div>
+  <div class="stat-label">repas planifiés</div>
 
-      </div>
+  <div style="font-size:11px;color:#668b6e;margin-top:7px;">
+    Voir mon planning →
+  </div>
+</a>
 
-
-      <div class="stat-card">
-
-        <div class="stat-icon">❤️</div>
-
-        <div
-          class="stat-number"
-          id="nombreFavoris"
-        >
-          0
-        </div>
-
-        <div class="stat-label">
-          recettes favorites
-        </div>
-
-      </div>
-
-
-      <div class="stat-card">
-
-        <div class="stat-icon">📅</div>
-
-        <div
-          class="stat-number"
-          id="nombrePlanning"
-        >
-          0
-        </div>
-
-        <div class="stat-label">
-          repas planifiés
-        </div>
-
-      </div>
-
-    </section>
 
 
     <!-- CHOIX DES PORTIONS -->
@@ -790,38 +753,47 @@
 
 
 
-    /* ---------------------------------------------
-       3. NOMBRE DE REPAS PLANIFIES
-       --------------------------------------------- */
+  /* 3. NOMBRE DE REPAS PLANIFIÉS */
 
-    try {
+try {
+const menus = JSON.parse(
+localStorage.getItem("menusSauvegardes") || "[]"
+);
 
-      const planning =
-        JSON.parse(
-          localStorage.getItem("planningRepas") || "[]"
-        );
+const planning = JSON.parse(
+localStorage.getItem("planningSemaine") || "{}"
+);
 
+// Nombre de recettes enregistrées dans les menus
+const nombreMenus = menus.reduce((total, menu) => {
+return total + (
+Array.isArray(menu.recettes) ? menu.recettes.length : 0
+);
+}, 0);
 
-      document.getElementById(
-        "nombrePlanning"
-      ).textContent = planning.length;
+// Nombre de repas enregistrés dans la semaine
+let nombreSemaine = 0;
 
+Object.values(planning).forEach(jour => {
+if (!jour || typeof jour !== "object") return;
 
-    } catch (erreur) {
+```
+["petitDejeuner", "petit-dejeuner", "dejeuner", "diner", "collation"].forEach(cle => {
+  if (jour[cle]) nombreSemaine++;
+});
+```
 
-      console.error(
-        "Erreur planning :",
-        erreur
-      );
+});
 
+// Évite de compter deux fois les repas de la semaine
+// si le compteur correspond déjà à des menus enregistrés.
+document.getElementById("nombrePlanning").textContent =
+nombreMenus + nombreSemaine;
 
-      document.getElementById(
-        "nombrePlanning"
-      ).textContent = "0";
-
-    }
-
-  }
+} catch (erreur) {
+console.error("Erreur de lecture du planning :", erreur);
+document.getElementById("nombrePlanning").textContent = "0";
+}
 
 
 
