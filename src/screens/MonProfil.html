@@ -753,53 +753,62 @@ style="display:block;text-decoration:none;color:inherit;cursor:pointer;"
 
 
 
-  /* 3. NOMBRE DE REPAS PLANIFIÉS */
+```javascript
+/* 3. NOMBRE DE REPAS PLANIFIÉS */
 
 try {
-const menus = JSON.parse(
-localStorage.getItem("menusSauvegardes") || "[]"
-);
+  const planning = JSON.parse(
+    localStorage.getItem("planningSemaine") || "{}"
+  );
 
-const planning = JSON.parse(
-localStorage.getItem("planningSemaine") || "{}"
-);
+  const repasComptes = new Set();
 
-// Nombre de recettes enregistrées dans les menus
-const nombreMenus = menus.reduce((total, menu) => {
-return total + (
-Array.isArray(menu.recettes) ? menu.recettes.length : 0
-);
-}, 0);
+  Object.entries(planning).forEach(([jour, contenu]) => {
+    if (!contenu || typeof contenu !== "object") return;
 
-// Nombre de repas enregistrés dans la semaine
-let nombreSemaine = 0;
+    [
+      "petitDejeuner",
+      "petit-dejeuner",
+      "dejeuner",
+      "diner",
+      "collation"
+    ].forEach(repas => {
+      const recette = contenu[repas];
 
-Object.values(planning).forEach(jour => {
-if (!jour || typeof jour !== "object") return;
+      if (recette && recette.id) {
+        repasComptes.add(
+          `${jour}-${repas}-${recette.id}`
+        );
+      }
+    });
+  });
 
-```
-["petitDejeuner", "petit-dejeuner", "dejeuner", "diner", "collation"].forEach(cle => {
-  if (jour[cle]) nombreSemaine++;
-});
-```
-
-});
-
-// Évite de compter deux fois les repas de la semaine
-// si le compteur correspond déjà à des menus enregistrés.
-document.getElementById("nombrePlanning").textContent =
-nombreMenus + nombreSemaine;
+  document.getElementById("nombrePlanning").textContent =
+    repasComptes.size;
 
 } catch (erreur) {
-console.error("Erreur de lecture du planning :", erreur);
-document.getElementById("nombrePlanning").textContent = "0";
+  console.error("Erreur de lecture du planning :", erreur);
+  document.getElementById("nombrePlanning").textContent = "0";
 }
+```
 
+Ce compteur affichera uniquement les repas réellement présents dans le planning hebdomadaire, sans additionner les menus enregistrés une seconde fois.
 
+## 2. Ajouter un accès direct à tes menus
 
-  /* Charger les statistiques */
+Dans `MonProfil.html`, sous la section **« Mes préférences »**, après la carte « Mes favoris », ajoute cette carte :
 
-  chargerStatistiques();
+<WritingBlock id="58318" variant="standard">```html <a href="MesMenus.html" class="menu-card"> <strong>📅 Mes menus et mon planning</strong> <span>
+Retrouver ma semaine, mon menu sélectionné
+et tous mes menus enregistrés. </span> </a>
+
+<a href="courses.html" class="menu-card">
+  <strong>🛒 Ma liste de courses</strong>
+  <span>
+    Retrouver les ingrédients de mes menus
+    et cocher mes achats au fur et à mesure.
+  </span>
+</a>
 
 
 </script>
