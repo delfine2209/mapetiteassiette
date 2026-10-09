@@ -596,217 +596,40 @@ style="display:block;text-decoration:none;color:inherit;cursor:pointer;"
 <script>
 
 
-  /* =====================================================
-     PREFERENCE DE PORTION
-  ===================================================== */
 
+Cette version corrige le JavaScript et conserve le choix de portion enregistré. Le compteur indique le nombre de repas renseignés dans le planning, et non le nombre de recettes présentes dans les menus enregistrés.
 
-  const modeEnregistre =
-    localStorage.getItem("modePortion");
+## Étape 2 — Relier les trois pages
 
+Voici le fonctionnement que nous devons obtenir :
 
-  if (modeEnregistre) {
+| Page | Source de données |
+|---|---|
+| `menu.html` | Menu en cours et planning hebdomadaire |
+| `MesMenus.html` | Planning, menu sélectionné et menus enregistrés |
+| `courses.html` | Ingrédients des recettes issues de ces trois sources |
+| `MonProfil.html` | Accès direct au planning et aux menus |
 
-    const choix =
-      document.querySelector(
-        'input[name="modePortion"][value="' +
-        modeEnregistre +
-        '"]'
-      );
+La correction de `courses.html` que je t’ai donnée précédemment permet de récupérer aussi les recettes du menu en cours et les petits-déjeuners. Elle ne doit toutefois pas être confondue avec une gestion des quantités par répétition d’une recette : pour l’instant, une recette portant le même identifiant n’est comptée qu’une seule fois.
 
+## Étape 3 — Ajouter les accès dans le profil
 
-    if (choix) {
+Dans `MonProfil.html`, après la carte « Mes favoris », ajoute ces deux liens si tu ne les as pas déjà ajoutés :
 
-      choix.checked = true;
-
-    }
-
-  }
-
-
-  function enregistrerMode() {
-
-    const choix =
-      document.querySelector(
-        'input[name="modePortion"]:checked'
-      );
-
-
-    if (!choix) {
-
-      alert(
-        "Choisissez d'abord votre mode de portion."
-      );
-
-      return;
-
-    }
-
-
-    localStorage.setItem(
-      "modePortion",
-      choix.value
-    );
-
-
-    const message =
-      document.getElementById(
-        "savedMessage"
-      );
-
-
-    message.style.display = "block";
-
-
-    setTimeout(() => {
-
-      message.style.display = "none";
-
-    }, 2500);
-
-  }
-
-
-
-  /* =====================================================
-     STATISTIQUES DU PROFIL
-  ===================================================== */
-
-
-  async function chargerStatistiques() {
-
-
-    /* ---------------------------------------------
-       1. NOMBRE TOTAL DE RECETTES
-       --------------------------------------------- */
-
-    try {
-
-      const reponse =
-        await fetch("../recettes.json");
-
-
-      if (!reponse.ok) {
-
-        throw new Error(
-          "Impossible de charger recettes.json"
-        );
-
-      }
-
-
-      const recettes =
-        await reponse.json();
-
-
-      document.getElementById(
-        "nombreRecettes"
-      ).textContent = recettes.length;
-
-
-    } catch (erreur) {
-
-      console.error(
-        "Erreur chargement recettes :",
-        erreur
-      );
-
-
-      document.getElementById(
-        "nombreRecettes"
-      ).textContent = "0";
-
-    }
-
-
-
-    /* ---------------------------------------------
-       2. NOMBRE DE FAVORIS
-       --------------------------------------------- */
-
-    try {
-
-      const favoris =
-        JSON.parse(
-          localStorage.getItem("favoris") || "[]"
-        );
-
-
-      document.getElementById(
-        "nombreFavoris"
-      ).textContent = favoris.length;
-
-
-    } catch (erreur) {
-
-      console.error(
-        "Erreur favoris :",
-        erreur
-      );
-
-
-      document.getElementById(
-        "nombreFavoris"
-      ).textContent = "0";
-
-    }
-
-
-
-```javascript
-/* 3. NOMBRE DE REPAS PLANIFIÉS */
-
-try {
-  const planning = JSON.parse(
-    localStorage.getItem("planningSemaine") || "{}"
-  );
-
-  const repasComptes = new Set();
-
-  Object.entries(planning).forEach(([jour, contenu]) => {
-    if (!contenu || typeof contenu !== "object") return;
-
-    [
-      "petitDejeuner",
-      "petit-dejeuner",
-      "dejeuner",
-      "diner",
-      "collation"
-    ].forEach(repas => {
-      const recette = contenu[repas];
-
-      if (recette && recette.id) {
-        repasComptes.add(
-          `${jour}-${repas}-${recette.id}`
-        );
-      }
-    });
-  });
-
-  document.getElementById("nombrePlanning").textContent =
-    repasComptes.size;
-
-} catch (erreur) {
-  console.error("Erreur de lecture du planning :", erreur);
-  document.getElementById("nombrePlanning").textContent = "0";
-}
-```
-
-Ce compteur affichera uniquement les repas réellement présents dans le planning hebdomadaire, sans additionner les menus enregistrés une seconde fois.
-
-## 2. Ajouter un accès direct à tes menus
-
-Dans `MonProfil.html`, sous la section **« Mes préférences »**, après la carte « Mes favoris », ajoute cette carte :
-
-<WritingBlock id="58318" variant="standard">```html <a href="MesMenus.html" class="menu-card"> <strong>📅 Mes menus et mon planning</strong> <span>
-Retrouver ma semaine, mon menu sélectionné
-et tous mes menus enregistrés. </span> </a>
+<WritingBlock id="72615" variant="standard">```html
+<a href="MesMenus.html" class="menu-card">
+  <strong>📅 Mes menus et mon planning</strong>
+  <span>
+    Retrouver ma semaine, mon menu sélectionné
+    et mes menus enregistrés.
+  </span>
+</a>
 
 <a href="courses.html" class="menu-card">
   <strong>🛒 Ma liste de courses</strong>
   <span>
     Retrouver les ingrédients de mes menus
-    et cocher mes achats au fur et à mesure.
+    et suivre mes achats.
   </span>
 </a>
 
