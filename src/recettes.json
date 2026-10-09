@@ -13667,5 +13667,517 @@
       "200 g de carotte"
     ]
   }
+},
+{
+  "id": "NEW216",
+  "nom": "Riz crémeux aux petits pois",
+  "categorie": "Plat",
+  "type": "Riz",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 12,
+  "calories": 220,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["réconfortant"],
+  "texture": "Crémeuse",
+  "ingredients": [
+    "40 g de riz cru",
+    "60 g de petits pois",
+    "20 g de fromage frais"
+  ],
+  "preparation": [
+    "Cuire le riz jusqu'à ce qu'il soit bien tendre.",
+    "Cuire les petits pois.",
+    "Ajouter les petits pois et le fromage frais au riz.",
+    "Mélanger jusqu'à obtenir une texture crémeuse."
+  ],
+  "quantites": {
+    "petite": [
+      "40 g de riz cru",
+      "60 g de petits pois",
+      "20 g de fromage frais"
+    ],
+    "famille2": [
+      "80 g de riz cru",
+      "120 g de petits pois",
+      "40 g de fromage frais"
+    ],
+    "famille4": [
+      "160 g de riz cru",
+      "240 g de petits pois",
+      "80 g de fromage frais"
+    ]
+  }
+},
+{
+  "id": "NEW217",
+  "nom": "Riz au potiron et parmesan",
+  "categorie": "Plat",
+  "type": "Riz",
+  "temps": 25,
+  "tempsPreparation": 5,
+  "tempsCuisson": 20,
+  "proteines": 10,
+  "calories": 230,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["réconfortant", "automne"],
+  "texture": "Crémeuse",
+  "ingredients": [
+    "40 g de riz cru",
+    "100 g de potiron",
+    "15 g de parmesan"
+  ],
+  "preparation": [
+    "Cuire le riz jusqu'à ce qu'il soit bien tendre.",
+    "Cuire le potiron jusqu'à ce qu'il soit fondant.",
+    "Mélanger le potiron avec le riz.",
+    "Ajouter le parmesan et mélanger jusqu'à obtenir une texture crémeuse."
+  ],
+  "quantites": {
+    "petite": [
+      "40 g de riz cru",
+      "100 g de potiron",
+      "15 g de parmesan"
+    ],
+    "famille2": [
+      "80 g de riz cru",
+      "200 g de potiron",
+      "30 g de parmesan"
+    ],
+    "famille4": [
+      "160 g de riz cru",
+      "400 g de potiron",
+      "60 g de parmesan"
+    ]
+  }
+},
+{
+  "id": "NEW218",
+  "nom": "Pâtes aux aubergines fondantes",
+  "categorie": "Plat",
+  "type": "Pâtes",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 11,
+  "calories": 230,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": true,
+  "sansGluten": false,
+  "sansLactose": true,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": ["végétarien"],
+  "texture": "Fondante",
+  "ingredients": [
+    "40 g de pâtes sèches",
+    "100 g d'aubergine"
+  ],
+  "preparation": [
+    "Cuire les pâtes.",
+    "Faire cuire l'aubergine jusqu'à ce qu'elle soit très fondante.",
+    "Mélanger les pâtes et l'aubergine."
+  ],
+  "quantites": {
+    "petite": [
+      "40 g de pâtes sèches",
+      "100 g d'aubergine"
+    ],
+    "famille2": [
+      "80 g de pâtes sèches",
+      "200 g d'aubergine"
+    ],
+    "famille4": [
+      "160 g de pâtes sèches",
+      "400 g d'aubergine"
+    ]
+  }
+},
+{
+  "id": "NEW219",
+  "nom": "Pâtes au poivron et fromage frais",
+  "categorie": "Plat",
+  "type": "Pâtes",
+  "temps": 20,
+  "tempsPreparation": 5,
+  "tempsCuisson": 15,
+  "proteines": 12,
+  "calories": 260,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": false,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["crémeux"],
+  "texture": "Crémeuse",
+  "ingredients": [
+    "40 g de pâtes sèches",
+    "80 g de poivron",
+    "25 g de fromage frais"
+  ],
+  "preparation": [
+    "Cuire les pâtes.",
+    "Faire cuire le poivron jusqu'à ce qu'il soit bien tendre.",
+    "Ajouter le fromage frais.",
+    "Incorporer les pâtes et mélanger."
+  ],
+  "quantites": {
+    "petite": [
+      "40 g de pâtes sèches",
+      "80 g de poivron",
+      "25 g de fromage frais"
+    ],
+    "famille2": [
+      "80 g de pâtes sèches",
+      "160 g de poivron",
+      "50 g de fromage frais"
+    ],
+    "famille4": [
+      "160 g de pâtes sèches",
+      "320 g de poivron",
+      "100 g de fromage frais"
+    ]
+  }
+},
+{
+  "id": "NEW220",
+  "nom": "Pâtes au chou-fleur rôti",
+  "categorie": "Plat",
+  "type": "Pâtes",
+  "temps": 25,
+  "tempsPreparation": 5,
+  "tempsCuisson": 20,
+  "proteines": 11,
+  "calories": 220,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": true,
+  "sansGluten": false,
+  "sansLactose": true,
+  "batchCooking": true,
+  "conservation": "3 jours au réfrigérateur",
+  "congelation": true,
+  "envies": ["léger"],
+  "texture": "Fondante",
+  "ingredients": [
+    "40 g de pâtes sèches",
+    "100 g de chou-fleur"
+  ],
+  "preparation": [
+    "Cuire le chou-fleur jusqu'à ce qu'il soit tendre.",
+    "Le faire légèrement rôtir au four.",
+    "Cuire les pâtes.",
+    "Mélanger les pâtes avec le chou-fleur."
+  ],
+  "quantites": {
+    "petite": [
+      "40 g de pâtes sèches",
+      "100 g de chou-fleur"
+    ],
+    "famille2": [
+      "80 g de pâtes sèches",
+      "200 g de chou-fleur"
+    ],
+    "famille4": [
+      "160 g de pâtes sèches",
+      "400 g de chou-fleur"
+    ]
+  }
+},
+{
+  "id": "NEW221",
+  "nom": "Verrine concombre et fromage frais",
+  "categorie": "Entrée",
+  "type": "Verrine",
+  "temps": 10,
+  "tempsPreparation": 10,
+  "tempsCuisson": 0,
+  "proteines": 6,
+  "calories": 90,
+  "portions": 2,
+  "portion": "1 petite verrine",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "conservation": "À consommer le jour même",
+  "congelation": false,
+  "envies": ["frais"],
+  "texture": "Croquante",
+  "ingredients": [
+    "80 g de concombre",
+    "40 g de fromage frais"
+  ],
+  "preparation": [
+    "Éplucher le concombre et retirer les graines si nécessaire.",
+    "Couper en petits dés.",
+    "Mélanger avec le fromage frais.",
+    "Répartir dans deux petites verrines."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de concombre",
+      "40 g de fromage frais"
+    ],
+    "famille2": [
+      "160 g de concombre",
+      "80 g de fromage frais"
+    ],
+    "famille4": [
+      "320 g de concombre",
+      "160 g de fromage frais"
+    ]
+  }
+},
+{
+  "id": "NEW222",
+  "nom": "Mousse légère de betterave",
+  "categorie": "Entrée",
+  "type": "Verrine",
+  "temps": 10,
+  "tempsPreparation": 10,
+  "tempsCuisson": 0,
+  "proteines": 5,
+  "calories": 80,
+  "portions": 2,
+  "portion": "1 petite verrine",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": false,
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["léger", "coloré"],
+  "texture": "Mousseuse",
+  "ingredients": [
+    "80 g de betterave cuite",
+    "60 g de yaourt nature"
+  ],
+  "preparation": [
+    "Mixer la betterave avec le yaourt jusqu'à obtenir une texture parfaitement lisse.",
+    "Répartir dans deux petites verrines.",
+    "Réserver au frais avant de servir."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de betterave cuite",
+      "60 g de yaourt nature"
+    ],
+    "famille2": [
+      "160 g de betterave cuite",
+      "120 g de yaourt nature"
+    ],
+    "famille4": [
+      "320 g de betterave cuite",
+      "240 g de yaourt nature"
+    ]
+  }
+},
+{
+  "id": "NEW223",
+  "nom": "Salade croquante de fenouil",
+  "categorie": "Entrée",
+  "type": "Salade",
+  "temps": 10,
+  "tempsPreparation": 10,
+  "tempsCuisson": 0,
+  "proteines": 2,
+  "calories": 65,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": false,
+  "vegetarien": true,
+  "vegetalien": true,
+  "sansGluten": true,
+  "sansLactose": true,
+  "batchCooking": false,
+  "conservation": "À consommer le jour même",
+  "congelation": false,
+  "envies": ["frais", "croquant"],
+  "texture": "Croquante",
+  "ingredients": [
+    "80 g de fenouil",
+    "60 g de pomme"
+  ],
+  "preparation": [
+    "Émincer très finement le fenouil.",
+    "Éplucher la pomme et la couper en petits dés.",
+    "Mélanger les deux ingrédients."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g de fenouil",
+      "60 g de pomme"
+    ],
+    "famille2": [
+      "160 g de fenouil",
+      "120 g de pomme"
+    ],
+    "famille4": [
+      "320 g de fenouil",
+      "240 g de pomme"
+    ]
+  }
+},
+{
+  "id": "NEW224",
+  "nom": "Flan abricot vanille",
+  "categorie": "Dessert",
+  "type": "Flan",
+  "temps": 25,
+  "tempsPreparation": 5,
+  "tempsCuisson": 25,
+  "proteines": 7,
+  "calories": 135,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["fruité", "léger"],
+  "texture": "Fondante",
+  "ingredients": [
+    "80 g d'abricot",
+    "1 œuf",
+    "80 ml de lait",
+    "Vanille"
+  ],
+  "preparation": [
+    "Couper l'abricot en petits morceaux.",
+    "Mélanger l'œuf avec le lait et la vanille.",
+    "Ajouter l'abricot.",
+    "Verser dans un petit moule.",
+    "Cuire environ 25 minutes au four à 180 °C."
+  ],
+  "quantites": {
+    "petite": [
+      "80 g d'abricot",
+      "1 œuf",
+      "80 ml de lait",
+      "Vanille"
+    ],
+    "famille2": [
+      "160 g d'abricot",
+      "2 œufs",
+      "160 ml de lait",
+      "Vanille"
+    ],
+    "famille4": [
+      "320 g d'abricot",
+      "4 œufs",
+      "320 ml de lait",
+      "Vanille"
+    ]
+  }
+},
+{
+  "id": "NEW225",
+  "nom": "Clafoutis aux fruits rouges",
+  "categorie": "Dessert",
+  "type": "Clafoutis",
+  "temps": 30,
+  "tempsPreparation": 5,
+  "tempsCuisson": 30,
+  "proteines": 7,
+  "calories": 150,
+  "portions": 2,
+  "portion": "1 petite portion",
+  "petitAppetit": true,
+  "preOperatoire": true,
+  "postOperatoire": true,
+  "vegetarien": true,
+  "vegetalien": false,
+  "sansGluten": true,
+  "sansLactose": false,
+  "batchCooking": true,
+  "conservation": "2 jours au réfrigérateur",
+  "congelation": false,
+  "envies": ["fruité", "léger"],
+  "texture": "Moelleuse",
+  "ingredients": [
+    "100 g de fruits rouges",
+    "1 œuf",
+    "80 ml de lait"
+  ],
+  "preparation": [
+    "Mélanger l'œuf avec le lait.",
+    "Ajouter les fruits rouges.",
+    "Verser dans un petit moule.",
+    "Cuire environ 30 minutes à 180 °C."
+  ],
+  "quantites": {
+    "petite": [
+      "100 g de fruits rouges",
+      "1 œuf",
+      "80 ml de lait"
+    ],
+    "famille2": [
+      "200 g de fruits rouges",
+      "2 œufs",
+      "160 ml de lait"
+    ],
+    "famille4": [
+      "400 g de fruits rouges",
+      "4 œufs",
+      "320 ml de lait"
+    ]
+  }
 }
 ]
